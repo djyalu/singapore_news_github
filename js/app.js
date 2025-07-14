@@ -592,7 +592,7 @@ function getChannelName(channelId) {
     return channels[channelId] || channelId;
 }
 
-function initializeSettings() {
+async function initializeSettings() {
     const scrapTarget = document.getElementById('scrapTarget');
     const sendChannel = document.getElementById('sendChannel');
     const sendPeriod = document.getElementById('sendPeriod');
@@ -615,13 +615,37 @@ function initializeSettings() {
         monthlyOptions.style.display = this.value === 'monthly' ? 'block' : 'none';
     });
     
-    loadSettings();
-    loadSites();
+    await loadSettings();
+    await loadSites();
     loadTestHistory();
 }
 
-function loadSettings() {
-    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+async function loadSettings() {
+    let settings = {};
+    
+    // localStorage에서 먼저 시도
+    const localSettings = localStorage.getItem('singapore_news_settings');
+    if (localSettings) {
+        settings = JSON.parse(localSettings);
+    } else {
+        // localStorage가 비어있으면 settings.json에서 로드
+        try {
+            const response = await fetch('data/settings.json');
+            if (response.ok) {
+                settings = await response.json();
+                // 로드한 데이터를 localStorage에 저장 (시크릿 모드가 아닌 경우)
+                try {
+                    localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+                } catch (e) {
+                    // 시크릿 모드에서는 localStorage 저장 실패 가능
+                    console.log('localStorage 저장 실패 (시크릿 모드일 수 있음)');
+                }
+            }
+        } catch (error) {
+            console.error('settings.json 로드 실패:', error);
+            settings = {};
+        }
+    }
     
     if (settings.scrapTarget) {
         document.getElementById('scrapTarget').value = settings.scrapTarget;
