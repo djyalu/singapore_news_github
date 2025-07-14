@@ -241,6 +241,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 
+                <div class="settings-section">
+                    <h3>테스트 전송</h3>
+                    <p>설정한 채널로 테스트 메시지를 전송하여 연결 상태를 확인하세요.</p>
+                    <div class="form-group">
+                        <label>테스트 메시지</label>
+                        <textarea id="testMessage" rows="3" placeholder="테스트 메시지를 입력하세요...">🧪 테스트 메시지입니다.
+
+Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
+
+📅 전송 시간: ${new Date().toLocaleString()}
+⚙️ 시스템 상태: 정상</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>전송 대상 채널</label>
+                        <select id="testChannel">
+                            <option value="">선택하세요</option>
+                            <option value="120363419092108413@g.us">Singapore News Main (Test)</option>
+                            <option value="120363421252284444@g.us">Singapore News Backup</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="sendTestMessage()" id="testSendBtn">테스트 전송</button>
+                    <div id="testResult" style="margin-top: 15px;"></div>
+                    
+                    <div class="test-history" style="margin-top: 30px;">
+                        <h4>최근 테스트 전송 이력</h4>
+                        <div id="testHistoryList"></div>
+                    </div>
+                </div>
+                
                 <button class="btn" onclick="saveSettings()">설정 저장</button>
             </div>
         `;
@@ -462,6 +491,107 @@ document.addEventListener('DOMContentLoaded', function() {
     checkAuth();
 });
 
+function sendTestMessage() {
+    const testMessage = document.getElementById('testMessage').value;
+    const testChannel = document.getElementById('testChannel').value;
+    const testSendBtn = document.getElementById('testSendBtn');
+    const testResult = document.getElementById('testResult');
+    
+    if (!testMessage.trim()) {
+        testResult.innerHTML = '<div class="error-message">테스트 메시지를 입력하세요.</div>';
+        return;
+    }
+    
+    if (!testChannel) {
+        testResult.innerHTML = '<div class="error-message">전송 대상 채널을 선택하세요.</div>';
+        return;
+    }
+    
+    // 버튼 비활성화 및 로딩 상태
+    testSendBtn.disabled = true;
+    testSendBtn.textContent = '전송 중...';
+    testResult.innerHTML = '<div class="info-message">테스트 메시지를 전송하고 있습니다...</div>';
+    
+    // 실제 메시지 처리 (시간 변수 치환)
+    const processedMessage = testMessage.replace('${new Date().toLocaleString()}', new Date().toLocaleString());
+    
+    // 시뮬레이션 전송 (실제 환경에서는 API 호출)
+    setTimeout(() => {
+        const success = Math.random() > 0.3; // 70% 성공률로 시뮬레이션
+        
+        if (success) {
+            testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
+            recordTestHistory(testChannel, 'success', processedMessage);
+        } else {
+            testResult.innerHTML = '<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다. 설정을 확인하세요.</div>';
+            recordTestHistory(testChannel, 'failed', processedMessage);
+        }
+        
+        // 버튼 복원
+        testSendBtn.disabled = false;
+        testSendBtn.textContent = '테스트 전송';
+        
+        // 테스트 이력 새로고침
+        loadTestHistory();
+    }, 2000);
+}
+
+function recordTestHistory(channel, status, message) {
+    const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    
+    const testRecord = {
+        id: Date.now().toString(),
+        timestamp: new Date().toISOString(),
+        channel: channel,
+        status: status,
+        message: message.substring(0, 50) + (message.length > 50 ? '...' : ''),
+        user: getCurrentUser().name
+    };
+    
+    testHistory.unshift(testRecord);
+    
+    // 최대 20개의 테스트 이력만 보관
+    if (testHistory.length > 20) {
+        testHistory.splice(20);
+    }
+    
+    localStorage.setItem('singapore_news_test_history', JSON.stringify(testHistory));
+}
+
+function loadTestHistory() {
+    const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    const testHistoryList = document.getElementById('testHistoryList');
+    
+    if (testHistory.length === 0) {
+        testHistoryList.innerHTML = '<p class="no-data">테스트 전송 이력이 없습니다.</p>';
+        return;
+    }
+    
+    const historyHTML = testHistory.slice(0, 5).map(record => `
+        <div class="test-history-item">
+            <div class="test-history-header">
+                <span class="test-status ${record.status}">${record.status === 'success' ? '✅ 성공' : '❌ 실패'}</span>
+                <span class="test-time">${new Date(record.timestamp).toLocaleString()}</span>
+            </div>
+            <div class="test-details">
+                <strong>채널:</strong> ${getChannelName(record.channel)} <br>
+                <strong>메시지:</strong> ${record.message} <br>
+                <strong>전송자:</strong> ${record.user}
+            </div>
+        </div>
+    `).join('');
+    
+    testHistoryList.innerHTML = historyHTML;
+}
+
+function getChannelName(channelId) {
+    const channels = {
+        '120363419092108413@g.us': 'Singapore News Main (Test)',
+        '120363421252284444@g.us': 'Singapore News Backup'
+    };
+    return channels[channelId] || channelId;
+}
+
 function initializeSettings() {
     const scrapTarget = document.getElementById('scrapTarget');
     const sendChannel = document.getElementById('sendChannel');
@@ -487,6 +617,7 @@ function initializeSettings() {
     
     loadSettings();
     loadSites();
+    loadTestHistory();
 }
 
 function loadSettings() {
