@@ -1,0 +1,18 @@
+{
+  "scrapTarget": "recent",
+  "importantKeywords": "",
+  "summaryOptions": {
+    "headline": true,
+    "keywords": true,
+    "content": true
+  },
+  "sendChannel": "whatsapp",
+  "whatsappChannel": "120363419092108413@g.us",
+  "sendSchedule": {
+    "period": "daily",
+    "time": "09:00",
+    "weekdays": [],
+    "date": "1"
+  },
+  "blockedKeywords": ""
+}

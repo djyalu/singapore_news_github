@@ -1,0 +1,43 @@
+name: Singapore News Scraper
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # 6시간마다 실행
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  scrape-and-send:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4 newspaper3k openai python-whatsapp-bot
+    
+    - name: Run scraper
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
+      run: |
+        python scripts/scraper.py
+    
+    - name: Send to WhatsApp
+      env:
+        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
+      run: |
+        python scripts/send_whatsapp.py
+    
+    - name: Update history
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/history/*.json
+        git commit -m "Update scraping history" || echo "No changes to commit"
+        git push

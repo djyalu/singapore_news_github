@@ -1,0 +1,20 @@
+[
+  {
+    "group": "주요 뉴스",
+    "name": "The Straits Times",
+    "url": "https://www.straitstimes.com",
+    "period": "daily"
+  },
+  {
+    "group": "주요 뉴스",
+    "name": "Channel NewsAsia",
+    "url": "https://www.channelnewsasia.com/singapore",
+    "period": "daily"
+  },
+  {
+    "group": "비즈니스",
+    "name": "The Business Times",
+    "url": "https://www.businesstimes.com.sg",
+    "period": "daily"
+  }
+]
