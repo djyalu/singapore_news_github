@@ -309,6 +309,36 @@ document.addEventListener('DOMContentLoaded', function() {
                     </form>
                 </div>
                 
+                <div id="editUserModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h3>사용자 정보 수정</h3>
+                        <form id="editUserForm">
+                            <input type="hidden" id="editUserId">
+                            <div class="form-group">
+                                <label>이름</label>
+                                <input type="text" id="editUserName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="editUserEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label>권한</label>
+                                <select id="editUserRole">
+                                    <option value="user">일반사용자</option>
+                                    <option value="admin">관리자</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>새 비밀번호 (변경하지 않으려면 비워두세요)</label>
+                                <input type="password" id="editUserPassword" placeholder="특수기호, 대소문자 포함 8글자 이상">
+                            </div>
+                            <button type="submit" class="btn">저장</button>
+                            <button type="button" class="btn" onclick="closeEditUserModal()">취소</button>
+                        </form>
+                    </div>
+                </div>
+                
                 <table class="table" id="usersTable">
                     <thead>
                         <tr>
@@ -597,6 +627,7 @@ function loadUsers() {
             <td>${user.email}</td>
             <td>${user.role === 'admin' ? '관리자' : '일반사용자'}</td>
             <td>
+                <button class="btn" onclick="showEditUserModal('${user.id}')">수정</button>
                 <button class="btn" onclick="resetUserPassword('${user.id}')">비밀번호 초기화</button>
                 ${user.id !== 'admin' ? `<button class="btn btn-danger" onclick="deleteUserConfirm('${user.id}')">삭제</button>` : ''}
             </td>
@@ -652,5 +683,72 @@ function deleteUserConfirm(userId) {
         deleteUser(userId);
         loadUsers();
         alert('사용자가 삭제되었습니다.');
+    }
+}
+
+function showEditUserModal(userId) {
+    const users = getAllUsers();
+    const user = users.find(u => u.id === userId);
+    
+    if (!user) {
+        alert('사용자를 찾을 수 없습니다.');
+        return;
+    }
+    
+    document.getElementById('editUserId').value = user.id;
+    document.getElementById('editUserName').value = user.name;
+    document.getElementById('editUserEmail').value = user.email;
+    document.getElementById('editUserRole').value = user.role;
+    document.getElementById('editUserPassword').value = '';
+    
+    document.getElementById('editUserModal').style.display = 'block';
+    
+    const editForm = document.getElementById('editUserForm');
+    editForm.onsubmit = function(e) {
+        e.preventDefault();
+        updateUserInfo();
+    };
+}
+
+function closeEditUserModal() {
+    document.getElementById('editUserModal').style.display = 'none';
+}
+
+function updateUserInfo() {
+    const userId = document.getElementById('editUserId').value;
+    const name = document.getElementById('editUserName').value;
+    const email = document.getElementById('editUserEmail').value;
+    const role = document.getElementById('editUserRole').value;
+    const password = document.getElementById('editUserPassword').value;
+    
+    const updates = {
+        name: name,
+        email: email,
+        role: role
+    };
+    
+    if (password.trim() !== '') {
+        updates.password = password;
+    }
+    
+    const result = updateUser(userId, updates);
+    
+    if (result.success) {
+        alert('사용자 정보가 수정되었습니다.');
+        closeEditUserModal();
+        loadUsers();
+        
+        const currentUser = getCurrentUser();
+        if (currentUser.userId === userId) {
+            const authData = {
+                ...currentUser,
+                name: name,
+                email: email,
+                role: role
+            };
+            localStorage.setItem('singapore_news_auth', JSON.stringify(authData));
+        }
+    } else {
+        alert('사용자 정보 수정에 실패했습니다: ' + result.message);
     }
 }
