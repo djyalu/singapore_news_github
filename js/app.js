@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
         
         if (login(username, password)) {
-            checkAuth();
+            if (isMFAEnabled(username)) {
+                showMFAForm(username);
+            } else {
+                checkAuth();
+            }
         } else {
             errorMessage.textContent = '잘못된 아이디 또는 비밀번호입니다.';
         }
@@ -71,6 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     content.innerHTML = getUsersHTML();
                     loadUsers();
                 }
+                break;
+            case 'mfa-settings':
+                content.innerHTML = getMFASettingsHTML();
+                initializeMFASettings();
                 break;
         }
     }
@@ -315,6 +323,110 @@ document.addEventListener('DOMContentLoaded', function() {
                 </table>
             </div>
         `;
+    }
+    
+    function showMFAForm(username) {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('mfaContainer').style.display = 'block';
+        
+        const mfaForm = document.getElementById('mfaForm');
+        const mfaBackBtn = document.getElementById('mfaBackBtn');
+        const mfaErrorMessage = document.getElementById('mfaErrorMessage');
+        
+        mfaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('mfaCode').value;
+            
+            if (verifyMFA(username, code)) {
+                checkAuth();
+            } else {
+                mfaErrorMessage.textContent = '잘못된 인증 코드입니다.';
+            }
+        });
+        
+        mfaBackBtn.addEventListener('click', function() {
+            logout();
+            document.getElementById('mfaContainer').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        });
+    }
+    
+    function verifyMFA(username, code) {
+        const secret = getMFASecret(username);
+        if (!secret) return false;
+        
+        if (verifyTOTP(secret, code)) {
+            return true;
+        }
+        
+        const backupResult = useBackupCode(username, code);
+        return backupResult.success;
+    }
+    
+    function getMFASettingsHTML() {
+        const currentUser = getCurrentUser();
+        const mfaEnabled = isMFAEnabled(currentUser.userId);
+        
+        return `
+            <div class="page-section">
+                <h2>MFA 설정</h2>
+                
+                <div class="mfa-status">
+                    <h3>현재 상태: ${mfaEnabled ? '활성화됨' : '비활성화됨'}</h3>
+                </div>
+                
+                ${!mfaEnabled ? `
+                    <div class="mfa-setup">
+                        <h3>MFA 활성화</h3>
+                        <p>Google Authenticator, Authy 등의 앱을 사용하여 2단계 인증을 설정하세요.</p>
+                        <button class="btn" onclick="setupMFA()">MFA 설정 시작</button>
+                    </div>
+                ` : `
+                    <div class="mfa-manage">
+                        <h3>MFA 관리</h3>
+                        <button class="btn" onclick="showBackupCodes()">백업 코드 보기</button>
+                        <button class="btn" onclick="regenerateBackupCodes()">백업 코드 재생성</button>
+                        <button class="btn btn-danger" onclick="disableMFAConfirm()">MFA 비활성화</button>
+                    </div>
+                `}
+                
+                <div id="mfaSetupModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h3>MFA 설정</h3>
+                        <div id="mfaSetupStep1">
+                            <p>1. 인증 앱에서 아래 QR 코드를 스캔하세요:</p>
+                            <canvas id="qrCode"></canvas>
+                            <p>또는 수동으로 입력: <code id="secretCode"></code></p>
+                            <button class="btn" onclick="nextMFAStep()">다음</button>
+                        </div>
+                        <div id="mfaSetupStep2" style="display: none;">
+                            <p>2. 인증 앱에서 생성된 6자리 코드를 입력하세요:</p>
+                            <input type="text" id="setupMfaCode" placeholder="000000" maxlength="6">
+                            <button class="btn" onclick="completeMFASetup()">완료</button>
+                        </div>
+                        <div id="mfaSetupStep3" style="display: none;">
+                            <h4>백업 코드</h4>
+                            <p>MFA 기기를 분실했을 때 사용할 백업 코드입니다. 안전한 곳에 보관하세요.</p>
+                            <div id="backupCodesList"></div>
+                            <button class="btn" onclick="finishMFASetup()">완료</button>
+                        </div>
+                        <button class="btn btn-danger" onclick="closeMFAModal()">취소</button>
+                    </div>
+                </div>
+                
+                <div id="backupCodesModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h3>백업 코드</h3>
+                        <div id="currentBackupCodes"></div>
+                        <button class="btn" onclick="closeBackupCodesModal()">닫기</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function initializeMFASettings() {
+        // MFA 설정 페이지 초기화
     }
     
     checkAuth();

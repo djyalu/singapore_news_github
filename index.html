@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Singapore News Scraper</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsOTP/1.0.0/jsOTP.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -16,6 +18,17 @@
                 <button type="submit">Login</button>
                 <p class="error-message" id="errorMessage"></p>
             </form>
+            
+            <div class="mfa-container" id="mfaContainer" style="display: none;">
+                <h2>2단계 인증</h2>
+                <p>인증 앱에서 6자리 코드를 입력하세요</p>
+                <form id="mfaForm">
+                    <input type="text" id="mfaCode" placeholder="000000" maxlength="6" required>
+                    <button type="submit">인증</button>
+                    <button type="button" id="mfaBackBtn">뒤로가기</button>
+                    <p class="error-message" id="mfaErrorMessage"></p>
+                </form>
+            </div>
         </div>
         
         <div class="main-container" id="mainContainer" style="display: none;">
@@ -26,6 +39,7 @@
                     <a href="#" data-page="settings" class="admin-only">Settings</a>
                     <a href="#" data-page="history">전송 이력</a>
                     <a href="#" data-page="users" class="admin-only">사용자 관리</a>
+                    <a href="#" data-page="mfa-settings">MFA 설정</a>
                     <a href="#" id="logoutBtn">로그아웃</a>
                 </div>
             </nav>
@@ -36,6 +50,8 @@
     </div>
     
     <script src="js/auth.js"></script>
+    <script src="js/mfa.js"></script>
+    <script src="js/mfa-functions.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
