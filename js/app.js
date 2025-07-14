@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    function loadPage(page) {
+    async function loadPage(page) {
         const content = document.getElementById('content');
         
         switch(page) {
@@ -752,7 +752,7 @@ async function loadSites() {
     });
 }
 
-document.addEventListener('submit', function(e) {
+document.addEventListener('submit', async function(e) {
     if (e.target.id === 'siteForm') {
         e.preventDefault();
         const sites = JSON.parse(localStorage.getItem('singapore_news_sites') || '[]');
@@ -765,16 +765,16 @@ document.addEventListener('submit', function(e) {
         });
         
         localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
-        loadSites();
+        await loadSites();
         e.target.reset();
     }
 });
 
-function deleteSite(index) {
+async function deleteSite(index) {
     const sites = JSON.parse(localStorage.getItem('singapore_news_sites') || '[]');
     sites.splice(index, 1);
     localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
-    loadSites();
+    await loadSites();
 }
 
 function loadHistory() {
