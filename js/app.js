@@ -686,8 +686,33 @@ function saveSettings() {
     alert('설정이 저장되었습니다.');
 }
 
-function loadSites() {
-    const sites = JSON.parse(localStorage.getItem('singapore_news_sites') || '[]');
+async function loadSites() {
+    let sites = [];
+    
+    // localStorage에서 먼저 시도
+    const localSites = localStorage.getItem('singapore_news_sites');
+    if (localSites) {
+        sites = JSON.parse(localSites);
+    } else {
+        // localStorage가 비어있으면 sites.json에서 로드
+        try {
+            const response = await fetch('data/sites.json');
+            if (response.ok) {
+                sites = await response.json();
+                // 로드한 데이터를 localStorage에 저장 (시크릿 모드가 아닌 경우)
+                try {
+                    localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+                } catch (e) {
+                    // 시크릿 모드에서는 localStorage 저장 실패 가능
+                    console.log('localStorage 저장 실패 (시크릿 모드일 수 있음)');
+                }
+            }
+        } catch (error) {
+            console.error('sites.json 로드 실패:', error);
+            sites = [];
+        }
+    }
+    
     const tbody = document.querySelector('#sitesTable tbody');
     tbody.innerHTML = '';
     
