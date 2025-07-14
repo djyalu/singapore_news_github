@@ -19,20 +19,15 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install requests beautifulsoup4 newspaper3k openai python-whatsapp-bot
+        pip install requests beautifulsoup4 lxml
     
     - name: Run scraper
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
       run: |
         python scripts/scraper.py
     
-    - name: Send to WhatsApp
-      env:
-        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
+    - name: Send to WhatsApp (Simulation)
       run: |
-        python scripts/send_whatsapp.py
+        echo "WhatsApp sending would run here in production"
     
     - name: Update history
       run: |

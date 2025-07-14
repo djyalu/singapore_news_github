@@ -3,8 +3,7 @@ import os
 import requests
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
-from newspaper import Article
-import openai
+import re
 
 def load_settings():
     with open('data/settings.json', 'r') as f:
@@ -27,21 +26,78 @@ def is_blocked(text, blocked_keywords):
     text_lower = text.lower()
     return any(keyword.lower() in text_lower for keyword in blocked_keywords)
 
-def summarize_article(article, settings):
+def create_summary(article_data, settings):
     summary_parts = []
     
-    if settings['summaryOptions']['headline']:
-        summary_parts.append(f"제목: {article.title}")
+    if settings.get('summaryOptions', {}).get('headline', True):
+        summary_parts.append(f"제목: {article_data['title']}")
     
-    if settings['summaryOptions']['keywords']:
-        keywords = article.keywords[:5] if article.keywords else []
-        if keywords:
+    if settings.get('summaryOptions', {}).get('keywords', True):
+        # 간단한 키워드 추출 (가장 자주 나오는 단어들)
+        words = re.findall(r'\b\w+\b', article_data['content'].lower())
+        word_freq = {}
+        for word in words:
+            if len(word) > 3:  # 3글자 이상의 단어만
+                word_freq[word] = word_freq.get(word, 0) + 1
+        
+        top_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:3]
+        if top_words:
+            keywords = [word for word, _ in top_words]
             summary_parts.append(f"키워드: {', '.join(keywords)}")
     
-    if settings['summaryOptions']['content']:
-        summary_parts.append(f"요약: {article.summary[:200]}...")
+    if settings.get('summaryOptions', {}).get('content', True):
+        content_summary = article_data['content'][:200]
+        if len(article_data['content']) > 200:
+            content_summary += "..."
+        summary_parts.append(f"요약: {content_summary}")
     
     return '\n'.join(summary_parts)
+
+def extract_article_content(url):
+    """간단한 기사 내용 추출"""
+    try:
+        response = requests.get(url, timeout=10)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # 제목 추출
+        title = ""
+        title_selectors = ['h1', '.headline', '.title', 'title']
+        for selector in title_selectors:
+            title_elem = soup.select_one(selector)
+            if title_elem and title_elem.get_text().strip():
+                title = title_elem.get_text().strip()
+                break
+        
+        # 본문 추출
+        content = ""
+        content_selectors = [
+            'article', '.article-content', '.content', '.story', 
+            '.post-content', 'main', '.main-content'
+        ]
+        
+        for selector in content_selectors:
+            content_elem = soup.select_one(selector)
+            if content_elem:
+                # 스크립트, 스타일 태그 제거
+                for script in content_elem(["script", "style"]):
+                    script.decompose()
+                content = content_elem.get_text().strip()
+                break
+        
+        # fallback: p 태그들 수집
+        if not content:
+            paragraphs = soup.find_all('p')
+            content = ' '.join([p.get_text().strip() for p in paragraphs[:5]])
+        
+        return {
+            'title': title,
+            'content': content[:500],  # 처음 500자만
+            'publish_date': datetime.now()
+        }
+        
+    except Exception as e:
+        print(f"Error extracting content from {url}: {e}")
+        return None
 
 def scrape_news():
     settings = load_settings()
@@ -53,44 +109,59 @@ def scrape_news():
     
     for site in sites:
         try:
-            response = requests.get(site['url'], timeout=10)
+            response = requests.get(site['url'], timeout=10, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            })
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            links = soup.find_all('a', href=True)[:20]
+            # 기사 링크 추출
+            links = []
+            for a in soup.find_all('a', href=True):
+                href = a['href']
+                if not href.startswith('http'):
+                    if href.startswith('/'):
+                        href = site['url'].rstrip('/') + href
+                    else:
+                        href = site['url'].rstrip('/') + '/' + href
+                
+                # 기사 링크로 보이는 패턴 필터링
+                if any(pattern in href.lower() for pattern in ['article', 'news', 'story', '/20']):
+                    links.append(href)
             
-            for link in links:
+            # 중복 제거 및 최대 10개로 제한
+            links = list(set(links))[:10]
+            
+            for article_url in links:
                 try:
-                    article_url = link['href']
-                    if not article_url.startswith('http'):
-                        article_url = site['url'] + article_url
+                    article_data = extract_article_content(article_url)
+                    if not article_data or not article_data['title']:
+                        continue
                     
-                    article = Article(article_url)
-                    article.download()
-                    article.parse()
-                    article.nlp()
-                    
-                    full_text = f"{article.title} {article.text}"
+                    full_text = f"{article_data['title']} {article_data['content']}"
                     
                     if is_blocked(full_text, blocked_keywords):
                         continue
                     
-                    if settings['scrapTarget'] == 'recent' and not is_recent_article(article.publish_date):
+                    if settings['scrapTarget'] == 'recent' and not is_recent_article(article_data['publish_date']):
                         continue
                     
                     if settings['scrapTarget'] == 'important' and not contains_keywords(full_text, important_keywords):
                         continue
                     
+                    # 요약 생성
+                    summary = create_summary(article_data, settings)
+                    
                     articles.append({
                         'site': site['name'],
                         'group': site['group'],
-                        'title': article.title,
+                        'title': article_data['title'],
                         'url': article_url,
-                        'summary': summarize_article(article, settings),
-                        'publish_date': article.publish_date.isoformat() if article.publish_date else None
+                        'summary': summary,
+                        'publish_date': article_data['publish_date'].isoformat() if article_data['publish_date'] else None
                     })
                     
                 except Exception as e:
-                    print(f"Error processing article: {e}")
+                    print(f"Error processing article {article_url}: {e}")
                     continue
                     
         except Exception as e:
