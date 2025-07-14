@@ -51,8 +51,11 @@ def send_to_whatsapp(message, channel_id):
         }
     }
     
+    # WhatsApp Business 전화번호 ID를 여기에 입력하세요
+    phone_number_id = os.environ.get('WHATSAPP_PHONE_NUMBER_ID', 'YOUR_PHONE_NUMBER_ID')
+    
     response = requests.post(
-        'https://graph.facebook.com/v17.0/YOUR_PHONE_NUMBER_ID/messages',
+        f'https://graph.facebook.com/v17.0/{phone_number_id}/messages',
         headers=headers,
         json=data
     )
