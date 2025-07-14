@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'settings':
                 if (isAdmin()) {
                     content.innerHTML = getSettingsHTML();
-                    initializeSettings();
+                    await initializeSettings();
                 }
                 break;
             case 'history':
