@@ -1,12 +1,26 @@
 let currentMFASecret = null;
 
+// generateHOTP 함수가 mfa.js에 정의되어 있으므로 
+// window 객체를 통해 접근 가능하도록 함
+const generateHOTP = window.generateHOTP || async function(secret, counter) {
+    // Fallback implementation
+    return '000000';
+};
+
 function setupMFA() {
     const secret = generateSecret();
     currentMFASecret = secret;
     
     const currentUser = getCurrentUser();
     generateQRCode(secret, currentUser.userId);
-    document.getElementById('secretCode').textContent = secret;
+    
+    // Secret을 보기 좋게 4자리씩 띄어서 표시
+    const formattedSecret = secret.match(/.{1,4}/g).join(' ');
+    document.getElementById('secretCode').textContent = formattedSecret;
+    
+    console.log('MFA Setup - Generated Secret:', secret);
+    console.log('MFA Setup - Formatted Secret:', formattedSecret);
+    
     document.getElementById('mfaSetupModal').style.display = 'block';
 }
 
@@ -16,12 +30,26 @@ function nextMFAStep() {
 }
 
 async function completeMFASetup() {
-    const code = document.getElementById('setupMfaCode').value;
+    const code = document.getElementById('setupMfaCode').value.trim();
     
     console.log('MFA Setup - Secret:', currentMFASecret);
     console.log('MFA Setup - Entered Code:', code);
     
     try {
+        // 현재 시간의 모든 코드 출력 (디버깅용)
+        const timeStep = 30;
+        const currentTime = Math.floor(Date.now() / 1000);
+        const currentCounter = Math.floor(currentTime / timeStep);
+        
+        console.log('Debug - Current Time:', new Date().toISOString());
+        console.log('Debug - Unix Time:', currentTime);
+        console.log('Debug - Counter:', currentCounter);
+        
+        for (let i = -2; i <= 2; i++) {
+            const testCode = await generateHOTP(currentMFASecret, currentCounter + i);
+            console.log(`Debug - Window ${i}: ${testCode}`);
+        }
+        
         const isValid = await verifyTOTP(currentMFASecret, code);
         console.log('MFA Setup - Verification Result:', isValid);
         
@@ -37,7 +65,9 @@ async function completeMFASetup() {
                 alert('MFA 설정에 실패했습니다: ' + result.message);
             }
         } else {
-            alert('잘못된 인증 코드입니다. 다시 시도하세요.\n\n디버깅 정보:\nSecret: ' + currentMFASecret + '\nCode: ' + code);
+            // 현재 예상되는 코드 표시
+            const expectedCode = await generateHOTP(currentMFASecret, currentCounter);
+            alert(`잘못된 인증 코드입니다.\n\n입력한 코드: ${code}\n예상 코드: ${expectedCode}\n\nGoogle Authenticator에 다음 키를 수동으로 입력했는지 확인하세요:\n${currentMFASecret}`);
         }
     } catch (error) {
         console.error('MFA Setup Error:', error);
