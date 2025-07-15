@@ -50,11 +50,12 @@ module.exports = async (req, res) => {
 
         const data = await response.json();
 
-        if (response.ok && (data.id || data.message_id)) {
+        if (response.ok && (data.sent === true || data.id || data.message_id || (data.message && data.message.id))) {
             return res.status(200).json({
                 success: true,
-                messageId: data.id || data.message_id,
-                timestamp: new Date().toISOString()
+                messageId: data.message?.id || data.id || data.message_id || 'unknown',
+                timestamp: new Date().toISOString(),
+                rawResponse: data
             });
         } else {
             return res.status(400).json({

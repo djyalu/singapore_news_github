@@ -632,8 +632,9 @@ function sendTestMessage() {
     .then(data => {
         console.log('WhatsApp API Response:', data);
         
-        if (data.id || data.message_id) {
-            testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
+        if (data.sent === true || data.id || data.message_id || (data.message && data.message.id)) {
+            const messageId = data.message?.id || data.id || data.message_id || 'unknown';
+            testResult.innerHTML = `<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (ID: ${messageId})</div>`;
             recordTestHistory(testChannel, 'success', processedMessage);
         } else {
             console.log('WhatsApp API Response Data:', data);
