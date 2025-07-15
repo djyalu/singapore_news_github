@@ -1,0 +1,16 @@
+{
+  "name": "singapore-news-scraper",
+  "version": "1.0.0",
+  "description": "Singapore News Scraper with GitHub Actions integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

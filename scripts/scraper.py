@@ -180,4 +180,15 @@ def scrape_news():
     return output_file
 
 if __name__ == "__main__":
+    # 스크래핑 실행
     scrape_news()
+    
+    # 30일 이전 데이터 자동 정리
+    try:
+        from cleanup_old_data import cleanup_old_data
+        cleanup_old_data(30)
+        print("Old data cleanup completed")
+    except ImportError:
+        print("cleanup_old_data module not found, skipping cleanup")
+    except Exception as e:
+        print(f"Error during cleanup: {e}")
