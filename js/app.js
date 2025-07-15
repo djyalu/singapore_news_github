@@ -116,12 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <i class="icon">🔧</i> 서버 상태
                     </button>
                 </div>
-                <div class="recent-activity">
-                    <h3>최근 활동</h3>
-                    <div id="recentActivityList" class="activity-list">
-                        <p class="loading">활동 내역을 불러오는 중...</p>
-                    </div>
-                </div>
                 <div class="scraped-articles">
                     <div class="scraped-articles-header">
                         <h3>오늘 스크랩한 기사</h3>
@@ -156,6 +150,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <i class="icon">📋</i> 클립보드 복사
                             </button>
                         </div>
+                    </div>
+                </div>
+                <div class="recent-activity">
+                    <h3>최근 활동</h3>
+                    <div id="recentActivityList" class="activity-list">
+                        <p class="loading">활동 내역을 불러오는 중...</p>
                     </div>
                 </div>
             </div>
