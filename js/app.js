@@ -1107,8 +1107,8 @@ function saveSettings() {
             return;
         }
         
-        // 서버에 설정 저장 (Vercel API 사용)
-        fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-settings', {
+        // 서버에 설정 저장
+        fetch('/api/save-settings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -2588,60 +2588,45 @@ async function scrapeNow() {
     if (!scrapeBtn) return;
     
     scrapeBtn.disabled = true;
-    scrapeBtn.innerHTML = '<i class="icon">⏳</i> 스크래핑 준비 중...';
+    scrapeBtn.innerHTML = '<i class="icon">⏳</i> 스크래핑 중...';
     
     showNotification('스크래핑을 시작합니다...', 'info');
     
     try {
-        // 최근 스크래핑 데이터를 직접 로드하여 표시
-        const response = await fetch('data/scraped/news_20250716_004341.json');
+        // GitHub Actions 트리거 API 호출
+        const response = await fetch('https://singapore-news-github-m1dttppc0-djyalus-projects.vercel.app/api/trigger-scraping', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
         
-        if (response.ok) {
-            const articles = await response.json();
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification(result.message, 'success');
             
-            showNotification(`최근 스크래핑 데이터: ${articles.length}개 기사`, 'success');
+            // 실행 상태 모니터링 시작
+            startScrapingStatusMonitor();
             
-            // 대시보드에 기사 수 업데이트
-            const articlesCountElement = document.getElementById('todayArticles');
-            if (articlesCountElement) {
-                const currentCount = parseInt(articlesCountElement.textContent) || 0;
-                animateNumber(articlesCountElement, currentCount, articles.length);
+            // 버튼 상태 업데이트
+            scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 확인 중...';
+            
+            // 진행 상황 확인 URL 제공
+            if (result.workflow_url) {
+                setTimeout(() => {
+                    showNotification(`GitHub Actions에서 진행 상황을 확인하세요: ${result.workflow_url}`, 'info');
+                }, 2000);
             }
             
-            // localStorage에 저장하여 모달에서 볼 수 있도록
-            const scrapedData = {
-                lastUpdated: new Date().toISOString(),
-                articles: articles
-            };
-            localStorage.setItem('singapore_news_scraped_data', JSON.stringify(scrapedData));
-            
-            // GitHub Actions 페이지 안내
-            setTimeout(() => {
-                const actionsUrl = 'https://github.com/djyalu/singapore_news_github/actions';
-                showNotification(`실시간 스크래핑은 GitHub Actions에서 수동으로 실행하세요: ${actionsUrl}`, 'info');
-                
-                // 사용자가 원하면 GitHub Actions 페이지 열기
-                if (confirm('GitHub Actions 페이지로 이동하시겠습니까?\n\n하루 3번 자동 스크래핑이 예약되어 있습니다.\n수동 실행은 Actions 페이지에서 "Run workflow"를 클릭하세요.')) {
-                    window.open(actionsUrl, '_blank');
-                }
-            }, 2000);
-            
         } else {
-            // 스크래핑 데이터가 없을 경우 시뮬레이션 데이터 생성
-            const simulationData = generateSimulationData();
-            displayScrapedArticles(simulationData);
-            
-            showNotification('시뮬레이션 데이터를 표시합니다. 실제 스크래핑은 GitHub Actions에서 실행하세요.', 'warning');
+            throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
         }
         
     } catch (error) {
-        console.error('스크래핑 데이터 로드 오류:', error);
-        
-        // 오류 발생 시 시뮬레이션 데이터 표시
-        const simulationData = generateSimulationData();
-        displayScrapedArticles(simulationData);
-        
-        showNotification('스크래핑 데이터를 불러올 수 없습니다. GitHub Actions에서 직접 실행해주세요.', 'error');
+        console.error('스크래핑 시작 오류:', error);
+        scrapeBtn.disabled = false;
+        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
         
         let errorMessage = '스크래핑 시작 중 오류가 발생했습니다.';
         if (error.message.includes('GitHub token')) {
@@ -2669,7 +2654,7 @@ async function startScrapingStatusMonitor() {
         }
         
         try {
-            const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/get-scraping-status');
+            const response = await fetch('https://singapore-news-github-m1dttppc0-djyalus-projects.vercel.app/api/get-scraping-status');
             const result = await response.json();
             
             if (result.success) {
