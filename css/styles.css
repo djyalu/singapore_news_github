@@ -1849,3 +1849,216 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Scraped Articles Styles */
+.scraped-articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.scraped-articles-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.article-group {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+}
+
+.article-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-group-header h4 {
+    margin: 0;
+    color: var(--dark-color);
+    font-size: 1.1em;
+}
+
+.article-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.article-item:hover {
+    background-color: #f8f9fa;
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.article-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.article-summary {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85em;
+    color: #888;
+}
+
+.article-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
+
+.article-actions {
+    display: flex;
+    gap: 4px;
+    margin-left: 12px;
+}
+
+.btn-xs {
+    padding: 4px 8px;
+    font-size: 0.75em;
+    min-width: auto;
+}
+
+/* Generated Message Styles */
+.generated-message {
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+}
+
+.generated-message h4 {
+    margin: 0;
+    padding: 12px 16px;
+    background: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--dark-color);
+}
+
+.message-preview {
+    padding: 16px;
+}
+
+.message-preview textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+    resize: vertical;
+    background: #f8f9fa;
+}
+
+.message-actions {
+    padding: 12px 16px;
+    background: var(--light-bg);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Button variants */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Responsive design for article actions */
+@media (max-width: 768px) {
+    .scraped-articles-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .scraped-articles-actions {
+        justify-content: center;
+    }
+    
+    .article-group-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .article-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .article-actions {
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+    
+    .message-actions {
+        flex-direction: column;
+    }
+}

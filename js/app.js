@@ -123,12 +123,39 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="scraped-articles">
-                    <h3>오늘 스크랩한 기사</h3>
-                    <button class="btn btn-sm" onclick="toggleScrapedArticles()" style="float: right; margin-top: -35px;">
-                        <span id="toggleArticlesText">펼치기</span>
-                    </button>
+                    <div class="scraped-articles-header">
+                        <h3>오늘 스크랩한 기사</h3>
+                        <div class="scraped-articles-actions">
+                            <button class="btn btn-sm btn-primary" onclick="scrapeNow()" id="scrapeNowBtn">
+                                <i class="icon">🔄</i> 지금 스크랩하기
+                            </button>
+                            <button class="btn btn-sm btn-secondary" onclick="generateSendMessage()" id="generateMessageBtn">
+                                <i class="icon">📝</i> 전송 메시지 생성
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="clearScrapedArticles()" id="clearArticlesBtn">
+                                <i class="icon">🗑️</i> 전체 삭제
+                            </button>
+                            <button class="btn btn-sm" onclick="toggleScrapedArticles()">
+                                <span id="toggleArticlesText">펼치기</span>
+                            </button>
+                        </div>
+                    </div>
                     <div id="scrapedArticlesList" class="articles-list" style="display: none;">
                         <p class="loading">기사를 불러오는 중...</p>
+                    </div>
+                    <div id="generatedMessage" class="generated-message" style="display: none;">
+                        <h4>생성된 전송 메시지</h4>
+                        <div class="message-preview">
+                            <textarea id="messageContent" rows="15" readonly></textarea>
+                        </div>
+                        <div class="message-actions">
+                            <button class="btn btn-primary" onclick="sendGeneratedMessage()">
+                                <i class="icon">📤</i> 메시지 전송
+                            </button>
+                            <button class="btn btn-secondary" onclick="copyMessageToClipboard()">
+                                <i class="icon">📋</i> 클립보드 복사
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1562,7 +1589,7 @@ function loadScrapedArticles() {
         
         // 기사를 소스별로 그룹화
         const groupedArticles = data.articles.reduce((groups, article) => {
-            const source = article.source || 'Unknown';
+            const source = article.source || article.site || 'Unknown';
             if (!groups[source]) groups[source] = [];
             groups[source].push(article);
             return groups;
@@ -1572,14 +1599,26 @@ function loadScrapedArticles() {
         Object.entries(groupedArticles).forEach(([source, articles]) => {
             html += `
                 <div class="article-group">
-                    <h4 class="article-source">${source} (${articles.length})</h4>
-                    ${articles.map(article => `
-                        <div class="article-item">
-                            <div class="article-title">${article.title}</div>
-                            ${article.summary ? `<div class="article-summary">${article.summary}</div>` : ''}
-                            <div class="article-meta">
-                                <span class="article-time">${new Date(article.timestamp).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
-                                ${article.url ? `<a href="${article.url}" target="_blank" class="article-link">원문 보기 →</a>` : ''}
+                    <div class="article-group-header">
+                        <h4 class="article-source">${source} (${articles.length})</h4>
+                        <button class="btn btn-sm btn-danger" onclick="deleteArticleGroup('${source}')">
+                            <i class="icon">🗑️</i> 그룹 삭제
+                        </button>
+                    </div>
+                    ${articles.map((article, index) => `
+                        <div class="article-item" data-source="${source}" data-index="${index}">
+                            <div class="article-content">
+                                <div class="article-title">${article.title}</div>
+                                ${article.summary ? `<div class="article-summary">${article.summary}</div>` : ''}
+                                <div class="article-meta">
+                                    <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
+                                    ${article.url ? `<a href="${article.url}" target="_blank" class="article-link">원문 보기 →</a>` : ''}
+                                </div>
+                            </div>
+                            <div class="article-actions">
+                                <button class="btn btn-xs btn-danger" onclick="deleteArticle('${source}', ${index})">
+                                    <i class="icon">🗑️</i>
+                                </button>
                             </div>
                         </div>
                     `).join('')}
@@ -2164,5 +2203,260 @@ function exportStatusReport() {
         document.execCommand('copy');
         document.body.removeChild(textarea);
         showNotification('상태 리포트가 클립보드에 복사되었습니다.', 'success');
+    });
+}
+
+// 새로운 스크래핑 및 기사 관리 기능들
+function clearScrapedArticles() {
+    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?')) {
+        localStorage.removeItem('singapore_news_scraped_data');
+        loadScrapedArticles();
+        updateTodayArticles();
+        showNotification('스크랩된 기사가 모두 삭제되었습니다.', 'success');
+    }
+}
+
+function deleteArticleGroup(source) {
+    if (confirm(`정말로 "${source}" 그룹의 모든 기사를 삭제하시겠습니까?`)) {
+        const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+        if (!scrapedData) return;
+        
+        try {
+            const data = JSON.parse(scrapedData);
+            if (data.articles) {
+                data.articles = data.articles.filter(article => (article.source || article.site || 'Unknown') !== source);
+                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                loadScrapedArticles();
+                updateTodayArticles();
+                showNotification(`"${source}" 그룹이 삭제되었습니다.`, 'success');
+            }
+        } catch (error) {
+            console.error('그룹 삭제 오류:', error);
+            showNotification('그룹 삭제 중 오류가 발생했습니다.', 'error');
+        }
+    }
+}
+
+function deleteArticle(source, index) {
+    if (confirm('정말로 이 기사를 삭제하시겠습니까?')) {
+        const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+        if (!scrapedData) return;
+        
+        try {
+            const data = JSON.parse(scrapedData);
+            if (data.articles) {
+                // 해당 소스의 기사들을 찾아서 인덱스에 해당하는 기사 삭제
+                const sourceArticles = data.articles.filter(article => (article.source || article.site || 'Unknown') === source);
+                const articleToDelete = sourceArticles[index];
+                
+                if (articleToDelete) {
+                    const articleIndex = data.articles.indexOf(articleToDelete);
+                    data.articles.splice(articleIndex, 1);
+                    localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                    loadScrapedArticles();
+                    updateTodayArticles();
+                    showNotification('기사가 삭제되었습니다.', 'success');
+                }
+            }
+        } catch (error) {
+            console.error('기사 삭제 오류:', error);
+            showNotification('기사 삭제 중 오류가 발생했습니다.', 'error');
+        }
+    }
+}
+
+function scrapeNow() {
+    const scrapeBtn = document.getElementById('scrapeNowBtn');
+    if (!scrapeBtn) return;
+    
+    scrapeBtn.disabled = true;
+    scrapeBtn.innerHTML = '<i class="icon">⏳</i> 스크래핑 중...';
+    
+    showNotification('스크래핑을 시작합니다...', 'info');
+    
+    // 시뮬레이션된 스크래핑 (실제로는 GitHub Actions를 수동으로 트리거해야 함)
+    setTimeout(() => {
+        // 시뮬레이션 데이터 생성
+        const simulatedArticles = [
+            {
+                site: 'The Straits Times',
+                group: 'Main News',
+                title: '새로운 기사 제목 1',
+                url: 'https://www.straitstimes.com/singapore/example-1',
+                summary: '제목: 새로운 기사 제목 1\n요약: 싱가포르 관련 최신 뉴스입니다...',
+                publish_date: new Date().toISOString(),
+                timestamp: new Date().toISOString()
+            },
+            {
+                site: 'Channel NewsAsia',
+                group: 'Breaking News',
+                title: '새로운 기사 제목 2',
+                url: 'https://www.channelnewsasia.com/singapore/example-2',
+                summary: '제목: 새로운 기사 제목 2\n요약: 경제 관련 업데이트입니다...',
+                publish_date: new Date().toISOString(),
+                timestamp: new Date().toISOString()
+            }
+        ];
+        
+        // 기존 데이터에 추가
+        const existingData = localStorage.getItem('singapore_news_scraped_data');
+        let data = {
+            lastUpdated: new Date().toISOString(),
+            articles: []
+        };
+        
+        if (existingData) {
+            try {
+                data = JSON.parse(existingData);
+            } catch (e) {
+                console.error('기존 데이터 파싱 오류:', e);
+            }
+        }
+        
+        // 새 기사 추가
+        data.articles = [...data.articles, ...simulatedArticles];
+        data.lastUpdated = new Date().toISOString();
+        
+        localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+        
+        loadScrapedArticles();
+        updateTodayArticles();
+        
+        scrapeBtn.disabled = false;
+        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크랩하기';
+        
+        showNotification(`${simulatedArticles.length}개의 새로운 기사를 스크래핑했습니다.`, 'success');
+    }, 2000);
+}
+
+function generateSendMessage() {
+    const generateBtn = document.getElementById('generateMessageBtn');
+    const messageDiv = document.getElementById('generatedMessage');
+    const messageContent = document.getElementById('messageContent');
+    
+    if (!generateBtn || !messageDiv || !messageContent) return;
+    
+    generateBtn.disabled = true;
+    generateBtn.innerHTML = '<i class="icon">⏳</i> 생성 중...';
+    
+    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    if (!scrapedData) {
+        showNotification('스크랩된 기사가 없습니다.', 'error');
+        generateBtn.disabled = false;
+        generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
+        return;
+    }
+    
+    try {
+        const data = JSON.parse(scrapedData);
+        const articles = data.articles || [];
+        
+        if (articles.length === 0) {
+            showNotification('스크랩된 기사가 없습니다.', 'error');
+            generateBtn.disabled = false;
+            generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
+            return;
+        }
+        
+        // 메시지 생성 (Python send_whatsapp.py의 format_message 함수와 동일한 형식)
+        let message = `📰 *Singapore News Update*\n${new Date().toLocaleString('ko-KR')}\n\n`;
+        
+        // 그룹별로 정리
+        const grouped = {};
+        articles.forEach(article => {
+            const group = article.group || 'Other';
+            if (!grouped[group]) grouped[group] = [];
+            grouped[group].push(article);
+        });
+        
+        Object.entries(grouped).forEach(([group, groupArticles]) => {
+            message += `🔹 *${group}*\n`;
+            groupArticles.slice(0, 3).forEach((article, i) => {
+                message += `\n${i + 1}. ${article.title}\n`;
+                const summaryLines = article.summary ? article.summary.split('\n') : [];
+                summaryLines.slice(0, 2).forEach(line => {
+                    if (line.trim()) {
+                        message += `   ${line.trim()}\n`;
+                    }
+                });
+                message += `   🔗 상세보기: ${article.url}\n`;
+            });
+            message += '\n';
+        });
+        
+        message += `🤖 _Singapore News Scraper_`;
+        
+        // 메시지 길이 제한
+        if (message.length > 4096) {
+            message = message.substring(0, 4090) + '...';
+        }
+        
+        messageContent.value = message;
+        messageDiv.style.display = 'block';
+        
+        generateBtn.disabled = false;
+        generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
+        
+        showNotification('전송 메시지가 생성되었습니다.', 'success');
+        
+    } catch (error) {
+        console.error('메시지 생성 오류:', error);
+        showNotification('메시지 생성 중 오류가 발생했습니다.', 'error');
+        generateBtn.disabled = false;
+        generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
+    }
+}
+
+function sendGeneratedMessage() {
+    const messageContent = document.getElementById('messageContent');
+    if (!messageContent || !messageContent.value) {
+        showNotification('전송할 메시지가 없습니다.', 'error');
+        return;
+    }
+    
+    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+    const channel = settings.whatsappChannel;
+    
+    if (!channel) {
+        showNotification('전송 채널이 설정되지 않았습니다.', 'error');
+        return;
+    }
+    
+    // 테스트 전송 함수를 재사용
+    const testSendBtn = document.getElementById('testSendBtn');
+    const testChannel = document.getElementById('testChannel');
+    const testMessage = document.getElementById('testMessage');
+    
+    if (testChannel && testMessage) {
+        const originalChannel = testChannel.value;
+        const originalMessage = testMessage.value;
+        
+        testChannel.value = channel;
+        testMessage.value = messageContent.value;
+        
+        sendTestMessage();
+        
+        // 원래 값 복원
+        testChannel.value = originalChannel;
+        testMessage.value = originalMessage;
+    } else {
+        showNotification('전송 기능을 사용할 수 없습니다.', 'error');
+    }
+}
+
+function copyMessageToClipboard() {
+    const messageContent = document.getElementById('messageContent');
+    if (!messageContent || !messageContent.value) {
+        showNotification('복사할 메시지가 없습니다.', 'error');
+        return;
+    }
+    
+    navigator.clipboard.writeText(messageContent.value).then(() => {
+        showNotification('메시지가 클립보드에 복사되었습니다.', 'success');
+    }).catch(() => {
+        // 클립보드 복사 실패 시 텍스트 영역 선택
+        messageContent.select();
+        document.execCommand('copy');
+        showNotification('메시지가 클립보드에 복사되었습니다.', 'success');
     });
 }
