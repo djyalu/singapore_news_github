@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
         
         if (login(username, password)) {
-            if (isMFAEnabled(username)) {
+            if (window.isMFAEnabled && isMFAEnabled(username)) {
                 showMFAForm(username);
             } else {
                 checkAuth();
@@ -246,18 +246,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>설정한 채널로 테스트 메시지를 전송하여 연결 상태를 확인하세요.</p>
                     <div class="form-group">
                         <label>테스트 메시지</label>
-                        <textarea id="testMessage" rows="3" placeholder="테스트 메시지를 입력하세요...">🧪 테스트 메시지입니다.
+                        <textarea id="testMessage" rows="5" placeholder="테스트 메시지를 입력하세요...">📰 *Singapore News Update*
 
-Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
+🔹 *The Straits Times*
+제목: Singapore's economy grows 3.8% in Q4 2024
+요약: 싱가포르 경제가 2024년 4분기에 3.8% 성장하며 예상치를 상회했습니다.
 
-📅 전송 시간: ${new Date().toLocaleString()}
-⚙️ 시스템 상태: 정상</textarea>
+🔹 *Channel NewsAsia* 
+제목: New MRT stations to open in 2025
+요약: 2025년에 새로운 MRT 역 5개가 개통될 예정입니다.
+
+📅 스크랩 시간: ${new Date().toLocaleString()}
+🤖 Singapore News Scraper</textarea>
                     </div>
                     <div class="form-group">
                         <label>전송 대상 채널</label>
                         <select id="testChannel">
                             <option value="">선택하세요</option>
-                            <option value="120363419092108413@g.us">Singapore News Main (Test)</option>
                             <option value="120363421252284444@g.us">Singapore News Backup</option>
                         </select>
                     </div>
@@ -304,7 +309,6 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
                             <label>채널</label>
                             <select id="historyChannel">
                                 <option value="">전체</option>
-                                <option value="120363419092108413@g.us">Singapore News Main (Test)</option>
                                 <option value="120363421252284444@g.us">Singapore News Backup</option>
                             </select>
                         </div>
@@ -442,6 +446,10 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
     }
     
     async function verifyMFA(username, code) {
+        if (!window.getMFASecret || !window.verifyTOTP || !window.useBackupCode) {
+            return false;
+        }
+        
         const secret = getMFASecret(username);
         if (!secret) return false;
         
@@ -456,7 +464,7 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
     
     function getMFASettingsHTML() {
         const currentUser = getCurrentUser();
-        const mfaEnabled = isMFAEnabled(currentUser.userId);
+        const mfaEnabled = window.isMFAEnabled ? isMFAEnabled(currentUser.userId) : false;
         
         return `
             <div class="page-section">
@@ -470,14 +478,14 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
                     <div class="mfa-setup">
                         <h3>MFA 활성화</h3>
                         <p>Google Authenticator, Authy 등의 앱을 사용하여 2단계 인증을 설정하세요.</p>
-                        <button class="btn" onclick="setupMFA()">MFA 설정 시작</button>
+                        <button class="btn" onclick="MFA.setupMFA(getCurrentUser)">MFA 설정 시작</button>
                     </div>
                 ` : `
                     <div class="mfa-manage">
                         <h3>MFA 관리</h3>
-                        <button class="btn" onclick="showBackupCodes()">백업 코드 보기</button>
-                        <button class="btn" onclick="regenerateBackupCodes()">백업 코드 재생성</button>
-                        <button class="btn btn-danger" onclick="disableMFAConfirm()">MFA 비활성화</button>
+                        <button class="btn" onclick="MFA.showBackupCodes(getCurrentUser)">백업 코드 보기</button>
+                        <button class="btn" onclick="MFA.regenerateBackupCodesUI(getCurrentUser)">백업 코드 재생성</button>
+                        <button class="btn btn-danger" onclick="MFA.disableMFAConfirm(getCurrentUser)">MFA 비활성화</button>
                     </div>
                 `}
                 
@@ -488,20 +496,20 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
                             <p>1. 인증 앱에서 아래 QR 코드를 스캔하세요:</p>
                             <canvas id="qrCode"></canvas>
                             <p>또는 수동으로 입력: <code id="secretCode"></code></p>
-                            <button class="btn" onclick="nextMFAStep()">다음</button>
+                            <button class="btn" onclick="MFA.nextMFAStep()">다음</button>
                         </div>
                         <div id="mfaSetupStep2" style="display: none;">
                             <p>2. 인증 앱에서 생성된 6자리 코드를 입력하세요:</p>
                             <input type="text" id="setupMfaCode" placeholder="000000" maxlength="6">
-                            <button class="btn" onclick="completeMFASetup()">완료</button>
+                            <button class="btn" onclick="MFA.completeMFASetup(getCurrentUser)">완료</button>
                         </div>
                         <div id="mfaSetupStep3" style="display: none;">
                             <h4>백업 코드</h4>
                             <p>MFA 기기를 분실했을 때 사용할 백업 코드입니다. 안전한 곳에 보관하세요.</p>
                             <div id="backupCodesList"></div>
-                            <button class="btn" onclick="finishMFASetup()">완료</button>
+                            <button class="btn" onclick="MFA.finishMFASetup()">완료</button>
                         </div>
-                        <button class="btn btn-danger" onclick="closeMFAModal()">취소</button>
+                        <button class="btn btn-danger" onclick="MFA.closeMFAModal()">취소</button>
                     </div>
                 </div>
                 
@@ -509,7 +517,7 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
                     <div class="modal-content">
                         <h3>백업 코드</h3>
                         <div id="currentBackupCodes"></div>
-                        <button class="btn" onclick="closeBackupCodesModal()">닫기</button>
+                        <button class="btn" onclick="MFA.closeBackupCodesModal()">닫기</button>
                     </div>
                 </div>
             </div>
@@ -547,30 +555,49 @@ function sendTestMessage() {
     // 실제 메시지 처리 (시간 변수 치환)
     const processedMessage = testMessage.replace('${new Date().toLocaleString()}', new Date().toLocaleString());
     
-    // WhatsApp API 호출
-    fetch('api/send-whatsapp.php', {
+    // WhatsApp API 직접 호출
+    const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
+    const whatsappToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+    
+    // 채널 ID 형식 변환
+    let toNumber = testChannel;
+    if (testChannel.includes('@g.us')) {
+        toNumber = testChannel.replace('@g.us', '');
+    }
+    
+    const whatsappData = {
+        to: toNumber,
+        body: processedMessage,
+        typing_time: 0
+    };
+    
+    fetch(whatsappApiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${whatsappToken}`
         },
-        body: JSON.stringify({
-            channel: testChannel,
-            message: processedMessage
-        })
+        body: JSON.stringify(whatsappData)
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log('WhatsApp API Response Status:', response.status);
+        return response.json();
+    })
     .then(data => {
-        if (data.success) {
+        console.log('WhatsApp API Response:', data);
+        
+        if (data.id || data.message_id) {
             testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
             recordTestHistory(testChannel, 'success', processedMessage);
         } else {
-            testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${data.error || '알 수 없는 오류'}</div>`;
+            const errorMsg = data.message || data.error || '알 수 없는 오류';
+            testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
             recordTestHistory(testChannel, 'failed', processedMessage);
         }
     })
     .catch(error => {
-        console.error('Error:', error);
-        testResult.innerHTML = '<div class="error-message">❌ 네트워크 오류가 발생했습니다.</div>';
+        console.error('WhatsApp API Error:', error);
+        testResult.innerHTML = '<div class="error-message">❌ WhatsApp API 호출 중 오류가 발생했습니다.</div>';
         recordTestHistory(testChannel, 'failed', processedMessage);
     })
     .finally(() => {
@@ -633,7 +660,6 @@ function loadTestHistory() {
 
 function getChannelName(channelId) {
     const channels = {
-        '120363419092108413@g.us': 'Singapore News Main (Test)',
         '120363421252284444@g.us': 'Singapore News Backup'
     };
     return channels[channelId] || channelId;

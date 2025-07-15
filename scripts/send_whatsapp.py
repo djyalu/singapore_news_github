@@ -15,7 +15,7 @@ def get_latest_scraped_file():
     return max(files, key=os.path.getctime)
 
 def format_message(articles):
-    message = f"📰 Singapore News Update - {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n"
+    message = f"📰 *Singapore News Update*\n{datetime.now().strftime('%Y년 %m월 %d일 %H:%M')}\n\n"
     
     grouped = {}
     for article in articles:
@@ -25,42 +25,58 @@ def format_message(articles):
         grouped[group].append(article)
     
     for group, group_articles in grouped.items():
-        message += f"【{group}】\n"
-        for article in group_articles[:5]:
-            message += f"\n📌 {article['title']}\n"
-            message += f"{article['summary']}\n"
-            message += f"🔗 {article['url']}\n"
-        message += "\n" + "="*50 + "\n\n"
+        message += f"🔹 *{group}*\n"
+        for i, article in enumerate(group_articles[:3], 1):
+            message += f"\n{i}. {article['title']}\n"
+            summary_lines = article['summary'].split('\n')
+            for line in summary_lines[:2]:  # 요약의 처음 2줄만
+                if line.strip():
+                    message += f"   {line.strip()}\n"
+            message += f"   🔗 상세보기: {article['url']}\n"
+        message += "\n"
+    
+    message += f"\n🤖 _Singapore News Scraper_"
     
     return message
 
 def send_to_whatsapp(message, channel_id):
-    api_key = os.environ.get('WHATSAPP_API_KEY')
+    # WhatsApp API 설정
+    api_url = 'https://gate.whapi.cloud/messages/text'
+    api_token = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq'
     
     headers = {
-        'Authorization': f'Bearer {api_key}',
+        'Authorization': f'Bearer {api_token}',
         'Content-Type': 'application/json'
     }
     
+    # 채널 ID 형식 처리
+    if '@g.us' in channel_id:
+        # 그룹 채널인 경우 - WhatsApp API 형식에 맞게 변환
+        to_number = channel_id.replace('@g.us', '')
+    else:
+        to_number = channel_id
+    
     data = {
-        'messaging_product': 'whatsapp',
-        'to': channel_id,
-        'type': 'text',
-        'text': {
-            'body': message
-        }
+        'to': to_number,
+        'body': message,
+        'typing_time': 0
     }
     
-    # WhatsApp Business 전화번호 ID를 여기에 입력하세요
-    phone_number_id = os.environ.get('WHATSAPP_PHONE_NUMBER_ID', 'YOUR_PHONE_NUMBER_ID')
-    
-    response = requests.post(
-        f'https://graph.facebook.com/v17.0/{phone_number_id}/messages',
-        headers=headers,
-        json=data
-    )
-    
-    return response.status_code == 200
+    try:
+        response = requests.post(
+            api_url,
+            headers=headers,
+            json=data,
+            timeout=30
+        )
+        
+        print(f"WhatsApp API Response: {response.status_code}")
+        print(f"Response Body: {response.text}")
+        
+        return response.status_code in [200, 201]
+    except Exception as e:
+        print(f"Error sending WhatsApp message: {e}")
+        return False
 
 def save_history(channel_id, status, message_preview):
     history_file = f'data/history/{datetime.now().strftime("%Y%m")}.json'
