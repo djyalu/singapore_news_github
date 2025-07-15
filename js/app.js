@@ -772,16 +772,23 @@ function recordTestHistory(channel, status, message) {
     
     testHistory.unshift(testRecord);
     
-    // 최대 20개의 테스트 이력만 보관
-    if (testHistory.length > 20) {
-        testHistory.splice(20);
+    // 최대 5개의 테스트 이력만 보관
+    if (testHistory.length > 5) {
+        testHistory.splice(5);
     }
     
     localStorage.setItem('singapore_news_test_history', JSON.stringify(testHistory));
 }
 
 function loadTestHistory() {
-    const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    let testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    
+    // 기존 데이터가 5개를 초과하면 5개로 제한
+    if (testHistory.length > 5) {
+        testHistory = testHistory.slice(0, 5);
+        localStorage.setItem('singapore_news_test_history', JSON.stringify(testHistory));
+    }
+    
     const testHistoryList = document.getElementById('testHistoryList');
     
     if (testHistory.length === 0) {
