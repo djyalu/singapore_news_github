@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'dashboard':
                 content.innerHTML = getDashboardHTML();
                 loadDashboardData();
+                setupDashboardEventListeners();
                 break;
             case 'settings':
                 if (isAdmin()) {
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="page-section">
                 <h2>Dashboard</h2>
                 <div class="dashboard-stats">
-                    <div class="stat-card" onclick="showArticlesList('today')" style="cursor: pointer;">
+                    <div class="stat-card clickable" id="todayArticlesCard" style="cursor: pointer;">
                         <h3>오늘 스크랩한 기사</h3>
                         <p class="stat-number" id="todayArticles">0</p>
                         <div class="stat-action">클릭하여 보기 →</div>
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>다음 전송 시간</h3>
                         <p class="stat-text" id="nextSendTime">-</p>
                     </div>
-                    <div class="stat-card" onclick="showSendSettings()" style="cursor: pointer;">
+                    <div class="stat-card clickable" id="sendSettingsCard" style="cursor: pointer;">
                         <h3>전송 설정</h3>
                         <p class="stat-text" id="sendChannelInfo">미설정</p>
                         <div class="stat-action">설정하기 →</div>
@@ -108,10 +109,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="btn btn-primary" onclick="refreshDashboard()">
                         <i class="icon">🔄</i> 새로고침
                     </button>
-                    <button class="btn btn-secondary" onclick="loadPage('history')">
+                    <button class="btn btn-secondary" id="historyBtn">
                         <i class="icon">📊</i> 전송 이력 보기
                     </button>
-                    <button class="btn btn-info" onclick="showServerStatus()">
+                    <button class="btn btn-info" id="serverStatusBtn">
                         <i class="icon">🔧</i> 서버 상태
                     </button>
                 </div>
@@ -1184,6 +1185,19 @@ function loadDashboardData() {
     updateNextSendTime();
     updateSendChannelInfo();
     loadRecentActivity();
+}
+
+function setupDashboardEventListeners() {
+    const historyBtn = document.getElementById('historyBtn');
+    const serverStatusBtn = document.getElementById('serverStatusBtn');
+    
+    if (historyBtn) {
+        historyBtn.addEventListener('click', () => loadPage('history'));
+    }
+    
+    if (serverStatusBtn) {
+        serverStatusBtn.addEventListener('click', showServerStatus);
+    }
 }
 
 function refreshDashboard() {

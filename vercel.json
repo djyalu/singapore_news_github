@@ -1,13 +1,15 @@
 {
-  "functions": {
-    "api/send-whatsapp.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "src": "api/send-whatsapp.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/send-whatsapp",
+      "dest": "/api/send-whatsapp.js"
     }
   ]
 }
