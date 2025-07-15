@@ -2062,3 +2062,139 @@ body {
         flex-direction: column;
     }
 }
+
+/* Selectable Articles Modal Styles */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.selectable-article-group {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+}
+
+.selectable-article-group-header {
+    padding: 12px 16px;
+    background: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.group-selection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.group-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.group-selection input[type="checkbox"] {
+    margin: 0;
+    margin-right: 8px;
+}
+
+.selectable-articles-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.selectable-article-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.selectable-article-item:hover {
+    background-color: #f8f9fa;
+}
+
+.selectable-article-item:last-child {
+    border-bottom: none;
+}
+
+.article-selection {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    padding-top: 2px;
+}
+
+.article-selection input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.selectable-article-item .article-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.selectable-article-item .article-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.selectable-article-item .article-summary {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.selectable-article-item .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* Modal responsive design */
+@media (max-width: 768px) {
+    .modal-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .modal-header-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .selectable-article-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .article-selection {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .selectable-articles-list {
+        max-height: 300px;
+    }
+}

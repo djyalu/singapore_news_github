@@ -968,8 +968,28 @@ function saveSettings() {
             return;
         }
         
-        localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
-        showNotification('설정이 저장되었습니다.', 'success');
+        // 서버에 설정 저장
+        fetch('/api/save-settings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(settings)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // 서버 저장 성공 시 로컬에도 저장
+                localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+                showNotification('설정이 저장되었습니다.', 'success');
+            } else {
+                showNotification(data.error || '설정 저장에 실패했습니다.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('설정 저장 오류:', error);
+            showNotification('설정 저장 중 오류가 발생했습니다.', 'error');
+        });
     } catch (error) {
         console.error('설정 저장 오류:', error);
         showNotification('설정 저장 중 오류가 발생했습니다.', 'error');
@@ -1639,7 +1659,7 @@ function showArticlesList(type) {
     document.body.appendChild(modal);
     
     if (type === 'today') {
-        loadTodayArticles();
+        loadTodayArticlesModal();
     } else if (type === 'sent') {
         loadSentArticles();
     }
@@ -1653,6 +1673,17 @@ function createArticlesModal() {
         <div class="modal-content large-modal">
             <div class="modal-header">
                 <h2 id="modalTitle">기사 목록</h2>
+                <div class="modal-header-actions">
+                    <button class="btn btn-sm btn-secondary" onclick="selectAllArticles()" id="selectAllBtn">
+                        <i class="icon">☑️</i> 전체 선택
+                    </button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteSelectedArticles()" id="deleteSelectedBtn" disabled>
+                        <i class="icon">🗑️</i> 선택 삭제
+                    </button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteAllArticlesFromModal()" id="deleteAllBtn">
+                        <i class="icon">🗑️</i> 전체 삭제
+                    </button>
+                </div>
                 <button class="modal-close" onclick="closeArticlesModal()">×</button>
             </div>
             <div class="modal-body">
@@ -1707,6 +1738,87 @@ function loadTodayArticles() {
         console.error('기사 로드 오류:', error);
         content.innerHTML = '<p class="error-message">기사를 불러오는 중 오류가 발생했습니다.</p>';
     }
+}
+
+function loadTodayArticlesModal() {
+    const content = document.getElementById('articlesModalContent');
+    const title = document.getElementById('modalTitle');
+    
+    title.textContent = '오늘 스크랩한 기사';
+    
+    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    if (!scrapedData) {
+        content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+        return;
+    }
+    
+    try {
+        const data = JSON.parse(scrapedData);
+        const today = new Date().toDateString();
+        const lastUpdate = new Date(data.lastUpdated);
+        
+        if (lastUpdate.toDateString() !== today || !data.articles || data.articles.length === 0) {
+            content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        renderSelectableArticlesList(data.articles, content);
+    } catch (error) {
+        console.error('기사 로드 오류:', error);
+        content.innerHTML = '<p class="error-message">기사를 불러오는 중 오류가 발생했습니다.</p>';
+    }
+}
+
+function renderSelectableArticlesList(articles, container) {
+    // 소스별로 그룹화
+    const groupedArticles = articles.reduce((groups, article, index) => {
+        const source = article.source || article.site || 'Unknown';
+        if (!groups[source]) groups[source] = [];
+        groups[source].push({...article, originalIndex: index});
+        return groups;
+    }, {});
+    
+    let html = '';
+    Object.entries(groupedArticles).forEach(([source, sourceArticles]) => {
+        html += `
+            <div class="selectable-article-group">
+                <div class="selectable-article-group-header">
+                    <div class="group-selection">
+                        <input type="checkbox" class="group-checkbox" id="group-${source}" onchange="toggleGroupSelection('${source}')">
+                        <label for="group-${source}">
+                            <h4 class="article-source">${source} (${sourceArticles.length})</h4>
+                        </label>
+                    </div>
+                </div>
+                <div class="selectable-articles-list">
+        `;
+        
+        sourceArticles.forEach(article => {
+            html += `
+                <div class="selectable-article-item" data-index="${article.originalIndex}">
+                    <div class="article-selection">
+                        <input type="checkbox" class="article-checkbox" id="article-${article.originalIndex}" 
+                               data-group="${source}" onchange="updateSelectionState()">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-title">${article.title}</div>
+                        ${article.summary ? `<div class="article-summary">${article.summary.substring(0, 100)}...</div>` : ''}
+                        <div class="article-meta">
+                            <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleString('ko-KR')}</span>
+                            ${article.url ? `<a href="${article.url}" target="_blank" class="article-link">원문 보기 →</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
 }
 
 function loadSentArticles() {
@@ -2459,4 +2571,113 @@ function copyMessageToClipboard() {
         document.execCommand('copy');
         showNotification('메시지가 클립보드에 복사되었습니다.', 'success');
     });
+}
+
+// 선택 기능들
+function selectAllArticles() {
+    const checkboxes = document.querySelectorAll('.article-checkbox');
+    const groupCheckboxes = document.querySelectorAll('.group-checkbox');
+    const selectAllBtn = document.getElementById('selectAllBtn');
+    
+    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+    
+    checkboxes.forEach(cb => cb.checked = !allChecked);
+    groupCheckboxes.forEach(cb => cb.checked = !allChecked);
+    
+    selectAllBtn.innerHTML = allChecked ? 
+        '<i class="icon">☑️</i> 전체 선택' : 
+        '<i class="icon">☐</i> 전체 해제';
+    
+    updateSelectionState();
+}
+
+function toggleGroupSelection(groupName) {
+    const groupCheckbox = document.getElementById(`group-${groupName}`);
+    const articleCheckboxes = document.querySelectorAll(`.article-checkbox[data-group="${groupName}"]`);
+    
+    articleCheckboxes.forEach(cb => {
+        cb.checked = groupCheckbox.checked;
+    });
+    
+    updateSelectionState();
+}
+
+function updateSelectionState() {
+    const checkboxes = document.querySelectorAll('.article-checkbox');
+    const selectedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+    const deleteSelectedBtn = document.getElementById('deleteSelectedBtn');
+    const selectAllBtn = document.getElementById('selectAllBtn');
+    
+    // 선택 삭제 버튼 상태 업데이트
+    deleteSelectedBtn.disabled = selectedCount === 0;
+    deleteSelectedBtn.innerHTML = selectedCount > 0 ? 
+        `<i class="icon">🗑️</i> 선택 삭제 (${selectedCount})` : 
+        '<i class="icon">🗑️</i> 선택 삭제';
+    
+    // 전체 선택 버튼 상태 업데이트
+    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+    selectAllBtn.innerHTML = allChecked ? 
+        '<i class="icon">☐</i> 전체 해제' : 
+        '<i class="icon">☑️</i> 전체 선택';
+    
+    // 그룹 체크박스 상태 업데이트
+    const groups = {};
+    checkboxes.forEach(cb => {
+        const group = cb.dataset.group;
+        if (!groups[group]) groups[group] = {total: 0, checked: 0};
+        groups[group].total++;
+        if (cb.checked) groups[group].checked++;
+    });
+    
+    Object.entries(groups).forEach(([group, stats]) => {
+        const groupCheckbox = document.getElementById(`group-${group}`);
+        if (groupCheckbox) {
+            groupCheckbox.checked = stats.checked === stats.total;
+            groupCheckbox.indeterminate = stats.checked > 0 && stats.checked < stats.total;
+        }
+    });
+}
+
+function deleteSelectedArticles() {
+    const selectedCheckboxes = document.querySelectorAll('.article-checkbox:checked');
+    const selectedIndices = Array.from(selectedCheckboxes).map(cb => parseInt(cb.id.replace('article-', '')));
+    
+    if (selectedIndices.length === 0) {
+        showNotification('삭제할 기사를 선택해주세요.', 'error');
+        return;
+    }
+    
+    if (confirm(`정말로 선택한 ${selectedIndices.length}개의 기사를 삭제하시겠습니까?`)) {
+        const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+        if (!scrapedData) return;
+        
+        try {
+            const data = JSON.parse(scrapedData);
+            if (data.articles) {
+                // 인덱스를 내림차순으로 정렬하여 삭제 (뒤에서부터 삭제)
+                selectedIndices.sort((a, b) => b - a);
+                selectedIndices.forEach(index => {
+                    data.articles.splice(index, 1);
+                });
+                
+                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                loadTodayArticlesModal();
+                updateTodayArticles();
+                showNotification(`${selectedIndices.length}개의 기사가 삭제되었습니다.`, 'success');
+            }
+        } catch (error) {
+            console.error('기사 삭제 오류:', error);
+            showNotification('기사 삭제 중 오류가 발생했습니다.', 'error');
+        }
+    }
+}
+
+function deleteAllArticlesFromModal() {
+    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?')) {
+        localStorage.removeItem('singapore_news_scraped_data');
+        closeArticlesModal();
+        loadScrapedArticles();
+        updateTodayArticles();
+        showNotification('모든 기사가 삭제되었습니다.', 'success');
+    }
 }
