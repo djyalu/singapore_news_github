@@ -422,11 +422,12 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
         const mfaBackBtn = document.getElementById('mfaBackBtn');
         const mfaErrorMessage = document.getElementById('mfaErrorMessage');
         
-        mfaForm.addEventListener('submit', function(e) {
+        mfaForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const code = document.getElementById('mfaCode').value;
             
-            if (verifyMFA(username, code)) {
+            const isValid = await verifyMFA(username, code);
+            if (isValid) {
                 checkAuth();
             } else {
                 mfaErrorMessage.textContent = '잘못된 인증 코드입니다.';
@@ -440,11 +441,12 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
         });
     }
     
-    function verifyMFA(username, code) {
+    async function verifyMFA(username, code) {
         const secret = getMFASecret(username);
         if (!secret) return false;
         
-        if (verifyTOTP(secret, code)) {
+        const isValid = await verifyTOTP(secret, code);
+        if (isValid) {
             return true;
         }
         
@@ -545,25 +547,40 @@ function sendTestMessage() {
     // 실제 메시지 처리 (시간 변수 치환)
     const processedMessage = testMessage.replace('${new Date().toLocaleString()}', new Date().toLocaleString());
     
-    // 시뮬레이션 전송 (실제 환경에서는 API 호출)
-    setTimeout(() => {
-        const success = Math.random() > 0.3; // 70% 성공률로 시뮬레이션
-        
-        if (success) {
+    // WhatsApp API 호출
+    fetch('api/send-whatsapp.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            channel: testChannel,
+            message: processedMessage
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
             testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
             recordTestHistory(testChannel, 'success', processedMessage);
         } else {
-            testResult.innerHTML = '<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다. 설정을 확인하세요.</div>';
+            testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${data.error || '알 수 없는 오류'}</div>`;
             recordTestHistory(testChannel, 'failed', processedMessage);
         }
-        
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        testResult.innerHTML = '<div class="error-message">❌ 네트워크 오류가 발생했습니다.</div>';
+        recordTestHistory(testChannel, 'failed', processedMessage);
+    })
+    .finally(() => {
         // 버튼 복원
         testSendBtn.disabled = false;
         testSendBtn.textContent = '테스트 전송';
         
         // 테스트 이력 새로고침
         loadTestHistory();
-    }, 2000);
+    });
 }
 
 function recordTestHistory(channel, status, message) {

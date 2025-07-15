@@ -15,22 +15,33 @@ function nextMFAStep() {
     document.getElementById('mfaSetupStep2').style.display = 'block';
 }
 
-function completeMFASetup() {
+async function completeMFASetup() {
     const code = document.getElementById('setupMfaCode').value;
     
-    if (verifyTOTP(currentMFASecret, code)) {
-        const currentUser = getCurrentUser();
-        const result = enableMFA(currentUser.userId, currentMFASecret);
+    console.log('MFA Setup - Secret:', currentMFASecret);
+    console.log('MFA Setup - Entered Code:', code);
+    
+    try {
+        const isValid = await verifyTOTP(currentMFASecret, code);
+        console.log('MFA Setup - Verification Result:', isValid);
         
-        if (result.success) {
-            displayBackupCodes(result.backupCodes);
-            document.getElementById('mfaSetupStep2').style.display = 'none';
-            document.getElementById('mfaSetupStep3').style.display = 'block';
+        if (isValid) {
+            const currentUser = getCurrentUser();
+            const result = enableMFA(currentUser.userId, currentMFASecret);
+            
+            if (result.success) {
+                displayBackupCodes(result.backupCodes);
+                document.getElementById('mfaSetupStep2').style.display = 'none';
+                document.getElementById('mfaSetupStep3').style.display = 'block';
+            } else {
+                alert('MFA 설정에 실패했습니다: ' + result.message);
+            }
         } else {
-            alert('MFA 설정에 실패했습니다: ' + result.message);
+            alert('잘못된 인증 코드입니다. 다시 시도하세요.\n\n디버깅 정보:\nSecret: ' + currentMFASecret + '\nCode: ' + code);
         }
-    } else {
-        alert('잘못된 인증 코드입니다. 다시 시도하세요.');
+    } catch (error) {
+        console.error('MFA Setup Error:', error);
+        alert('MFA 설정 중 오류가 발생했습니다: ' + error.message);
     }
 }
 
