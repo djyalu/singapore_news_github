@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loginContainer.style.display = 'none';
             mainContainer.style.display = 'block';
             updateNavigation();
+            setupNavigationListeners(); // Re-setup navigation listeners
             loadPage('dashboard');
         } else {
             loginContainer.style.display = 'block';
@@ -46,13 +47,28 @@ document.addEventListener('DOMContentLoaded', function() {
         logout();
     });
     
-    document.querySelectorAll('.nav-links a[data-page]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const page = this.getAttribute('data-page');
-            loadPage(page);
+    // Navigation links event listeners - updated for new Flowbite structure
+    function setupNavigationListeners() {
+        document.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('data-page');
+                loadPage(page);
+                
+                // Update active navigation state
+                document.querySelectorAll('a[data-page]').forEach(navLink => {
+                    navLink.classList.remove('border-blue-500', 'text-gray-900');
+                    navLink.classList.add('border-transparent', 'text-gray-500', 'hover:border-gray-300', 'hover:text-gray-700');
+                });
+                
+                this.classList.remove('border-transparent', 'text-gray-500', 'hover:border-gray-300', 'hover:text-gray-700');
+                this.classList.add('border-blue-500', 'text-gray-900');
+            });
         });
-    });
+    }
+    
+    // Call this function after the main container is shown
+    setupNavigationListeners();
     
     async function loadPage(page) {
         const content = document.getElementById('content');
@@ -1686,12 +1702,12 @@ function toggleScrapedArticles() {
     const articlesList = document.getElementById('scrapedArticlesList');
     const toggleText = document.getElementById('toggleArticlesText');
     
-    if (articlesList.style.display === 'none') {
-        articlesList.style.display = 'block';
+    if (articlesList.classList.contains('hidden')) {
+        articlesList.classList.remove('hidden');
         toggleText.textContent = '접기';
         loadScrapedArticles();
     } else {
-        articlesList.style.display = 'none';
+        articlesList.classList.add('hidden');
         toggleText.textContent = '펼치기';
     }
 }
@@ -2576,52 +2592,132 @@ async function scrapeNow() {
     
     showNotification('스크래핑을 시작합니다...', 'info');
     
-    // 실제 스크래핑 데이터 로드
     try {
-        // 최신 스크래핑 데이터 파일 로드
-        const response = await fetch('data/scraped/news_20250716_004341.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // GitHub Actions 트리거 API 호출
+        const response = await fetch('/api/trigger-scraping', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification(result.message, 'success');
+            
+            // 실행 상태 모니터링 시작
+            startScrapingStatusMonitor();
+            
+            // 버튼 상태 업데이트
+            scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 확인 중...';
+            
+            // 진행 상황 확인 URL 제공
+            if (result.workflow_url) {
+                setTimeout(() => {
+                    showNotification(`GitHub Actions에서 진행 상황을 확인하세요: ${result.workflow_url}`, 'info');
+                }, 2000);
+            }
+            
+        } else {
+            throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
         }
         
-        const scrapedArticles = await response.json();
+    } catch (error) {
+        console.error('스크래핑 시작 오류:', error);
+        scrapeBtn.disabled = false;
+        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
         
-        // 기존 데이터에 추가
-        const existingData = localStorage.getItem('singapore_news_scraped_data');
-        let data = {
-            lastUpdated: new Date().toISOString(),
-            articles: []
-        };
+        let errorMessage = '스크래핑 시작 중 오류가 발생했습니다.';
+        if (error.message.includes('GitHub token')) {
+            errorMessage = 'GitHub 토큰이 설정되지 않았습니다. 관리자에게 문의하세요.';
+        } else if (error.message.includes('not found')) {
+            errorMessage = 'GitHub 저장소를 찾을 수 없습니다. 설정을 확인하세요.';
+        } else if (error.message.includes('unauthorized')) {
+            errorMessage = 'GitHub 인증에 실패했습니다. 관리자에게 문의하세요.';
+        }
         
-        if (existingData) {
-            try {
-                data = JSON.parse(existingData);
-            } catch (e) {
-                console.error('기존 데이터 파싱 오류:', e);
+        showNotification(errorMessage, 'error');
+    }
+}
+
+async function startScrapingStatusMonitor() {
+    let attempts = 0;
+    const maxAttempts = 30; // 최대 5분 모니터링
+    const checkInterval = 10000; // 10초마다 체크
+    
+    const checkStatus = async () => {
+        if (attempts >= maxAttempts) {
+            resetScrapeButton();
+            showNotification('상태 확인 시간이 초과되었습니다. GitHub Actions 페이지에서 직접 확인하세요.', 'warning');
+            return;
+        }
+        
+        try {
+            const response = await fetch('/api/get-scraping-status');
+            const result = await response.json();
+            
+            if (result.success) {
+                const scrapeBtn = document.getElementById('scrapeNowBtn');
+                
+                if (result.status === 'running' || result.status === 'pending') {
+                    // 계속 실행 중
+                    scrapeBtn.innerHTML = `<i class="icon">${result.icon || '🔄'}</i> ${result.message}`;
+                    attempts++;
+                    setTimeout(checkStatus, checkInterval);
+                    
+                } else if (result.status === 'success') {
+                    // 성공 완료
+                    resetScrapeButton();
+                    showNotification('스크래핑이 성공적으로 완료되었습니다!', 'success');
+                    
+                    // 새로운 데이터 로드 시도
+                    setTimeout(() => {
+                        loadScrapedArticles();
+                        updateTodayArticles();
+                    }, 2000);
+                    
+                } else if (result.status === 'error') {
+                    // 실행 실패
+                    resetScrapeButton();
+                    showNotification('스크래핑이 실패했습니다. GitHub Actions 로그를 확인하세요.', 'error');
+                    
+                } else {
+                    // 기타 상태
+                    resetScrapeButton();
+                    showNotification(`스크래핑 상태: ${result.message}`, 'info');
+                }
+            } else {
+                attempts++;
+                if (attempts < maxAttempts) {
+                    setTimeout(checkStatus, checkInterval);
+                } else {
+                    resetScrapeButton();
+                    showNotification('상태 확인 중 오류가 발생했습니다.', 'error');
+                }
+            }
+            
+        } catch (error) {
+            console.error('상태 확인 오류:', error);
+            attempts++;
+            if (attempts < maxAttempts) {
+                setTimeout(checkStatus, checkInterval);
+            } else {
+                resetScrapeButton();
+                showNotification('상태 확인 중 네트워크 오류가 발생했습니다.', 'error');
             }
         }
-        
-        // 새 기사 추가 (중복 제거)
-        const existingUrls = new Set(data.articles.map(article => article.url));
-        const newArticles = scrapedArticles.filter(article => !existingUrls.has(article.url));
-        
-        data.articles = [...data.articles, ...newArticles];
-        data.lastUpdated = new Date().toISOString();
-        
-        localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
-        
-        loadScrapedArticles();
-        updateTodayArticles();
-        
+    };
+    
+    // 첫 번째 상태 확인 (3초 후 시작)
+    setTimeout(checkStatus, 3000);
+}
+
+function resetScrapeButton() {
+    const scrapeBtn = document.getElementById('scrapeNowBtn');
+    if (scrapeBtn) {
         scrapeBtn.disabled = false;
         scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
-        
-        showNotification(`${newArticles.length}개의 새로운 기사를 스크래핑했습니다.`, 'success');
-    } catch (error) {
-        console.error('스크래핑 오류:', error);
-        scrapeBtn.disabled = false;
-        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
-        showNotification('스크래핑 중 오류가 발생했습니다: ' + error.message, 'error');
     }
 }
 
@@ -2688,7 +2784,7 @@ function generateSendMessage() {
         }
         
         messageContent.value = message;
-        messageDiv.style.display = 'block';
+        messageDiv.classList.remove('hidden');
         
         generateBtn.disabled = false;
         generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
@@ -2873,12 +2969,12 @@ function toggleArticleAccordion(source, index) {
     const toggle = document.querySelector(`[data-source="${source}"][data-index="${index}"] .accordion-toggle i`);
     
     if (content && toggle) {
-        if (content.style.display === 'none') {
-            content.style.display = 'block';
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
             toggle.textContent = '▲';
             toggle.style.transform = 'rotate(180deg)';
         } else {
-            content.style.display = 'none';
+            content.classList.add('hidden');
             toggle.textContent = '▼';
             toggle.style.transform = 'rotate(0deg)';
         }
@@ -2891,12 +2987,12 @@ function toggleSelectableArticleAccordion(index) {
     const toggle = document.querySelector(`[data-index="${index}"] .accordion-toggle i`);
     
     if (content && toggle) {
-        if (content.style.display === 'none') {
-            content.style.display = 'block';
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
             toggle.textContent = '▲';
             toggle.style.transform = 'rotate(180deg)';
         } else {
-            content.style.display = 'none';
+            content.classList.add('hidden');
             toggle.textContent = '▼';
             toggle.style.transform = 'rotate(0deg)';
         }
