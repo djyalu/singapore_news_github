@@ -136,11 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <i class="icon">🗑️</i> 전체 삭제
                             </button>
                             <button class="btn btn-sm" onclick="toggleScrapedArticles()">
-                                <span id="toggleArticlesText">펼치기</span>
+                                <span id="toggleArticlesText">접기</span>
                             </button>
                         </div>
                     </div>
-                    <div id="scrapedArticlesList" class="articles-list" style="display: none;">
+                    <div id="scrapedArticlesList" class="articles-list" style="display: block;">
                         <p class="loading">기사를 불러오는 중...</p>
                     </div>
                     <div id="generatedMessage" class="generated-message" style="display: none;">
@@ -1324,6 +1324,7 @@ function loadDashboardData() {
     updateNextSendTime();
     updateSendChannelInfo();
     loadRecentActivity();
+    loadScrapedArticles(); // 스크랩된 기사도 로드
 }
 
 function setupDashboardEventListeners() {
@@ -1612,19 +1613,59 @@ function loadScrapedArticles() {
                         </button>
                     </div>
                     ${articles.map((article, index) => `
-                        <div class="article-item" data-source="${source}" data-index="${index}">
-                            <div class="article-content">
-                                <div class="article-title">${article.title}</div>
-                                ${article.summary ? `<div class="article-summary">${article.summary}</div>` : ''}
-                                <div class="article-meta">
-                                    <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
-                                    ${article.url ? `<a href="${article.url}" target="_blank" class="article-link">원문 보기 →</a>` : ''}
+                        <div class="article-item accordion-item" data-source="${source}" data-index="${index}">
+                            <div class="article-header" onclick="toggleArticleAccordion('${source}', ${index})">
+                                <div class="article-title-section">
+                                    <div class="article-title">${article.title}</div>
+                                    <div class="article-meta">
+                                        <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleString('ko-KR')}</span>
+                                        ${article.url ? `<a href="${article.url}" target="_blank" class="article-link" onclick="event.stopPropagation()">🔗 원문보기</a>` : ''}
+                                    </div>
+                                </div>
+                                <div class="article-controls">
+                                    <button class="btn btn-xs btn-danger" onclick="event.stopPropagation(); deleteArticle('${source}', ${index})">
+                                        <i class="icon">🗑️</i>
+                                    </button>
+                                    <div class="accordion-toggle">
+                                        <i class="icon">▼</i>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="article-actions">
-                                <button class="btn btn-xs btn-danger" onclick="deleteArticle('${source}', ${index})">
-                                    <i class="icon">🗑️</i>
-                                </button>
+                            <div class="article-content" id="article-content-${source}-${index}" style="display: none;">
+                                <div class="article-full-content">
+                                    ${article.summary ? `
+                                        <div class="article-section">
+                                            <h5>📋 요약</h5>
+                                            <div class="article-summary">${article.summary.replace(/\n/g, '<br>')}</div>
+                                        </div>
+                                    ` : ''}
+                                    
+                                    ${article.content ? `
+                                        <div class="article-section">
+                                            <h5>📄 전체 내용</h5>
+                                            <div class="article-full-text">${article.content.replace(/\n/g, '<br>')}</div>
+                                        </div>
+                                    ` : ''}
+                                    
+                                    ${article.keywords && article.keywords.length > 0 ? `
+                                        <div class="article-section">
+                                            <h5>🏷️ 키워드</h5>
+                                            <div class="article-keywords">
+                                                ${article.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                    
+                                    <div class="article-section">
+                                        <h5>ℹ️ 기사 정보</h5>
+                                        <div class="article-info">
+                                            <p><strong>출처:</strong> ${article.site || article.source || 'Unknown'}</p>
+                                            <p><strong>그룹:</strong> ${article.group || 'Other'}</p>
+                                            <p><strong>발행일:</strong> ${new Date(article.publish_date || article.timestamp).toLocaleString('ko-KR')}</p>
+                                            ${article.url ? `<p><strong>원문 링크:</strong> <a href="${article.url}" target="_blank">${article.url}</a></p>` : ''}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     `).join('')}
@@ -1781,17 +1822,57 @@ function renderSelectableArticlesList(articles, container) {
         
         sourceArticles.forEach(article => {
             html += `
-                <div class="selectable-article-item" data-index="${article.originalIndex}">
-                    <div class="article-selection">
-                        <input type="checkbox" class="article-checkbox" id="article-${article.originalIndex}" 
-                               data-group="${source}" onchange="updateSelectionState()">
+                <div class="selectable-article-item accordion-item" data-index="${article.originalIndex}">
+                    <div class="selectable-article-header" onclick="toggleSelectableArticleAccordion(${article.originalIndex})">
+                        <div class="article-selection">
+                            <input type="checkbox" class="article-checkbox" id="article-${article.originalIndex}" 
+                                   data-group="${source}" onchange="updateSelectionState()" onclick="event.stopPropagation()">
+                        </div>
+                        <div class="article-title-section">
+                            <div class="article-title">${article.title}</div>
+                            <div class="article-meta">
+                                <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleString('ko-KR')}</span>
+                                ${article.url ? `<a href="${article.url}" target="_blank" class="article-link" onclick="event.stopPropagation()">🔗 원문보기</a>` : ''}
+                            </div>
+                        </div>
+                        <div class="accordion-toggle">
+                            <i class="icon">▼</i>
+                        </div>
                     </div>
-                    <div class="article-content">
-                        <div class="article-title">${article.title}</div>
-                        ${article.summary ? `<div class="article-summary">${article.summary.substring(0, 100)}...</div>` : ''}
-                        <div class="article-meta">
-                            <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleString('ko-KR')}</span>
-                            ${article.url ? `<a href="${article.url}" target="_blank" class="article-link">원문 보기 →</a>` : ''}
+                    <div class="selectable-article-content" id="selectable-article-content-${article.originalIndex}" style="display: none;">
+                        <div class="article-full-content">
+                            ${article.summary ? `
+                                <div class="article-section">
+                                    <h5>📋 요약</h5>
+                                    <div class="article-summary">${article.summary.replace(/\n/g, '<br>')}</div>
+                                </div>
+                            ` : ''}
+                            
+                            ${article.content ? `
+                                <div class="article-section">
+                                    <h5>📄 전체 내용</h5>
+                                    <div class="article-full-text">${article.content.replace(/\n/g, '<br>')}</div>
+                                </div>
+                            ` : ''}
+                            
+                            ${article.keywords && article.keywords.length > 0 ? `
+                                <div class="article-section">
+                                    <h5>🏷️ 키워드</h5>
+                                    <div class="article-keywords">
+                                        ${article.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                            
+                            <div class="article-section">
+                                <h5>ℹ️ 기사 정보</h5>
+                                <div class="article-info">
+                                    <p><strong>출처:</strong> ${article.site || article.source || 'Unknown'}</p>
+                                    <p><strong>그룹:</strong> ${article.group || 'Other'}</p>
+                                    <p><strong>발행일:</strong> ${new Date(article.publish_date || article.timestamp).toLocaleString('ko-KR')}</p>
+                                    ${article.url ? `<p><strong>원문 링크:</strong> <a href="${article.url}" target="_blank">${article.url}</a></p>` : ''}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2374,25 +2455,73 @@ function scrapeNow() {
     
     // 시뮬레이션된 스크래핑 (실제로는 GitHub Actions를 수동으로 트리거해야 함)
     setTimeout(() => {
-        // 시뮬레이션 데이터 생성
+        // 현실적인 시뮬레이션 데이터 생성
         const simulatedArticles = [
             {
                 site: 'The Straits Times',
                 group: 'Main News',
-                title: '새로운 기사 제목 1',
-                url: 'https://www.straitstimes.com/singapore/example-1',
-                summary: '제목: 새로운 기사 제목 1\n요약: 싱가포르 관련 최신 뉴스입니다...',
-                publish_date: new Date().toISOString(),
-                timestamp: new Date().toISOString()
+                title: 'Singapore\'s GDP grows 3.8% in Q4 2024, beating expectations',
+                url: 'https://www.straitstimes.com/singapore/economy-growth-q4-2024',
+                summary: '제목: Singapore\'s GDP grows 3.8% in Q4 2024, beating expectations\n키워드: GDP, economy, growth\n요약: 싱가포르의 2024년 4분기 국내총생산(GDP)이 전년 동기 대비 3.8% 성장하며 전문가들의 예상치 3.2%를 상회했습니다. 제조업과 서비스업의 강세가 성장을 견인했습니다.',
+                content: '싱가포르 통계청(DOS)이 발표한 예비 추정치에 따르면, 2024년 4분기 GDP는 전년 동기 대비 3.8% 성장했다. 이는 블룸버그가 집계한 경제학자 예상치 3.2%를 크게 웃도는 수치다.\n\n제조업 부문이 5.2% 성장하며 경제 성장을 주도했고, 특히 반도체와 정밀화학 부문이 강세를 보였다. 서비스업도 4.1% 증가하며 견조한 성장세를 이어갔다.\n\n정부는 2025년 경제 성장률을 2.5-3.5%로 전망한다고 밝혔다.',
+                keywords: ['GDP', 'economy', 'growth', 'manufacturing', 'services'],
+                publish_date: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+                timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()
             },
             {
                 site: 'Channel NewsAsia',
                 group: 'Breaking News',
-                title: '새로운 기사 제목 2',
-                url: 'https://www.channelnewsasia.com/singapore/example-2',
-                summary: '제목: 새로운 기사 제목 2\n요약: 경제 관련 업데이트입니다...',
-                publish_date: new Date().toISOString(),
-                timestamp: new Date().toISOString()
+                title: 'New MRT Circle Line extension to open in March 2025',
+                url: 'https://www.channelnewsasia.com/singapore/mrt-circle-line-extension-2025',
+                summary: '제목: New MRT Circle Line extension to open in March 2025\n키워드: MRT, transport, infrastructure\n요약: 서클라인의 새로운 연장 구간이 2025년 3월에 개통될 예정입니다. 총 5개의 새로운 역이 추가되며, 서부 지역의 교통 편의성이 크게 향상될 것으로 기대됩니다.',
+                content: '육상교통청(LTA)은 MRT 서클라인 연장 구간이 오는 3월 개통될 예정이라고 발표했다. 이번 연장으로 Keppel, Cantonment, Prince Edward Road, Irwell Bank, Portsdown 등 5개 역이 새로 추가된다.\n\n새로운 구간 개통으로 서부 지역 주민들의 도심 접근성이 크게 개선될 것으로 예상된다. 특히 Keppel과 Cantonment 역은 금융 중심지와의 연결성을 높일 것으로 기대된다.\n\nLTA는 시험 운행을 통해 안전성을 최종 점검하고 있으며, 정식 개통 전 무료 시승 행사도 계획하고 있다고 밝혔다.',
+                keywords: ['MRT', 'transport', 'infrastructure', 'Circle Line', 'extension'],
+                publish_date: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
+                timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                site: 'Today Online',
+                group: 'Technology',
+                title: 'Singapore launches AI governance framework for financial sector',
+                url: 'https://www.todayonline.com/singapore/ai-governance-framework-finance',
+                summary: '제목: Singapore launches AI governance framework for financial sector\n키워드: AI, governance, fintech, regulation\n요약: 싱가포르 금융관리청(MAS)이 금융 부문에서의 AI 활용을 위한 거버넌스 프레임워크를 공식 발표했습니다. 이를 통해 AI 기술의 안전하고 책임감 있는 도입을 촉진할 계획입니다.',
+                content: 'MAS(Monetary Authority of Singapore)가 금융 기관들이 인공지능(AI) 기술을 안전하게 도입할 수 있도록 돕는 종합적인 거버넌스 프레임워크를 발표했다.\n\n이 프레임워크는 AI 시스템의 투명성, 공정성, 설명가능성을 보장하기 위한 가이드라인을 제시한다. 특히 대출 심사, 보험 언더라이팅, 투자 자문 등 핵심 금융 서비스에서의 AI 활용 시 준수해야 할 원칙들을 명시했다.\n\nMAS는 이 프레임워크를 통해 싱가포르를 AI 혁신과 규제의 글로벌 허브로 만들겠다는 목표를 밝혔다.',
+                keywords: ['AI', 'governance', 'fintech', 'regulation', 'MAS'],
+                publish_date: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
+                timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                site: 'Business Times',
+                group: 'Business',
+                title: 'Singapore property prices rise 2.1% in Q4 2024',
+                url: 'https://www.businesstimes.com.sg/property/prices-rise-q4-2024',
+                summary: '제목: Singapore property prices rise 2.1% in Q4 2024\n키워드: property, prices, real estate, housing\n요약: 2024년 4분기 싱가포르 부동산 가격이 전분기 대비 2.1% 상승했습니다. 이는 정부의 부동산 냉각 조치에도 불구하고 지속되는 수요 증가 때문으로 분석됩니다.',
+                content: '도시재개발청(URA)의 발표에 따르면, 2024년 4분기 사적 주택 가격이 전분기 대비 2.1% 상승했다. 이는 3분기 상승률 1.8%보다 확대된 수치다.\n\n부동산 전문가들은 외국인 투자 증가와 싱가포르 경제의 견조한 성장세가 부동산 시장을 지지하고 있다고 분석했다. 특히 오차드와 마리나 베이 지역의 프리미엄 주택 수요가 급증했다.\n\n정부는 부동산 시장 과열을 우려해 추가적인 냉각 조치 도입을 검토하고 있다고 밝혔다.',
+                keywords: ['property', 'prices', 'real estate', 'housing', 'URA'],
+                publish_date: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString(),
+                timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                site: 'The Straits Times',
+                group: 'Main News',
+                title: 'Changi Airport T5 construction progresses on schedule',
+                url: 'https://www.straitstimes.com/singapore/changi-t5-construction-update',
+                summary: '제목: Changi Airport T5 construction progresses on schedule\n키워드: Changi, airport, construction, infrastructure\n요약: 창이공항 5터미널 건설이 예정대로 진행되고 있으며, 2030년 완공을 목표로 하고 있습니다. 완공 시 연간 승객 처리 능력이 5000만 명 증가할 예정입니다.',
+                content: '창이공항그룹(CAG)은 제5터미널(T5) 건설이 계획대로 순조롭게 진행되고 있다고 발표했다. 현재 기초 공사와 지하 구조물 건설이 완료된 상태다.\n\nT5는 2030년 완공 예정이며, 완공 시 창이공항의 연간 승객 처리 능력이 현재 8500만 명에서 1억 3500만 명으로 증가한다. 이는 싱가포르가 아시아 항공 허브로서의 지위를 더욱 공고히 할 것으로 기대된다.\n\nCAG는 T5에 최신 자동화 기술과 친환경 시설을 도입해 승객 경험을 혁신적으로 개선할 계획이라고 밝혔다.',
+                keywords: ['Changi', 'airport', 'construction', 'infrastructure', 'T5'],
+                publish_date: new Date(Date.now() - 10 * 60 * 60 * 1000).toISOString(),
+                timestamp: new Date(Date.now() - 10 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                site: 'Channel NewsAsia',
+                group: 'Breaking News',
+                title: 'Singapore-Malaysia water agreement talks resume next month',
+                url: 'https://www.channelnewsasia.com/singapore/water-agreement-malaysia-talks',
+                summary: '제목: Singapore-Malaysia water agreement talks resume next month\n키워드: water, Malaysia, agreement, diplomacy\n요약: 싱가포르와 말레이시아 간의 물 공급 협정 재협상이 다음 달에 재개될 예정입니다. 양국은 2061년 협정 만료에 앞서 새로운 협정 체결을 위해 노력하고 있습니다.',
+                content: '싱가포르 외교부는 말레이시아와의 물 공급 협정 재협상 회담이 다음 달 쿠알라룸푸르에서 재개될 예정이라고 발표했다.\n\n현재 1962년 체결된 물 공급 협정은 2061년 만료 예정이며, 양국은 이보다 앞서 새로운 장기 협정을 체결하기를 원하고 있다. 싱가포르는 말레이시아 조호르주에서 하루 2억 5000만 갤런의 원수를 수입하고 있다.\n\n양국 관계자들은 상호 이익이 되는 방향으로 협상을 진행할 것이라고 밝혔으며, 이번 회담에서 실질적인 진전이 있을 것으로 기대된다고 말했다.',
+                keywords: ['water', 'Malaysia', 'agreement', 'diplomacy', 'Johor'],
+                publish_date: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString(),
+                timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString()
             }
         ];
         
@@ -2665,5 +2794,42 @@ function deleteAllArticlesFromModal() {
         loadScrapedArticles();
         updateTodayArticles();
         showNotification('모든 기사가 삭제되었습니다.', 'success');
+    }
+}
+
+// 아코디언 토글 함수
+function toggleArticleAccordion(source, index) {
+    const contentId = `article-content-${source}-${index}`;
+    const content = document.getElementById(contentId);
+    const toggle = document.querySelector(`[data-source="${source}"][data-index="${index}"] .accordion-toggle i`);
+    
+    if (content && toggle) {
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            toggle.textContent = '▲';
+            toggle.style.transform = 'rotate(180deg)';
+        } else {
+            content.style.display = 'none';
+            toggle.textContent = '▼';
+            toggle.style.transform = 'rotate(0deg)';
+        }
+    }
+}
+
+function toggleSelectableArticleAccordion(index) {
+    const contentId = `selectable-article-content-${index}`;
+    const content = document.getElementById(contentId);
+    const toggle = document.querySelector(`[data-index="${index}"] .accordion-toggle i`);
+    
+    if (content && toggle) {
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            toggle.textContent = '▲';
+            toggle.style.transform = 'rotate(180deg)';
+        } else {
+            content.style.display = 'none';
+            toggle.textContent = '▼';
+            toggle.style.transform = 'rotate(0deg)';
+        }
     }
 }
