@@ -2594,7 +2594,7 @@ async function scrapeNow() {
     
     try {
         // GitHub Actions 트리거 API 호출
-        const response = await fetch('https://singapore-news-github-m1dttppc0-djyalus-projects.vercel.app/api/trigger-scraping', {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/trigger-scraping', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2654,7 +2654,7 @@ async function startScrapingStatusMonitor() {
         }
         
         try {
-            const response = await fetch('https://singapore-news-github-m1dttppc0-djyalus-projects.vercel.app/api/get-scraping-status');
+            const response = await fetch('https://singapore-news-github.vercel.app/api/get-scraping-status');
             const result = await response.json();
             
             if (result.success) {
