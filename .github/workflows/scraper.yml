@@ -21,14 +21,14 @@ jobs:
       run: |
         pip install requests beautifulsoup4 lxml
     
-    - name: Run scraper
-      run: |
-        python scripts/scraper.py
-    
     - name: Create data directories
       run: |
         mkdir -p data/scraped
         mkdir -p data/history
+    
+    - name: Run scraper
+      run: |
+        python scripts/scraper.py
     
     - name: Send to WhatsApp
       run: |

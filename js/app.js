@@ -116,6 +116,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p class="loading">활동 내역을 불러오는 중...</p>
                     </div>
                 </div>
+                <div class="scraped-articles">
+                    <h3>오늘 스크랩한 기사</h3>
+                    <button class="btn btn-sm" onclick="toggleScrapedArticles()" style="float: right; margin-top: -35px;">
+                        <span id="toggleArticlesText">펼치기</span>
+                    </button>
+                    <div id="scrapedArticlesList" class="articles-list" style="display: none;">
+                        <p class="loading">기사를 불러오는 중...</p>
+                    </div>
+                </div>
             </div>
         `;
     }
@@ -1154,20 +1163,75 @@ function refreshDashboard() {
 }
 
 function updateTodayArticles() {
-    // 실제로는 스크랩된 데이터를 확인해야 하지만, 현재는 시뮬레이션
-    const todayCount = Math.floor(Math.random() * 50) + 10;
+    // localStorage에서 스크랩 데이터 확인
+    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    let todayCount = 0;
+    
+    if (scrapedData) {
+        try {
+            const data = JSON.parse(scrapedData);
+            const today = new Date().toDateString();
+            
+            // 오늘 날짜의 기사만 필터링
+            if (data.lastUpdated) {
+                const lastUpdate = new Date(data.lastUpdated);
+                if (lastUpdate.toDateString() === today && data.articles) {
+                    todayCount = data.articles.length;
+                }
+            }
+        } catch (error) {
+            console.error('스크랩 데이터 파싱 오류:', error);
+        }
+    }
+    
+    // 실제 스크랩이 구현되기 전까지는 시뮬레이션 데이터도 함께 표시
+    if (todayCount === 0) {
+        // 시뮬레이션 데이터 생성 및 저장
+        todayCount = Math.floor(Math.random() * 30) + 10;
+        const simulatedData = {
+            lastUpdated: new Date().toISOString(),
+            articles: Array(todayCount).fill(null).map((_, i) => ({
+                id: `sim-${Date.now()}-${i}`,
+                title: `시뮬레이션 기사 ${i + 1}`,
+                source: 'Simulation',
+                timestamp: new Date().toISOString()
+            }))
+        };
+        localStorage.setItem('singapore_news_scraped_data', JSON.stringify(simulatedData));
+    }
+    
     const element = document.getElementById('todayArticles');
     if (element) {
-        animateNumber(element, 0, todayCount);
+        const currentValue = parseInt(element.textContent) || 0;
+        animateNumber(element, currentValue, todayCount);
     }
 }
 
 function updatePendingArticles() {
-    // 실제로는 대기 중인 기사를 확인해야 하지만, 현재는 시뮬레이션
-    const pendingCount = Math.floor(Math.random() * 20) + 5;
+    // 설정에서 전송 대기 중인 기사 확인
+    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    let pendingCount = 0;
+    
+    if (scrapedData && settings.sendChannel) {
+        try {
+            const data = JSON.parse(scrapedData);
+            if (data.articles) {
+                // 아직 전송되지 않은 기사 수
+                const sentHistory = JSON.parse(localStorage.getItem('singapore_news_sent_articles') || '[]');
+                const sentIds = new Set(sentHistory.map(h => h.articleId));
+                
+                pendingCount = data.articles.filter(article => !sentIds.has(article.id)).length;
+            }
+        } catch (error) {
+            console.error('대기 기사 계산 오류:', error);
+        }
+    }
+    
     const element = document.getElementById('pendingArticles');
     if (element) {
-        animateNumber(element, 0, pendingCount);
+        const currentValue = parseInt(element.textContent) || 0;
+        animateNumber(element, currentValue, pendingCount);
     }
 }
 
@@ -1312,4 +1376,74 @@ function closeNotification(element) {
     setTimeout(() => {
         notification.remove();
     }, 300);
+}
+
+// Scraped Articles Functions
+function toggleScrapedArticles() {
+    const articlesList = document.getElementById('scrapedArticlesList');
+    const toggleText = document.getElementById('toggleArticlesText');
+    
+    if (articlesList.style.display === 'none') {
+        articlesList.style.display = 'block';
+        toggleText.textContent = '접기';
+        loadScrapedArticles();
+    } else {
+        articlesList.style.display = 'none';
+        toggleText.textContent = '펼치기';
+    }
+}
+
+function loadScrapedArticles() {
+    const articlesList = document.getElementById('scrapedArticlesList');
+    if (!articlesList) return;
+    
+    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    
+    if (!scrapedData) {
+        articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+        return;
+    }
+    
+    try {
+        const data = JSON.parse(scrapedData);
+        const today = new Date().toDateString();
+        const lastUpdate = new Date(data.lastUpdated);
+        
+        if (lastUpdate.toDateString() !== today || !data.articles || data.articles.length === 0) {
+            articlesList.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        // 기사를 소스별로 그룹화
+        const groupedArticles = data.articles.reduce((groups, article) => {
+            const source = article.source || 'Unknown';
+            if (!groups[source]) groups[source] = [];
+            groups[source].push(article);
+            return groups;
+        }, {});
+        
+        let html = '';
+        Object.entries(groupedArticles).forEach(([source, articles]) => {
+            html += `
+                <div class="article-group">
+                    <h4 class="article-source">${source} (${articles.length})</h4>
+                    ${articles.map(article => `
+                        <div class="article-item">
+                            <div class="article-title">${article.title}</div>
+                            ${article.summary ? `<div class="article-summary">${article.summary}</div>` : ''}
+                            <div class="article-meta">
+                                <span class="article-time">${new Date(article.timestamp).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
+                                ${article.url ? `<a href="${article.url}" target="_blank" class="article-link">원문 보기 →</a>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        });
+        
+        articlesList.innerHTML = html;
+    } catch (error) {
+        console.error('기사 로드 오류:', error);
+        articlesList.innerHTML = '<p class="error-message">기사를 불러오는 중 오류가 발생했습니다.</p>';
+    }
 }
