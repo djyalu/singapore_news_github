@@ -626,6 +626,7 @@ function sendTestMessage() {
     })
     .then(response => {
         console.log('WhatsApp API Response Status:', response.status);
+        console.log('WhatsApp API Response Headers:', response.headers);
         return response.json();
     })
     .then(data => {
@@ -635,16 +636,28 @@ function sendTestMessage() {
             testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
             recordTestHistory(testChannel, 'success', processedMessage);
         } else {
+            console.log('WhatsApp API Response Data:', data);
             let errorMsg = '알 수 없는 오류';
-            if (data.error) {
-                if (typeof data.error === 'object') {
-                    errorMsg = data.error.message || data.error.details || JSON.stringify(data.error);
+            
+            // 더 자세한 에러 파싱
+            try {
+                if (data.error) {
+                    if (typeof data.error === 'object') {
+                        errorMsg = data.error.message || data.error.details || data.error.code || JSON.stringify(data.error);
+                    } else {
+                        errorMsg = String(data.error);
+                    }
+                } else if (data.message) {
+                    errorMsg = String(data.message);
+                } else if (data.details) {
+                    errorMsg = String(data.details);
                 } else {
-                    errorMsg = data.error;
+                    errorMsg = JSON.stringify(data);
                 }
-            } else if (data.message) {
-                errorMsg = data.message;
+            } catch (e) {
+                errorMsg = '에러 파싱 실패: ' + String(data);
             }
+            
             testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
             recordTestHistory(testChannel, 'failed', processedMessage);
         }
@@ -679,16 +692,28 @@ function sendTestMessage() {
                     testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (Vercel API)</div>';
                     recordTestHistory(testChannel, 'success', processedMessage);
                 } else {
+                    console.log('Vercel API Response Data:', data);
                     let errorMsg = '알 수 없는 오류';
-                    if (data.error) {
-                        if (typeof data.error === 'object') {
-                            errorMsg = data.error.message || data.error.details || JSON.stringify(data.error);
+                    
+                    // 더 자세한 에러 파싱
+                    try {
+                        if (data.error) {
+                            if (typeof data.error === 'object') {
+                                errorMsg = data.error.message || data.error.details || data.error.code || JSON.stringify(data.error);
+                            } else {
+                                errorMsg = String(data.error);
+                            }
+                        } else if (data.message) {
+                            errorMsg = String(data.message);
+                        } else if (data.details) {
+                            errorMsg = String(data.details);
                         } else {
-                            errorMsg = data.error;
+                            errorMsg = JSON.stringify(data);
                         }
-                    } else if (data.message) {
-                        errorMsg = data.message;
+                    } catch (e) {
+                        errorMsg = '에러 파싱 실패: ' + String(data);
                     }
+                    
                     testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
                     recordTestHistory(testChannel, 'failed', processedMessage);
                 }
