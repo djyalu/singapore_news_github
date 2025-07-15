@@ -1,14 +1,16 @@
 const { Octokit } = require("@octokit/rest");
 
 module.exports = async (req, res) => {
-    // CORS 설정
+    // CORS 설정 - 모든 origin 허용
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
 
-    // OPTIONS 요청 처리
+    // OPTIONS 요청 처리 (preflight)
     if (req.method === 'OPTIONS') {
-        return res.status(200).end();
+        res.status(200).end();
+        return;
     }
 
     // POST 요청만 허용
