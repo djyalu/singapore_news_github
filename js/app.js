@@ -276,14 +276,44 @@ Singapore News Scraper 시스템이 정상적으로 작동하고 있습니다.
     }
     
     function getHistoryHTML() {
+        const today = new Date();
+        const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+        
         return `
             <div class="page-section">
                 <h2>전송 이력</h2>
-                <div class="form-group">
-                    <label>기간 선택</label>
-                    <input type="date" id="historyStartDate">
-                    <input type="date" id="historyEndDate">
-                    <button class="btn" onclick="loadHistory()">조회</button>
+                <div class="history-filters">
+                    <div class="filter-row">
+                        <div class="form-group">
+                            <label>시작일</label>
+                            <input type="date" id="historyStartDate" value="${lastMonth.toISOString().split('T')[0]}">
+                        </div>
+                        <div class="form-group">
+                            <label>종료일</label>
+                            <input type="date" id="historyEndDate" value="${today.toISOString().split('T')[0]}">
+                        </div>
+                        <div class="form-group">
+                            <label>상태</label>
+                            <select id="historyStatus">
+                                <option value="">전체</option>
+                                <option value="success">성공</option>
+                                <option value="failed">실패</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>채널</label>
+                            <select id="historyChannel">
+                                <option value="">전체</option>
+                                <option value="120363419092108413@g.us">Singapore News Main (Test)</option>
+                                <option value="120363421252284444@g.us">Singapore News Backup</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn" onclick="loadHistory()">조회</button>
+                        <button class="btn" onclick="resetHistoryFilters()">초기화</button>
+                        <span class="result-count" id="historyResultCount"></span>
+                    </div>
                 </div>
                 <table class="table" id="historyTable">
                     <thead>
@@ -782,16 +812,89 @@ function loadHistory() {
     const tbody = document.querySelector('#historyTable tbody');
     tbody.innerHTML = '';
     
-    history.forEach(record => {
+    // 필터 값 가져오기
+    const startDate = document.getElementById('historyStartDate')?.value;
+    const endDate = document.getElementById('historyEndDate')?.value;
+    const statusFilter = document.getElementById('historyStatus')?.value;
+    const channelFilter = document.getElementById('historyChannel')?.value;
+    
+    // 필터링
+    let filteredHistory = history.filter(record => {
+        const recordDate = new Date(record.timestamp);
+        
+        // 날짜 필터
+        if (startDate && recordDate < new Date(startDate + 'T00:00:00')) {
+            return false;
+        }
+        if (endDate && recordDate > new Date(endDate + 'T23:59:59')) {
+            return false;
+        }
+        
+        // 상태 필터
+        if (statusFilter && record.status !== statusFilter) {
+            return false;
+        }
+        
+        // 채널 필터
+        if (channelFilter && record.channel !== channelFilter) {
+            return false;
+        }
+        
+        return true;
+    });
+    
+    // 결과 개수 표시
+    const resultCount = document.getElementById('historyResultCount');
+    if (resultCount) {
+        resultCount.textContent = `총 ${filteredHistory.length}건`;
+    }
+    
+    // 최신 순으로 정렬
+    filteredHistory.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    
+    // 테이블에 표시
+    filteredHistory.forEach(record => {
         const row = tbody.insertRow();
+        const statusClass = record.status === 'success' ? 'status-success' : 'status-failed';
         row.innerHTML = `
             <td>${new Date(record.timestamp).toLocaleString()}</td>
-            <td>${record.header}</td>
-            <td>${record.channel}</td>
-            <td>${record.status}</td>
-            <td><button class="btn" onclick="showHistoryDetail('${record.id}')">상세</button></td>
+            <td>${record.header || '-'}</td>
+            <td>${getChannelName(record.channel)}</td>
+            <td><span class="${statusClass}">${record.status === 'success' ? '성공' : '실패'}</span></td>
+            <td><button class="btn btn-sm" onclick="showHistoryDetail('${record.id}')">상세</button></td>
         `;
     });
+    
+    if (filteredHistory.length === 0) {
+        const row = tbody.insertRow();
+        row.innerHTML = '<td colspan="5" style="text-align: center;">조회 결과가 없습니다.</td>';
+    }
+}
+
+function resetHistoryFilters() {
+    const today = new Date();
+    const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+    
+    document.getElementById('historyStartDate').value = lastMonth.toISOString().split('T')[0];
+    document.getElementById('historyEndDate').value = today.toISOString().split('T')[0];
+    document.getElementById('historyStatus').value = '';
+    document.getElementById('historyChannel').value = '';
+    
+    loadHistory();
+}
+
+function showHistoryDetail(recordId) {
+    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    const record = history.find(r => r.id === recordId);
+    
+    if (record) {
+        alert(`전송 상세 정보\n\n` +
+              `전송 시간: ${new Date(record.timestamp).toLocaleString()}\n` +
+              `채널: ${getChannelName(record.channel)}\n` +
+              `상태: ${record.status === 'success' ? '성공' : '실패'}\n` +
+              `헤더: ${record.header}\n` +
+              `메시지 길이: ${record.message_length || 0}자`);
+    }
 }
 
 function loadUsers() {
