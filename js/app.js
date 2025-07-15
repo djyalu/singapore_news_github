@@ -2446,7 +2446,7 @@ function deleteArticle(source, index) {
     }
 }
 
-function scrapeNow() {
+async function scrapeNow() {
     const scrapeBtn = document.getElementById('scrapeNowBtn');
     if (!scrapeBtn) return;
     
@@ -2455,77 +2455,15 @@ function scrapeNow() {
     
     showNotification('스크래핑을 시작합니다...', 'info');
     
-    // 시뮬레이션된 스크래핑 (실제로는 GitHub Actions를 수동으로 트리거해야 함)
-    setTimeout(() => {
-        // 현실적인 시뮬레이션 데이터 생성
-        const simulatedArticles = [
-            {
-                site: 'The Straits Times',
-                group: 'Main News',
-                title: 'Singapore\'s GDP grows 3.8% in Q4 2024, beating expectations',
-                url: 'https://www.straitstimes.com/business/economy',
-                summary: '제목: Singapore\'s GDP grows 3.8% in Q4 2024, beating expectations\n키워드: GDP, economy, growth\n요약: 싱가포르의 2024년 4분기 국내총생산(GDP)이 전년 동기 대비 3.8% 성장하며 전문가들의 예상치 3.2%를 상회했습니다. 제조업과 서비스업의 강세가 성장을 견인했습니다.',
-                content: '싱가포르 통계청(DOS)이 발표한 예비 추정치에 따르면, 2024년 4분기 GDP는 전년 동기 대비 3.8% 성장했다. 이는 블룸버그가 집계한 경제학자 예상치 3.2%를 크게 웃도는 수치다.\n\n제조업 부문이 5.2% 성장하며 경제 성장을 주도했고, 특히 반도체와 정밀화학 부문이 강세를 보였다. 서비스업도 4.1% 증가하며 견조한 성장세를 이어갔다.\n\n정부는 2025년 경제 성장률을 2.5-3.5%로 전망한다고 밝혔다.',
-                keywords: ['GDP', 'economy', 'growth', 'manufacturing', 'services'],
-                publish_date: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-                timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()
-            },
-            {
-                site: 'Channel NewsAsia',
-                group: 'Breaking News',
-                title: 'New MRT Circle Line extension to open in March 2025',
-                url: 'https://www.channelnewsasia.com/singapore/transport',
-                summary: '제목: New MRT Circle Line extension to open in March 2025\n키워드: MRT, transport, infrastructure\n요약: 서클라인의 새로운 연장 구간이 2025년 3월에 개통될 예정입니다. 총 5개의 새로운 역이 추가되며, 서부 지역의 교통 편의성이 크게 향상될 것으로 기대됩니다.',
-                content: '육상교통청(LTA)은 MRT 서클라인 연장 구간이 오는 3월 개통될 예정이라고 발표했다. 이번 연장으로 Keppel, Cantonment, Prince Edward Road, Irwell Bank, Portsdown 등 5개 역이 새로 추가된다.\n\n새로운 구간 개통으로 서부 지역 주민들의 도심 접근성이 크게 개선될 것으로 예상된다. 특히 Keppel과 Cantonment 역은 금융 중심지와의 연결성을 높일 것으로 기대된다.\n\nLTA는 시험 운행을 통해 안전성을 최종 점검하고 있으며, 정식 개통 전 무료 시승 행사도 계획하고 있다고 밝혔다.',
-                keywords: ['MRT', 'transport', 'infrastructure', 'Circle Line', 'extension'],
-                publish_date: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
-                timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString()
-            },
-            {
-                site: 'Today Online',
-                group: 'Technology',
-                title: 'Singapore launches AI governance framework for financial sector',
-                url: 'https://www.todayonline.com/singapore/tech',
-                summary: '제목: Singapore launches AI governance framework for financial sector\n키워드: AI, governance, fintech, regulation\n요약: 싱가포르 금융관리청(MAS)이 금융 부문에서의 AI 활용을 위한 거버넌스 프레임워크를 공식 발표했습니다. 이를 통해 AI 기술의 안전하고 책임감 있는 도입을 촉진할 계획입니다.',
-                content: 'MAS(Monetary Authority of Singapore)가 금융 기관들이 인공지능(AI) 기술을 안전하게 도입할 수 있도록 돕는 종합적인 거버넌스 프레임워크를 발표했다.\n\n이 프레임워크는 AI 시스템의 투명성, 공정성, 설명가능성을 보장하기 위한 가이드라인을 제시한다. 특히 대출 심사, 보험 언더라이팅, 투자 자문 등 핵심 금융 서비스에서의 AI 활용 시 준수해야 할 원칙들을 명시했다.\n\nMAS는 이 프레임워크를 통해 싱가포르를 AI 혁신과 규제의 글로벌 허브로 만들겠다는 목표를 밝혔다.',
-                keywords: ['AI', 'governance', 'fintech', 'regulation', 'MAS'],
-                publish_date: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
-                timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString()
-            },
-            {
-                site: 'Business Times',
-                group: 'Business',
-                title: 'Singapore property prices rise 2.1% in Q4 2024',
-                url: 'https://www.businesstimes.com.sg/property',
-                summary: '제목: Singapore property prices rise 2.1% in Q4 2024\n키워드: property, prices, real estate, housing\n요약: 2024년 4분기 싱가포르 부동산 가격이 전분기 대비 2.1% 상승했습니다. 이는 정부의 부동산 냉각 조치에도 불구하고 지속되는 수요 증가 때문으로 분석됩니다.',
-                content: '도시재개발청(URA)의 발표에 따르면, 2024년 4분기 사적 주택 가격이 전분기 대비 2.1% 상승했다. 이는 3분기 상승률 1.8%보다 확대된 수치다.\n\n부동산 전문가들은 외국인 투자 증가와 싱가포르 경제의 견조한 성장세가 부동산 시장을 지지하고 있다고 분석했다. 특히 오차드와 마리나 베이 지역의 프리미엄 주택 수요가 급증했다.\n\n정부는 부동산 시장 과열을 우려해 추가적인 냉각 조치 도입을 검토하고 있다고 밝혔다.',
-                keywords: ['property', 'prices', 'real estate', 'housing', 'URA'],
-                publish_date: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString(),
-                timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString()
-            },
-            {
-                site: 'The Straits Times',
-                group: 'Main News',
-                title: 'Changi Airport T5 construction progresses on schedule',
-                url: 'https://www.straitstimes.com/singapore/transport',
-                summary: '제목: Changi Airport T5 construction progresses on schedule\n키워드: Changi, airport, construction, infrastructure\n요약: 창이공항 5터미널 건설이 예정대로 진행되고 있으며, 2030년 완공을 목표로 하고 있습니다. 완공 시 연간 승객 처리 능력이 5000만 명 증가할 예정입니다.',
-                content: '창이공항그룹(CAG)은 제5터미널(T5) 건설이 계획대로 순조롭게 진행되고 있다고 발표했다. 현재 기초 공사와 지하 구조물 건설이 완료된 상태다.\n\nT5는 2030년 완공 예정이며, 완공 시 창이공항의 연간 승객 처리 능력이 현재 8500만 명에서 1억 3500만 명으로 증가한다. 이는 싱가포르가 아시아 항공 허브로서의 지위를 더욱 공고히 할 것으로 기대된다.\n\nCAG는 T5에 최신 자동화 기술과 친환경 시설을 도입해 승객 경험을 혁신적으로 개선할 계획이라고 밝혔다.',
-                keywords: ['Changi', 'airport', 'construction', 'infrastructure', 'T5'],
-                publish_date: new Date(Date.now() - 10 * 60 * 60 * 1000).toISOString(),
-                timestamp: new Date(Date.now() - 10 * 60 * 60 * 1000).toISOString()
-            },
-            {
-                site: 'Channel NewsAsia',
-                group: 'Breaking News',
-                title: 'Singapore-Malaysia water agreement talks resume next month',
-                url: 'https://www.channelnewsasia.com/asia',
-                summary: '제목: Singapore-Malaysia water agreement talks resume next month\n키워드: water, Malaysia, agreement, diplomacy\n요약: 싱가포르와 말레이시아 간의 물 공급 협정 재협상이 다음 달에 재개될 예정입니다. 양국은 2061년 협정 만료에 앞서 새로운 협정 체결을 위해 노력하고 있습니다.',
-                content: '싱가포르 외교부는 말레이시아와의 물 공급 협정 재협상 회담이 다음 달 쿠알라룸푸르에서 재개될 예정이라고 발표했다.\n\n현재 1962년 체결된 물 공급 협정은 2061년 만료 예정이며, 양국은 이보다 앞서 새로운 장기 협정을 체결하기를 원하고 있다. 싱가포르는 말레이시아 조호르주에서 하루 2억 5000만 갤런의 원수를 수입하고 있다.\n\n양국 관계자들은 상호 이익이 되는 방향으로 협상을 진행할 것이라고 밝혔으며, 이번 회담에서 실질적인 진전이 있을 것으로 기대된다고 말했다.',
-                keywords: ['water', 'Malaysia', 'agreement', 'diplomacy', 'Johor'],
-                publish_date: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString(),
-                timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString()
-            }
-        ];
+    // 실제 스크래핑 데이터 로드
+    try {
+        // 최신 스크래핑 데이터 파일 로드
+        const response = await fetch('data/scraped/news_20250716_004341.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const scrapedArticles = await response.json();
         
         // 기존 데이터에 추가
         const existingData = localStorage.getItem('singapore_news_scraped_data');
@@ -2542,8 +2480,11 @@ function scrapeNow() {
             }
         }
         
-        // 새 기사 추가
-        data.articles = [...data.articles, ...simulatedArticles];
+        // 새 기사 추가 (중복 제거)
+        const existingUrls = new Set(data.articles.map(article => article.url));
+        const newArticles = scrapedArticles.filter(article => !existingUrls.has(article.url));
+        
+        data.articles = [...data.articles, ...newArticles];
         data.lastUpdated = new Date().toISOString();
         
         localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
@@ -2552,10 +2493,15 @@ function scrapeNow() {
         updateTodayArticles();
         
         scrapeBtn.disabled = false;
-        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크랩하기';
+        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
         
-        showNotification(`${simulatedArticles.length}개의 새로운 기사를 스크래핑했습니다.`, 'success');
-    }, 2000);
+        showNotification(`${newArticles.length}개의 새로운 기사를 스크래핑했습니다.`, 'success');
+    } catch (error) {
+        console.error('스크래핑 오류:', error);
+        scrapeBtn.disabled = false;
+        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
+        showNotification('스크래핑 중 오류가 발생했습니다: ' + error.message, 'error');
+    }
 }
 
 function generateSendMessage() {
