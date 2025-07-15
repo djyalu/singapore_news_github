@@ -3,7 +3,8 @@ const MFA_KEY = 'singapore_news_mfa';
 function generateSecret() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
     let secret = '';
-    for (let i = 0; i < 32; i++) {
+    // 16바이트 = 26자 base32 (padding 제외)
+    for (let i = 0; i < 16; i++) {
         secret += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return secret;
