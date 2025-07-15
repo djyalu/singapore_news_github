@@ -600,77 +600,119 @@ function sendTestMessage() {
     // 환경 감지 및 API 호출
     const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
     
-    if (isProduction) {
-        // Vercel 배포 URL 설정 (사용자가 직접 수정 필요)
-        const VERCEL_URL = 'https://singapore-news-github-djyalu.vercel.app'; // TODO: 실제 Vercel URL로 변경
-        const apiUrl = window.location.hostname.includes('github.io') 
-            ? `${VERCEL_URL}/api/send-whatsapp`  // GitHub Pages에서 실행 시
-            : '/api/send-whatsapp';  // Vercel에서 직접 실행 시
-        
-        // 프로덕션 환경: 서버리스 함수 API 호출
-        fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                channel: testChannel,
-                message: processedMessage
-            })
-        })
-        .then(response => {
-            console.log('API Response Status:', response.status);
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('API Response:', data);
-            
-            if (data.success) {
-                testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
-                recordTestHistory(testChannel, 'success', processedMessage);
-            } else {
-                const errorMsg = data.error || '알 수 없는 오류';
-                testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
-                recordTestHistory(testChannel, 'failed', processedMessage);
-            }
-        })
-        .catch(error => {
-            console.error('API Error:', error);
-            testResult.innerHTML = '<div class="error-message">❌ API 호출 중 오류가 발생했습니다.</div>';
-            recordTestHistory(testChannel, 'failed', processedMessage);
-        })
-        .finally(() => {
-            // 버튼 복원
-            testSendBtn.disabled = false;
-            testSendBtn.textContent = '테스트 전송';
-            
-            // 테스트 이력 새로고침
-            loadTestHistory();
-        });
-    } else {
-        // 로컬 개발 환경: 시뮬레이션 모드
-        setTimeout(() => {
-            const success = Math.random() > 0.2; // 80% 성공률
-            
-            if (success) {
-                testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (시뮬레이션)</div>';
-                recordTestHistory(testChannel, 'success', processedMessage);
-            } else {
-                testResult.innerHTML = '<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다. (시뮬레이션)</div>';
-                recordTestHistory(testChannel, 'failed', processedMessage);
-            }
-            
-            // 버튼 복원
-            testSendBtn.disabled = false;
-            testSendBtn.textContent = '테스트 전송';
-            
-            // 테스트 이력 새로고침
-            loadTestHistory();
-        }, 1500);
+    // 환경에 관계없이 직접 WhatsApp API 호출 시도
+    const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
+    const whatsappToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+    
+    // 채널 ID 형식 변환
+    let toNumber = testChannel;
+    if (testChannel.includes('@g.us')) {
+        toNumber = testChannel.replace('@g.us', '');
     }
+    
+    const whatsappData = {
+        to: toNumber,
+        body: processedMessage,
+        typing_time: 0
+    };
+    
+    // 먼저 직접 WhatsApp API 호출 시도
+    fetch(whatsappApiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${whatsappToken}`
+        },
+        body: JSON.stringify(whatsappData)
+    })
+    .then(response => {
+        console.log('WhatsApp API Response Status:', response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log('WhatsApp API Response:', data);
+        
+        if (data.id || data.message_id) {
+            testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
+            recordTestHistory(testChannel, 'success', processedMessage);
+        } else {
+            const errorMsg = data.message || data.error || '알 수 없는 오류';
+            testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
+            recordTestHistory(testChannel, 'failed', processedMessage);
+        }
+    })
+    .catch(error => {
+        console.error('WhatsApp API Error:', error);
+        
+        // API 호출 실패 시 환경에 따른 대체 처리
+        if (isProduction) {
+            // GitHub Pages에서 실행 중인 경우 Vercel API 시도
+            const VERCEL_URL = 'https://singapore-news-github-dxt8xxd64-djyalus-projects.vercel.app';
+            const apiUrl = `${VERCEL_URL}/api/send-whatsapp`;
+            
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    channel: testChannel,
+                    message: processedMessage
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (Vercel API)</div>';
+                    recordTestHistory(testChannel, 'success', processedMessage);
+                } else {
+                    const errorMsg = data.error || '알 수 없는 오류';
+                    testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
+                    recordTestHistory(testChannel, 'failed', processedMessage);
+                }
+            })
+            .catch(vercelError => {
+                console.error('Vercel API Error:', vercelError);
+                testResult.innerHTML = '<div class="error-message">❌ 모든 API 호출이 실패했습니다. 네트워크 상태를 확인해주세요.</div>';
+                recordTestHistory(testChannel, 'failed', processedMessage);
+            })
+            .finally(() => {
+                testSendBtn.disabled = false;
+                testSendBtn.textContent = '테스트 전송';
+                loadTestHistory();
+            });
+        } else {
+            // 로컬 개발 환경: 시뮬레이션 모드
+            setTimeout(() => {
+                const success = Math.random() > 0.2;
+                
+                if (success) {
+                    testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (시뮬레이션)</div>';
+                    recordTestHistory(testChannel, 'success', processedMessage);
+                } else {
+                    testResult.innerHTML = '<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다. (시뮬레이션)</div>';
+                    recordTestHistory(testChannel, 'failed', processedMessage);
+                }
+                
+                testSendBtn.disabled = false;
+                testSendBtn.textContent = '테스트 전송';
+                loadTestHistory();
+            }, 1500);
+        }
+    })
+    .finally(() => {
+        // 직접 API 호출 성공 시 버튼 복원
+        if (!isProduction || testSendBtn.disabled) {
+            testSendBtn.disabled = false;
+            testSendBtn.textContent = '테스트 전송';
+            loadTestHistory();
+        }
+    });
 }
 
 function recordTestHistory(channel, status, message) {
@@ -1947,7 +1989,7 @@ async function checkVercelAPI() {
     const statusIndicator = statusCard.querySelector('.status-indicator');
     
     try {
-        const vercelUrl = 'https://singapore-news-github-djyalu.vercel.app';
+        const vercelUrl = 'https://singapore-news-github-dxt8xxd64-djyalus-projects.vercel.app';
         const apiUrl = `${vercelUrl}/api/send-whatsapp`;
         
         const response = await fetch(apiUrl, {
