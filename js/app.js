@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.innerHTML = getDashboardHTML();
                 loadDashboardData();
                 setupDashboardEventListeners();
+                // GitHub에서 최신 데이터 자동 로드
+                loadLatestDataFromGitHub();
                 break;
             case 'settings':
                 if (isAdmin()) {
@@ -2797,6 +2799,8 @@ async function startScrapingStatusMonitor() {
                     setTimeout(() => {
                         loadScrapedArticles();
                         updateTodayArticles();
+                        // GitHub에서 최신 데이터 로드
+                        loadLatestDataFromGitHub();
                     }, 2000);
                     
                 } else if (result.status === 'error') {
@@ -2840,6 +2844,36 @@ function resetScrapeButton() {
     if (scrapeBtn) {
         scrapeBtn.disabled = false;
         scrapeBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>스크래핑 + 전송';
+    }
+}
+
+async function loadLatestDataFromGitHub() {
+    try {
+        console.log('GitHub에서 최신 데이터를 로드합니다...');
+        
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+        if (response.ok) {
+            const result = await response.json();
+            
+            if (result.success && result.articles) {
+                // GitHub 데이터를 로컬 스토리지에 저장
+                const data = {
+                    lastUpdated: result.lastUpdated,
+                    articles: result.articles
+                };
+                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                
+                // UI 업데이트
+                loadScrapedArticles();
+                updateTodayArticles();
+                
+                console.log(`GitHub에서 ${result.articleCount}개의 기사를 로드했습니다.`);
+                showNotification(`최신 뉴스 ${result.articleCount}개를 불러왔습니다.`, 'success');
+            }
+        }
+    } catch (error) {
+        console.error('GitHub 데이터 로드 오류:', error);
+        // 오류가 발생해도 조용히 실패 (사용자 경험 방해하지 않음)
     }
 }
 
