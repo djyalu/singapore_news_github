@@ -36,6 +36,21 @@
         <button onclick="verifyCode()">검증</button>
         <p id="verifyResult"></p>
     </div>
+    
+    <div>
+        <h2>5. Google Authenticator 호환 테스트</h2>
+        <p>아래 정보로 Google Authenticator에 수동 입력하세요:</p>
+        <p><strong>계정 이름:</strong> test@singapore-news</p>
+        <p><strong>키:</strong> <code id="manualKey">JBSWY3DPEHPK3PXP</code></p>
+        <p><strong>시간 기반</strong> 선택</p>
+        <button onclick="testGoogleAuth()">이 키로 테스트</button>
+        <p>예상 코드: <strong id="expectedCode" style="font-size: 24px; color: blue;"></strong></p>
+    </div>
+    
+    <div>
+        <h2>6. 디버깅 정보</h2>
+        <pre id="debugInfo" style="background: #f5f5f5; padding: 10px; overflow: auto;"></pre>
+    </div>
 
     <script>
         // Base32 decode function
@@ -193,8 +208,58 @@
             document.getElementById('countdown').textContent = secondsLeft;
         }, 1000);
         
+        async function testGoogleAuth() {
+            const testSecret = 'JBSWY3DPEHPK3PXP';
+            document.getElementById('secretInput').value = testSecret;
+            document.getElementById('verifySecret').value = testSecret;
+            
+            try {
+                const timeStep = 30;
+                const currentTime = Math.floor(Date.now() / 1000);
+                const counter = Math.floor(currentTime / timeStep);
+                
+                const code = await generateHOTP(testSecret, counter);
+                document.getElementById('expectedCode').textContent = code;
+                
+                // 디버깅 정보
+                const debugInfo = {
+                    secret: testSecret,
+                    currentTime: new Date().toISOString(),
+                    unixTime: currentTime,
+                    counter: counter,
+                    expectedCode: code,
+                    base32Decoded: base32Decode(testSecret),
+                    allWindows: {}
+                };
+                
+                for (let i = -2; i <= 2; i++) {
+                    debugInfo.allWindows[`window_${i}`] = await generateHOTP(testSecret, counter + i);
+                }
+                
+                document.getElementById('debugInfo').textContent = JSON.stringify(debugInfo, null, 2);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('debugInfo').textContent = 'Error: ' + error.message;
+            }
+        }
+        
+        // 자동으로 코드 업데이트
+        setInterval(async () => {
+            const secret = document.getElementById('secretInput').value;
+            if (secret) {
+                try {
+                    await generateCode();
+                } catch (e) {
+                    // 에러 무시
+                }
+            }
+        }, 1000);
+        
         // 초기 secret 생성
         generateTestSecret();
+        
+        // 페이지 로드 시 Google Auth 테스트
+        setTimeout(() => testGoogleAuth(), 100);
     </script>
 </body>
 </html>
