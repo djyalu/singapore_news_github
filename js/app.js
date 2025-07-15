@@ -1804,26 +1804,56 @@ function toggleScrapedArticles() {
     }
 }
 
-function loadScrapedArticles() {
+async function loadScrapedArticles() {
     const articlesList = document.getElementById('scrapedArticlesList');
     if (!articlesList) return;
     
-    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    // 먼저 로컬 데이터 확인
+    let data = null;
+    const localData = localStorage.getItem('singapore_news_scraped_data');
     
-    if (!scrapedData) {
+    if (localData) {
+        try {
+            data = JSON.parse(localData);
+        } catch (e) {
+            console.error('로컬 데이터 파싱 오류:', e);
+        }
+    }
+    
+    // GitHub에서 최신 데이터 가져오기 시도
+    try {
+        articlesList.innerHTML = '<p class="loading">최신 기사를 불러오는 중...</p>';
+        
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+        if (response.ok) {
+            const result = await response.json();
+            
+            if (result.success && result.articles) {
+                // GitHub 데이터를 로컬 스토리지에 저장
+                data = {
+                    lastUpdated: result.lastUpdated,
+                    articles: result.articles
+                };
+                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+            }
+        }
+    } catch (error) {
+        console.error('GitHub 데이터 로드 오류:', error);
+    }
+    
+    // 데이터가 없는 경우
+    if (!data || !data.articles || data.articles.length === 0) {
         articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
         return;
     }
     
-    try {
-        const data = JSON.parse(scrapedData);
-        const today = new Date().toDateString();
-        const lastUpdate = new Date(data.lastUpdated);
-        
-        if (lastUpdate.toDateString() !== today || !data.articles || data.articles.length === 0) {
-            articlesList.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
-            return;
-        }
+    const today = new Date().toDateString();
+    const lastUpdate = new Date(data.lastUpdated);
+    
+    if (lastUpdate.toDateString() !== today && data.articles.length === 0) {
+        articlesList.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+        return;
+    }
         
         // 기사를 소스별로 그룹화
         const groupedArticles = data.articles.reduce((groups, article) => {

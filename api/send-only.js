@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
         });
 
         // Send Only 워크플로우 트리거
-        const workflow_id = 'send-only.yml';
+        const workflow_id = 'send-whatsapp.yml';
 
         console.log(`Triggering send-only workflow: ${owner}/${repo}/${workflow_id}`);
 

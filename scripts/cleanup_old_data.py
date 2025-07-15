@@ -3,18 +3,62 @@ import json
 import glob
 from datetime import datetime, timedelta
 
-def cleanup_old_data(retention_days=30):
+def cleanup_old_data(retention_days=30, max_size_mb=50):
     """
-    30일 이전의 스크래핑 데이터와 전송 이력을 자동 삭제
+    30일 이전 또는 전체 용량 50MB 초과 시 오래된 데이터부터 삭제
     """
     cutoff_date = datetime.now() - timedelta(days=retention_days)
     deleted_files = []
     
-    print(f"Cleaning up data older than {cutoff_date.strftime('%Y-%m-%d')}...")
+    print(f"Cleaning up data older than {cutoff_date.strftime('%Y-%m-%d')} or exceeding {max_size_mb}MB...")
     
     # 1. 스크래핑 데이터 정리 (data/scraped/news_*.json)
     scraped_pattern = 'data/scraped/news_*.json'
     scraped_files = glob.glob(scraped_pattern)
+    
+    # 파일을 날짜순으로 정렬 (오래된 것부터)
+    file_info = []
+    total_size = 0
+    
+    for file_path in scraped_files:
+        try:
+            size = os.path.getsize(file_path)
+            mtime = os.path.getmtime(file_path)
+            file_info.append({
+                'path': file_path,
+                'size': size,
+                'mtime': mtime,
+                'date': datetime.fromtimestamp(mtime)
+            })
+            total_size += size
+        except:
+            continue
+    
+    # 날짜순 정렬 (오래된 것부터)
+    file_info.sort(key=lambda x: x['mtime'])
+    
+    # 용량 초과 또는 날짜 초과 파일 삭제
+    total_size_mb = total_size / (1024 * 1024)
+    print(f"Current total size: {total_size_mb:.2f} MB")
+    
+    for file_data in file_info:
+        file_path = file_data['path']
+        file_date = file_data['date']
+        file_size_mb = file_data['size'] / (1024 * 1024)
+        
+        # 30일 이전이거나 전체 용량이 50MB 초과인 경우 삭제
+        if file_date < cutoff_date or total_size_mb > max_size_mb:
+            try:
+                os.remove(file_path)
+                deleted_files.append(file_path)
+                total_size_mb -= file_size_mb
+                print(f"Deleted: {file_path} ({file_size_mb:.2f} MB, {file_date.strftime('%Y-%m-%d')})")
+            except Exception as e:
+                print(f"Error deleting {file_path}: {e}")
+        else:
+            # 용량이 50MB 이하이고 30일 이내면 중단
+            if total_size_mb <= max_size_mb:
+                break
     
     for file_path in scraped_files:
         try:

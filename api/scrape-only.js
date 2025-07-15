@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
         });
 
         // Scrape Only 워크플로우 트리거
-        const workflow_id = 'scrape-only.yml';
+        const workflow_id = 'scraper-only.yml';
 
         console.log(`Triggering scrape-only workflow: ${owner}/${repo}/${workflow_id}`);
 
