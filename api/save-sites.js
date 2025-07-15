@@ -17,21 +17,13 @@ module.exports = async (req, res) => {
     }
 
     try {
-        const settings = req.body;
+        const sites = req.body;
         
-        // 설정 검증
-        if (!settings || typeof settings !== 'object') {
+        // 사이트 목록 검증
+        if (!sites || !Array.isArray(sites)) {
             return res.status(400).json({ 
                 success: false, 
-                error: '잘못된 설정 데이터입니다.' 
-            });
-        }
-
-        // 필수 필드 검증
-        if (settings.sendChannel === 'whatsapp' && !settings.whatsappChannel) {
-            return res.status(400).json({ 
-                success: false, 
-                error: 'WhatsApp 채널을 선택해주세요.' 
+                error: '잘못된 사이트 데이터입니다.' 
             });
         }
 
@@ -53,48 +45,28 @@ module.exports = async (req, res) => {
             auth: githubToken,
         });
         
-        // 기본 설정 구조 확인
-        const defaultSettings = {
-            scrapTarget: settings.scrapTarget || "recent",
-            importantKeywords: settings.importantKeywords || "",
-            summaryOptions: settings.summaryOptions || {
-                headline: true,
-                keywords: true,
-                content: true
-            },
-            sendChannel: settings.sendChannel || "whatsapp",
-            whatsappChannel: settings.whatsappChannel || "",
-            sendSchedule: settings.sendSchedule || {
-                period: "daily",
-                time: "08:00",
-                weekdays: [],
-                date: "1"
-            },
-            blockedKeywords: settings.blockedKeywords || ""
-        };
-        
         // 현재 파일의 SHA 가져오기
         let sha;
         try {
             const { data: fileData } = await octokit.rest.repos.getContent({
                 owner,
                 repo,
-                path: 'data/settings.json',
+                path: 'data/sites.json',
             });
             sha = fileData.sha;
         } catch (error) {
             // 파일이 없으면 새로 생성
-            console.log('settings.json not found, will create new file');
+            console.log('sites.json not found, will create new file');
         }
         
         // GitHub에 파일 저장
-        const content = Buffer.from(JSON.stringify(defaultSettings, null, 2)).toString('base64');
+        const content = Buffer.from(JSON.stringify(sites, null, 2)).toString('base64');
         
         const { data: result } = await octokit.rest.repos.createOrUpdateFileContents({
             owner,
             repo,
-            path: 'data/settings.json',
-            message: `Update settings via Web UI at ${new Date().toISOString()}`,
+            path: 'data/sites.json',
+            message: `Update sites list via Web UI at ${new Date().toISOString()}`,
             content,
             sha, // 파일이 존재하면 SHA 필요
             committer: {
@@ -105,16 +77,25 @@ module.exports = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: '설정이 GitHub에 저장되었습니다.',
-            settings: defaultSettings,
+            message: '사이트 목록이 GitHub에 저장되었습니다.',
+            sites: sites,
             commit: result.commit.sha
         });
 
     } catch (error) {
-        console.error('Settings save error:', error);
+        console.error('Sites save error:', error);
+        
+        let errorMessage = '사이트 목록 저장 중 오류가 발생했습니다.';
+        if (error.status === 404) {
+            errorMessage = 'GitHub 저장소를 찾을 수 없습니다.';
+        } else if (error.status === 401) {
+            errorMessage = 'GitHub 인증에 실패했습니다.';
+        }
+        
         return res.status(500).json({
             success: false,
-            error: '설정 저장 중 오류가 발생했습니다.'
+            error: errorMessage,
+            details: error.message
         });
     }
 };

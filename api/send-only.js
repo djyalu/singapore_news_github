@@ -53,7 +53,7 @@ module.exports = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: 'WhatsApp 전송이 시작되었습니다. GitHub Actions에서 진행 상황을 확인하세요.',
+            message: 'WhatsApp 전송이 시작되었습니다. 잠시 후 전송 결과가 표시됩니다.',
             github_response_status: response.status,
             workflow_url: `https://github.com/${owner}/${repo}/actions`
         });

@@ -1201,8 +1201,8 @@ function saveSettings() {
             return;
         }
         
-        // 서버에 설정 저장
-        fetch('/api/save-settings', {
+        // GitHub에 설정 저장
+        fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-settings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -1283,7 +1283,33 @@ document.addEventListener('submit', async function(e) {
             period: document.getElementById('scrapPeriod').value
         });
         
-        localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+        // GitHub에 사이트 목록 저장
+        try {
+            const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-sites', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(sites)
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // 성공 시 로컬에도 저장
+                localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+                showNotification('사이트가 추가되었습니다.', 'success');
+            } else {
+                showNotification(result.error || '사이트 저장에 실패했습니다.', 'error');
+                // 실패 시 배열에서 제거
+                sites.pop();
+            }
+        } catch (error) {
+            console.error('사이트 저장 오류:', error);
+            showNotification('사이트 저장 중 오류가 발생했습니다.', 'error');
+            sites.pop();
+        }
+        
         await loadSites();
         e.target.reset();
     }
@@ -1291,8 +1317,37 @@ document.addEventListener('submit', async function(e) {
 
 async function deleteSite(index) {
     const sites = JSON.parse(localStorage.getItem('singapore_news_sites') || '[]');
+    const deletedSite = sites[index];
     sites.splice(index, 1);
-    localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+    
+    // GitHub에 사이트 목록 업데이트
+    try {
+        const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-sites', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sites)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // 성공 시 로컬에도 저장
+            localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+            showNotification('사이트가 삭제되었습니다.', 'success');
+        } else {
+            showNotification(result.error || '사이트 삭제에 실패했습니다.', 'error');
+            // 실패 시 복구
+            sites.splice(index, 0, deletedSite);
+        }
+    } catch (error) {
+        console.error('사이트 삭제 오류:', error);
+        showNotification('사이트 삭제 중 오류가 발생했습니다.', 'error');
+        // 오류 시 복구
+        sites.splice(index, 0, deletedSite);
+    }
+    
     await loadSites();
 }
 
@@ -2737,11 +2792,9 @@ async function scrapeNow() {
             // 버튼 상태 업데이트
             scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 확인 중...';
             
-            // 진행 상황 확인 URL 제공
+            // 진행 상황 확인 URL 제공 (개발자용 로그에만 표시)
             if (result.workflow_url) {
-                setTimeout(() => {
-                    showNotification(`GitHub Actions에서 진행 상황을 확인하세요: ${result.workflow_url}`, 'info');
-                }, 2000);
+                console.log(`GitHub Actions URL: ${result.workflow_url}`);
             }
             
         } else {

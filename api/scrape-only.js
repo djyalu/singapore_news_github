@@ -53,7 +53,7 @@ module.exports = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: '스크래핑이 시작되었습니다 (전송 없음). GitHub Actions에서 진행 상황을 확인하세요.',
+            message: '뉴스 스크래핑이 시작되었습니다 (전송 없음). 잠시 후 결과가 자동으로 표시됩니다.',
             github_response_status: response.status,
             workflow_url: `https://github.com/${owner}/${repo}/actions`
         });
