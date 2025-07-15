@@ -6,91 +6,251 @@
     <title>Singapore News Scraper</title>
     <link rel="icon" type="image/svg+xml" href="favicon-news.svg">
     <link rel="alternate icon" href="favicon.ico">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite CSS & JS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    
+    <!-- Custom styles (will be updated to work with Tailwind) -->
     <link rel="stylesheet" href="css/styles.css">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </head>
 <body>
     <div id="app">
-        <div class="login-page" id="loginContainer">
-            <div class="login-content">
-                <div class="login-illustration">
-                    <img src="images/login-illustration.svg" alt="Singapore News Illustration">
-                    <div class="login-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">🌏</span>
-                            <span class="feature-text">싱가포르 주요 뉴스 실시간 수집</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">🤖</span>
-                            <span class="feature-text">AI 기반 자동 요약 및 분류</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">📱</span>
-                            <span class="feature-text">WhatsApp 자동 전송</span>
-                        </div>
+        <div class="min-h-screen bg-gray-50 flex flex-col justify-center" id="loginContainer">
+            <div class="sm:mx-auto sm:w-full sm:max-w-md">
+                <div class="flex justify-center">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                        </svg>
                     </div>
                 </div>
-                <div class="login-form-container">
-                    <div class="login-header">
-                        <h1>Singapore News Scraper</h1>
-                        <p class="login-subtitle">싱가포르 뉴스를 한눈에 모아보세요</p>
-                    </div>
-                    
-                    <form id="loginForm" class="login-form">
-                        <div class="form-field">
-                            <label for="username">사용자 ID</label>
-                            <input type="text" id="username" placeholder="아이디를 입력하세요" required>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                    Singapore News Scraper
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    싱가포르 뉴스를 한눈에 모아보세요
+                </p>
+            </div>
+
+            <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+                <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                    <form id="loginForm" class="space-y-6">
+                        <div>
+                            <label for="username" class="block text-sm font-medium text-gray-700">
+                                사용자 ID
+                            </label>
+                            <div class="mt-1">
+                                <input id="username" name="username" type="text" required 
+                                       class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                                       placeholder="아이디를 입력하세요">
+                            </div>
                         </div>
-                        <div class="form-field">
-                            <label for="password">비밀번호</label>
-                            <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">
+                                비밀번호
+                            </label>
+                            <div class="mt-1">
+                                <input id="password" name="password" type="password" required 
+                                       class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                                       placeholder="비밀번호를 입력하세요">
+                            </div>
                         </div>
-                        <button type="submit" class="login-button">
-                            <span class="button-text">로그인</span>
-                            <span class="button-icon">→</span>
-                        </button>
-                        <p class="error-message" id="errorMessage"></p>
+
+                        <div>
+                            <button type="submit" 
+                                    class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                    <svg class="h-5 w-5 text-blue-500 group-hover:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                로그인
+                            </button>
+                        </div>
+
+                        <div id="errorMessage" class="text-red-600 text-sm text-center hidden"></div>
                     </form>
-                    
-                    <div class="login-footer">
-                        <p class="login-info">기본 관리자 계정: admin / Admin@123</p>
+
+                    <div class="mt-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-300" />
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-white text-gray-500">기본 계정</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3 text-center">
+                            <p class="text-sm text-gray-600">
+                                관리자: <span class="font-mono text-blue-600">admin</span> / <span class="font-mono text-blue-600">Admin@123</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Features section -->
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <span class="text-green-600">🌏</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600">싱가포르 주요 뉴스 실시간 수집</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <span class="text-purple-600">🤖</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600">AI 기반 자동 요약 및 분류</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600">📱</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600">WhatsApp 자동 전송</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
             
-            <div class="mfa-modal" id="mfaContainer" style="display: none;">
-                <div class="mfa-content">
-                    <div class="mfa-icon">🔐</div>
-                    <h2>2단계 인증</h2>
-                    <p>인증 앱에서 생성된 6자리 코드를 입력하세요</p>
-                    <form id="mfaForm">
-                        <div class="mfa-input-group">
-                            <input type="text" id="mfaCode" placeholder="000000" maxlength="6" required autocomplete="off">
+            <!-- MFA Modal -->
+            <div id="mfaContainer" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                    <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <div class="sm:flex sm:items-start">
+                                <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                                    <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                        2단계 인증
+                                    </h3>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-gray-500">
+                                            인증 앱에서 생성된 6자리 코드를 입력하세요
+                                        </p>
+                                    </div>
+                                    <form id="mfaForm" class="mt-4">
+                                        <div>
+                                            <label for="mfaCode" class="block text-sm font-medium text-gray-700">인증 코드</label>
+                                            <input type="text" id="mfaCode" name="mfaCode" maxlength="6" required autocomplete="off"
+                                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-center text-2xl tracking-widest"
+                                                   placeholder="000000">
+                                        </div>
+                                        <div id="mfaErrorMessage" class="mt-2 text-red-600 text-sm hidden"></div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mfa-buttons">
-                            <button type="submit" class="btn btn-primary">인증하기</button>
-                            <button type="button" id="mfaBackBtn" class="btn btn-secondary">뒤로가기</button>
+                        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                            <button type="submit" form="mfaForm" 
+                                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                인증하기
+                            </button>
+                            <button type="button" id="mfaBackBtn"
+                                    class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                                뒤로가기
+                            </button>
                         </div>
-                        <p class="error-message" id="mfaErrorMessage"></p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="main-container" id="mainContainer" style="display: none;">
-            <nav class="navbar">
-                <h2>Singapore News Scraper</h2>
-                <div class="nav-links">
-                    <a href="#" data-page="dashboard">Dashboard</a>
-                    <a href="#" data-page="settings" class="admin-only">Settings</a>
-                    <a href="#" data-page="history">전송 이력</a>
-                    <a href="#" data-page="users" class="admin-only">사용자 관리</a>
-                    <a href="#" data-page="mfa-settings">MFA 설정</a>
-                    <a href="#" id="logoutBtn">로그아웃</a>
+        <div class="min-h-screen bg-gray-100" id="mainContainer" style="display: none;">
+            <!-- Navigation -->
+            <nav class="bg-white shadow">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <div class="flex-shrink-0 flex items-center">
+                                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                    </svg>
+                                </div>
+                                <h2 class="ml-3 text-xl font-semibold text-gray-900">Singapore News Scraper</h2>
+                            </div>
+                            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                                <a href="#" data-page="dashboard" class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6h-8V5z"></path>
+                                    </svg>
+                                    Dashboard
+                                </a>
+                                <a href="#" data-page="settings" class="admin-only border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    Settings
+                                </a>
+                                <a href="#" data-page="history" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    전송 이력
+                                </a>
+                                <a href="#" data-page="users" class="admin-only border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                    </svg>
+                                    사용자 관리
+                                </a>
+                                <a href="#" data-page="mfa-settings" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                    MFA 설정
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                            <button id="logoutBtn" class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <span class="sr-only">로그아웃</span>
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="-mr-2 flex items-center sm:hidden">
+                            <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </nav>
             
-            <main class="content" id="content">
+            <!-- Page Content -->
+            <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <div class="px-4 py-6 sm:px-0">
+                    <div id="content" class="min-h-96">
+                        <!-- Content will be loaded here -->
+                    </div>
+                </div>
             </main>
         </div>
     </div>

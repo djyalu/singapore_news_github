@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             errorMessage.textContent = '잘못된 아이디 또는 비밀번호입니다.';
+            errorMessage.classList.remove('hidden');
         }
     });
     
@@ -87,76 +88,194 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function getDashboardHTML() {
         return `
-            <div class="page-section">
-                <div class="dashboard-header">
-                    <h2>Dashboard</h2>
-                    <div class="dashboard-actions">
-                        <button class="btn btn-primary" id="refreshBtn">
-                            <i class="icon">🔄</i> 새로고침
+            <div class="space-y-6">
+                <!-- Header with Actions -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+                        <p class="mt-1 text-sm text-gray-500">싱가포르 뉴스 스크래핑 현황을 확인하세요</p>
+                    </div>
+                    <div class="mt-4 sm:mt-0 flex space-x-3">
+                        <button type="button" id="refreshBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            새로고침
                         </button>
-                        <button class="btn btn-secondary" id="historyBtn">
-                            <i class="icon">📊</i> 전송 이력 보기
+                        <button type="button" id="historyBtn" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                            전송 이력
                         </button>
-                        <button class="btn btn-info" id="serverStatusBtn">
-                            <i class="icon">🔧</i> 서버 상태
+                        <button type="button" id="serverStatusBtn" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            서버 상태
                         </button>
                     </div>
                 </div>
-                <div class="dashboard-stats">
-                    <div class="stat-card clickable" id="todayArticlesCard" style="cursor: pointer;">
-                        <h3>오늘 스크랩한 기사</h3>
-                        <p class="stat-number" id="todayArticles">0</p>
-                        <div class="stat-action">클릭하여 보기 →</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>다음 전송 시간</h3>
-                        <p class="stat-text" id="nextSendTime">-</p>
-                    </div>
-                    <div class="stat-card clickable" id="sendSettingsCard" style="cursor: pointer;">
-                        <h3>전송 설정</h3>
-                        <p class="stat-text" id="sendChannelInfo">미설정</p>
-                        <div class="stat-action">설정하기 →</div>
-                    </div>
-                </div>
-                <div class="recent-activity">
-                    <h3>최근 활동</h3>
-                    <div id="recentActivityList" class="activity-list">
-                        <p class="loading">활동 내역을 불러오는 중...</p>
-                    </div>
-                </div>
-                <div class="scraped-articles">
-                    <div class="scraped-articles-header">
-                        <h3>오늘 스크랩한 기사</h3>
-                        <div class="scraped-articles-actions">
-                            <button class="btn btn-sm btn-primary" onclick="scrapeNow()" id="scrapeNowBtn">
-                                <i class="icon">🔄</i> 지금 스크랩하기
-                            </button>
-                            <button class="btn btn-sm btn-secondary" onclick="generateSendMessage()" id="generateMessageBtn">
-                                <i class="icon">📝</i> 전송 메시지 생성
-                            </button>
-                            <button class="btn btn-sm btn-danger" onclick="clearScrapedArticles()" id="clearArticlesBtn">
-                                <i class="icon">🗑️</i> 전체 삭제
-                            </button>
-                            <button class="btn btn-sm" onclick="toggleScrapedArticles()">
-                                <span id="toggleArticlesText">접기</span>
-                            </button>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Today's Articles Card -->
+                    <div id="todayArticlesCard" class="bg-white overflow-hidden shadow rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-200">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-gray-500 truncate">오늘 스크랩한 기사</dt>
+                                        <dd class="text-lg font-medium text-gray-900" id="todayArticles">0</dd>
+                                    </dl>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="scrapedArticlesList" class="articles-list" style="display: block;">
-                        <p class="loading">기사를 불러오는 중...</p>
-                    </div>
-                    <div id="generatedMessage" class="generated-message" style="display: none;">
-                        <h4>생성된 전송 메시지</h4>
-                        <div class="message-preview">
-                            <textarea id="messageContent" rows="15" readonly></textarea>
+
+                    <!-- Next Send Time Card -->
+                    <div class="bg-white overflow-hidden shadow rounded-lg">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-gray-500 truncate">다음 전송 시간</dt>
+                                        <dd class="text-lg font-medium text-gray-900" id="nextSendTime">-</dd>
+                                    </dl>
+                                </div>
+                            </div>
                         </div>
-                        <div class="message-actions">
-                            <button class="btn btn-primary" onclick="sendGeneratedMessage()">
-                                <i class="icon">📤</i> 메시지 전송
-                            </button>
-                            <button class="btn btn-secondary" onclick="copyMessageToClipboard()">
-                                <i class="icon">📋</i> 클립보드 복사
-                            </button>
+                    </div>
+
+                    <!-- Send Settings Card -->
+                    <div id="sendSettingsCard" class="bg-white overflow-hidden shadow rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-200">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-gray-500 truncate">전송 설정</dt>
+                                        <dd class="text-lg font-medium text-gray-900" id="sendChannelInfo">미설정</dd>
+                                    </dl>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Activity -->
+                <div class="bg-white shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">최근 활동</h3>
+                        <div id="recentActivityList" class="flow-root">
+                            <div class="text-center py-4">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="mt-2 text-sm text-gray-500">활동 내역을 불러오는 중...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scraped Articles -->
+                <div class="bg-white shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                            <div>
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">오늘 스크랩한 기사</h3>
+                                <p class="mt-1 text-sm text-gray-500">실시간으로 수집된 싱가포르 뉴스 기사들</p>
+                            </div>
+                            <div class="mt-3 sm:mt-0 flex space-x-3">
+                                <button type="button" onclick="scrapeNow()" id="scrapeNowBtn" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                    지금 스크랩하기
+                                </button>
+                                <button type="button" onclick="generateSendMessage()" id="generateMessageBtn" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    </svg>
+                                    메시지 생성
+                                </button>
+                                <button type="button" onclick="clearScrapedArticles()" id="clearArticlesBtn" class="inline-flex items-center px-3 py-2 border border-red-300 text-sm leading-4 font-medium rounded-md text-red-700 bg-white hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                    전체 삭제
+                                </button>
+                                <button type="button" onclick="toggleScrapedArticles()" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    <span id="toggleArticlesText">접기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="scrapedArticlesList" class="mt-4" style="display: block;">
+                            <div class="text-center py-4">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                </svg>
+                                <p class="mt-2 text-sm text-gray-500">기사를 불러오는 중...</p>
+                            </div>
+                        </div>
+                        <div id="generatedMessage" class="mt-6 hidden">
+                            <div class="border-t border-gray-200 pt-6">
+                                <h4 class="text-lg font-medium text-gray-900 mb-4">생성된 전송 메시지</h4>
+                                <div class="mt-4">
+                                    <label for="messageContent" class="block text-sm font-medium text-gray-700">메시지 내용</label>
+                                    <div class="mt-1">
+                                        <textarea id="messageContent" rows="15" readonly 
+                                                  class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md bg-gray-50">
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-4 flex space-x-3">
+                                    <button type="button" onclick="sendGeneratedMessage()" 
+                                            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                        </svg>
+                                        메시지 전송
+                                    </button>
+                                    <button type="button" onclick="copyMessageToClipboard()" 
+                                            class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                                        </svg>
+                                        클립보드 복사
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -479,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function showMFAForm(username) {
-        document.getElementById('mfaContainer').style.display = 'flex';
+        document.getElementById('mfaContainer').classList.remove('hidden');
         document.getElementById('mfaCode').focus();
         
         const mfaForm = document.getElementById('mfaForm');
@@ -500,10 +619,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const isValid = await verifyMFA(username, code);
             if (isValid) {
-                document.getElementById('mfaContainer').style.display = 'none';
+                document.getElementById('mfaContainer').classList.add('hidden');
                 checkAuth();
             } else {
-                document.getElementById('mfaErrorMessage').textContent = '잘못된 인증 코드입니다.';
+                const mfaErrorMessage = document.getElementById('mfaErrorMessage');
+                mfaErrorMessage.textContent = '잘못된 인증 코드입니다.';
+                mfaErrorMessage.classList.remove('hidden');
                 document.getElementById('mfaCode').value = '';
                 document.getElementById('mfaCode').focus();
             }
@@ -511,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('mfaBackBtn').addEventListener('click', function() {
             logout();
-            document.getElementById('mfaContainer').style.display = 'none';
+            document.getElementById('mfaContainer').classList.add('hidden');
             document.getElementById('mfaCode').value = '';
             document.getElementById('mfaErrorMessage').textContent = '';
         });
