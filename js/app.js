@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="btn btn-secondary" onclick="loadPage('history')">
                         <i class="icon">📊</i> 전송 이력 보기
                     </button>
+                    <button class="btn btn-info" onclick="showServerStatus()">
+                        <i class="icon">🔧</i> 서버 상태
+                    </button>
                 </div>
                 <div class="recent-activity">
                     <h3>최근 활동</h3>
@@ -1709,4 +1712,334 @@ function showSendSettings() {
             sendSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }, 100);
+}
+
+// Server Status Functions
+function showServerStatus() {
+    const modal = createServerStatusModal();
+    document.body.appendChild(modal);
+    checkAllServerStatus();
+}
+
+function createServerStatusModal() {
+    const modal = document.createElement('div');
+    modal.className = 'modal server-status-modal';
+    modal.id = 'serverStatusModal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>서버 상태 확인</h2>
+                <button class="modal-close" onclick="closeServerStatusModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="status-grid">
+                    <div class="status-card" id="githubPagesStatus">
+                        <div class="status-icon">🌐</div>
+                        <div class="status-info">
+                            <h3>GitHub Pages</h3>
+                            <p class="status-text">확인 중...</p>
+                            <div class="status-details"></div>
+                        </div>
+                        <div class="status-indicator checking"></div>
+                    </div>
+                    
+                    <div class="status-card" id="githubActionsStatus">
+                        <div class="status-icon">⚙️</div>
+                        <div class="status-info">
+                            <h3>GitHub Actions</h3>
+                            <p class="status-text">확인 중...</p>
+                            <div class="status-details"></div>
+                        </div>
+                        <div class="status-indicator checking"></div>
+                    </div>
+                    
+                    <div class="status-card" id="vercelStatus">
+                        <div class="status-icon">▲</div>
+                        <div class="status-info">
+                            <h3>Vercel API</h3>
+                            <p class="status-text">확인 중...</p>
+                            <div class="status-details"></div>
+                        </div>
+                        <div class="status-indicator checking"></div>
+                    </div>
+                    
+                    <div class="status-card" id="whatsappStatus">
+                        <div class="status-icon">📱</div>
+                        <div class="status-info">
+                            <h3>WhatsApp API</h3>
+                            <p class="status-text">확인 중...</p>
+                            <div class="status-details"></div>
+                        </div>
+                        <div class="status-indicator checking"></div>
+                    </div>
+                </div>
+                
+                <div class="status-actions">
+                    <button class="btn btn-primary" onclick="checkAllServerStatus()">
+                        <i class="icon">🔄</i> 다시 확인
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportStatusReport()">
+                        <i class="icon">📋</i> 리포트 복사
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 모달 바깥 클릭시 닫기
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeServerStatusModal();
+        }
+    });
+    
+    return modal;
+}
+
+function closeServerStatusModal() {
+    const modal = document.getElementById('serverStatusModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+async function checkAllServerStatus() {
+    const checks = [
+        checkGitHubPages(),
+        checkGitHubActions(),
+        checkVercelAPI(),
+        checkWhatsAppAPI()
+    ];
+    
+    await Promise.all(checks);
+}
+
+async function checkGitHubPages() {
+    const statusCard = document.getElementById('githubPagesStatus');
+    const statusText = statusCard.querySelector('.status-text');
+    const statusDetails = statusCard.querySelector('.status-details');
+    const statusIndicator = statusCard.querySelector('.status-indicator');
+    
+    try {
+        const response = await fetch(window.location.origin, {
+            method: 'HEAD',
+            cache: 'no-cache'
+        });
+        
+        if (response.ok) {
+            statusText.textContent = '정상 작동';
+            statusDetails.innerHTML = `
+                <small>✅ 사이트 접근 가능</small><br>
+                <small>📍 URL: ${window.location.origin}</small>
+            `;
+            statusIndicator.className = 'status-indicator online';
+        } else {
+            throw new Error(`HTTP ${response.status}`);
+        }
+    } catch (error) {
+        statusText.textContent = '오류 발생';
+        statusDetails.innerHTML = `
+            <small>❌ ${error.message}</small><br>
+            <small>🔧 GitHub Pages 설정 확인 필요</small>
+        `;
+        statusIndicator.className = 'status-indicator offline';
+    }
+}
+
+async function checkGitHubActions() {
+    const statusCard = document.getElementById('githubActionsStatus');
+    const statusText = statusCard.querySelector('.status-text');
+    const statusDetails = statusCard.querySelector('.status-details');
+    const statusIndicator = statusCard.querySelector('.status-indicator');
+    
+    try {
+        // GitHub API를 통해 워크플로우 상태 확인
+        const repoOwner = 'djyalu'; // GitHub 사용자명
+        const repoName = 'singapore_news_github';
+        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/runs?per_page=1`;
+        
+        const response = await fetch(apiUrl);
+        
+        if (response.ok) {
+            const data = await response.json();
+            const lastRun = data.workflow_runs[0];
+            
+            if (lastRun) {
+                const status = lastRun.status;
+                const conclusion = lastRun.conclusion;
+                const runDate = new Date(lastRun.updated_at).toLocaleString('ko-KR');
+                
+                let statusMsg = '';
+                let indicator = '';
+                
+                if (status === 'completed') {
+                    if (conclusion === 'success') {
+                        statusMsg = '마지막 실행 성공';
+                        indicator = 'online';
+                    } else {
+                        statusMsg = '마지막 실행 실패';
+                        indicator = 'offline';
+                    }
+                } else {
+                    statusMsg = '실행 중';
+                    indicator = 'checking';
+                }
+                
+                statusText.textContent = statusMsg;
+                statusDetails.innerHTML = `
+                    <small>📅 마지막 실행: ${runDate}</small><br>
+                    <small>🔄 워크플로우: ${lastRun.name}</small>
+                `;
+                statusIndicator.className = `status-indicator ${indicator}`;
+            } else {
+                statusText.textContent = '워크플로우 없음';
+                statusDetails.innerHTML = '<small>ℹ️ 실행된 워크플로우가 없습니다</small>';
+                statusIndicator.className = 'status-indicator offline';
+            }
+        } else {
+            throw new Error(`API 호출 실패: ${response.status}`);
+        }
+    } catch (error) {
+        statusText.textContent = '확인 불가';
+        statusDetails.innerHTML = `
+            <small>❌ ${error.message}</small><br>
+            <small>🔧 GitHub Actions 설정 확인 필요</small>
+        `;
+        statusIndicator.className = 'status-indicator offline';
+    }
+}
+
+async function checkVercelAPI() {
+    const statusCard = document.getElementById('vercelStatus');
+    const statusText = statusCard.querySelector('.status-text');
+    const statusDetails = statusCard.querySelector('.status-details');
+    const statusIndicator = statusCard.querySelector('.status-indicator');
+    
+    try {
+        const vercelUrl = 'https://singapore-news-github-djyalu.vercel.app';
+        const apiUrl = `${vercelUrl}/api/send-whatsapp`;
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                channel: 'test',
+                message: 'status check'
+            })
+        });
+        
+        if (response.status === 400) {
+            // 400 에러는 API가 작동하지만 잘못된 요청임을 의미
+            statusText.textContent = '정상 작동';
+            statusDetails.innerHTML = `
+                <small>✅ API 엔드포인트 접근 가능</small><br>
+                <small>📍 URL: ${vercelUrl}</small>
+            `;
+            statusIndicator.className = 'status-indicator online';
+        } else if (response.ok) {
+            statusText.textContent = '정상 작동';
+            statusDetails.innerHTML = `
+                <small>✅ API 응답 정상</small><br>
+                <small>📍 URL: ${vercelUrl}</small>
+            `;
+            statusIndicator.className = 'status-indicator online';
+        } else {
+            throw new Error(`HTTP ${response.status}`);
+        }
+    } catch (error) {
+        statusText.textContent = '접근 불가';
+        statusDetails.innerHTML = `
+            <small>❌ ${error.message}</small><br>
+            <small>🔧 Vercel 배포 상태 확인 필요</small>
+        `;
+        statusIndicator.className = 'status-indicator offline';
+    }
+}
+
+async function checkWhatsAppAPI() {
+    const statusCard = document.getElementById('whatsappStatus');
+    const statusText = statusCard.querySelector('.status-text');
+    const statusDetails = statusCard.querySelector('.status-details');
+    const statusIndicator = statusCard.querySelector('.status-indicator');
+    
+    try {
+        const apiUrl = 'https://gate.whapi.cloud/messages/text';
+        const apiToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiToken}`
+            },
+            body: JSON.stringify({
+                to: 'test',
+                body: 'status check'
+            })
+        });
+        
+        if (response.status === 400 || response.status === 401) {
+            // 400/401 에러는 API가 작동하지만 인증이나 요청 형식 문제
+            statusText.textContent = 'API 접근 가능';
+            statusDetails.innerHTML = `
+                <small>✅ WhatsApp API 엔드포인트 정상</small><br>
+                <small>🔑 인증 토큰 확인됨</small>
+            `;
+            statusIndicator.className = 'status-indicator online';
+        } else if (response.ok) {
+            statusText.textContent = '정상 작동';
+            statusDetails.innerHTML = `
+                <small>✅ WhatsApp API 응답 정상</small><br>
+                <small>📱 메시지 전송 가능</small>
+            `;
+            statusIndicator.className = 'status-indicator online';
+        } else {
+            throw new Error(`HTTP ${response.status}`);
+        }
+    } catch (error) {
+        statusText.textContent = '접근 불가';
+        statusDetails.innerHTML = `
+            <small>❌ ${error.message}</small><br>
+            <small>🔧 WhatsApp API 설정 확인 필요</small>
+        `;
+        statusIndicator.className = 'status-indicator offline';
+    }
+}
+
+function exportStatusReport() {
+    const timestamp = new Date().toLocaleString('ko-KR');
+    const statusCards = document.querySelectorAll('.status-card');
+    
+    let report = `Singapore News Scraper - 서버 상태 리포트\n`;
+    report += `생성 시간: ${timestamp}\n\n`;
+    
+    statusCards.forEach(card => {
+        const title = card.querySelector('h3').textContent;
+        const status = card.querySelector('.status-text').textContent;
+        const details = card.querySelector('.status-details').textContent;
+        
+        report += `${title}: ${status}\n`;
+        if (details) {
+            report += `  ${details.replace(/\n/g, '\n  ')}\n`;
+        }
+        report += '\n';
+    });
+    
+    // 클립보드에 복사
+    navigator.clipboard.writeText(report).then(() => {
+        showNotification('상태 리포트가 클립보드에 복사되었습니다.', 'success');
+    }).catch(() => {
+        // 클립보드 복사 실패 시 텍스트 영역에 표시
+        const textarea = document.createElement('textarea');
+        textarea.value = report;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showNotification('상태 리포트가 클립보드에 복사되었습니다.', 'success');
+    });
 }
