@@ -25,14 +25,19 @@ jobs:
       run: |
         python scripts/scraper.py
     
-    - name: Send to WhatsApp (Simulation)
+    - name: Create data directories
       run: |
-        echo "WhatsApp sending would run here in production"
+        mkdir -p data/scraped
+        mkdir -p data/history
+    
+    - name: Send to WhatsApp
+      run: |
+        python scripts/send_whatsapp.py
     
     - name: Update history
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/history/*.json
-        git commit -m "Update scraping history" || echo "No changes to commit"
+        git add data/scraped/*.json data/history/*.json || echo "No files to add"
+        git commit -m "Update scraping and history data [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         git push

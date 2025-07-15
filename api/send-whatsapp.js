@@ -1,42 +1,74 @@
-// Node.js/Express 버전 (선택적)
-const express = require('express');
-const fetch = require('node-fetch');
-const router = express.Router();
+export default async function handler(req, res) {
+    // CORS 설정
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-const WHAPI_URL = 'https://gate.whapi.cloud/messages/text';
-const WHAPI_TOKEN = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
-
-router.post('/api/send-whatsapp', async (req, res) => {
-    const { channel, message } = req.body;
-    
-    if (!channel || !message) {
-        return res.json({ success: false, error: '필수 파라미터가 누락되었습니다.' });
+    // OPTIONS 요청 처리
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
     }
-    
+
+    // POST 요청만 허용
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
+
     try {
-        const response = await fetch(WHAPI_URL, {
+        const { channel, message } = req.body;
+
+        if (!channel || !message) {
+            return res.status(400).json({ 
+                success: false, 
+                error: '채널과 메시지는 필수입니다.' 
+            });
+        }
+
+        // WhatsApp API 설정
+        const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
+        const whatsappToken = process.env.WHATSAPP_API_KEY || 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+
+        // 채널 ID 형식 변환
+        let toNumber = channel;
+        if (channel.includes('@g.us')) {
+            toNumber = channel.replace('@g.us', '');
+        }
+
+        const whatsappData = {
+            to: toNumber,
+            body: message,
+            typing_time: 0
+        };
+
+        // WhatsApp API 호출
+        const response = await fetch(whatsappApiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${WHAPI_TOKEN}`
+                'Authorization': `Bearer ${whatsappToken}`
             },
-            body: JSON.stringify({
-                to: channel,
-                body: message
-            })
+            body: JSON.stringify(whatsappData)
         });
-        
+
         const data = await response.json();
-        
-        if (response.ok && data.message_id) {
-            res.json({ success: true, message_id: data.message_id });
+
+        if (response.ok && (data.id || data.message_id)) {
+            return res.status(200).json({
+                success: true,
+                messageId: data.id || data.message_id,
+                timestamp: new Date().toISOString()
+            });
         } else {
-            res.json({ success: false, error: data.error || '알 수 없는 오류' });
+            return res.status(400).json({
+                success: false,
+                error: data.message || data.error || '메시지 전송에 실패했습니다.'
+            });
         }
     } catch (error) {
         console.error('WhatsApp API Error:', error);
-        res.json({ success: false, error: '네트워크 오류' });
+        return res.status(500).json({
+            success: false,
+            error: '서버 오류가 발생했습니다.'
+        });
     }
-});
-
-module.exports = router;
+}

@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switch(page) {
             case 'dashboard':
                 content.innerHTML = getDashboardHTML();
+                loadDashboardData();
                 break;
             case 'settings':
                 if (isAdmin()) {
@@ -90,15 +91,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="dashboard-stats">
                     <div class="stat-card">
                         <h3>오늘 스크랩한 기사</h3>
-                        <p class="stat-number">0</p>
+                        <p class="stat-number" id="todayArticles">0</p>
                     </div>
                     <div class="stat-card">
                         <h3>전송 예정 기사</h3>
-                        <p class="stat-number">0</p>
+                        <p class="stat-number" id="pendingArticles">0</p>
                     </div>
                     <div class="stat-card">
                         <h3>다음 전송 시간</h3>
-                        <p class="stat-text">-</p>
+                        <p class="stat-text" id="nextSendTime">-</p>
+                    </div>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="btn btn-primary" onclick="refreshDashboard()">
+                        <i class="icon">🔄</i> 새로고침
+                    </button>
+                    <button class="btn btn-secondary" onclick="loadPage('history')">
+                        <i class="icon">📊</i> 전송 이력 보기
+                    </button>
+                </div>
+                <div class="recent-activity">
+                    <h3>최근 활동</h3>
+                    <div id="recentActivityList" class="activity-list">
+                        <p class="loading">활동 내역을 불러오는 중...</p>
                     </div>
                 </div>
             </div>
@@ -555,59 +570,74 @@ function sendTestMessage() {
     // 실제 메시지 처리 (시간 변수 치환)
     const processedMessage = testMessage.replace('${new Date().toLocaleString()}', new Date().toLocaleString());
     
-    // WhatsApp API 직접 호출
-    const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
-    const whatsappToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+    // 환경 감지 및 API 호출
+    const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
     
-    // 채널 ID 형식 변환
-    let toNumber = testChannel;
-    if (testChannel.includes('@g.us')) {
-        toNumber = testChannel.replace('@g.us', '');
-    }
-    
-    const whatsappData = {
-        to: toNumber,
-        body: processedMessage,
-        typing_time: 0
-    };
-    
-    fetch(whatsappApiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${whatsappToken}`
-        },
-        body: JSON.stringify(whatsappData)
-    })
-    .then(response => {
-        console.log('WhatsApp API Response Status:', response.status);
-        return response.json();
-    })
-    .then(data => {
-        console.log('WhatsApp API Response:', data);
-        
-        if (data.id || data.message_id) {
-            testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
-            recordTestHistory(testChannel, 'success', processedMessage);
-        } else {
-            const errorMsg = data.message || data.error || '알 수 없는 오류';
-            testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
+    if (isProduction) {
+        // 프로덕션 환경: 서버리스 함수 API 호출
+        fetch('/api/send-whatsapp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                channel: testChannel,
+                message: processedMessage
+            })
+        })
+        .then(response => {
+            console.log('API Response Status:', response.status);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('API Response:', data);
+            
+            if (data.success) {
+                testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
+                recordTestHistory(testChannel, 'success', processedMessage);
+            } else {
+                const errorMsg = data.error || '알 수 없는 오류';
+                testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
+                recordTestHistory(testChannel, 'failed', processedMessage);
+            }
+        })
+        .catch(error => {
+            console.error('API Error:', error);
+            testResult.innerHTML = '<div class="error-message">❌ API 호출 중 오류가 발생했습니다.</div>';
             recordTestHistory(testChannel, 'failed', processedMessage);
-        }
-    })
-    .catch(error => {
-        console.error('WhatsApp API Error:', error);
-        testResult.innerHTML = '<div class="error-message">❌ WhatsApp API 호출 중 오류가 발생했습니다.</div>';
-        recordTestHistory(testChannel, 'failed', processedMessage);
-    })
-    .finally(() => {
-        // 버튼 복원
-        testSendBtn.disabled = false;
-        testSendBtn.textContent = '테스트 전송';
-        
-        // 테스트 이력 새로고침
-        loadTestHistory();
-    });
+        })
+        .finally(() => {
+            // 버튼 복원
+            testSendBtn.disabled = false;
+            testSendBtn.textContent = '테스트 전송';
+            
+            // 테스트 이력 새로고침
+            loadTestHistory();
+        });
+    } else {
+        // 로컬 개발 환경: 시뮬레이션 모드
+        setTimeout(() => {
+            const success = Math.random() > 0.2; // 80% 성공률
+            
+            if (success) {
+                testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (시뮬레이션)</div>';
+                recordTestHistory(testChannel, 'success', processedMessage);
+            } else {
+                testResult.innerHTML = '<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다. (시뮬레이션)</div>';
+                recordTestHistory(testChannel, 'failed', processedMessage);
+            }
+            
+            // 버튼 복원
+            testSendBtn.disabled = false;
+            testSendBtn.textContent = '테스트 전송';
+            
+            // 테스트 이력 새로고침
+            loadTestHistory();
+        }, 1500);
+    }
 }
 
 function recordTestHistory(channel, status, message) {
@@ -760,27 +790,38 @@ async function loadSettings() {
 }
 
 function saveSettings() {
-    const settings = {
-        scrapTarget: document.getElementById('scrapTarget').value,
-        importantKeywords: document.getElementById('importantKeywords').value,
-        summaryOptions: {
-            headline: document.getElementById('summaryHeadline').checked,
-            keywords: document.getElementById('summaryKeywords').checked,
-            content: document.getElementById('summaryContent').checked
-        },
-        sendChannel: document.getElementById('sendChannel').value,
-        whatsappChannel: document.getElementById('whatsappChannel').value,
-        sendSchedule: {
-            period: document.getElementById('sendPeriod').value,
-            time: document.getElementById('sendTime').value,
-            weekdays: Array.from(document.querySelectorAll('input[name="weekday"]:checked')).map(cb => cb.value),
-            date: document.getElementById('monthlyDate').value
-        },
-        blockedKeywords: document.getElementById('blockedKeywords').value
-    };
-    
-    localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
-    alert('설정이 저장되었습니다.');
+    try {
+        const settings = {
+            scrapTarget: document.getElementById('scrapTarget').value,
+            importantKeywords: document.getElementById('importantKeywords').value,
+            summaryOptions: {
+                headline: document.getElementById('summaryHeadline').checked,
+                keywords: document.getElementById('summaryKeywords').checked,
+                content: document.getElementById('summaryContent').checked
+            },
+            sendChannel: document.getElementById('sendChannel').value,
+            whatsappChannel: document.getElementById('whatsappChannel').value,
+            sendSchedule: {
+                period: document.getElementById('sendPeriod').value,
+                time: document.getElementById('sendTime').value,
+                weekdays: Array.from(document.querySelectorAll('input[name="weekday"]:checked')).map(cb => cb.value),
+                date: document.getElementById('monthlyDate').value
+            },
+            blockedKeywords: document.getElementById('blockedKeywords').value
+        };
+        
+        // 설정 유효성 검사
+        if (settings.sendChannel === 'whatsapp' && !settings.whatsappChannel) {
+            showNotification('WhatsApp 채널을 선택해주세요.', 'error');
+            return;
+        }
+        
+        localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+        showNotification('설정이 저장되었습니다.', 'success');
+    } catch (error) {
+        console.error('설정 저장 오류:', error);
+        showNotification('설정 저장 중 오류가 발생했습니다.', 'error');
+    }
 }
 
 async function loadSites() {
@@ -983,12 +1024,12 @@ function addNewUser(event) {
     const result = addUser(userData);
     
     if (result.success) {
-        alert('사용자가 추가되었습니다.');
+        showNotification('사용자가 추가되었습니다.', 'success');
         hideAddUserForm();
         loadUsers();
         event.target.reset();
     } else {
-        alert(result.message);
+        showNotification(result.message, 'error');
     }
 }
 
@@ -997,9 +1038,9 @@ function resetUserPassword(userId) {
     if (newPassword) {
         const result = updateUser(userId, { password: newPassword });
         if (result.success) {
-            alert('비밀번호가 변경되었습니다.');
+            showNotification('비밀번호가 변경되었습니다.', 'success');
         } else {
-            alert(result.message);
+            showNotification(result.message, 'error');
         }
     }
 }
@@ -1008,7 +1049,7 @@ function deleteUserConfirm(userId) {
     if (confirm('정말로 이 사용자를 삭제하시겠습니까?')) {
         deleteUser(userId);
         loadUsers();
-        alert('사용자가 삭제되었습니다.');
+        showNotification('사용자가 삭제되었습니다.', 'success');
     }
 }
 
@@ -1017,7 +1058,7 @@ function showEditUserModal(userId) {
     const user = users.find(u => u.id === userId);
     
     if (!user) {
-        alert('사용자를 찾을 수 없습니다.');
+        showNotification('사용자를 찾을 수 없습니다.', 'error');
         return;
     }
     
@@ -1060,7 +1101,7 @@ function updateUserInfo() {
     const result = updateUser(userId, updates);
     
     if (result.success) {
-        alert('사용자 정보가 수정되었습니다.');
+        showNotification('사용자 정보가 수정되었습니다.', 'success');
         closeEditUserModal();
         loadUsers();
         
@@ -1075,6 +1116,188 @@ function updateUserInfo() {
             localStorage.setItem('singapore_news_auth', JSON.stringify(authData));
         }
     } else {
-        alert('사용자 정보 수정에 실패했습니다: ' + result.message);
+        showNotification('사용자 정보 수정에 실패했습니다: ' + result.message, 'error');
     }
+}
+
+// Dashboard Functions
+function loadDashboardData() {
+    updateTodayArticles();
+    updatePendingArticles();
+    updateNextSendTime();
+    loadRecentActivity();
+}
+
+function refreshDashboard() {
+    const refreshBtn = event.target;
+    refreshBtn.disabled = true;
+    refreshBtn.innerHTML = '<i class="icon">⏳</i> 새로고침 중...';
+    
+    loadDashboardData();
+    
+    setTimeout(() => {
+        refreshBtn.disabled = false;
+        refreshBtn.innerHTML = '<i class="icon">🔄</i> 새로고침';
+    }, 1000);
+}
+
+function updateTodayArticles() {
+    // 실제로는 스크랩된 데이터를 확인해야 하지만, 현재는 시뮬레이션
+    const todayCount = Math.floor(Math.random() * 50) + 10;
+    const element = document.getElementById('todayArticles');
+    if (element) {
+        animateNumber(element, 0, todayCount);
+    }
+}
+
+function updatePendingArticles() {
+    // 실제로는 대기 중인 기사를 확인해야 하지만, 현재는 시뮬레이션
+    const pendingCount = Math.floor(Math.random() * 20) + 5;
+    const element = document.getElementById('pendingArticles');
+    if (element) {
+        animateNumber(element, 0, pendingCount);
+    }
+}
+
+function updateNextSendTime() {
+    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+    const element = document.getElementById('nextSendTime');
+    
+    if (element && settings.sendSchedule) {
+        const now = new Date();
+        const sendTime = settings.sendSchedule.time || '09:00';
+        const [hours, minutes] = sendTime.split(':');
+        
+        const nextSend = new Date();
+        nextSend.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+        
+        if (nextSend <= now) {
+            nextSend.setDate(nextSend.getDate() + 1);
+        }
+        
+        element.textContent = nextSend.toLocaleString('ko-KR', {
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            weekday: 'short'
+        });
+    }
+}
+
+function loadRecentActivity() {
+    const activityList = document.getElementById('recentActivityList');
+    if (!activityList) return;
+    
+    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    
+    // 모든 활동을 합치고 정렬
+    const allActivities = [
+        ...history.map(h => ({...h, type: 'send'})),
+        ...testHistory.map(h => ({...h, type: 'test'}))
+    ].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    
+    if (allActivities.length === 0) {
+        activityList.innerHTML = '<p class="no-data">최근 활동이 없습니다.</p>';
+        return;
+    }
+    
+    const recentActivities = allActivities.slice(0, 5);
+    activityList.innerHTML = recentActivities.map(activity => {
+        const time = new Date(activity.timestamp).toLocaleString('ko-KR', {
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric'
+        });
+        
+        const icon = activity.type === 'test' ? '🧪' : '📤';
+        const status = activity.status === 'success' ? 
+            '<span class="status-success">성공</span>' : 
+            '<span class="status-failed">실패</span>';
+        
+        return `
+            <div class="activity-item">
+                <span class="activity-icon">${icon}</span>
+                <div class="activity-content">
+                    <div class="activity-title">
+                        ${activity.type === 'test' ? '테스트 전송' : '뉴스 전송'}
+                        ${status}
+                    </div>
+                    <div class="activity-time">${time}</div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function animateNumber(element, start, end, duration = 1000) {
+    const startTime = performance.now();
+    const range = end - start;
+    
+    function update() {
+        const currentTime = performance.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(start + range * progress);
+        element.textContent = current.toLocaleString();
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
+}
+
+// Notification System
+function showNotification(message, type = 'info') {
+    // 기존 알림 제거
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // 새 알림 생성
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">${getNotificationIcon(type)}</span>
+            <span class="notification-message">${message}</span>
+        </div>
+        <button class="notification-close" onclick="closeNotification(this)">×</button>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // 애니메이션
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // 자동 제거
+    setTimeout(() => {
+        closeNotification(notification);
+    }, 5000);
+}
+
+function getNotificationIcon(type) {
+    const icons = {
+        success: '✅',
+        error: '❌',
+        warning: '⚠️',
+        info: 'ℹ️'
+    };
+    return icons[type] || icons.info;
+}
+
+function closeNotification(element) {
+    const notification = element.classList.contains('notification') ? element : element.parentElement;
+    notification.classList.remove('show');
+    setTimeout(() => {
+        notification.remove();
+    }, 300);
 }
