@@ -39,9 +39,12 @@ jobs:
         python scripts/send_whatsapp.py
     
     - name: Update history
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
         git add data/scraped/*.json data/history/*.json || echo "No files to add"
         git commit -m "Update scraping and history data [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         git push
