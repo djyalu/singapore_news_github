@@ -434,29 +434,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function showMFAForm(username) {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('mfaContainer').style.display = 'block';
+        document.getElementById('mfaContainer').style.display = 'flex';
+        document.getElementById('mfaCode').focus();
         
         const mfaForm = document.getElementById('mfaForm');
         const mfaBackBtn = document.getElementById('mfaBackBtn');
         const mfaErrorMessage = document.getElementById('mfaErrorMessage');
         
-        mfaForm.addEventListener('submit', async function(e) {
+        // Remove any existing event listeners
+        const newMfaForm = mfaForm.cloneNode(true);
+        mfaForm.parentNode.replaceChild(newMfaForm, mfaForm);
+        
+        const newMfaBackBtn = mfaBackBtn.cloneNode(true);
+        mfaBackBtn.parentNode.replaceChild(newMfaBackBtn, mfaBackBtn);
+        
+        // Add new event listeners
+        document.getElementById('mfaForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const code = document.getElementById('mfaCode').value;
             
             const isValid = await verifyMFA(username, code);
             if (isValid) {
+                document.getElementById('mfaContainer').style.display = 'none';
                 checkAuth();
             } else {
-                mfaErrorMessage.textContent = '잘못된 인증 코드입니다.';
+                document.getElementById('mfaErrorMessage').textContent = '잘못된 인증 코드입니다.';
+                document.getElementById('mfaCode').value = '';
+                document.getElementById('mfaCode').focus();
             }
         });
         
-        mfaBackBtn.addEventListener('click', function() {
+        document.getElementById('mfaBackBtn').addEventListener('click', function() {
             logout();
             document.getElementById('mfaContainer').style.display = 'none';
-            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('mfaCode').value = '';
+            document.getElementById('mfaErrorMessage').textContent = '';
         });
     }
     

@@ -11,24 +11,69 @@
 </head>
 <body>
     <div id="app">
-        <div class="login-container" id="loginContainer">
-            <h1>Singapore News Scraper</h1>
-            <form id="loginForm">
-                <input type="text" id="username" placeholder="Username" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-                <p class="error-message" id="errorMessage"></p>
-            </form>
+        <div class="login-page" id="loginContainer">
+            <div class="login-content">
+                <div class="login-illustration">
+                    <img src="images/login-illustration.svg" alt="Singapore News Illustration">
+                    <div class="login-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🌏</span>
+                            <span class="feature-text">싱가포르 주요 뉴스 실시간 수집</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🤖</span>
+                            <span class="feature-text">AI 기반 자동 요약 및 분류</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📱</span>
+                            <span class="feature-text">WhatsApp 자동 전송</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-form-container">
+                    <div class="login-header">
+                        <h1>Singapore News Scraper</h1>
+                        <p class="login-subtitle">싱가포르 뉴스를 한눈에 모아보세요</p>
+                    </div>
+                    
+                    <form id="loginForm" class="login-form">
+                        <div class="form-field">
+                            <label for="username">사용자 ID</label>
+                            <input type="text" id="username" placeholder="아이디를 입력하세요" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="password">비밀번호</label>
+                            <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                        </div>
+                        <button type="submit" class="login-button">
+                            <span class="button-text">로그인</span>
+                            <span class="button-icon">→</span>
+                        </button>
+                        <p class="error-message" id="errorMessage"></p>
+                    </form>
+                    
+                    <div class="login-footer">
+                        <p class="login-info">기본 관리자 계정: admin / Admin@123</p>
+                    </div>
+                </div>
+            </div>
             
-            <div class="mfa-container" id="mfaContainer" style="display: none;">
-                <h2>2단계 인증</h2>
-                <p>인증 앱에서 6자리 코드를 입력하세요</p>
-                <form id="mfaForm">
-                    <input type="text" id="mfaCode" placeholder="000000" maxlength="6" required>
-                    <button type="submit">인증</button>
-                    <button type="button" id="mfaBackBtn">뒤로가기</button>
-                    <p class="error-message" id="mfaErrorMessage"></p>
-                </form>
+            <div class="mfa-modal" id="mfaContainer" style="display: none;">
+                <div class="mfa-content">
+                    <div class="mfa-icon">🔐</div>
+                    <h2>2단계 인증</h2>
+                    <p>인증 앱에서 생성된 6자리 코드를 입력하세요</p>
+                    <form id="mfaForm">
+                        <div class="mfa-input-group">
+                            <input type="text" id="mfaCode" placeholder="000000" maxlength="6" required autocomplete="off">
+                        </div>
+                        <div class="mfa-buttons">
+                            <button type="submit" class="btn btn-primary">인증하기</button>
+                            <button type="button" id="mfaBackBtn" class="btn btn-secondary">뒤로가기</button>
+                        </div>
+                        <p class="error-message" id="mfaErrorMessage"></p>
+                    </form>
+                </div>
             </div>
         </div>
         
