@@ -648,7 +648,7 @@ function sendTestMessage() {
         // API 호출 실패 시 환경에 따른 대체 처리
         if (isProduction) {
             // GitHub Pages에서 실행 중인 경우 Vercel API 시도
-            const VERCEL_URL = 'https://singapore-news-github-evtridssr-djyalus-projects.vercel.app';
+            const VERCEL_URL = 'https://singapore-news-github.vercel.app';
             const apiUrl = `${VERCEL_URL}/api/send-whatsapp`;
             
             fetch(apiUrl, {
@@ -1990,7 +1990,7 @@ async function checkVercelAPI() {
     const statusIndicator = statusCard.querySelector('.status-indicator');
     
     try {
-        const vercelUrl = 'https://singapore-news-github-evtridssr-djyalus-projects.vercel.app';
+        const vercelUrl = 'https://singapore-news-github.vercel.app';
         const apiUrl = `${vercelUrl}/api/send-whatsapp`;
         
         const response = await fetch(apiUrl, {
