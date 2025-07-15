@@ -637,7 +637,16 @@ function sendTestMessage() {
             testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다!</div>';
             recordTestHistory(testChannel, 'success', processedMessage);
         } else {
-            const errorMsg = data.message || data.error || '알 수 없는 오류';
+            let errorMsg = '알 수 없는 오류';
+            if (data.error) {
+                if (typeof data.error === 'object') {
+                    errorMsg = data.error.message || data.error.details || JSON.stringify(data.error);
+                } else {
+                    errorMsg = data.error;
+                }
+            } else if (data.message) {
+                errorMsg = data.message;
+            }
             testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
             recordTestHistory(testChannel, 'failed', processedMessage);
         }
@@ -672,7 +681,16 @@ function sendTestMessage() {
                     testResult.innerHTML = '<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (Vercel API)</div>';
                     recordTestHistory(testChannel, 'success', processedMessage);
                 } else {
-                    const errorMsg = data.error || '알 수 없는 오류';
+                    let errorMsg = '알 수 없는 오류';
+                    if (data.error) {
+                        if (typeof data.error === 'object') {
+                            errorMsg = data.error.message || data.error.details || JSON.stringify(data.error);
+                        } else {
+                            errorMsg = data.error;
+                        }
+                    } else if (data.message) {
+                        errorMsg = data.message;
+                    }
                     testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
                     recordTestHistory(testChannel, 'failed', processedMessage);
                 }
