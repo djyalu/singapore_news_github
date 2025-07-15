@@ -304,8 +304,42 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="page-section">
                 <h2>Settings</h2>
                 
-                <div class="settings-section">
-                    <h3>스크랩 대상 사이트 관리</h3>
+                <!-- Tab Navigation -->
+                <div class="border-b border-gray-200">
+                    <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                        <button onclick="switchSettingsTab('sites')" class="settings-tab active whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="sites">
+                            <svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                            사이트 관리
+                        </button>
+                        <button onclick="switchSettingsTab('scraping')" class="settings-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="scraping">
+                            <svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            스크랩 설정
+                        </button>
+                        <button onclick="switchSettingsTab('delivery')" class="settings-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="delivery">
+                            <svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                            전송 설정
+                        </button>
+                        <button onclick="switchSettingsTab('test')" class="settings-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm" data-tab="test">
+                            <svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            테스트
+                        </button>
+                    </nav>
+                </div>
+                
+                <!-- Tab Content -->
+                
+                <!-- Sites Tab -->
+                <div id="sites-tab" class="settings-tab-content active">
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">스크랩 대상 사이트 관리</h3>
                     <form id="siteForm">
                         <div class="form-group">
                             <label>그룹명</label>
@@ -341,10 +375,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         </thead>
                         <tbody></tbody>
                     </table>
+                    </div>
                 </div>
                 
-                <div class="settings-section">
-                    <h3>스크랩 대상 설정</h3>
+                <!-- Scraping Tab -->
+                <div id="scraping-tab" class="settings-tab-content" style="display: none;">
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">스크랩 대상 설정</h3>
                     <div class="form-group">
                         <label>스크랩 대상</label>
                         <select id="scrapTarget">
@@ -357,10 +394,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <label>중요 키워드 (쉼표로 구분)</label>
                         <input type="text" id="importantKeywords" placeholder="Singapore, Economy, Technology">
                     </div>
-                </div>
-                
-                <div class="settings-section">
-                    <h3>요약 기준</h3>
+                    </div>
+                    
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">요약 기준</h3>
                     <div class="checkbox-group">
                         <label>
                             <input type="checkbox" id="summaryHeadline" checked>
@@ -375,10 +412,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             본문내용
                         </label>
                     </div>
+                    </div>
+                    
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">기타 설정</h3>
+                        <div class="form-group">
+                            <label>유해 키워드 차단 (쉼표로 구분)</label>
+                            <textarea id="blockedKeywords" rows="3" placeholder="violence, adult, gambling" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="settings-section">
-                    <h3>전송 대상</h3>
+                <!-- Delivery Tab -->
+                <div id="delivery-tab" class="settings-tab-content" style="display: none;">
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">전송 대상</h3>
                     <div class="form-group">
                         <label>전송 채널</label>
                         <select id="sendChannel">
@@ -393,10 +441,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <option value="120363421252284444@g.us">Singapore News Backup</option>
                         </select>
                     </div>
-                </div>
-                
-                <div class="settings-section">
-                    <h3>전송 스케줄</h3>
+                    </div>
+                    
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">전송 스케줄</h3>
                     <div class="form-group">
                         <label>전송 주기</label>
                         <select id="sendPeriod">
@@ -425,18 +473,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <label>전송 시간</label>
                         <input type="time" id="sendTime" value="09:00">
                     </div>
-                </div>
-                
-                <div class="settings-section">
-                    <h3>기타 설정</h3>
-                    <div class="form-group">
-                        <label>유해 키워드 차단 (쉼표로 구분)</label>
-                        <textarea id="blockedKeywords" rows="3" placeholder="violence, adult, gambling"></textarea>
                     </div>
                 </div>
                 
-                <div class="settings-section">
-                    <h3>테스트 전송</h3>
+                <!-- Test Tab -->
+                <div id="test-tab" class="settings-tab-content" style="display: none;">
+                    <div class="bg-white shadow rounded-lg p-6 mt-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">테스트 전송</h3>
                     <p>설정한 채널로 테스트 메시지를 전송하여 연결 상태를 확인하세요.</p>
                     <div class="form-group">
                         <label>테스트 메시지</label>
@@ -468,9 +511,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4>최근 테스트 전송 이력</h4>
                         <div id="testHistoryList"></div>
                     </div>
+                    </div>
                 </div>
                 
-                <button class="btn" onclick="saveSettings()">설정 저장</button>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="saveSettings()">
+                        <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V2"></path>
+                        </svg>
+                        설정 저장
+                    </button>
+                </div>
             </div>
         `;
     }
@@ -739,6 +790,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     checkAuth();
 });
+
+function switchSettingsTab(tabName) {
+    // 모든 탭 콘텐츠 숨기기
+    document.querySelectorAll('.settings-tab-content').forEach(content => {
+        content.style.display = 'none';
+    });
+    
+    // 모든 탭 버튼 비활성화
+    document.querySelectorAll('.settings-tab').forEach(tab => {
+        tab.classList.remove('active', 'border-blue-500', 'text-blue-600');
+        tab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+    });
+    
+    // 선택된 탭 콘텐츠 표시
+    const tabContent = document.getElementById(`${tabName}-tab`);
+    if (tabContent) {
+        tabContent.style.display = 'block';
+    }
+    
+    // 선택된 탭 버튼 활성화
+    const tabButton = document.querySelector(`[data-tab="${tabName}"]`);
+    if (tabButton) {
+        tabButton.classList.add('active', 'border-blue-500', 'text-blue-600');
+        tabButton.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+    }
+}
 
 function sendTestMessage() {
     const testMessage = document.getElementById('testMessage').value;

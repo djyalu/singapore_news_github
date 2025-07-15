@@ -20,6 +20,27 @@
     box-sizing: border-box;
 }
 
+/* Settings Tab Styles */
+.settings-tab {
+    border-transparent: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-tab.active {
+    border-color: #3b82f6 !important;
+    color: #3b82f6 !important;
+}
+
+.settings-tab-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--light-bg);
