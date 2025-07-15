@@ -1391,21 +1391,7 @@ function updateTodayArticles() {
         }
     }
     
-    // 실제 스크랩이 구현되기 전까지는 시뮬레이션 데이터도 함께 표시
-    if (todayCount === 0) {
-        // 시뮬레이션 데이터 생성 및 저장
-        todayCount = Math.floor(Math.random() * 30) + 10;
-        const simulatedData = {
-            lastUpdated: new Date().toISOString(),
-            articles: Array(todayCount).fill(null).map((_, i) => ({
-                id: `sim-${Date.now()}-${i}`,
-                title: `시뮬레이션 기사 ${i + 1}`,
-                source: 'Simulation',
-                timestamp: new Date().toISOString()
-            }))
-        };
-        localStorage.setItem('singapore_news_scraped_data', JSON.stringify(simulatedData));
-    }
+    // 실제 스크랩 데이터만 표시 (시뮬레이션 데이터 생성 제거)
     
     const element = document.getElementById('todayArticles');
     if (element) {
