@@ -2,8 +2,12 @@ name: Singapore News Scraper
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # 6시간마다 실행
+    # 하루 3번 실행 (한국시간 기준: 오전 9시, 오후 1시, 오후 6시)
+    - cron: '0 0,4,9 * * *'  # UTC 기준
   workflow_dispatch:  # 수동 실행 가능
+  push:
+    paths:
+      - 'scripts/**'  # 스크립트 변경 시에도 실행
 
 jobs:
   scrape-and-send:

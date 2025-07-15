@@ -89,17 +89,19 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="page-section">
                 <h2>Dashboard</h2>
                 <div class="dashboard-stats">
-                    <div class="stat-card">
+                    <div class="stat-card" onclick="showArticlesList('today')" style="cursor: pointer;">
                         <h3>오늘 스크랩한 기사</h3>
                         <p class="stat-number" id="todayArticles">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>전송 예정 기사</h3>
-                        <p class="stat-number" id="pendingArticles">0</p>
+                        <div class="stat-action">클릭하여 보기 →</div>
                     </div>
                     <div class="stat-card">
                         <h3>다음 전송 시간</h3>
                         <p class="stat-text" id="nextSendTime">-</p>
+                    </div>
+                    <div class="stat-card" onclick="showSendSettings()" style="cursor: pointer;">
+                        <h3>전송 설정</h3>
+                        <p class="stat-text" id="sendChannelInfo">미설정</p>
+                        <div class="stat-action">설정하기 →</div>
                     </div>
                 </div>
                 <div class="dashboard-actions">
@@ -595,8 +597,14 @@ function sendTestMessage() {
     const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
     
     if (isProduction) {
+        // Vercel 배포 URL 설정 (사용자가 직접 수정 필요)
+        const VERCEL_URL = 'https://singapore-news-github-djyalu.vercel.app'; // TODO: 실제 Vercel URL로 변경
+        const apiUrl = window.location.hostname.includes('github.io') 
+            ? `${VERCEL_URL}/api/send-whatsapp`  // GitHub Pages에서 실행 시
+            : '/api/send-whatsapp';  // Vercel에서 직접 실행 시
+        
         // 프로덕션 환경: 서버리스 함수 API 호출
-        fetch('/api/send-whatsapp', {
+        fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -992,13 +1000,39 @@ function showHistoryDetail(recordId) {
     const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
     const record = history.find(r => r.id === recordId);
     
-    if (record) {
-        alert(`전송 상세 정보\n\n` +
-              `전송 시간: ${new Date(record.timestamp).toLocaleString()}\n` +
-              `채널: ${getChannelName(record.channel)}\n` +
-              `상태: ${record.status === 'success' ? '성공' : '실패'}\n` +
-              `헤더: ${record.header}\n` +
-              `메시지 길이: ${record.message_length || 0}자`);
+    if (record && record.articles && record.articles.length > 0) {
+        // 기사가 있는 경우 모달로 표시
+        const modal = createArticlesModal();
+        document.body.appendChild(modal);
+        
+        const content = document.getElementById('articlesModalContent');
+        const title = document.getElementById('modalTitle');
+        
+        title.textContent = `전송 기록 - ${new Date(record.timestamp).toLocaleString('ko-KR')}`;
+        
+        let html = `
+            <div class="history-detail-info">
+                <div class="info-row">
+                    <span class="info-label">채널:</span>
+                    <span class="info-value">${getChannelName(record.channel)}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">상태:</span>
+                    <span class="info-value ${record.status}">${record.status === 'success' ? '✅ 성공' : '❌ 실패'}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">기사 수:</span>
+                    <span class="info-value">${record.articles.length}개</span>
+                </div>
+            </div>
+            <hr style="margin: 20px 0;">
+        `;
+        
+        renderArticlesList(record.articles, content);
+        content.innerHTML = html + content.innerHTML;
+    } else {
+        // 기사가 없는 경우 기본 정보만 표시
+        showNotification(`전송 시간: ${new Date(record.timestamp).toLocaleString()}, 상태: ${record.status === 'success' ? '성공' : '실패'}`, 'info');
     }
 }
 
@@ -1144,8 +1178,8 @@ function updateUserInfo() {
 // Dashboard Functions
 function loadDashboardData() {
     updateTodayArticles();
-    updatePendingArticles();
     updateNextSendTime();
+    updateSendChannelInfo();
     loadRecentActivity();
 }
 
@@ -1207,31 +1241,17 @@ function updateTodayArticles() {
     }
 }
 
-function updatePendingArticles() {
-    // 설정에서 전송 대기 중인 기사 확인
+function updateSendChannelInfo() {
     const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
-    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
-    let pendingCount = 0;
+    const element = document.getElementById('sendChannelInfo');
     
-    if (scrapedData && settings.sendChannel) {
-        try {
-            const data = JSON.parse(scrapedData);
-            if (data.articles) {
-                // 아직 전송되지 않은 기사 수
-                const sentHistory = JSON.parse(localStorage.getItem('singapore_news_sent_articles') || '[]');
-                const sentIds = new Set(sentHistory.map(h => h.articleId));
-                
-                pendingCount = data.articles.filter(article => !sentIds.has(article.id)).length;
-            }
-        } catch (error) {
-            console.error('대기 기사 계산 오류:', error);
-        }
-    }
-    
-    const element = document.getElementById('pendingArticles');
     if (element) {
-        const currentValue = parseInt(element.textContent) || 0;
-        animateNumber(element, currentValue, pendingCount);
+        if (settings.sendChannel === 'whatsapp' && settings.whatsappChannel) {
+            const channelName = getChannelName(settings.whatsappChannel);
+            element.innerHTML = `<span style="color: #28a745;">✓ ${channelName}</span>`;
+        } else {
+            element.innerHTML = '<span style="color: #dc3545;">미설정</span>';
+        }
     }
 }
 
@@ -1446,4 +1466,247 @@ function loadScrapedArticles() {
         console.error('기사 로드 오류:', error);
         articlesList.innerHTML = '<p class="error-message">기사를 불러오는 중 오류가 발생했습니다.</p>';
     }
+}
+
+// Articles Modal Functions
+function showArticlesList(type) {
+    const modal = createArticlesModal();
+    document.body.appendChild(modal);
+    
+    if (type === 'today') {
+        loadTodayArticles();
+    } else if (type === 'sent') {
+        loadSentArticles();
+    }
+}
+
+function createArticlesModal() {
+    const modal = document.createElement('div');
+    modal.className = 'modal articles-modal';
+    modal.id = 'articlesModal';
+    modal.innerHTML = `
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">기사 목록</h2>
+                <button class="modal-close" onclick="closeArticlesModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="articlesModalContent" class="articles-modal-content">
+                    <p class="loading">기사를 불러오는 중...</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 모달 바깥 클릭시 닫기
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeArticlesModal();
+        }
+    });
+    
+    return modal;
+}
+
+function closeArticlesModal() {
+    const modal = document.getElementById('articlesModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+function loadTodayArticles() {
+    const content = document.getElementById('articlesModalContent');
+    const title = document.getElementById('modalTitle');
+    
+    title.textContent = '오늘 스크랩한 기사';
+    
+    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
+    if (!scrapedData) {
+        content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+        return;
+    }
+    
+    try {
+        const data = JSON.parse(scrapedData);
+        const today = new Date().toDateString();
+        const lastUpdate = new Date(data.lastUpdated);
+        
+        if (lastUpdate.toDateString() !== today || !data.articles || data.articles.length === 0) {
+            content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        renderArticlesList(data.articles, content);
+    } catch (error) {
+        console.error('기사 로드 오류:', error);
+        content.innerHTML = '<p class="error-message">기사를 불러오는 중 오류가 발생했습니다.</p>';
+    }
+}
+
+function loadSentArticles() {
+    const content = document.getElementById('articlesModalContent');
+    const title = document.getElementById('modalTitle');
+    
+    title.textContent = '전송된 기사';
+    
+    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    const sentArticles = history.filter(h => h.articles && h.articles.length > 0);
+    
+    if (sentArticles.length === 0) {
+        content.innerHTML = '<p class="no-data">전송된 기사가 없습니다.</p>';
+        return;
+    }
+    
+    let html = '';
+    sentArticles.forEach(record => {
+        html += `
+            <div class="sent-record">
+                <div class="sent-record-header">
+                    <span class="sent-time">${new Date(record.timestamp).toLocaleString('ko-KR')}</span>
+                    <span class="sent-status ${record.status}">${record.status === 'success' ? '✅ 성공' : '❌ 실패'}</span>
+                </div>
+                <div class="sent-articles">
+        `;
+        
+        if (record.articles) {
+            record.articles.forEach(article => {
+                html += createArticleCard(article);
+            });
+        }
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+    
+    content.innerHTML = html;
+}
+
+function renderArticlesList(articles, container) {
+    // 소스별로 그룹화
+    const groupedArticles = articles.reduce((groups, article) => {
+        const source = article.source || 'Unknown';
+        if (!groups[source]) groups[source] = [];
+        groups[source].push(article);
+        return groups;
+    }, {});
+    
+    let html = '';
+    Object.entries(groupedArticles).forEach(([source, sourceArticles]) => {
+        html += `
+            <div class="article-group">
+                <h4 class="article-source">${source} (${sourceArticles.length})</h4>
+                <div class="article-grid">
+        `;
+        
+        sourceArticles.forEach(article => {
+            html += createArticleCard(article);
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+function createArticleCard(article) {
+    return `
+        <div class="article-card" onclick="showArticleDetail('${encodeURIComponent(JSON.stringify(article))}')">
+            <div class="article-card-header">
+                <h5 class="article-card-title">${article.title}</h5>
+                ${article.category ? `<span class="article-category">${article.category}</span>` : ''}
+            </div>
+            ${article.summary ? `<p class="article-card-summary">${article.summary.substring(0, 150)}...</p>` : ''}
+            <div class="article-card-footer">
+                <span class="article-time">⏰ ${new Date(article.timestamp || article.date).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
+                ${article.url ? `<a href="${article.url}" target="_blank" class="article-link" onclick="event.stopPropagation()">원문 보기 →</a>` : ''}
+            </div>
+        </div>
+    `;
+}
+
+function showArticleDetail(encodedArticle) {
+    try {
+        const article = JSON.parse(decodeURIComponent(encodedArticle));
+        
+        const detailModal = document.createElement('div');
+        detailModal.className = 'modal article-detail-modal';
+        detailModal.id = 'articleDetailModal';
+        
+        detailModal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>${article.title}</h3>
+                    <button class="modal-close" onclick="closeArticleDetail()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="article-detail-meta">
+                        ${article.source ? `<span class="article-source-badge">${article.source}</span>` : ''}
+                        ${article.category ? `<span class="article-category-badge">${article.category}</span>` : ''}
+                        <span class="article-time">${new Date(article.timestamp || article.date).toLocaleString('ko-KR')}</span>
+                    </div>
+                    ${article.summary ? `
+                        <div class="article-detail-section">
+                            <h4>요약</h4>
+                            <p>${article.summary}</p>
+                        </div>
+                    ` : ''}
+                    ${article.content ? `
+                        <div class="article-detail-section">
+                            <h4>본문</h4>
+                            <p>${article.content}</p>
+                        </div>
+                    ` : ''}
+                    ${article.keywords && article.keywords.length > 0 ? `
+                        <div class="article-detail-section">
+                            <h4>키워드</h4>
+                            <div class="article-keywords">
+                                ${article.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    ${article.url ? `
+                        <div class="article-detail-actions">
+                            <a href="${article.url}" target="_blank" class="btn btn-primary">원문 보기</a>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(detailModal);
+        
+        // 모달 바깥 클릭시 닫기
+        detailModal.addEventListener('click', function(e) {
+            if (e.target === detailModal) {
+                closeArticleDetail();
+            }
+        });
+    } catch (error) {
+        console.error('기사 상세 표시 오류:', error);
+        showNotification('기사 정보를 표시할 수 없습니다.', 'error');
+    }
+}
+
+function closeArticleDetail() {
+    const modal = document.getElementById('articleDetailModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+function showSendSettings() {
+    loadPage('settings');
+    // 설정 페이지로 이동 후 전송 설정 섹션으로 스크롤
+    setTimeout(() => {
+        const sendSection = document.querySelector('.settings-section:nth-child(4)');
+        if (sendSection) {
+            sendSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, 100);
 }
