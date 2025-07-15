@@ -1,0 +1,42 @@
+name: Scrape News Only
+
+on:
+  workflow_dispatch:  # 수동 실행만
+  
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4 lxml
+    
+    - name: Create data directories
+      run: |
+        mkdir -p data/scraped
+        mkdir -p data/history
+    
+    - name: Run scraper only
+      run: |
+        python scripts/scraper.py
+    
+    - name: Save scraped data
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f data/scraped/*.json || echo "No scraped files to add"
+        git commit -m "Update scraped data [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
+        git push

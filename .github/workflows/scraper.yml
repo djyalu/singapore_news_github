@@ -9,6 +9,9 @@ on:
     paths:
       - 'scripts/**'  # 스크립트 변경 시에도 실행
 
+permissions:
+  contents: write
+  
 jobs:
   scrape-and-send:
     runs-on: ubuntu-latest
