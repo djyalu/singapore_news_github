@@ -605,11 +605,9 @@ function sendTestMessage() {
     const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
     const whatsappToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
     
-    // 채널 ID 형식 변환
+    // 채널 ID 형식 변환 (그룹 채널은 @g.us 유지)
     let toNumber = testChannel;
-    if (testChannel.includes('@g.us')) {
-        toNumber = testChannel.replace('@g.us', '');
-    }
+    // 그룹 채널(@g.us)은 그대로 유지, 개인 채널만 숫자로 변환
     
     const whatsappData = {
         to: toNumber,

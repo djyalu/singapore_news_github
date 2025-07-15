@@ -28,11 +28,9 @@ module.exports = async (req, res) => {
         const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
         const whatsappToken = process.env.WHATSAPP_API_KEY || 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
 
-        // 채널 ID 형식 변환
+        // 채널 ID 형식 변환 (그룹 채널은 @g.us 유지)
         let toNumber = channel;
-        if (channel.includes('@g.us')) {
-            toNumber = channel.replace('@g.us', '');
-        }
+        // 그룹 채널(@g.us)은 그대로 유지, 개인 채널만 숫자로 변환
 
         const whatsappData = {
             to: toNumber,
