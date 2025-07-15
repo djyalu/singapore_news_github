@@ -1856,7 +1856,8 @@ async function loadScrapedArticles() {
         articlesList.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
         return;
     }
-        
+    
+    try {
         // 기사를 소스별로 그룹화
         const groupedArticles = data.articles.reduce((groups, article) => {
             const source = article.source || article.site || 'Unknown';

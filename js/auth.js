@@ -16,6 +16,18 @@ function initializeUsers() {
     if (!users) {
         localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
     }
+    
+    // 사용자 데이터 검증
+    try {
+        const parsedUsers = JSON.parse(localStorage.getItem(USERS_KEY));
+        if (!Array.isArray(parsedUsers) || parsedUsers.length === 0) {
+            console.log('Users data is invalid or empty, reinitializing...');
+            localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
+        }
+    } catch (e) {
+        console.error('Error parsing users data:', e);
+        localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
+    }
 }
 
 function login(username, password) {
