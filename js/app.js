@@ -88,7 +88,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function getDashboardHTML() {
         return `
             <div class="page-section">
-                <h2>Dashboard</h2>
+                <div class="dashboard-header">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard-actions">
+                        <button class="btn btn-primary" id="refreshBtn">
+                            <i class="icon">🔄</i> 새로고침
+                        </button>
+                        <button class="btn btn-secondary" id="historyBtn">
+                            <i class="icon">📊</i> 전송 이력 보기
+                        </button>
+                        <button class="btn btn-info" id="serverStatusBtn">
+                            <i class="icon">🔧</i> 서버 상태
+                        </button>
+                    </div>
+                </div>
                 <div class="dashboard-stats">
                     <div class="stat-card clickable" id="todayArticlesCard" style="cursor: pointer;">
                         <h3>오늘 스크랩한 기사</h3>
@@ -105,16 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="stat-action">설정하기 →</div>
                     </div>
                 </div>
-                <div class="dashboard-actions">
-                    <button class="btn btn-primary" id="refreshBtn">
-                        <i class="icon">🔄</i> 새로고침
-                    </button>
-                    <button class="btn btn-secondary" id="historyBtn">
-                        <i class="icon">📊</i> 전송 이력 보기
-                    </button>
-                    <button class="btn btn-info" id="serverStatusBtn">
-                        <i class="icon">🔧</i> 서버 상태
-                    </button>
+                <div class="recent-activity">
+                    <h3>최근 활동</h3>
+                    <div id="recentActivityList" class="activity-list">
+                        <p class="loading">활동 내역을 불러오는 중...</p>
+                    </div>
                 </div>
                 <div class="scraped-articles">
                     <div class="scraped-articles-header">
@@ -150,12 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <i class="icon">📋</i> 클립보드 복사
                             </button>
                         </div>
-                    </div>
-                </div>
-                <div class="recent-activity">
-                    <h3>최근 활동</h3>
-                    <div id="recentActivityList" class="activity-list">
-                        <p class="loading">활동 내역을 불러오는 중...</p>
                     </div>
                 </div>
             </div>
