@@ -19,16 +19,28 @@ module.exports = async (req, res) => {
     }
 
     try {
+        // GitHub Personal Access Token 확인
         const githubToken = process.env.GITHUB_TOKEN;
+        if (!githubToken) {
+            return res.status(500).json({ 
+                success: false, 
+                error: 'GitHub token not configured. Please set GITHUB_TOKEN environment variable.' 
+            });
+        }
+
+        // GitHub 저장소 정보
         const owner = process.env.GITHUB_OWNER || 'djyalu';
         const repo = process.env.GITHUB_REPO || 'singapore_news_github';
 
+        // Octokit 인스턴스 생성
         const octokit = new Octokit({
             auth: githubToken,
         });
 
-        // 스크래핑만 실행
-        const workflow_id = 'scraper-only.yml';
+        // Scrape Only 워크플로우 트리거
+        const workflow_id = 'scrape-only.yml';
+
+        console.log(`Triggering scrape-only workflow: ${owner}/${repo}/${workflow_id}`);
 
         const response = await octokit.rest.actions.createWorkflowDispatch({
             owner,
@@ -37,18 +49,31 @@ module.exports = async (req, res) => {
             ref: 'main',
         });
 
+        console.log('Scrape-only workflow triggered successfully:', response.status);
+
         return res.status(200).json({
             success: true,
-            message: '뉴스 스크래핑이 시작되었습니다.',
+            message: '스크래핑이 시작되었습니다 (전송 없음). GitHub Actions에서 진행 상황을 확인하세요.',
+            github_response_status: response.status,
             workflow_url: `https://github.com/${owner}/${repo}/actions`
         });
 
     } catch (error) {
-        console.error('Scraping trigger error:', error);
+        console.error('GitHub Actions trigger error:', error);
         
+        let errorMessage = '스크래핑 시작 중 오류가 발생했습니다.';
+        
+        if (error.status === 404) {
+            errorMessage = 'GitHub 저장소 또는 워크플로우를 찾을 수 없습니다.';
+        } else if (error.status === 401) {
+            errorMessage = 'GitHub 인증에 실패했습니다. GITHUB_TOKEN을 확인하세요.';
+        } else if (error.status === 403) {
+            errorMessage = 'GitHub Actions 실행 권한이 없습니다.';
+        }
+
         return res.status(500).json({
             success: false,
-            error: '스크래핑 시작 중 오류가 발생했습니다.',
+            error: errorMessage,
             details: error.message
         });
     }

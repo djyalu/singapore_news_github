@@ -232,12 +232,27 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h3 class="text-lg leading-6 font-medium text-gray-900">오늘 스크랩한 기사</h3>
                                 <p class="mt-1 text-sm text-gray-500">실시간으로 수집된 싱가포르 뉴스 기사들</p>
                             </div>
-                            <div class="mt-3 sm:mt-0 flex space-x-3">
-                                <button type="button" onclick="scrapeNow()" id="scrapeNowBtn" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <div class="mt-3 sm:mt-0 flex flex-wrap gap-2">
+                                <!-- 통합 워크플로우 -->
+                                <button type="button" onclick="scrapeNow()" id="scrapeNowBtn" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" title="스크래핑 + WhatsApp 전송">
                                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                                     </svg>
-                                    지금 스크랩하기
+                                    스크래핑 + 전송
+                                </button>
+                                <!-- 스크래핑만 -->
+                                <button type="button" onclick="scrapeOnly()" id="scrapeOnlyBtn" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" title="스크래핑만 실행">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                    </svg>
+                                    스크래핑만
+                                </button>
+                                <!-- 전송만 -->
+                                <button type="button" onclick="sendOnly()" id="sendOnlyBtn" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" title="WhatsApp 전송만">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                    </svg>
+                                    전송만
                                 </button>
                                 <button type="button" onclick="generateSendMessage()" id="generateMessageBtn" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2794,7 +2809,97 @@ function resetScrapeButton() {
     const scrapeBtn = document.getElementById('scrapeNowBtn');
     if (scrapeBtn) {
         scrapeBtn.disabled = false;
-        scrapeBtn.innerHTML = '<i class="icon">🔄</i> 지금 스크래핑하기';
+        scrapeBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>스크래핑 + 전송';
+    }
+}
+
+// 스크래핑만 실행
+async function scrapeOnly() {
+    const scrapeBtn = document.getElementById('scrapeOnlyBtn');
+    if (!scrapeBtn) return;
+    
+    scrapeBtn.disabled = true;
+    scrapeBtn.innerHTML = '<i class="icon">⏳</i> 스크래핑 중...';
+    
+    showNotification('스크래핑만 실행합니다...', 'info');
+    
+    try {
+        // Scrape Only API 호출
+        const response = await fetch('https://singapore-news-github.vercel.app/api/scrape-only', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification('스크래핑이 시작되었습니다 (전송 없음)', 'success');
+            
+            setTimeout(() => {
+                const actionsUrl = 'https://github.com/djyalu/singapore_news_github/actions';
+                showNotification(`GitHub Actions: ${actionsUrl}`, 'info');
+                if (confirm('GitHub Actions 페이지로 이동하시겠습니까?')) {
+                    window.open(actionsUrl, '_blank');
+                }
+            }, 2000);
+            
+        } else {
+            throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
+        }
+        
+    } catch (error) {
+        console.error('스크래핑 오류:', error);
+        showNotification('스크래핑 실행 중 오류가 발생했습니다.', 'error');
+    } finally {
+        scrapeBtn.disabled = false;
+        scrapeBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>스크래핑만';
+    }
+}
+
+// 전송만 실행
+async function sendOnly() {
+    const sendBtn = document.getElementById('sendOnlyBtn');
+    if (!sendBtn) return;
+    
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = '<i class="icon">⏳</i> 전송 중...';
+    
+    showNotification('WhatsApp 전송만 실행합니다...', 'info');
+    
+    try {
+        // Send Only API 호출
+        const response = await fetch('https://singapore-news-github.vercel.app/api/send-only', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification('WhatsApp 전송이 시작되었습니다', 'success');
+            
+            setTimeout(() => {
+                const actionsUrl = 'https://github.com/djyalu/singapore_news_github/actions';
+                showNotification(`GitHub Actions: ${actionsUrl}`, 'info');
+                if (confirm('GitHub Actions 페이지로 이동하시겠습니까?')) {
+                    window.open(actionsUrl, '_blank');
+                }
+            }, 2000);
+            
+        } else {
+            throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
+        }
+        
+    } catch (error) {
+        console.error('전송 오류:', error);
+        showNotification('전송 실행 중 오류가 발생했습니다.', 'error');
+    } finally {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>전송만';
     }
 }
 
