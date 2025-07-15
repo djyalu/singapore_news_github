@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="dashboard-actions">
-                    <button class="btn btn-primary" onclick="refreshDashboard()">
+                    <button class="btn btn-primary" id="refreshBtn">
                         <i class="icon">🔄</i> 새로고침
                     </button>
                     <button class="btn btn-secondary" id="historyBtn">
@@ -1188,8 +1188,15 @@ function loadDashboardData() {
 }
 
 function setupDashboardEventListeners() {
+    const refreshBtn = document.getElementById('refreshBtn');
     const historyBtn = document.getElementById('historyBtn');
     const serverStatusBtn = document.getElementById('serverStatusBtn');
+    const todayArticlesCard = document.getElementById('todayArticlesCard');
+    const sendSettingsCard = document.getElementById('sendSettingsCard');
+    
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', refreshDashboard);
+    }
     
     if (historyBtn) {
         historyBtn.addEventListener('click', () => loadPage('history'));
@@ -1198,10 +1205,20 @@ function setupDashboardEventListeners() {
     if (serverStatusBtn) {
         serverStatusBtn.addEventListener('click', showServerStatus);
     }
+    
+    if (todayArticlesCard) {
+        todayArticlesCard.addEventListener('click', () => showArticlesList('today'));
+    }
+    
+    if (sendSettingsCard) {
+        sendSettingsCard.addEventListener('click', showSendSettings);
+    }
 }
 
-function refreshDashboard() {
-    const refreshBtn = event.target;
+function refreshDashboard(event) {
+    const refreshBtn = event ? event.target : document.getElementById('refreshBtn');
+    if (!refreshBtn) return;
+    
     refreshBtn.disabled = true;
     refreshBtn.innerHTML = '<i class="icon">⏳</i> 새로고침 중...';
     
