@@ -1947,13 +1947,49 @@ async function loadScrapedArticles() {
     try {
         articlesList.innerHTML = '<p class="loading">최신 기사를 불러오는 중...</p>';
         
-        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
-        if (response.ok) {
-            const result = await response.json();
-            
-            if (result.success) {
-                // 새로운 그룹별 데이터 구조 처리
-                if (result.articles) {
+        let result = null;
+        
+        try {
+            const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+            if (response.ok) {
+                result = await response.json();
+            }
+        } catch (apiError) {
+            console.log('Vercel API 호출 실패, GitHub API 직접 호출 시도...');
+        }
+        
+        // Vercel API 실패 시 GitHub API 직접 호출
+        if (!result || !result.success) {
+            try {
+                const githubResponse = await fetch('https://api.github.com/repos/djyalu/singapore_news_github/contents/data/scraped');
+                if (githubResponse.ok) {
+                    const files = await githubResponse.json();
+                    const newsFiles = files
+                        .filter(file => file.name.startsWith('news_') && file.name.endsWith('.json'))
+                        .sort((a, b) => b.name.localeCompare(a.name));
+                    
+                    if (newsFiles.length > 0) {
+                        const latestFile = newsFiles[0];
+                        const fileResponse = await fetch(latestFile.download_url);
+                        if (fileResponse.ok) {
+                            const articles = await fileResponse.json();
+                            result = {
+                                success: true,
+                                filename: latestFile.name,
+                                articles: articles,
+                                articleCount: articles.length
+                            };
+                        }
+                    }
+                }
+            } catch (githubError) {
+                console.error('GitHub API 직접 호출도 실패:', githubError);
+            }
+        }
+        
+        if (result && result.success) {
+            // 새로운 그룹별 데이터 구조 처리
+            if (result.articles) {
                     // 그룹별 통합 데이터 구조인지 확인
                     if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
                         data = {
@@ -3199,25 +3235,60 @@ async function loadLatestDataFromGitHub() {
     try {
         console.log('GitHub에서 최신 데이터를 로드합니다...');
         
-        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
-        if (response.ok) {
-            const result = await response.json();
-            
-            if (result.success && result.articles) {
-                // GitHub 데이터를 로컬 스토리지에 저장
-                const data = {
-                    lastUpdated: result.lastUpdated,
-                    articles: result.articles
-                };
-                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
-                
-                // UI 업데이트
-                loadScrapedArticles();
-                updateTodayArticles();
-                
-                console.log(`GitHub에서 ${result.articleCount}개의 기사를 로드했습니다.`);
-                showNotification(`최신 뉴스 ${result.articleCount}개를 불러왔습니다.`, 'success');
+        let result = null;
+        
+        try {
+            const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+            if (response.ok) {
+                result = await response.json();
             }
+        } catch (apiError) {
+            console.log('Vercel API 호출 실패, GitHub API 직접 호출 시도...');
+        }
+        
+        // Vercel API 실패 시 GitHub API 직접 호출
+        if (!result || !result.success) {
+            try {
+                const githubResponse = await fetch('https://api.github.com/repos/djyalu/singapore_news_github/contents/data/scraped');
+                if (githubResponse.ok) {
+                    const files = await githubResponse.json();
+                    const newsFiles = files
+                        .filter(file => file.name.startsWith('news_') && file.name.endsWith('.json'))
+                        .sort((a, b) => b.name.localeCompare(a.name));
+                    
+                    if (newsFiles.length > 0) {
+                        const latestFile = newsFiles[0];
+                        const fileResponse = await fetch(latestFile.download_url);
+                        if (fileResponse.ok) {
+                            const articles = await fileResponse.json();
+                            result = {
+                                success: true,
+                                filename: latestFile.name,
+                                articles: articles,
+                                articleCount: articles.length
+                            };
+                        }
+                    }
+                }
+            } catch (githubError) {
+                console.error('GitHub API 직접 호출도 실패:', githubError);
+            }
+        }
+        
+        if (result && result.success && result.articles) {
+            // GitHub 데이터를 로컬 스토리지에 저장
+            const data = {
+                lastUpdated: result.lastUpdated || new Date().toISOString(),
+                articles: result.articles
+            };
+            localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+            
+            // UI 업데이트
+            loadScrapedArticles();
+            updateTodayArticles();
+            
+            console.log(`GitHub에서 ${result.articleCount}개의 기사를 로드했습니다.`);
+            showNotification(`최신 뉴스 ${result.articleCount}개를 불러왔습니다.`, 'success');
         }
     } catch (error) {
         console.error('GitHub 데이터 로드 오류:', error);
