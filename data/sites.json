@@ -1,20 +1,32 @@
 [
   {
-    "group": "주요 뉴스",
+    "group": "News",
     "name": "The Straits Times",
-    "url": "https://www.straitstimes.com",
+    "url": "https://www.straitstimes.com/global",
     "period": "daily"
   },
   {
-    "group": "주요 뉴스",
+    "group": "News",
     "name": "Channel NewsAsia",
-    "url": "https://www.channelnewsasia.com/singapore",
+    "url": "https://www.channelnewsasia.com/",
     "period": "daily"
   },
   {
-    "group": "비즈니스",
-    "name": "The Business Times",
-    "url": "https://www.businesstimes.com.sg",
+    "group": "Economy",
+    "name": "Singapore Business Review",
+    "url": "https://sbr.com.sg/",
+    "period": "daily"
+  },
+  {
+    "group": "Education",
+    "name": "Ministry of Education",
+    "url": "https://www.moe.gov.sg/",
+    "period": "daily"
+  },
+  {
+    "group": "Art",
+    "name": "National Arts Council",
+    "url": "https://www.nac.gov.sg/",
     "period": "daily"
   }
 ]
