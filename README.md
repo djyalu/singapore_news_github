@@ -5,12 +5,70 @@
 ## 기능
 
 - 🌏 싱가포르 주요 뉴스 사이트 자동 스크래핑
-- 🤖 AI 기반 요약 및 키워드 추출
+- 🤖 AI 기반 한글 요약 (Google Gemini API)
 - 📱 WhatsApp 자동 전송
 - ⏰ 스케줄링 기능 (하루 3회 자동 실행)
 - 🔧 웹 대시보드를 통한 관리
 - 🔄 GitHub Actions 연동
-- 🗂️ 30일 데이터 보관 및 자동 정리
+- 🗂️ 30일 또는 50MB 제한 자동 정리
+- 👤 사용자 관리 및 인증 시스템
+
+## 시스템 아키텍처
+
+```mermaid
+graph TB
+    subgraph "Frontend (GitHub Pages)"
+        A[Web Dashboard<br/>HTML/JS/CSS]
+        B[localStorage<br/>캐시 데이터]
+        A <--> B
+    end
+    
+    subgraph "Vercel Serverless"
+        C[API Endpoints]
+        C1[/api/trigger-scraping]
+        C2[/api/save-settings]
+        C3[/api/get-latest-scraped]
+        C4[/api/send-whatsapp]
+        C --> C1
+        C --> C2
+        C --> C3
+        C --> C4
+    end
+    
+    subgraph "GitHub Repository"
+        D[data/settings.json<br/>설정 파일]
+        E[data/sites.json<br/>사이트 목록]
+        F[data/scraped/<br/>스크랩 데이터]
+        G[data/history/<br/>전송 이력]
+    end
+    
+    subgraph "GitHub Actions"
+        H[Scraper Workflow<br/>스크래핑 + 전송]
+        I[Scraper-Only<br/>스크래핑만]
+        J[Send-WhatsApp<br/>전송만]
+    end
+    
+    subgraph "External Services"
+        L[News Websites<br/>뉴스 사이트들]
+        M[WhatsApp API<br/>메시지 전송]
+        N[Google Gemini API<br/>한글 요약]
+    end
+    
+    A -->|API 호출| C
+    C1 -->|워크플로우 트리거| H
+    C2 -->|설정 저장| D
+    C3 -->|데이터 읽기| F
+    
+    H -->|뉴스 수집| L
+    H -->|AI 요약| N
+    H -->|데이터 저장| F
+    H -->|메시지 전송| M
+    H -->|이력 저장| G
+    
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style H fill:#bfb,stroke:#333,stroke-width:2px
+```
 
 ## 환경 설정
 
@@ -37,6 +95,18 @@ WHATSAPP_API_KEY=ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq     # WhatsApp API 키
 ### 3. WhatsApp API 설정
 
 WhatsApp API 토큰을 `WHATSAPP_API_KEY` 환경변수에 설정합니다.
+
+### 4. Google Gemini API 설정 (한글 요약)
+
+1. [Google AI Studio](https://makersuite.google.com/app/apikey) 방문
+2. Google 계정으로 로그인
+3. "Create API Key" 클릭
+4. GitHub Repository → Settings → Secrets and variables → Actions
+5. "New repository secret" 클릭
+6. Name: `GOOGLE_GEMINI_API_KEY`
+7. Value: 생성한 API 키 붙여넣기
+
+**무료 한도**: 일일 1,500회 요청 (충분함)
 
 ## 사용법
 
