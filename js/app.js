@@ -2765,11 +2765,31 @@ async function saveScrapedArticlesToGithub() {
 }
 
 function clearScrapedArticles() {
+    console.log('clearScrapedArticles called');
+    
     if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?')) {
+        console.log('User confirmed deletion');
+        
+        // 로컬 스토리지에서 삭제
         localStorage.removeItem('singapore_news_scraped_data');
-        loadScrapedArticles();
-        updateTodayArticles();
+        console.log('localStorage cleared');
+        
+        // UI 업데이트
+        const articlesList = document.getElementById('scrapedArticlesList');
+        if (articlesList) {
+            articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+        }
+        
+        // 기사 수 업데이트
+        const todayArticlesElement = document.getElementById('todayArticles');
+        if (todayArticlesElement) {
+            todayArticlesElement.textContent = '0';
+        }
+        
         showNotification('스크랩된 기사가 모두 삭제되었습니다.', 'success');
+        
+        // 페이지 새로고침 (선택사항)
+        // location.reload();
     }
 }
 
