@@ -2400,3 +2400,83 @@ body {
         padding: 12px 0;
     }
 }
+
+/* Enhanced Checkbox Styles */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white;
+    border: 2px solid #cbd5e0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #3b82f6;
+}
+
+input[type="checkbox"]:checked {
+    background: #3b82f6;
+    border-color: #3b82f6;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* For labels with checkboxes */
+label input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Grid checkbox layout */
+.checkbox-grid label {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-grid label:hover {
+    background-color: #f3f4f6;
+}
+
+/* Tailwind checkbox enhancements */
+input[type="checkbox"].h-5.w-5 {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+/* Settings page checkbox improvements */
+.space-y-3 label {
+    user-select: none;
+}
+
+.space-y-3 label:hover {
+    background-color: #f9fafb;
+    border-radius: 6px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}

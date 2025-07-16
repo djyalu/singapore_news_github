@@ -428,20 +428,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="bg-white shadow rounded-lg p-6 mt-4">
                         <h3 class="text-lg font-medium text-gray-900 mb-4">요약 기준</h3>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" id="summaryHeadline" checked>
-                            헤드라인
-                        </label>
-                        <label>
-                            <input type="checkbox" id="summaryKeywords" checked>
-                            키워드
-                        </label>
-                        <label>
-                            <input type="checkbox" id="summaryContent" checked>
-                            본문내용
-                        </label>
-                    </div>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" id="summaryHeadline" checked class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium text-gray-700">헤드라인</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" id="summaryKeywords" checked class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium text-gray-700">키워드</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" id="summaryContent" checked class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium text-gray-700">본문내용</span>
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="bg-white shadow rounded-lg p-6 mt-4">
@@ -484,15 +484,36 @@ document.addEventListener('DOMContentLoaded', function() {
                         </select>
                     </div>
                     <div class="form-group" id="weeklyOptions" style="display: none;">
-                        <label>요일 선택</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="weekday" value="1"> 월</label>
-                            <label><input type="checkbox" name="weekday" value="2"> 화</label>
-                            <label><input type="checkbox" name="weekday" value="3"> 수</label>
-                            <label><input type="checkbox" name="weekday" value="4"> 목</label>
-                            <label><input type="checkbox" name="weekday" value="5"> 금</label>
-                            <label><input type="checkbox" name="weekday" value="6"> 토</label>
-                            <label><input type="checkbox" name="weekday" value="0"> 일</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">요일 선택</label>
+                        <div class="grid grid-cols-7 gap-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="1" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">월</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="2" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">화</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="3" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">수</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="4" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">목</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="5" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">금</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="6" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">토</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" name="weekday" value="0" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">일</span>
+                            </label>
                         </div>
                     </div>
                     <div class="form-group" id="monthlyOptions" style="display: none;">
