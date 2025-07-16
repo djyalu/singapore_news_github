@@ -3073,44 +3073,6 @@ async function scrapeNow() {
             
             // 스크래핑 상태 모니터링 시작
             startScrapingStatusMonitor();
-                            }
-                            
-                            // UI 업데이트
-                            loadScrapedArticles();
-                            updateTodayArticles();
-                            
-                            // 스크래핑 이력 저장
-                            const scrapeHistory = JSON.parse(localStorage.getItem('singapore_news_scrape_history') || '[]');
-                            const articleCount = latestData.articles.length > 0 && latestData.articles[0].articles ? 
-                                latestData.articles.reduce((sum, group) => sum + group.article_count, 0) : 
-                                latestData.articles.length;
-                            
-                            scrapeHistory.push({
-                                timestamp: new Date().toISOString(),
-                                status: 'success',
-                                articleCount: articleCount,
-                                source: 'manual'
-                            });
-                            
-                            // 최대 50개까지만 저장
-                            if (scrapeHistory.length > 50) {
-                                scrapeHistory.shift();
-                            }
-                            
-                            localStorage.setItem('singapore_news_scrape_history', JSON.stringify(scrapeHistory));
-                            
-                            // 최근 활동 업데이트
-                            loadRecentActivity();
-                            
-                            showNotification(`스크래핑 완료! ${articleCount}개의 기사가 로드되었습니다.`, 'success');
-                        }
-                    }
-                } catch (error) {
-                    console.error('최신 데이터 로드 오류:', error);
-                } finally {
-                    resetScrapeButton();
-                }
-            }, 30000); // 30초 후
             
         } else {
             throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
