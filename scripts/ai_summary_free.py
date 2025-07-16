@@ -10,26 +10,42 @@ def translate_to_korean_summary_gemini(title, content):
         # Gemini API 키 확인
         api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
         if not api_key:
+            print("Gemini API key not found")
             return None
         
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel('gemini-pro')
         
-        # 내용 길이 제한
-        content_preview = content[:1000] if len(content) > 1000 else content
+        # 내용 길이 제한 및 정제
+        content = content.strip()
+        if not content:
+            content = "내용 없음"
+        content_preview = content[:800] if len(content) > 800 else content
         
-        prompt = f"""다음 싱가포르 뉴스를 한국어로 요약해주세요:
+        prompt = f"""다음 싱가포르 뉴스를 한국어로 간단히 요약해주세요.
 
 제목: {title}
 내용: {content_preview}
 
-3-4문장으로 핵심 내용만 요약하고, 중요한 숫자나 날짜를 포함해주세요."""
+요구사항:
+- 3-4문장으로 핵심 내용만 요약
+- 중요한 숫자, 날짜, 인물명 포함
+- 자연스러운 한국어로 작성
+- 불필요한 이모지나 기호 제외"""
         
         response = model.generate_content(prompt)
-        return f"📰 {response.text}"
+        if response and response.text:
+            # 응답 텍스트 정제
+            summary_text = response.text.strip()
+            # 불필요한 마크다운 제거
+            summary_text = summary_text.replace('**', '').replace('*', '')
+            return f"📰 {summary_text}"
+        else:
+            print("Gemini API returned empty response")
+            return None
         
     except Exception as e:
-        print(f"Gemini API error: {e}")
+        print(f"Gemini API error: {str(e)}")
         return None
 
 def translate_to_korean_summary_googletrans(title, content):
