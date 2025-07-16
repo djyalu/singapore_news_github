@@ -1781,11 +1781,13 @@ function loadRecentActivity() {
     
     const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
     const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    const scrapeHistory = JSON.parse(localStorage.getItem('singapore_news_scrape_history') || '[]');
     
     // 모든 활동을 합치고 정렬
     const allActivities = [
         ...history.map(h => ({...h, type: 'send'})),
-        ...testHistory.map(h => ({...h, type: 'test'}))
+        ...testHistory.map(h => ({...h, type: 'test'})),
+        ...scrapeHistory.map(h => ({...h, type: 'scrape'}))
     ].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     
     if (allActivities.length === 0) {
@@ -1802,17 +1804,35 @@ function loadRecentActivity() {
             minute: 'numeric'
         });
         
-        const icon = activity.type === 'test' ? '🧪' : '📤';
+        let icon, title;
+        switch(activity.type) {
+            case 'test':
+                icon = '🧪';
+                title = '테스트 전송';
+                break;
+            case 'scrape':
+                icon = '📥';
+                title = '스크래핑';
+                break;
+            default:
+                icon = '📤';
+                title = '뉴스 전송';
+        }
+        
         const status = activity.status === 'success' ? 
             '<span class="status-success">성공</span>' : 
             '<span class="status-failed">실패</span>';
+        
+        // 스크래핑의 경우 기사 수 표시
+        const extraInfo = activity.type === 'scrape' && activity.articleCount ? 
+            ` (${activity.articleCount}개 기사)` : '';
         
         return `
             <div class="activity-item">
                 <span class="activity-icon">${icon}</span>
                 <div class="activity-content">
                     <div class="activity-title">
-                        ${activity.type === 'test' ? '테스트 전송' : '뉴스 전송'}
+                        ${title}${extraInfo}
                         ${status}
                     </div>
                     <div class="activity-time">${time}</div>
@@ -3037,7 +3057,31 @@ async function scrapeNow() {
                             // UI 업데이트
                             loadScrapedArticles();
                             updateTodayArticles();
-                            showNotification(`스크래핑 완료! ${latestData.articles.length}개의 기사가 로드되었습니다.`, 'success');
+                            
+                            // 스크래핑 이력 저장
+                            const scrapeHistory = JSON.parse(localStorage.getItem('singapore_news_scrape_history') || '[]');
+                            const articleCount = latestData.articles.length > 0 && latestData.articles[0].articles ? 
+                                latestData.articles.reduce((sum, group) => sum + group.article_count, 0) : 
+                                latestData.articles.length;
+                            
+                            scrapeHistory.push({
+                                timestamp: new Date().toISOString(),
+                                status: 'success',
+                                articleCount: articleCount,
+                                source: 'manual'
+                            });
+                            
+                            // 최대 50개까지만 저장
+                            if (scrapeHistory.length > 50) {
+                                scrapeHistory.shift();
+                            }
+                            
+                            localStorage.setItem('singapore_news_scrape_history', JSON.stringify(scrapeHistory));
+                            
+                            // 최근 활동 업데이트
+                            loadRecentActivity();
+                            
+                            showNotification(`스크래핑 완료! ${articleCount}개의 기사가 로드되었습니다.`, 'success');
                         }
                     }
                 } catch (error) {
