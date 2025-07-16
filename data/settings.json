@@ -3,14 +3,14 @@
   "importantKeywords": "",
   "summaryOptions": {
     "headline": true,
-    "keywords": true,
-    "content": true
+    "keywords": false,
+    "content": false
   },
   "sendChannel": "whatsapp",
-  "whatsappChannel": "120363419092108413@g.us",
+  "whatsappChannel": "120363421252284444@g.us",
   "sendSchedule": {
     "period": "daily",
-    "time": "09:00",
+    "time": "08:00",
     "weekdays": [],
     "date": "1"
   },
