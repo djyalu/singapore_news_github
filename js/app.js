@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isAdmin()) {
             adminLinks.forEach(link => link.style.display = 'none');
         }
+        
+        // 현재 사용자 정보 표시
+        const currentUser = getCurrentUser();
+        const userInfoElement = document.getElementById('currentUserInfo');
+        if (userInfoElement && currentUser) {
+            userInfoElement.textContent = `${currentUser.name} (${currentUser.userId})`;
+        }
     }
     
     loginForm.addEventListener('submit', function(e) {
