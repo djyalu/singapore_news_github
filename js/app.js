@@ -1990,25 +1990,24 @@ async function loadScrapedArticles() {
         if (result && result.success) {
             // 새로운 그룹별 데이터 구조 처리
             if (result.articles) {
-                    // 그룹별 통합 데이터 구조인지 확인
-                    if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
-                        data = {
-                            lastUpdated: result.lastUpdated,
-                            consolidatedArticles: result.articles
-                        };
-                    } else {
-                        // 기존 구조 (하위 호환성)
-                        data = {
-                            lastUpdated: result.lastUpdated,
-                            articles: result.articles
-                        };
-                    }
-                    localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
-                    
-                    // 파일명 저장
-                    if (result.filename) {
-                        localStorage.setItem('singapore_news_github_filename', result.filename);
-                    }
+                // 그룹별 통합 데이터 구조인지 확인
+                if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
+                    data = {
+                        lastUpdated: result.lastUpdated,
+                        consolidatedArticles: result.articles
+                    };
+                } else {
+                    // 기존 구조 (하위 호환성)
+                    data = {
+                        lastUpdated: result.lastUpdated,
+                        articles: result.articles
+                    };
+                }
+                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                
+                // 파일명 저장
+                if (result.filename) {
+                    localStorage.setItem('singapore_news_github_filename', result.filename);
                 }
             }
         }
