@@ -2890,7 +2890,7 @@ async function scrapeNow() {
     
     try {
         // GitHub Actions 트리거 API 호출
-        const response = await fetch('https://singapore-news-github.vercel.app/api/trigger-scraping', {
+        const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/trigger-scraping', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2902,16 +2902,42 @@ async function scrapeNow() {
         if (result.success) {
             showNotification(result.message, 'success');
             
-            // 실행 상태 모니터링 시작
-            startScrapingStatusMonitor();
-            
             // 버튼 상태 업데이트
             scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 확인 중...';
             
-            // 진행 상황 확인 URL 제공 (개발자용 로그에만 표시)
-            if (result.workflow_url) {
-                console.log(`GitHub Actions URL: ${result.workflow_url}`);
-            }
+            // 30초 후 자동 새로고침
+            showNotification('스크래핑이 진행 중입니다. 30초 후 자동으로 결과가 표시됩니다.', 'info');
+            
+            setTimeout(async () => {
+                // 최신 데이터 로드 시도
+                try {
+                    const latestResponse = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/get-latest-scraped');
+                    if (latestResponse.ok) {
+                        const latestData = await latestResponse.json();
+                        if (latestData.success && latestData.articles) {
+                            // 로컬 스토리지에 저장
+                            const scrapedData = {
+                                lastUpdated: latestData.lastUpdated,
+                                articles: latestData.articles,
+                                filename: latestData.filename
+                            };
+                            localStorage.setItem('singapore_news_scraped_data', JSON.stringify(scrapedData));
+                            if (latestData.filename) {
+                                localStorage.setItem('singapore_news_github_filename', latestData.filename);
+                            }
+                            
+                            // UI 업데이트
+                            loadScrapedArticles();
+                            updateTodayArticles();
+                            showNotification(`스크래핑 완료! ${latestData.articles.length}개의 기사가 로드되었습니다.`, 'success');
+                        }
+                    }
+                } catch (error) {
+                    console.error('최신 데이터 로드 오류:', error);
+                } finally {
+                    resetScrapeButton();
+                }
+            }, 30000); // 30초 후
             
         } else {
             throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
@@ -3383,14 +3409,34 @@ function toggleArticleAccordion(source, index) {
     const contentId = `article-content-${source}-${index}`;
     const content = document.getElementById(contentId);
     const toggle = document.querySelector(`[data-source="${source}"][data-index="${index}"] .accordion-toggle i`);
+    const articleItem = document.querySelector(`[data-source="${source}"][data-index="${index}"]`);
     
     if (content && toggle) {
-        if (content.classList.contains('hidden')) {
-            content.classList.remove('hidden');
+        if (content.style.display === 'none' || !content.style.display) {
+            // 다른 모든 기사 닫기
+            document.querySelectorAll('.article-content').forEach(el => {
+                if (el.id !== contentId) {
+                    el.style.display = 'none';
+                    const otherToggle = el.parentElement.querySelector('.accordion-toggle i');
+                    if (otherToggle) {
+                        otherToggle.textContent = '▼';
+                        otherToggle.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+            
+            // 현재 기사 열기
+            content.style.display = 'block';
             toggle.textContent = '▲';
             toggle.style.transform = 'rotate(180deg)';
+            
+            // 스크롤 위치 조정
+            setTimeout(() => {
+                articleItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
         } else {
-            content.classList.add('hidden');
+            // 닫기
+            content.style.display = 'none';
             toggle.textContent = '▼';
             toggle.style.transform = 'rotate(0deg)';
         }
