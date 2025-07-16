@@ -3717,8 +3717,16 @@ async function deleteAllArticlesFromModal() {
 function toggleArticleAccordion(source, index) {
     const contentId = `article-content-${source}-${index}`;
     const content = document.getElementById(contentId);
-    const toggle = document.querySelector(`[data-source="${source}"][data-index="${index}"] .accordion-toggle i`);
-    const articleItem = document.querySelector(`[data-source="${source}"][data-index="${index}"]`);
+    
+    // 새로운 그룹 구조와 기존 구조 모두 지원
+    let toggle = document.querySelector(`[data-group="${source}"][data-index="${index}"] .accordion-toggle i`);
+    let articleItem = document.querySelector(`[data-group="${source}"][data-index="${index}"]`);
+    
+    // 기존 구조 fallback
+    if (!toggle) {
+        toggle = document.querySelector(`[data-source="${source}"][data-index="${index}"] .accordion-toggle i`);
+        articleItem = document.querySelector(`[data-source="${source}"][data-index="${index}"]`);
+    }
     
     if (content && toggle) {
         if (content.style.display === 'none' || !content.style.display) {
