@@ -3,8 +3,8 @@
   "importantKeywords": "",
   "summaryOptions": {
     "headline": true,
-    "keywords": false,
-    "content": false
+    "keywords": true,
+    "content": true
   },
   "sendChannel": "whatsapp",
   "whatsappChannel": "120363421252284444@g.us",
