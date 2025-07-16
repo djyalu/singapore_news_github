@@ -90,15 +90,21 @@ def translate_to_korean_summary(title, content):
 
 def create_summary(article_data, settings):
     """설정에 따른 요약 생성"""
-    summary_parts = []
-    
-    # 한글 요약 생성
-    korean_summary = translate_to_korean_summary(
-        article_data['title'], 
-        article_data['content']
-    )
-    
-    return korean_summary
+    try:
+        # 무료 AI 요약 시도
+        from ai_summary_free import get_free_summary
+        summary = get_free_summary(
+            article_data['title'], 
+            article_data['content']
+        )
+        return summary
+    except ImportError:
+        # 기존 방식으로 폴백
+        korean_summary = translate_to_korean_summary(
+            article_data['title'], 
+            article_data['content']
+        )
+        return korean_summary
 
 def extract_article_content(url):
     """간단한 기사 내용 추출"""

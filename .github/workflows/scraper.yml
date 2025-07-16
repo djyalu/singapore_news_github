@@ -27,6 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install requests beautifulsoup4 lxml
+        pip install googletrans==4.0.0-rc1 google-generativeai
     
     - name: Create data directories
       run: |
@@ -34,6 +35,8 @@ jobs:
         mkdir -p data/history
     
     - name: Run scraper
+      env:
+        GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
       run: |
         python scripts/scraper.py
     
