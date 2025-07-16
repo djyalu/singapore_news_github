@@ -2745,9 +2745,13 @@ async function saveScrapedArticlesToGithub() {
         if (result.success) {
             showNotification(`${result.count}개의 기사가 GitHub에 저장되었습니다. (파일: ${result.filename})`, 'success');
             
+            // GitHub 파일명 저장
+            localStorage.setItem('singapore_news_github_filename', result.filename);
+            
             // 저장 성공 후 로컬 데이터 초기화 옵션
             if (confirm('GitHub에 저장이 완료되었습니다. 로컬 기사를 초기화하시겠습니까?')) {
                 localStorage.removeItem('singapore_news_scraped_data');
+                localStorage.removeItem('singapore_news_github_filename');
                 loadScrapedArticles();
                 updateTodayArticles();
             }
@@ -2764,11 +2768,40 @@ async function saveScrapedArticlesToGithub() {
     }
 }
 
-function clearScrapedArticles() {
+async function clearScrapedArticles() {
     console.log('clearScrapedArticles called');
     
-    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?')) {
+    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?\n\nGitHub에 저장된 파일도 함께 삭제됩니다.')) {
         console.log('User confirmed deletion');
+        
+        // 저장된 GitHub 파일명 확인
+        const savedFilename = localStorage.getItem('singapore_news_github_filename');
+        
+        if (savedFilename) {
+            try {
+                // GitHub에서 파일 삭제
+                const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/delete-scraped-file', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: savedFilename })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    console.log('GitHub file deleted successfully');
+                    localStorage.removeItem('singapore_news_github_filename');
+                } else {
+                    console.error('GitHub deletion failed:', result.error);
+                    showNotification('GitHub 파일 삭제 실패: ' + result.error, 'error');
+                }
+            } catch (error) {
+                console.error('GitHub deletion error:', error);
+                showNotification('GitHub 파일 삭제 중 오류 발생', 'error');
+            }
+        }
         
         // 로컬 스토리지에서 삭제
         localStorage.removeItem('singapore_news_scraped_data');
@@ -2787,9 +2820,6 @@ function clearScrapedArticles() {
         }
         
         showNotification('스크랩된 기사가 모두 삭제되었습니다.', 'success');
-        
-        // 페이지 새로고침 (선택사항)
-        // location.reload();
     }
 }
 
