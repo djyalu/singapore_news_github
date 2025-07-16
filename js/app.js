@@ -3068,25 +3068,11 @@ async function scrapeNow() {
             // 버튼 상태 업데이트
             scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 확인 중...';
             
-            // 30초 후 자동 새로고침
-            showNotification('스크래핑이 진행 중입니다. 30초 후 자동으로 결과가 표시됩니다.', 'info');
+            // 상태 모니터링 시작
+            showNotification('스크래핑이 진행 중입니다. 완료되면 자동으로 새로고침됩니다.', 'info');
             
-            setTimeout(async () => {
-                // 최신 데이터 로드 시도
-                try {
-                    const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
-                    if (latestResponse.ok) {
-                        const latestData = await latestResponse.json();
-                        if (latestData.success && latestData.articles) {
-                            // 로컬 스토리지에 저장
-                            const scrapedData = {
-                                lastUpdated: latestData.lastUpdated,
-                                articles: latestData.articles,
-                                filename: latestData.filename
-                            };
-                            localStorage.setItem('singapore_news_scraped_data', JSON.stringify(scrapedData));
-                            if (latestData.filename) {
-                                localStorage.setItem('singapore_news_github_filename', latestData.filename);
+            // 스크래핑 상태 모니터링 시작
+            startScrapingStatusMonitor();
                             }
                             
                             // UI 업데이트
@@ -3176,14 +3162,24 @@ async function startScrapingStatusMonitor() {
                 } else if (result.status === 'success') {
                     // 성공 완료
                     resetScrapeButton();
-                    showNotification('스크래핑이 성공적으로 완료되었습니다!', 'success');
+                    showNotification('스크래핑이 성공적으로 완료되었습니다! 기사를 불러오는 중...', 'success');
                     
                     // 새로운 데이터 로드 시도
-                    setTimeout(() => {
-                        loadScrapedArticles();
-                        updateTodayArticles();
+                    setTimeout(async () => {
                         // GitHub에서 최신 데이터 로드
-                        loadLatestDataFromGitHub();
+                        await loadLatestDataFromGitHub();
+                        
+                        // 대시보드가 현재 페이지인 경우 자동 새로고침
+                        const currentContent = document.getElementById('content');
+                        if (currentContent && currentContent.innerHTML.includes('dashboard-content')) {
+                            loadScrapedArticles();
+                            updateTodayArticles();
+                            showNotification('새로운 기사가 로드되었습니다!', 'success');
+                        } else {
+                            // 다른 페이지에 있는 경우 대시보드로 이동
+                            loadPage('dashboard');
+                            showNotification('새로운 기사가 로드되었습니다! 대시보드로 이동합니다.', 'success');
+                        }
                     }, 2000);
                     
                 } else if (result.status === 'error') {
