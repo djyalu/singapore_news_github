@@ -405,6 +405,14 @@ def scrape_news():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(consolidated_articles, f, ensure_ascii=False, indent=2)
     
+    # latest.json 파일 업데이트
+    latest_info = {
+        'lastUpdated': datetime.now().isoformat(),
+        'latestFile': f'news_{timestamp}.json'
+    }
+    with open('data/latest.json', 'w', encoding='utf-8') as f:
+        json.dump(latest_info, f, ensure_ascii=False, indent=2)
+    
     total_articles = sum(len(group['articles']) for group in consolidated_articles)
     print(f"\nScraped {total_articles} articles from {len(consolidated_articles)} groups")
     return output_file
