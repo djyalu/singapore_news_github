@@ -238,14 +238,45 @@ def get_article_links_moe(soup, base_url):
 def get_article_links_generic(soup, base_url):
     """범용 링크 추출"""
     links = []
+    domain = urlparse(base_url).netloc.lower()
     
-    for a in soup.select('a[href]'):
-        href = a.get('href', '')
-        full_url = urljoin(base_url, href)
-        
-        # 기본 필터링
-        if any(pattern in href.lower() for pattern in ['article', 'news', 'story', '/20']):
+    # 사이트별 특별 처리
+    if 'channelnewsasia.com' in domain:
+        # CNA는 특정 섹션 링크
+        for a in soup.select('a[href*="/singapore"], a[href*="/asia"], a[href*="/world"]'):
+            href = a.get('href', '')
+            full_url = urljoin(base_url, href)
+            if '/topic/' not in href and '/tag/' not in href:
+                links.append(full_url)
+                
+    elif 'sbr.com.sg' in domain:
+        # Singapore Business Review
+        for a in soup.select('a[href]'):
+            href = a.get('href', '')
+            full_url = urljoin(base_url, href)
+            # 기사 패턴: /economy/, /markets/, /financial-services/
+            if any(section in href for section in ['/economy/', '/markets/', '/financial-services/', '/commercial-property/']):
+                links.append(full_url)
+                
+    elif 'nac.gov.sg' in domain:
+        # National Arts Council - 프로그램/이벤트 페이지
+        for a in soup.select('a[href*="/whatson"], a[href*="/engage"], a[href*="/news"]'):
+            href = a.get('href', '')
+            full_url = urljoin(base_url, href)
             links.append(full_url)
+            
+    else:
+        # 기본 패턴
+        for a in soup.select('a[href]'):
+            href = a.get('href', '')
+            full_url = urljoin(base_url, href)
+            
+            # 기본 필터링
+            if any(pattern in href.lower() for pattern in ['article', 'news', 'story', '/20']):
+                # 제외 패턴
+                exclude = ['login', 'register', 'subscribe', 'search', 'tag', 'category', 'author']
+                if not any(ex in href.lower() for ex in exclude):
+                    links.append(full_url)
     
     return list(set(links))[:10]
 

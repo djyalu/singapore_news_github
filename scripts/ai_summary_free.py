@@ -223,15 +223,25 @@ def get_free_summary(title, content):
     """무료 요약 방법들을 순차적으로 시도"""
     
     # 1. Gemini API 시도 (완전 무료)
-    if os.environ.get('GOOGLE_GEMINI_API_KEY'):
+    api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
+    if api_key:
+        print(f"Gemini API key found: {api_key[:10]}...")
         summary = translate_to_korean_summary_gemini(title, content)
         if summary:
+            print("Gemini API summary successful")
             return summary
+        else:
+            print("Gemini API failed, trying next method...")
+    else:
+        print("No Gemini API key found in environment")
     
     # 2. googletrans 시도 (무료지만 제한 있음)
+    print("Trying googletrans...")
     summary = translate_to_korean_summary_googletrans(title, content)
     if summary:
+        print("Googletrans summary successful")
         return summary
     
     # 3. 향상된 키워드 기반 요약 (항상 작동)
+    print("Using keyword-based summary as fallback")
     return enhanced_keyword_summary(title, content)
