@@ -135,8 +135,27 @@ def enhanced_keyword_summary(title, content):
         if eng in text_lower:
             found_actions.append(kor)
     
-    # 요약 생성
-    summary = f"📰 {title}\n"
+    # 요약 생성 - 제목을 번역 시도
+    title_keywords = []
+    title_lower = title.lower()
+    for eng, kor in sorted(keyword_mapping.items(), key=lambda x: len(x[0]), reverse=True):
+        if eng.lower() in title_lower:
+            title_keywords.append(kor)
+            title_lower = title_lower.replace(eng.lower(), '', 1)
+    
+    # 제목에서 찾은 키워드로 한글 제목 생성
+    if title_keywords:
+        summary = f"📰 {' '.join(title_keywords)} 관련 뉴스\n"
+    else:
+        # 키워드를 못찾으면 일반적인 표현 사용
+        if any(word in title.lower() for word in ['announce', 'launch', 'plan', 'report']):
+            summary = f"📰 싱가포르 주요 발표/계획 뉴스\n"
+        elif any(word in title.lower() for word in ['rise', 'increase', 'grow', 'up']):
+            summary = f"📰 싱가포르 상승/성장 관련 뉴스\n"
+        elif any(word in title.lower() for word in ['fall', 'decrease', 'drop', 'down']):
+            summary = f"📰 싱가포르 하락/감소 관련 뉴스\n"
+        else:
+            summary = f"📰 싱가포르 최신 뉴스\n"
     
     if found_keywords:
         summary += f"🔍 주요 키워드: {', '.join(found_keywords[:5])}\n"
@@ -150,11 +169,37 @@ def enhanced_keyword_summary(title, content):
     if dates:
         summary += f"📅 날짜: {', '.join(dates[:2])}\n"
     
-    # 내용 미리보기
-    content_preview = content[:150].strip()
-    if len(content) > 150:
-        content_preview += "..."
-    summary += f"📝 {content_preview}"
+    # 내용을 한글로 요약
+    content_summary = "📝 "
+    
+    # 내용에서 주요 정보 추출
+    content_lower = content[:300].lower()
+    
+    # 주요 동작과 대상 조합
+    main_points = []
+    
+    # 숫자와 관련 키워드 조합
+    if numbers and found_keywords:
+        main_points.append(f"{found_keywords[0]}이(가) {numbers[0]} 기록")
+    
+    # 동작과 키워드 조합
+    if found_actions and found_keywords:
+        main_points.append(f"{found_keywords[0] if len(found_keywords) > 0 else '싱가포르'}에서 {found_actions[0]}")
+    
+    # 날짜 정보 포함
+    if dates:
+        main_points.append(f"{dates[0]}부터 시행")
+    
+    if main_points:
+        content_summary += " / ".join(main_points[:2])
+    else:
+        # 기본 요약
+        if found_keywords:
+            content_summary += f"{', '.join(found_keywords[:2])} 관련 소식"
+        else:
+            content_summary += "싱가포르 최신 동향"
+    
+    summary += content_summary
     
     return summary
 
