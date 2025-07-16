@@ -17,7 +17,7 @@
 
 ```mermaid
 graph TB
-    subgraph "Frontend (GitHub Pages)"
+    subgraph "Frontend - GitHub Pages"
         A[Web Dashboard<br/>HTML/JS/CSS]
         B[localStorage<br/>캐시 데이터]
         A <--> B
@@ -25,10 +25,10 @@ graph TB
     
     subgraph "Vercel Serverless"
         C[API Endpoints]
-        C1[/api/trigger-scraping]
-        C2[/api/save-settings]
-        C3[/api/get-latest-scraped]
-        C4[/api/send-whatsapp]
+        C1[trigger-scraping]
+        C2[save-settings]
+        C3[get-latest-scraped]
+        C4[send-whatsapp]
         C --> C1
         C --> C2
         C --> C3
@@ -36,10 +36,10 @@ graph TB
     end
     
     subgraph "GitHub Repository"
-        D[data/settings.json<br/>설정 파일]
-        E[data/sites.json<br/>사이트 목록]
-        F[data/scraped/<br/>스크랩 데이터]
-        G[data/history/<br/>전송 이력]
+        D[settings.json<br/>설정 파일]
+        E[sites.json<br/>사이트 목록]
+        F[scraped data<br/>스크랩 데이터]
+        G[history<br/>전송 이력]
     end
     
     subgraph "GitHub Actions"
