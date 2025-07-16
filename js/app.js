@@ -3081,8 +3081,10 @@ async function scrapeNow() {
             // 상태 모니터링 시작
             showNotification('스크래핑이 진행 중입니다. 완료되면 자동으로 새로고침됩니다.', 'info');
             
-            // 스크래핑 상태 모니터링 시작
-            startScrapingStatusMonitor();
+            // 간단한 자동 새로고침 방식 (30초 후부터 10초마다 확인)
+            setTimeout(() => {
+                startAutoRefreshMonitor();
+            }, 30000);
             
         } else {
             throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
@@ -3104,6 +3106,90 @@ async function scrapeNow() {
         
         showNotification(errorMessage, 'error');
     }
+}
+
+async function startAutoRefreshMonitor() {
+    let attempts = 0;
+    const maxAttempts = 18; // 최대 3분 (10초 x 18)
+    const checkInterval = 10000; // 10초마다 체크
+    let lastArticleCount = 0;
+    
+    // 현재 기사 수 저장
+    const currentData = localStorage.getItem('singapore_news_scraped_data');
+    if (currentData) {
+        try {
+            const parsed = JSON.parse(currentData);
+            if (parsed.articles) {
+                lastArticleCount = parsed.articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+            }
+        } catch (e) {
+            console.error('현재 데이터 파싱 오류:', e);
+        }
+    }
+    
+    const checkForNewData = async () => {
+        attempts++;
+        console.log(`자동 새로고침 확인 중... (${attempts}/${maxAttempts})`);
+        
+        try {
+            // GitHub에서 최신 데이터 확인
+            await loadLatestDataFromGitHub();
+            
+            // 새 데이터가 있는지 확인
+            const newData = localStorage.getItem('singapore_news_scraped_data');
+            if (newData) {
+                try {
+                    const parsed = JSON.parse(newData);
+                    if (parsed.articles) {
+                        const newArticleCount = parsed.articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+                        
+                        // 기사 수가 변경되었거나 새로운 타임스탬프가 있으면
+                        if (newArticleCount !== lastArticleCount || parsed.lastUpdated) {
+                            console.log(`새로운 기사 발견! 이전: ${lastArticleCount}개, 현재: ${newArticleCount}개`);
+                            
+                            // 스크래핑 성공
+                            resetScrapeButton();
+                            showNotification(`스크래핑 완료! ${newArticleCount}개의 기사가 로드되었습니다.`, 'success');
+                            
+                            // 대시보드 새로고침
+                            const currentContent = document.getElementById('content');
+                            if (currentContent && currentContent.innerHTML.includes('dashboard-content')) {
+                                loadScrapedArticles();
+                                updateTodayArticles();
+                                loadRecentActivity();
+                            } else {
+                                loadPage('dashboard');
+                            }
+                            
+                            return; // 모니터링 종료
+                        }
+                    }
+                } catch (e) {
+                    console.error('새 데이터 파싱 오류:', e);
+                }
+            }
+            
+            // 계속 확인
+            if (attempts < maxAttempts) {
+                setTimeout(checkForNewData, checkInterval);
+            } else {
+                resetScrapeButton();
+                showNotification('스크래핑 상태를 확인할 수 없습니다. 나중에 다시 시도해주세요.', 'warning');
+            }
+            
+        } catch (error) {
+            console.error('자동 새로고침 오류:', error);
+            if (attempts < maxAttempts) {
+                setTimeout(checkForNewData, checkInterval);
+            } else {
+                resetScrapeButton();
+                showNotification('새로고침 중 오류가 발생했습니다.', 'error');
+            }
+        }
+    };
+    
+    // 첫 번째 확인 시작
+    checkForNewData();
 }
 
 async function startScrapingStatusMonitor() {
