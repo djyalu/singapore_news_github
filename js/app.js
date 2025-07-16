@@ -1236,14 +1236,19 @@ function saveSettings() {
         }
         
         // GitHub에 설정 저장
-        fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-settings', {
+        fetch('https://singapore-news-github.vercel.app/api/save-settings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(settings)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.success) {
                 // 서버 저장 성공 시 로컬에도 저장
@@ -1254,8 +1259,15 @@ function saveSettings() {
             }
         })
         .catch(error => {
-            console.error('설정 저장 오류:', error);
-            showNotification('설정 저장 중 오류가 발생했습니다.', 'error');
+            console.error('GitHub 설정 저장 오류:', error);
+            // GitHub 저장 실패 시 로컬에만 저장
+            try {
+                localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+                showNotification('설정이 로컬에 저장되었습니다. (GitHub 연결 실패)', 'warning');
+            } catch (localError) {
+                console.error('로컬 저장도 실패:', localError);
+                showNotification('설정 저장에 실패했습니다.', 'error');
+            }
         });
     } catch (error) {
         console.error('설정 저장 오류:', error);
@@ -1319,7 +1331,7 @@ document.addEventListener('submit', async function(e) {
         
         // GitHub에 사이트 목록 저장
         try {
-            const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-sites', {
+            const response = await fetch('https://singapore-news-github.vercel.app/api/save-sites', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -1356,7 +1368,7 @@ async function deleteSite(index) {
     
     // GitHub에 사이트 목록 업데이트
     try {
-        const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-sites', {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/save-sites', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -2758,7 +2770,7 @@ async function saveScrapedArticlesToGithub() {
         saveBtn.disabled = true;
         saveBtn.innerHTML = '<i class="icon">⏳</i> 저장 중...';
         
-        const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/save-scraped-articles', {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/save-scraped-articles', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -2808,7 +2820,7 @@ async function clearScrapedArticles() {
         if (savedFilename) {
             try {
                 // GitHub에서 파일 삭제
-                const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/delete-scraped-file', {
+                const response = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -2911,7 +2923,7 @@ async function scrapeNow() {
     
     try {
         // GitHub Actions 트리거 API 호출
-        const response = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/trigger-scraping', {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/trigger-scraping', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2932,7 +2944,7 @@ async function scrapeNow() {
             setTimeout(async () => {
                 // 최신 데이터 로드 시도
                 try {
-                    const latestResponse = await fetch('https://singapore-news-github-793mgqtfp-djyalus-projects.vercel.app/api/get-latest-scraped');
+                    const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
                     if (latestResponse.ok) {
                         const latestData = await latestResponse.json();
                         if (latestData.success && latestData.articles) {
