@@ -1931,13 +1931,24 @@ async function loadScrapedArticles() {
         if (response.ok) {
             const result = await response.json();
             
-            if (result.success && result.articles) {
-                // GitHub 데이터를 로컬 스토리지에 저장
-                data = {
-                    lastUpdated: result.lastUpdated,
-                    articles: result.articles
-                };
-                localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+            if (result.success) {
+                // 새로운 그룹별 데이터 구조 처리
+                if (result.articles) {
+                    // 그룹별 통합 데이터 구조인지 확인
+                    if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
+                        data = {
+                            lastUpdated: result.lastUpdated,
+                            consolidatedArticles: result.articles
+                        };
+                    } else {
+                        // 기존 구조 (하위 호환성)
+                        data = {
+                            lastUpdated: result.lastUpdated,
+                            articles: result.articles
+                        };
+                    }
+                    localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                }
             }
         }
     } catch (error) {
@@ -1945,7 +1956,7 @@ async function loadScrapedArticles() {
     }
     
     // 데이터가 없는 경우
-    if (!data || !data.articles || data.articles.length === 0) {
+    if (!data || (!data.consolidatedArticles && !data.articles)) {
         articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
         return;
     }
@@ -1953,90 +1964,149 @@ async function loadScrapedArticles() {
     const today = new Date().toDateString();
     const lastUpdate = new Date(data.lastUpdated);
     
-    if (lastUpdate.toDateString() !== today && data.articles.length === 0) {
-        articlesList.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
-        return;
-    }
-    
     try {
-        // 기사를 소스별로 그룹화
-        const groupedArticles = data.articles.reduce((groups, article) => {
-            const source = article.source || article.site || 'Unknown';
-            if (!groups[source]) groups[source] = [];
-            groups[source].push(article);
-            return groups;
-        }, {});
-        
         let html = '';
-        Object.entries(groupedArticles).forEach(([source, articles]) => {
+        
+        // 새로운 그룹별 통합 구조 처리
+        if (data.consolidatedArticles) {
+            const totalArticles = data.consolidatedArticles.reduce((sum, group) => sum + group.article_count, 0);
+            
             html += `
-                <div class="article-group">
-                    <div class="article-group-header">
-                        <h4 class="article-source">${source} (${articles.length})</h4>
-                        <button class="btn btn-sm btn-danger" onclick="deleteArticleGroup('${source}')">
-                            <i class="icon">🗑️</i> 그룹 삭제
-                        </button>
-                    </div>
-                    ${articles.map((article, index) => `
-                        <div class="article-item accordion-item" data-source="${source}" data-index="${index}">
-                            <div class="article-header" onclick="toggleArticleAccordion('${source}', ${index})">
-                                <div class="article-title-section">
-                                    <div class="article-title">${article.title}</div>
-                                    <div class="article-meta">
-                                        <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleString('ko-KR')}</span>
-                                        ${article.url ? `<a href="${article.url}" target="_blank" class="article-link" onclick="event.stopPropagation()">🔗 원문보기</a>` : ''}
-                                    </div>
-                                </div>
-                                <div class="article-controls">
-                                    <button class="btn btn-xs btn-danger" onclick="event.stopPropagation(); deleteArticle('${source}', ${index})">
-                                        <i class="icon">🗑️</i>
-                                    </button>
-                                    <div class="accordion-toggle">
-                                        <i class="icon">▼</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-content" id="article-content-${source}-${index}" style="display: none;">
-                                <div class="article-full-content">
-                                    ${article.summary ? `
-                                        <div class="article-section">
-                                            <h5>📋 요약</h5>
-                                            <div class="article-summary">${article.summary.replace(/\n/g, '<br>')}</div>
-                                        </div>
-                                    ` : ''}
-                                    
-                                    ${article.content ? `
-                                        <div class="article-section">
-                                            <h5>📄 전체 내용</h5>
-                                            <div class="article-full-text">${article.content.replace(/\n/g, '<br>')}</div>
-                                        </div>
-                                    ` : ''}
-                                    
-                                    ${article.keywords && article.keywords.length > 0 ? `
-                                        <div class="article-section">
-                                            <h5>🏷️ 키워드</h5>
-                                            <div class="article-keywords">
-                                                ${article.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
-                                            </div>
-                                        </div>
-                                    ` : ''}
-                                    
-                                    <div class="article-section">
-                                        <h5>ℹ️ 기사 정보</h5>
-                                        <div class="article-info">
-                                            <p><strong>출처:</strong> ${article.site || article.source || 'Unknown'}</p>
-                                            <p><strong>그룹:</strong> ${article.group || 'Other'}</p>
-                                            <p><strong>발행일:</strong> ${new Date(article.publish_date || article.timestamp).toLocaleString('ko-KR')}</p>
-                                            ${article.url ? `<p><strong>원문 링크:</strong> <a href="${article.url}" target="_blank">${article.url}</a></p>` : ''}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('')}
+                <div class="scraped-articles-summary">
+                    <p>📊 총 ${data.consolidatedArticles.length}개 그룹에서 ${totalArticles}개 기사 수집</p>
+                    <p>🕒 마지막 업데이트: ${lastUpdate.toLocaleString('ko-KR')}</p>
                 </div>
             `;
-        });
+            
+            data.consolidatedArticles.forEach((groupData, groupIndex) => {
+                html += `
+                    <div class="article-group">
+                        <div class="article-group-header">
+                            <h4 class="article-source">【${groupData.group}】 - ${groupData.sites.join(', ')} (${groupData.article_count}개)</h4>
+                            <button class="btn btn-sm btn-danger" onclick="deleteArticleGroup('${groupData.group}')">
+                                <i class="icon">🗑️</i> 그룹 삭제
+                            </button>
+                        </div>
+                        ${groupData.articles.map((article, index) => `
+                            <div class="article-item accordion-item" data-group="${groupData.group}" data-index="${index}">
+                                <div class="article-header" onclick="toggleArticleAccordion('${groupData.group}', ${index})">
+                                    <div class="article-title-section">
+                                        <div class="article-title">${article.title}</div>
+                                        <div class="article-meta">
+                                            <span class="article-site">${article.site}</span>
+                                            <span class="article-time">${new Date(article.publish_date || groupData.timestamp).toLocaleString('ko-KR')}</span>
+                                            ${article.url ? `<a href="${article.url}" target="_blank" class="article-link" onclick="event.stopPropagation()">🔗 원문보기</a>` : ''}
+                                        </div>
+                                    </div>
+                                    <div class="article-controls">
+                                        <button class="btn btn-xs btn-danger" onclick="event.stopPropagation(); deleteArticle('${groupData.group}', ${index})">
+                                            <i class="icon">🗑️</i>
+                                        </button>
+                                        <div class="accordion-toggle">
+                                            <i class="icon">▼</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="article-content" id="article-content-${groupData.group}-${index}" style="display: none;">
+                                    <div class="article-full-content">
+                                        <div class="article-section">
+                                            <h5>📋 한글 요약</h5>
+                                            <div class="article-summary">${article.summary.replace(/\n/g, '<br>')}</div>
+                                        </div>
+                                        
+                                        ${article.content ? `
+                                            <div class="article-section">
+                                                <h5>📄 원문 일부</h5>
+                                                <div class="article-full-text">${article.content.replace(/\n/g, '<br>')}</div>
+                                            </div>
+                                        ` : ''}
+                                        
+                                        <div class="article-section">
+                                            <h5>ℹ️ 기사 정보</h5>
+                                            <div class="article-info">
+                                                <p><strong>사이트:</strong> ${article.site}</p>
+                                                <p><strong>그룹:</strong> ${groupData.group}</p>
+                                                <p><strong>스크랩 시간:</strong> ${new Date(article.publish_date || groupData.timestamp).toLocaleString('ko-KR')}</p>
+                                                ${article.url ? `<p><strong>원문 링크:</strong> <a href="${article.url}" target="_blank">${article.url}</a></p>` : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            });
+        } else if (data.articles) {
+            // 기존 구조 처리 (하위 호환성)
+            const groupedArticles = data.articles.reduce((groups, article) => {
+                const source = article.source || article.site || 'Unknown';
+                if (!groups[source]) groups[source] = [];
+                groups[source].push(article);
+                return groups;
+            }, {});
+            
+            Object.entries(groupedArticles).forEach(([source, articles]) => {
+                html += `
+                    <div class="article-group">
+                        <div class="article-group-header">
+                            <h4 class="article-source">${source} (${articles.length})</h4>
+                            <button class="btn btn-sm btn-danger" onclick="deleteArticleGroup('${source}')">
+                                <i class="icon">🗑️</i> 그룹 삭제
+                            </button>
+                        </div>
+                        ${articles.map((article, index) => `
+                            <div class="article-item accordion-item" data-source="${source}" data-index="${index}">
+                                <div class="article-header" onclick="toggleArticleAccordion('${source}', ${index})">
+                                    <div class="article-title-section">
+                                        <div class="article-title">${article.title}</div>
+                                        <div class="article-meta">
+                                            <span class="article-time">${new Date(article.timestamp || article.publish_date).toLocaleString('ko-KR')}</span>
+                                            ${article.url ? `<a href="${article.url}" target="_blank" class="article-link" onclick="event.stopPropagation()">🔗 원문보기</a>` : ''}
+                                        </div>
+                                    </div>
+                                    <div class="article-controls">
+                                        <button class="btn btn-xs btn-danger" onclick="event.stopPropagation(); deleteArticle('${source}', ${index})">
+                                            <i class="icon">🗑️</i>
+                                        </button>
+                                        <div class="accordion-toggle">
+                                            <i class="icon">▼</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="article-content" id="article-content-${source}-${index}" style="display: none;">
+                                    <div class="article-full-content">
+                                        ${article.summary ? `
+                                            <div class="article-section">
+                                                <h5>📋 요약</h5>
+                                                <div class="article-summary">${article.summary.replace(/\n/g, '<br>')}</div>
+                                            </div>
+                                        ` : ''}
+                                        
+                                        ${article.content ? `
+                                            <div class="article-section">
+                                                <h5>📄 전체 내용</h5>
+                                                <div class="article-full-text">${article.content.replace(/\n/g, '<br>')}</div>
+                                            </div>
+                                        ` : ''}
+                                        
+                                        <div class="article-section">
+                                            <h5>ℹ️ 기사 정보</h5>
+                                            <div class="article-info">
+                                                <p><strong>출처:</strong> ${article.site || article.source || 'Unknown'}</p>
+                                                <p><strong>그룹:</strong> ${article.group || 'Other'}</p>
+                                                <p><strong>발행일:</strong> ${new Date(article.publish_date || article.timestamp).toLocaleString('ko-KR')}</p>
+                                                ${article.url ? `<p><strong>원문 링크:</strong> <a href="${article.url}" target="_blank">${article.url}</a></p>` : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            });
+        }
         
         articlesList.innerHTML = html;
     } catch (error) {
@@ -3216,42 +3286,95 @@ function generateSendMessage() {
     
     try {
         const data = JSON.parse(scrapedData);
-        const articles = data.articles || [];
+        let message = '';
         
-        if (articles.length === 0) {
+        // 새로운 그룹별 통합 구조 처리
+        if (data.consolidatedArticles) {
+            const totalArticles = data.consolidatedArticles.reduce((sum, group) => sum + group.article_count, 0);
+            
+            if (totalArticles === 0) {
+                showNotification('스크랩된 기사가 없습니다.', 'error');
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
+                return;
+            }
+            
+            // 새로운 형식의 메시지 생성
+            message = `📰 *Singapore News Update*\n${new Date().toLocaleString('ko-KR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            })}\n`;
+            message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+            message += `📊 오늘의 주요 뉴스: ${data.consolidatedArticles.length}개 그룹, 총 ${totalArticles}개 기사\n\n`;
+            
+            // 각 그룹별로 기사 표시
+            data.consolidatedArticles.forEach(groupData => {
+                message += `【 ${groupData.group} 】\n`;
+                message += `📍 출처: ${groupData.sites.join(', ')}\n`;
+                message += `━━━━━━━━━━━━━━━━━━━━\n`;
+                
+                // 그룹 내 기사들 표시
+                groupData.articles.forEach((article, i) => {
+                    message += `\n${i + 1}. ${article.summary}\n`;
+                    message += `   🔗 원문: ${article.url}\n\n`;
+                });
+                
+                message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+            });
+            
+            // 푸터 추가
+            message += `\n💡 *요약 정보*\n`;
+            message += `• 스크랩 시간: ${new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}\n`;
+            message += `• 총 ${data.consolidatedArticles.length}개 카테고리에서 ${totalArticles}개 기사 수집\n`;
+            message += `\n🤖 _Singapore News Scraper Bot_`;
+            
+        } else if (data.articles) {
+            // 기존 구조 처리 (하위 호환성)
+            const articles = data.articles || [];
+            
+            if (articles.length === 0) {
+                showNotification('스크랩된 기사가 없습니다.', 'error');
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
+                return;
+            }
+            
+            // 메시지 생성 (Python send_whatsapp.py의 format_message 함수와 동일한 형식)
+            message = `📰 *Singapore News Update*\n${new Date().toLocaleString('ko-KR')}\n\n`;
+            
+            // 그룹별로 정리
+            const grouped = {};
+            articles.forEach(article => {
+                const group = article.group || 'Other';
+                if (!grouped[group]) grouped[group] = [];
+                grouped[group].push(article);
+            });
+            
+            Object.entries(grouped).forEach(([group, groupArticles]) => {
+                message += `🔹 *${group}*\n`;
+                groupArticles.slice(0, 3).forEach((article, i) => {
+                    message += `\n${i + 1}. ${article.title}\n`;
+                    const summaryLines = article.summary ? article.summary.split('\n') : [];
+                    summaryLines.slice(0, 2).forEach(line => {
+                        if (line.trim()) {
+                            message += `   ${line.trim()}\n`;
+                        }
+                    });
+                    message += `   🔗 상세보기: ${article.url}\n`;
+                });
+                message += '\n';
+            });
+            
+            message += `🤖 _Singapore News Scraper_`;
+        } else {
             showNotification('스크랩된 기사가 없습니다.', 'error');
             generateBtn.disabled = false;
             generateBtn.innerHTML = '<i class="icon">📝</i> 전송 메시지 생성';
             return;
         }
-        
-        // 메시지 생성 (Python send_whatsapp.py의 format_message 함수와 동일한 형식)
-        let message = `📰 *Singapore News Update*\n${new Date().toLocaleString('ko-KR')}\n\n`;
-        
-        // 그룹별로 정리
-        const grouped = {};
-        articles.forEach(article => {
-            const group = article.group || 'Other';
-            if (!grouped[group]) grouped[group] = [];
-            grouped[group].push(article);
-        });
-        
-        Object.entries(grouped).forEach(([group, groupArticles]) => {
-            message += `🔹 *${group}*\n`;
-            groupArticles.slice(0, 3).forEach((article, i) => {
-                message += `\n${i + 1}. ${article.title}\n`;
-                const summaryLines = article.summary ? article.summary.split('\n') : [];
-                summaryLines.slice(0, 2).forEach(line => {
-                    if (line.trim()) {
-                        message += `   ${line.trim()}\n`;
-                    }
-                });
-                message += `   🔗 상세보기: ${article.url}\n`;
-            });
-            message += '\n';
-        });
-        
-        message += `🤖 _Singapore News Scraper_`;
         
         // 메시지 길이 제한
         if (message.length > 4096) {
