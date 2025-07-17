@@ -1183,17 +1183,16 @@ def scrape_news_ai():
     return output_file
 
 def scrape_news():
-    """메인 스크랩 함수 - AI 기능 우선 사용"""
-    # AI 기능이 활성화된 경우 AI 스크래퍼 사용
+    """메인 스크랩 함수 - 하이브리드 방식 사용"""
+    # AI 기능이 활성화된 경우에도 일일 할당량 때문에 전통적 방식 우선 사용
     print(f"[SCRAPER] AI model status: {ai_scraper.model is not None}")
     print(f"[SCRAPER] AI API key: {bool(ai_scraper.api_key)}")
     
-    if ai_scraper.model:
-        print("Using AI-enhanced scraping...")
-        return scrape_news_ai()
-    else:
-        print("Using traditional scraping (AI not available)...")
-        return scrape_news_traditional()
+    # 무료 티어 할당량 문제로 인해 전통적 방식을 기본으로 사용
+    # AI는 필요한 경우에만 선택적으로 사용
+    print("Using traditional scraping with minimal AI assistance...")
+    print("(Due to free tier daily limit of 50 requests)")
+    return scrape_news_traditional()
 
 def scrape_news_traditional():
     """기존 방식의 스크랩 함수 (AI 없이)"""
