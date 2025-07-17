@@ -1964,10 +1964,10 @@ async function loadScrapedArticles() {
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기
         try {
-            const latestResponse = await fetch('/data/latest.json?t=' + Date.now());
+            const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
-                const dataResponse = await fetch(`/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     result = {
@@ -3349,13 +3349,13 @@ async function loadLatestDataFromGitHub() {
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기 (우선 시도)
         try {
-            const latestResponse = await fetch('/data/latest.json?t=' + Date.now());
+            const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 console.log('Latest file info:', latestInfo);
                 
                 // latest.json에서 가져온 파일명으로 실제 데이터 로드
-                const dataResponse = await fetch(`/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {

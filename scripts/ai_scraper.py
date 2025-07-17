@@ -7,7 +7,6 @@ import google.generativeai as genai
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin, urlparse
-# from batch_ai_processor import BatchAIProcessor  # Temporarily disabled
 
 class AIScraper:
     def __init__(self):
@@ -38,11 +37,9 @@ class AIScraper:
         self.last_request_time = 0
         self.request_delay = 4.5  # ~13 requests per minute to stay under limit
         
-        # 배치 처리를 위한 URL 큐
+        # 배치 처리를 위한 URL 큐 (향후 구현 예정)
         self.url_queue = []
         self.batch_size = 5  # 한 번에 5개씩 처리
-        # self.batch_processor = BatchAIProcessor(self.model) if self.model else None  # Temporarily disabled
-        self.batch_processor = None
         
         # URL 캐시 (AI 호출 최소화)
         self.url_cache = {}  # {url: is_valid}
