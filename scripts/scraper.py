@@ -1304,22 +1304,39 @@ def scrape_news_traditional():
     
     for site in sites:
         try:
-            print(f"Scraping {site['name']}...")
+            print(f"\n[SCRAPER] === Scraping {site['name']} ({site['url']}) ===")
             response = requests.get(site['url'], timeout=10, headers={
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             })
+            
+            print(f"[SCRAPER] HTTP Status: {response.status_code}")
+            if response.status_code != 200:
+                print(f"[SCRAPER] Failed to access {site['name']}: HTTP {response.status_code}")
+                continue
+                
             soup = BeautifulSoup(response.content, 'html.parser')
             
             # 사이트별 링크 추출
             domain = urlparse(site['url']).netloc.lower()
+            print(f"[SCRAPER] Domain: {domain}")
+            
             if 'straitstimes.com' in domain:
+                print(f"[SCRAPER] Using Straits Times specific extractor")
                 links = get_article_links_straits_times(soup, site['url'])
             elif 'moe.gov.sg' in domain:
+                print(f"[SCRAPER] Using MOE specific extractor")
                 links = get_article_links_moe(soup, site['url'])
             else:
+                print(f"[SCRAPER] Using generic extractor")
                 links = get_article_links_generic(soup, site['url'])
             
-            print(f"Found {len(links)} article links")
+            print(f"[SCRAPER] Found {len(links)} article links for {site['name']}")
+            if len(links) == 0:
+                print(f"[SCRAPER] WARNING: No links found for {site['name']} - site may have changed structure")
+                # 페이지 타이틀 확인
+                title = soup.title.string if soup.title else "No title"
+                print(f"[SCRAPER] Page title: {title[:100]}")
+                continue
             
             # 기사별 처리
             for article_url in links[:5]:  # 사이트당 최대 5개
@@ -1391,7 +1408,9 @@ def scrape_news_traditional():
                     continue
                     
         except Exception as e:
-            print(f"Error scraping {site['name']}: {e}")
+            print(f"[SCRAPER] ERROR scraping {site['name']}: {e}")
+            import traceback
+            traceback.print_exc()
             continue
     
     # 그룹별로 기사 통합
