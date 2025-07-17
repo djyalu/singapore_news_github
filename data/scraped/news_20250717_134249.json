@@ -1,0 +1,48 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "New AI chatbot by ST’s Headstart to answer your career-related questions",
+        "url": "https://www.straitstimes.com/singapore/new-ai-chatbot-by-sts-headstart-to-answer-your-career-related-questions?ref=headstart",
+        "summary": "📰 개발 관련 뉴스\n📝 ST’s new chatbot answers all sorts of questions about topics such as working life, job trends and career growth.  Published Apr 14, 2025, 06:55 PMUpdated May 05, 2025, 01:31 PM...",
+        "content": "ST’s new chatbot answers all sorts of questions about topics such as working life, job trends and career growth. Published Apr 14, 2025, 06:55 PMUpdated May 05, 2025, 01:31 PM. Published Apr 14, 2025, 06:55 PMUpdated May 05, 2025, 01:31 PM. Updated May 05, 2025, 01:31 PM. Updated May 05, 2025, 01:31 PM. Ms Chong said: “Through natural conversation, users can explore professional development opportunities at any time, making career guidance more accessible and engaging than ever before",
+        "publish_date": "2025-07-17T13:42:38.555510"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "South Korea battered by record rainfall; 2 dead and more than 1,000 evacuated",
+        "url": "https://www.straitstimes.com/asia/east-asia/south-korean-region-hit-by-most-rainfall-in-120-years",
+        "summary": "📰 교육 관련 뉴스\n📝 People wading through an inundated street in the South Korean city of Gwangju on July 17 following torrential rains.  South Korean broadcasters ran videos of severe flooding in Seosan, with water swamping markets and apartment complexes, as well as submerging parked cars...",
+        "content": "People wading through an inundated street in the South Korean city of Gwangju on July 17 following torrential rains. South Korean broadcasters ran videos of severe flooding in Seosan, with water swamping markets and apartment complexes, as well as submerging parked cars. Some 403 schools were closed and 166 reported property damage from the heavy rain, the Ministry of Education said. More on this topic‘My car is being swept away’: Man’s last phone call to wife in flood-hit South Korea provinceHeavy rain to drench South Korea before heat returns next week. Heavy rain to drench South Korea before heat returns next week",
+        "publish_date": "2025-07-17T13:42:39.615587"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-17T13:42:49.257449",
+    "scraping_method": "traditional"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Chinese carmakers take the wheel in Malaysia’s fast-charging EV market",
+        "url": "https://www.businesstimes.com.sg/international/asean/chinese-carmakers-take-wheel-malaysias-fast-charging-ev-market",
+        "summary": "📰 비즈니스 관련 뉴스\n📝 BYD takes the lead with 5,434 vehicles delivered in the first six months of 2025, outpacing home-grown Proton’s 4,043 cars.  [KUALA LUMPUR] Chinese electric vehicle (EV) brands have quietly overtaken European, American and even local competitors to dominate Malaysia’s emerging EV market, riding a wave of shifting consumer perception, favourable pricing and aggressive regional investment...",
+        "content": "BYD takes the lead with 5,434 vehicles delivered in the first six months of 2025, outpacing home-grown Proton’s 4,043 cars. [KUALA LUMPUR] Chinese electric vehicle (EV) brands have quietly overtaken European, American and even local competitors to dominate Malaysia’s emerging EV market, riding a wave of shifting consumer perception, favourable pricing and aggressive regional investment. A NEWSLETTER FOR YOUFriday, 8. 30 amAsean BusinessBusiness insights centering on South-east Asia's fast-growing economies. A NEWSLETTER FOR YOUFriday, 8. 30 amAsean BusinessBusiness insights centering on South-east Asia's fast-growing economies. A NEWSLETTER FOR YOUFriday, 8. 30 amAsean BusinessBusiness insights centering on South-east Asia's fast-growing economies. 30 amAsean BusinessBusiness insights centering on South-east Asia's fast-growing economies. 30 amAsean BusinessBusiness insights centering on South-east Asia's fast-growing economies",
+        "publish_date": "2025-07-17T13:42:48.157961"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-17T13:42:49.257462",
+    "scraping_method": "traditional"
+  }
+]
