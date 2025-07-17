@@ -10,11 +10,5 @@
     "name": "Channel NewsAsia",
     "url": "https://www.channelnewsasia.com/",
     "period": "daily"
-  },
-  {
-    "group": "Art",
-    "name": "National Arts Council",
-    "url": "https://www.nac.gov.sg/",
-    "period": "daily"
   }
 ]
