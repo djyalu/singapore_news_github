@@ -2,13 +2,13 @@
   {
     "group": "News",
     "name": "The Straits Times",
-    "url": "https://www.straitstimes.com/",
+    "url": "https://www.straitstimes.com/global",
     "period": "daily"
   },
   {
     "group": "News",
     "name": "Channel NewsAsia",
-    "url": "https://www.channelnewsasia.com/singapore",
+    "url": "https://www.channelnewsasia.com/",
     "period": "daily"
   },
   {
