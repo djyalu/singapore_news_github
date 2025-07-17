@@ -1729,7 +1729,12 @@ function updateTodayArticles() {
             
             // 오늘 날짜의 기사만 필터링
             if (data.lastUpdated) {
-                const lastUpdate = new Date(data.lastUpdated);
+                const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+    
+    // 날짜 유효성 검사
+    if (isNaN(lastUpdate.getTime())) {
+        lastUpdate = new Date();
+    }
                 if (lastUpdate.toDateString() === today && data.articles) {
                     todayCount = data.articles.length;
                 }
@@ -2045,7 +2050,12 @@ async function loadScrapedArticles() {
     }
     
     const today = new Date().toDateString();
-    const lastUpdate = new Date(data.lastUpdated);
+    const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+    
+    // 날짜 유효성 검사
+    if (isNaN(lastUpdate.getTime())) {
+        lastUpdate = new Date();
+    }
     
     try {
         let html = '';
@@ -2271,7 +2281,12 @@ function loadTodayArticles() {
     try {
         const data = JSON.parse(scrapedData);
         const today = new Date().toDateString();
-        const lastUpdate = new Date(data.lastUpdated);
+        const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+    
+    // 날짜 유효성 검사
+    if (isNaN(lastUpdate.getTime())) {
+        lastUpdate = new Date();
+    }
         
         if (lastUpdate.toDateString() !== today || !data.articles || data.articles.length === 0) {
             content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
@@ -2300,7 +2315,12 @@ function loadTodayArticlesModal() {
     try {
         const data = JSON.parse(scrapedData);
         const today = new Date().toDateString();
-        const lastUpdate = new Date(data.lastUpdated);
+        const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+    
+    // 날짜 유효성 검사
+    if (isNaN(lastUpdate.getTime())) {
+        lastUpdate = new Date();
+    }
         
         if (lastUpdate.toDateString() !== today || !data.articles || data.articles.length === 0) {
             content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';

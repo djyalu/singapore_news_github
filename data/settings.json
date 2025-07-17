@@ -15,7 +15,7 @@
     "date": "1"
   },
   "blockedKeywords": "violence, adult, kill, sex",
-  "scrapingMethod": "traditional",
+  "scrapingMethod": "ai",
   "scrapingMethodOptions": {
     "ai": {
       "provider": "gemini",
