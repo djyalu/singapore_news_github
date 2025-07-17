@@ -3114,10 +3114,13 @@ async function scrapeNow() {
             // 상태 모니터링 시작
             showNotification('스크래핑이 진행 중입니다. 완료되면 자동으로 새로고침됩니다.', 'info');
             
-            // 자동 새로고침 모니터링 시작 (30초 후부터 10초마다 확인)
+            // 진행 상태 표시
+            showProgressStatus('스크래핑 진행 중...');
+            
+            // 자동 새로고침 모니터링 시작 (15초 후부터 5초마다 확인)
             setTimeout(() => {
                 startAutoRefreshMonitor();
-            }, 30000);
+            }, 15000);
             
         } else {
             throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
@@ -3144,8 +3147,8 @@ async function scrapeNow() {
 
 async function startAutoRefreshMonitor() {
     let attempts = 0;
-    const maxAttempts = 30; // 최대 5분 (10초 x 30)
-    const checkInterval = 10000; // 10초마다 체크
+    const maxAttempts = 60; // 최대 5분 (5초 x 60)
+    const checkInterval = 5000; // 5초마다 체크 (더 빠른 반응)
     let lastArticleCount = 0;
     
     // 현재 기사 수 저장
@@ -3209,6 +3212,7 @@ async function startAutoRefreshMonitor() {
             if (attempts < maxAttempts) {
                 setTimeout(checkForNewData, checkInterval);
             } else {
+                hideProgressStatus();
                 resetScrapeButton();
                 showTimeoutNotification();
             }
@@ -3218,6 +3222,7 @@ async function startAutoRefreshMonitor() {
             if (attempts < maxAttempts) {
                 setTimeout(checkForNewData, checkInterval);
             } else {
+                hideProgressStatus();
                 resetScrapeButton();
                 showNotification('새로고침 중 오류가 발생했습니다.', 'error');
             }
@@ -3228,7 +3233,36 @@ async function startAutoRefreshMonitor() {
     checkForNewData();
 }
 
+function showProgressStatus(message) {
+    const progressDiv = document.getElementById('scraping-progress');
+    if (!progressDiv) {
+        // 진행 상태 표시용 div 생성
+        const div = document.createElement('div');
+        div.id = 'scraping-progress';
+        div.className = 'fixed top-4 right-4 bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded shadow-lg z-50 max-w-sm';
+        div.innerHTML = `
+            <div class="flex items-center">
+                <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-700 mr-3"></div>
+                <span>${message}</span>
+            </div>
+        `;
+        document.body.appendChild(div);
+    } else {
+        progressDiv.querySelector('span').textContent = message;
+    }
+}
+
+function hideProgressStatus() {
+    const progressDiv = document.getElementById('scraping-progress');
+    if (progressDiv) {
+        progressDiv.remove();
+    }
+}
+
 function showScrapingCompleteNotification(articleCount) {
+    // 진행 상태 숨기기
+    hideProgressStatus();
+    
     // 성공 알림
     showNotification(`🎉 스크래핑 완료! ${articleCount}개의 새로운 기사가 로드되었습니다.`, 'success');
     
