@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 break;
             case 'history':
+                console.log('Loading history page');
                 content.innerHTML = getHistoryHTML();
                 loadHistory();
                 break;
@@ -1680,7 +1681,15 @@ function setupDashboardEventListeners() {
     }
     
     if (historyBtn) {
-        historyBtn.addEventListener('click', () => loadPage('history'));
+        historyBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('History button clicked');
+            // 네비게이션 링크를 통해 히스토리 페이지로 이동
+            const historyNavLink = document.querySelector('a[data-page="history"]');
+            if (historyNavLink) {
+                historyNavLink.click();
+            }
+        });
     }
     
     if (serverStatusBtn) {
@@ -3476,13 +3485,144 @@ async function sendOnly() {
     showNotification('WhatsApp 전송만 실행합니다...', 'info');
     
     try {
-        // Send Only API 호출
+        // GitHub Actions 방식 먼저 시도
         const response = await fetch('https://singapore-news-github.vercel.app/api/send-only', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             }
         });
+        
+        if (!response.ok) {
+            throw new Error('GitHub Actions 방식 실패, 직접 전송 시도');
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification('GitHub Actions를 통해 전송이 시작되었습니다!', 'success');
+            // 30초 후 자동 새로고침하여 결과 확인
+            setTimeout(() => {
+                refreshDashboard();
+            }, 30000);
+        } else {
+            throw new Error(result.error || 'GitHub Actions 실행 실패');
+        }
+        
+    } catch (error) {
+        console.error('GitHub Actions 방식 실패:', error);
+        showNotification('GitHub Actions 방식 실패, 직접 전송을 시도합니다...', 'warning');
+        
+        // 직접 WhatsApp API 호출
+        try {
+            await sendDirectToWhatsApp();
+        } catch (directError) {
+            console.error('Direct send error:', directError);
+            showNotification('전송에 실패했습니다: ' + directError.message, 'error');
+        }
+    } finally {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>전송만';
+    }
+}
+
+// 직접 WhatsApp 전송 함수
+async function sendDirectToWhatsApp() {
+    // 최신 스크랩 데이터 가져오기
+    const latestResponse = await fetch('https://singapore-news-github.vercel.app/data/latest.json');
+    const latestData = await latestResponse.json();
+    
+    if (!latestData.latestFile) {
+        throw new Error('전송할 데이터가 없습니다.');
+    }
+    
+    // 스크랩된 데이터 가져오기
+    const scrapedResponse = await fetch(`https://singapore-news-github.vercel.app/data/scraped/${latestData.latestFile}`);
+    const scrapedData = await scrapedResponse.json();
+    
+    if (!scrapedData || scrapedData.length === 0) {
+        throw new Error('스크랩된 기사가 없습니다.');
+    }
+    
+    // 메시지 생성
+    const message = formatWhatsAppMessage(scrapedData);
+    
+    // WhatsApp API 호출
+    const whatsappResponse = await fetch('https://gate.whapi.cloud/messages/text', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            to: '120363421252284444@g.us',
+            body: message,
+            typing_time: 0
+        })
+    });
+    
+    const whatsappResult = await whatsappResponse.json();
+    
+    if (whatsappResult.sent) {
+        showNotification('WhatsApp 전송이 완료되었습니다!', 'success');
+        // 전송 기록 저장
+        await saveTransmissionHistory(scrapedData, 'success');
+    } else {
+        throw new Error('WhatsApp 전송 실패');
+    }
+}
+
+// WhatsApp 메시지 포맷 함수
+function formatWhatsAppMessage(consolidatedArticles) {
+    const now = new Date();
+    let message = `📰 *Singapore News Update*\n${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일 ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}\n`;
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n";
+    
+    // 전체 기사 개수 계산
+    const totalArticles = consolidatedArticles.reduce((sum, group) => sum + group.article_count, 0);
+    message += `📊 오늘의 주요 뉴스: ${consolidatedArticles.length}개 그룹, 총 ${totalArticles}개 기사\n\n`;
+    
+    // 각 그룹별로 기사 표시
+    consolidatedArticles.forEach(group => {
+        message += `【 ${group.group} 】\n`;
+        message += `📍 출처: ${group.sites.join(', ')}\n`;
+        message += `━━━━━━━━━━━━━━━━━━━━\n`;
+        
+        group.articles.forEach((article, index) => {
+            message += `\n${index + 1}. ${article.summary}\n`;
+            message += `   🔗 원문: ${article.url}\n\n`;
+        });
+        
+        message += "━━━━━━━━━━━━━━━━━━━━\n\n";
+    });
+    
+    message += `\n💡 *요약 정보*\n`;
+    message += `• 스크랩 시간: ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}\n`;
+    message += `• 총 ${consolidatedArticles.length}개 카테고리에서 ${totalArticles}개 기사 수집\n`;
+    message += `\n🤖 _Singapore News Scraper Bot_`;
+    
+    return message;
+}
+
+// 전송 기록 저장 함수
+async function saveTransmissionHistory(articles, status) {
+    const totalArticles = articles.reduce((sum, group) => sum + group.article_count, 0);
+    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    
+    history.push({
+        id: Date.now().toString(),
+        timestamp: new Date().toISOString(),
+        channel: '120363421252284444@g.us',
+        status: status,
+        header: `뉴스 ${totalArticles}개 발송`,
+        message_preview: `${articles.length}개 그룹, 총 ${totalArticles}개 기사 전송`,
+        message_length: 0,
+        article_count: totalArticles,
+        articles: articles
+    });
+    
+    localStorage.setItem('singapore_news_history', JSON.stringify(history));
+}
         
         const result = await response.json();
         
@@ -3582,33 +3722,53 @@ function generateSendMessage() {
                 return;
             }
             
-            // 메시지 생성 (Python send_whatsapp.py의 format_message 함수와 동일한 형식)
-            message = `📰 *Singapore News Update*\n${new Date().toLocaleString('ko-KR')}\n\n`;
+            // 메시지 생성 (Python send_whatsapp.py의 format_message 함수와 정확히 동일한 형식)
+            const now = new Date();
+            const dateStr = `${now.getFullYear()}년 ${String(now.getMonth() + 1).padStart(2, '0')}월 ${String(now.getDate()).padStart(2, '0')}일 ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
             
-            // 그룹별로 정리
+            message = `📰 *Singapore News Update*\n${dateStr}\n`;
+            message += "━━━━━━━━━━━━━━━━━━━━\n\n";
+            
+            // 그룹별로 정리 (실제 스크랩 데이터 구조에 맞춤)
             const grouped = {};
+            let totalArticles = 0;
+            
             articles.forEach(article => {
-                const group = article.group || 'Other';
-                if (!grouped[group]) grouped[group] = [];
-                grouped[group].push(article);
+                const group = article.group || article.site || 'Other';
+                if (!grouped[group]) {
+                    grouped[group] = {
+                        articles: [],
+                        sites: new Set()
+                    };
+                }
+                grouped[group].articles.push(article);
+                grouped[group].sites.add(article.site || 'Unknown');
+                totalArticles++;
             });
             
-            Object.entries(grouped).forEach(([group, groupArticles]) => {
-                message += `🔹 *${group}*\n`;
-                groupArticles.slice(0, 3).forEach((article, i) => {
-                    message += `\n${i + 1}. ${article.title}\n`;
-                    const summaryLines = article.summary ? article.summary.split('\n') : [];
-                    summaryLines.slice(0, 2).forEach(line => {
-                        if (line.trim()) {
-                            message += `   ${line.trim()}\n`;
-                        }
-                    });
-                    message += `   🔗 상세보기: ${article.url}\n`;
+            // 전체 기사 개수 표시
+            message += `📊 오늘의 주요 뉴스: ${Object.keys(grouped).length}개 그룹, 총 ${totalArticles}개 기사\n\n`;
+            
+            // 각 그룹별로 기사 표시
+            Object.entries(grouped).forEach(([groupName, groupData]) => {
+                message += `【 ${groupName} 】\n`;
+                message += `📍 출처: ${Array.from(groupData.sites).join(', ')}\n`;
+                message += `━━━━━━━━━━━━━━━━━━━━\n`;
+                
+                // 그룹 내 기사들 표시
+                groupData.articles.forEach((article, i) => {
+                    message += `\n${i + 1}. ${article.summary || article.title}\n`;
+                    message += `   🔗 원문: ${article.url}\n\n`;
                 });
-                message += '\n';
+                
+                message += "━━━━━━━━━━━━━━━━━━━━\n\n";
             });
             
-            message += `🤖 _Singapore News Scraper_`;
+            // 푸터 추가
+            message += `\n💡 *요약 정보*\n`;
+            message += `• 스크랩 시간: ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}\n`;
+            message += `• 총 ${Object.keys(grouped).length}개 카테고리에서 ${totalArticles}개 기사 수집\n`;
+            message += `\n🤖 _Singapore News Scraper Bot_`;
         } else {
             showNotification('스크랩된 기사가 없습니다.', 'error');
             generateBtn.disabled = false;
