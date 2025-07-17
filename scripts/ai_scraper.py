@@ -7,6 +7,7 @@ import google.generativeai as genai
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin, urlparse
+from batch_ai_processor import BatchAIProcessor
 
 class AIScraper:
     def __init__(self):
@@ -26,6 +27,15 @@ class AIScraper:
         # Rate limiting for free tier (15 requests per minute)
         self.last_request_time = 0
         self.request_delay = 4.5  # ~13 requests per minute to stay under limit
+        
+        # 배치 처리를 위한 URL 큐
+        self.url_queue = []
+        self.batch_size = 5  # 한 번에 5개씩 처리
+        self.batch_processor = BatchAIProcessor(self.model) if self.model else None
+        
+        # URL 캠시 (AI 호출 최소화)
+        self.url_cache = {}  # {url: is_valid}
+        self.content_cache = {}  # {url: classification}
 
     def _rate_limit(self):
         """Rate limiting to avoid quota errors"""
@@ -38,10 +48,26 @@ class AIScraper:
     
     def is_valid_article_url_ai(self, url: str, page_title: str = "", link_text: str = "") -> bool:
         """AI를 사용해 URL이 유효한 기사 링크인지 판단"""
+        # 캠시 확인
+        if url in self.url_cache:
+            return self.url_cache[url]
+            
+        # 1단계: 먼저 패턴 기반 필터링으로 명백한 비기사 URL 제거
+        if not self._fallback_url_validation(url):
+            self.url_cache[url] = False
+            return False
+            
+        # 2단계: 패턴을 통과한 URL만 AI로 검증 (AI 호출 최소화)
         if not self.model:
-            return self._fallback_url_validation(url)
+            self.url_cache[url] = True
+            return True  # 패턴 검증을 통과했으면 기사로 간주
         
         try:
+            # URL이 명백히 기사 패턴이면 AI 검증 스킵
+            if self._is_obvious_article_url(url):
+                self.url_cache[url] = True
+                return True
+                
             self._rate_limit()  # Apply rate limiting
             prompt = f"""
 다음 URL이 뉴스 기사 링크인지 판단해주세요:
@@ -93,6 +119,22 @@ URL: {url}
         ]
         
         return any(re.search(pattern, url_lower) for pattern in news_patterns)
+    
+    def _is_obvious_article_url(self, url: str) -> bool:
+        """명백한 기사 URL 패턴인지 확인 (AI 호출 절약용)"""
+        url_lower = url.lower()
+        
+        # 매우 명확한 기사 URL 패턴
+        obvious_patterns = [
+            r'/\d{4}/\d{2}/\d{2}/[\w-]+',  # /2024/01/15/article-title
+            r'/article/\d+',  # /article/12345
+            r'/story/\d+',  # /story/12345
+            r'/news/\d{4}/\d{2}/\d{2}/',  # /news/2024/01/15/
+            r'-\d{6,}\.',  # -123456.html
+            r'/[\w-]+-ar\d+\.',  # /title-ar123456.html
+        ]
+        
+        return any(re.search(pattern, url_lower) for pattern in obvious_patterns)
 
     def classify_content_ai(self, html_content: str, url: str) -> Dict[str, any]:
         """AI를 사용해 HTML 콘텐츠를 분류"""
