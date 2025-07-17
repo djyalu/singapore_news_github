@@ -16,5 +16,11 @@
     "name": "The Business Times",
     "url": "https://www.businesstimes.com.sg/?region=sg",
     "period": "daily"
+  },
+  {
+    "group": "News",
+    "name": "Yahoo Singapore News",
+    "url": "https://sg.news.yahoo.com",
+    "period": "daily"
   }
 ]
