@@ -12,12 +12,6 @@
     "period": "daily"
   },
   {
-    "group": "Education",
-    "name": "Ministry of Education",
-    "url": "https://www.moe.gov.sg/",
-    "period": "daily"
-  },
-  {
     "group": "Art",
     "name": "National Arts Council",
     "url": "https://www.nac.gov.sg/",
