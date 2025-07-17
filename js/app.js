@@ -3109,9 +3109,10 @@ async function scrapeNow() {
 
 async function startAutoRefreshMonitor() {
     let attempts = 0;
-    const maxAttempts = 60; // 최대 5분 (5초 x 60)
-    const checkInterval = 5000; // 5초마다 체크 (더 빠른 반응)
+    const maxAttempts = 12; // 최대 1분 (5초 x 12)
+    const checkInterval = 5000; // 5초마다 체크
     let lastArticleCount = 0;
+    let monitoringStopped = false;
     
     // 현재 기사 수 저장
     const currentData = localStorage.getItem('singapore_news_scraped_data');
@@ -3127,72 +3128,68 @@ async function startAutoRefreshMonitor() {
     }
     
     const checkForNewData = async () => {
+        if (monitoringStopped) return;
+        
         attempts++;
         console.log(`자동 새로고침 확인 중... (${attempts}/${maxAttempts})`);
         
         try {
-            // GitHub에서 최신 데이터 확인
-            await loadLatestDataFromGitHub();
+            // GitHub에서 최신 데이터 확인 (단순히 latest.json만 확인)
+            const latestResponse = await fetch('https://singapore-news-github.vercel.app/data/latest.json?t=' + Date.now());
+            if (!latestResponse.ok) {
+                throw new Error('Latest.json 로드 실패');
+            }
             
-            // 새 데이터가 있는지 확인
-            const newData = localStorage.getItem('singapore_news_scraped_data');
-            if (newData) {
-                try {
-                    const parsed = JSON.parse(newData);
-                    if (parsed.articles) {
-                        const newArticleCount = parsed.articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
-                        
-                        // 기사 수가 변경되었거나 새로운 타임스탬프가 있으면
-                        if (newArticleCount !== lastArticleCount || parsed.lastUpdated) {
-                            console.log(`새로운 기사 발견! 이전: ${lastArticleCount}개, 현재: ${newArticleCount}개`);
-                            
-                            // 스크래핑 성공
-                            resetScrapeButton();
-                            
-                            // 성공 알림과 함께 새로고침 알림
-                            showScrapingCompleteNotification(newArticleCount);
-                            
-                            // 대시보드 새로고침
-                            const currentContent = document.getElementById('content');
-                            if (currentContent && currentContent.innerHTML.includes('dashboard-content')) {
-                                loadScrapedArticles();
-                                updateTodayArticles();
-                                loadRecentActivity();
-                            } else {
-                                loadPage('dashboard');
-                            }
-                            
-                            return; // 모니터링 종료
-                        }
-                    }
-                } catch (e) {
-                    console.error('새 데이터 파싱 오류:', e);
+            const latestInfo = await latestResponse.json();
+            const currentLatestFile = localStorage.getItem('singapore_news_latest_file');
+            
+            // 새로운 파일이 있는지 확인
+            if (currentLatestFile !== latestInfo.latestFile) {
+                console.log('새로운 파일 발견:', latestInfo.latestFile);
+                localStorage.setItem('singapore_news_latest_file', latestInfo.latestFile);
+                
+                // 새 데이터 로드
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                if (dataResponse.ok) {
+                    const articles = await dataResponse.json();
+                    const data = {
+                        lastUpdated: latestInfo.lastUpdated,
+                        articles: articles
+                    };
+                    localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                    
+                    // UI 업데이트
+                    loadScrapedArticles();
+                    updateTodayArticles();
+                    
+                    const articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+                    showNotification(`새로운 뉴스 ${articleCount}개를 불러왔습니다!`, 'success');
+                    
+                    // 모니터링 종료
+                    monitoringStopped = true;
+                    return;
                 }
             }
-            
-            // 계속 확인
-            if (attempts < maxAttempts) {
-                setTimeout(checkForNewData, checkInterval);
-            } else {
-                hideProgressStatus();
-                resetScrapeButton();
-                showTimeoutNotification();
-            }
-            
         } catch (error) {
-            console.error('자동 새로고침 오류:', error);
-            if (attempts < maxAttempts) {
-                setTimeout(checkForNewData, checkInterval);
-            } else {
-                hideProgressStatus();
-                resetScrapeButton();
-                showNotification('새로고침 중 오류가 발생했습니다.', 'error');
-            }
+            console.error('자동 새로고침 확인 오류:', error);
+        }
+        
+        // 최대 시도 횟수 확인
+        if (attempts >= maxAttempts) {
+            console.log('자동 새로고침 모니터링 종료 (최대 시도 횟수 도달)');
+            monitoringStopped = true;
+            showNotification('자동 새로고침 모니터링이 종료되었습니다.', 'info');
+            return;
+        }
+        
+        // 다음 확인 스케줄링
+        if (!monitoringStopped) {
+            setTimeout(checkForNewData, checkInterval);
         }
     };
     
     // 첫 번째 확인 시작
-    checkForNewData();
+    setTimeout(checkForNewData, checkInterval);
 }
 
 function showProgressStatus(message) {
@@ -3297,23 +3294,24 @@ async function startScrapingStatusMonitor() {
                     resetScrapeButton();
                     showNotification('스크래핑이 성공적으로 완료되었습니다! 기사를 불러오는 중...', 'success');
                     
-                    // 새로운 데이터 로드 시도
+                    // 새로운 데이터 로드 시도 (한 번만)
                     setTimeout(async () => {
-                        // GitHub에서 최신 데이터 로드
-                        await loadLatestDataFromGitHub();
-                        
-                        // 대시보드가 현재 페이지인 경우 자동 새로고침
-                        const currentContent = document.getElementById('content');
-                        if (currentContent && currentContent.innerHTML.includes('dashboard-content')) {
-                            loadScrapedArticles();
-                            updateTodayArticles();
-                            showNotification('새로운 기사가 로드되었습니다!', 'success');
-                        } else {
-                            // 다른 페이지에 있는 경우 대시보드로 이동
-                            loadPage('dashboard');
-                            showNotification('새로운 기사가 로드되었습니다! 대시보드로 이동합니다.', 'success');
+                        try {
+                            // GitHub에서 최신 데이터 로드
+                            await loadLatestDataFromGitHub();
+                            
+                            // 대시보드가 현재 페이지인 경우 자동 새로고침
+                            const currentContent = document.getElementById('content');
+                            if (currentContent && currentContent.innerHTML.includes('dashboard-content')) {
+                                loadScrapedArticles();
+                                updateTodayArticles();
+                                showNotification('새로운 기사가 로드되었습니다!', 'success');
+                            }
+                        } catch (error) {
+                            console.error('데이터 로드 오류:', error);
+                            showNotification('데이터 로드 중 오류가 발생했습니다.', 'error');
                         }
-                    }, 2000);
+                    }, 3000);
                     
                 } else if (result.status === 'error') {
                     // 실행 실패
@@ -3380,9 +3378,10 @@ async function loadLatestDataFromGitHub() {
                     };
                     localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
                     
-                    // UI 업데이트
-                    loadScrapedArticles();
-                    updateTodayArticles();
+                    // UI 업데이트 (한 번만)
+                    console.log('UI 업데이트 시작...');
+                    // loadScrapedArticles();
+                    // updateTodayArticles();
                     
                     const articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
                     console.log(`최신 데이터 로드 성공: ${articleCount}개의 기사`);
@@ -3528,16 +3527,16 @@ async function sendOnly() {
 
 // 직접 WhatsApp 전송 함수
 async function sendDirectToWhatsApp() {
-    // 최신 스크랩 데이터 가져오기
-    const latestResponse = await fetch('https://singapore-news-github.vercel.app/data/latest.json');
+    // 최신 스크랩 데이터 가져오기 (GitHub Pages 경로 사용)
+    const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
     const latestData = await latestResponse.json();
     
     if (!latestData.latestFile) {
         throw new Error('전송할 데이터가 없습니다.');
     }
     
-    // 스크랩된 데이터 가져오기
-    const scrapedResponse = await fetch(`https://singapore-news-github.vercel.app/data/scraped/${latestData.latestFile}`);
+    // 스크랩된 데이터 가져오기 (GitHub Pages 경로 사용)
+    const scrapedResponse = await fetch(`/singapore_news_github/data/scraped/${latestData.latestFile}?t=` + Date.now());
     const scrapedData = await scrapedResponse.json();
     
     if (!scrapedData || scrapedData.length === 0) {
