@@ -37,13 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         
+        console.log('로그인 시도:', username, password);
+        
+        // 사용자 데이터 확인
+        const users = JSON.parse(localStorage.getItem('singapore_news_users') || '[]');
+        console.log('저장된 사용자 데이터:', users);
+        
         if (login(username, password)) {
+            console.log('로그인 성공');
             if (window.isMFAEnabled && isMFAEnabled(username)) {
                 showMFAForm(username);
             } else {
                 checkAuth();
             }
         } else {
+            console.log('로그인 실패');
             errorMessage.textContent = '잘못된 아이디 또는 비밀번호입니다.';
             errorMessage.classList.remove('hidden');
         }
@@ -3565,7 +3573,7 @@ async function sendDirectToWhatsApp() {
     if (whatsappResult.sent) {
         showNotification('WhatsApp 전송이 완료되었습니다!', 'success');
         // 전송 기록 저장
-        await saveTransmissionHistory(scrapedData, 'success');
+        saveTransmissionHistory(scrapedData, 'success');
     } else {
         throw new Error('WhatsApp 전송 실패');
     }
@@ -3621,28 +3629,6 @@ async function saveTransmissionHistory(articles, status) {
     });
     
     localStorage.setItem('singapore_news_history', JSON.stringify(history));
-}
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            showNotification('WhatsApp 전송이 시작되었습니다', 'success');
-            
-            setTimeout(() => {
-                showNotification('WhatsApp 전송이 진행 중입니다. 완료까지 잠시 기다려주세요.', 'info');
-            }, 2000);
-            
-        } else {
-            throw new Error(result.error || '알 수 없는 오류가 발생했습니다.');
-        }
-        
-    } catch (error) {
-        console.error('전송 오류:', error);
-        showNotification('전송 실행 중 오류가 발생했습니다.', 'error');
-    } finally {
-        sendBtn.disabled = false;
-        sendBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>전송만';
-    }
 }
 
 function generateSendMessage() {
