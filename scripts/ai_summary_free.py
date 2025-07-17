@@ -14,7 +14,7 @@ def translate_to_korean_summary_gemini(title, content):
             return None
         
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-1.5-flash')
         
         # 내용 길이 제한 및 정제
         content = content.strip()
