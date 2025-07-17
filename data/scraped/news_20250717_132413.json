@@ -1,0 +1,38 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "New AI chatbot by ST’s Headstart to answer your career-related questions",
+        "url": "https://www.straitstimes.com/singapore/new-ai-chatbot-by-sts-headstart-to-answer-your-career-related-questions?ref=headstart",
+        "summary": "📰 개발 관련 뉴스\n📝 ST’s new chatbot answers all sorts of questions about topics such as working life, job trends and career growth.  Published Apr 14, 2025, 06:55 PMUpdated May 05, 2025, 01:31 PM...",
+        "content": "ST’s new chatbot answers all sorts of questions about topics such as working life, job trends and career growth. Published Apr 14, 2025, 06:55 PMUpdated May 05, 2025, 01:31 PM. Published Apr 14, 2025, 06:55 PMUpdated May 05, 2025, 01:31 PM. Updated May 05, 2025, 01:31 PM. Updated May 05, 2025, 01:31 PM. Ms Chong said: “Through natural conversation, users can explore professional development opportunities at any time, making career guidance more accessible and engaging than ever before",
+        "publish_date": "2025-07-17T13:23:54.488394"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Why handwriting matters",
+        "url": "https://www.straitstimes.com/life/why-handwriting-matters",
+        "summary": "📰 비즈니스 관련 뉴스\n📝 These irregularities may confuse computers, but they’re exactly what make handwriting distinct.  These irregularities may confuse computers, but they’re exactly what make handwriting distinct...",
+        "content": "These irregularities may confuse computers, but they’re exactly what make handwriting distinct. These irregularities may confuse computers, but they’re exactly what make handwriting distinct. These irregularities may confuse computers, but they’re exactly what make handwriting distinct. We all start off learning handwriting similarly. Why does it look so different across generations?. We all start off learning handwriting similarly. Why does it look so different across generations?. We all start off learning handwriting similarly. Why does it look so different across generations?. Writing exercises in the Palmer Method Of Business Writing",
+        "publish_date": "2025-07-17T13:23:55.091461"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "72-year-old man jailed for slashing neighbour who later died of heart disease",
+        "url": "https://www.channelnewsasia.com/singapore/knife-slash-neighbour-die-heart-disease-5243426",
+        "summary": "📰 싱가포르 최신 뉴스\n📝 An autopsy found that these injuries were not fatal, and that Mr Chua's cause of death was ischaemic heart disease, Deputy Public Prosecutor Joseph Gwee said.  Mr Chua then called the second victim to accompany him and they went to Lim's flat together...",
+        "content": "An autopsy found that these injuries were not fatal, and that Mr Chua's cause of death was ischaemic heart disease, Deputy Public Prosecutor Joseph Gwee said. Mr Chua then called the second victim to accompany him and they went to Lim's flat together. 30am, police officers on patrol on the ground floor came across Mr Chua exiting the lift with severe head injuries. Mr Gwee also said that while Lim did not initiate the fight, he reacted disproportionately",
+        "publish_date": "2025-07-17T13:24:01.812286"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-17T13:24:13.404650",
+    "scraping_method": "traditional"
+  }
+]
