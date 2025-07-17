@@ -1185,6 +1185,9 @@ def scrape_news_ai():
 def scrape_news():
     """메인 스크랩 함수 - AI 기능 우선 사용"""
     # AI 기능이 활성화된 경우 AI 스크래퍼 사용
+    print(f"[SCRAPER] AI model status: {ai_scraper.model is not None}")
+    print(f"[SCRAPER] AI API key: {bool(ai_scraper.api_key)}")
+    
     if ai_scraper.model:
         print("Using AI-enhanced scraping...")
         return scrape_news_ai()

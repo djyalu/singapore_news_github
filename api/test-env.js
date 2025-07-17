@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
             GITHUB_OWNER: process.env.GITHUB_OWNER || 'NOT_SET',
             GITHUB_REPO: process.env.GITHUB_REPO || 'NOT_SET',
             WHATSAPP_API_KEY: !!process.env.WHATSAPP_API_KEY ? 'SET' : 'NOT_SET',
+            GOOGLE_GEMINI_API_KEY: !!process.env.GOOGLE_GEMINI_API_KEY ? 'SET' : 'NOT_SET',
             timestamp: new Date().toISOString()
         };
 

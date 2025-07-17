@@ -11,9 +11,13 @@ class AIScraper:
     def __init__(self):
         """AI 기반 스크래퍼 초기화"""
         self.api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
+        print(f"[AI_SCRAPER] Initializing... API key present: {bool(self.api_key)}")
+        print(f"[AI_SCRAPER] API key length: {len(self.api_key) if self.api_key else 0}")
+        
         if self.api_key:
             genai.configure(api_key=self.api_key)
             self.model = genai.GenerativeModel('gemini-pro')
+            print(f"[AI_SCRAPER] Gemini model initialized successfully")
         else:
             self.model = None
             print("Warning: GOOGLE_GEMINI_API_KEY not found. AI features will be disabled.")
