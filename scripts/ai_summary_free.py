@@ -22,24 +22,38 @@ def translate_to_korean_summary_gemini(title, content):
             content = "내용 없음"
         content_preview = content[:800] if len(content) > 800 else content
         
-        prompt = f"""다음 싱가포르 뉴스를 한국어로 간단히 요약해주세요.
+        prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
 
 제목: {title}
 내용: {content_preview}
 
 요구사항:
-- 3-4문장으로 핵심 내용만 요약
-- 중요한 숫자, 날짜, 인물명 포함
-- 자연스러운 한국어로 작성
-- 불필요한 이모지나 기호 제외"""
+1. 제목을 먼저 한국어로 번역
+2. 핵심 내용을 2-3문장으로 요약
+3. 중요한 수치, 날짜, 인물명은 정확히 포함
+4. 자연스러운 한국어 표현 사용
+5. 응답 형식: "제목: [한국어 제목]\n내용: [요약 내용]"
+6. 이모지나 특수 기호는 사용하지 말 것
+
+예시:
+제목: 싱가포르 정부, 새로운 주택 정책 발표
+내용: 싱가포르 정부가 주택 가격 상승을 억제하기 위한 새로운 정책을 발표했습니다. 이 정책은 내년부터 시행될 예정입니다."""
         
         response = model.generate_content(prompt)
         if response and response.text:
             # 응답 텍스트 정제
             summary_text = response.text.strip()
             # 불필요한 마크다운 제거
-            summary_text = summary_text.replace('**', '').replace('*', '')
-            return f"📰 {summary_text}"
+            summary_text = summary_text.replace('**', '').replace('*', '').replace('#', '')
+            
+            # 응답 형식 확인 및 정제
+            if '제목:' in summary_text and '내용:' in summary_text:
+                return f"📰 {summary_text}"
+            else:
+                # 형식이 맞지 않으면 기본 형식으로 변환
+                lines = summary_text.split('\n')
+                clean_summary = ' '.join([line.strip() for line in lines if line.strip()])
+                return f"📰 제목: {title}\n📝 내용: {clean_summary}"
         else:
             print("Gemini API returned empty response")
             return None
@@ -56,11 +70,16 @@ def translate_to_korean_summary_googletrans(title, content):
         # 제목 번역
         translated_title = translator.translate(title, dest='ko').text
         
-        # 내용 요약 (첫 200자만)
-        content_preview = content[:200] if len(content) > 200 else content
-        translated_content = translator.translate(content_preview, dest='ko').text
+        # 내용에서 의미있는 문장만 추출
+        sentences = [s.strip() for s in content.split('.') if len(s.strip()) > 20 and not is_menu_sentence(s.strip())]
+        if sentences:
+            # 첫 2문장만 번역
+            content_to_translate = '. '.join(sentences[:2]) + '.'
+            translated_content = translator.translate(content_to_translate, dest='ko').text
+        else:
+            translated_content = "상세 내용을 확인할 수 없습니다."
         
-        return f"📰 {translated_title}\n📝 {translated_content}..."
+        return f"📰 제목: {translated_title}\n📝 내용: {translated_content}"
         
     except Exception as e:
         print(f"Google Translate error: {e}")
@@ -151,7 +170,10 @@ def enhanced_keyword_summary(title, content):
         if eng in text_lower:
             found_actions.append(kor)
     
-    # 요약 생성 - 제목을 번역 시도
+    # 제목 번역 시도
+    korean_title = translate_title_intelligently(title, keyword_mapping, action_mapping)
+    
+    # 제목에서 찾은 키워드로 분류
     title_keywords = []
     title_lower = title.lower()
     for eng, kor in sorted(keyword_mapping.items(), key=lambda x: len(x[0]), reverse=True):
@@ -159,19 +181,21 @@ def enhanced_keyword_summary(title, content):
             title_keywords.append(kor)
             title_lower = title_lower.replace(eng.lower(), '', 1)
     
-    # 제목에서 찾은 키워드로 한글 제목 생성
-    if title_keywords:
-        summary = f"📰 {' '.join(title_keywords)} 관련 뉴스\n"
+    # 제목 생성
+    if korean_title and korean_title != title:
+        summary = f"📰 제목: {korean_title}\n"
+    elif title_keywords:
+        summary = f"📰 제목: {' '.join(title_keywords[:2])} 관련 뉴스\n"
     else:
         # 키워드를 못찾으면 일반적인 표현 사용
         if any(word in title.lower() for word in ['announce', 'launch', 'plan', 'report']):
-            summary = f"📰 싱가포르 주요 발표/계획 뉴스\n"
+            summary = f"📰 제목: 싱가포르 주요 발표/계획 뉴스\n"
         elif any(word in title.lower() for word in ['rise', 'increase', 'grow', 'up']):
-            summary = f"📰 싱가포르 상승/성장 관련 뉴스\n"
+            summary = f"📰 제목: 싱가포르 상승/성장 관련 뉴스\n"
         elif any(word in title.lower() for word in ['fall', 'decrease', 'drop', 'down']):
-            summary = f"📰 싱가포르 하락/감소 관련 뉴스\n"
+            summary = f"📰 제목: 싱가포르 하락/감소 관련 뉴스\n"
         else:
-            summary = f"📰 싱가포르 최신 뉴스\n"
+            summary = f"📰 제목: 싱가포르 최신 뉴스\n"
     
     if found_keywords:
         summary += f"🔍 주요 키워드: {', '.join(found_keywords[:5])}\n"
@@ -218,6 +242,101 @@ def enhanced_keyword_summary(title, content):
     summary += content_summary
     
     return summary
+
+def translate_title_intelligently(title, keyword_mapping, action_mapping):
+    """지능적인 헤드라인 번역 함수"""
+    title_lower = title.lower().strip()
+    
+    # 특수 케이스: 질문형 헤드라인 처리
+    if title_lower.startswith('why') or title_lower.startswith('what') or title_lower.startswith('how'):
+        return translate_question_headline(title, keyword_mapping, action_mapping)
+    
+    # 일반 헤드라인 번역
+    translated_parts = []
+    words = title_lower.split()
+    
+    i = 0
+    while i < len(words):
+        word = words[i].strip('.,!?:;"\'')
+        
+        # 2단어 조합 먼저 확인
+        if i < len(words) - 1:
+            two_words = f"{word} {words[i+1].strip('.,!?:;\"\'')}"  
+            if two_words in keyword_mapping:
+                translated_parts.append(keyword_mapping[two_words])
+                i += 2
+                continue
+        
+        # 단일 단어 확인
+        if word in keyword_mapping:
+            translated_parts.append(keyword_mapping[word])
+        elif word in action_mapping:
+            translated_parts.append(action_mapping[word])
+        elif word.isdigit():
+            translated_parts.append(word)
+        elif word.startswith('$') or '%' in word:
+            translated_parts.append(word)
+        elif len(word) <= 3 and word.isupper():
+            translated_parts.append(word)
+        
+        i += 1
+    
+    if len(translated_parts) >= 2:
+        return ' '.join(translated_parts)
+    else:
+        return None
+
+def translate_question_headline(title, keyword_mapping, action_mapping):
+    """질문형 헤드라인 번역"""
+    title_lower = title.lower()
+    
+    # 질문 단어 매핑
+    question_mapping = {
+        'why': '왜',
+        'what': '무엇이',
+        'how': '어떻게',
+        'when': '언제',
+        'where': '어디서',
+        'who': '누가'
+    }
+    
+    # 주요 키워드 찾기
+    found_keywords = []
+    for eng, kor in keyword_mapping.items():
+        if eng in title_lower:
+            found_keywords.append(kor)
+    
+    # 질문 단어 찾기
+    question_word = None
+    for eng, kor in question_mapping.items():
+        if title_lower.startswith(eng):
+            question_word = kor
+            break
+    
+    if question_word and found_keywords:
+        return f"{question_word} {found_keywords[0]}을/를"
+    elif found_keywords:
+        return f"{found_keywords[0]} 관련 질문"
+    else:
+        return "싱가포르 관련 질문"
+
+def is_menu_sentence(sentence):
+    """메뉴나 네비게이션 문장인지 확인"""
+    menu_patterns = [
+        'sign in', 'log in', 'my feed', 'edition menu', 'search menu',
+        'singapore indonesia asia', 'lifestyle luxury', 'top stories',
+        'latest news', 'live tv', 'podcasts', 'radio schedule',
+        'news id', 'type landing_page', 'find out what',
+        'get the best', 'sent to your inbox', 'newsletters',
+        'cna explains', 'sustainability', 'documentaries & shows'
+    ]
+    
+    sentence_lower = sentence.lower()
+    return any(pattern in sentence_lower for pattern in menu_patterns)
+
+def translate_title_simple(title, keyword_mapping, action_mapping):
+    """백업용 간단 번역 함수"""
+    return translate_title_intelligently(title, keyword_mapping, action_mapping)
 
 def get_free_summary(title, content):
     """무료 요약 방법들을 순차적으로 시도"""

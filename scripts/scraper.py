@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import re
 from collections import defaultdict
 from urllib.parse import urljoin, urlparse
+from ai_scraper import ai_scraper
 
 def load_settings():
     with open('data/settings.json', 'r') as f:
@@ -37,6 +38,283 @@ def clean_text(text):
     # 앞뒤 공백 제거
     return text.strip()
 
+def is_meaningful_content(text):
+    """의미있는 기사 내용인지 확인 - 더 관대하게"""
+    if len(text) < 20:
+        return False
+    
+    # 메뉴 텍스트 체크 - 더 엄격하게 (확실한 메뉴만)
+    if is_menu_text(text) and len(text) < 100:
+        return False
+    
+    # 기본 구조 체크
+    sentences = text.split('.')
+    if len(sentences) < 2:
+        return False
+    
+    # 단어 수 체크
+    words = text.split()
+    if len(words) < 30:
+        return False
+    
+    # 진엄한 기사 내용 패턴 - 더 넓은 범위
+    article_indicators = [
+        'said', 'announced', 'reported', 'according to', 'in a statement',
+        'the government', 'the ministry', 'officials', 'spokesperson',
+        'singapore', 'minister', 'prime minister', 'parliament',
+        'economic', 'policy', 'development', 'growth', 'investment',
+        'will', 'would', 'can', 'could', 'should', 'may', 'might',
+        'new', 'project', 'plan', 'programme', 'service', 'system',
+        'million', 'billion', 'percent', 'year', 'month', 'week',
+        'company', 'business', 'market', 'price', 'cost', 'budget',
+        'people', 'public', 'residents', 'citizens', 'community'
+    ]
+    
+    text_lower = text.lower()
+    article_score = sum(1 for indicator in article_indicators if indicator in text_lower)
+    
+    # 문장 구조 체크 (마침표, 쉼표 등)
+    punctuation_score = text.count('.') + text.count(',') + text.count(';')
+    
+    # 전체 길이 대비 의미있는 단어 비율
+    meaningful_words = [w for w in words if len(w) > 3 and w.isalpha()]
+    
+    if len(words) == 0:
+        return False
+    
+    meaningful_ratio = len(meaningful_words) / len(words)
+    
+    # 점수 기반 판단 - 더 관대하게
+    total_score = article_score + (punctuation_score * 0.3) + (meaningful_ratio * 5)
+    
+    return total_score > 2  # 점수 기준을 3에서 2로 낮춤
+
+def post_process_article_content(article_data):
+    """추출된 기사 내용 후처리"""
+    if not article_data or not article_data.get('content'):
+        return article_data
+    
+    content = article_data['content']
+    
+    # 문장 단위로 분리하여 필터링
+    sentences = [s.strip() for s in content.split('.') if s.strip()]
+    filtered_sentences = []
+    
+    for sentence in sentences:
+        # 진엄한 메뉴 문장 필터링
+        if not is_menu_sentence(sentence) and len(sentence) > 15:
+            # 추가 정제
+            cleaned_sentence = clean_menu_remnants(sentence)
+            if cleaned_sentence and len(cleaned_sentence) > 15:
+                filtered_sentences.append(cleaned_sentence)
+    
+    # 정제된 내용으로 업데이트
+    article_data['content'] = '. '.join(filtered_sentences[:10])  # 최대 10문장
+    
+    return article_data
+
+def is_menu_sentence(sentence):
+    """멤뉴 문장인지 더 엄격하게 판단"""
+    sentence_lower = sentence.lower().strip()
+    
+    # 직접적인 메뉴 패턴
+    direct_menu_patterns = [
+        '내 피드 에디션 메뉴',
+        'sign in account my feed',
+        'edition menu edition',
+        '싱가포르 인도네시아 아시아',
+        'singapore indonesia asia',
+        'cna 라이프 스타일 럭셔리',
+        'cna lifestyle luxury',
+        'top stories', 'latest news', 'live tv',
+        'news id', 'type landing_page',
+        'search menu search edition'
+    ]
+    
+    # 직접 매칭
+    if any(pattern in sentence_lower for pattern in direct_menu_patterns):
+        return True
+    
+    # 패턴 기반 판단
+    words = sentence_lower.split()
+    
+    # 진엄한 메뉴 단어 비율
+    menu_words = [
+        'feed', 'edition', 'menu', 'account', 'sign', 'search',
+        'lifestyle', 'luxury', 'today', 'stories', 'news',
+        'singapore', 'indonesia', 'asia', 'cna', 'cnar'
+    ]
+    
+    if len(words) > 0:
+        menu_word_ratio = sum(1 for word in words if word in menu_words) / len(words)
+        if menu_word_ratio > 0.6:  # 60% 이상이 메뉴 단어
+            return True
+    
+    # 진었단 나열 패턴 (a b c d e f...)
+    if len(words) > 8 and len([w for w in words if len(w) < 4]) > 6:
+        return True
+    
+    return False
+
+def clean_menu_remnants(text):
+    """남은 메뉴 잔여물 제거"""
+    # 특정 메뉴 문구 제거
+    menu_phrases_to_remove = [
+        '내 피드 에디션 메뉴 에디션 계정',
+        'Sign In Account My Feed Edition Menu',
+        'Edition: Singapore Indonesia Asia',
+        'CNAR 검색 메뉴 검색',
+        'CNA Lifestyle Luxury TODAY',
+        'News Id', 'Type landing_page'
+    ]
+    
+    cleaned_text = text
+    for phrase in menu_phrases_to_remove:
+        cleaned_text = cleaned_text.replace(phrase, '')
+        cleaned_text = cleaned_text.replace(phrase.lower(), '')
+        cleaned_text = cleaned_text.replace(phrase.upper(), '')
+    
+    # 다중 공백 제거
+    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
+    
+    return cleaned_text
+
+def is_landing_page_content(content):
+    """랜딩 페이지 또는 메뉴 페이지 콘텐츠인지 판단 - 더 관대하게"""
+    if not content or len(content) < 20:
+        return True
+    
+    content_lower = content.lower()
+    
+    # 확실한 랜딩 페이지 지표들만 체크
+    definite_landing_indicators = [
+        'sign in account my feed edition menu',
+        'type landing_page',
+        'news id 1822271 type landing_page',
+        'top stories id 1821936 type landing_page',
+        'latest news id 1822271 type landing_page'
+    ]
+    
+    # 확실한 지표가 하나라도 있으면 랜딩 페이지
+    if any(indicator in content_lower for indicator in definite_landing_indicators):
+        return True
+    
+    # 메뉴 텍스트 패턴 확인 - 더 엄격하게
+    menu_patterns = [
+        r'id \d+ type landing_page',
+        r'sign in account my feed edition menu',
+        r'edition menu edition singapore indonesia asia'
+    ]
+    
+    pattern_matches = sum(1 for pattern in menu_patterns if re.search(pattern, content_lower))
+    
+    # 패턴 매칭이 2개 이상이면 랜딩 페이지
+    if pattern_matches >= 2:
+        return True
+    
+    # 전체 단어 수 대비 메뉴 단어 비율 계산 - 더 관대하게
+    words = content_lower.split()
+    menu_words = [
+        'sign', 'account', 'feed', 'edition', 'menu', 'search',
+        'landing_page', 'landing', 'type'
+    ]
+    
+    if len(words) > 0:
+        menu_word_ratio = sum(1 for word in words if word in menu_words) / len(words)
+        
+        # 메뉴 단어 비율이 70% 이상이면 랜딩 페이지 (더 엄격하게)
+        if menu_word_ratio > 0.7:
+            return True
+    
+    # 실제 기사 내용의 지표 확인
+    article_indicators = [
+        'said', 'announced', 'reported', 'according to', 'minister', 'government',
+        'policy', 'economic', 'business', 'investment', 'development', 'growth',
+        'court', 'sentenced', 'charged', 'arrested', 'police', 'trial',
+        'company', 'market', 'shares', 'profit', 'revenue', 'customers',
+        'singapore', 'malaysian', 'indonesian', 'thai', 'vietnam'
+    ]
+    
+    article_score = sum(1 for indicator in article_indicators if indicator in content_lower)
+    
+    # 기사 지표가 있으면 일단 기사로 판단
+    if article_score > 0:
+        return False
+    
+    # 기사 지표가 전혀 없고 메뉴 단어 비율이 50% 이상이면 랜딩 페이지
+    if len(words) > 0:
+        menu_word_ratio = sum(1 for word in words if word in menu_words) / len(words)
+        if menu_word_ratio > 0.5:
+            return True
+    
+    return False
+
+def validate_final_article_content(article_data):
+    """최종 기사 내용 유효성 검사 - 더 관대하게"""
+    if not article_data or not article_data.get('title') or not article_data.get('content'):
+        return False
+    
+    title = article_data['title'].strip()
+    content = article_data['content'].strip()
+    
+    print(f"[DEBUG] Final validation for: {title}")
+    
+    # 제목 검사 - 명백한 메뉴/네비게이션 제목들만
+    invalid_titles = [
+        'newsletters', 'breaking news', 'sign up', 'login', 'register',
+        'share on whatsapp', 'yoursingapore story', 'featured',
+        'menu', 'search', 'edition'
+    ]
+    
+    if any(invalid in title.lower() for invalid in invalid_titles):
+        print(f"[DEBUG] Invalid title detected: {title}")
+        return False
+    
+    # 내용 검사 - 실제 뉴스 기사의 특징 확인 (더 관대하게)
+    news_indicators = [
+        'said', 'announced', 'reported', 'according to', 'minister',
+        'government', 'policy', 'singapore', 'parliament', 'court',
+        'arrested', 'charged', 'sentenced', 'company', 'business',
+        'economy', 'investment', 'market', 'development', 'residents',
+        'citizens', 'public', 'authorities', 'officials', 'plan',
+        'project', 'programme', 'service', 'system', 'will', 'would',
+        'can', 'could', 'should', 'million', 'billion', 'percent',
+        'year', 'years', 'month', 'months', 'week', 'weeks', 'day', 'days'
+    ]
+    
+    content_lower = content.lower()
+    news_score = sum(1 for indicator in news_indicators if indicator in content_lower)
+    
+    # 뉴스 지표가 전혀 없으면 기사가 아님 (하지만 더 관대하게)
+    if news_score == 0:
+        # 기본적인 문서 구조가 있는지 확인
+        sentences = content.split('.')
+        if len(sentences) < 2 or len(content.split()) < 20:
+            print(f"[DEBUG] No news indicators and insufficient structure")
+            return False
+    
+    # 메뉴 텍스트 확인 - 더 엄격하게 (확실한 메뉴만)
+    if is_menu_text(content) and news_score == 0:
+        print(f"[DEBUG] Menu text detected in content")
+        return False
+    
+    # 내용 길이 및 구조 확인 - 더 관대하게
+    sentences = content.split('.')
+    valid_sentences = [s.strip() for s in sentences if len(s.strip()) > 10]
+    
+    if len(valid_sentences) < 2:
+        print(f"[DEBUG] Insufficient valid sentences: {len(valid_sentences)}")
+        return False
+    
+    # 단어 수 확인 - 더 관대하게 (20단어 이상)
+    words = content.split()
+    if len(words) < 20:
+        print(f"[DEBUG] Content too short: {len(words)} words")
+        return False
+    
+    print(f"[DEBUG] Article validation passed - news_score: {news_score}, sentences: {len(valid_sentences)}, words: {len(words)}")
+    return True
+
 def extract_article_content_straits_times(url, soup):
     """The Straits Times 전용 콘텐츠 추출"""
     article = {
@@ -46,20 +324,25 @@ def extract_article_content_straits_times(url, soup):
     }
     
     # 제목 추출
-    title_elem = soup.select_one('h1.headline, h1[data-testid="headline"], .article-headline h1')
+    title_elem = soup.select_one('h1.headline, h1[data-testid="headline"], .article-headline h1, h1')
     if title_elem:
         article['title'] = clean_text(title_elem.get_text())
     
-    # 본문 추출
-    content_elem = soup.select_one('div[data-testid="article-body"], .article-content, .paywall-content')
+    # 전체 비필요 요소 먼저 제거
+    remove_unwanted_elements(soup)
+    
+    # 본문 추출 - 더 정교한 선택자 사용
+    content_elem = find_main_content_element(soup, [
+        'div[data-testid="article-body"]',
+        '.article-content',
+        '.paywall-content', 
+        '.story-content',
+        'article',
+        '.content-body'
+    ])
+    
     if content_elem:
-        # 불필요한 요소 제거
-        for elem in content_elem.select('.related-articles, .advertisement, script, style'):
-            elem.decompose()
-        
-        paragraphs = content_elem.find_all('p')
-        content = ' '.join([clean_text(p.get_text()) for p in paragraphs if p.get_text().strip()])
-        article['content'] = content[:1000]  # 1000자로 제한
+        article['content'] = extract_pure_article_text(content_elem)
     
     # 날짜 추출
     date_elem = soup.select_one('time, .published-date, [data-testid="publish-date"]')
@@ -141,6 +424,261 @@ def extract_article_content_nac(url, soup):
     
     return article
 
+def extract_article_content_business_times(url, soup):
+    """The Business Times 전용 콘텐츠 추출"""
+    article = {
+        'title': '',
+        'content': '',
+        'publish_date': datetime.now()
+    }
+    
+    # 제목 추출
+    title_elem = soup.select_one('h1, .headline, .article-title')
+    if title_elem:
+        title_text = clean_text(title_elem.get_text())
+        # 사이트 이름 제거
+        if ' - ' in title_text:
+            title_text = title_text.split(' - ')[0]
+        article['title'] = title_text
+    
+    # 전체 비필요 요소 먼저 제거
+    remove_unwanted_elements(soup)
+    
+    # 본문 추출 - Business Times 전용 선택자
+    content_elem = find_main_content_element(soup, [
+        '.article-content',
+        '.story-content',
+        '.content-body',
+        'article',
+        '.post-content',
+        '.main-content'
+    ])
+    
+    if content_elem:
+        article['content'] = extract_pure_article_text(content_elem)
+    
+    return article
+
+def extract_article_content_cna(url, soup):
+    """Channel NewsAsia 전용 콘텐츠 추출"""
+    article = {
+        'title': '',
+        'content': '',
+        'publish_date': datetime.now()
+    }
+    
+    # 제목 추출
+    title_elem = soup.select_one('h1, .headline, .article-headline')
+    if title_elem:
+        title_text = clean_text(title_elem.get_text())
+        # 사이트 이름 제거
+        if ' - ' in title_text:
+            title_text = title_text.split(' - ')[0]
+        article['title'] = title_text
+    
+    # 전체 비필요 요소 먼저 제거
+    remove_unwanted_elements(soup)
+    
+    # 본문 추출 - CNA 전용 선택자
+    content_elem = find_main_content_element(soup, [
+        '.text-long',
+        '.article-content',
+        '.story-content',
+        'article',
+        '.content-body',
+        '.post-content'
+    ])
+    
+    if content_elem:
+        article['content'] = extract_pure_article_text(content_elem)
+    
+    return article
+
+def is_menu_text(text):
+    """메뉴나 네비게이션 텍스트인지 확인"""
+    menu_indicators = [
+        # 로그인/계정 관련
+        'log in', 'sign in', 'account', 'my feed', 'manage account', 'log out',
+        'subscribe', 'newsletter', 'subscription',
+        
+        # 메뉴/네비게이션
+        'menu', 'search', 'share', 'edition', 'search menu', 'breadcrumb',
+        'navigation', 'header', 'footer', 'sidebar',
+        
+        # 사이트 섹션
+        'top stories', 'latest news', 'breaking news', 'live tv', 'podcasts', 
+        'radio schedule', 'tv schedule', 'watch', 'listen',
+        
+        # 카테고리
+        'business', 'sport', 'lifestyle', 'luxury', 'commentary', 'sustainability',
+        'singapore', 'asia', 'world', 'insider', 'cna explains',
+        
+        # 기술적 요소
+        'news id', 'type landing_page', 'type all_videos', 'type all_vod', 'type all_podcasts',
+        'id 1822271', 'id 1821936', 'id 1821901', 'id 4310561', 'id 1821876',
+        'id 1821886', 'id 1821896', 'id 3384986', 'id 1881506', 'id 1821906',
+        'id 1821911', 'id 1821891', 'id 1431321', 'id 1822266', 'id 5197731',
+        'id 2005266', 'id 5191361',
+        
+        # 기타 UI 요소
+        'find out what', 'submitted by', 'anonymous', 'verified', 'newsletters',
+        'get the best', 'select your', 'sent to your inbox', 'east asia',
+        'us/uk', 'cnar', 'cna938', 'documentaries & shows', 'news reports'
+    ]
+    
+    text_lower = text.lower().strip()
+    
+    # 직접 매칭
+    if any(indicator in text_lower for indicator in menu_indicators):
+        return True
+    
+    # 패턴 매칭
+    import re
+    
+    # ID 패턴 (News Id 1234567, Type landing_page 등)
+    if re.search(r'\b(id|type)\s+\d+|\b(id|type)\s+\w+_\w+', text_lower):
+        return True
+    
+    # 진엄한 메뉴 패턴 (A B C D E... 나열)
+    words = text_lower.split()
+    if len(words) > 10 and len([w for w in words if len(w) < 4]) > 5:
+        return True
+    
+    # 진엄한 선택자나 링크 나열
+    if text_lower.count(':') > 3 or text_lower.count('|') > 2:
+        return True
+    
+    # 진엄한 소문자 나열 (a b c d e f g...)
+    if len(text) > 100 and len([c for c in text if c.isupper()]) < len(text) * 0.1:
+        single_chars = [w for w in words if len(w) == 1]
+        if len(single_chars) > 5:
+            return True
+    
+    return False
+
+def remove_unwanted_elements(soup):
+    """전체 페이지에서 비필요 요소 제거"""
+    # 제거할 선택자 목록
+    unwanted_selectors = [
+        # 네비게이션
+        'nav', '.nav', '.navigation', '.navbar', '.menu', '.breadcrumb',
+        # 헤더/푸터
+        'header', 'footer', '.header', '.footer', '.page-header', '.page-footer',
+        # 사이드바
+        '.sidebar', '.side-bar', '.left-sidebar', '.right-sidebar', 'aside',
+        # 소셜/공유
+        '.social-share', '.share-buttons', '.social-links', '.social-media',
+        # 메타데이터
+        '.tags', '.tag-list', '.categories', '.meta', '.author-info',
+        # 댓글
+        '.comments', '.comment-section', '.discussion',
+        # 광고
+        '.advertisement', '.ads', '.banner', '.promo',
+        # 기타
+        'script', 'style', '.hidden', '.sr-only',
+        # CNA 전용
+        '.c-header', '.c-footer', '.c-nav', '.c-sidebar',
+        # 일반적인 메뉴 클래스
+        '.main-nav', '.primary-nav', '.secondary-nav'
+    ]
+    
+    for selector in unwanted_selectors:
+        for elem in soup.select(selector):
+            elem.decompose()
+
+def find_main_content_element(soup, selectors):
+    """주 콘텐츠 요소 찾기"""
+    for selector in selectors:
+        elem = soup.select_one(selector)
+        if elem:
+            return elem
+    return None
+
+def extract_pure_article_text(content_elem):
+    """순수 기사 텍스트만 추출"""
+    # 내부에서 추가 불필요 요소 제거
+    unwanted_inner = [
+        '.related-articles', '.related-content', '.see-also',
+        '.advertisement', '.ads', '.banner', '.promo',
+        '.social-share', '.share-buttons', '.tags', '.meta',
+        '.author-bio', '.author-info', '.byline',
+        '.comments', '.comment-form', '.discussion',
+        '.newsletter-signup', '.subscription',
+        '.breadcrumb', '.navigation',
+        'script', 'style', 'noscript'
+    ]
+    
+    for selector in unwanted_inner:
+        for elem in content_elem.select(selector):
+            elem.decompose()
+    
+    # 단락 추출
+    paragraphs = content_elem.find_all(['p', 'div'])
+    content_parts = []
+    
+    for p in paragraphs:
+        text = clean_text(p.get_text())
+        
+        # 진짜 기사 내용인지 엄격하게 확인
+        if is_real_article_content(text):
+            content_parts.append(text)
+    
+    # 최대 10개 단락, 1000자로 제한
+    return '. '.join(content_parts[:10])[:1000]
+
+def is_real_article_content(text):
+    """진짜 기사 내용인지 엄격하게 판단"""
+    if len(text) < 30:  # 최소 길이 증가
+        return False
+    
+    # 메뉴 텍스트 체크
+    if is_menu_sentence(text):
+        return False
+    
+    # 진짜 기사 내용의 지표
+    article_signals = [
+        # 인용구
+        'said', 'announced', 'reported', 'stated', 'explained', 'confirmed',
+        'according to', 'in a statement', 'speaking to', 'told reporters',
+        
+        # 정부/기관
+        'government', 'ministry', 'minister', 'prime minister', 'parliament',
+        'official', 'spokesperson', 'department', 'agency',
+        
+        # 지역/국가
+        'singapore', 'malaysian', 'indonesian', 'thai', 'asean',
+        
+        # 수치/날짜
+        'percent', 'million', 'billion', 'year', 'month', 'week',
+        'january', 'february', 'march', 'april', 'may', 'june',
+        'july', 'august', 'september', 'october', 'november', 'december',
+        
+        # 기사 내용
+        'policy', 'economic', 'growth', 'development', 'investment',
+        'business', 'market', 'industry', 'company', 'project'
+    ]
+    
+    text_lower = text.lower()
+    signal_count = sum(1 for signal in article_signals if signal in text_lower)
+    
+    # 기사 지표가 없으면 기본 문장 구조 체크
+    if signal_count == 0:
+        # 완전한 문장 구조를 가진 기사인지 확인
+        sentences = text.split('.')
+        complete_sentences = [s.strip() for s in sentences if len(s.strip()) > 10]
+        
+        if len(complete_sentences) < 2:  # 최소 2개 문장 필요
+            return False
+        
+        # 단어 길이 및 분포 체크
+        words = text_lower.split()
+        long_words = [w for w in words if len(w) > 4]
+        
+        if len(words) == 0 or len(long_words) / len(words) < 0.3:
+            return False
+    
+    return signal_count > 0 or len(text.split('.')) >= 2
+
 def extract_article_content_generic(url, soup):
     """범용 콘텐츠 추출 (폴백)"""
     article = {
@@ -154,17 +692,49 @@ def extract_article_content_generic(url, soup):
     if not title_elem:
         title_elem = soup.find('title')
     if title_elem:
-        article['title'] = clean_text(title_elem.get_text())
+        title_text = clean_text(title_elem.get_text())
+        # 사이트 이름 제거
+        if ' - ' in title_text:
+            title_text = title_text.split(' - ')[0]
+        article['title'] = title_text
     
-    # 본문 추출
-    # 가장 긴 텍스트를 가진 요소 찾기
-    main_content = ""
-    for elem in soup.find_all(['article', 'main', 'div']):
-        text = clean_text(elem.get_text())
-        if len(text) > len(main_content):
-            main_content = text
+    # 전체 비필요 요소 먼저 제거
+    remove_unwanted_elements(soup)
     
-    article['content'] = main_content[:1000]
+    # 본문 추출 - 다양한 선택자 시도
+    content_elem = find_main_content_element(soup, [
+        'article',
+        'main',
+        '.article-content',
+        '.post-content',
+        '.content-body',
+        '.story-content',
+        '.entry-content',
+        '.main-content'
+    ])
+    
+    if content_elem:
+        article['content'] = extract_pure_article_text(content_elem)
+    else:
+        # 폴백: 가장 많은 p 태그를 가진 div 찾기
+        best_div = None
+        max_content_score = 0
+        
+        for div in soup.find_all('div'):
+            paragraphs = div.find_all('p')
+            content_score = 0
+            
+            for p in paragraphs:
+                text = clean_text(p.get_text())
+                if is_real_article_content(text):
+                    content_score += len(text)
+            
+            if content_score > max_content_score:
+                max_content_score = content_score
+                best_div = div
+        
+        if best_div:
+            article['content'] = extract_pure_article_text(best_div)
     
     return article
 
@@ -179,58 +749,164 @@ def extract_article_content(url):
         # 도메인에 따라 다른 추출 방법 사용
         domain = urlparse(url).netloc.lower()
         
+        article_data = None
         if 'straitstimes.com' in domain:
-            return extract_article_content_straits_times(url, soup)
+            article_data = extract_article_content_straits_times(url, soup)
+        elif 'businesstimes.com.sg' in domain:
+            article_data = extract_article_content_business_times(url, soup)
+        elif 'channelnewsasia.com' in domain or 'cna.com.sg' in domain:
+            article_data = extract_article_content_cna(url, soup)
         elif 'moe.gov.sg' in domain:
-            return extract_article_content_moe(url, soup)
+            article_data = extract_article_content_moe(url, soup)
         elif 'nac.gov.sg' in domain or 'catch.sg' in domain:
-            return extract_article_content_nac(url, soup)
+            article_data = extract_article_content_nac(url, soup)
         else:
-            return extract_article_content_generic(url, soup)
+            article_data = extract_article_content_generic(url, soup)
+        
+        # 추출된 데이터 후처리
+        if article_data:
+            article_data = post_process_article_content(article_data)
+        
+        return article_data
             
     except Exception as e:
         print(f"Error extracting content from {url}: {e}")
         return None
 
+def is_valid_article_url(url, domain):
+    """유효한 기사 URL인지 판단 - 더 유연한 접근"""
+    url_lower = url.lower()
+    print(f"[DEBUG] Checking URL: {url}")
+    
+    # 제외할 패턴들 - 핵심적인 것들만
+    exclude_patterns = [
+        'javascript:', 'mailto:', 'tel:', '#', 'wa.me', 'whatsapp',
+        '.pdf', '.jpg', '.png', '.gif', '.mp4', '.css', '.js',
+        'subscribe', 'login', 'register', 'sign-up', 'newsletter-signup',
+        'privacy-policy', 'terms-of-service', 'contact-us', 'about-us',
+        '/search', '/tag/', '/topic/', '/category/', '/author/'
+    ]
+    
+    # 제외 패턴 체크
+    if any(pattern in url_lower for pattern in exclude_patterns):
+        print(f"[DEBUG] URL excluded by pattern: {url}") 
+        return False
+    
+    # 사이트별 기사 URL 패턴 - 더 유연하게
+    if 'channelnewsasia.com' in domain or 'cna.com.sg' in domain:
+        print(f"[DEBUG] Checking CNA URL patterns for: {url}")
+        
+        # CNA 기사 패턴 - 더 유연하게
+        cna_patterns = [
+            r'/singapore/[a-z0-9-]{5,}',          # 싱가포르 섹션 + 짧은 제목도 허용
+            r'/asia/[a-z0-9-]{5,}',               # 아시아 섹션
+            r'/world/[a-z0-9-]{5,}',              # 월드 섹션
+            r'/business/[a-z0-9-]{5,}',           # 비즈니스 섹션
+            r'/sport/[a-z0-9-]{5,}',              # 스포츠 섹션
+            r'/lifestyle/[a-z0-9-]{5,}',          # 라이프스타일 섹션
+            r'/commentary/[a-z0-9-]{5,}',         # 논평 섹션
+            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}', # 날짜 패턴
+            r'/[a-z0-9-]{10,}-\d+$'               # 긴 제목-숫자 패턴
+        ]
+        
+        # 섹션 루트 페이지는 제외
+        if url.rstrip('/').endswith(('/singapore', '/asia', '/world', '/business', '/sport', '/lifestyle')):
+            print(f"[DEBUG] CNA section root page excluded")
+            return False
+        
+        matched = any(re.search(pattern, url) for pattern in cna_patterns)
+        print(f"[DEBUG] CNA URL pattern match: {matched}")
+        return matched
+    
+    elif 'straitstimes.com' in domain:
+        print(f"[DEBUG] Checking ST URL patterns for: {url}")
+        
+        # Straits Times 기사 패턴 - 더 유연하게
+        st_patterns = [
+            r'/singapore/[a-z0-9-]{5,}',          # 싱가포르 섹션
+            r'/asia/[a-z0-9-/]{5,}',              # 아시아 섹션
+            r'/world/[a-z0-9-/]{5,}',             # 월드 섹션
+            r'/business/[a-z0-9-/]{5,}',          # 비즈니스 섹션
+            r'/sport/[a-z0-9-/]{5,}',             # 스포츠 섹션
+            r'/life/[a-z0-9-/]{5,}',              # 라이프 섹션
+            r'/opinion/[a-z0-9-]{5,}',            # 오피니언 섹션
+            r'/tech/[a-z0-9-]{5,}',               # 기술 섹션
+            r'/politics/[a-z0-9-]{5,}',           # 정치 섹션
+            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}', # 날짜 패턴
+            r'/[a-z0-9-]{15,}$'                   # 긴 제목 URL
+        ]
+        
+        # ST 특별 페이지들만 제외
+        if any(exclude in url_lower for exclude in ['/multimedia/', '/graphics/', '/180']):
+            print(f"[DEBUG] ST special page excluded")
+            return False
+            
+        matched = any(re.search(pattern, url) for pattern in st_patterns)
+        print(f"[DEBUG] ST URL pattern match: {matched}")
+        return matched
+    
+    elif 'businesstimes.com.sg' in domain:
+        print(f"[DEBUG] Checking BT URL patterns for: {url}")
+        
+        # Business Times 기사 패턴 - 더 유연하게
+        bt_patterns = [
+            r'/economy/[a-z0-9-]{5,}',            # 경제 섹션
+            r'/companies/[a-z0-9-]{5,}',          # 기업 섹션
+            r'/banking-finance/[a-z0-9-]{5,}',    # 금융 섹션
+            r'/asean/[a-z0-9-]{5,}',              # 아세안 섹션
+            r'/tech/[a-z0-9-]{5,}',               # 기술 섹션
+            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}', # 날짜 패턴
+            r'/[a-z0-9-]{15,}$'                   # 긴 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in bt_patterns)
+        print(f"[DEBUG] BT URL pattern match: {matched}")
+        return matched
+    
+    # 기본 패턴 (모든 사이트용) - 더 관대하게
+    general_patterns = [
+        r'/20\d{2}/\d{2}/\d{2}/[a-z0-9-]{5,}',   # 날짜 + 제목 패턴
+        r'/articles?/[a-z0-9-]{5,}',             # 기사 URL
+        r'/news/[a-z0-9-]{5,}',                  # 뉴스 URL
+        r'/story/[a-z0-9-]{5,}',                 # 스토리 URL
+        r'/post/[a-z0-9-]{5,}',                  # 포스트 URL
+        r'/press-releases/[a-z0-9-]{5,}',        # 보도자료 URL
+        r'/events?/[a-z0-9-]{5,}',               # 이벤트 URL
+        r'/[a-z0-9-]{15,}$',                     # 긴 제목만 있는 URL (15자 이상)
+        r'/[a-z0-9-]+-\d+$'                      # 제목-숫자 패턴
+    ]
+    
+    matched = any(re.search(pattern, url) for pattern in general_patterns)
+    print(f"[DEBUG] General URL pattern match: {matched} for {url}")
+    return matched
+
 def get_article_links_straits_times(soup, base_url):
     """The Straits Times 전용 링크 추출"""
     links = []
-    
-    # 실제 기사 링크 패턴
-    article_patterns = [
-        r'/singapore/',
-        r'/asia/',
-        r'/world/',
-        r'/business/',
-        r'/sport/',
-        r'/lifestyle/',
-        r'/multimedia/'
-    ]
+    domain = urlparse(base_url).netloc.lower()
     
     for a in soup.select('a[href]'):
         href = a.get('href', '')
         full_url = urljoin(base_url, href)
         
-        # 기사 URL 패턴 확인
-        if any(pattern in href for pattern in article_patterns):
-            # 제외할 패턴
-            exclude_patterns = ['subscribe', 'login', 'register', 'terms', 'privacy']
-            if not any(exclude in href.lower() for exclude in exclude_patterns):
-                links.append(full_url)
+        # 유효한 기사 URL인지 확인
+        if is_valid_article_url(full_url, domain):
+            links.append(full_url)
     
     return list(set(links))[:10]  # 중복 제거 후 10개까지
 
 def get_article_links_moe(soup, base_url):
     """MOE 전용 링크 추출"""
     links = []
+    domain = urlparse(base_url).netloc.lower()
     
     # MOE는 주로 press-releases와 news 섹션
     for a in soup.select('a[href*="press-releases"], a[href*="/news/"]'):
         href = a.get('href', '')
         full_url = urljoin(base_url, href)
         
-        # 실제 기사인지 확인 (날짜 패턴 포함)
-        if re.search(r'/20\d{2}/', href):
+        # 유효한 기사 URL인지 확인
+        if is_valid_article_url(full_url, domain):
             links.append(full_url)
     
     return list(set(links))[:10]
@@ -241,12 +917,14 @@ def get_article_links_generic(soup, base_url):
     domain = urlparse(base_url).netloc.lower()
     
     # 사이트별 특별 처리
-    if 'channelnewsasia.com' in domain:
-        # CNA는 특정 섹션 링크
-        for a in soup.select('a[href*="/singapore"], a[href*="/asia"], a[href*="/world"]'):
+    if 'channelnewsasia.com' in domain or 'cna.com.sg' in domain:
+        # CNA는 더 엄격한 선택자 사용
+        for a in soup.select('a[href]'):
             href = a.get('href', '')
             full_url = urljoin(base_url, href)
-            if '/topic/' not in href and '/tag/' not in href:
+            
+            # 유효한 기사 URL인지 확인
+            if is_valid_article_url(full_url, domain):
                 links.append(full_url)
                 
     elif 'sbr.com.sg' in domain:
@@ -254,8 +932,8 @@ def get_article_links_generic(soup, base_url):
         for a in soup.select('a[href]'):
             href = a.get('href', '')
             full_url = urljoin(base_url, href)
-            # 기사 패턴: /economy/, /markets/, /financial-services/
-            if any(section in href for section in ['/economy/', '/markets/', '/financial-services/', '/commercial-property/']):
+            
+            if is_valid_article_url(full_url, domain):
                 links.append(full_url)
                 
     elif 'nac.gov.sg' in domain:
@@ -263,7 +941,9 @@ def get_article_links_generic(soup, base_url):
         for a in soup.select('a[href*="/whatson"], a[href*="/engage"], a[href*="/news"]'):
             href = a.get('href', '')
             full_url = urljoin(base_url, href)
-            links.append(full_url)
+            
+            if is_valid_article_url(full_url, domain):
+                links.append(full_url)
             
     else:
         # 기본 패턴
@@ -271,12 +951,8 @@ def get_article_links_generic(soup, base_url):
             href = a.get('href', '')
             full_url = urljoin(base_url, href)
             
-            # 기본 필터링
-            if any(pattern in href.lower() for pattern in ['article', 'news', 'story', '/20']):
-                # 제외 패턴
-                exclude = ['login', 'register', 'subscribe', 'search', 'tag', 'category', 'author']
-                if not any(ex in href.lower() for ex in exclude):
-                    links.append(full_url)
+            if is_valid_article_url(full_url, domain):
+                links.append(full_url)
     
     return list(set(links))[:10]
 
@@ -329,7 +1005,195 @@ def create_keyword_summary(title, content):
     
     return summary
 
+def scrape_news_ai():
+    """AI 기반 향상된 뉴스 스크랩 함수"""
+    settings = load_settings()
+    sites = load_sites()
+    articles_by_group = defaultdict(list)
+    
+    blocked_keywords = [kw.strip() for kw in settings.get('blockedKeywords', '').split(',') if kw.strip()]
+    important_keywords = [kw.strip() for kw in settings.get('importantKeywords', '').split(',') if kw.strip()]
+    
+    for site in sites:
+        try:
+            print(f"AI Scraping {site['name']}...")
+            
+            # AI 스크래퍼로 사이트 분석
+            site_result = ai_scraper.scrape_with_ai(site['url'])
+            
+            if site_result['type'] == 'error':
+                print(f"[ERROR] Failed to scrape {site['name']}: {site_result['error']}")
+                continue
+            
+            # 링크 페이지인 경우 - 기사 링크들 추출
+            if site_result['type'] == 'link_page':
+                links = site_result.get('links', [])
+                print(f"[AI] Found {len(links)} article links from {site['name']}")
+                
+                # 각 링크에 대해 기사 추출
+                for article_url in links[:5]:  # 사이트당 최대 5개
+                    try:
+                        print(f"[AI] Processing article: {article_url}")
+                        
+                        # AI로 기사 추출
+                        article_result = ai_scraper.scrape_with_ai(article_url)
+                        
+                        if article_result['type'] != 'article':
+                            print(f"[AI] Skipping: not an article - {article_result['type']}")
+                            continue
+                        
+                        # 기사 데이터 검증
+                        if not article_result.get('title') or not article_result.get('content'):
+                            print(f"[AI] Skipping: missing title or content")
+                            continue
+                        
+                        if len(article_result['content']) < 50:
+                            print(f"[AI] Skipping: content too short ({len(article_result['content'])} chars)")
+                            continue
+                        
+                        # 키워드 필터링
+                        full_text = f"{article_result['title']} {article_result['content']}"
+                        
+                        if is_blocked(full_text, blocked_keywords):
+                            print(f"[AI] Skipping: blocked by keywords")
+                            continue
+                        
+                        if settings['scrapTarget'] == 'important' and not contains_keywords(full_text, important_keywords):
+                            print(f"[AI] Skipping: no important keywords")
+                            continue
+                        
+                        print(f"[AI] Article passed validation: {article_result['title']}")
+                        
+                        # 요약 생성
+                        article_data = {
+                            'title': article_result['title'],
+                            'content': article_result['content'],
+                            'publish_date': datetime.now()
+                        }
+                        summary = create_summary(article_data, settings)
+                        print(f"[AI] Generated summary: {summary[:100]}...")
+                        
+                        # 그룹별로 기사 수집
+                        articles_by_group[site['group']].append({
+                            'site': site['name'],
+                            'title': article_result['title'],
+                            'url': article_url,
+                            'summary': summary,
+                            'content': article_result['content'],
+                            'publish_date': datetime.now().isoformat(),
+                            'extracted_by': article_result.get('extracted_by', 'ai'),
+                            'ai_classification': article_result.get('classification', {})
+                        })
+                        
+                    except Exception as e:
+                        print(f"[ERROR] Error processing article {article_url}: {e}")
+                        continue
+            
+            # 직접 기사인 경우
+            elif site_result['type'] == 'article':
+                print(f"[AI] Direct article found from {site['name']}")
+                
+                if site_result.get('title') and site_result.get('content'):
+                    full_text = f"{site_result['title']} {site_result['content']}"
+                    
+                    # 필터링
+                    if not is_blocked(full_text, blocked_keywords):
+                        if settings['scrapTarget'] != 'important' or contains_keywords(full_text, important_keywords):
+                            
+                            article_data = {
+                                'title': site_result['title'],
+                                'content': site_result['content'],
+                                'publish_date': datetime.now()
+                            }
+                            summary = create_summary(article_data, settings)
+                            
+                            articles_by_group[site['group']].append({
+                                'site': site['name'],
+                                'title': site_result['title'],
+                                'url': site['url'],
+                                'summary': summary,
+                                'content': site_result['content'],
+                                'publish_date': datetime.now().isoformat(),
+                                'extracted_by': site_result.get('extracted_by', 'ai'),
+                                'ai_classification': site_result.get('classification', {})
+                            })
+                            
+                            print(f"[AI] Direct article processed: {site_result['title']}")
+                        else:
+                            print(f"[AI] Direct article filtered by keywords")
+                    else:
+                        print(f"[AI] Direct article blocked by keywords")
+                else:
+                    print(f"[AI] Direct article missing title or content")
+                    
+        except Exception as e:
+            print(f"[ERROR] Error scraping {site['name']}: {e}")
+            continue
+    
+    # 그룹별로 기사 통합
+    consolidated_articles = []
+    
+    for group, group_articles in articles_by_group.items():
+        if not group_articles:
+            continue
+            
+        # 중복 제거 (제목 기준)
+        unique_articles = []
+        seen_titles = set()
+        for article in group_articles:
+            if article['title'] not in seen_titles:
+                seen_titles.add(article['title'])
+                unique_articles.append(article)
+        
+        # 각 그룹에서 최대 3개의 주요 기사만 선택
+        selected_articles = unique_articles[:3]
+        
+        # 그룹별 통합 기사 생성
+        group_summary = {
+            'group': group,
+            'articles': selected_articles,
+            'article_count': len(selected_articles),
+            'sites': list(set(article['site'] for article in selected_articles)),
+            'timestamp': datetime.now().isoformat(),
+            'scraping_method': 'ai_enhanced'
+        }
+        
+        consolidated_articles.append(group_summary)
+    
+    # 결과 저장
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    output_file = f'data/scraped/news_{timestamp}.json'
+    
+    os.makedirs('data/scraped', exist_ok=True)
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(consolidated_articles, f, ensure_ascii=False, indent=2)
+    
+    # latest.json 파일 업데이트
+    latest_info = {
+        'lastUpdated': datetime.now().isoformat(),
+        'latestFile': f'news_{timestamp}.json',
+        'scrapingMethod': 'ai_enhanced'
+    }
+    with open('data/latest.json', 'w', encoding='utf-8') as f:
+        json.dump(latest_info, f, ensure_ascii=False, indent=2)
+    
+    total_articles = sum(len(group['articles']) for group in consolidated_articles)
+    print(f"\n[AI] Scraped {total_articles} articles from {len(consolidated_articles)} groups")
+    return output_file
+
 def scrape_news():
+    """메인 스크랩 함수 - AI 기능 우선 사용"""
+    # AI 기능이 활성화된 경우 AI 스크래퍼 사용
+    if ai_scraper.model:
+        print("Using AI-enhanced scraping...")
+        return scrape_news_ai()
+    else:
+        print("Using traditional scraping (AI not available)...")
+        return scrape_news_traditional()
+
+def scrape_news_traditional():
+    """기존 방식의 스크랩 함수 (AI 없이)"""
     settings = load_settings()
     sites = load_sites()
     articles_by_group = defaultdict(list)
@@ -359,26 +1223,57 @@ def scrape_news():
             # 기사별 처리
             for article_url in links[:5]:  # 사이트당 최대 5개
                 try:
-                    print(f"  Processing: {article_url}")
+                    print(f"[DEBUG] Processing article: {article_url}")
                     article_data = extract_article_content(article_url)
                     
-                    if not article_data or not article_data['title'] or len(article_data['content']) < 50:
+                    if not article_data or not article_data['title']:
+                        print(f"[DEBUG] Skipping: no title or data")
+                        continue
+                        
+                    if len(article_data['content']) < 50:
+                        print(f"[DEBUG] Skipping: content too short ({len(article_data['content'])} chars)")
+                        continue
+                    
+                    # 제목부터 메뉴/네비게이션 페이지 확인
+                    if is_menu_text(article_data['title']):
+                        print(f"[DEBUG] Skipping: menu title detected - {article_data['title']}")
+                        continue
+                    
+                    # 랜딩 페이지 또는 메뉴 페이지인지 확인
+                    if is_landing_page_content(article_data['content']):
+                        print(f"[DEBUG] Skipping: landing page content detected")
+                        continue
+                        
+                    # 의미있는 기사 내용인지 확인
+                    if not is_meaningful_content(article_data['content']):
+                        print(f"[DEBUG] Skipping: not meaningful content")
                         continue
                     
                     full_text = f"{article_data['title']} {article_data['content']}"
                     
                     # 필터링
                     if is_blocked(full_text, blocked_keywords):
+                        print(f"[DEBUG] Skipping: blocked by keywords")
                         continue
                     
                     if settings['scrapTarget'] == 'recent' and not is_recent_article(article_data['publish_date']):
+                        print(f"[DEBUG] Skipping: not recent article")
                         continue
                     
                     if settings['scrapTarget'] == 'important' and not contains_keywords(full_text, important_keywords):
+                        print(f"[DEBUG] Skipping: no important keywords")
                         continue
+                    
+                    # 최종 유효성 검사 - 실제 기사 내용인지 재확인
+                    if not validate_final_article_content(article_data):
+                        print(f"[DEBUG] Skipping: failed final validation")
+                        continue
+                    
+                    print(f"[DEBUG] Article passed all validations: {article_data['title']}")
                     
                     # 요약 생성
                     summary = create_summary(article_data, settings)
+                    print(f"[DEBUG] Generated summary: {summary[:100]}...")
                     
                     # 그룹별로 기사 수집
                     articles_by_group[site['group']].append({
@@ -391,7 +1286,7 @@ def scrape_news():
                     })
                     
                 except Exception as e:
-                    print(f"Error processing article {article_url}: {e}")
+                    print(f"[ERROR] Error processing article {article_url}: {e}")
                     continue
                     
         except Exception as e:
@@ -422,7 +1317,8 @@ def scrape_news():
             'articles': selected_articles,
             'article_count': len(selected_articles),
             'sites': list(set(article['site'] for article in selected_articles)),
-            'timestamp': datetime.now().isoformat()
+            'timestamp': datetime.now().isoformat(),
+            'scraping_method': 'traditional'
         }
         
         consolidated_articles.append(group_summary)
@@ -439,7 +1335,8 @@ def scrape_news():
     # latest.json 파일 업데이트
     latest_info = {
         'lastUpdated': datetime.now().isoformat(),
-        'latestFile': f'news_{timestamp}.json'
+        'latestFile': f'news_{timestamp}.json',
+        'scrapingMethod': 'traditional'
     }
     with open('data/latest.json', 'w', encoding='utf-8') as f:
         json.dump(latest_info, f, ensure_ascii=False, indent=2)

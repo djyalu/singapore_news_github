@@ -3057,7 +3057,7 @@ async function scrapeNow() {
     if (!scrapeBtn) return;
     
     scrapeBtn.disabled = true;
-    scrapeBtn.innerHTML = '<i class="icon">⏳</i> 스크래핑 중...';
+    scrapeBtn.innerHTML = '<i class="icon">⏳</i> 스크래핑 시작 중...';
     
     showNotification('스크래핑을 시작합니다...', 'info');
     
@@ -3076,12 +3076,12 @@ async function scrapeNow() {
             showNotification(result.message, 'success');
             
             // 버튼 상태 업데이트
-            scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 확인 중...';
+            scrapeBtn.innerHTML = '<i class="icon">🔄</i> 진행 상황 모니터링 중...';
             
             // 상태 모니터링 시작
             showNotification('스크래핑이 진행 중입니다. 완료되면 자동으로 새로고침됩니다.', 'info');
             
-            // 간단한 자동 새로고침 방식 (30초 후부터 10초마다 확인)
+            // 자동 새로고침 모니터링 시작 (30초 후부터 10초마다 확인)
             setTimeout(() => {
                 startAutoRefreshMonitor();
             }, 30000);
@@ -3108,9 +3108,10 @@ async function scrapeNow() {
     }
 }
 
+
 async function startAutoRefreshMonitor() {
     let attempts = 0;
-    const maxAttempts = 18; // 최대 3분 (10초 x 18)
+    const maxAttempts = 30; // 최대 5분 (10초 x 30)
     const checkInterval = 10000; // 10초마다 체크
     let lastArticleCount = 0;
     
@@ -3149,7 +3150,9 @@ async function startAutoRefreshMonitor() {
                             
                             // 스크래핑 성공
                             resetScrapeButton();
-                            showNotification(`스크래핑 완료! ${newArticleCount}개의 기사가 로드되었습니다.`, 'success');
+                            
+                            // 성공 알림과 함께 새로고침 알림
+                            showScrapingCompleteNotification(newArticleCount);
                             
                             // 대시보드 새로고침
                             const currentContent = document.getElementById('content');
@@ -3174,7 +3177,7 @@ async function startAutoRefreshMonitor() {
                 setTimeout(checkForNewData, checkInterval);
             } else {
                 resetScrapeButton();
-                showNotification('스크래핑 상태를 확인할 수 없습니다. 나중에 다시 시도해주세요.', 'warning');
+                showTimeoutNotification();
             }
             
         } catch (error) {
@@ -3190,6 +3193,49 @@ async function startAutoRefreshMonitor() {
     
     // 첫 번째 확인 시작
     checkForNewData();
+}
+
+function showScrapingCompleteNotification(articleCount) {
+    // 성공 알림
+    showNotification(`🎉 스크래핑 완료! ${articleCount}개의 새로운 기사가 로드되었습니다.`, 'success');
+    
+    // 추가 알림 메시지
+    setTimeout(() => {
+        showNotification('대시보드가 자동으로 새로고침되었습니다.', 'info');
+    }, 2000);
+}
+
+function showTimeoutNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'fixed top-4 right-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded shadow-lg z-50 max-w-sm';
+    notification.innerHTML = `
+        <div class="flex items-center">
+            <i class="mr-2">⚠️</i>
+            <div>
+                <strong>스크래핑 상태 확인 타임아웃</strong>
+                <p class="text-sm mt-1">스크래핑이 진행 중일 수 있습니다.</p>
+                <div class="mt-2">
+                    <button onclick="location.reload()" 
+                            class="text-sm bg-blue-200 hover:bg-blue-300 px-2 py-1 rounded mr-2">
+                        새로고침
+                    </button>
+                    <button onclick="this.parentElement.parentElement.parentElement.parentElement.remove()" 
+                            class="text-sm bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">
+                        닫기
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // 10초 후 자동 제거
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 10000);
 }
 
 async function startScrapingStatusMonitor() {
@@ -3383,11 +3429,7 @@ async function scrapeOnly() {
             showNotification('스크래핑이 시작되었습니다 (전송 없음)', 'success');
             
             setTimeout(() => {
-                const actionsUrl = 'https://github.com/djyalu/singapore_news_github/actions';
-                showNotification(`GitHub Actions: ${actionsUrl}`, 'info');
-                if (confirm('GitHub Actions 페이지로 이동하시겠습니까?')) {
-                    window.open(actionsUrl, '_blank');
-                }
+                showNotification('스크래핑이 진행 중입니다. 완료까지 잠시 기다려주세요.', 'info');
             }, 2000);
             
         } else {
@@ -3428,11 +3470,7 @@ async function sendOnly() {
             showNotification('WhatsApp 전송이 시작되었습니다', 'success');
             
             setTimeout(() => {
-                const actionsUrl = 'https://github.com/djyalu/singapore_news_github/actions';
-                showNotification(`GitHub Actions: ${actionsUrl}`, 'info');
-                if (confirm('GitHub Actions 페이지로 이동하시겠습니까?')) {
-                    window.open(actionsUrl, '_blank');
-                }
+                showNotification('WhatsApp 전송이 진행 중입니다. 완료까지 잠시 기다려주세요.', 'info');
             }, 2000);
             
         } else {
