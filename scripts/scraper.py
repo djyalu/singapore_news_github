@@ -924,18 +924,35 @@ def is_valid_article_url(url, domain):
         print(f"[DEBUG] NAC URL pattern match: {matched}")
         return matched
     
-    # 기본 패턴 (모든 사이트용) - 더 관대하게
+    # 기본 패턴 (모든 사이트용) - 매우 관대하게
     general_patterns = [
-        r'/20\d{2}/\d{2}/\d{2}/[a-z0-9-]{5,}',   # 날짜 + 제목 패턴
-        r'/articles?/[a-z0-9-]{5,}',             # 기사 URL
-        r'/news/[a-z0-9-]{5,}',                  # 뉴스 URL
-        r'/story/[a-z0-9-]{5,}',                 # 스토리 URL
-        r'/post/[a-z0-9-]{5,}',                  # 포스트 URL
-        r'/press-releases/[a-z0-9-]{5,}',        # 보도자료 URL
-        r'/events?/[a-z0-9-]{5,}',               # 이벤트 URL
-        r'/[a-z0-9-]{15,}$',                     # 긴 제목만 있는 URL (15자 이상)
-        r'/[a-z0-9-]+-\d+$'                      # 제목-숫자 패턴
+        r'/20\d{2}/\d{2}/\d{2}/[a-z0-9-]{3,}',   # 날짜 + 제목 패턴 (더 짧은 제목도 허용)
+        r'/articles?/[a-z0-9-]{3,}',             # 기사 URL
+        r'/news/[a-z0-9-]{3,}',                  # 뉴스 URL
+        r'/story/[a-z0-9-]{3,}',                 # 스토리 URL
+        r'/post/[a-z0-9-]{3,}',                  # 포스트 URL
+        r'/press-releases/[a-z0-9-]{3,}',        # 보도자료 URL
+        r'/events?/[a-z0-9-]{3,}',               # 이벤트 URL
+        r'/programmes?/[a-z0-9-]{3,}',           # 프로그램 URL
+        r'/initiatives?/[a-z0-9-]{3,}',          # 이니셔티브 URL
+        r'/policies/[a-z0-9-]{3,}',              # 정책 URL
+        r'/speeches/[a-z0-9-]{3,}',              # 연설 URL
+        r'/singapore/[a-z0-9-]{3,}',             # 싱가포르 섹션
+        r'/asia/[a-z0-9-]{3,}',                  # 아시아 섹션
+        r'/world/[a-z0-9-]{3,}',                 # 월드 섹션
+        r'/business/[a-z0-9-]{3,}',              # 비즈니스 섹션
+        r'/economy/[a-z0-9-]{3,}',               # 경제 섹션
+        r'/technology/[a-z0-9-]{3,}',            # 기술 섹션
+        r'/[a-z0-9-]{10,}$',                     # 긴 제목 URL (10자 이상)
+        r'/[a-z0-9-]+-\d+$',                     # 제목-숫자 패턴
+        r'/[a-z0-9-]+/[a-z0-9-]{5,}',           # 카테고리/제목 패턴
+        r'\w+://[^/]+/[^?#]+[a-zA-Z0-9-]{5,}'   # 일반적인 콘텐츠 URL (쿼리/앵커 제외)
     ]
+    
+    # URL이 최소 길이 요건을 만족하는지 확인
+    if len(url) < 30:  # 너무 짧은 URL은 기사가 아닐 가능성
+        print(f"[DEBUG] URL too short: {url}")
+        return False
     
     matched = any(re.search(pattern, url) for pattern in general_patterns)
     print(f"[DEBUG] General URL pattern match: {matched} for {url}")
@@ -973,49 +990,47 @@ def get_article_links_moe(soup, base_url):
     return list(set(links))[:10]
 
 def get_article_links_generic(soup, base_url):
-    """범용 링크 추출"""
+    """범용 링크 추출 - 개선된 버전"""
     links = []
     domain = urlparse(base_url).netloc.lower()
+    print(f"[DEBUG] Generic link extraction for domain: {domain}")
     
-    # 사이트별 특별 처리
-    if 'channelnewsasia.com' in domain or 'cna.com.sg' in domain:
-        # CNA는 더 엄격한 선택자 사용
-        for a in soup.select('a[href]'):
-            href = a.get('href', '')
-            full_url = urljoin(base_url, href)
+    # 모든 링크를 수집하되, 더 똑똑한 필터링 적용
+    all_links = []
+    for a in soup.select('a[href]'):
+        href = a.get('href', '')
+        if not href:
+            continue
             
-            # 유효한 기사 URL인지 확인
-            if is_valid_article_url(full_url, domain):
-                links.append(full_url)
-                
-    elif 'sbr.com.sg' in domain:
-        # Singapore Business Review
-        for a in soup.select('a[href]'):
-            href = a.get('href', '')
-            full_url = urljoin(base_url, href)
-            
-            if is_valid_article_url(full_url, domain):
-                links.append(full_url)
-                
-    elif 'nac.gov.sg' in domain:
-        # National Arts Council - 프로그램/이벤트 페이지
-        for a in soup.select('a[href*="/whatson"], a[href*="/engage"], a[href*="/news"]'):
-            href = a.get('href', '')
-            full_url = urljoin(base_url, href)
-            
-            if is_valid_article_url(full_url, domain):
-                links.append(full_url)
-            
-    else:
-        # 기본 패턴
-        for a in soup.select('a[href]'):
-            href = a.get('href', '')
-            full_url = urljoin(base_url, href)
-            
-            if is_valid_article_url(full_url, domain):
-                links.append(full_url)
+        full_url = urljoin(base_url, href)
+        link_text = a.get_text(strip=True)
+        
+        # 링크가 기본 조건을 만족하는지 확인
+        if len(full_url) > 30 and link_text:  # 링크와 텍스트가 있어야 함
+            all_links.append({
+                'url': full_url,
+                'text': link_text,
+                'domain': urlparse(full_url).netloc.lower()
+            })
     
-    return list(set(links))[:10]
+    print(f"[DEBUG] Found {len(all_links)} total links")
+    
+    # 도메인 내 링크만 필터링
+    same_domain_links = [link for link in all_links if domain in link['domain']]
+    print(f"[DEBUG] Found {len(same_domain_links)} same-domain links")
+    
+    # 각 링크를 URL 패턴으로 검증
+    for link in same_domain_links:
+        if is_valid_article_url(link['url'], domain):
+            links.append(link['url'])
+            print(f"[DEBUG] Added valid link: {link['url']}")
+            
+            # 최대 15개까지만 수집
+            if len(links) >= 15:
+                break
+    
+    print(f"[DEBUG] Final link count for {domain}: {len(links)}")
+    return list(set(links))[:10]  # 중복 제거 후 최대 10개
 
 def create_summary(article_data, settings):
     """설정에 따른 요약 생성"""
