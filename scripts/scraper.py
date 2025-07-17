@@ -961,15 +961,22 @@ def create_summary(article_data, settings):
     try:
         # 무료 AI 요약 시도
         from ai_summary_free import get_free_summary
+        print(f"[DEBUG] Attempting AI summary for: {article_data['title'][:50]}...")
         summary = get_free_summary(
             article_data['title'], 
             article_data['content']
         )
-        # Gemini API 사용 성공 여부 확인
-        if summary and not summary.startswith('📰 ' + article_data['title']):
+        print(f"[DEBUG] AI summary result: {summary[:100] if summary else 'None'}...")
+        # AI 요약 성공 여부 확인 (제목이 한글로 번역되었으면 성공)
+        if summary and ('제목:' in summary or '내용:' in summary or len(summary) > 50):
+            print(f"[DEBUG] AI summary successful!")
             return summary
+        else:
+            print(f"[DEBUG] AI summary failed, falling back to keywords")
     except Exception as e:
         print(f"AI summary error: {e}")
+        import traceback
+        traceback.print_exc()
     
     # 폴백: 향상된 키워드 기반 요약
     return create_keyword_summary(article_data['title'], article_data['content'])
@@ -1191,22 +1198,23 @@ def scrape_news():
     print(f"[SCRAPER] AI model status: {ai_scraper.model is not None}")
     print(f"[SCRAPER] AI API key: {bool(ai_scraper.api_key)}")
     
-    if scraping_method == 'ai' and ai_scraper.model:
-        print("Using AI-enhanced scraping...")
-        try:
-            return scrape_news_ai()
-        except Exception as e:
-            print(f"AI scraping failed: {e}")
-            if settings.get('scrapingMethodOptions', {}).get('ai', {}).get('fallbackToTraditional', True):
-                print("Falling back to traditional scraping...")
-                return scrape_news_traditional()
-            else:
-                raise
-    else:
-        if scraping_method == 'ai' and not ai_scraper.model:
-            print("AI scraping requested but AI model not available. Using traditional scraping...")
+    if scraping_method == 'ai':
+        if ai_scraper.model:
+            print("Using AI-enhanced scraping...")
+            try:
+                return scrape_news_ai()
+            except Exception as e:
+                print(f"AI scraping failed: {e}")
+                if settings.get('scrapingMethodOptions', {}).get('ai', {}).get('fallbackToTraditional', True):
+                    print("Falling back to traditional scraping with AI summaries...")
+                    return scrape_news_traditional()
+                else:
+                    raise
         else:
-            print("Using traditional scraping...")
+            print("AI scraping requested but AI model not available. Using traditional scraping with AI summaries...")
+            return scrape_news_traditional()
+    else:
+        print("Using traditional scraping...")
         return scrape_news_traditional()
 
 def scrape_news_traditional():
