@@ -8,31 +8,56 @@ const defaultUsers = [
         name: '관리자',
         email: 'admin@example.com',
         role: 'admin'
+    },
+    {
+        id: 'djyalu',
+        password: 'djyalu123',
+        name: 'djyalu',
+        email: 'djyalu@github.com',
+        role: 'admin'
     }
 ];
 
 function initializeUsers() {
-    const users = localStorage.getItem(USERS_KEY);
-    if (!users) {
+    // 사용자 데이터가 없으면 초기화
+    const existingUsers = localStorage.getItem(USERS_KEY);
+    if (!existingUsers) {
+        console.log('사용자 데이터 초기화 중...');
         localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
-    }
-    
-    // 사용자 데이터 검증
-    try {
-        const parsedUsers = JSON.parse(localStorage.getItem(USERS_KEY));
-        if (!Array.isArray(parsedUsers) || parsedUsers.length === 0) {
-            console.log('Users data is invalid or empty, reinitializing...');
-            localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
+        console.log('초기화된 사용자 데이터:', defaultUsers);
+    } else {
+        console.log('기존 사용자 데이터 발견:', JSON.parse(existingUsers));
+        // 기본 사용자가 없으면 추가
+        const users = JSON.parse(existingUsers);
+        let needsUpdate = false;
+        
+        defaultUsers.forEach(defaultUser => {
+            if (!users.find(u => u.id === defaultUser.id)) {
+                users.push(defaultUser);
+                needsUpdate = true;
+            }
+        });
+        
+        if (needsUpdate) {
+            localStorage.setItem(USERS_KEY, JSON.stringify(users));
+            console.log('기본 사용자 추가됨:', users);
         }
-    } catch (e) {
-        console.error('Error parsing users data:', e);
-        localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
     }
 }
 
 function login(username, password) {
+    console.log('로그인 시도:', { username, password: password ? '***' : 'empty' });
+    
+    if (!username || !password) {
+        console.log('로그인 실패: 사용자명 또는 비밀번호가 비어있음');
+        return false;
+    }
+    
     const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+    console.log('저장된 사용자 목록:', users.map(u => ({ id: u.id, name: u.name, role: u.role })));
+    
     const user = users.find(u => u.id === username && u.password === password);
+    console.log('찾은 사용자:', user ? { id: user.id, name: user.name, role: user.role } : null);
     
     if (user) {
         const authData = {
@@ -43,7 +68,16 @@ function login(username, password) {
             loginTime: new Date().toISOString()
         };
         localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
+        console.log('로그인 성공, 인증 데이터 저장:', authData);
         return true;
+    }
+    
+    // 실패 원인 세부 분석
+    const userExists = users.find(u => u.id === username);
+    if (userExists) {
+        console.log('로그인 실패: 비밀번호가 일치하지 않음');
+    } else {
+        console.log('로그인 실패: 존재하지 않는 사용자명');
     }
     return false;
 }
