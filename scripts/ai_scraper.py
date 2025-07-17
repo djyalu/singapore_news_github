@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import time
 from typing import Dict, List, Optional, Tuple
 import google.generativeai as genai
 from bs4 import BeautifulSoup
@@ -21,13 +22,27 @@ class AIScraper:
         else:
             self.model = None
             print("Warning: GOOGLE_GEMINI_API_KEY not found. AI features will be disabled.")
+        
+        # Rate limiting for free tier (15 requests per minute)
+        self.last_request_time = 0
+        self.request_delay = 4.5  # ~13 requests per minute to stay under limit
 
+    def _rate_limit(self):
+        """Rate limiting to avoid quota errors"""
+        current_time = time.time()
+        time_since_last = current_time - self.last_request_time
+        if time_since_last < self.request_delay:
+            sleep_time = self.request_delay - time_since_last
+            time.sleep(sleep_time)
+        self.last_request_time = time.time()
+    
     def is_valid_article_url_ai(self, url: str, page_title: str = "", link_text: str = "") -> bool:
         """AI를 사용해 URL이 유효한 기사 링크인지 판단"""
         if not self.model:
             return self._fallback_url_validation(url)
         
         try:
+            self._rate_limit()  # Apply rate limiting
             prompt = f"""
 다음 URL이 뉴스 기사 링크인지 판단해주세요:
 
@@ -85,6 +100,7 @@ URL: {url}
             return self._fallback_content_classification(html_content)
         
         try:
+            self._rate_limit()  # Apply rate limiting
             # HTML을 텍스트로 변환 (처음 2000자)
             soup = BeautifulSoup(html_content, 'html.parser')
             text_content = soup.get_text()[:2000]
@@ -146,6 +162,7 @@ URL: {url}
             return self._fallback_article_extraction(html_content, url)
         
         try:
+            self._rate_limit()  # Apply rate limiting
             # HTML을 정리해서 텍스트로 변환
             soup = BeautifulSoup(html_content, 'html.parser')
             
