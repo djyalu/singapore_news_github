@@ -863,6 +863,67 @@ def is_valid_article_url(url, domain):
         print(f"[DEBUG] BT URL pattern match: {matched}")
         return matched
     
+    elif 'sbr.com.sg' in domain:
+        print(f"[DEBUG] Checking SBR URL patterns for: {url}")
+        
+        # Singapore Business Review 기사 패턴
+        sbr_patterns = [
+            r'/economy/[a-z0-9-]{5,}',                # 경제 섹션
+            r'/companies/[a-z0-9-]{5,}',              # 기업 섹션
+            r'/banking/[a-z0-9-]{5,}',                # 금융 섹션
+            r'/real-estate/[a-z0-9-]{5,}',            # 부동산 섹션
+            r'/technology/[a-z0-9-]{5,}',             # 기술 섹션
+            r'/startups/[a-z0-9-]{5,}',               # 스타트업 섹션
+            r'/sustainability/[a-z0-9-]{5,}',         # 지속가능성 섹션
+            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}',     # 날짜 패턴
+            r'/[a-z0-9-]{10,}$'                       # 기사 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in sbr_patterns)
+        print(f"[DEBUG] SBR URL pattern match: {matched}")
+        return matched
+    
+    elif 'moe.gov.sg' in domain:
+        print(f"[DEBUG] Checking MOE URL patterns for: {url}")
+        
+        # Ministry of Education 페이지 패턴
+        moe_patterns = [
+            r'/news/[a-z0-9-]{5,}',                   # 뉴스
+            r'/press-releases/[a-z0-9-]{5,}',         # 보도자료
+            r'/parliamentary-replies/[a-z0-9-]{5,}',  # 국회 답변
+            r'/speeches/[a-z0-9-]{5,}',               # 연설
+            r'/initiatives/[a-z0-9-]{5,}',            # 이니셔티브
+            r'/policies/[a-z0-9-]{5,}',               # 정책
+            r'/programmes/[a-z0-9-]{5,}',             # 프로그램
+            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}',     # 날짜 패턴
+            r'/[a-z0-9-]{10,}$'                       # 긴 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in moe_patterns)
+        print(f"[DEBUG] MOE URL pattern match: {matched}")
+        return matched
+    
+    elif 'nac.gov.sg' in domain:
+        print(f"[DEBUG] Checking NAC URL patterns for: {url}")
+        
+        # National Arts Council 페이지 패턴
+        nac_patterns = [
+            r'/whatson/[a-z0-9-]{5,}',                # 행사/프로그램
+            r'/engage/[a-z0-9-]{5,}',                 # 참여 프로그램
+            r'/news/[a-z0-9-]{5,}',                   # 뉴스
+            r'/press-releases/[a-z0-9-]{5,}',         # 보도자료
+            r'/events/[a-z0-9-]{5,}',                 # 이벤트
+            r'/programmes/[a-z0-9-]{5,}',             # 프로그램
+            r'/grants/[a-z0-9-]{5,}',                 # 보조금 정보
+            r'/initiatives/[a-z0-9-]{5,}',            # 이니셔티브
+            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}',     # 날짜 패턴
+            r'/[a-z0-9-]{10,}$'                       # 긴 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in nac_patterns)
+        print(f"[DEBUG] NAC URL pattern match: {matched}")
+        return matched
+    
     # 기본 패턴 (모든 사이트용) - 더 관대하게
     general_patterns = [
         r'/20\d{2}/\d{2}/\d{2}/[a-z0-9-]{5,}',   # 날짜 + 제목 패턴
