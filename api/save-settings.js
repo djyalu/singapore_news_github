@@ -70,7 +70,18 @@ module.exports = async (req, res) => {
                 weekdays: [],
                 date: "1"
             },
-            blockedKeywords: settings.blockedKeywords || ""
+            blockedKeywords: settings.blockedKeywords || "",
+            scrapingMethod: settings.scrapingMethod || "traditional",
+            scrapingMethodOptions: settings.scrapingMethodOptions || {
+                ai: {
+                    provider: "gemini",
+                    model: "gemini-1.5-flash",
+                    fallbackToTraditional: true
+                },
+                traditional: {
+                    useEnhancedFiltering: true
+                }
+            }
         };
         
         // 현재 파일의 SHA 가져오기

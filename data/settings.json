@@ -14,5 +14,16 @@
     "weekdays": [],
     "date": "1"
   },
-  "blockedKeywords": "violence, adult, kill, sex"
+  "blockedKeywords": "violence, adult, kill, sex",
+  "scrapingMethod": "ai",
+  "scrapingMethodOptions": {
+    "ai": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash",
+      "fallbackToTraditional": true
+    },
+    "traditional": {
+      "useEnhancedFiltering": true
+    }
+  }
 }

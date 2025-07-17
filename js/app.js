@@ -424,6 +424,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         <label>중요 키워드 (쉼표로 구분)</label>
                         <input type="text" id="importantKeywords" placeholder="Singapore, Economy, Technology">
                     </div>
+                    <div class="form-group">
+                        <label>스크래핑 방식</label>
+                        <select id="scrapingMethod">
+                            <option value="traditional">전통적 방식 (Pattern-based)</option>
+                            <option value="ai">AI 방식 (Gemini AI)</option>
+                        </select>
+                        <small class="text-gray-500 block mt-1">AI 방식은 Google Gemini API를 사용합니다 (일일 50회 제한)</small>
+                    </div>
                     </div>
                     
                     <div class="bg-white shadow rounded-lg p-6 mt-4">
@@ -1183,6 +1191,10 @@ async function loadSettings() {
         document.getElementById('summaryContent').checked = settings.summaryOptions.content;
     }
     
+    if (settings.scrapingMethod) {
+        document.getElementById('scrapingMethod').value = settings.scrapingMethod;
+    }
+    
     if (settings.sendChannel) {
         document.getElementById('sendChannel').value = settings.sendChannel;
         if (settings.sendChannel === 'whatsapp') {
@@ -1226,7 +1238,8 @@ function saveSettings() {
                 weekdays: Array.from(document.querySelectorAll('input[name="weekday"]:checked')).map(cb => cb.value),
                 date: document.getElementById('monthlyDate').value
             },
-            blockedKeywords: document.getElementById('blockedKeywords').value
+            blockedKeywords: document.getElementById('blockedKeywords').value,
+            scrapingMethod: document.getElementById('scrapingMethod').value
         };
         
         // 설정 유효성 검사
