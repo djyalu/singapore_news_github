@@ -269,12 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                     </svg>
                                     메시지 생성
                                 </button>
-                                <button type="button" onclick="saveScrapedArticlesToGithub()" id="saveToGithubBtn" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V2"></path>
-                                    </svg>
-                                    GitHub에 저장
-                                </button>
                                 <button type="button" onclick="clearScrapedArticles()" id="clearArticlesBtn" class="inline-flex items-center px-3 py-2 border border-red-300 text-sm leading-4 font-medium rounded-md text-red-700 bg-white hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
@@ -2924,100 +2918,19 @@ function exportStatusReport() {
 }
 
 // 새로운 스크래핑 및 기사 관리 기능들
-async function saveScrapedArticlesToGithub() {
-    const saveBtn = document.getElementById('saveToGithubBtn');
-    const scrapedData = localStorage.getItem('singapore_news_scraped_data');
-    
-    if (!scrapedData) {
-        showNotification('저장할 기사가 없습니다.', 'warning');
-        return;
-    }
-    
-    try {
-        const data = JSON.parse(scrapedData);
-        if (!data.articles || data.articles.length === 0) {
-            showNotification('저장할 기사가 없습니다.', 'warning');
-            return;
-        }
-        
-        saveBtn.disabled = true;
-        saveBtn.innerHTML = '<i class="icon">⏳</i> 저장 중...';
-        
-        const response = await fetch('https://singapore-news-github.vercel.app/api/save-scraped-articles', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                articles: data.articles
-            })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            showNotification(`${result.count}개의 기사가 GitHub에 저장되었습니다. (파일: ${result.filename})`, 'success');
-            
-            // GitHub 파일명 저장
-            localStorage.setItem('singapore_news_github_filename', result.filename);
-            
-            // 저장 성공 후 로컬 데이터 초기화 옵션
-            if (confirm('GitHub에 저장이 완료되었습니다. 로컬 기사를 초기화하시겠습니까?')) {
-                localStorage.removeItem('singapore_news_scraped_data');
-                localStorage.removeItem('singapore_news_github_filename');
-                loadScrapedArticles();
-                updateTodayArticles();
-            }
-        } else {
-            showNotification(result.error || '기사 저장에 실패했습니다.', 'error');
-        }
-        
-    } catch (error) {
-        console.error('GitHub 저장 오류:', error);
-        showNotification('기사 저장 중 오류가 발생했습니다.', 'error');
-    } finally {
-        saveBtn.disabled = false;
-        saveBtn.innerHTML = '<svg class="w-4 h-4 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V2"></path></svg>GitHub에 저장';
-    }
-}
 
-async function clearScrapedArticles() {
+function clearScrapedArticles() {
     console.log('clearScrapedArticles called');
     
-    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?\n\nGitHub에 저장된 파일도 함께 삭제됩니다.')) {
+    if (confirm('정말로 로컬에 저장된 모든 기사를 삭제하시겠습니까?')) {
         console.log('User confirmed deletion');
-        
-        // 저장된 GitHub 파일명 확인
-        const savedFilename = localStorage.getItem('singapore_news_github_filename');
-        
-        if (savedFilename) {
-            try {
-                // GitHub에서 파일 삭제
-                const response = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ filename: savedFilename })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    console.log('GitHub file deleted successfully');
-                    localStorage.removeItem('singapore_news_github_filename');
-                } else {
-                    console.error('GitHub deletion failed:', result.error);
-                    showNotification('GitHub 파일 삭제 실패: ' + result.error, 'error');
-                }
-            } catch (error) {
-                console.error('GitHub deletion error:', error);
-                showNotification('GitHub 파일 삭제 중 오류 발생', 'error');
-            }
-        }
         
         // 로컬 스토리지에서 삭제
         localStorage.removeItem('singapore_news_scraped_data');
+        
+        // 삭제 상태 플래그 설정 (자동 새로고침 방지)
+        localStorage.setItem('singapore_news_articles_deleted', 'true');
+        
         console.log('localStorage cleared');
         
         // UI 업데이트
@@ -3032,7 +2945,7 @@ async function clearScrapedArticles() {
             todayArticlesElement.textContent = '0';
         }
         
-        showNotification('스크랩된 기사가 모두 삭제되었습니다.', 'success');
+        showNotification('로컬 기사가 모두 삭제되었습니다.', 'success');
     }
 }
 
