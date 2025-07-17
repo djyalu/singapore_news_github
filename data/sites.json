@@ -16,17 +16,5 @@
     "name": "The Business Times",
     "url": "https://www.businesstimes.com.sg/",
     "period": "daily"
-  },
-  {
-    "group": "Education",
-    "name": "Ministry of Education",
-    "url": "https://www.moe.gov.sg/",
-    "period": "daily"
-  },
-  {
-    "group": "Art",
-    "name": "National Arts Council",
-    "url": "https://www.nac.gov.sg/",
-    "period": "daily"
   }
 ]
