@@ -172,8 +172,8 @@ async function testEmailNotification() {
     testButton.textContent = '📧 발송 중...';
     
     try {
-        const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
-        const apiUrl = isProduction ? '/api/send-email' : 'https://singapore-news-github.vercel.app/api/send-email';
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const apiUrl = isLocal ? 'https://singapore-news-github.vercel.app/api/send-email' : 'https://singapore-news-github.vercel.app/api/send-email';
         
         const response = await fetch(apiUrl, {
             method: 'POST',
