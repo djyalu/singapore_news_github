@@ -1999,34 +1999,29 @@ function loadRecentActivity() {
                     minute: 'numeric'
                 });
                 
-                let icon, title, color, description = '';
+                let title, color, description = '';
                 switch(activity.type) {
                     case 'test':
-                        icon = '🧪';
                         title = '테스트 전송';
                         color = 'bg-purple-500';
                         description = activity.channel || '';
                         break;
                     case 'scrape':
-                        icon = '📥';
                         title = '스크래핑 실행';
                         color = 'bg-blue-500';
                         description = activity.articleCount ? `${activity.articleCount}개 기사` : '';
                         break;
                     case 'github_scrape':
-                        icon = '🔄';
                         title = activity.executionType === 'scheduled' ? '배치 스크래핑' : '수동 스크래핑';
                         color = activity.executionType === 'scheduled' ? 'bg-indigo-500' : 'bg-green-500';
                         description = `${activity.method} 방식`;
                         break;
                     case 'settings':
-                        icon = '⚙️';
                         title = '설정 변경';
                         color = 'bg-gray-500';
                         description = activity.setting || '';
                         break;
                     default:
-                        icon = '📤';
                         title = 'WhatsApp 전송';
                         color = 'bg-green-500';
                         description = activity.header || '';
@@ -2037,21 +2032,16 @@ function loadRecentActivity() {
                     '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">실패</span>';
                 
                 return `
-                    <li class="pb-4">
-                        <div class="relative flex items-start space-x-3">
-                            ${index < recentActivities.length - 1 ? '<span class="absolute top-10 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>' : ''}
-                            <div class="relative flex h-10 w-10 items-center justify-center ${color} rounded-full text-white">
-                                <span class="text-sm">${icon}</span>
-                            </div>
+                    <li class="pb-3 ${index < recentActivities.length - 1 ? 'border-b border-gray-100' : ''}">
+                        <div class="flex items-start justify-between">
                             <div class="min-w-0 flex-1">
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">
-                                        ${title}
-                                        ${status}
-                                    </div>
-                                    ${description ? `<p class="mt-0.5 text-sm text-gray-500">${description}</p>` : ''}
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 ${color} rounded-full flex-shrink-0"></div>
+                                    <div class="text-sm font-medium text-gray-900">${title}</div>
+                                    ${status}
                                 </div>
-                                <div class="mt-1 text-xs text-gray-500">
+                                ${description ? `<p class="mt-1 text-sm text-gray-500 ml-4">${description}</p>` : ''}
+                                <div class="mt-1 text-xs text-gray-500 ml-4">
                                     ${time}
                                 </div>
                             </div>
