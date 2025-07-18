@@ -22,5 +22,11 @@
     "name": "Yahoo Singapore News",
     "url": "https://sg.news.yahoo.com",
     "period": "daily"
+  },
+  {
+    "group": "Lifestyle",
+    "name": "Mothership",
+    "url": "https://mothership.sg",
+    "period": "daily"
   }
 ]
