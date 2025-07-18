@@ -56,13 +56,26 @@ python scripts/cleanup_old_data.py
 - `vercel.json`: Vercel configuration
 - `requirements.txt`: Python dependencies
 
-### API Endpoints (Vercel)
-- `/api/trigger-scraping.js`: Trigger scraping + WhatsApp sending
-- `/api/scrape-only.js`: Scraping only (no WhatsApp)
-- `/api/send-only.js`: WhatsApp sending only
+### API Endpoints (Vercel) - 12개 제한
+- `/api/trigger-scraping.js`: Trigger scraping + WhatsApp sending workflow
+- `/api/scrape-only.js`: Scraping only workflow (no WhatsApp)
+- `/api/send-only.js`: WhatsApp sending only workflow
 - `/api/get-scraping-status.js`: Check scraping status
 - `/api/save-settings.js`: Save application settings
 - `/api/test-env.js`: Test environment variables
+- `/api/auth-config.js`: Authentication configuration
+- `/api/auth-login.js`: User authentication login
+- `/api/delete-scraped-file.js`: Delete scraped article files
+- `/api/get-latest-scraped.js`: Get latest scraped data
+- `/api/save-scraped-articles.js`: Save scraped articles to GitHub
+- `/api/save-sites.js`: Save scraping site configurations
+- `/api/send-email.js`: Send email notifications (SMTP)
+
+**참고사항:**
+- Vercel 무료 플랜의 API 엔드포인트 제한: 12개 (현재 13개 사용 중)
+- 직접 WhatsApp 메시지 전송 API는 없음 (GitHub Actions 워크플로우 트리거 방식 사용)
+- 테스트 기능은 시뮬레이션 모드로 작동
+- 모든 API는 CORS 설정 완료되어 GitHub Pages에서 호출 가능
 
 ### Python Scripts
 - `scripts/scraper.py`: Main news scraper
