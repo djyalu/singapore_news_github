@@ -600,45 +600,72 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
         
         return `
-            <div class="space-y-6">
+            <div class="page-section">
                 <!-- Header -->
-                <div>
-                    <h1 class="text-2xl font-bold text-gray-900">전송 이력</h1>
-                    <p class="mt-1 text-sm text-gray-500">WhatsApp 메시지 전송 기록을 확인합니다</p>
+                <div class="section-header">
+                    <h1>전송 이력</h1>
+                    <p>WhatsApp 메시지 전송 기록을 확인합니다</p>
                 </div>
                 
-                <!-- Filters -->
-                <div class="bg-white shadow rounded-lg p-4">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="filter-row">
-                        <div class="form-group">
-                            <label>시작일</label>
-                            <input type="date" id="historyStartDate" value="${lastMonth.toISOString().split('T')[0]}">
+                <!-- Advanced Search Section -->
+                <div class="search-section">
+                    <div class="search-header">
+                        <h3>🔍 검색 조건</h3>
+                        <div class="quick-filters">
+                            <button class="quick-filter-btn" onclick="setQuickFilter('today')">오늘</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('week')">1주일</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('month')">1개월</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('all')">전체</button>
                         </div>
-                        <div class="form-group">
-                            <label>종료일</label>
-                            <input type="date" id="historyEndDate" value="${today.toISOString().split('T')[0]}">
+                    </div>
+                    
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <div class="filter-label">📅 기간 설정</div>
+                            <div class="date-range">
+                                <input type="date" id="historyStartDate" value="${lastMonth.toISOString().split('T')[0]}" class="date-input">
+                                <span class="date-separator">~</span>
+                                <input type="date" id="historyEndDate" value="${today.toISOString().split('T')[0]}" class="date-input">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>상태</label>
-                            <select id="historyStatus">
-                                <option value="">전체</option>
-                                <option value="success">성공</option>
-                                <option value="failed">실패</option>
-                            </select>
+                        
+                        <div class="filter-group">
+                            <div class="filter-label">📊 상태별</div>
+                            <div class="status-filters">
+                                <label class="radio-label">
+                                    <input type="radio" name="statusFilter" value="" checked onchange="updateStatusFilter(this.value)">
+                                    <span class="radio-text">전체</span>
+                                </label>
+                                <label class="radio-label success">
+                                    <input type="radio" name="statusFilter" value="success" onchange="updateStatusFilter(this.value)">
+                                    <span class="radio-text">✅ 성공</span>
+                                </label>
+                                <label class="radio-label failed">
+                                    <input type="radio" name="statusFilter" value="failed" onchange="updateStatusFilter(this.value)">
+                                    <span class="radio-text">❌ 실패</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>채널</label>
-                            <select id="historyChannel">
-                                <option value="">전체</option>
-                                <option value="120363421252284444@g.us">Singapore News Backup</option>
+                        
+                        <div class="filter-group">
+                            <div class="filter-label">📱 채널 선택</div>
+                            <select id="historyChannel" class="channel-select" onchange="loadHistory()">
+                                <option value="">모든 채널</option>
+                                <option value="120363421252284444@g.us">📰 Singapore News Backup</option>
                             </select>
                         </div>
                     </div>
-                    <div class="filter-actions">
-                        <button class="btn" onclick="loadHistory()">조회</button>
-                        <button class="btn" onclick="resetHistoryFilters()">초기화</button>
-                        <span class="result-count" id="historyResultCount"></span>
+                    
+                    <div class="search-actions">
+                        <span class="result-summary" id="historyResultCount">검색 결과: 0건</span>
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" onclick="resetHistoryFilters()">
+                                <span>🔄</span> 초기화
+                            </button>
+                            <button class="btn btn-primary" onclick="loadHistory()">
+                                <span>🔍</span> 검색
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <table class="table" id="historyTable">
@@ -1436,7 +1463,7 @@ async function loadHistory() {
     // 필터 값 가져오기
     const startDate = document.getElementById('historyStartDate')?.value;
     const endDate = document.getElementById('historyEndDate')?.value;
-    const statusFilter = document.getElementById('historyStatus')?.value;
+    const statusFilter = document.querySelector('input[name="statusFilter"]:checked')?.value || '';
     const channelFilter = document.getElementById('historyChannel')?.value;
     
     // 필터링
@@ -1520,9 +1547,45 @@ function resetHistoryFilters() {
     
     document.getElementById('historyStartDate').value = lastMonth.toISOString().split('T')[0];
     document.getElementById('historyEndDate').value = today.toISOString().split('T')[0];
-    document.getElementById('historyStatus').value = '';
+    document.querySelector('input[name="statusFilter"][value=""]').checked = true;
     document.getElementById('historyChannel').value = '';
     
+    loadHistory();
+}
+
+function setQuickFilter(period) {
+    const endDate = new Date();
+    let startDate = new Date();
+    
+    switch(period) {
+        case 'today':
+            startDate = new Date();
+            break;
+        case 'week':
+            startDate.setDate(endDate.getDate() - 7);
+            break;
+        case 'month':
+            startDate.setMonth(endDate.getMonth() - 1);
+            break;
+        case 'all':
+            startDate = new Date('2024-01-01');
+            break;
+    }
+    
+    document.getElementById('historyStartDate').value = startDate.toISOString().split('T')[0];
+    document.getElementById('historyEndDate').value = endDate.toISOString().split('T')[0];
+    
+    // Highlight active quick filter
+    document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    loadHistory();
+}
+
+function updateStatusFilter(value) {
+    document.getElementById('historyStatus').value = value;
     loadHistory();
 }
 
