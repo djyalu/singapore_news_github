@@ -1,51 +1,7 @@
 const AUTH_KEY = 'singapore_news_auth';
-const USERS_KEY = 'singapore_news_users';
 
-const defaultUsers = [
-    {
-        id: 'admin',
-        password: 'Admin@123',
-        name: '관리자',
-        email: 'admin@example.com',
-        role: 'admin'
-    },
-    {
-        id: 'djyalu',
-        password: 'djyalu123',
-        name: 'djyalu',
-        email: 'djyalu@github.com',
-        role: 'admin'
-    }
-];
-
-function initializeUsers() {
-    // 사용자 데이터가 없으면 초기화
-    const existingUsers = localStorage.getItem(USERS_KEY);
-    if (!existingUsers) {
-        console.log('사용자 데이터 초기화 중...');
-        localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
-        console.log('초기화된 사용자 데이터:', defaultUsers);
-    } else {
-        console.log('기존 사용자 데이터 발견:', JSON.parse(existingUsers));
-        // 기본 사용자가 없으면 추가
-        const users = JSON.parse(existingUsers);
-        let needsUpdate = false;
-        
-        defaultUsers.forEach(defaultUser => {
-            if (!users.find(u => u.id === defaultUser.id)) {
-                users.push(defaultUser);
-                needsUpdate = true;
-            }
-        });
-        
-        if (needsUpdate) {
-            localStorage.setItem(USERS_KEY, JSON.stringify(users));
-            console.log('기본 사용자 추가됨:', users);
-        }
-    }
-}
-
-function login(username, password) {
+// API를 통한 로그인
+async function login(username, password) {
     console.log('로그인 시도:', { username, password: password ? '***' : 'empty' });
     
     if (!username || !password) {
@@ -53,33 +9,54 @@ function login(username, password) {
         return false;
     }
     
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
-    console.log('저장된 사용자 목록:', users.map(u => ({ id: u.id, name: u.name, role: u.role })));
-    
-    const user = users.find(u => u.id === username && u.password === password);
-    console.log('찾은 사용자:', user ? { id: user.id, name: user.name, role: user.role } : null);
-    
-    if (user) {
-        const authData = {
-            userId: user.id,
-            name: user.name,
-            role: user.role,
-            email: user.email,
-            loginTime: new Date().toISOString()
-        };
-        localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
-        console.log('로그인 성공, 인증 데이터 저장:', authData);
-        return true;
+    try {
+        const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+        const apiUrl = isProduction ? '/api/auth-login' : 'https://singapore-news-github.vercel.app/api/auth-login';
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success && result.user) {
+            const authData = {
+                userId: result.user.id,
+                name: result.user.name,
+                role: result.user.role,
+                email: result.user.email,
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
+            console.log('로그인 성공, 인증 데이터 저장:', authData);
+            return true;
+        } else {
+            console.log('로그인 실패:', result.error);
+            return false;
+        }
+    } catch (error) {
+        console.error('로그인 에러:', error);
+        // 오프라인 모드 또는 API 오류 시 임시 로그인 허용 (개발 환경에서만)
+        if (!window.location.hostname.includes('github.io') && !window.location.hostname.includes('vercel')) {
+            console.warn('개발 환경에서 임시 로그인 허용');
+            if (username === 'admin' || username === 'djyalu') {
+                const authData = {
+                    userId: username,
+                    name: username === 'admin' ? '관리자' : 'djyalu',
+                    role: 'admin',
+                    email: `${username}@example.com`,
+                    loginTime: new Date().toISOString()
+                };
+                localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
+                return true;
+            }
+        }
+        return false;
     }
-    
-    // 실패 원인 세부 분석
-    const userExists = users.find(u => u.id === username);
-    if (userExists) {
-        console.log('로그인 실패: 비밀번호가 일치하지 않음');
-    } else {
-        console.log('로그인 실패: 존재하지 않는 사용자명');
-    }
-    return false;
 }
 
 function logout() {
@@ -101,52 +78,20 @@ function isAdmin() {
     return user && user.role === 'admin';
 }
 
-function validatePassword(password) {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return regex.test(password);
-}
-
-function addUser(userData) {
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
-    if (users.find(u => u.id === userData.id)) {
-        return { success: false, message: '이미 존재하는 ID입니다.' };
+// 사용자 설정 확인 (환경 변수 설정 여부)
+async function checkAuthConfig() {
+    try {
+        const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+        const apiUrl = isProduction ? '/api/auth-config' : 'https://singapore-news-github.vercel.app/api/auth-config';
+        
+        const response = await fetch(apiUrl);
+        const result = await response.json();
+        
+        if (result.success && result.config) {
+            return result.config;
+        }
+    } catch (error) {
+        console.error('인증 설정 확인 에러:', error);
     }
-    
-    if (!validatePassword(userData.password)) {
-        return { success: false, message: '비밀번호는 8자 이상, 대소문자와 특수문자를 포함해야 합니다.' };
-    }
-    
-    users.push(userData);
-    localStorage.setItem(USERS_KEY, JSON.stringify(users));
-    return { success: true };
+    return null;
 }
-
-function updateUser(userId, updates) {
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
-    const index = users.findIndex(u => u.id === userId);
-    
-    if (index === -1) {
-        return { success: false, message: '사용자를 찾을 수 없습니다.' };
-    }
-    
-    if (updates.password && !validatePassword(updates.password)) {
-        return { success: false, message: '비밀번호는 8자 이상, 대소문자와 특수문자를 포함해야 합니다.' };
-    }
-    
-    users[index] = { ...users[index], ...updates };
-    localStorage.setItem(USERS_KEY, JSON.stringify(users));
-    return { success: true };
-}
-
-function deleteUser(userId) {
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
-    const filtered = users.filter(u => u.id !== userId);
-    localStorage.setItem(USERS_KEY, JSON.stringify(filtered));
-    return { success: true };
-}
-
-function getAllUsers() {
-    return JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
-}
-
-initializeUsers();

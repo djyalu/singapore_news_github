@@ -4288,6 +4288,38 @@ async function loadAllScrapedArticles() {
     }
 }
 
+// 실행 타입 태그 생성
+function getExecutionTypeTag(group, dateStr) {
+    // execution_type 필드가 있으면 사용
+    if (group.execution_type) {
+        return group.execution_type === 'scheduled' 
+            ? '<span class="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">배치</span>'
+            : '<span class="ml-2 px-2 py-1 text-xs bg-green-100 text-green-800 rounded">수동</span>';
+    }
+    
+    // 없으면 시간으로 추정 (한국시간 기준)
+    const time = dateStr.substring(11, 16); // HH:MM 추출
+    const hour = parseInt(time.substring(0, 2));
+    
+    // 오전 6시(06:00) 전후 30분 이내면 배치로 간주
+    if ((hour === 5 && parseInt(time.substring(3, 5)) >= 30) || 
+        (hour === 6 && parseInt(time.substring(3, 5)) <= 30)) {
+        return '<span class="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">배치(추정)</span>';
+    }
+    
+    // 기존 배치 시간 (09:00, 13:00, 18:00) 전후 30분도 체크
+    const batchHours = [9, 13, 18];
+    for (const batchHour of batchHours) {
+        if ((hour === batchHour - 1 && parseInt(time.substring(3, 5)) >= 30) || 
+            hour === batchHour ||
+            (hour === batchHour && parseInt(time.substring(3, 5)) <= 30)) {
+            return '<span class="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">배치(추정)</span>';
+        }
+    }
+    
+    return '<span class="ml-2 px-2 py-1 text-xs bg-green-100 text-green-800 rounded">수동</span>';
+}
+
 // 스크랩 기사 표시
 function displayScrapedArticles(articles) {
     const container = document.getElementById('scrapingArticlesList');
@@ -4331,7 +4363,7 @@ function displayScrapedArticles(articles) {
                             <div class="flex-1">
                                 <h4 class="text-md font-medium text-gray-900">
                                     ${group.group}
-                                    ${group.execution_type === 'scheduled' ? '<span class="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">배치</span>' : '<span class="ml-2 px-2 py-1 text-xs bg-green-100 text-green-800 rounded">수동</span>'}
+                                    ${getExecutionTypeTag(group, item.date)}
                                 </h4>
                                 <p class="text-sm text-gray-500 mt-1">
                                     ${group.sites.join(', ')} • ${group.article_count}개 기사 • ${item.date}
@@ -4417,7 +4449,26 @@ function filterScrapedArticles() {
     
     // 실행 타입 필터
     if (executionType !== 'all') {
-        filtered = filtered.filter(item => item.group.execution_type === executionType);
+        filtered = filtered.filter(item => {
+            // execution_type 필드가 있으면 사용
+            if (item.group.execution_type) {
+                return item.group.execution_type === executionType;
+            }
+            
+            // 없으면 시간으로 추정
+            const time = item.date.substring(11, 16);
+            const hour = parseInt(time.substring(0, 2));
+            const minute = parseInt(time.substring(3, 5));
+            
+            // 배치 시간 체크 (06:00, 09:00, 13:00, 18:00 전후 30분)
+            const isScheduled = 
+                (hour === 5 && minute >= 30) || (hour === 6 && minute <= 30) ||
+                (hour === 8 && minute >= 30) || (hour === 9 && minute <= 30) ||
+                (hour === 12 && minute >= 30) || (hour === 13 && minute <= 30) ||
+                (hour === 17 && minute >= 30) || (hour === 18 && minute <= 30);
+            
+            return executionType === 'scheduled' ? isScheduled : !isScheduled;
+        });
     }
     
     displayScrapedArticles(filtered);

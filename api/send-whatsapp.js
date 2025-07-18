@@ -26,7 +26,14 @@ module.exports = async (req, res) => {
 
         // WhatsApp API 설정
         const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
-        const whatsappToken = process.env.WHATSAPP_API_KEY || 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+        const whatsappToken = process.env.WHATSAPP_API_KEY;
+        
+        if (!whatsappToken) {
+            return res.status(500).json({
+                success: false,
+                error: 'WhatsApp API 키가 설정되지 않았습니다.'
+            });
+        }
 
         // 채널 ID 형식 변환 (그룹 채널은 @g.us 유지)
         let toNumber = channel;

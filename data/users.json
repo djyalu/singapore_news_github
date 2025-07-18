@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "password": "$2b$10$YourHashedPasswordHere",
+      "name": "관리자",
+      "email": "admin@example.com",
+      "role": "admin"
+    },
+    {
+      "id": "djyalu",
+      "password": "$2b$10$YourHashedPasswordHere",
+      "name": "djyalu",
+      "email": "djyalu@github.com",
+      "role": "admin"
+    }
+  ]
+}

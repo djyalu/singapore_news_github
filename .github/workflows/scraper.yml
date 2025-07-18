@@ -37,6 +37,7 @@ jobs:
     - name: Run scraper
       env:
         GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
+        GITHUB_EVENT_NAME: ${{ github.event_name }}
       run: |
         python scripts/scraper.py
     
