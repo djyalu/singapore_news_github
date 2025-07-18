@@ -28,5 +28,11 @@
     "name": "Mothership",
     "url": "https://mothership.sg",
     "period": "daily"
+  },
+  {
+    "group": "Politics",
+    "name": "The Independent Singapore",
+    "url": "https://theindependent.sg",
+    "period": "daily"
   }
 ]
