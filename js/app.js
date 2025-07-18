@@ -4076,19 +4076,20 @@ function getScrapingManagementHTML() {
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700 mb-2">실행 타입</label>
                     <div class="flex space-x-4">
-                        <label class="inline-flex items-center">
+                        <label class="inline-flex items-center cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">
                             <input type="radio" name="executionType" value="all" checked onchange="filterScrapedArticles()" class="form-radio text-blue-600">
                             <span class="ml-2">전체</span>
                         </label>
-                        <label class="inline-flex items-center">
+                        <label class="inline-flex items-center cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">
                             <input type="radio" name="executionType" value="scheduled" onchange="filterScrapedArticles()" class="form-radio text-blue-600">
                             <span class="ml-2">배치 실행</span>
                         </label>
-                        <label class="inline-flex items-center">
+                        <label class="inline-flex items-center cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">
                             <input type="radio" name="executionType" value="manual" onchange="filterScrapedArticles()" class="form-radio text-blue-600">
                             <span class="ml-2">수동 실행</span>
                         </label>
                     </div>
+                    <div id="filterStatus" class="mt-2 text-sm text-gray-600"></div>
                 </div>
             </div>
 
@@ -4421,6 +4422,10 @@ function filterScrapedArticles() {
     
     if (!window.allScrapedArticles) return;
     
+    // 로딩 표시
+    const container = document.getElementById('scrapingArticlesList');
+    container.style.opacity = '0.5';
+    
     let filtered = window.allScrapedArticles;
     
     // 날짜 필터
@@ -4471,7 +4476,27 @@ function filterScrapedArticles() {
         });
     }
     
+    // 필터 상태 표시
+    const filterStatus = document.getElementById('filterStatus');
+    if (filterStatus) {
+        let statusText = `${filtered.length}개 결과`;
+        if (executionType === 'scheduled') {
+            statusText += ' (배치 실행만 표시)';
+        } else if (executionType === 'manual') {
+            statusText += ' (수동 실행만 표시)';
+        }
+        if (dateFilter || siteFilter || searchFilter) {
+            statusText += ' - 추가 필터 적용됨';
+        }
+        filterStatus.textContent = statusText;
+    }
+    
     displayScrapedArticles(filtered);
+    
+    // 로딩 완료
+    setTimeout(() => {
+        container.style.opacity = '1';
+    }, 100);
 }
 
 // 스크랩 데이터 새로고침
