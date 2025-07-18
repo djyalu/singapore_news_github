@@ -1478,16 +1478,16 @@ async function loadHistory() {
         const row = tbody.insertRow();
         const statusClass = record.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
         row.innerHTML = `
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${new Date(record.timestamp).toLocaleString('ko-KR')}</td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${record.header || '-'}</td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${getChannelName(record.channel)}</td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${statusClass}">
+            <td>${new Date(record.timestamp).toLocaleString('ko-KR')}</td>
+            <td>${record.header || '-'}</td>
+            <td>${getChannelName(record.channel)}</td>
+            <td>
+                <span class="status-badge ${record.status}">
                     ${record.status === 'success' ? '성공' : '실패'}
                 </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                <button class="text-blue-600 hover:text-blue-900" onclick="showHistoryDetail('${record.id}')">상세</button>
+            <td>
+                <button class="btn btn-sm" onclick="showHistoryDetail('${record.id}')">상세</button>
             </td>
         `;
     });
