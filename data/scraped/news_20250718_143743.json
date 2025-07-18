@@ -1,0 +1,80 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Critical infrastructure in S’pore under attack by cyber espionage group: Shanmugam",
+        "url": "https://www.straitstimes.com/singapore/critical-infrastructure-in-spore-attacked-by-cyber-espionage-group-shanmugam",
+        "summary": "📰 싱가포르 관련 뉴스\n📝 SINGAPORE – The authorities are dealing with an ongoing attack on Singapore’s critical information infrastructure by a state-sponsored cyber espionage group, UNC3886....",
+        "content": "SINGAPORE – The authorities are dealing with an ongoing attack on Singapore’s critical information infrastructure by a state-sponsored cyber espionage group, UNC3886.",
+        "publish_date": "2025-07-18T14:27:43.391032",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Who is UNC3886, the group that attacked Singapore’s critical information infrastructure?",
+        "url": "https://www.straitstimes.com/singapore/who-is-unc3886-the-group-that-attacked-spores-critical-information-infrastructure",
+        "summary": "📰 싱가포르, 정부, 보건 관련 뉴스\n📝 SINGAPORE – Singapore’s critical information infrastructure has come under attack from cyber espionage group UNC3886.  A state-linked advanced persistent threat (APT) actor, it poses a menace to national security in many countries, including Singapore...",
+        "content": "SINGAPORE – Singapore’s critical information infrastructure has come under attack from cyber espionage group UNC3886. A state-linked advanced persistent threat (APT) actor, it poses a menace to national security in many countries, including Singapore.   Naming the nation’s attacker for the first time on July 18, Coordinating Minister for National Security K. Shanmugam said: “UNC3886 poses a serious threat to us and has the potential to undermine our national security. Even as we speak, UNC3886 is attacking our critical infrastructure right now.”  What is UNC3886? Are essential services in Singapore safe from the attack? The Straits Times answers questions about the attack and APTs. 1. Who is UNC3886? First detected in 2022 by cyber-security firm Mandiant, UNC3886 is a China-linked cyber espionage group.UNC3886’s attempts are known to be persistent, with the intention of intelligence gathering and long-term spying.The “UNC” label stands for “uncategorised” or “unclassified”, as industry analysts have not formally classified it. “But that does not mean that it is any less of a threat,” Mr Shanmugam said.2. How does UNC3886 operate?Mr Vivek Chudgar, managing director of Mandiant Consulting in Asia-Pacific and Japan, described UNC3886 as highly adept.  “UNC3886 operates in a sophisticated, cautious and evasive nature,” he said, adding that the group largely focuses on defence, technology and telecommunications organisations in the US and Asia. The Chinese espionage group is known to target network devices, virtualisation systems and critical information infrastructure with zero-day exploits. Zero-day exploits are attacks that take advantage of security vulnerabilities in software that vendors have yet to discover and develop patches for.Unpatched vulnerabilities in the software of network devices, hypervisors and virtual machines are typically harder to monitor, Mr Chudgar said.UNC3886 also employs custom malware and tools already available on the victim’s system to evade detection. Like other APT attackers, UNC3886 is persistent – even if detected and removed from the network, it will attempt to re-enter.  More on this topicCritical infrastructure in S’pore under attack by cyber espionage group: ShanmugamS’pore vulnerabilities are no different from those of other nations: Commissioner of Cybersecurity 3. What cyber attacks has UNC3886 been responsible for?Mr Chudgar said UNC3886 has attacked organisations in the US, Europe and parts of Asia. Specifically, it has targeted sectors such as government, telecoms, technology, aerospace, defence, energy and utility. “UNC3886 poses a severe threat to national security for the organisations and the countries targeted,” he said.   The group has exploited vulnerabilities in routers from Juniper Networks, network security devices from Fortinet and virtual machines from VMware.4. Are essential services in Singapore safe from the attack?On July 18, the Cyber Security Agency (CSA) said UNC3886’s activities have been detected in parts of Singapore’s critical information infrastructure that power essential services.“We have been investigating UNC3886’s activities,” said CSA, which is leading the investigations. The agency added that it is monitoring all critical services sectors and sharing threat intelligence, but did not name the affected sectors.Singapore’s 11 critical services sectors are: energy, water, finance, healthcare, transport, government, infocommunications, media and security and emergency services.More on this topicThink like criminals, anticipate cyber-attack tactics: ExpertsCredit reports among personal data of 190,000 breached, put for sale on Dark Web; IT vendor fined The agency is also working closely with other government bodies and partners to support the unnamed affected organisations.CSA also did not say how long UNC3886 has been in the affected networks, saying instead: “These attacks are often protracted campaigns, and CSA will need to preserve operational security by not disclosing further information at this stage.”5. What other APT attacks have hit Singapore?In 2014, the authorities detected a security breach in the Ministry of Foreign Affairs’ technology systems. Steps were taken to isolate the affected devices and strengthen the networks.   In what was the first sophisticated attack against universities here, the National University of Singapore and Nanyang Technological University discovered intrusions in their networks in 2017. No classified data or stu",
+        "publish_date": "2025-07-18T14:28:12.187161",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Singapore police in contact with Indonesian authorities over baby trafficking allegations",
+        "url": "https://www.straitstimes.com/singapore/singapore-police-in-contact-with-indonesian-authorities-over-baby-trafficking-allegations",
+        "summary": "📰 싱가포르 관련 뉴스\n📝 Singapore police in contact with Indonesian authorities over baby trafficking allegationsFind out what’s new on ST website and app. The Jakarta Post reported that the West Java police have arrested 13 people suspected of trafficking dozens of newborn babies to Singapore through an illegal adoption network...",
+        "content": "Singapore police in contact with Indonesian authorities over baby trafficking allegationsFind out what’s new on ST website and app.The Jakarta Post reported that the West Java police have arrested 13 people suspected of trafficking dozens of newborn babies to Singapore through an illegal adoption network.PHOTO ILLUSTRATION: UNSPLASHIan ChengFollow topic:SingaporePublished Jul 18, 2025, 07:45 PMUpdated Jul 18, 2025, 08:03 PMSINGAPORE - In the light of recent media reports linking an alleged baby trafficking ring to Singapore, the police on July 18 said that they have not received any local police reports nor any information on babies being trafficked into the country from Indonesia.The police told The Straits Times they are aware of media reports with these allegations.“The police have contacted the Indonesian authorities to seek relevant information about the allegations and will render necessary assistance to our Indonesian counterparts within the ambit of our laws,” they said. Indone",
+        "publish_date": "2025-07-18T14:28:25.423790",
+        "extracted_by": "fallback",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-18T14:37:43.492025",
+    "scraping_method": "ai_enhanced"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Fasten your seatbelts: Turbulence ahead for budget carriers in Changi Airport",
+        "url": "https://www.businesstimes.com.sg/opinion-features/fasten-your-seatbelts-turbulence-ahead-budget-carriers-changi-airport",
+        "summary": "📰 싱가포르, 비즈니스 관련 뉴스\n📝 BRUNCH·SUBSCRIBERSFasten your seatbelts: Turbulence ahead for budget carriers in Changi AirportAmid rising costs and fierce competition, low-cost airlines must navigate a turbulent path to stay profitable while keeping fares lowTay Peck Gek Published Fri, Jul 18, 2025 · 02:00 PMBrunchFollowAmong the low-cost airlines that have flown into the history books are Valuair and Tigerair, with Jetstar Asia soon to join them.  PHOTO: BT FILE[SINGAPORE] Even as Jetstar Asia braces for its final day of operations on Jul 31, the skies surrounding Changi Airport are set to remain busy...",
+        "content": "BRUNCH·SUBSCRIBERSFasten your seatbelts: Turbulence ahead for budget carriers in Changi AirportAmid rising costs and fierce competition, low-cost airlines must navigate a turbulent path to stay profitable while keeping fares lowTay Peck Gek Published Fri, Jul 18, 2025 · 02:00 PMBrunchFollowAmong the low-cost airlines that have flown into the history books are Valuair and Tigerair, with Jetstar Asia soon to join them. PHOTO: BT FILE[SINGAPORE] Even as Jetstar Asia braces for its final day of operations on Jul 31, the skies surrounding Changi Airport are set to remain busy.Come that day, 31 planes will take off from the runways of Changi Airport, traversing a sliver of the Java Sea before landing in Jakarta, Indonesia, just under two hours later. Twelve of those flights on this popular route will be operated by budget carriers, checks by The Business Times found.But amid an increasingly challenging landscape fraught with rising competition and costs, the future for these low-cost airline",
+        "publish_date": "2025-07-18T14:35:19.500783",
+        "extracted_by": "fallback",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-18T14:37:43.492033",
+    "scraping_method": "ai_enhanced"
+  }
+]
