@@ -947,11 +947,11 @@ function sendTestMessage() {
         console.log('WhatsApp Test API Response:', data);
         
         if (data.success && data.sent) {
-            const messageId = data.id || 'unknown';
+            const messageId = data.message?.message?.id || data.id || 'unknown';
             testResult.innerHTML = `<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (ID: ${messageId})</div>`;
             recordTestHistory(testChannel, 'success', processedMessage);
         } else {
-            let errorMsg = data.error || '알 수 없는 오류가 발생했습니다.';
+            let errorMsg = data.error?.message || data.error || '알 수 없는 오류가 발생했습니다.';
             testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
             recordTestHistory(testChannel, 'failed', processedMessage);
         }
