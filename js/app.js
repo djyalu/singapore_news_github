@@ -920,28 +920,56 @@ function sendTestMessage() {
     // 환경 감지 및 API 호출
     const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
     
-    // WhatsApp 테스트는 시뮬레이션 모드로 작동 (Vercel API 제한으로 인해)
-    console.log('WhatsApp 테스트 시뮬레이션 시작');
-    console.log('채널:', testChannel);
-    console.log('메시지:', processedMessage);
+    // 실제 WhatsApp API를 통한 테스트 전송
+    const apiUrl = 'https://singapore-news-github.vercel.app/api/test-whatsapp';
     
-    setTimeout(() => {
-        // 80% 성공률로 시뮬레이션
-        const success = Math.random() > 0.2;
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            channel: testChannel,
+            message: processedMessage
+        })
+    })
+    .then(response => {
+        console.log('WhatsApp Test API Response Status:', response.status);
+        console.log('WhatsApp Test API Response OK:', response.ok);
         
-        if (success) {
-            const simulatedId = 'sim_' + Date.now();
-            testResult.innerHTML = `<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (시뮬레이션 ID: ${simulatedId})</div>`;
-            recordTestHistory(testChannel, 'success', processedMessage);
-        } else {
-            testResult.innerHTML = '<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다. (시뮬레이션)</div>';
-            recordTestHistory(testChannel, 'failed', processedMessage);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
+        return response.json();
+    })
+    .then(data => {
+        console.log('WhatsApp Test API Response:', data);
+        
+        if (data.success && data.sent) {
+            const messageId = data.id || 'unknown';
+            testResult.innerHTML = `<div class="success-message">✅ 테스트 메시지가 성공적으로 전송되었습니다! (ID: ${messageId})</div>`;
+            recordTestHistory(testChannel, 'success', processedMessage);
+        } else {
+            let errorMsg = data.error || '알 수 없는 오류가 발생했습니다.';
+            testResult.innerHTML = `<div class="error-message">❌ 테스트 메시지 전송에 실패했습니다: ${errorMsg}</div>`;
+            recordTestHistory(testChannel, 'failed', processedMessage);
+        }
+    })
+    .catch(error => {
+        console.error('WhatsApp Test API Error:', error);
+        let errorMsg = '네트워크 연결을 확인해주세요.';
+        if (error.message) {
+            errorMsg = error.message;
+        }
+        testResult.innerHTML = `<div class="error-message">❌ WhatsApp API 호출이 실패했습니다: ${errorMsg}</div>`;
+        recordTestHistory(testChannel, 'failed', processedMessage);
+    })
+    .finally(() => {
         testSendBtn.disabled = false;
         testSendBtn.textContent = '테스트 전송';
         loadTestHistory();
-    }, 1500);
+    });
 }
 
 function recordTestHistory(channel, status, message) {
@@ -1172,12 +1200,12 @@ function saveSettings() {
         }
         
         // GitHub에 설정 저장
-        fetch('https://singapore-news-github.vercel.app/api/save-settings', {
+        fetch('https://singapore-news-github.vercel.app/api/save-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(settings)
+            body: JSON.stringify({ type: 'settings', data: settings })
         })
         .then(response => {
             if (!response.ok) {
@@ -1273,12 +1301,12 @@ document.addEventListener('submit', async function(e) {
         
         // GitHub에 사이트 목록 저장
         try {
-            const response = await fetch('https://singapore-news-github.vercel.app/api/save-sites', {
+            const response = await fetch('https://singapore-news-github.vercel.app/api/save-data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(sites)
+                body: JSON.stringify({ type: 'sites', data: sites })
             });
             
             const result = await response.json();
@@ -1310,12 +1338,12 @@ async function deleteSite(index) {
     
     // GitHub에 사이트 목록 업데이트
     try {
-        const response = await fetch('https://singapore-news-github.vercel.app/api/save-sites', {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/save-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(sites)
+            body: JSON.stringify({ type: 'sites', data: sites })
         });
         
         const result = await response.json();

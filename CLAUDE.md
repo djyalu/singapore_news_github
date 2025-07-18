@@ -61,21 +61,25 @@ python scripts/cleanup_old_data.py
 - `/api/scrape-only.js`: Scraping only workflow (no WhatsApp)
 - `/api/send-only.js`: WhatsApp sending only workflow
 - `/api/get-scraping-status.js`: Check scraping status
-- `/api/save-settings.js`: Save application settings
 - `/api/test-env.js`: Test environment variables
-- `/api/auth-config.js`: Authentication configuration
-- `/api/auth-login.js`: User authentication login
+- `/api/auth.js`: 통합 인증 API (설정 조회 + 로그인) - GET/POST
 - `/api/delete-scraped-file.js`: Delete scraped article files
 - `/api/get-latest-scraped.js`: Get latest scraped data
 - `/api/save-scraped-articles.js`: Save scraped articles to GitHub
-- `/api/save-sites.js`: Save scraping site configurations
+- `/api/save-data.js`: 통합 데이터 저장 API (설정 + 사이트 목록) - POST
 - `/api/send-email.js`: Send email notifications (SMTP)
+- `/api/test-whatsapp.js`: WhatsApp 테스트 메시지 전송 (실제 API 호출)
+
+**API 통합 완료:**
+- `auth-config.js` + `auth-login.js` → `auth.js`
+- `save-settings.js` + `save-sites.js` → `save-data.js`
+- 새로 추가: `test-whatsapp.js` (실제 WhatsApp API 테스트)
 
 **참고사항:**
-- Vercel 무료 플랜의 API 엔드포인트 제한: 12개 (현재 13개 사용 중)
-- 직접 WhatsApp 메시지 전송 API는 없음 (GitHub Actions 워크플로우 트리거 방식 사용)
-- 테스트 기능은 시뮬레이션 모드로 작동
+- Vercel 무료 플랜의 API 엔드포인트 제한: 12개 (현재 12개 사용 중 - 제한 준수)
+- 실제 WhatsApp 테스트 메시지 전송 가능
 - 모든 API는 CORS 설정 완료되어 GitHub Pages에서 호출 가능
+- 통합된 API는 `type` 파라미터로 기능 구분
 
 ### Python Scripts
 - `scripts/scraper.py`: Main news scraper
