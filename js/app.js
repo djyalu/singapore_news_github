@@ -1408,7 +1408,7 @@ async function loadHistory() {
         for (let i = 0; i < 3; i++) {
             const targetDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
             const monthStr = targetDate.toISOString().substring(0, 7).replace('-', '');
-            const historyUrl = `/data/history/${monthStr}.json`;
+            const historyUrl = `data/history/${monthStr}.json`;
             
             console.log(`GitHub 이력 조회 (${i+1}/3):`, historyUrl);
             
@@ -1433,7 +1433,7 @@ async function loadHistory() {
         
         // send_history.json도 확인
         try {
-            const sendHistoryUrl = '/data/history/send_history.json';
+            const sendHistoryUrl = 'data/history/send_history.json';
             const sendResponse = await fetch(sendHistoryUrl + '?t=' + Date.now());
             if (sendResponse.ok) {
                 const sendHistory = await sendResponse.json();
@@ -4437,14 +4437,20 @@ async function loadAllScrapedArticles() {
     try {
         showNotification('스크랩 데이터를 불러오는 중...', 'info');
         
-        // GitHub API로 스크랩 파일 목록 가져오기
-        const response = await fetch('https://api.github.com/repos/djyalu/singapore_news_github/contents/data/scraped');
+        // Vercel API를 통해 파일 목록 가져오기
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-scraped-files');
         
         if (!response.ok) {
-            throw new Error('GitHub API 요청 실패');
+            throw new Error(`파일 목록 가져오기 실패: ${response.status} ${response.statusText}`);
         }
         
-        const files = await response.json();
+        const result = await response.json();
+        
+        if (!result.success) {
+            throw new Error(result.error || '파일 목록을 가져올 수 없습니다');
+        }
+        
+        const files = result.files;
         
         // JSON 파일만 필터링하고 날짜순으로 정렬
         const jsonFiles = files
@@ -4559,7 +4565,22 @@ async function loadAllScrapedArticles() {
         
     } catch (error) {
         console.error('스크랩 데이터 로드 실패:', error);
-        showNotification('데이터를 불러오는데 실패했습니다.', 'error');
+        console.error('에러 상세:', error.message, error.stack);
+        
+        // 에러 상세 정보 표시
+        const errorMsg = error.message || '알 수 없는 오류';
+        showNotification(`데이터를 불러오는데 실패했습니다: ${errorMsg}`, 'error');
+        
+        // 에러 시에도 UI 표시
+        document.getElementById('scrapingArticlesList').innerHTML = `
+            <div class="text-center py-8">
+                <svg class="mx-auto h-12 w-12 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="mt-2 text-sm text-red-600">데이터 로드 실패</p>
+                <p class="mt-1 text-xs text-gray-500">${errorMsg}</p>
+            </div>
+        `;
     }
 }
 
