@@ -1,0 +1,58 @@
+name: Test Email System
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-email:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Test email sending
+      env:
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      run: |
+        python -c "
+import os
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+smtp_user = os.environ.get('SMTP_USER')
+smtp_password = os.environ.get('SMTP_PASSWORD')
+
+if not smtp_user or not smtp_password:
+    print('SMTP credentials not found')
+    exit(1)
+
+msg = MIMEMultipart()
+msg['Subject'] = '🔔 Singapore News Scraper 테스트'
+msg['From'] = smtp_user
+msg['To'] = smtp_user
+
+body = '이메일 시스템이 정상 작동합니다!'
+msg.attach(MIMEText(body, 'plain'))
+
+try:
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(smtp_user, smtp_password)
+    server.send_message(msg)
+    server.quit()
+    print('Email sent successfully!')
+except Exception as e:
+    print(f'Error: {e}')
+    exit(1)
+        "
