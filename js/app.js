@@ -4393,20 +4393,30 @@ async function loadAllScrapedArticles() {
                 if (fileData.consolidatedArticles) {
                     fileData.consolidatedArticles.forEach(group => {
                         group.sites.forEach(site => siteSet.add(site));
+                        // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
+                        const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
                         allArticles.push({
                             date: file.name.substring(0, 19),
                             fileName: file.name,
-                            group: group
+                            group: {
+                                ...group,
+                                actual_article_count: actualCount
+                            }
                         });
                     });
                 } else if (Array.isArray(fileData)) {
                     // 구형 데이터 구조 지원
                     fileData.forEach(group => {
                         if (group.sites) group.sites.forEach(site => siteSet.add(site));
+                        // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
+                        const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
                         allArticles.push({
                             date: file.name.substring(0, 19),
                             fileName: file.name,
-                            group: group
+                            group: {
+                                ...group,
+                                actual_article_count: actualCount
+                            }
                         });
                     });
                 }
@@ -4425,8 +4435,20 @@ async function loadAllScrapedArticles() {
             }
         }
         
-        // 통계 업데이트
-        const totalArticles = allArticles.reduce((sum, item) => sum + item.group.article_count, 0);
+        // 통계 업데이트 - 실제 기사 배열 길이로 계산
+        const totalArticles = allArticles.reduce((sum, item) => {
+            // 새로 계산한 actual_article_count 사용
+            if (item.group.actual_article_count !== undefined) {
+                return sum + item.group.actual_article_count;
+            }
+            // 기존 방식 (하위 호환성)
+            else if (item.group.articles && Array.isArray(item.group.articles)) {
+                return sum + item.group.articles.length;
+            } else if (item.group.article_count) {
+                return sum + item.group.article_count;
+            }
+            return sum;
+        }, 0);
         document.getElementById('totalArticlesCount').textContent = totalArticles;
         document.getElementById('totalSitesCount').textContent = siteSet.size;
         
