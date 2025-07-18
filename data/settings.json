@@ -25,5 +25,28 @@
     "traditional": {
       "useEnhancedFiltering": true
     }
+  },
+  "monitoring": {
+    "enabled": true,
+    "email": {
+      "enabled": true,
+      "recipients": [
+        "go41@naver.com"
+      ],
+      "sendOn": {
+        "success": false,
+        "failure": true,
+        "noArticles": true
+      },
+      "smtp": {
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "secure": false
+      }
+    },
+    "summary": {
+      "dailyReport": false,
+      "weeklyReport": true
+    }
   }
 }
