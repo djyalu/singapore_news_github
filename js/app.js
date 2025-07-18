@@ -117,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.innerHTML = getMFASettingsHTML();
                 initializeMFASettings();
                 break;
+            case 'scraping':
+                content.innerHTML = getScrapingManagementHTML();
+                loadAllScrapedArticles();
+                break;
         }
     }
     
@@ -906,28 +910,18 @@ function sendTestMessage() {
     // 환경 감지 및 API 호출
     const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
     
-    // 환경에 관계없이 직접 WhatsApp API 호출 시도
-    const whatsappApiUrl = 'https://gate.whapi.cloud/messages/text';
-    const whatsappToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+    // Vercel API를 통해 WhatsApp 메시지 전송
+    const apiUrl = isProduction ? '/api/send-whatsapp' : 'https://singapore-news-github.vercel.app/api/send-whatsapp';
     
-    // 채널 ID 형식 변환 (그룹 채널은 @g.us 유지)
-    let toNumber = testChannel;
-    // 그룹 채널(@g.us)은 그대로 유지, 개인 채널만 숫자로 변환
-    
-    const whatsappData = {
-        to: toNumber,
-        body: processedMessage,
-        typing_time: 0
-    };
-    
-    // 먼저 직접 WhatsApp API 호출 시도
-    fetch(whatsappApiUrl, {
+    fetch(apiUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${whatsappToken}`
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(whatsappData)
+        body: JSON.stringify({
+            channel: testChannel,
+            message: processedMessage
+        })
     })
     .then(response => {
         console.log('WhatsApp API Response Status:', response.status);
@@ -2855,19 +2849,15 @@ async function checkWhatsAppAPI() {
     const statusIndicator = statusCard.querySelector('.status-indicator');
     
     try {
-        const apiUrl = 'https://gate.whapi.cloud/messages/text';
-        const apiToken = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq';
+        // Vercel API를 통해 상태 확인
+        const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+        const apiUrl = isProduction ? '/api/test-env' : 'https://singapore-news-github.vercel.app/api/test-env';
         
         const response = await fetch(apiUrl, {
-            method: 'POST',
+            method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiToken}`
-            },
-            body: JSON.stringify({
-                to: 'test',
-                body: 'status check'
-            })
+                'Content-Type': 'application/json'
+            }
         });
         
         if (response.status === 400 || response.status === 401) {
@@ -3554,17 +3544,18 @@ async function sendDirectToWhatsApp() {
     // 메시지 생성
     const message = formatWhatsAppMessage(scrapedData);
     
-    // WhatsApp API 호출
-    const whatsappResponse = await fetch('https://gate.whapi.cloud/messages/text', {
+    // Vercel API를 통해 WhatsApp 전송
+    const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+    const apiUrl = isProduction ? '/api/send-whatsapp' : 'https://singapore-news-github.vercel.app/api/send-whatsapp';
+    
+    const whatsappResponse = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-            'Authorization': 'Bearer ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            to: '120363421252284444@g.us',
-            body: message,
-            typing_time: 0
+            channel: '120363421252284444@g.us',
+            message: message
         })
     });
     
@@ -4042,4 +4033,376 @@ function toggleSelectableArticleAccordion(index) {
             toggle.style.transform = 'rotate(0deg)';
         }
     }
+}
+
+// 스크랩 관리 페이지 HTML
+function getScrapingManagementHTML() {
+    return `
+        <div class="space-y-6">
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">스크랩 관리</h1>
+                    <p class="mt-1 text-sm text-gray-500">GitHub에 저장된 모든 스크랩 기사를 관리합니다</p>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button type="button" onclick="refreshScrapedArticles()" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                        새로고침
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-white shadow rounded-lg p-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="dateFilter" class="block text-sm font-medium text-gray-700">날짜 선택</label>
+                        <input type="date" id="dateFilter" onchange="filterScrapedArticles()" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="siteFilter" class="block text-sm font-medium text-gray-700">사이트</label>
+                        <select id="siteFilter" onchange="filterScrapedArticles()" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                            <option value="">모든 사이트</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="searchFilter" class="block text-sm font-medium text-gray-700">검색</label>
+                        <input type="text" id="searchFilter" placeholder="제목 또는 내용 검색" onkeyup="filterScrapedArticles()" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">실행 타입</label>
+                    <div class="flex space-x-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="executionType" value="all" checked onchange="filterScrapedArticles()" class="form-radio text-blue-600">
+                            <span class="ml-2">전체</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="executionType" value="scheduled" onchange="filterScrapedArticles()" class="form-radio text-blue-600">
+                            <span class="ml-2">배치 실행</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="executionType" value="manual" onchange="filterScrapedArticles()" class="form-radio text-blue-600">
+                            <span class="ml-2">수동 실행</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">총 파일 수</dt>
+                                    <dd class="text-lg font-medium text-gray-900" id="totalFilesCount">0</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">총 기사 수</dt>
+                                    <dd class="text-lg font-medium text-gray-900" id="totalArticlesCount">0</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">날짜 범위</dt>
+                                    <dd class="text-lg font-medium text-gray-900" id="dateRangeInfo">-</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">사이트 수</dt>
+                                    <dd class="text-lg font-medium text-gray-900" id="totalSitesCount">0</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles List -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div id="scrapingArticlesList" class="space-y-4">
+                        <div class="text-center py-8">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            <p class="mt-2 text-sm text-gray-500">데이터를 불러오는 중...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// 모든 스크랩 데이터 불러오기
+async function loadAllScrapedArticles() {
+    try {
+        showNotification('스크랩 데이터를 불러오는 중...', 'info');
+        
+        // GitHub API로 스크랩 파일 목록 가져오기
+        const response = await fetch('https://api.github.com/repos/djyalu/singapore_news_github/contents/data/scraped');
+        
+        if (!response.ok) {
+            throw new Error('GitHub API 요청 실패');
+        }
+        
+        const files = await response.json();
+        
+        // JSON 파일만 필터링하고 날짜순으로 정렬
+        const jsonFiles = files
+            .filter(file => file.name.endsWith('.json'))
+            .sort((a, b) => b.name.localeCompare(a.name));
+        
+        // 통계 업데이트
+        document.getElementById('totalFilesCount').textContent = jsonFiles.length;
+        
+        if (jsonFiles.length === 0) {
+            document.getElementById('scrapingArticlesList').innerHTML = `
+                <div class="text-center py-8">
+                    <p class="text-gray-500">저장된 스크랩 데이터가 없습니다.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        // 날짜 범위 계산
+        const dates = jsonFiles.map(f => f.name.substring(0, 10));
+        document.getElementById('dateRangeInfo').textContent = `${dates[dates.length-1]} ~ ${dates[0]}`;
+        
+        // 파일 데이터 로드
+        const allArticles = [];
+        const siteSet = new Set();
+        
+        // 최근 10개 파일만 먼저 로드 (성능 최적화)
+        const recentFiles = jsonFiles.slice(0, 10);
+        
+        for (const file of recentFiles) {
+            try {
+                const fileResponse = await fetch(file.download_url);
+                const fileData = await fileResponse.json();
+                
+                if (fileData.consolidatedArticles) {
+                    fileData.consolidatedArticles.forEach(group => {
+                        group.sites.forEach(site => siteSet.add(site));
+                        allArticles.push({
+                            date: file.name.substring(0, 19),
+                            fileName: file.name,
+                            group: group
+                        });
+                    });
+                }
+            } catch (error) {
+                console.error(`파일 로드 실패: ${file.name}`, error);
+            }
+        }
+        
+        // 통계 업데이트
+        const totalArticles = allArticles.reduce((sum, item) => sum + item.group.article_count, 0);
+        document.getElementById('totalArticlesCount').textContent = totalArticles;
+        document.getElementById('totalSitesCount').textContent = siteSet.size;
+        
+        // 사이트 필터 옵션 추가
+        const siteFilter = document.getElementById('siteFilter');
+        siteFilter.innerHTML = '<option value="">모든 사이트</option>';
+        Array.from(siteSet).sort().forEach(site => {
+            siteFilter.innerHTML += `<option value="${site}">${site}</option>`;
+        });
+        
+        // 기사 목록 표시
+        window.allScrapedArticles = allArticles; // 필터링을 위해 저장
+        displayScrapedArticles(allArticles);
+        
+        showNotification('스크랩 데이터를 성공적으로 불러왔습니다.', 'success');
+        
+    } catch (error) {
+        console.error('스크랩 데이터 로드 실패:', error);
+        showNotification('데이터를 불러오는데 실패했습니다.', 'error');
+    }
+}
+
+// 스크랩 기사 표시
+function displayScrapedArticles(articles) {
+    const container = document.getElementById('scrapingArticlesList');
+    
+    if (articles.length === 0) {
+        container.innerHTML = `
+            <div class="text-center py-8">
+                <p class="text-gray-500">표시할 기사가 없습니다.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    const groupedByDate = {};
+    
+    // 날짜별로 그룹화
+    articles.forEach(item => {
+        const date = item.date.substring(0, 10);
+        if (!groupedByDate[date]) {
+            groupedByDate[date] = [];
+        }
+        groupedByDate[date].push(item);
+    });
+    
+    // 날짜별로 표시
+    Object.entries(groupedByDate)
+        .sort((a, b) => b[0].localeCompare(a[0]))
+        .forEach(([date, items]) => {
+            html += `
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-3">${date}</h3>
+                    <div class="space-y-3">
+            `;
+            
+            items.forEach((item, index) => {
+                const group = item.group;
+                html += `
+                    <div class="border rounded-lg p-4 hover:bg-gray-50">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <h4 class="text-md font-medium text-gray-900">
+                                    ${group.group}
+                                    ${group.execution_type === 'scheduled' ? '<span class="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">배치</span>' : '<span class="ml-2 px-2 py-1 text-xs bg-green-100 text-green-800 rounded">수동</span>'}
+                                </h4>
+                                <p class="text-sm text-gray-500 mt-1">
+                                    ${group.sites.join(', ')} • ${group.article_count}개 기사 • ${item.date}
+                                </p>
+                            </div>
+                            <button onclick="toggleScrapingArticle('${date}-${index}')" class="ml-4 text-blue-600 hover:text-blue-800">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="scraping-article-${date}-${index}" class="hidden mt-4 space-y-2">
+                `;
+                
+                group.articles.forEach((article, i) => {
+                    html += `
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-sm font-medium text-gray-900">${i + 1}. ${article.summary}</p>
+                            <a href="${article.url}" target="_blank" class="text-xs text-blue-600 hover:text-blue-800 mt-1 inline-block">
+                                원문 보기 →
+                            </a>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+    
+    container.innerHTML = html;
+}
+
+// 스크랩 기사 토글
+function toggleScrapingArticle(id) {
+    const content = document.getElementById(`scraping-article-${id}`);
+    if (content) {
+        content.classList.toggle('hidden');
+    }
+}
+
+// 스크랩 기사 필터링
+function filterScrapedArticles() {
+    const dateFilter = document.getElementById('dateFilter').value;
+    const siteFilter = document.getElementById('siteFilter').value;
+    const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+    const executionType = document.querySelector('input[name="executionType"]:checked')?.value || 'all';
+    
+    if (!window.allScrapedArticles) return;
+    
+    let filtered = window.allScrapedArticles;
+    
+    // 날짜 필터
+    if (dateFilter) {
+        filtered = filtered.filter(item => item.date.startsWith(dateFilter));
+    }
+    
+    // 사이트 필터
+    if (siteFilter) {
+        filtered = filtered.filter(item => item.group.sites.includes(siteFilter));
+    }
+    
+    // 검색 필터
+    if (searchFilter) {
+        filtered = filtered.filter(item => {
+            // 그룹 이름 검색
+            if (item.group.group.toLowerCase().includes(searchFilter)) return true;
+            
+            // 기사 내용 검색
+            return item.group.articles.some(article => 
+                article.summary.toLowerCase().includes(searchFilter) ||
+                (article.title && article.title.toLowerCase().includes(searchFilter))
+            );
+        });
+    }
+    
+    // 실행 타입 필터
+    if (executionType !== 'all') {
+        filtered = filtered.filter(item => item.group.execution_type === executionType);
+    }
+    
+    displayScrapedArticles(filtered);
+}
+
+// 스크랩 데이터 새로고침
+async function refreshScrapedArticles() {
+    await loadAllScrapedArticles();
 }

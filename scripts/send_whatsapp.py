@@ -53,7 +53,11 @@ def format_message(consolidated_articles):
 def send_to_whatsapp(message, channel_id):
     # WhatsApp API 설정
     api_url = 'https://gate.whapi.cloud/messages/text'
-    api_token = 'ZCF4emVil1iJLNRJ6Sb7ce7TsyctIEYq'
+    api_token = os.environ.get('WHATSAPP_API_KEY')
+    
+    if not api_token:
+        print("Error: WHATSAPP_API_KEY environment variable not set")
+        return False
     
     headers = {
         'Authorization': f'Bearer {api_token}',

@@ -1438,7 +1438,8 @@ def scrape_news_traditional():
             'article_count': len(selected_articles),
             'sites': list(set(article['site'] for article in selected_articles)),
             'timestamp': datetime.now().isoformat(),
-            'scraping_method': 'traditional'
+            'scraping_method': 'traditional',
+            'execution_type': 'scheduled' if os.environ.get('GITHUB_EVENT_NAME') == 'schedule' else 'manual'
         }
         
         consolidated_articles.append(group_summary)
@@ -1452,11 +1453,15 @@ def scrape_news_traditional():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(consolidated_articles, f, ensure_ascii=False, indent=2)
     
+    # GitHub Actions 환경변수로 배치 실행 여부 확인
+    is_scheduled = os.environ.get('GITHUB_EVENT_NAME') == 'schedule'
+    
     # latest.json 파일 업데이트
     latest_info = {
         'lastUpdated': datetime.now().isoformat(),
         'latestFile': f'news_{timestamp}.json',
-        'scrapingMethod': 'traditional'
+        'scrapingMethod': 'traditional',
+        'executionType': 'scheduled' if is_scheduled else 'manual'
     }
     with open('data/latest.json', 'w', encoding='utf-8') as f:
         json.dump(latest_info, f, ensure_ascii=False, indent=2)

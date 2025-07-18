@@ -2,8 +2,8 @@ name: Singapore News Scraper
 
 on:
   schedule:
-    # 하루 3번 실행 (한국시간 기준: 오전 9시, 오후 1시, 오후 6시)
-    - cron: '0 0,4,9 * * *'  # UTC 기준
+    # 하루 1번 실행 (한국시간 기준: 오전 6시)
+    - cron: '0 21 * * *'  # UTC 기준 (KST 06:00)
   workflow_dispatch:  # 수동 실행 가능
   push:
     paths:
@@ -41,6 +41,8 @@ jobs:
         python scripts/scraper.py
     
     - name: Send to WhatsApp
+      env:
+        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
       run: |
         python scripts/send_whatsapp.py
     
