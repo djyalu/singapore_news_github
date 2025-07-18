@@ -34,5 +34,11 @@
     "name": "The Independent Singapore",
     "url": "https://theindependent.sg",
     "period": "daily"
+  },
+  {
+    "group": "Culture",
+    "name": "TODAY Online",
+    "url": "https://www.todayonline.com",
+    "period": "daily"
   }
 ]
