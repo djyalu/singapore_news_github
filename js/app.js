@@ -2037,9 +2037,9 @@ function loadRecentActivity() {
                     '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">실패</span>';
                 
                 return `
-                    <li class="${index < recentActivities.length - 1 ? 'pb-4' : 'pb-0'}">
+                    <li class="pb-4">
                         <div class="relative flex items-start space-x-3">
-                            ${index < recentActivities.length - 1 ? '<span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>' : ''}
+                            ${index < recentActivities.length - 1 ? '<span class="absolute top-10 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>' : ''}
                             <div class="relative flex h-10 w-10 items-center justify-center ${color} rounded-full text-white">
                                 <span class="text-sm">${icon}</span>
                             </div>
