@@ -23,11 +23,11 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+        cache: 'pip'  # pip 캐시 활성화
     
     - name: Install dependencies
       run: |
-        pip install requests beautifulsoup4 lxml
-        pip install googletrans==4.0.0-rc1 google-generativeai
+        pip install -r requirements.txt
     
     - name: Create data directories
       run: |
@@ -38,16 +38,35 @@ jobs:
       env:
         GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
       run: |
         python scripts/scraper.py
+      continue-on-error: true  # 스크래핑 실패해도 계속 진행
+    
+    - name: Check scraping results
+      id: check_results
+      run: |
+        if [ -f "data/latest.json" ]; then
+          echo "scraping_success=true" >> $GITHUB_OUTPUT
+        else
+          echo "scraping_success=false" >> $GITHUB_OUTPUT
+        fi
     
     - name: Send to WhatsApp
+      if: steps.check_results.outputs.scraping_success == 'true'
       env:
         WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
       run: |
         python scripts/send_whatsapp.py
+      continue-on-error: true  # WhatsApp 전송 실패해도 데이터는 저장
+    
+    - name: Clean up old data
+      run: |
+        python scripts/cleanup_old_data.py || echo "Cleanup script not found or failed"
     
     - name: Update history
+      if: always()  # 항상 실행
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -63,3 +82,27 @@ jobs:
         
         # Retry push with pull if needed
         git push || (git pull origin main --rebase && git push)
+    
+    - name: Create workflow summary
+      if: always()
+      run: |
+        echo "## Workflow Summary 📊" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Run Time**: $(date '+%Y-%m-%d %H:%M:%S KST')" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ steps.check_results.outputs.scraping_success }}" == "true" ]; then
+          echo "✅ **Scraping**: Success" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **Scraping**: Failed" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        # Check latest.json for more details
+        if [ -f "data/latest.json" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Latest Data" >> $GITHUB_STEP_SUMMARY
+          echo '```json' >> $GITHUB_STEP_SUMMARY
+          cat data/latest.json >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        fi

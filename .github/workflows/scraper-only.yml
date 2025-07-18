@@ -20,8 +20,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install requests beautifulsoup4 lxml
-        pip install googletrans==4.0.0-rc1 google-generativeai
+        pip install -r requirements.txt
     
     - name: Create data directories
       run: |

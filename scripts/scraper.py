@@ -1471,4 +1471,36 @@ def scrape_news_traditional():
     return output_file
 
 if __name__ == "__main__":
-    scrape_news()
+    import sys
+    from monitoring import create_execution_summary, check_and_send_notification, save_monitoring_log
+    
+    try:
+        # 스크래핑 실행
+        output_file = scrape_news()
+        
+        # 실행 결과 요약 생성
+        summary = create_execution_summary(scraped_file=output_file)
+        
+        # 모니터링 로그 저장
+        save_monitoring_log(summary)
+        
+        # 알림 전송
+        check_and_send_notification(summary['status'], summary)
+        
+        # 성공 종료
+        sys.exit(0)
+        
+    except Exception as e:
+        print(f"Scraping failed with error: {e}")
+        
+        # 오류 요약 생성
+        summary = create_execution_summary(error=e)
+        
+        # 모니터링 로그 저장
+        save_monitoring_log(summary)
+        
+        # 오류 알림 전송
+        check_and_send_notification('failure', summary)
+        
+        # 오류 종료
+        sys.exit(1)

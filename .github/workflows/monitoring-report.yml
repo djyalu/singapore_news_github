@@ -1,0 +1,60 @@
+name: Monitoring Reports
+
+on:
+  schedule:
+    # 일일 리포트 - 매일 오후 11시 (KST)
+    - cron: '0 14 * * *'  # UTC 14:00 = KST 23:00
+    # 주간 리포트 - 매주 일요일 오후 6시 (KST)
+    - cron: '0 9 * * 0'   # UTC 09:00 = KST 18:00
+  workflow_dispatch:
+    inputs:
+      report_type:
+        description: 'Report type'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+
+permissions:
+  contents: read
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Determine report type
+      id: report_type
+      run: |
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          echo "type=${{ github.event.inputs.report_type }}" >> $GITHUB_OUTPUT
+        else
+          # 스케줄 시간으로 판단
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" == "14" ]; then
+            echo "type=daily" >> $GITHUB_OUTPUT
+          else
+            echo "type=weekly" >> $GITHUB_OUTPUT
+          fi
+        fi
+    
+    - name: Generate and send report
+      env:
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      run: |
+        python scripts/send_report.py --type ${{ steps.report_type.outputs.type }}

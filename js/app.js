@@ -469,6 +469,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <textarea id="blockedKeywords" rows="3" placeholder="violence, adult, gambling" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
                     </div>
+                    
+                    <!-- Monitoring Settings -->
+                    <div id="monitoringSettingsContainer"></div>
                 </div>
                 
                 <!-- Delivery Tab -->
@@ -600,9 +603,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
         
         return `
-            <div class="page-section">
-                <h2>전송 이력</h2>
-                <div class="history-filters">
+            <div class="space-y-6">
+                <!-- Header -->
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">전송 이력</h1>
+                    <p class="mt-1 text-sm text-gray-500">WhatsApp 메시지 전송 기록을 확인합니다</p>
+                </div>
+                
+                <!-- Filters -->
+                <div class="bg-white shadow rounded-lg p-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div class="filter-row">
                         <div class="form-group">
                             <label>시작일</label>
@@ -1218,6 +1228,21 @@ async function loadSettings() {
     if (settings.blockedKeywords) {
         document.getElementById('blockedKeywords').value = settings.blockedKeywords;
     }
+    
+    // 모니터링 UI 렌더링
+    const monitoringContainer = document.getElementById('monitoringSettingsContainer');
+    if (monitoringContainer) {
+        monitoringContainer.innerHTML = createMonitoringSettingsUI();
+        
+        // 모니터링 설정 로드
+        loadMonitoringSettings(settings);
+        
+        // 이벤트 리스너 추가
+        const monitoringEnabled = document.getElementById('monitoringEnabled');
+        if (monitoringEnabled) {
+            monitoringEnabled.addEventListener('change', toggleMonitoringSettings);
+        }
+    }
 }
 
 function saveSettings() {
@@ -1440,9 +1465,70 @@ async function deleteSite(index) {
     await loadSites();
 }
 
-function loadHistory() {
-    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
-    const tbody = document.querySelector('#historyTable tbody');
+async function loadHistory() {
+    console.log('전송 이력 로드 시작...');
+    
+    // localStorage와 GitHub 데이터 결합
+    let history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    
+    // GitHub에서 이력 데이터 가져오기 (최근 3개월)
+    try {
+        const now = new Date();
+        const localIds = new Set(history.map(h => h.id));
+        
+        for (let i = 0; i < 3; i++) {
+            const targetDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
+            const monthStr = targetDate.toISOString().substring(0, 7).replace('-', '');
+            const historyUrl = `/data/history/${monthStr}.json`;
+            
+            console.log(`GitHub 이력 조회 (${i+1}/3):`, historyUrl);
+            
+            try {
+                const response = await fetch(historyUrl + '?t=' + Date.now());
+                if (response.ok) {
+                    const githubHistory = await response.json();
+                    console.log(`${monthStr} 이력 데이터:`, githubHistory.length, '건');
+                    
+                    // 중복 제거하며 결합
+                    githubHistory.forEach(record => {
+                        if (!localIds.has(record.id)) {
+                            history.push(record);
+                            localIds.add(record.id);
+                        }
+                    });
+                }
+            } catch (monthError) {
+                console.log(`${monthStr} 이력 없음`);
+            }
+        }
+        
+        // send_history.json도 확인
+        try {
+            const sendHistoryUrl = '/data/history/send_history.json';
+            const sendResponse = await fetch(sendHistoryUrl + '?t=' + Date.now());
+            if (sendResponse.ok) {
+                const sendHistory = await sendResponse.json();
+                console.log('send_history.json 데이터:', sendHistory.length, '건');
+                sendHistory.forEach(record => {
+                    if (!localIds.has(record.id)) {
+                        history.push(record);
+                    }
+                });
+            }
+        } catch (e) {
+            console.log('send_history.json 없음');
+        }
+    } catch (error) {
+        console.error('GitHub 이력 로드 실패:', error);
+    }
+    
+    console.log('전체 이력 개수:', history.length);
+    
+    const tbody = document.querySelector('#historyTableBody') || document.querySelector('#historyTable tbody');
+    if (!tbody) {
+        console.error('historyTable tbody를 찾을 수 없습니다');
+        return;
+    }
     tbody.innerHTML = '';
     
     // 필터 값 가져오기
@@ -1488,19 +1574,41 @@ function loadHistory() {
     // 테이블에 표시
     filteredHistory.forEach(record => {
         const row = tbody.insertRow();
-        const statusClass = record.status === 'success' ? 'status-success' : 'status-failed';
+        const statusClass = record.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
         row.innerHTML = `
-            <td>${new Date(record.timestamp).toLocaleString()}</td>
-            <td>${record.header || '-'}</td>
-            <td>${getChannelName(record.channel)}</td>
-            <td><span class="${statusClass}">${record.status === 'success' ? '성공' : '실패'}</span></td>
-            <td><button class="btn btn-sm" onclick="showHistoryDetail('${record.id}')">상세</button></td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${new Date(record.timestamp).toLocaleString('ko-KR')}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${record.header || '-'}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${getChannelName(record.channel)}</td>
+            <td class="px-6 py-4 whitespace-nowrap">
+                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${statusClass}">
+                    ${record.status === 'success' ? '성공' : '실패'}
+                </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <button class="text-blue-600 hover:text-blue-900" onclick="showHistoryDetail('${record.id}')">상세</button>
+            </td>
         `;
     });
     
+    // Show/hide empty state
+    const emptyState = document.getElementById('historyEmptyState');
     if (filteredHistory.length === 0) {
-        const row = tbody.insertRow();
-        row.innerHTML = '<td colspan="5" style="text-align: center;">조회 결과가 없습니다.</td>';
+        tbody.innerHTML = '';
+        if (emptyState) {
+            emptyState.classList.remove('hidden');
+            // Update empty state message based on whether we have any history
+            if (history.length === 0) {
+                emptyState.querySelector('h3').textContent = '전송 기록이 없습니다';
+                emptyState.querySelector('p').textContent = 'WhatsApp 전송을 실행하면 여기에 이력이 표시됩니다.';
+            } else {
+                emptyState.querySelector('h3').textContent = '검색 결과가 없습니다';
+                emptyState.querySelector('p').textContent = '필터 조건에 맞는 전송 기록이 없습니다.';
+            }
+        }
+    } else {
+        if (emptyState) {
+            emptyState.classList.add('hidden');
+        }
     }
 }
 

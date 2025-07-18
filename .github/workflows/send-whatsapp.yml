@@ -23,6 +23,8 @@ jobs:
         pip install requests
     
     - name: Send to WhatsApp
+      env:
+        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
       run: |
         python scripts/send_whatsapp.py
     
