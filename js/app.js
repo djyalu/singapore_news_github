@@ -245,7 +245,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- Scraped Articles Section (moved to bottom) -->
+            <div class="space-y-6 mt-6">
                 <!-- Scraped Articles -->
                 <div class="bg-white shadow rounded-lg">
                     <div class="px-4 py-5 sm:p-6">
@@ -1219,6 +1222,9 @@ async function loadSettings() {
 
 function saveSettings() {
     try {
+        // 기존 설정 가져오기 (변경 사항 추적용)
+        const oldSettings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+        
         const settings = {
             scrapTarget: document.getElementById('scrapTarget').value,
             importantKeywords: document.getElementById('importantKeywords').value,
@@ -1236,7 +1242,28 @@ function saveSettings() {
                 date: document.getElementById('monthlyDate').value
             },
             blockedKeywords: document.getElementById('blockedKeywords').value,
-            scrapingMethod: document.getElementById('scrapingMethod').value
+            scrapingMethod: document.getElementById('scrapingMethod').value,
+            monitoring: {
+                enabled: document.getElementById('monitoringEnabled')?.checked || false,
+                email: {
+                    enabled: document.getElementById('emailEnabled')?.checked || false,
+                    recipients: (document.getElementById('emailRecipients')?.value || '').split(',').map(e => e.trim()).filter(e => e),
+                    sendOn: {
+                        success: document.getElementById('sendOnSuccess')?.checked || false,
+                        failure: document.getElementById('sendOnFailure')?.checked || true,
+                        noArticles: document.getElementById('sendOnNoArticles')?.checked || true
+                    },
+                    smtp: {
+                        host: document.getElementById('smtpHost')?.value || 'smtp.gmail.com',
+                        port: parseInt(document.getElementById('smtpPort')?.value || '587'),
+                        secure: document.getElementById('smtpSecure')?.checked || false
+                    }
+                },
+                summary: {
+                    dailyReport: document.getElementById('dailyReport')?.checked || false,
+                    weeklyReport: document.getElementById('weeklyReport')?.checked || false
+                }
+            }
         };
         
         // 설정 유효성 검사
@@ -1264,6 +1291,9 @@ function saveSettings() {
                 // 서버 저장 성공 시 로컬에도 저장
                 localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
                 showNotification('설정이 저장되었습니다.', 'success');
+                
+                // 설정 변경 이력 저장
+                saveSettingsHistory(settings, oldSettings);
             } else {
                 showNotification(data.error || '설정 저장에 실패했습니다.', 'error');
             }
@@ -1274,6 +1304,9 @@ function saveSettings() {
             try {
                 localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
                 showNotification('설정이 로컬에 저장되었습니다. (GitHub 연결 실패)', 'warning');
+                
+                // 설정 변경 이력 저장
+                saveSettingsHistory(settings, oldSettings);
             } catch (localError) {
                 console.error('로컬 저장도 실패:', localError);
                 showNotification('설정 저장에 실패했습니다.', 'error');
@@ -1802,67 +1835,191 @@ function loadRecentActivity() {
     const activityList = document.getElementById('recentActivityList');
     if (!activityList) return;
     
+    // 다양한 이력 데이터 수집
     const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
     const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
     const scrapeHistory = JSON.parse(localStorage.getItem('singapore_news_scrape_history') || '[]');
+    const settingsHistory = JSON.parse(localStorage.getItem('singapore_news_settings_history') || '[]');
+    
+    // GitHub 스크랩 이력 확인 (최신 파일 정보)
+    const latestScrapedData = localStorage.getItem('singapore_news_latest_scraped');
+    const githubActivities = [];
+    
+    if (latestScrapedData) {
+        try {
+            const latest = JSON.parse(latestScrapedData);
+            if (latest.lastUpdated) {
+                githubActivities.push({
+                    timestamp: latest.lastUpdated,
+                    type: 'github_scrape',
+                    status: 'success',
+                    executionType: latest.executionType || 'manual',
+                    method: latest.scrapingMethod || 'traditional'
+                });
+            }
+        } catch (e) {
+            console.error('Failed to parse latest scraped data:', e);
+        }
+    }
     
     // 모든 활동을 합치고 정렬
     const allActivities = [
         ...history.map(h => ({...h, type: 'send'})),
         ...testHistory.map(h => ({...h, type: 'test'})),
-        ...scrapeHistory.map(h => ({...h, type: 'scrape'}))
+        ...scrapeHistory.map(h => ({...h, type: 'scrape'})),
+        ...settingsHistory.map(h => ({...h, type: 'settings'})),
+        ...githubActivities
     ].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     
     if (allActivities.length === 0) {
-        activityList.innerHTML = '<p class="no-data">최근 활동이 없습니다.</p>';
+        activityList.innerHTML = `
+            <div class="text-center py-4">
+                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p class="mt-2 text-sm text-gray-500">최근 활동이 없습니다.</p>
+            </div>
+        `;
         return;
     }
     
-    const recentActivities = allActivities.slice(0, 5);
-    activityList.innerHTML = recentActivities.map(activity => {
-        const time = new Date(activity.timestamp).toLocaleString('ko-KR', {
-            month: 'numeric',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric'
-        });
+    const recentActivities = allActivities.slice(0, 10); // 10개로 확대
+    activityList.innerHTML = `
+        <ul role="list" class="-mb-8">
+            ${recentActivities.map((activity, index) => {
+                const time = new Date(activity.timestamp).toLocaleString('ko-KR', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric'
+                });
+                
+                let icon, title, color, description = '';
+                switch(activity.type) {
+                    case 'test':
+                        icon = '🧪';
+                        title = '테스트 전송';
+                        color = 'bg-purple-500';
+                        description = activity.channel || '';
+                        break;
+                    case 'scrape':
+                        icon = '📥';
+                        title = '스크래핑 실행';
+                        color = 'bg-blue-500';
+                        description = activity.articleCount ? `${activity.articleCount}개 기사` : '';
+                        break;
+                    case 'github_scrape':
+                        icon = '🔄';
+                        title = activity.executionType === 'scheduled' ? '배치 스크래핑' : '수동 스크래핑';
+                        color = activity.executionType === 'scheduled' ? 'bg-indigo-500' : 'bg-green-500';
+                        description = `${activity.method} 방식`;
+                        break;
+                    case 'settings':
+                        icon = '⚙️';
+                        title = '설정 변경';
+                        color = 'bg-gray-500';
+                        description = activity.setting || '';
+                        break;
+                    default:
+                        icon = '📤';
+                        title = 'WhatsApp 전송';
+                        color = 'bg-green-500';
+                        description = activity.header || '';
+                }
+                
+                const status = activity.status === 'success' ? 
+                    '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">성공</span>' : 
+                    '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">실패</span>';
+                
+                return `
+                    <li class="${index < recentActivities.length - 1 ? 'pb-3' : ''}">
+                        <div class="relative flex items-start space-x-3">
+                            ${index < recentActivities.length - 1 ? '<span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>' : ''}
+                            <div class="relative flex h-10 w-10 items-center justify-center ${color} rounded-full text-white">
+                                <span class="text-lg">${icon}</span>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <div>
+                                    <div class="text-sm font-medium text-gray-900">
+                                        ${title}
+                                        ${status}
+                                    </div>
+                                    ${description ? `<p class="mt-0.5 text-sm text-gray-500">${description}</p>` : ''}
+                                </div>
+                                <div class="mt-1 text-xs text-gray-500">
+                                    ${time}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                `;
+            }).join('')}
+        </ul>
+    `;
+}
+
+// 설정 변경 이력 저장
+function saveSettingsHistory(newSettings, oldSettings) {
+    try {
+        const history = JSON.parse(localStorage.getItem('singapore_news_settings_history') || '[]');
         
-        let icon, title;
-        switch(activity.type) {
-            case 'test':
-                icon = '🧪';
-                title = '테스트 전송';
-                break;
-            case 'scrape':
-                icon = '📥';
-                title = '스크래핑';
-                break;
-            default:
-                icon = '📤';
-                title = '뉴스 전송';
+        // 변경된 항목 찾기
+        const changes = [];
+        
+        // 주요 설정 비교
+        if (newSettings.scrapTarget !== oldSettings.scrapTarget) {
+            changes.push(`스크랩 대상: ${oldSettings.scrapTarget || '전체'} → ${newSettings.scrapTarget}`);
+        }
+        if (newSettings.sendChannel !== oldSettings.sendChannel) {
+            changes.push(`전송 채널: ${oldSettings.sendChannel || '없음'} → ${newSettings.sendChannel}`);
+        }
+        if (newSettings.sendSchedule?.period !== oldSettings.sendSchedule?.period) {
+            changes.push(`전송 주기: ${oldSettings.sendSchedule?.period || '없음'} → ${newSettings.sendSchedule.period}`);
         }
         
-        const status = activity.status === 'success' ? 
-            '<span class="status-success">성공</span>' : 
-            '<span class="status-failed">실패</span>';
+        // 변경사항이 있을 때만 기록
+        if (changes.length > 0) {
+            history.unshift({
+                timestamp: new Date().toISOString(),
+                type: 'settings',
+                status: 'success',
+                setting: changes.join(', '),
+                changes: changes
+            });
+            
+            // 최대 50개 유지
+            if (history.length > 50) {
+                history.length = 50;
+            }
+            
+            localStorage.setItem('singapore_news_settings_history', JSON.stringify(history));
+        }
+    } catch (error) {
+        console.error('설정 이력 저장 실패:', error);
+    }
+}
+
+// 스크래핑 이력 저장
+function saveScrapeHistory(articleCount, status = 'success') {
+    try {
+        const history = JSON.parse(localStorage.getItem('singapore_news_scrape_history') || '[]');
         
-        // 스크래핑의 경우 기사 수 표시
-        const extraInfo = activity.type === 'scrape' && activity.articleCount ? 
-            ` (${activity.articleCount}개 기사)` : '';
+        history.unshift({
+            timestamp: new Date().toISOString(),
+            type: 'scrape',
+            status: status,
+            articleCount: articleCount
+        });
         
-        return `
-            <div class="activity-item">
-                <span class="activity-icon">${icon}</span>
-                <div class="activity-content">
-                    <div class="activity-title">
-                        ${title}${extraInfo}
-                        ${status}
-                    </div>
-                    <div class="activity-time">${time}</div>
-                </div>
-            </div>
-        `;
-    }).join('');
+        // 최대 50개 유지
+        if (history.length > 50) {
+            history.length = 50;
+        }
+        
+        localStorage.setItem('singapore_news_scrape_history', JSON.stringify(history));
+    } catch (error) {
+        console.error('스크래핑 이력 저장 실패:', error);
+    }
 }
 
 function animateNumber(element, start, end, duration = 1000) {
@@ -3375,6 +3532,9 @@ async function loadLatestDataFromGitHub() {
                         articles: articles
                     };
                     localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
+                    
+                    // 최신 스크랩 정보 저장 (최근 활동용)
+                    localStorage.setItem('singapore_news_latest_scraped', JSON.stringify(latestInfo));
                     
                     // UI 업데이트 (한 번만)
                     console.log('UI 업데이트 시작...');
