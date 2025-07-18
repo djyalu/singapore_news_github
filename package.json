@@ -1,6 +1,6 @@
 {
   "name": "singapore-news-scraper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Singapore News Scraper with GitHub Actions integration",
   "main": "index.js",
   "scripts": {
