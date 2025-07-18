@@ -4220,10 +4220,11 @@ async function loadAllScrapedArticles() {
         const allArticles = [];
         const siteSet = new Set();
         
-        // 최근 10개 파일만 먼저 로드 (성능 최적화)
-        const recentFiles = jsonFiles.slice(0, 10);
+        // 모든 파일 로드하도록 변경
+        showNotification(`${jsonFiles.length}개의 스크랩 파일을 로드 중...`, 'info');
         
-        for (const file of recentFiles) {
+        let loadedCount = 0;
+        for (const file of jsonFiles) {
             try {
                 const fileResponse = await fetch(file.download_url);
                 const fileData = await fileResponse.json();
@@ -4237,6 +4238,26 @@ async function loadAllScrapedArticles() {
                             group: group
                         });
                     });
+                } else if (Array.isArray(fileData)) {
+                    // 구형 데이터 구조 지원
+                    fileData.forEach(group => {
+                        if (group.sites) group.sites.forEach(site => siteSet.add(site));
+                        allArticles.push({
+                            date: file.name.substring(0, 19),
+                            fileName: file.name,
+                            group: group
+                        });
+                    });
+                }
+                
+                loadedCount++;
+                // 5개마다 진행 상황 업데이트
+                if (loadedCount % 5 === 0) {
+                    document.getElementById('scrapingArticlesList').innerHTML = `
+                        <div class="text-center py-8">
+                            <p class="text-sm text-gray-500">로딩 중... (${loadedCount}/${jsonFiles.length})</p>
+                        </div>
+                    `;
                 }
             } catch (error) {
                 console.error(`파일 로드 실패: ${file.name}`, error);
