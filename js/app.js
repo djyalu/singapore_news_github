@@ -231,24 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-                <!-- Recent Activity -->
-                <div class="bg-white shadow rounded-lg">
-                    <div class="px-4 py-5 sm:p-6">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">최근 활동</h3>
-                        <div id="recentActivityList" class="flow-root">
-                            <div class="text-center py-4">
-                                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p class="mt-2 text-sm text-gray-500">활동 내역을 불러오는 중...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scraped Articles Section (moved to bottom) -->
-            <div class="space-y-6 mt-6">
                 <!-- Scraped Articles -->
                 <div class="bg-white shadow rounded-lg">
                     <div class="px-4 py-5 sm:p-6">
@@ -331,6 +313,21 @@ document.addEventListener('DOMContentLoaded', function() {
                                         클립보드 복사
                                     </button>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity (moved to bottom) -->
+                <div class="bg-white shadow rounded-lg mt-6">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">최근 활동</h3>
+                        <div id="recentActivityList" class="flow-root">
+                            <div class="text-center py-4">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="mt-2 text-sm text-gray-500">활동 내역을 불러오는 중...</p>
                             </div>
                         </div>
                     </div>
