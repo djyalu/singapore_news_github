@@ -2200,11 +2200,22 @@ async function loadScrapedArticles() {
         
         let result = null;
         
+        // 삭제 플래그 확인
+        const deletedFiles = JSON.parse(localStorage.getItem('singapore_news_deleted_files') || '[]');
+        
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기
         try {
             const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
+                
+                // 삭제된 파일인지 확인
+                if (deletedFiles.includes(latestInfo.latestFile)) {
+                    console.log('이 파일은 삭제된 파일입니다. 로드하지 않습니다.');
+                    articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+                    return;
+                }
+                
                 const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
@@ -2214,8 +2225,14 @@ async function loadScrapedArticles() {
                         articleCount: articles.reduce((sum, group) => sum + (group.article_count || 0), 0)
                     };
                 } else if (dataResponse.status === 404) {
-                    // 파일이 삭제된 경우 - GitHub API로 fallback
-                    console.log('파일이 삭제되었습니다. GitHub API로 다른 파일 찾기...');
+                    // 파일이 삭제된 경우 - 삭제 플래그 추가하고 중단
+                    console.log('파일이 삭제되었습니다.');
+                    if (!deletedFiles.includes(latestInfo.latestFile)) {
+                        deletedFiles.push(latestInfo.latestFile);
+                        localStorage.setItem('singapore_news_deleted_files', JSON.stringify(deletedFiles));
+                    }
+                    articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+                    return;
                 }
             }
         } catch (e) {
@@ -3629,10 +3646,11 @@ async function loadLatestDataFromGitHub() {
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기 (우선 시도)
         try {
-            const latestResponse = await fetch('/data/latest.json?t=' + Date.now());
+            const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 console.log('Latest file info:', latestInfo);
+                console.log('Deleted files:', deletedFiles);
                 
                 // 삭제된 파일인지 확인
                 if (deletedFiles.includes(latestInfo.latestFile)) {
@@ -3642,7 +3660,7 @@ async function loadLatestDataFromGitHub() {
                 }
                 
                 // latest.json에서 가져온 파일명으로 실제 데이터 로드
-                const dataResponse = await fetch(`/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {

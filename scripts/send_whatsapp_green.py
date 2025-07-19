@@ -177,10 +177,17 @@ def check_green_api_status():
     
     if not instance_id or not api_token:
         print("❌ 환경 변수가 설정되지 않았습니다.")
+        print(f"   - GREEN_API_INSTANCE_ID 설정됨: {'예' if instance_id else '아니오'}")
+        print(f"   - GREEN_API_TOKEN 설정됨: {'예' if api_token else '아니오'}")
+        if instance_id:
+            print(f"   - Instance ID 길이: {len(instance_id)}")
+            print(f"   - Instance ID 앞 4자리: {instance_id[:4] if len(instance_id) >= 4 else instance_id}")
         return False
     
     try:
-        base_url = f"https://{instance_id}.api.greenapi.com"
+        # Green API 형식: https://XXXX.api.greenapi.com (인스턴스ID의 앞 4자리)
+        instance_prefix = instance_id[:4] if len(instance_id) >= 4 else instance_id
+        base_url = f"https://{instance_prefix}.api.greenapi.com"
         url = f"{base_url}/waInstance{instance_id}/getStateInstance/{api_token}"
         
         print(f"   - 상태 확인 URL: {url[:60]}...")
