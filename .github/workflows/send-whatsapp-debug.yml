@@ -1,0 +1,78 @@
+name: Send to WhatsApp (Debug)
+
+on:
+  workflow_dispatch:  # 수동 실행만 가능
+  
+permissions:
+  contents: write
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install requests
+    
+    - name: Test Green API Connection
+      env:
+        GREEN_API_INSTANCE_ID: ${{ secrets.GREEN_API_INSTANCE_ID }}
+        GREEN_API_TOKEN: ${{ secrets.GREEN_API_TOKEN }}
+      run: |
+        echo "=== Green API 연결 테스트 ==="
+        python scripts/test_green_api.py
+    
+    - name: Check Data Files
+      run: |
+        echo "=== 데이터 파일 확인 ==="
+        echo "1. Latest.json 내용:"
+        cat data/latest.json || echo "latest.json 파일 없음"
+        echo ""
+        echo "2. 최근 스크랩 파일 목록:"
+        ls -la data/scraped/ | tail -5 || echo "스크랩 파일 없음"
+        echo ""
+        echo "3. Settings.json 확인:"
+        cat data/settings.json | grep -E "(sendChannel|whatsappChannel)" || echo "settings.json 파일 없음"
+    
+    - name: Send to WhatsApp with Debug
+      env:
+        GREEN_API_INSTANCE_ID: ${{ secrets.GREEN_API_INSTANCE_ID }}
+        GREEN_API_TOKEN: ${{ secrets.GREEN_API_TOKEN }}
+      run: |
+        echo "=== WhatsApp 전송 시작 ==="
+        # 디버그 모드로 실행
+        python -u scripts/send_whatsapp_green.py || {
+          echo "=== 전송 실패 - 추가 디버깅 ==="
+          echo "1. 현재 작업 디렉토리:"
+          pwd
+          echo ""
+          echo "2. 파일 구조:"
+          find . -name "*.json" -type f | head -20
+          echo ""
+          echo "3. Python 버전:"
+          python --version
+          echo ""
+          echo "4. 환경 변수 (마스킹):"
+          echo "GREEN_API_INSTANCE_ID 길이: ${#GREEN_API_INSTANCE_ID}"
+          echo "GREEN_API_TOKEN 길이: ${#GREEN_API_TOKEN}"
+          exit 1
+        }
+    
+    - name: Update send history
+      if: always()  # 성공/실패 관계없이 항상 실행
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f data/history/*.json || echo "No history files to add"
+        git commit -m "Update send history [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
+        git push || echo "Push failed"

@@ -30,8 +30,12 @@ jobs:
         GREEN_API_INSTANCE_ID: ${{ secrets.GREEN_API_INSTANCE_ID }}
         GREEN_API_TOKEN: ${{ secrets.GREEN_API_TOKEN }}
       run: |
+        echo "=== WhatsApp 전송 시작 ==="
+        echo "Green API Instance ID 길이: ${#GREEN_API_INSTANCE_ID}"
+        echo "Green API Token 길이: ${#GREEN_API_TOKEN}"
+        
         # Green API 사용 (Whapi 서비스 중단으로 변경)
-        python scripts/send_whatsapp_green.py
+        python -u scripts/send_whatsapp_green.py
     
     - name: Update send history
       env:

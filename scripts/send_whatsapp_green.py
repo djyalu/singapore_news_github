@@ -98,6 +98,13 @@ def send_to_whatsapp_green(message, phone_number):
     
     if not instance_id or not api_token:
         print("❌ Green API 인증 정보가 없습니다.")
+        print("\n📝 현재 환경 변수 상태:")
+        print(f"   - GREEN_API_INSTANCE_ID: {'설정됨' if instance_id else '없음'}")
+        print(f"   - GREEN_API_TOKEN: {'설정됨' if api_token else '없음'}")
+        if instance_id:
+            print(f"   - Instance ID 길이: {len(instance_id)}")
+        if api_token:
+            print(f"   - Token 길이: {len(api_token)}")
         print("\n📝 설정 방법:")
         print("1. https://green-api.com 에서 계정 생성")
         print("2. 인스턴스 생성 후 QR 코드로 WhatsApp 연결")
@@ -125,16 +132,37 @@ def send_to_whatsapp_green(message, phone_number):
     }
     
     try:
+        print(f"\n📤 API 호출 정보:")
+        print(f"   - URL: {api_url[:50]}...")
+        print(f"   - Chat ID: {phone_number}")
+        print(f"   - 메시지 길이: {len(message)}자")
+        
         response = requests.post(api_url, json=payload, timeout=30)
         
-        print(f"Green API Response: {response.status_code}")
-        print(f"Response: {response.text}")
+        print(f"\n📥 Green API Response:")
+        print(f"   - 상태 코드: {response.status_code}")
+        print(f"   - 응답 헤더: {dict(response.headers)}")
+        print(f"   - 응답 본문: {response.text[:500]}..." if len(response.text) > 500 else f"   - 응답 본문: {response.text}")
         
         if response.status_code == 200:
-            print("✅ 메시지 전송 성공!")
+            print("\n✅ 메시지 전송 성공!")
+            try:
+                result = response.json()
+                if 'idMessage' in result:
+                    print(f"   - 메시지 ID: {result['idMessage']}")
+            except:
+                pass
             return True
         else:
-            print(f"❌ 전송 실패: {response.status_code}")
+            print(f"\n❌ 전송 실패: {response.status_code}")
+            if response.status_code == 400:
+                print("   - 400 Bad Request: 요청 형식이 잘못되었습니다.")
+            elif response.status_code == 401:
+                print("   - 401 Unauthorized: 인증 정보가 올바르지 않습니다.")
+            elif response.status_code == 403:
+                print("   - 403 Forbidden: 권한이 없습니다.")
+            elif response.status_code == 404:
+                print("   - 404 Not Found: API 엔드포인트를 찾을 수 없습니다.")
             return False
             
     except Exception as e:
@@ -147,20 +175,36 @@ def check_green_api_status():
     api_token = os.environ.get('GREEN_API_TOKEN')
     
     if not instance_id or not api_token:
+        print("❌ 환경 변수가 설정되지 않았습니다.")
         return False
     
     try:
         base_url = f"https://{instance_id}.api.greenapi.com"
         url = f"{base_url}/waInstance{instance_id}/getStateInstance/{api_token}"
+        
+        print(f"   - 상태 확인 URL: {url[:60]}...")
+        
         response = requests.get(url, timeout=10)
+        
+        print(f"   - 상태 확인 응답: {response.status_code}")
         
         if response.status_code == 200:
             data = response.json()
             state = data.get('stateInstance', '')
-            print(f"📱 Green API 상태: {state}")
+            print(f"   - 📱 인스턴스 상태: {state}")
+            
+            # 추가 정보 출력
+            if 'typeInstance' in data:
+                print(f"   - 인스턴스 타입: {data['typeInstance']}")
+            if 'deviceId' in data:
+                print(f"   - 디바이스 ID: {data['deviceId'][:20]}...")
+            
             return state == 'authorized'
-        return False
-    except:
+        else:
+            print(f"   - ❌ 상태 확인 실패: {response.text[:200]}")
+            return False
+    except Exception as e:
+        print(f"   - ❌ 상태 확인 오류: {type(e).__name__}: {e}")
         return False
 
 def save_history(channel_id, status, message_preview, article_count):
@@ -195,9 +239,17 @@ def main():
     print("=" * 50)
     
     # Green API 상태 확인
-    if not check_green_api_status():
+    print("\n🔍 Green API 상태 확인 중...")
+    api_status = check_green_api_status()
+    if not api_status:
         print("\n❌ Green API가 준비되지 않았습니다.")
         print("   인스턴스가 authorized 상태인지 확인하세요.")
+        print("\n💡 디버깅 정보:")
+        instance_id = os.environ.get('GREEN_API_INSTANCE_ID')
+        api_token = os.environ.get('GREEN_API_TOKEN')
+        if instance_id and api_token:
+            print(f"   - Base URL: https://{instance_id}.api.greenapi.com")
+            print(f"   - Instance ID 형식 확인: {instance_id[:10]}...")
         return
     
     # 설정 로드
