@@ -80,6 +80,52 @@ module.exports = async (req, res) => {
             }
         });
 
+        // latest.json 업데이트 (이전 파일로 되돌리기)
+        try {
+            // 남은 파일 목록 가져오기
+            const { data: files } = await octokit.rest.repos.getContent({
+                owner,
+                repo,
+                path: 'data/scraped',
+            });
+            
+            // news_*.json 파일만 필터링하고 날짜순 정렬
+            const newsFiles = files
+                .filter(file => file.name.startsWith('news_') && file.name.endsWith('.json') && file.name !== filename)
+                .sort((a, b) => b.name.localeCompare(a.name));
+            
+            if (newsFiles.length > 0) {
+                // 가장 최신 파일로 latest.json 업데이트
+                const latestFile = newsFiles[0];
+                const latestData = {
+                    lastUpdated: new Date().toISOString(),
+                    latestFile: latestFile.name,
+                    scrapingMethod: "traditional",
+                    executionType: "manual"
+                };
+                
+                // latest.json 파일 가져오기 (SHA 필요)
+                const { data: latestFileData } = await octokit.rest.repos.getContent({
+                    owner,
+                    repo,
+                    path: 'data/latest.json',
+                });
+                
+                // latest.json 업데이트
+                await octokit.rest.repos.createOrUpdateFileContents({
+                    owner,
+                    repo,
+                    path: 'data/latest.json',
+                    message: `Update latest.json after deleting ${filename}`,
+                    content: Buffer.from(JSON.stringify(latestData, null, 2)).toString('base64'),
+                    sha: latestFileData.sha,
+                });
+            }
+        } catch (updateError) {
+            console.error('latest.json 업데이트 실패:', updateError);
+            // latest.json 업데이트 실패해도 파일 삭제는 성공으로 처리
+        }
+
         return res.status(200).json({
             success: true,
             message: `파일 ${filename}이(가) GitHub에서 삭제되었습니다.`,
