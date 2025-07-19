@@ -1401,7 +1401,8 @@ def scrape_news_traditional():
                         'breaking news', 'world news', 'asia news', 'business news',
                         'opinion', 'lifestyle', 'sports', 'technology',
                         'property', 'investment', 'markets', 'commentary',
-                        'learning minds', 'newsletter', 'subscribe'
+                        'learning minds', 'newsletter', 'subscribe', 'health',
+                        'politics', 'science', 'culture', 'entertainment'
                     ]
                     
                     if any(cat.lower() == article_data['title'].lower().strip() for cat in category_page_titles):
