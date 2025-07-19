@@ -88,5 +88,16 @@
     "message_preview": "📰 *Singapore News Update*\n2025년 07월 19일 16:01\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 2개 그룹, 총 4개 기사\n\n【 News 】\n📍 출처: Yahoo Singapore News, The Straits Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 제목: 말레이시아의 새로운 대법원장 임...",
     "message_length": 1450,
     "article_count": 4
+  },
+  {
+    "id": "20250719072602",
+    "timestamp": "2025-07-19T07:26:02.131565",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 4개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 19일 07:26\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 2개 그룹, 총 4개 기사\n\n【 News 】\n📍 출처: The Straits Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 개발 관련 뉴스\n📝 ST’s new chatbot answers all sor...",
+    "message_length": 1483,
+    "article_count": 4,
+    "api": "green-api"
   }
 ]
