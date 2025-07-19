@@ -3426,7 +3426,7 @@ async function startAutoRefreshMonitor() {
                 localStorage.setItem('singapore_news_latest_file', latestInfo.latestFile);
                 
                 // 새 데이터 로드
-                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {
