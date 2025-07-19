@@ -176,8 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.innerHTML = getDashboardHTML();
                 loadDashboardData();
                 setupDashboardEventListeners();
-                // 항상 GitHub에서 최신 데이터 로드 (로컬 스토리지 무시)
-                loadLatestDataFromGitHub(true);
+                // loadLatestDataFromGitHub 제거 - loadScrapedArticles에서 처리
                 break;
             case 'settings':
                 if (isAdmin()) {
@@ -2293,8 +2292,8 @@ async function loadScrapedArticles() {
     const articlesList = document.getElementById('scrapedArticlesList');
     if (!articlesList) return;
     
-    // 항상 GitHub에서 최신 데이터 로드
-    await loadLatestDataFromGitHub(true);
+    // loadLatestDataFromGitHub 호출 제거 (순환 호출 방지)
+    // 대신 직접 데이터를 가져옴
     
     const localData = [];
     let data = null;
@@ -3777,12 +3776,12 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                     return;
                 }
                 
-                // latest.json에서 가져온 파일명으로 실제 데이터 로드
-                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped`);
-                if (dataResponse.ok) {
-                    const articles = await dataResponse.json();
+                // latestInfo가 이미 기사 데이터를 포함하고 있을 수 있음
+                if (latestInfo.success && latestInfo.data) {
+                    // API가 이미 데이터를 반환했음
+                    const articles = latestInfo.data;
                     const data = {
-                        lastUpdated: latestInfo.lastUpdated,
+                        lastUpdated: latestInfo.lastUpdated || new Date().toISOString(),
                         articles: articles
                     };
                     // Server-based data storage;
@@ -3792,26 +3791,18 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                     
                     // UI 업데이트 (한 번만)
                     console.log('UI 업데이트 시작...');
-                    // loadScrapedArticles();
-                    // updateTodayArticles();
+                    loadScrapedArticles();
+                    updateTodayArticles();
                     
                     const articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
                     console.log(`최신 데이터 로드 성공: ${articleCount}개의 기사`);
                     showNotification(`최신 뉴스 ${articleCount}개를 불러왔습니다.`, 'success');
                     return;
-                } else if (dataResponse.status === 404) {
-                    // 파일이 삭제된 경우
-                    console.log('파일이 삭제되었습니다. 삭제 플래그 설정...');
-                    const deletedFiles = JSON.parse("[]" || '[]');
-                    if (!deletedFiles.includes(latestInfo.latestFile)) {
-                        deletedFiles.push(latestInfo.latestFile);
-                        // Server-based data storage;
-                    }
-                    // Server-based data removal;
-                    
-                    // GitHub API로 다른 파일 찾기 시도
-                    console.log('GitHub API로 다른 파일 찾기 시도...');
-                    // 아래 방법 2로 진행
+                } else {
+                    // 데이터가 없는 경우
+                    console.log('최신 데이터를 찾을 수 없습니다.');
+                    showNotification('최신 뉴스를 찾을 수 없습니다.', 'warning');
+                    return;
                 }
             }
         } catch (e) {
