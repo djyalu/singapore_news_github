@@ -114,8 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 break;
             case 'mfa-settings':
-                content.innerHTML = getMFASettingsHTML();
-                initializeMFASettings();
+                getMFASettingsHTML().then(html => {
+                    content.innerHTML = html;
+                    initializeMFASettings();
+                });
                 break;
             case 'scraping':
                 content.innerHTML = getScrapingManagementHTML();
@@ -815,25 +817,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     async function verifyMFA(username, code) {
-        if (!window.getMFASecret || !window.verifyTOTP || !window.useBackupCode) {
+        if (!window.verifyMFAToken) {
             return false;
         }
         
-        const secret = getMFASecret(username);
-        if (!secret) return false;
-        
-        const isValid = await verifyTOTP(secret, code);
-        if (isValid) {
-            return true;
+        try {
+            const result = await window.verifyMFAToken(username, code);
+            return result.success;
+        } catch (error) {
+            console.error('MFA 검증 에러:', error);
+            return false;
         }
-        
-        const backupResult = useBackupCode(username, code);
-        return backupResult.success;
     }
     
-    function getMFASettingsHTML() {
+    async function getMFASettingsHTML() {
         const currentUser = getCurrentUser();
-        const mfaEnabled = window.isMFAEnabled ? isMFAEnabled(currentUser.userId) : false;
+        let mfaEnabled = false;
+        
+        try {
+            if (window.isMFAEnabled) {
+                mfaEnabled = await window.isMFAEnabled(currentUser.userId);
+            }
+        } catch (error) {
+            console.error('MFA 상태 확인 에러:', error);
+        }
         
         return `
             <div class="page-section">
