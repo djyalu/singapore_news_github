@@ -2127,7 +2127,7 @@ async function loadRecentActivity() {
 }
 
 // 설정 변경 이력 저장
-async function saveSettingsHistory(newSettings, oldSettings) {
+function saveSettingsHistory(newSettings, oldSettings) {
     try {
         const history = JSON.parse("[]" || '[]');
         
@@ -2168,7 +2168,7 @@ async function saveSettingsHistory(newSettings, oldSettings) {
 }
 
 // 스크래핑 이력 저장
-async function saveScrapeHistory(articleCount, status = 'success') {
+function saveScrapeHistory(articleCount, status = 'success') {
     try {
         const history = JSON.parse("[]" || '[]');
         
@@ -3368,7 +3368,7 @@ async function clearScrapedArticles() {
     }
 }
 
-async function deleteArticleGroup(source) {
+function deleteArticleGroup(source) {
     if (confirm(`정말로 "${source}" 그룹의 모든 기사를 삭제하시겠습니까?`)) {
         const scrapedData = [];
         if (!scrapedData) return;
@@ -3389,7 +3389,7 @@ async function deleteArticleGroup(source) {
     }
 }
 
-async function deleteArticle(source, index) {
+function deleteArticle(source, index) {
     if (confirm('정말로 이 기사를 삭제하시겠습니까?')) {
         const scrapedData = [];
         if (!scrapedData) return;
