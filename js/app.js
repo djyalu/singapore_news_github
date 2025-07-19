@@ -3838,7 +3838,7 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                         // Server-based data storage;
                         
                         // UI 업데이트
-                        loadScrapedArticles();
+                        // loadScrapedArticles(); // 순환 호출 방지를 위해 주석 처리
                         updateTodayArticles();
                         
                         const articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
