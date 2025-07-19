@@ -6,6 +6,13 @@
       "name": "관리자",
       "email": "admin@example.com",
       "role": "admin"
+    },
+    {
+      "id": "djyalu",
+      "password": "Admin@123",
+      "name": "djyalu",
+      "email": "djyalu@example.com",
+      "role": "admin"
     }
   ]
 }
