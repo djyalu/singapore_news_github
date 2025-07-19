@@ -1,3 +1,6 @@
+// 현재 페이지 추적 (무한 루프 방지)
+let currentPage = null;
+
 // 서버 기반 데이터 관리 함수들
 async function getDataFromServer() {
     return [];
@@ -74,10 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
             mainContainer.style.display = 'block';
             updateNavigation();
             setupNavigationListeners(); // Re-setup navigation listeners
-            loadPage('dashboard');
+            // Only load dashboard if not already on a page
+            if (!currentPage) {
+                loadPage('dashboard');
+            }
         } else {
             loginContainer.style.display = 'block';
             mainContainer.style.display = 'none';
+            currentPage = null;
         }
     }
     
@@ -155,6 +162,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setupNavigationListeners();
     
     async function loadPage(page) {
+        // Prevent reloading the same page
+        if (currentPage === page) {
+            console.log(`Already on ${page} page, skipping reload`);
+            return;
+        }
+        
+        currentPage = page;
         const content = document.getElementById('content');
         
         switch(page) {
