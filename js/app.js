@@ -1514,13 +1514,14 @@ async function loadHistory() {
                         const githubHistory = result.data;
                         console.log(`${monthStr} 이력 데이터:`, githubHistory.length, '건');
                     
-                    // 중복 제거하며 결합
-                    githubHistory.forEach(record => {
-                        if (!localIds.has(record.id)) {
-                            history.push(record);
-                            localIds.add(record.id);
-                        }
-                    });
+                        // 중복 제거하며 결합
+                        githubHistory.forEach(record => {
+                            if (!localIds.has(record.id)) {
+                                history.push(record);
+                                localIds.add(record.id);
+                            }
+                        });
+                    }
                 }
             } catch (monthError) {
                 console.log(`${monthStr} 이력 없음`);
@@ -1685,7 +1686,7 @@ function updateStatusFilter(value) {
     loadHistory();
 }
 
-function showHistoryDetail(recordId) {
+async function showHistoryDetail(recordId) {
     const history = JSON.parse(await getHistoryFromServer());
     const record = history.find(r => r.id === recordId);
     
@@ -2008,7 +2009,7 @@ function updateNextSendTime() {
     }
 }
 
-function loadRecentActivity() {
+async function loadRecentActivity() {
     const activityList = document.getElementById('recentActivityList');
     if (!activityList) return;
     
