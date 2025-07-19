@@ -3921,6 +3921,11 @@ async function sendDirectToWhatsApp() {
         })
     });
     
+    if (!whatsappResponse.ok) {
+        const errorText = await whatsappResponse.text();
+        throw new Error(`WhatsApp API 호출 실패 (${whatsappResponse.status}): ${errorText}`);
+    }
+    
     const whatsappResult = await whatsappResponse.json();
     
     if (whatsappResult.sent) {
