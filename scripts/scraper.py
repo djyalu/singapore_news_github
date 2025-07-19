@@ -1039,27 +1039,59 @@ def create_summary(article_data, settings):
 
 def create_keyword_summary(title, content):
     """향상된 키워드 기반 한글 요약"""
-    # 확장된 키워드 매핑
+    # 정확한 키워드 매핑
     keywords = {
         # 기본 키워드
         'singapore': '싱가포르', 'economy': '경제', 'government': '정부',
         'education': '교육', 'health': '보건', 'transport': '교통',
         'technology': '기술', 'business': '비즈니스', 'covid': '코로나',
         'minister': '장관', 'policy': '정책', 'development': '개발',
-        # 추가 키워드
-        'school': '학교', 'student': '학생', 'train': '열차', 'mrt': 'MRT',
-        'lrt': 'LRT', 'bus': '버스', 'airport': '공항', 'changi': '창이',
-        'housing': '주택', 'hdb': 'HDB', 'condo': '콘도', 'property': '부동산',
-        'food': '음식', 'restaurant': '레스토랑', 'hawker': '호커',
-        'market': '시장', 'stock': '주식', 'bank': '은행', 'finance': '금융',
-        'police': '경찰', 'court': '법원', 'law': '법률', 'election': '선거',
-        'climate': '기후', 'environment': '환경', 'green': '친환경',
-        'startup': '스타트업', 'innovation': '혁신', 'digital': '디지털',
-        'ai': 'AI', 'artificial': 'AI', 'data': '데이터', 'cyber': '사이버',
-        'tourism': '관광', 'tourist': '관광객', 'travel': '여행',
-        'malaysia': '말레이시아', 'indonesia': '인도네시아', 'thailand': '태국',
-        'china': '중국', 'india': '인도', 'japan': '일본', 'korea': '한국',
-        'asean': '아세안', 'asia': '아시아', 'global': '글로벌'
+        
+        # 교통 관련
+        'train': '교통', 'mrt': '교통', 'lrt': '교통', 'bus': '교통',
+        'transport': '교통', 'traffic': '교통', 'airport': '공항', 'changi': '창이',
+        
+        # 교육 및 사회
+        'school': '교육', 'student': '교육', 'university': '교육',
+        'employment': '취업', 'job': '취업', 'work': '취업', 'salary': '취업',
+        'mom': '취업', 'manpower': '취업', 'worker': '취업',
+        
+        # 부동산 및 주택
+        'housing': '주택', 'hdb': '주택', 'condo': '부동산',
+        'property': '부동산', 'condominium': '부동산',
+        
+        # 법률 및 범죄
+        'police': '법률', 'court': '법률', 'law': '법률', 'crime': '범죄',
+        'jail': '범죄', 'sentenced': '법률', 'trial': '법률',
+        
+        # 경제 및 금융
+        'market': '경제', 'stock': '경제', 'bank': '금융', 'finance': '금융',
+        'investment': '경제', 'trade': '경제', 'gdp': '경제',
+        
+        # 음식 및 문화
+        'food': '음식', 'restaurant': '음식', 'hawker': '음식',
+        'culture': '문화', 'arts': '문화', 'festival': '문화',
+        
+        # 정치 및 선거
+        'election': '정치', 'parliament': '정치', 'voting': '선거',
+        'prime': '정치', 'president': '정치',
+        
+        # 환경 및 기후
+        'climate': '환경', 'environment': '환경', 'green': '환경',
+        'carbon': '환경', 'sustainability': '환경',
+        
+        # 기술 및 혁신
+        'startup': '기술', 'innovation': '기술', 'digital': '기술',
+        'ai': '기술', 'artificial': '기술', 'data': '기술', 'cyber': '기술',
+        
+        # 관광 및 여행
+        'tourism': '관광', 'tourist': '관광', 'travel': '관광',
+        'visitor': '관광', 'hotel': '관광',
+        
+        # 국제 관계
+        'malaysia': '국제', 'indonesia': '국제', 'thailand': '국제',
+        'china': '국제', 'india': '국제', 'japan': '국제', 'korea': '국제',
+        'asean': '국제', 'asia': '국제', 'global': '국제'
     }
     
     # 제목과 내용에서 핵심 키워드 추출
@@ -1335,7 +1367,7 @@ def scrape_news_traditional():
                 continue
             
             # 기사별 처리
-            for article_url in links[:5]:  # 사이트당 최대 5개
+            for article_url in links[:8]:  # 사이트당 최대 8개로 증가
                 try:
                     print(f"[DEBUG] Processing article: {article_url}")
                     article_data = extract_article_content(article_url)
@@ -1344,7 +1376,7 @@ def scrape_news_traditional():
                         print(f"[DEBUG] Skipping: no title or data")
                         continue
                         
-                    if len(article_data['content']) < 50:
+                    if len(article_data['content']) < 30:
                         print(f"[DEBUG] Skipping: content too short ({len(article_data['content'])} chars)")
                         continue
                     
@@ -1361,6 +1393,19 @@ def scrape_news_traditional():
                     # 의미있는 기사 내용인지 확인
                     if not is_meaningful_content(article_data['content']):
                         print(f"[DEBUG] Skipping: not meaningful content")
+                        continue
+                    
+                    # 카테고리 페이지 필터링 (제목 기반)
+                    category_page_titles = [
+                        'features', 'big read', 'top stories', 'latest news',
+                        'breaking news', 'world news', 'asia news', 'business news',
+                        'opinion', 'lifestyle', 'sports', 'technology',
+                        'property', 'investment', 'markets', 'commentary',
+                        'learning minds', 'newsletter', 'subscribe'
+                    ]
+                    
+                    if any(cat.lower() == article_data['title'].lower().strip() for cat in category_page_titles):
+                        print(f"[DEBUG] Skipping: category page title detected - {article_data['title']}")
                         continue
                     
                     full_text = f"{article_data['title']} {article_data['content']}"
