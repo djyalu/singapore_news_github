@@ -40,23 +40,6 @@ async function login(username, password) {
         }
     } catch (error) {
         console.error('로그인 에러:', error);
-        // API 오류 시 로컬 스토리지 기반 인증 사용
-        console.warn('API 오류로 인해 로컬 스토리지 기반 인증 사용');
-        const users = getAllUsers();
-        const user = users.find(u => u.id === username);
-        
-        if (user && user.password === password) {
-            const authData = {
-                userId: user.id,
-                name: user.name,
-                role: user.role,
-                email: user.email,
-                loginTime: new Date().toISOString()
-            };
-            localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
-            console.log('로컬 스토리지 기반 로그인 성공');
-            return true;
-        }
         return false;
     }
 }
