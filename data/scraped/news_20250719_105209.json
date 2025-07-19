@@ -1,0 +1,59 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Appointment of Malaysia’s new chief justice eases controversy over vacant top judge seats for now",
+        "url": "https://www.straitstimes.com/asia/se-asia/malaysia-appoints-new-chief-justice-easing-weeks-of-controversy-over-vacant-top-judge-seats",
+        "summary": "📰 제목: 말레이시아의 새로운 대법원장 임명은 지금 비어있는 최고 판사 좌석에 대한 논쟁을 완화시킵니다.\n📝 내용: “전직 법원 판사 인 전 변호사를 포함하여 이름이 던져졌습니다.",
+        "content": "“There were names being thrown around. including a former attorney-general who served with distinction and is now a Federal Court judge. More on this topicMalaysia’s King appoints Wan Ahmad Farid as new chief justiceHundreds march to defend judicial independence in Malaysia. Hundreds march to defend judicial independence in Malaysia",
+        "publish_date": "2025-07-19T10:51:32.465693"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Critical infrastructure in S’pore under attack by cyber espionage group: Shanmugam",
+        "url": "https://sg.news.yahoo.com/critical-infrastructure-pore-under-attack-113451650.html",
+        "summary": "📰 제목: 사이버 스파이 활동 그룹의 공격중인 S'pore의 중요한 인프라 : Shanmugam\n📝 내용: Samuel Devaraj18 2025 년 7 월 오후 8시 34 분 · 5 분 리드 링크 복사.Samuel Devaraj18 2025 년 7 월 오후 8시 34 분 · 5 분 읽기.",
+        "content": "Samuel Devaraj18 July 2025 at 8:34 pm·5-min readLink copied. Samuel Devaraj18 July 2025 at 8:34 pm·5-min read. Samuel Devaraj18 July 2025 at 8:34 pm·5-min read. 18 July 2025 at 8:34 pm·5-min read. Coordinating Minister for National Security K. Shanmugam said that Singapore is facing serious threats from state-linked advanced persistent threat (APT) actors. Attacks on Singapore’s telco systems and payment systems can have very serious consequences too, he added. Then in 2018, Singapore experienced its worst data breach involving the personal particulars of 1. 5 million patients, including then Prime Minister Lee Hsien Loong. Mr Shanmugam said Singapore has been and continues to be attacked by cyber threat actors",
+        "publish_date": "2025-07-19T10:51:53.081158"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-19T10:52:09.300858",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Tariffs, trade deals and Tokyo wobbles",
+        "url": "https://www.businesstimes.com.sg/podcasts/tariffs-trade-deals-and-tokyo-wobbles",
+        "summary": "📰 제목: 관세, 무역 거래 및 도쿄 흔들림\n📝 내용: 일본의 장거리 채권은 이번 주 지방 선거에 앞서 흔들렸다.일본의 장거리 채권은 이번 주 지방 선거에 앞서 흔들렸다.",
+        "content": "Japanese long-range bond yields swung this week, ahead of local elections. PHOTO: ADOBE STOCK. Japanese long-range bond yields swung this week, ahead of local elections. PHOTO: ADOBE STOCK. Japanese long-range bond yields swung this week, ahead of local elections. PHOTO: ADOBE STOCK. Japanese long-range bond yields swung this week, ahead of local elections. PHOTO: ADOBE STOCK. Japanese long-range bond yields swung this week, ahead of local elections. PHOTO: ADOBE STOCK",
+        "publish_date": "2025-07-19T10:51:40.533241"
+      },
+      {
+        "site": "The Business Times",
+        "title": "As Trump and Powell saga plays out, it’s the Fed’s independence that gives it credibility",
+        "url": "https://www.businesstimes.com.sg/opinion-features/trump-and-powell-saga-plays-out-its-feds-independence-gives-it-credibility",
+        "summary": "📰 제목: 트럼프와 파웰 사가가 연기함에 따라, 연준의 독립성은 신뢰를 제공합니다.\n📝 내용: 그날 대통령은 2026 년 5 월 중앙 은행의 임기가 끝나기 전에 여전히 파월의 제거를 구할 수 있다고 제안하는 것처럼 보였습니다. Alsofed의 Waller는 7 월 이자율 삭감 성장으로 7 월 이자율 삭감을 원한다고 말하면서 일자리 시장 위험 스트럼프는 파월에 대한 압력을 인상하면서‘Likely New’뉴욕 대통령은 방금 경제적 영향을 미쳤다고 말합니다.",
+        "content": "Later that day, the president seemed to suggest that he could still seek Powell’s removal before the central banker’s term ends in May 2026. SEE ALSOFed’s Waller wants July interest rate cut amid rising growth, job market risksTrump raises pressure on Powell while calling firing ‘unlikely’Fed’s New York president says tariff economic impact is only just starting. SEE ALSOFed’s Waller wants July interest rate cut amid rising growth, job market risksTrump raises pressure on Powell while calling firing ‘unlikely’Fed’s New York president says tariff economic impact is only just starting. Fed’s Waller wants July interest rate cut amid rising growth, job market risksTrump raises pressure on Powell while calling firing ‘unlikely’Fed’s New York president says tariff economic impact is only just starting. Fed’s Waller wants July interest rate cut amid rising growth, job market risks. Fed’s Waller wants July interest rate cut amid rising growth, job market risks. Fed’s Waller wants July interes",
+        "publish_date": "2025-07-19T10:51:44.522177"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-19T10:52:09.300888",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
