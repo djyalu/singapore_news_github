@@ -40,20 +40,22 @@ async function login(username, password) {
         }
     } catch (error) {
         console.error('로그인 에러:', error);
-        // 오프라인 모드 또는 API 오류 시 임시 로그인 허용 (개발 환경에서만)
-        if (!window.location.hostname.includes('github.io') && !window.location.hostname.includes('vercel')) {
-            console.warn('개발 환경에서 임시 로그인 허용');
-            if (username === 'admin' || username === 'djyalu') {
-                const authData = {
-                    userId: username,
-                    name: username === 'admin' ? '관리자' : 'djyalu',
-                    role: 'admin',
-                    email: `${username}@example.com`,
-                    loginTime: new Date().toISOString()
-                };
-                localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
-                return true;
-            }
+        // API 오류 시 로컬 스토리지 기반 인증 사용
+        console.warn('API 오류로 인해 로컬 스토리지 기반 인증 사용');
+        const users = getAllUsers();
+        const user = users.find(u => u.id === username);
+        
+        if (user && user.password === password) {
+            const authData = {
+                userId: user.id,
+                name: user.name,
+                role: user.role,
+                email: user.email,
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem(AUTH_KEY, JSON.stringify(authData));
+            console.log('로컬 스토리지 기반 로그인 성공');
+            return true;
         }
         return false;
     }
