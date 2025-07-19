@@ -79,7 +79,7 @@ async function checkAuthConfig() {
     return null;
 }
 
-// 사용자 관리 함수들 - 서버에서만 실행
+// 서버 기반 사용자 관리
 async function getAllUsers() {
     try {
         const apiUrl = 'https://singapore-news-github.vercel.app/api/auth';

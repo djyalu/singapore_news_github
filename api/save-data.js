@@ -17,10 +17,10 @@ module.exports = async (req, res) => {
         try {
             const { type } = req.query;
             
-            if (!type || !['settings', 'sites'].includes(type)) {
+            if (!type || !['settings', 'sites', 'history', 'test-history', 'scraped-cache'].includes(type)) {
                 return res.status(400).json({ 
                     success: false, 
-                    error: '타입을 지정해주세요. (?type=settings 또는 ?type=sites)' 
+                    error: '타입을 지정해주세요. (?type=settings|sites|history|test-history|scraped-cache)' 
                 });
             }
 
@@ -42,7 +42,15 @@ module.exports = async (req, res) => {
                 auth: githubToken,
             });
 
-            const filePath = type === 'settings' ? 'data/settings.json' : 'data/sites.json';
+            let filePath;
+            switch(type) {
+                case 'settings': filePath = 'data/settings.json'; break;
+                case 'sites': filePath = 'data/sites.json'; break;
+                case 'history': filePath = 'data/client-history.json'; break;
+                case 'test-history': filePath = 'data/test-history.json'; break;
+                case 'scraped-cache': filePath = 'data/scraped-cache.json'; break;
+                default: filePath = 'data/settings.json';
+            }
             
             // 파일 읽기
             const { data: fileData } = await octokit.rest.repos.getContent({
@@ -79,10 +87,10 @@ module.exports = async (req, res) => {
         const { type, data } = req.body;
         
         // 타입 검증
-        if (!type || !['settings', 'sites'].includes(type)) {
+        if (!type || !['settings', 'sites', 'history', 'test-history', 'scraped-cache'].includes(type)) {
             return res.status(400).json({ 
                 success: false, 
-                error: '잘못된 데이터 타입입니다. (settings 또는 sites)' 
+                error: '잘못된 데이터 타입입니다. (settings|sites|history|test-history|scraped-cache)' 
             });
         }
 
@@ -178,6 +186,24 @@ module.exports = async (req, res) => {
             processedData = data;
             filePath = 'data/sites.json';
             commitMessage = `Update sites list via Web UI at ${new Date().toISOString()}`;
+        } else {
+            // 기타 데이터 타입 처리 (history, test-history, scraped-cache)
+            processedData = data;
+            
+            switch(type) {
+                case 'history': 
+                    filePath = 'data/client-history.json';
+                    commitMessage = `Update client history data at ${new Date().toISOString()}`;
+                    break;
+                case 'test-history': 
+                    filePath = 'data/test-history.json';
+                    commitMessage = `Update test history data at ${new Date().toISOString()}`;
+                    break;
+                case 'scraped-cache': 
+                    filePath = 'data/scraped-cache.json';
+                    commitMessage = `Update scraped cache data at ${new Date().toISOString()}`;
+                    break;
+            }
         }
         
         // 현재 파일의 SHA 가져오기
