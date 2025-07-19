@@ -11,7 +11,7 @@ async function login(username, password) {
     
     try {
         // 항상 Vercel API 사용 (GitHub Pages에서는 /api/ 경로 불가)
-        const apiUrl = 'https://singapore-news-github.vercel.app/api/auth-login';
+        const apiUrl = 'https://singapore-news-github.vercel.app/api/auth';
         
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -82,7 +82,7 @@ function isAdmin() {
 async function checkAuthConfig() {
     try {
         // 항상 Vercel API 사용 (GitHub Pages에서는 /api/ 경로 불가)
-        const apiUrl = 'https://singapore-news-github.vercel.app/api/auth-config';
+        const apiUrl = 'https://singapore-news-github.vercel.app/api/auth';
         
         const response = await fetch(apiUrl);
         const result = await response.json();
