@@ -19,6 +19,8 @@ module.exports = async (req, res) => {
     }
 
     try {
+        // 쿼리 파라미터로 모든 파일 목록 요청 확인
+        const { all } = req.query;
         const githubToken = process.env.GITHUB_TOKEN;
         const owner = process.env.GITHUB_OWNER || 'djyalu';
         const repo = process.env.GITHUB_REPO || 'singapore_news_github';
@@ -43,6 +45,19 @@ module.exports = async (req, res) => {
             return res.status(404).json({
                 success: false,
                 error: '스크래핑된 데이터가 없습니다.'
+            });
+        }
+
+        // all=true인 경우 파일 목록만 반환
+        if (all === 'true') {
+            return res.status(200).json({
+                success: true,
+                files: newsFiles.map(file => ({
+                    name: file.name,
+                    download_url: file.download_url,
+                    size: file.size
+                })),
+                count: newsFiles.length
             });
         }
 

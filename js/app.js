@@ -4438,9 +4438,19 @@ async function loadAllScrapedArticles() {
         showNotification('스크랩 데이터를 불러오는 중...', 'info');
         
         // Vercel API를 통해 파일 목록 가져오기
-        const response = await fetch('https://singapore-news-github.vercel.app/api/get-scraped-files');
+        console.log('파일 목록 API 호출 시작...');
+        const apiUrl = 'https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true';
+        console.log('API URL:', apiUrl);
+        
+        const response = await fetch(apiUrl);
+        console.log('API 응답 상태:', response.status, response.statusText);
         
         if (!response.ok) {
+            // 404인 경우 GitHub API 직접 시도
+            if (response.status === 404) {
+                console.log('Vercel API 404, GitHub API 직접 시도...');
+                return await loadAllScrapedArticlesFromGitHub();
+            }
             throw new Error(`파일 목록 가져오기 실패: ${response.status} ${response.statusText}`);
         }
         
@@ -4451,117 +4461,10 @@ async function loadAllScrapedArticles() {
         }
         
         const files = result.files;
+        console.log('Vercel API에서 받은 파일 목록:', files.length, '개');
         
-        // JSON 파일만 필터링하고 날짜순으로 정렬
-        const jsonFiles = files
-            .filter(file => file.name.endsWith('.json'))
-            .sort((a, b) => b.name.localeCompare(a.name));
-        
-        // 통계 업데이트
-        document.getElementById('totalFilesCount').textContent = jsonFiles.length;
-        
-        if (jsonFiles.length === 0) {
-            document.getElementById('scrapingArticlesList').innerHTML = `
-                <div class="text-center py-8">
-                    <p class="text-gray-500">저장된 스크랩 데이터가 없습니다.</p>
-                </div>
-            `;
-            return;
-        }
-        
-        // 날짜 범위 계산
-        const dates = jsonFiles.map(f => f.name.substring(0, 10));
-        document.getElementById('dateRangeInfo').textContent = `${dates[dates.length-1]} ~ ${dates[0]}`;
-        
-        // 파일 데이터 로드
-        const allArticles = [];
-        const siteSet = new Set();
-        
-        // 모든 파일 로드하도록 변경
-        showNotification(`${jsonFiles.length}개의 스크랩 파일을 로드 중...`, 'info');
-        
-        let loadedCount = 0;
-        for (const file of jsonFiles) {
-            try {
-                const fileResponse = await fetch(file.download_url);
-                const fileData = await fileResponse.json();
-                
-                // 배열인 경우 (현재 주요 구조)
-                if (Array.isArray(fileData) && fileData.length > 0) {
-                    fileData.forEach(group => {
-                        if (group.sites) group.sites.forEach(site => siteSet.add(site));
-                        // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
-                        const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
-                        allArticles.push({
-                            date: file.name.substring(0, 19),
-                            fileName: file.name,
-                            group: {
-                                ...group,
-                                actual_article_count: actualCount
-                            }
-                        });
-                    });
-                } 
-                // consolidatedArticles 구조 (이전 버전 호환)
-                else if (fileData && fileData.consolidatedArticles) {
-                    fileData.consolidatedArticles.forEach(group => {
-                        if (group.sites) group.sites.forEach(site => siteSet.add(site));
-                        // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
-                        const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
-                        allArticles.push({
-                            date: file.name.substring(0, 19),
-                            fileName: file.name,
-                            group: {
-                                ...group,
-                                actual_article_count: actualCount
-                            }
-                        });
-                    });
-                }
-                
-                loadedCount++;
-                // 5개마다 진행 상황 업데이트
-                if (loadedCount % 5 === 0) {
-                    document.getElementById('scrapingArticlesList').innerHTML = `
-                        <div class="text-center py-8">
-                            <p class="text-sm text-gray-500">로딩 중... (${loadedCount}/${jsonFiles.length})</p>
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                console.error(`파일 로드 실패: ${file.name}`, error);
-            }
-        }
-        
-        // 통계 업데이트 - 실제 기사 배열 길이로 계산
-        const totalArticles = allArticles.reduce((sum, item) => {
-            // 새로 계산한 actual_article_count 사용
-            if (item.group.actual_article_count !== undefined) {
-                return sum + item.group.actual_article_count;
-            }
-            // 기존 방식 (하위 호환성)
-            else if (item.group.articles && Array.isArray(item.group.articles)) {
-                return sum + item.group.articles.length;
-            } else if (item.group.article_count) {
-                return sum + item.group.article_count;
-            }
-            return sum;
-        }, 0);
-        document.getElementById('totalArticlesCount').textContent = totalArticles;
-        document.getElementById('totalSitesCount').textContent = siteSet.size;
-        
-        // 사이트 필터 옵션 추가
-        const siteFilter = document.getElementById('siteFilter');
-        siteFilter.innerHTML = '<option value="">모든 사이트</option>';
-        Array.from(siteSet).sort().forEach(site => {
-            siteFilter.innerHTML += `<option value="${site}">${site}</option>`;
-        });
-        
-        // 기사 목록 표시
-        window.allScrapedArticles = allArticles; // 필터링을 위해 저장
-        displayScrapedArticles(allArticles);
-        
-        showNotification('스크랩 데이터를 성공적으로 불러왔습니다.', 'success');
+        // 공통 파일 처리 함수 호출
+        await processScrapedFiles(files);
         
     } catch (error) {
         console.error('스크랩 데이터 로드 실패:', error);
@@ -4792,6 +4695,157 @@ function filterScrapedArticles() {
     setTimeout(() => {
         container.style.opacity = '1';
     }, 100);
+}
+
+// GitHub API 직접 호출 백업 함수
+async function loadAllScrapedArticlesFromGitHub() {
+    try {
+        console.log('GitHub API 직접 호출 시작...');
+        const response = await fetch('https://api.github.com/repos/djyalu/singapore_news_github/contents/data/scraped', {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+            }
+        });
+        
+        if (!response.ok) {
+            if (response.status === 403) {
+                const rateLimitReset = response.headers.get('x-ratelimit-reset');
+                if (rateLimitReset) {
+                    const resetTime = new Date(parseInt(rateLimitReset) * 1000);
+                    throw new Error(`GitHub API 사용 한도 초과. ${resetTime.toLocaleTimeString('ko-KR')}에 다시 시도하세요.`);
+                }
+                throw new Error('GitHub API 접근 권한이 없습니다.');
+            }
+            throw new Error(`GitHub API 요청 실패: ${response.status} ${response.statusText}`);
+        }
+        
+        const files = await response.json();
+        
+        if (!Array.isArray(files)) {
+            throw new Error(files.message || '파일 목록을 가져올 수 없습니다');
+        }
+        
+        // 기존 로직 계속 진행
+        await processScrapedFiles(files);
+        
+    } catch (error) {
+        console.error('GitHub API 호출 실패:', error);
+        throw error;
+    }
+}
+
+// 파일 처리 공통 함수
+async function processScrapedFiles(files) {
+    // JSON 파일만 필터링하고 날짜순으로 정렬
+    const jsonFiles = files
+        .filter(file => file.name.endsWith('.json'))
+        .sort((a, b) => b.name.localeCompare(a.name));
+    
+    // 통계 업데이트
+    document.getElementById('totalFilesCount').textContent = jsonFiles.length;
+    
+    if (jsonFiles.length === 0) {
+        document.getElementById('scrapingArticlesList').innerHTML = `
+            <div class="text-center py-8">
+                <p class="text-gray-500">저장된 스크랩 데이터가 없습니다.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // 날짜 범위 계산
+    const dates = jsonFiles.map(f => f.name.substring(0, 10));
+    document.getElementById('dateRangeInfo').textContent = `${dates[dates.length-1]} ~ ${dates[0]}`;
+    
+    // 파일 데이터 로드
+    const allArticles = [];
+    const siteSet = new Set();
+    
+    // 모든 파일 로드하도록 변경
+    showNotification(`${jsonFiles.length}개의 스크랩 파일을 로드 중...`, 'info');
+    
+    let loadedCount = 0;
+    for (const file of jsonFiles) {
+        try {
+            const fileResponse = await fetch(file.download_url);
+            const fileData = await fileResponse.json();
+            
+            // 배열인 경우 (현재 주요 구조)
+            if (Array.isArray(fileData) && fileData.length > 0) {
+                fileData.forEach(group => {
+                    if (group.sites) group.sites.forEach(site => siteSet.add(site));
+                    // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
+                    const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
+                    allArticles.push({
+                        date: file.name.substring(0, 19),
+                        fileName: file.name,
+                        group: {
+                            ...group,
+                            actual_article_count: actualCount
+                        }
+                    });
+                });
+            } 
+            // consolidatedArticles 구조 (이전 버전 호환)
+            else if (fileData && fileData.consolidatedArticles) {
+                fileData.consolidatedArticles.forEach(group => {
+                    if (group.sites) group.sites.forEach(site => siteSet.add(site));
+                    // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
+                    const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
+                    allArticles.push({
+                        date: file.name.substring(0, 19),
+                        fileName: file.name,
+                        group: {
+                            ...group,
+                            actual_article_count: actualCount
+                        }
+                    });
+                });
+            }
+            
+            loadedCount++;
+            // 5개마다 진행 상황 업데이트
+            if (loadedCount % 5 === 0) {
+                document.getElementById('scrapingArticlesList').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-sm text-gray-500">로딩 중... (${loadedCount}/${jsonFiles.length})</p>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error(`파일 로드 실패: ${file.name}`, error);
+        }
+    }
+    
+    // 통계 업데이트 - 실제 기사 배열 길이로 계산
+    const totalArticles = allArticles.reduce((sum, item) => {
+        // 새로 계산한 actual_article_count 사용
+        if (item.group.actual_article_count !== undefined) {
+            return sum + item.group.actual_article_count;
+        }
+        // 기존 방식 (하위 호환성)
+        else if (item.group.articles && Array.isArray(item.group.articles)) {
+            return sum + item.group.articles.length;
+        } else if (item.group.article_count) {
+            return sum + item.group.article_count;
+        }
+        return sum;
+    }, 0);
+    document.getElementById('totalArticlesCount').textContent = totalArticles;
+    document.getElementById('totalSitesCount').textContent = siteSet.size;
+    
+    // 사이트 필터 옵션 추가
+    const siteFilter = document.getElementById('siteFilter');
+    siteFilter.innerHTML = '<option value="">모든 사이트</option>';
+    Array.from(siteSet).sort().forEach(site => {
+        siteFilter.innerHTML += `<option value="${site}">${site}</option>`;
+    });
+    
+    // 기사 목록 표시
+    window.allScrapedArticles = allArticles; // 필터링을 위해 저장
+    displayScrapedArticles(allArticles);
+    
+    showNotification('스크랩 데이터를 성공적으로 불러왔습니다.', 'success');
 }
 
 // 스크랩 데이터 새로고침
