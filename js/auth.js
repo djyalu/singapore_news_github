@@ -10,8 +10,8 @@ async function login(username, password) {
     }
     
     try {
-        const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
-        const apiUrl = isProduction ? '/api/auth-login' : 'https://singapore-news-github.vercel.app/api/auth-login';
+        // 항상 Vercel API 사용 (GitHub Pages에서는 /api/ 경로 불가)
+        const apiUrl = 'https://singapore-news-github.vercel.app/api/auth-login';
         
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -81,8 +81,8 @@ function isAdmin() {
 // 사용자 설정 확인 (환경 변수 설정 여부)
 async function checkAuthConfig() {
     try {
-        const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
-        const apiUrl = isProduction ? '/api/auth-config' : 'https://singapore-news-github.vercel.app/api/auth-config';
+        // 항상 Vercel API 사용 (GitHub Pages에서는 /api/ 경로 불가)
+        const apiUrl = 'https://singapore-news-github.vercel.app/api/auth-config';
         
         const response = await fetch(apiUrl);
         const result = await response.json();
