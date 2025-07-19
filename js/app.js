@@ -1938,19 +1938,22 @@ async function refreshDashboard(event) {
     }, 1000);
 }
 
-function updateTodayArticles() {
-    // localStorage에서 스크랩 데이터 확인
-    const scrapedData = [];
+async function updateTodayArticles() {
+    // 서버에서 최신 스크랩 데이터 확인
     let todayCount = 0;
     
-    if (scrapedData) {
-        try {
-            const data = JSON.parse(scrapedData);
-            const today = new Date().toDateString();
+    try {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+        if (response.ok) {
+            const result = await response.json();
+            if (result.success && result.data) {
+                const articles = result.data;
+                const today = new Date().toDateString();
             
-            // 오늘 날짜의 기사만 필터링
-            if (data.lastUpdated) {
-                const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+                // 배열인 경우 (그룹별 기사)
+                if (Array.isArray(articles)) {
+                    todayCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+                }
                 
                 // 날짜 유효성 검사
                 if (isNaN(lastUpdate.getTime())) {
@@ -3381,20 +3384,43 @@ async function clearScrapedArticles() {
     }
 }
 
-function deleteArticleGroup(source) {
+async function deleteArticleGroup(source) {
     if (confirm(`정말로 "${source}" 그룹의 모든 기사를 삭제하시겠습니까?`)) {
-        const scrapedData = [];
-        if (!scrapedData) return;
-        
         try {
-            const data = JSON.parse(scrapedData);
+            // 서버에서 현재 데이터 가져오기
+            const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+            if (!response.ok) {
+                throw new Error('데이터를 가져올 수 없습니다.');
+            }
+            
+            const data = await response.json();
+            
+            // consolidatedArticles 구조에서 삭제
+            if (data.consolidatedArticles) {
+                data.consolidatedArticles = data.consolidatedArticles.filter(group => group.group !== source);
+            }
+            // 구버전 articles 구조에서도 삭제
             if (data.articles) {
                 data.articles = data.articles.filter(article => (article.source || article.site || 'Unknown') !== source);
-                // Server-based data storage;
-                loadScrapedArticles();
-                updateTodayArticles();
-                showNotification(`"${source}" 그룹이 삭제되었습니다.`, 'success');
             }
+            
+            // 서버에 업데이트된 데이터 저장
+            const saveResponse = await fetch('https://singapore-news-github.vercel.app/api/save-scraped', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            if (!saveResponse.ok) {
+                throw new Error('데이터 저장에 실패했습니다.');
+            }
+            
+            // UI 업데이트
+            loadScrapedArticles();
+            updateTodayArticles();
+            showNotification(`"${source}" 그룹이 삭제되었습니다.`, 'success');
         } catch (error) {
             console.error('그룹 삭제 오류:', error);
             showNotification('그룹 삭제 중 오류가 발생했습니다.', 'error');
@@ -3402,27 +3428,58 @@ function deleteArticleGroup(source) {
     }
 }
 
-function deleteArticle(source, index) {
+async function deleteArticle(source, index) {
     if (confirm('정말로 이 기사를 삭제하시겠습니까?')) {
-        const scrapedData = [];
-        if (!scrapedData) return;
-        
         try {
-            const data = JSON.parse(scrapedData);
+            // 서버에서 현재 데이터 가져오기
+            const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+            if (!response.ok) {
+                throw new Error('데이터를 가져올 수 없습니다.');
+            }
+            
+            const data = await response.json();
+            
+            // consolidatedArticles 구조에서 삭제
+            if (data.consolidatedArticles) {
+                const group = data.consolidatedArticles.find(g => g.group === source);
+                if (group && group.articles && group.articles[index]) {
+                    group.articles.splice(index, 1);
+                    group.article_count = group.articles.length;
+                    
+                    // 그룹에 기사가 없으면 그룹 자체를 삭제
+                    if (group.articles.length === 0) {
+                        data.consolidatedArticles = data.consolidatedArticles.filter(g => g.group !== source);
+                    }
+                }
+            }
+            
+            // 구버전 articles 구조에서도 삭제
             if (data.articles) {
-                // 해당 소스의 기사들을 찾아서 인덱스에 해당하는 기사 삭제
                 const sourceArticles = data.articles.filter(article => (article.source || article.site || 'Unknown') === source);
                 const articleToDelete = sourceArticles[index];
-                
                 if (articleToDelete) {
                     const articleIndex = data.articles.indexOf(articleToDelete);
                     data.articles.splice(articleIndex, 1);
-                    // Server-based data storage;
-                    loadScrapedArticles();
-                    updateTodayArticles();
-                    showNotification('기사가 삭제되었습니다.', 'success');
                 }
             }
+            
+            // 서버에 업데이트된 데이터 저장
+            const saveResponse = await fetch('https://singapore-news-github.vercel.app/api/save-scraped', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            if (!saveResponse.ok) {
+                throw new Error('데이터 저장에 실패했습니다.');
+            }
+            
+            // UI 업데이트
+            loadScrapedArticles();
+            updateTodayArticles();
+            showNotification('기사가 삭제되었습니다.', 'success');
         } catch (error) {
             console.error('기사 삭제 오류:', error);
             showNotification('기사 삭제 중 오류가 발생했습니다.', 'error');
