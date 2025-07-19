@@ -2309,7 +2309,7 @@ async function loadScrapedArticles() {
                 
                 // 서버 데이터 그대로 사용 (삭제 플래그 무시)
                 
-                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped`);
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     result = {
@@ -3307,7 +3307,7 @@ async function clearScrapedArticles() {
             
             if (!filename) {
                 // latest.json에서 파일명 가져오기
-                const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
+                const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped')
                 if (latestResponse.ok) {
                     const latestData = await latestResponse.json();
                     filename = latestData.latestFile;
@@ -3520,7 +3520,7 @@ async function startAutoRefreshMonitor() {
                 // Server-based data storage;
                 
                 // 새 데이터 로드
-                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped`);
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {
@@ -3764,7 +3764,7 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                 }
                 
                 // latest.json에서 가져온 파일명으로 실제 데이터 로드
-                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped`);
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {
@@ -3947,7 +3947,7 @@ async function sendOnly() {
 // 직접 WhatsApp 전송 함수
 async function sendDirectToWhatsApp() {
     // 최신 스크랩 데이터 가져오기 (GitHub Pages 경로 사용)
-    const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
+    const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped')
     const latestData = await latestResponse.json();
     
     if (!latestData.latestFile) {
@@ -3955,7 +3955,7 @@ async function sendDirectToWhatsApp() {
     }
     
     // 스크랩된 데이터 가져오기 (GitHub Pages 경로 사용)
-    const scrapedResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
+    const scrapedResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped`)
     const scrapedData = await scrapedResponse.json();
     
     if (!scrapedData || scrapedData.length === 0) {
