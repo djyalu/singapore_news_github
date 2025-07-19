@@ -65,6 +65,10 @@ async function getTestHistoryFromServer() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // URL에서 민감한 정보 제거
+    if (window.location.search.includes('password=')) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
     const loginForm = document.getElementById('loginForm');
     const loginContainer = document.getElementById('loginContainer');
     const mainContainer = document.getElementById('mainContainer');
@@ -1954,26 +1958,10 @@ async function updateTodayArticles() {
                 if (Array.isArray(articles)) {
                     todayCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
                 }
-                
-                // 날짜 유효성 검사
-                if (isNaN(lastUpdate.getTime())) {
-                    lastUpdate = new Date();
-                }
-                
-                if (lastUpdate.toDateString() === today) {
-                    // 새로운 그룹별 통합 구조 처리
-                    if (data.consolidatedArticles) {
-                        todayCount = data.consolidatedArticles.reduce((sum, group) => sum + group.article_count, 0);
-                    } 
-                    // 기존 구조 처리 (하위 호환성)
-                    else if (data.articles) {
-                        todayCount = data.articles.length;
-                    }
-                }
             }
-        } catch (error) {
-            console.error('스크랩 데이터 파싱 오류:', error);
         }
+    } catch (error) {
+        console.error('스크랩 데이터 로드 오류:', error);
     }
     
     console.log('Today articles count:', todayCount); // 디버깅용
