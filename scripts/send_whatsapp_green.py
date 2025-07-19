@@ -114,8 +114,9 @@ def send_to_whatsapp_green(message, phone_number):
         return False
     
     # API 엔드포인트
-    # Green API 형식: https://인스턴스ID.api.greenapi.com
-    base_url = f"https://{instance_id}.api.greenapi.com"
+    # Green API 형식: https://XXXX.api.greenapi.com (인스턴스ID의 앞 4자리)
+    instance_prefix = instance_id[:4] if len(instance_id) >= 4 else instance_id
+    base_url = f"https://{instance_prefix}.api.greenapi.com"
     api_url = f"{base_url}/waInstance{instance_id}/sendMessage/{api_token}"
     
     # 전화번호 형식 변환

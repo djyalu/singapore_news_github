@@ -3179,54 +3179,66 @@ function exportStatusReport() {
 async function clearScrapedArticles() {
     console.log('clearScrapedArticles called');
     
-    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?\n\n이 작업은 GitHub에 저장된 데이터도 삭제합니다.')) {
+    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?\n\n주의: 삭제 후에는 새로고침해도 다시 나타나지 않습니다.')) {
         console.log('User confirmed deletion');
         
+        let filename = null;
+        
         try {
-            // GitHub에서 최신 스크랩 파일 삭제
-            const latestData = localStorage.getItem('singapore_news_scraped_data');
-            if (latestData) {
-                const data = JSON.parse(latestData);
-                if (data.lastUpdated) {
-                    // latest.json에서 파일명 가져오기
-                    const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
-                    if (latestResponse.ok) {
-                        const latestInfo = await latestResponse.json();
-                        const filename = latestInfo.latestFile;
-                        
-                        if (filename) {
-                            console.log('Attempting to delete GitHub file:', filename);
-                            const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({ filename: filename })
-                            });
-                            
-                            const deleteResult = await deleteResponse.json();
-                            
-                            if (deleteResult.success) {
-                                console.log('GitHub file deleted successfully');
-                                showNotification('GitHub 파일이 삭제되었습니다.', 'success');
-                            } else {
-                                console.error('GitHub deletion failed:', deleteResult.error);
-                                showNotification('GitHub 파일 삭제 실패: ' + deleteResult.error, 'warning');
-                            }
+            // 현재 파일명 가져오기
+            const latestInfo = JSON.parse(localStorage.getItem('singapore_news_latest_scraped') || '{}');
+            filename = latestInfo.latestFile;
+            
+            if (!filename) {
+                // latest.json에서 파일명 가져오기
+                const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
+                if (latestResponse.ok) {
+                    const latestData = await latestResponse.json();
+                    filename = latestData.latestFile;
+                }
+            }
+            
+            if (filename) {
+                // 삭제된 파일 목록에 추가
+                const deletedFiles = JSON.parse(localStorage.getItem('singapore_news_deleted_files') || '[]');
+                if (!deletedFiles.includes(filename)) {
+                    deletedFiles.push(filename);
+                    localStorage.setItem('singapore_news_deleted_files', JSON.stringify(deletedFiles));
+                    console.log('Added to deleted files:', filename);
+                }
+                
+                // GitHub에서 파일 삭제 시도
+                console.log('Attempting to delete GitHub file:', filename);
+                try {
+                    const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ filename: filename })
+                    });
+                    
+                    if (deleteResponse.ok) {
+                        const deleteResult = await deleteResponse.json();
+                        console.log('GitHub deletion response:', deleteResult);
+                        if (deleteResult.success) {
+                            console.log('GitHub file deleted successfully');
                         }
+                    } else {
+                        console.log(`GitHub deletion failed with status: ${deleteResponse.status}`);
                     }
+                } catch (apiError) {
+                    console.error('GitHub deletion API error:', apiError);
                 }
             }
         } catch (error) {
-            console.error('GitHub deletion error:', error);
-            showNotification('GitHub 파일 삭제 중 오류 발생', 'warning');
+            console.error('Error during deletion process:', error);
         }
         
-        // 로컬 스토리지에서 삭제
+        // 로컬 스토리지 삭제
         localStorage.removeItem('singapore_news_scraped_data');
-        
-        // 삭제 상태 플래그 설정 (자동 새로고침 방지)
-        localStorage.setItem('singapore_news_articles_deleted', 'true');
+        localStorage.removeItem('singapore_news_github_filename');
+        localStorage.removeItem('singapore_news_latest_scraped');
         
         console.log('localStorage cleared');
         
@@ -3242,7 +3254,7 @@ async function clearScrapedArticles() {
             todayArticlesElement.textContent = '0';
         }
         
-        showNotification('스크랩된 기사가 모두 삭제되었습니다.', 'success');
+        showNotification('모든 기사가 삭제되었습니다. 새로고침해도 다시 로드되지 않습니다.', 'success');
     }
 }
 
