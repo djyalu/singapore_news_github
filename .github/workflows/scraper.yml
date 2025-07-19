@@ -2,8 +2,8 @@ name: Singapore News Scraper
 
 on:
   schedule:
-    # 하루 1번 실행 (한국시간 기준: 오전 8시 5분)
-    - cron: '5 23 * * *'  # UTC 기준 (KST 08:05)
+    # 하루 1번 실행 (한국시간 기준: 오전 7시 54분)
+    - cron: '54 22 * * *'  # UTC 기준 (KST 07:54)
   workflow_dispatch:  # 수동 실행 가능
   push:
     paths:
@@ -76,14 +76,20 @@ jobs:
         git config --local user.name "GitHub Action"
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
         
+        # Stash any local changes first
+        git stash || echo "Nothing to stash"
+        
         # Pull latest changes to avoid conflicts
-        git pull origin main --rebase || echo "No remote changes to pull"
+        git pull origin main || echo "No remote changes to pull"
+        
+        # Apply stashed changes
+        git stash pop || echo "No stash to apply"
         
         git add data/scraped/*.json data/history/*.json data/latest.json || echo "No files to add"
         git commit -m "Update scraping and history data [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         
-        # Retry push with pull if needed
-        git push || (git pull origin main --rebase && git push)
+        # Retry push with merge if needed
+        git push || (git pull origin main --no-rebase && git push)
     
     - name: Create workflow summary
       if: always()
