@@ -56,9 +56,11 @@ jobs:
     - name: Send to WhatsApp
       if: steps.check_results.outputs.scraping_success == 'true'
       env:
-        WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
+        GREEN_API_INSTANCE_ID: ${{ secrets.GREEN_API_INSTANCE_ID }}
+        GREEN_API_TOKEN: ${{ secrets.GREEN_API_TOKEN }}
       run: |
-        python scripts/send_whatsapp.py
+        # Green API 사용 (Whapi 서비스 중단으로 변경)
+        python scripts/send_whatsapp_green.py
       continue-on-error: true  # WhatsApp 전송 실패해도 데이터는 저장
     
     - name: Clean up old data
