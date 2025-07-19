@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "admin",
-      "password": "$2a$10$YR7n.yV5YBKiPVXLxq1YYezLu1.2nOL0N5JV4BjwXk5J0oNRz7Lq6",
+      "password": "Admin@123",
       "name": "관리자",
       "email": "admin@example.com",
       "role": "admin"
