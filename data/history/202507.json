@@ -99,5 +99,16 @@
     "message_length": 1483,
     "article_count": 4,
     "api": "green-api"
+  },
+  {
+    "id": "20250719072857",
+    "timestamp": "2025-07-19T07:28:57.832186",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 5개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 19일 07:28\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 3개 그룹, 총 5개 기사\n\n【 Economy 】\n📍 출처: The Business Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 보건 관련 뉴스\n📝 After careful deliberation, ...",
+    "message_length": 1722,
+    "article_count": 5,
+    "api": "green-api"
   }
 ]
