@@ -5,12 +5,7 @@
       "password": "Admin@123",
       "name": "관리자",
       "email": "admin@example.com",
-      "role": "admin",
-      "mfa": {
-        "enabled": false,
-        "secret": null,
-        "backupCodes": []
-      }
+      "role": "admin"
     },
     {
       "id": "djyalu",
