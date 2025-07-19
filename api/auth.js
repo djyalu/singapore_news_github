@@ -62,6 +62,11 @@ module.exports = async (req, res) => {
             // 사용자 찾기
             const user = usersData.users.find(u => u.id === username);
             
+            console.log('Login attempt:', { username, userFound: !!user });
+            if (user) {
+                console.log('User data:', { id: user.id, hasPassword: !!user.password, passwordType: user.password?.startsWith('$2') ? 'hashed' : 'plain' });
+            }
+            
             if (!user) {
                 return res.status(401).json({
                     success: false,
@@ -79,6 +84,7 @@ module.exports = async (req, res) => {
             } else {
                 // 임시: 평문 비밀번호 (마이그레이션 전)
                 console.warn(`Warning: User ${username} has unhashed password. Please update to bcrypt hash.`);
+                console.log('Plain text comparison:', { provided: password, stored: user.password, match: password === user.password });
                 isValidPassword = (password === user.password);
             }
 
