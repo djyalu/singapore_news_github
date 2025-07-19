@@ -2213,6 +2213,9 @@ async function loadScrapedArticles() {
                         articles: articles,
                         articleCount: articles.reduce((sum, group) => sum + (group.article_count || 0), 0)
                     };
+                } else if (dataResponse.status === 404) {
+                    // 파일이 삭제된 경우 - GitHub API로 fallback
+                    console.log('파일이 삭제되었습니다. GitHub API로 다른 파일 찾기...');
                 }
             }
         } catch (e) {
@@ -3648,6 +3651,19 @@ async function loadLatestDataFromGitHub() {
                     console.log(`최신 데이터 로드 성공: ${articleCount}개의 기사`);
                     showNotification(`최신 뉴스 ${articleCount}개를 불러왔습니다.`, 'success');
                     return;
+                } else if (dataResponse.status === 404) {
+                    // 파일이 삭제된 경우
+                    console.log('파일이 삭제되었습니다. 삭제 플래그 설정...');
+                    const deletedFiles = JSON.parse(localStorage.getItem('singapore_news_deleted_files') || '[]');
+                    if (!deletedFiles.includes(latestInfo.latestFile)) {
+                        deletedFiles.push(latestInfo.latestFile);
+                        localStorage.setItem('singapore_news_deleted_files', JSON.stringify(deletedFiles));
+                    }
+                    localStorage.removeItem('singapore_news_scraped_data');
+                    
+                    // GitHub API로 다른 파일 찾기 시도
+                    console.log('GitHub API로 다른 파일 찾기 시도...');
+                    // 아래 방법 2로 진행
                 }
             }
         } catch (e) {
@@ -4227,6 +4243,7 @@ async function deleteAllArticlesFromModal() {
             // GitHub API 삭제 시도 (실패해도 계속 진행)
             if (filename) {
                 try {
+                    console.log(`GitHub에서 파일 삭제 시도: ${filename}`);
                     const response = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
                         method: 'POST',
                         headers: {
@@ -4235,11 +4252,14 @@ async function deleteAllArticlesFromModal() {
                         body: JSON.stringify({ filename })
                     });
                     
-                    if (!response.ok) {
-                        console.log('GitHub 삭제 API 실패, 하지만 로컬 삭제는 완료됨');
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('GitHub 삭제 성공:', result);
+                    } else {
+                        console.log(`GitHub 삭제 API 실패 (${response.status}), 하지만 로컬 삭제는 완료됨`);
                     }
                 } catch (e) {
-                    console.log('GitHub 삭제 API 오류, 하지만 로컬 삭제는 완료됨');
+                    console.log('GitHub 삭제 API 오류:', e, '하지만 로컬 삭제는 완료됨');
                 }
             }
         } catch (error) {
