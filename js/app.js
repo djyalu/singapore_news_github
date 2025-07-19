@@ -1681,7 +1681,7 @@ function setQuickFilter(period) {
     loadHistory();
 }
 
-function updateStatusFilter(value) {
+async function updateStatusFilter(value) {
     document.getElementById('historyStatus').value = value;
     loadHistory();
 }
@@ -1910,7 +1910,7 @@ function setupDashboardEventListeners() {
     }
 }
 
-function refreshDashboard(event) {
+async function refreshDashboard(event) {
     const refreshBtn = event ? event.target : document.getElementById('refreshBtn');
     if (!refreshBtn) return;
     
@@ -1927,7 +1927,7 @@ function refreshDashboard(event) {
 
 function updateTodayArticles() {
     // localStorage에서 스크랩 데이터 확인
-    const scrapedData = await getDataFromServer();
+    const scrapedData = [];
     let todayCount = 0;
     
     if (scrapedData) {
@@ -1969,7 +1969,7 @@ function updateTodayArticles() {
     }
 }
 
-function updateSendChannelInfo() {
+async function updateSendChannelInfo() {
     const settings = JSON.parse(await getSettingsFromServer());
     const element = document.getElementById('sendChannelInfo');
     
@@ -1983,7 +1983,7 @@ function updateSendChannelInfo() {
     }
 }
 
-function updateNextSendTime() {
+async function updateNextSendTime() {
     const settings = JSON.parse(await getSettingsFromServer());
     const element = document.getElementById('nextSendTime');
     
@@ -2016,11 +2016,11 @@ async function loadRecentActivity() {
     // 다양한 이력 데이터 수집
     const history = JSON.parse(await getHistoryFromServer());
     const testHistory = JSON.parse(await getTestHistoryFromServer());
-    const scrapeHistory = JSON.parse(await getDataFromServer() || '[]');
-    const settingsHistory = JSON.parse(await getDataFromServer() || '[]');
+    const scrapeHistory = JSON.parse("[]" || '[]');
+    const settingsHistory = JSON.parse("[]" || '[]');
     
     // GitHub 스크랩 이력 확인 (최신 파일 정보)
-    const latestScrapedData = await getDataFromServer();
+    const latestScrapedData = [];
     const githubActivities = [];
     
     if (latestScrapedData) {
@@ -2127,9 +2127,9 @@ async function loadRecentActivity() {
 }
 
 // 설정 변경 이력 저장
-function saveSettingsHistory(newSettings, oldSettings) {
+async function saveSettingsHistory(newSettings, oldSettings) {
     try {
-        const history = JSON.parse(await getDataFromServer() || '[]');
+        const history = JSON.parse("[]" || '[]');
         
         // 변경된 항목 찾기
         const changes = [];
@@ -2168,9 +2168,9 @@ function saveSettingsHistory(newSettings, oldSettings) {
 }
 
 // 스크래핑 이력 저장
-function saveScrapeHistory(articleCount, status = 'success') {
+async function saveScrapeHistory(articleCount, status = 'success') {
     try {
-        const history = JSON.parse(await getDataFromServer() || '[]');
+        const history = JSON.parse("[]" || '[]');
         
         history.unshift({
             timestamp: new Date().toISOString(),
@@ -2261,7 +2261,7 @@ function closeNotification(element) {
 }
 
 // Scraped Articles Functions
-function toggleScrapedArticles() {
+async function toggleScrapedArticles() {
     const articlesList = document.getElementById('scrapedArticlesList');
     const toggleText = document.getElementById('toggleArticlesText');
     
@@ -2282,7 +2282,7 @@ async function loadScrapedArticles() {
     // 항상 GitHub에서 최신 데이터 로드
     await loadLatestDataFromGitHub(true);
     
-    const localData = await getDataFromServer();
+    const localData = [];
     let data = null;
     if (localData) {
         try {
@@ -2299,11 +2299,11 @@ async function loadScrapedArticles() {
         let result = null;
         
         // 삭제 플래그 확인
-        const deletedFiles = JSON.parse(await getDataFromServer() || '[]');
+        const deletedFiles = JSON.parse("[]" || '[]');
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기
         try {
-            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
+            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 
@@ -2605,20 +2605,20 @@ function createArticlesModal() {
     return modal;
 }
 
-function closeArticlesModal() {
+async function closeArticlesModal() {
     const modal = document.getElementById('articlesModal');
     if (modal) {
         modal.remove();
     }
 }
 
-function loadTodayArticles() {
+async function loadTodayArticles() {
     const content = document.getElementById('articlesModalContent');
     const title = document.getElementById('modalTitle');
     
     title.textContent = '오늘 스크랩한 기사';
     
-    const scrapedData = await getDataFromServer();
+    const scrapedData = [];
     if (!scrapedData) {
         content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
         return;
@@ -2646,13 +2646,13 @@ function loadTodayArticles() {
     }
 }
 
-function loadTodayArticlesModal() {
+async function loadTodayArticlesModal() {
     const content = document.getElementById('articlesModalContent');
     const title = document.getElementById('modalTitle');
     
     title.textContent = '오늘 스크랩한 기사';
     
-    const scrapedData = await getDataFromServer();
+    const scrapedData = [];
     if (!scrapedData) {
         content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
         return;
@@ -2795,7 +2795,7 @@ function renderSelectableArticlesList(articles, container) {
     container.innerHTML = html;
 }
 
-function loadSentArticles() {
+async function loadSentArticles() {
     const content = document.getElementById('articlesModalContent');
     const title = document.getElementById('modalTitle');
     
@@ -3062,7 +3062,7 @@ function createServerStatusModal() {
     return modal;
 }
 
-function closeServerStatusModal() {
+async function closeServerStatusModal() {
     const modal = document.getElementById('serverStatusModal');
     if (modal) {
         modal.remove();
@@ -3302,7 +3302,7 @@ async function clearScrapedArticles() {
         
         try {
             // 현재 파일명 가져오기
-            const latestInfo = JSON.parse(await getDataFromServer() || '{}');
+            const latestInfo = JSON.parse("[]" || '{}');
             filename = latestInfo.latestFile;
             
             if (!filename) {
@@ -3368,9 +3368,9 @@ async function clearScrapedArticles() {
     }
 }
 
-function deleteArticleGroup(source) {
+async function deleteArticleGroup(source) {
     if (confirm(`정말로 "${source}" 그룹의 모든 기사를 삭제하시겠습니까?`)) {
-        const scrapedData = await getDataFromServer();
+        const scrapedData = [];
         if (!scrapedData) return;
         
         try {
@@ -3389,9 +3389,9 @@ function deleteArticleGroup(source) {
     }
 }
 
-function deleteArticle(source, index) {
+async function deleteArticle(source, index) {
     if (confirm('정말로 이 기사를 삭제하시겠습니까?')) {
-        const scrapedData = await getDataFromServer();
+        const scrapedData = [];
         if (!scrapedData) return;
         
         try {
@@ -3486,7 +3486,7 @@ async function startAutoRefreshMonitor() {
     let retryCount = 0; // 404 에러 재시도 카운트
     
     // 현재 기사 수 저장
-    const currentData = await getDataFromServer();
+    const currentData = [];
     if (currentData) {
         try {
             const parsed = JSON.parse(currentData);
@@ -3512,7 +3512,7 @@ async function startAutoRefreshMonitor() {
             }
             
             const latestInfo = await latestResponse.json();
-            const currentLatestFile = await getDataFromServer();
+            const currentLatestFile = [];
             
             // 새로운 파일이 있는지 확인
             if (currentLatestFile !== latestInfo.latestFile) {
@@ -3733,7 +3733,7 @@ async function startScrapingStatusMonitor() {
     setTimeout(checkStatus, 3000);
 }
 
-function resetScrapeButton() {
+async function resetScrapeButton() {
     const scrapeBtn = document.getElementById('scrapeNowBtn');
     if (scrapeBtn) {
         scrapeBtn.disabled = false;
@@ -3746,11 +3746,11 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
         console.log('GitHub에서 최신 데이터를 로드합니다...');
         
         // 삭제 플래그 확인
-        const deletedFiles = JSON.parse(await getDataFromServer() || '[]');
+        const deletedFiles = JSON.parse("[]" || '[]');
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기 (우선 시도)
         try {
-            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
+            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 console.log('Latest file info:', latestInfo);
@@ -3788,7 +3788,7 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                 } else if (dataResponse.status === 404) {
                     // 파일이 삭제된 경우
                     console.log('파일이 삭제되었습니다. 삭제 플래그 설정...');
-                    const deletedFiles = JSON.parse(await getDataFromServer() || '[]');
+                    const deletedFiles = JSON.parse("[]" || '[]');
                     if (!deletedFiles.includes(latestInfo.latestFile)) {
                         deletedFiles.push(latestInfo.latestFile);
                         // Server-based data storage;
@@ -4048,7 +4048,7 @@ async function saveTransmissionHistory(articles, status) {
     // Server-based data storage;
 }
 
-function generateSendMessage() {
+async function generateSendMessage() {
     const generateBtn = document.getElementById('generateMessageBtn');
     const messageDiv = document.getElementById('generatedMessage');
     const messageContent = document.getElementById('messageContent');
@@ -4058,7 +4058,7 @@ function generateSendMessage() {
     generateBtn.disabled = true;
     generateBtn.innerHTML = '<i class="icon">⏳</i> 생성 중...';
     
-    const scrapedData = await getDataFromServer();
+    const scrapedData = [];
     if (!scrapedData) {
         showNotification('스크랩된 기사가 없습니다.', 'error');
         generateBtn.disabled = false;
@@ -4199,7 +4199,7 @@ function generateSendMessage() {
     }
 }
 
-function sendGeneratedMessage() {
+async function sendGeneratedMessage() {
     const messageContent = document.getElementById('messageContent');
     if (!messageContent || !messageContent.value) {
         showNotification('전송할 메시지가 없습니다.', 'error');
@@ -4318,7 +4318,7 @@ function updateSelectionState() {
     });
 }
 
-function deleteSelectedArticles() {
+async function deleteSelectedArticles() {
     const selectedCheckboxes = document.querySelectorAll('.article-checkbox:checked');
     const selectedIndices = Array.from(selectedCheckboxes).map(cb => parseInt(cb.id.replace('article-', '')));
     
@@ -4328,7 +4328,7 @@ function deleteSelectedArticles() {
     }
     
     if (confirm(`정말로 선택한 ${selectedIndices.length}개의 기사를 삭제하시겠습니까?`)) {
-        const scrapedData = await getDataFromServer();
+        const scrapedData = [];
         if (!scrapedData) return;
         
         try {
@@ -4356,8 +4356,8 @@ async function deleteAllArticlesFromModal() {
     if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?\n\n주의: 삭제 후에는 새로고침해도 다시 나타나지 않습니다.')) {
         try {
             // 현재 파일명 가져오기
-            const latestInfo = JSON.parse(await getDataFromServer() || '{}');
-            const filename = latestInfo.latestFile || await getDataFromServer();
+            const latestInfo = JSON.parse("[]" || '{}');
+            const filename = latestInfo.latestFile || [];
             
             if (filename) {
                 // 삭제 플래그 사용하지 않음 (서버에서 직접 삭제)
