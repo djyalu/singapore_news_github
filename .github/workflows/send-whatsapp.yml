@@ -1,10 +1,10 @@
 name: Send to WhatsApp
 
 on:
-  schedule:
-    # 매일 오전 8시 전송 (한국시간)
-    - cron: '0 23 * * *'  # UTC 기준 (KST 08:00)
-  workflow_dispatch:  # 수동 실행도 가능
+  # schedule:
+  #   # 매일 오전 8시 전송 (한국시간)
+  #   - cron: '0 23 * * *'  # UTC 기준 (KST 08:00)
+  workflow_dispatch:  # 수동 실행만 가능
   
 permissions:
   contents: write

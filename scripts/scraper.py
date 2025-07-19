@@ -1034,37 +1034,32 @@ def get_article_links_generic(soup, base_url):
 
 def create_summary(article_data, settings):
     """설정에 따른 요약 생성"""
-    try:
-        # 무료 AI 요약 시도
-        from ai_summary_free import get_free_summary
-        print(f"[DEBUG] Attempting AI summary for: {article_data['title'][:50]}...")
-        summary = get_free_summary(
-            article_data['title'], 
-            article_data['content']
-        )
-        print(f"[DEBUG] AI summary result: {summary[:100] if summary else 'None'}...")
-        # AI 요약 성공 여부 확인 (제목이 한글로 번역되었으면 성공)
-        if summary and ('제목:' in summary or '내용:' in summary or len(summary) > 50):
-            print(f"[DEBUG] AI summary successful!")
-            return summary
-        else:
-            print(f"[DEBUG] AI summary failed, falling back to keywords")
-    except Exception as e:
-        print(f"AI summary error: {e}")
-        import traceback
-        traceback.print_exc()
-    
-    # 폴백: 향상된 키워드 기반 요약
+    # 키워드 기반 요약만 사용 (AI 요약 비활성화)
     return create_keyword_summary(article_data['title'], article_data['content'])
 
 def create_keyword_summary(title, content):
     """향상된 키워드 기반 한글 요약"""
-    # 키워드 매핑
+    # 확장된 키워드 매핑
     keywords = {
+        # 기본 키워드
         'singapore': '싱가포르', 'economy': '경제', 'government': '정부',
         'education': '교육', 'health': '보건', 'transport': '교통',
         'technology': '기술', 'business': '비즈니스', 'covid': '코로나',
-        'minister': '장관', 'policy': '정책', 'development': '개발'
+        'minister': '장관', 'policy': '정책', 'development': '개발',
+        # 추가 키워드
+        'school': '학교', 'student': '학생', 'train': '열차', 'mrt': 'MRT',
+        'lrt': 'LRT', 'bus': '버스', 'airport': '공항', 'changi': '창이',
+        'housing': '주택', 'hdb': 'HDB', 'condo': '콘도', 'property': '부동산',
+        'food': '음식', 'restaurant': '레스토랑', 'hawker': '호커',
+        'market': '시장', 'stock': '주식', 'bank': '은행', 'finance': '금융',
+        'police': '경찰', 'court': '법원', 'law': '법률', 'election': '선거',
+        'climate': '기후', 'environment': '환경', 'green': '친환경',
+        'startup': '스타트업', 'innovation': '혁신', 'digital': '디지털',
+        'ai': 'AI', 'artificial': 'AI', 'data': '데이터', 'cyber': '사이버',
+        'tourism': '관광', 'tourist': '관광객', 'travel': '여행',
+        'malaysia': '말레이시아', 'indonesia': '인도네시아', 'thailand': '태국',
+        'china': '중국', 'india': '인도', 'japan': '일본', 'korea': '한국',
+        'asean': '아세안', 'asia': '아시아', 'global': '글로벌'
     }
     
     # 제목과 내용에서 핵심 키워드 추출
@@ -1075,16 +1070,17 @@ def create_keyword_summary(title, content):
         if eng in text_lower:
             found_keywords.append(kor)
     
+    # 중복 제거
+    found_keywords = list(dict.fromkeys(found_keywords))
+    
     # 요약 생성
     if found_keywords:
-        summary = f"📰 {', '.join(found_keywords[:3])} 관련 뉴스\n"
+        summary = f"📰 {', '.join(found_keywords[:3])} 관련 뉴스"
     else:
-        summary = f"📰 싱가포르 최신 뉴스\n"
+        summary = f"📰 싱가포르 최신 뉴스"
     
-    # 내용 요약
-    sentences = content.split('.')[:2]  # 처음 2문장
-    if sentences:
-        summary += f"📝 {'. '.join(sentences).strip()}..."
+    # 제목만 포함 (원문 내용 제외)
+    summary += f"\n📢 {title[:80]}{'...' if len(title) > 80 else ''}"
     
     return summary
 

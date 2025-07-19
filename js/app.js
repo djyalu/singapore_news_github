@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.innerHTML = getDashboardHTML();
                 loadDashboardData();
                 setupDashboardEventListeners();
-                // GitHub에서 최신 데이터 자동 로드
-                loadLatestDataFromGitHub();
+                // 항상 GitHub에서 최신 데이터 로드 (로컬 스토리지 무시)
+                loadLatestDataFromGitHub(true);
                 break;
             case 'settings':
                 if (isAdmin()) {
@@ -539,8 +539,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         <input type="number" id="monthlyDate" min="1" max="31" value="1">
                     </div>
                     <div class="form-group">
-                        <label>전송 시간</label>
-                        <input type="time" id="sendTime" value="09:00">
+                        <label>스크래핑 및 전송 시간</label>
+                        <input type="time" id="sendTime" value="08:00">
+                        <small class="text-gray-500 block mt-1">
+                            <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            설정한 시간에 뉴스 스크래핑과 WhatsApp 전송이 함께 실행됩니다.
+                        </small>
                     </div>
                     </div>
                 </div>
@@ -1174,6 +1180,31 @@ async function loadSettings() {
     }
 }
 
+// GitHub Actions 스케줄 업데이트
+async function updateGitHubSchedule(time) {
+    try {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/update-schedule', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ time })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification(`스크래핑 시간이 ${time}로 변경되었습니다.`, 'success');
+        } else {
+            console.error('Schedule update failed:', result.error);
+            showNotification('스케줄 업데이트 실패: ' + (result.error || '알 수 없는 오류'), 'warning');
+        }
+    } catch (error) {
+        console.error('Schedule update error:', error);
+        showNotification('스케줄 업데이트 중 오류가 발생했습니다.', 'warning');
+    }
+}
+
 function saveSettings() {
     try {
         // 기존 설정 가져오기 (변경 사항 추적용)
@@ -1244,6 +1275,13 @@ function saveSettings() {
             if (data.success) {
                 // 서버 저장 성공 시 로컬에도 저장
                 localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+                
+                // 스케줄 시간이 변경되었는지 확인
+                if (oldSettings.sendSchedule?.time !== settings.sendSchedule.time) {
+                    // GitHub Actions 스케줄 업데이트
+                    updateGitHubSchedule(settings.sendSchedule.time);
+                }
+                
                 showNotification('설정이 저장되었습니다.', 'success');
                 
                 // 설정 변경 이력 저장
@@ -2182,10 +2220,11 @@ async function loadScrapedArticles() {
     const articlesList = document.getElementById('scrapedArticlesList');
     if (!articlesList) return;
     
-    // 먼저 로컬 데이터 확인
-    let data = null;
-    const localData = localStorage.getItem('singapore_news_scraped_data');
+    // 항상 GitHub에서 최신 데이터 로드
+    await loadLatestDataFromGitHub(true);
     
+    const localData = localStorage.getItem('singapore_news_scraped_data');
+    let data = null;
     if (localData) {
         try {
             data = JSON.parse(localData);
@@ -2209,12 +2248,7 @@ async function loadScrapedArticles() {
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 
-                // 삭제된 파일인지 확인
-                if (deletedFiles.includes(latestInfo.latestFile)) {
-                    console.log('이 파일은 삭제된 파일입니다. 로드하지 않습니다.');
-                    articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
-                    return;
-                }
+                // 서버 데이터 그대로 사용 (삭제 플래그 무시)
                 
                 const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
                 if (dataResponse.ok) {
@@ -2860,25 +2894,31 @@ function closeArticleDetail() {
 
 function showSendSettings() {
     console.log('showSendSettings called'); // 디버깅용
-    loadPage('settings');
-    // 설정 페이지로 이동 후 전송 설정 탭으로 이동
-    setTimeout(() => {
-        // 설정 탭 전환
-        switchSettingsTab('send');
+    
+    // Settings 네비게이션 링크를 클릭하여 설정 페이지로 이동
+    const settingsNavLink = document.querySelector('a[data-page="settings"]');
+    if (settingsNavLink) {
+        settingsNavLink.click();
         
-        // 전송 설정 섹션으로 스크롤 (다양한 선택자 시도)
-        const sendSection = document.getElementById('send-tab') || 
-                           document.querySelector('[data-tab="send"]') ||
-                           document.querySelector('.settings-section:nth-child(4)') ||
-                           document.querySelector('#sendSettings');
-        
-        if (sendSection) {
-            sendSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            console.log('Scrolled to send settings section'); // 디버깅용
-        } else {
-            console.log('Send settings section not found'); // 디버깅용
-        }
-    }, 200);
+        // 설정 페이지로 이동 후 전송 설정 탭으로 이동
+        setTimeout(() => {
+            // 설정 탭 전환
+            switchSettingsTab('send');
+            
+            // 전송 설정 섹션으로 스크롤 (다양한 선택자 시도)
+            const sendSection = document.getElementById('send-tab') || 
+                               document.querySelector('[data-tab="send"]') ||
+                               document.querySelector('.settings-section:nth-child(4)') ||
+                               document.querySelector('#sendSettings');
+            
+            if (sendSection) {
+                sendSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                console.log('Scrolled to send settings section'); // 디버깅용
+            } else {
+                console.log('Send settings section not found'); // 디버깅용
+            }
+        }, 300);
+    }
 }
 
 // Server Status Functions
@@ -3216,13 +3256,7 @@ async function clearScrapedArticles() {
             }
             
             if (filename) {
-                // 삭제된 파일 목록에 추가
-                const deletedFiles = JSON.parse(localStorage.getItem('singapore_news_deleted_files') || '[]');
-                if (!deletedFiles.includes(filename)) {
-                    deletedFiles.push(filename);
-                    localStorage.setItem('singapore_news_deleted_files', JSON.stringify(deletedFiles));
-                    console.log('Added to deleted files:', filename);
-                }
+                // 삭제 플래그 사용하지 않음 (서버에서 직접 삭제)
                 
                 // GitHub에서 파일 삭제 시도
                 console.log('Attempting to delete GitHub file:', filename);
@@ -3271,7 +3305,7 @@ async function clearScrapedArticles() {
             todayArticlesElement.textContent = '0';
         }
         
-        showNotification('모든 기사가 삭제되었습니다. 새로고침해도 다시 로드되지 않습니다.', 'success');
+        showNotification('모든 기사가 서버에서 삭제되었습니다.', 'success');
     }
 }
 
@@ -3386,10 +3420,11 @@ async function scrapeNow() {
 
 async function startAutoRefreshMonitor() {
     let attempts = 0;
-    const maxAttempts = 12; // 최대 1분 (5초 x 12)
+    const maxAttempts = 36; // 최대 3분 (5초 x 36) - GitHub Pages 배포 시간 고려
     const checkInterval = 5000; // 5초마다 체크
     let lastArticleCount = 0;
     let monitoringStopped = false;
+    let retryCount = 0; // 404 에러 재시도 카운트
     
     // 현재 기사 수 저장
     const currentData = localStorage.getItem('singapore_news_scraped_data');
@@ -3435,6 +3470,9 @@ async function startAutoRefreshMonitor() {
                     };
                     localStorage.setItem('singapore_news_scraped_data', JSON.stringify(data));
                     
+                    // 삭제 플래그 초기화
+                    localStorage.removeItem('singapore_news_deleted_files');
+                    
                     // UI 업데이트
                     loadScrapedArticles();
                     updateTodayArticles();
@@ -3442,9 +3480,16 @@ async function startAutoRefreshMonitor() {
                     const articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
                     showNotification(`새로운 뉴스 ${articleCount}개를 불러왔습니다!`, 'success');
                     
+                    // 진행 상태 숨기기
+                    hideProgressStatus();
+                    
                     // 모니터링 종료
                     monitoringStopped = true;
                     return;
+                } else if (dataResponse.status === 404 && retryCount < 3) {
+                    // 404 에러시 재시도 (GitHub Pages 배포 지연 고려)
+                    console.log(`파일 아직 없음. ${3-retryCount}번 더 시도합니다...`);
+                    retryCount++;
                 }
             }
         } catch (error) {
@@ -3637,7 +3682,7 @@ function resetScrapeButton() {
     }
 }
 
-async function loadLatestDataFromGitHub() {
+async function loadLatestDataFromGitHub(forceRefresh = false) {
     try {
         console.log('GitHub에서 최신 데이터를 로드합니다...');
         
@@ -3652,8 +3697,8 @@ async function loadLatestDataFromGitHub() {
                 console.log('Latest file info:', latestInfo);
                 console.log('Deleted files:', deletedFiles);
                 
-                // 삭제된 파일인지 확인
-                if (deletedFiles.includes(latestInfo.latestFile)) {
+                // forceRefresh가 true면 삭제 플래그 무시
+                if (!forceRefresh && deletedFiles.includes(latestInfo.latestFile)) {
                     console.log('이 파일은 사용자가 삭제한 파일입니다. 로드하지 않습니다.');
                     localStorage.removeItem('singapore_news_scraped_data');
                     return;
@@ -3712,8 +3757,8 @@ async function loadLatestDataFromGitHub() {
                 if (newsFiles.length > 0) {
                     const latestFile = newsFiles[0];
                     
-                    // 삭제된 파일인지 확인
-                    if (deletedFiles.includes(latestFile.name)) {
+                    // forceRefresh가 true면 삭제 플래그 무시
+                    if (!forceRefresh && deletedFiles.includes(latestFile.name)) {
                         console.log('이 파일은 사용자가 삭제한 파일입니다. 로드하지 않습니다.');
                         localStorage.removeItem('singapore_news_scraped_data');
                         return;
@@ -4251,12 +4296,7 @@ async function deleteAllArticlesFromModal() {
             const filename = latestInfo.latestFile || localStorage.getItem('singapore_news_github_filename');
             
             if (filename) {
-                // 삭제된 파일 목록에 추가
-                const deletedFiles = JSON.parse(localStorage.getItem('singapore_news_deleted_files') || '[]');
-                if (!deletedFiles.includes(filename)) {
-                    deletedFiles.push(filename);
-                    localStorage.setItem('singapore_news_deleted_files', JSON.stringify(deletedFiles));
-                }
+                // 삭제 플래그 사용하지 않음 (서버에서 직접 삭제)
             }
             
             // 로컬 스토리지 삭제
@@ -4268,7 +4308,7 @@ async function deleteAllArticlesFromModal() {
             closeArticlesModal();
             loadScrapedArticles();
             updateTodayArticles();
-            showNotification('모든 기사가 삭제되었습니다. 새로고침해도 다시 로드되지 않습니다.', 'success');
+            showNotification('모든 기사가 서버에서 삭제되었습니다.', 'success');
             
             // GitHub API 삭제 시도 (실패해도 계속 진행)
             if (filename) {

@@ -2,8 +2,8 @@ name: Singapore News Scraper
 
 on:
   schedule:
-    # 하루 1번 실행 (한국시간 기준: 오전 6시)
-    - cron: '0 21 * * *'  # UTC 기준 (KST 06:00)
+    # 하루 1번 실행 (한국시간 기준: 오전 8시 5분)
+    - cron: '5 23 * * *'  # UTC 기준 (KST 08:05)
   workflow_dispatch:  # 수동 실행 가능
   push:
     paths:
