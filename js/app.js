@@ -39,9 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log('로그인 시도:', username, password);
         
-        // 사용자 데이터 확인
-        const users = JSON.parse(localStorage.getItem('singapore_news_users') || '[]');
-        console.log('저장된 사용자 데이터:', users);
+        // 서버 기반 인증 - localStorage 사용 안함
+        console.log('서버 기반 인증 사용');
         
         const loginResult = await login(username, password);
         if (loginResult) {
@@ -1019,8 +1018,8 @@ function sendTestMessage() {
     });
 }
 
-function recordTestHistory(channel, status, message) {
-    const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+async function recordTestHistory(channel, status, message) {
+    const testHistory = JSON.parse(await getTestHistoryFromServer());
     
     const testRecord = {
         id: Date.now().toString(),
@@ -1038,16 +1037,16 @@ function recordTestHistory(channel, status, message) {
         testHistory.splice(5);
     }
     
-    localStorage.setItem('singapore_news_test_history', JSON.stringify(testHistory));
+    // Server-based test history storage
 }
 
-function loadTestHistory() {
-    let testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+async function loadTestHistory() {
+    let testHistory = JSON.parse(await getTestHistoryFromServer());
     
     // 기존 데이터가 5개를 초과하면 5개로 제한
     if (testHistory.length > 5) {
         testHistory = testHistory.slice(0, 5);
-        localStorage.setItem('singapore_news_test_history', JSON.stringify(testHistory));
+        // Server-based test history storage
     }
     
     const testHistoryList = document.getElementById('testHistoryList');
@@ -1210,10 +1209,10 @@ async function updateGitHubSchedule(time) {
     }
 }
 
-function saveSettings() {
+async function saveSettings() {
     try {
         // 기존 설정 가져오기 (변경 사항 추적용)
-        const oldSettings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+        const oldSettings = JSON.parse(await getSettingsFromServer());
         
         const settings = {
             scrapTarget: document.getElementById('scrapTarget').value,
@@ -1279,7 +1278,7 @@ function saveSettings() {
         .then(data => {
             if (data.success) {
                 // 서버 저장 성공 시 로컬에도 저장
-                localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+                // Server-based settings storage
                 
                 // 스케줄 시간이 변경되었는지 확인
                 if (oldSettings.sendSchedule?.time !== settings.sendSchedule.time) {
@@ -1299,7 +1298,7 @@ function saveSettings() {
             console.error('GitHub 설정 저장 오류:', error);
             // GitHub 저장 실패 시 로컬에만 저장
             try {
-                localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
+                // Server-based settings storage
                 showNotification('설정이 로컬에 저장되었습니다. (GitHub 연결 실패)', 'warning');
                 
                 // 설정 변경 이력 저장
@@ -1351,7 +1350,7 @@ async function loadSites() {
 document.addEventListener('submit', async function(e) {
     if (e.target.id === 'siteForm') {
         e.preventDefault();
-        const sites = JSON.parse(localStorage.getItem('singapore_news_sites') || '[]');
+        const sites = JSON.parse(await getSitesFromServer());
         
         sites.push({
             group: document.getElementById('siteGroup').value,
@@ -1374,7 +1373,7 @@ document.addEventListener('submit', async function(e) {
             
             if (result.success) {
                 // 성공 시 로컬에도 저장
-                localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+                // Server-based sites storage
                 showNotification('사이트가 추가되었습니다.', 'success');
             } else {
                 showNotification(result.error || '사이트 저장에 실패했습니다.', 'error');
@@ -1393,7 +1392,7 @@ document.addEventListener('submit', async function(e) {
 });
 
 async function deleteSite(index) {
-    const sites = JSON.parse(localStorage.getItem('singapore_news_sites') || '[]');
+    const sites = JSON.parse(await getSitesFromServer());
     const deletedSite = sites[index];
     sites.splice(index, 1);
     
@@ -1411,7 +1410,7 @@ async function deleteSite(index) {
         
         if (result.success) {
             // 성공 시 로컬에도 저장
-            localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
+            // Server-based sites storage
             showNotification('사이트가 삭제되었습니다.', 'success');
         } else {
             showNotification(result.error || '사이트 삭제에 실패했습니다.', 'error');
@@ -1432,7 +1431,7 @@ async function loadHistory() {
     console.log('전송 이력 로드 시작...');
     
     // localStorage와 GitHub 데이터 결합
-    let history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    let history = JSON.parse(await getHistoryFromServer());
     
     // GitHub에서 이력 데이터 가져오기 (최근 3개월)
     try {
@@ -1624,7 +1623,7 @@ function updateStatusFilter(value) {
 }
 
 function showHistoryDetail(recordId) {
-    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    const history = JSON.parse(await getHistoryFromServer());
     const record = history.find(r => r.id === recordId);
     
     if (record && record.articles && record.articles.length > 0) {
@@ -1907,7 +1906,7 @@ function updateTodayArticles() {
 }
 
 function updateSendChannelInfo() {
-    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+    const settings = JSON.parse(await getSettingsFromServer());
     const element = document.getElementById('sendChannelInfo');
     
     if (element) {
@@ -1921,7 +1920,7 @@ function updateSendChannelInfo() {
 }
 
 function updateNextSendTime() {
-    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+    const settings = JSON.parse(await getSettingsFromServer());
     const element = document.getElementById('nextSendTime');
     
     if (element && settings.sendSchedule) {
@@ -1951,8 +1950,8 @@ function loadRecentActivity() {
     if (!activityList) return;
     
     // 다양한 이력 데이터 수집
-    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
-    const testHistory = JSON.parse(localStorage.getItem('singapore_news_test_history') || '[]');
+    const history = JSON.parse(await getHistoryFromServer());
+    const testHistory = JSON.parse(await getTestHistoryFromServer());
     const scrapeHistory = JSON.parse(localStorage.getItem('singapore_news_scrape_history') || '[]');
     const settingsHistory = JSON.parse(localStorage.getItem('singapore_news_settings_history') || '[]');
     
@@ -2097,7 +2096,7 @@ function saveSettingsHistory(newSettings, oldSettings) {
                 history.length = 50;
             }
             
-            localStorage.setItem('singapore_news_settings_history', JSON.stringify(history));
+            // Server-based settings storage
         }
     } catch (error) {
         console.error('설정 이력 저장 실패:', error);
@@ -2240,13 +2239,13 @@ async function loadScrapedArticles() {
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기
         try {
-            const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
+            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 
                 // 서버 데이터 그대로 사용 (삭제 플래그 무시)
                 
-                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     result = {
@@ -2738,7 +2737,7 @@ function loadSentArticles() {
     
     title.textContent = '전송된 기사';
     
-    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    const history = JSON.parse(await getHistoryFromServer());
     const sentArticles = history.filter(h => h.articles && h.articles.length > 0);
     
     if (sentArticles.length === 0) {
@@ -3244,7 +3243,7 @@ async function clearScrapedArticles() {
             
             if (!filename) {
                 // latest.json에서 파일명 가져오기
-                const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
+                const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
                 if (latestResponse.ok) {
                     const latestData = await latestResponse.json();
                     filename = latestData.latestFile;
@@ -3457,7 +3456,7 @@ async function startAutoRefreshMonitor() {
                 localStorage.setItem('singapore_news_latest_file', latestInfo.latestFile);
                 
                 // 새 데이터 로드
-                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {
@@ -3687,7 +3686,7 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기 (우선 시도)
         try {
-            const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
+            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 console.log('Latest file info:', latestInfo);
@@ -3701,7 +3700,7 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                 }
                 
                 // latest.json에서 가져온 파일명으로 실제 데이터 로드
-                const dataResponse = await fetch(`/singapore_news_github/data/scraped/${latestInfo.latestFile}?t=` + Date.now());
+                const dataResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
                 if (dataResponse.ok) {
                     const articles = await dataResponse.json();
                     const data = {
@@ -3884,7 +3883,7 @@ async function sendOnly() {
 // 직접 WhatsApp 전송 함수
 async function sendDirectToWhatsApp() {
     // 최신 스크랩 데이터 가져오기 (GitHub Pages 경로 사용)
-    const latestResponse = await fetch('/singapore_news_github/data/latest.json?t=' + Date.now());
+    const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped
     const latestData = await latestResponse.json();
     
     if (!latestData.latestFile) {
@@ -3892,7 +3891,7 @@ async function sendDirectToWhatsApp() {
     }
     
     // 스크랩된 데이터 가져오기 (GitHub Pages 경로 사용)
-    const scrapedResponse = await fetch(`/singapore_news_github/data/scraped/${latestData.latestFile}?t=` + Date.now());
+    const scrapedResponse = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped
     const scrapedData = await scrapedResponse.json();
     
     if (!scrapedData || scrapedData.length === 0) {
@@ -3968,7 +3967,7 @@ function formatWhatsAppMessage(consolidatedArticles) {
 // 전송 기록 저장 함수
 async function saveTransmissionHistory(articles, status) {
     const totalArticles = articles.reduce((sum, group) => sum + group.article_count, 0);
-    const history = JSON.parse(localStorage.getItem('singapore_news_history') || '[]');
+    const history = JSON.parse(await getHistoryFromServer());
     
     history.push({
         id: Date.now().toString(),
@@ -4143,7 +4142,7 @@ function sendGeneratedMessage() {
         return;
     }
     
-    const settings = JSON.parse(localStorage.getItem('singapore_news_settings') || '{}');
+    const settings = JSON.parse(await getSettingsFromServer());
     const channel = settings.whatsappChannel;
     
     if (!channel) {
