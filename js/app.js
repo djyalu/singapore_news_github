@@ -1105,28 +1105,19 @@ async function initializeSettings() {
 async function loadSettings() {
     let settings = {};
     
-    // localStorage에서 먼저 시도
-    const localSettings = localStorage.getItem('singapore_news_settings');
-    if (localSettings) {
-        settings = JSON.parse(localSettings);
-    } else {
-        // localStorage가 비어있으면 settings.json에서 로드
-        try {
-            const response = await fetch('data/settings.json');
-            if (response.ok) {
-                settings = await response.json();
-                // 로드한 데이터를 localStorage에 저장 (시크릿 모드가 아닌 경우)
-                try {
-                    localStorage.setItem('singapore_news_settings', JSON.stringify(settings));
-                } catch (e) {
-                    // 시크릿 모드에서는 localStorage 저장 실패 가능
-                    console.log('localStorage 저장 실패 (시크릿 모드일 수 있음)');
-                }
+    // 서버에서 설정 로드
+    try {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/save-data?type=settings');
+        if (response.ok) {
+            const result = await response.json();
+            if (result.success && result.data) {
+                settings = result.data;
+                console.log('서버에서 설정 로드됨');
             }
-        } catch (error) {
-            console.error('settings.json 로드 실패:', error);
-            settings = {};
         }
+    } catch (error) {
+        console.error('서버 설정 로드 실패:', error);
+        settings = {};
     }
     
     if (settings.scrapTarget) {
@@ -1320,28 +1311,19 @@ function saveSettings() {
 async function loadSites() {
     let sites = [];
     
-    // localStorage에서 먼저 시도
-    const localSites = localStorage.getItem('singapore_news_sites');
-    if (localSites) {
-        sites = JSON.parse(localSites);
-    } else {
-        // localStorage가 비어있으면 sites.json에서 로드
-        try {
-            const response = await fetch('data/sites.json');
-            if (response.ok) {
-                sites = await response.json();
-                // 로드한 데이터를 localStorage에 저장 (시크릿 모드가 아닌 경우)
-                try {
-                    localStorage.setItem('singapore_news_sites', JSON.stringify(sites));
-                } catch (e) {
-                    // 시크릿 모드에서는 localStorage 저장 실패 가능
-                    console.log('localStorage 저장 실패 (시크릿 모드일 수 있음)');
-                }
+    // 서버에서 사이트 목록 로드
+    try {
+        const response = await fetch('https://singapore-news-github.vercel.app/api/save-data?type=sites');
+        if (response.ok) {
+            const result = await response.json();
+            if (result.success && result.data) {
+                sites = result.data;
+                console.log('서버에서 사이트 목록 로드됨');
             }
-        } catch (error) {
-            console.error('sites.json 로드 실패:', error);
-            sites = [];
         }
+    } catch (error) {
+        console.error('서버 사이트 목록 로드 실패:', error);
+        sites = [];
     }
     
     const tbody = document.querySelector('#sitesTable tbody');
@@ -1453,15 +1435,15 @@ async function loadHistory() {
         for (let i = 0; i < 3; i++) {
             const targetDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
             const monthStr = targetDate.toISOString().substring(0, 7).replace('-', '');
-            const historyUrl = `data/history/${monthStr}.json`;
-            
-            console.log(`GitHub 이력 조회 (${i+1}/3):`, historyUrl);
+            console.log(`서버 이력 조회 (${i+1}/3):`, monthStr);
             
             try {
-                const response = await fetch(historyUrl + '?t=' + Date.now());
+                const response = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped?type=history&month=${monthStr}`);
                 if (response.ok) {
-                    const githubHistory = await response.json();
-                    console.log(`${monthStr} 이력 데이터:`, githubHistory.length, '건');
+                    const result = await response.json();
+                    if (result.success && result.data) {
+                        const githubHistory = result.data;
+                        console.log(`${monthStr} 이력 데이터:`, githubHistory.length, '건');
                     
                     // 중복 제거하며 결합
                     githubHistory.forEach(record => {

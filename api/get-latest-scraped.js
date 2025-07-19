@@ -19,8 +19,8 @@ module.exports = async (req, res) => {
     }
 
     try {
-        // 쿼리 파라미터로 모든 파일 목록 요청 확인
-        const { all } = req.query;
+        // 쿼리 파라미터 확인
+        const { all, type, month } = req.query;
         const githubToken = process.env.GITHUB_TOKEN;
         const owner = process.env.GITHUB_OWNER || 'djyalu';
         const repo = process.env.GITHUB_REPO || 'singapore_news_github';
@@ -29,7 +29,65 @@ module.exports = async (req, res) => {
             auth: githubToken,
         });
 
-        // data/scraped 디렉토리의 파일 목록 가져오기
+        // 히스토리 데이터 요청인 경우
+        if (type === 'history') {
+            const historyPath = month ? `data/history/${month}.json` : 'data/history';
+            
+            if (month) {
+                // 특정 월 히스토리 파일 조회
+                try {
+                    const { data: fileData } = await octokit.rest.repos.getContent({
+                        owner,
+                        repo,
+                        path: historyPath,
+                    });
+                    
+                    const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
+                    const historyData = JSON.parse(content);
+                    
+                    return res.status(200).json({
+                        success: true,
+                        type: 'history',
+                        month: month,
+                        data: historyData
+                    });
+                } catch (error) {
+                    if (error.status === 404) {
+                        return res.status(200).json({
+                            success: true,
+                            type: 'history',
+                            month: month,
+                            data: []
+                        });
+                    }
+                    throw error;
+                }
+            } else {
+                // 히스토리 디렉토리 내 모든 파일 목록 조회
+                const { data: historyFiles } = await octokit.rest.repos.getContent({
+                    owner,
+                    repo,
+                    path: historyPath,
+                });
+                
+                const monthFiles = historyFiles
+                    .filter(file => file.name.match(/^\d{6}\.json$/))
+                    .sort((a, b) => b.name.localeCompare(a.name));
+                
+                return res.status(200).json({
+                    success: true,
+                    type: 'history',
+                    files: monthFiles.map(file => ({
+                        name: file.name,
+                        month: file.name.replace('.json', ''),
+                        download_url: file.download_url,
+                        size: file.size
+                    }))
+                });
+            }
+        }
+
+        // data/scraped 디렉토리의 파일 목록 가져오기 (기존 로직)
         const { data: files } = await octokit.rest.repos.getContent({
             owner,
             repo,

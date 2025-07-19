@@ -1,10 +1,10 @@
 const { Octokit } = require('@octokit/rest');
 
-// 통합 데이터 저장 API - 설정 및 사이트 목록 저장
+// 통합 데이터 API - 설정/사이트 저장 및 조회
 module.exports = async (req, res) => {
     // CORS 설정
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     // OPTIONS 요청 처리
@@ -12,7 +12,65 @@ module.exports = async (req, res) => {
         return res.status(200).end();
     }
 
-    // POST 요청만 허용
+    // GET 요청: 데이터 조회
+    if (req.method === 'GET') {
+        try {
+            const { type } = req.query;
+            
+            if (!type || !['settings', 'sites'].includes(type)) {
+                return res.status(400).json({ 
+                    success: false, 
+                    error: '타입을 지정해주세요. (?type=settings 또는 ?type=sites)' 
+                });
+            }
+
+            // GitHub Personal Access Token 확인
+            const githubToken = process.env.GITHUB_TOKEN;
+            if (!githubToken) {
+                return res.status(500).json({ 
+                    success: false, 
+                    error: 'GitHub token not configured.' 
+                });
+            }
+
+            // GitHub 저장소 정보
+            const owner = process.env.GITHUB_OWNER || 'djyalu';
+            const repo = process.env.GITHUB_REPO || 'singapore_news_github';
+            
+            // Octokit 인스턴스 생성
+            const octokit = new Octokit({
+                auth: githubToken,
+            });
+
+            const filePath = type === 'settings' ? 'data/settings.json' : 'data/sites.json';
+            
+            // 파일 읽기
+            const { data: fileData } = await octokit.rest.repos.getContent({
+                owner,
+                repo,
+                path: filePath,
+            });
+            
+            const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
+            const jsonData = JSON.parse(content);
+            
+            return res.status(200).json({
+                success: true,
+                type: type,
+                data: jsonData
+            });
+
+        } catch (error) {
+            console.error('Data fetch error:', error);
+            return res.status(500).json({
+                success: false,
+                error: `${type} 데이터를 가져올 수 없습니다.`,
+                details: error.message
+            });
+        }
+    }
+
+    // POST 요청만 허용 (기존 저장 로직)
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
