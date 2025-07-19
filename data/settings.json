@@ -7,14 +7,11 @@
     "content": true
   },
   "sendChannel": "whatsapp",
-  "whatsappChannel": "120363421252284444@g.us",
+  "whatsappChannel": "",
   "sendSchedule": {
-    "period": "daily",
-    "time": "07:54",
-    "weekdays": [],
-    "date": "1"
+    "time": "07:54"
   },
-  "blockedKeywords": "  violence, kill, murder, suicide, rape, torture, drugs, cocaine, heroin, meth, marijuana, porn, pornography,\n  nude, vape, e-cigarette, juul, gambling, gore, homicide, trafficking, kidnap, kidnapping, terrorism, bomb,\n  explosion, molestation, pedophile, pedophilia, prostitution, human trafficking, self-harm, cutting, abuse,\n  assault, brutality, alcohol, drunk, weapon, gun, shooting, stabbing, bully, bullying, domestic violence,\n  child abuse, addiction, overdose",
+  "blockedKeywords": "",
   "scrapingMethod": "traditional",
   "scrapingMethodOptions": {
     "ai": {
@@ -26,27 +23,5 @@
       "useEnhancedFiltering": true
     }
   },
-  "monitoring": {
-    "enabled": true,
-    "email": {
-      "enabled": true,
-      "recipients": [
-        "go41@naver.com"
-      ],
-      "sendOn": {
-        "success": false,
-        "failure": true,
-        "noArticles": true
-      },
-      "smtp": {
-        "host": "smtp.gmail.com",
-        "port": 587,
-        "secure": false
-      }
-    },
-    "summary": {
-      "dailyReport": false,
-      "weeklyReport": true
-    }
-  }
+  "monitoring": {}
 }
