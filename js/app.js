@@ -43,12 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const users = JSON.parse(localStorage.getItem('singapore_news_users') || '[]');
         console.log('저장된 사용자 데이터:', users);
         
-        if (login(username, password)) {
+        const loginResult = await login(username, password);
+        if (loginResult) {
             console.log('로그인 성공');
-            if (window.isMFAEnabled && isMFAEnabled(username)) {
-                showMFAForm(username);
-            } else {
-                checkAuth();
+            try {
+                const mfaEnabled = window.isMFAEnabled ? await window.isMFAEnabled(username) : false;
+                if (mfaEnabled) {
+                    showMFAForm(username);
+                } else {
+                    checkAuth();
+                }
+            } catch (error) {
+                console.error('MFA 상태 확인 에러:', error);
+                checkAuth(); // MFA 체크 실패시 바로 로그인 진행
             }
         } else {
             console.log('로그인 실패');

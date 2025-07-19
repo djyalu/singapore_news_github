@@ -46,10 +46,14 @@ module.exports = async (req, res) => {
         if (req.method === 'GET') {
             if (action === 'status') {
                 const user = usersData.users[userIndex];
+                // MFA 속성이 없으면 비활성화로 처리
+                const mfaEnabled = user.mfa ? user.mfa.enabled : false;
+                const hasBackupCodes = user.mfa ? user.mfa.backupCodes.length > 0 : false;
+                
                 return res.status(200).json({
                     success: true,
-                    enabled: user.mfa.enabled,
-                    hasBackupCodes: user.mfa.backupCodes.length > 0
+                    enabled: mfaEnabled,
+                    hasBackupCodes: hasBackupCodes
                 });
             }
             
@@ -142,7 +146,7 @@ module.exports = async (req, res) => {
                 const { token } = req.body;
                 const user = usersData.users[userIndex];
                 
-                if (!user.mfa.enabled) {
+                if (!user.mfa || !user.mfa.enabled) {
                     return res.status(400).json({
                         success: false,
                         error: 'MFA가 활성화되지 않았습니다.'

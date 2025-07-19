@@ -99,7 +99,7 @@ module.exports = async (req, res) => {
             }
 
             // MFA 검증 (MFA가 활성화된 경우)
-            if (user.mfa && user.mfa.enabled) {
+            if (user.mfa && user.mfa.enabled === true) {
                 if (!mfaToken) {
                     return res.status(200).json({
                         success: false,
