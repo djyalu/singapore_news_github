@@ -2155,7 +2155,12 @@ async function updateTodayArticles() {
             const result = await response.json();
             if (result.success && result.data) {
                 const articles = result.data;
-                const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD 형식
+                
+                // KST 기준 오늘 날짜 계산
+                const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+                const todayKST = kstNow.toISOString().split('T')[0]; // YYYY-MM-DD 형식
+                
+                console.log('KST 오늘 날짜:', todayKST); // 디버깅용
             
                 // 배열인 경우 (그룹별 기사)
                 if (Array.isArray(articles)) {
@@ -2163,18 +2168,21 @@ async function updateTodayArticles() {
                     todayCount = articles.reduce((sum, group) => {
                         // 타임스탬프가 오늘인지 확인
                         if (group.timestamp) {
-                            const groupDate = new Date(group.timestamp).toISOString().split('T')[0];
-                            if (groupDate === today) {
+                            // timestamp를 KST로 변환하여 날짜 비교
+                            const groupDate = new Date(group.timestamp);
+                            const groupDateKST = new Date(groupDate.toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+                            const groupDateStr = groupDateKST.toISOString().split('T')[0];
+                            
+                            console.log('그룹 날짜:', groupDateStr, '기사 수:', group.article_count); // 디버깅용
+                            
+                            if (groupDateStr === todayKST) {
                                 return sum + (group.article_count || 0);
                             }
                         }
                         return sum;
                     }, 0);
                     
-                    // 오늘 기사가 없으면 전체 카운트 표시
-                    if (todayCount === 0) {
-                        todayCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
-                    }
+                    console.log('오늘 기사 총 개수:', todayCount); // 디버깅용
                 }
             }
         }
