@@ -1,0 +1,58 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Sky terraces and sea views: The condominium bringing nature-inspired living to Science Park",
+        "url": "https://www.straitstimes.com/business/property/resort-style-condominium-launches-singapore-science-park-capitaland-lyndenwoods",
+        "summary": "📰 싱가포르, 개발, 취업 관련 뉴스\n📢 Sky terraces and sea views: The condominium bringing nature-inspired living to S...",
+        "content": "Located within Singapore’s research hub, CapitaLand Development’s 343-unit LyndenWoods development offers residents the chance to walk to work through tree-lined pathways while offering convenient connectivity to lifestyle facilities. Located within the Science Park district, LyndenWoods will be the first residential development launched in this evolving live-work-play neighbourhood. This could be your lifestyle at LyndenWoods, a 343-unit condominium by CapitaLand Development (CapitaLand) that marks the developer’s first residential project within the Science Park precinct. The towers are designed like point blocks, maximising corner views. This configuration ensures privacy while creating a more exclusive living environment with better views and enhanced natural ventilation. As Singapore Science Park transforms into a vibrant district, LyndenWoods presents an attractive investment opportunity for homeowners and investors. Given this strategic location, LyndenWoods residents will be...",
+        "publish_date": "2025-07-20T07:41:30.485856"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Hong Kong issues highest storm warning as Typhoon Wipha approaches",
+        "url": "https://www.straitstimes.com/asia/east-asia/hong-kong-issues-highest-storm-warning-as-typhoon-wipha-approaches",
+        "summary": "📰 정부, 기술, 국제 관련 뉴스\n📢 Hong Kong issues highest storm warning as Typhoon Wipha approaches",
+        "content": "China’s Hainan and Guangdong provinces were also put on high alert, state news agency Xinhua said on July 19. More than 200 people have sought refuge at government-run temporary shelters.",
+        "publish_date": "2025-07-20T07:41:31.814499"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "New AI chatbot by ST’s Headstart to answer your career-related questions",
+        "url": "https://www.straitstimes.com/singapore/new-ai-chatbot-by-sts-headstart-to-answer-your-career-related-questions?ref=headstart",
+        "summary": "📰 개발, 취업, 기술 관련 뉴스\n📢 New AI chatbot by ST’s Headstart to answer your career-related questions",
+        "content": "ST’s new chatbot answers all sorts of questions about topics such as working life, job trends and career growth. Updated May 05, 2025, 01:31 PM. Ms Chong said: “Through natural conversation, users can explore professional development opportunities at any time, making career guidance more accessible and engaging than ever before.”",
+        "publish_date": "2025-07-20T07:41:32.763997"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-20T07:42:10.414066",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Fasten your seatbelts: Turbulence ahead for budget carriers in Changi Airport",
+        "url": "https://www.businesstimes.com.sg/opinion-features/fasten-your-seatbelts-turbulence-ahead-budget-carriers-changi-airport",
+        "summary": "📰 싱가포르, 교통, 공항 관련 뉴스\n📢 Fasten your seatbelts: Turbulence ahead for budget carriers in Changi Airport",
+        "content": "Full-service carriers are increasingly defending short-haul leisure and Visiting Friends and Relatives (VFR) markets with competitive pricing. Farouk Kamal, deputy chief executive of AirAsia Aviation Group, said at a recent panel discussion that budget travellers have found Singapore becoming expensive, with airport fees and charges sometimes higher than the base fare itself. Jetstar Asia’s closure certainly thus highlights the rising pressure on airlines to critically evaluate market performance and redeploy limited resources to higher-yielding opportunities. She warns, however, that if budget carriers find themselves unable to maintain profitability in Singapore’s competitive landscape, further rationalisation or capacity shifts are possible. In a constrained supply environment, airlines are increasingly prioritising markets where they can achieve better margins and scale. “I would say most of them will generate a small profit this year.”",
+        "publish_date": "2025-07-20T07:41:42.471515"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-20T07:42:10.414086",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
