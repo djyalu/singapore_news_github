@@ -206,6 +206,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (isAdmin()) {
                     content.innerHTML = getSettingsHTML();
                     await initializeSettings();
+                    
+                    // URL 파라미터에서 탭 정보 확인
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const tab = urlParams.get('tab');
+                    if (tab) {
+                        // 탭 전환
+                        setTimeout(() => {
+                            switchSettingsTab(tab);
+                        }, 100);
+                    }
                 }
                 break;
             case 'history':
@@ -1017,6 +1027,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function switchSettingsTab(tabName) {
+    console.log('Switching to tab:', tabName); // 디버깅용
+    
     // 모든 탭 콘텐츠 숨기기
     document.querySelectorAll('.settings-tab-content').forEach(content => {
         content.style.display = 'none';
@@ -1030,12 +1042,17 @@ function switchSettingsTab(tabName) {
     
     // 선택된 탭 콘텐츠 표시
     const tabContent = document.getElementById(`${tabName}-tab`);
+    console.log('Tab content element:', tabContent); // 디버깅용
     if (tabContent) {
         tabContent.style.display = 'block';
+        console.log('Tab content displayed'); // 디버깅용
+    } else {
+        console.error('Tab content not found for:', `${tabName}-tab`); // 디버깅용
     }
     
     // 선택된 탭 버튼 활성화
     const tabButton = document.querySelector(`[data-tab="${tabName}"]`);
+    console.log('Tab button element:', tabButton); // 디버깅용
     if (tabButton) {
         tabButton.classList.add('active', 'border-blue-500', 'text-blue-600');
         tabButton.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
@@ -3199,30 +3216,9 @@ function closeArticleDetail() {
 function showSendSettings() {
     console.log('showSendSettings called'); // 디버깅용
     
-    // Settings 네비게이션 링크를 클릭하여 설정 페이지로 이동
-    const settingsNavLink = document.querySelector('a[data-page="settings"]');
-    if (settingsNavLink) {
-        settingsNavLink.click();
-        
-        // 설정 페이지로 이동 후 전송 설정 탭으로 이동
-        setTimeout(() => {
-            // 설정 탭 전환
-            switchSettingsTab('send');
-            
-            // 전송 설정 섹션으로 스크롤 (다양한 선택자 시도)
-            const sendSection = document.getElementById('send-tab') || 
-                               document.querySelector('[data-tab="send"]') ||
-                               document.querySelector('.settings-section:nth-child(4)') ||
-                               document.querySelector('#sendSettings');
-            
-            if (sendSection) {
-                sendSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                console.log('Scrolled to send settings section'); // 디버깅용
-            } else {
-                console.log('Send settings section not found'); // 디버깅용
-            }
-        }, 300);
-    }
+    // URL 파라미터를 통해 전송 설정 탭으로 직접 이동
+    window.history.pushState({}, '', '?tab=delivery');
+    loadPage('settings');
 }
 
 // Server Status Functions
