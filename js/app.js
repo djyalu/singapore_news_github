@@ -45,7 +45,15 @@ async function getSitesFromServer() {
 async function getHistoryFromServer() {
     try {
         const response = await fetch('https://singapore-news-github.vercel.app/api/save-data?type=history');
-        const result = await response.json();
+        const text = await response.text();
+        
+        // 서버 에러 응답 처리
+        if (!response.ok) {
+            console.error('히스토리 API 에러:', response.status, text);
+            return [];
+        }
+        
+        const result = JSON.parse(text);
         return result.success ? result.data : [];
     } catch (error) {
         console.error('히스토리 로드 실패:', error);
@@ -1446,7 +1454,7 @@ async function loadSites() {
 document.addEventListener('submit', async function(e) {
     if (e.target.id === 'siteForm') {
         e.preventDefault();
-        const sites = JSON.parse(await getSitesFromServer());
+        const sites = await getSitesFromServer();
         
         sites.push({
             group: document.getElementById('siteGroup').value,
@@ -1488,7 +1496,7 @@ document.addEventListener('submit', async function(e) {
 });
 
 async function deleteSite(index) {
-    const sites = JSON.parse(await getSitesFromServer());
+    const sites = await getSitesFromServer();
     const deletedSite = sites[index];
     sites.splice(index, 1);
     
@@ -1526,28 +1534,31 @@ async function deleteSite(index) {
 async function loadHistory() {
     console.log('전송 이력 로드 시작...');
     
-    // localStorage와 GitHub 데이터 결합
-    let history = JSON.parse(await getHistoryFromServer());
+    // 이력 데이터 배열
+    let history = [];
+    const localIds = new Set();
     
     // GitHub에서 이력 데이터 가져오기 (최근 3개월)
     try {
         const now = new Date();
-        const localIds = new Set(history.map(h => h.id));
         
         for (let i = 0; i < 3; i++) {
             const targetDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
-            const monthStr = targetDate.toISOString().substring(0, 7).replace('-', '');
-            console.log(`서버 이력 조회 (${i+1}/3):`, monthStr);
+            const yearStr = targetDate.getFullYear().toString();
+            const monthStr = (targetDate.getMonth() + 1).toString().padStart(2, '0');
+            const monthKey = yearStr + monthStr;
+            
+            console.log(`서버 이력 조회 (${i+1}/3):`, monthKey);
             
             try {
-                const response = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped?type=history&month=${monthStr}`);
+                const response = await fetch(`https://singapore-news-github.vercel.app/api/get-latest-scraped?type=history&month=${monthKey}`);
                 if (response.ok) {
                     const result = await response.json();
-                    if (result.success && result.data) {
+                    if (result.success && result.data && Array.isArray(result.data)) {
                         const githubHistory = result.data;
-                        console.log(`${monthStr} 이력 데이터:`, githubHistory.length, '건');
+                        console.log(`${monthKey} 이력 데이터:`, githubHistory.length, '건');
                     
-                        // 중복 제거하며 결합
+                        // 중복 제거하며 추가
                         githubHistory.forEach(record => {
                             if (!localIds.has(record.id)) {
                                 history.push(record);
@@ -1557,35 +1568,18 @@ async function loadHistory() {
                     }
                 }
             } catch (monthError) {
-                console.log(`${monthStr} 이력 없음`);
+                console.log(`${monthKey} 이력 조회 오류:`, monthError);
             }
         }
         
-        // 현재 월의 이력 파일도 확인 (예: 202507.json)
-        try {
-            const currentMonth = new Date().toISOString().substring(0, 7).replace('-', '');
-            const monthHistoryUrl = `data/history/${currentMonth}.json`;
-            console.log(`현재 월 이력 파일 확인: ${monthHistoryUrl}`);
-            
-            const monthResponse = await fetch(monthHistoryUrl + '?t=' + Date.now());
-            if (monthResponse.ok) {
-                const monthHistory = await monthResponse.json();
-                console.log(`${currentMonth}.json 데이터:`, monthHistory.length, '건');
-                monthHistory.forEach(record => {
-                    if (!localIds.has(record.id)) {
-                        history.push(record);
-                        localIds.add(record.id);
-                    }
-                });
-            }
-        } catch (e) {
-            console.log('현재 월 이력 파일 없음:', e);
-        }
     } catch (error) {
         console.error('GitHub 이력 로드 실패:', error);
     }
     
     console.log('전체 이력 개수:', history.length);
+    
+    // 서버 데이터를 전역 변수에 저장 (다른 함수에서 사용하기 위해)
+    window.currentHistoryData = history;
     
     const tbody = document.querySelector('#historyTableBody') || document.querySelector('#historyTable tbody');
     if (!tbody) {
@@ -1724,7 +1718,8 @@ async function updateStatusFilter(value) {
 }
 
 async function showHistoryDetail(recordId) {
-    const history = JSON.parse(await getHistoryFromServer());
+    // 전역 히스토리 데이터 사용 또는 다시 로드
+    const history = window.currentHistoryData || [];
     const record = history.find(r => r.id === recordId);
     
     if (record && record.articles && record.articles.length > 0) {
@@ -2085,7 +2080,7 @@ async function loadRecentActivity() {
     if (!activityList) return;
     
     // 다양한 이력 데이터 수집
-    const history = await getHistoryFromServer();
+    const history = [];  // 빈 배열로 초기화 (필요시 API에서 직접 로드)
     const testHistory = await getTestHistoryFromServer();
     const scrapeHistory = [];
     const settingsHistory = [];
@@ -2850,7 +2845,8 @@ async function loadSentArticles() {
     
     title.textContent = '전송된 기사';
     
-    const history = JSON.parse(await getHistoryFromServer());
+    // 서버에서 전송 이력 데이터를 직접 가져오기
+    const history = window.currentHistoryData || [];
     const sentArticles = history.filter(h => h.articles && h.articles.length > 0);
     
     if (sentArticles.length === 0) {
@@ -4125,7 +4121,8 @@ function formatWhatsAppMessage(consolidatedArticles) {
 // 전송 기록 저장 함수
 async function saveTransmissionHistory(articles, status) {
     const totalArticles = articles.reduce((sum, group) => sum + group.article_count, 0);
-    const history = JSON.parse(await getHistoryFromServer());
+    // 새로운 이력 데이터 생성 (서버에 저장될 예정)
+    const history = [];
     
     history.push({
         id: Date.now().toString(),
@@ -4306,7 +4303,7 @@ async function sendGeneratedMessage() {
         return;
     }
     
-    const settings = JSON.parse(await getSettingsFromServer());
+    const settings = await getSettingsFromServer();
     const channel = settings.whatsappChannel;
     
     if (!channel) {

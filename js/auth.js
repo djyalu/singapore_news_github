@@ -1,5 +1,33 @@
-// 서버 전용 인증 - 로컬 스토리지 사용 안함
+// 서버 전용 인증 - sessionStorage 사용 (탭이 열려있는 동안만 유지)
 let currentUser = null;
+
+// 페이지 로드시 세션 복원
+function restoreSession() {
+    const sessionData = sessionStorage.getItem('userSession');
+    if (sessionData) {
+        try {
+            currentUser = JSON.parse(sessionData);
+            // 세션 만료 확인 (24시간)
+            const loginTime = new Date(currentUser.loginTime);
+            const now = new Date();
+            const hoursSinceLogin = (now - loginTime) / (1000 * 60 * 60);
+            
+            if (hoursSinceLogin > 24) {
+                // 24시간 경과시 세션 만료
+                sessionStorage.removeItem('userSession');
+                currentUser = null;
+            }
+        } catch (e) {
+            sessionStorage.removeItem('userSession');
+            currentUser = null;
+        }
+    }
+}
+
+// 초기화시 세션 복원
+console.log('[AUTH] 페이지 로드 - 세션 복원 시작');
+restoreSession();
+console.log('[AUTH] 현재 사용자:', currentUser);
 
 // API를 통한 로그인
 async function login(username, password) {
@@ -32,6 +60,8 @@ async function login(username, password) {
                 email: result.user.email,
                 loginTime: new Date().toISOString()
             };
+            // 세션 저장 (탭이 열려있는 동안 유지)
+            sessionStorage.setItem('userSession', JSON.stringify(currentUser));
             console.log('로그인 성공, 서버 인증 완료:', currentUser);
             return true;
         } else {
@@ -46,6 +76,7 @@ async function login(username, password) {
 
 function logout() {
     currentUser = null;
+    sessionStorage.removeItem('userSession');
     window.location.reload();
 }
 
