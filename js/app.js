@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'scraping':
                 content.innerHTML = getScrapingManagementHTML();
-                loadAllScrapedArticles();
+                await loadAllScrapedArticles();
                 break;
         }
     }
@@ -3283,6 +3283,418 @@ function createScrapingManagementModal() {
     });
     
     return modal;
+}
+
+function getScrapingManagementHTML() {
+    return `
+        <div class="space-y-6">
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">스크랩 관리</h2>
+                    
+                    <div class="mb-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900">스크랩된 파일 목록</h3>
+                                <p class="text-sm text-gray-500 mt-1">날짜별로 정리된 스크랩 파일들을 관리할 수 있습니다.</p>
+                            </div>
+                            <div class="mt-3 sm:mt-0">
+                                <button onclick="refreshScrapingList()" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                    새로고침
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="scrapingManagementList" class="scraping-list">
+                        <div class="flex justify-center items-center py-8">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                            <span class="ml-2 text-gray-600">파일 목록을 불러오는 중...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+async function loadAllScrapedArticles() {
+    const container = document.getElementById('scrapingManagementList');
+    
+    try {
+        // 모든 파일 목록 가져오기
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+        if (!response.ok) {
+            throw new Error('파일 목록을 가져올 수 없습니다.');
+        }
+        
+        const data = await response.json();
+        if (!data.success || !data.files) {
+            throw new Error('파일 목록이 비어있습니다.');
+        }
+        
+        const newsFiles = data.files.filter(file => 
+            file.name.startsWith('news_') && file.name.endsWith('.json')
+        );
+        
+        if (newsFiles.length === 0) {
+            container.innerHTML = `
+                <div class="text-center py-8">
+                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <h3 class="mt-2 text-sm font-medium text-gray-900">스크랩된 파일이 없습니다</h3>
+                    <p class="mt-1 text-sm text-gray-500">아직 스크랩된 파일이 없습니다.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        // 날짜별로 그룹화
+        const filesByDate = {};
+        const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+        const todayKST = kstNow.toISOString().split('T')[0].replace(/-/g, '');
+        
+        newsFiles.forEach(file => {
+            const dateMatch = file.name.match(/news_(\\d{8})_\\d{6}\\.json/);
+            if (dateMatch) {
+                const fileDate = dateMatch[1];
+                if (!filesByDate[fileDate]) {
+                    filesByDate[fileDate] = [];
+                }
+                filesByDate[fileDate].push(file);
+            }
+        });
+        
+        // HTML 생성
+        let html = `
+            <div class="space-y-4">
+                <div class="bg-blue-50 border border-blue-200 rounded-md p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-blue-800">파일 관리 안내</h3>
+                            <div class="mt-2 text-sm text-blue-700">
+                                <p>총 <strong>${newsFiles.length}개</strong>의 스크랩 파일이 있습니다. 각 파일을 개별적으로 삭제하거나 날짜별로 일괄 삭제할 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        `;
+        
+        // 날짜순으로 정렬 (최신순)
+        const sortedDates = Object.keys(filesByDate).sort((a, b) => b.localeCompare(a));
+        
+        sortedDates.forEach(dateStr => {
+            const files = filesByDate[dateStr];
+            const isToday = dateStr === todayKST;
+            const displayDate = `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+            const dayLabel = isToday ? ' (오늘)' : '';
+            
+            html += `
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <div class="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-900">${displayDate}${dayLabel}</h4>
+                            <p class="text-sm text-gray-500">${files.length}개 파일</p>
+                        </div>
+                        <button onclick="deleteScrapingDateGroup('${dateStr}')" class="inline-flex items-center px-3 py-1 border border-red-300 text-xs font-medium rounded text-red-700 bg-white hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                            날짜 전체 삭제
+                        </button>
+                    </div>
+                    <div class="divide-y divide-gray-200">
+            `;
+            
+            files.forEach(file => {
+                const timeMatch = file.name.match(/news_\\d{8}_(\\d{6})\\.json/);
+                const timeStr = timeMatch ? `${timeMatch[1].substring(0,2)}:${timeMatch[1].substring(2,4)}:${timeMatch[1].substring(4,6)}` : '';
+                const sizeKB = Math.round(file.size / 1024);
+                
+                html += `
+                    <div class="px-4 py-4 flex items-center justify-between">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900 font-mono">${file.name}</p>
+                                    <p class="text-sm text-gray-500">${timeStr} • ${sizeKB}KB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-shrink-0 flex space-x-2">
+                            <button onclick="viewScrapingFile('${file.name}')" class="inline-flex items-center px-3 py-1 border border-gray-300 text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                보기
+                            </button>
+                            <button onclick="deleteScrapingFile('${file.name}')" class="inline-flex items-center px-3 py-1 border border-red-300 text-xs font-medium rounded text-red-700 bg-white hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                                삭제
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        container.innerHTML = html;
+        
+    } catch (error) {
+        console.error('스크랩 관리 데이터 로드 오류:', error);
+        container.innerHTML = `
+            <div class="text-center py-8">
+                <svg class="mx-auto h-12 w-12 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <h3 class="mt-2 text-sm font-medium text-red-900">파일 목록 로드 실패</h3>
+                <p class="mt-1 text-sm text-red-500">${error.message}</p>
+                <button onclick="loadAllScrapedArticles()" class="mt-3 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                    다시 시도
+                </button>
+            </div>
+        `;
+    }
+}
+
+async function refreshScrapingList() {
+    await loadAllScrapedArticles();
+    showNotification('목록이 새로고침되었습니다.', 'success');
+}
+
+async function deleteScrapingFile(filename) {
+    if (!confirm(`${filename} 파일을 삭제하시겠습니까?\\n\\n이 작업은 되돌릴 수 없습니다.`)) {
+        return;
+    }
+    
+    try {
+        const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: filename })
+        });
+        
+        const deleteResult = await deleteResponse.json();
+        
+        if (deleteResult.success) {
+            showNotification(`${filename} 파일이 삭제되었습니다.`, 'success');
+            await loadAllScrapedArticles(); // 목록 새로고침
+            
+            // 대시보드 업데이트
+            if (typeof updateTodayArticles === 'function') {
+                await updateTodayArticles();
+            }
+        } else {
+            showNotification('파일 삭제에 실패했습니다: ' + (deleteResult.error || 'Unknown error'), 'error');
+        }
+        
+    } catch (error) {
+        console.error('파일 삭제 오류:', error);
+        showNotification('삭제 중 오류가 발생했습니다: ' + error.message, 'error');
+    }
+}
+
+async function deleteScrapingDateGroup(dateStr) {
+    const displayDate = `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+    
+    if (!confirm(`${displayDate} 날짜의 모든 파일을 삭제하시겠습니까?\\n\\n이 작업은 되돌릴 수 없습니다.`)) {
+        return;
+    }
+    
+    try {
+        // 해당 날짜의 파일들 가져오기
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+        const data = await response.json();
+        
+        const filesToDelete = data.files.filter(file => {
+            const dateMatch = file.name.match(/news_(\\d{8})_\\d{6}\\.json/);
+            return dateMatch && dateMatch[1] === dateStr;
+        });
+        
+        if (filesToDelete.length === 0) {
+            showNotification('삭제할 파일이 없습니다.', 'info');
+            return;
+        }
+        
+        let deletedCount = 0;
+        
+        // 진행 상황 표시
+        showNotification(`${filesToDelete.length}개 파일 삭제 중...`, 'info');
+        
+        for (const file of filesToDelete) {
+            try {
+                const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename: file.name })
+                });
+                
+                const deleteResult = await deleteResponse.json();
+                if (deleteResult.success) {
+                    deletedCount++;
+                }
+                
+                // API 제한 방지를 위한 대기
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+            } catch (error) {
+                console.error(`Error deleting ${file.name}:`, error);
+            }
+        }
+        
+        showNotification(`${displayDate} 날짜의 ${deletedCount}개 파일이 삭제되었습니다.`, 'success');
+        
+        // 목록 새로고침
+        await loadAllScrapedArticles();
+        
+        // 대시보드 업데이트
+        if (typeof updateTodayArticles === 'function') {
+            await updateTodayArticles();
+        }
+        
+    } catch (error) {
+        console.error('날짜별 삭제 오류:', error);
+        showNotification('삭제 중 오류가 발생했습니다: ' + error.message, 'error');
+    }
+}
+
+async function viewScrapingFile(filename) {
+    try {
+        // 파일 내용 가져오기
+        const response = await fetch(`https://api.github.com/repos/djyalu/singapore_news_github/contents/data/scraped/${filename}`);
+        const fileData = await response.json();
+        
+        if (response.ok && fileData.content) {
+            const content = atob(fileData.content);
+            const articles = JSON.parse(content);
+            
+            // 기사 보기 모달 생성
+            showArticleViewModal(filename, articles);
+        } else {
+            showNotification('파일을 불러올 수 없습니다.', 'error');
+        }
+        
+    } catch (error) {
+        console.error('파일 보기 오류:', error);
+        showNotification('파일 보기 중 오류가 발생했습니다: ' + error.message, 'error');
+    }
+}
+
+function showArticleViewModal(filename, articles) {
+    const modal = document.createElement('div');
+    modal.className = 'modal article-view-modal';
+    modal.id = 'articleViewModal';
+    
+    const totalArticles = Array.isArray(articles) ? 
+        articles.reduce((sum, group) => sum + (group.article_count || group.articles?.length || 0), 0) : 
+        articles.articles?.length || 0;
+    
+    modal.innerHTML = `
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2>${filename}</h2>
+                <p class="text-sm text-gray-500 mt-1">총 ${totalArticles}개 기사</p>
+                <button class="modal-close" onclick="closeArticleViewModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="article-view-content">
+                    ${renderArticlesForView(articles)}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 모달 바깥 클릭시 닫기
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeArticleViewModal();
+        }
+    });
+    
+    document.body.appendChild(modal);
+}
+
+function renderArticlesForView(articles) {
+    if (!articles || (Array.isArray(articles) && articles.length === 0)) {
+        return '<p class="text-center text-gray-500 py-8">기사가 없습니다.</p>';
+    }
+    
+    let html = '';
+    
+    if (Array.isArray(articles)) {
+        // 그룹별 기사 구조
+        articles.forEach(group => {
+            html += `
+                <div class="article-group mb-6 p-4 border border-gray-200 rounded-lg">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">${group.group || 'Unknown Group'}</h3>
+                    <p class="text-sm text-gray-500 mb-4">출처: ${(group.sites || []).join(', ') || 'Unknown'} • ${group.article_count || group.articles?.length || 0}개 기사</p>
+                    <div class="space-y-4">
+            `;
+            
+            if (group.articles && Array.isArray(group.articles)) {
+                group.articles.forEach((article, index) => {
+                    html += `
+                        <div class="article-item p-3 bg-gray-50 rounded-md">
+                            <h4 class="font-medium text-gray-900 mb-2">${index + 1}. ${article.title || 'No Title'}</h4>
+                            <p class="text-sm text-gray-600 mb-2">${article.summary || 'No Summary'}</p>
+                            <div class="text-xs text-gray-500">
+                                <span>출처: ${article.site || 'Unknown'}</span>
+                                ${article.url ? ` • <a href="${article.url}" target="_blank" class="text-blue-600 hover:text-blue-800">원문 보기</a>` : ''}
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+    } else if (articles.articles && Array.isArray(articles.articles)) {
+        // 단일 articles 배열 구조
+        html += '<div class="space-y-4">';
+        articles.articles.forEach((article, index) => {
+            html += `
+                <div class="article-item p-3 bg-gray-50 rounded-md">
+                    <h4 class="font-medium text-gray-900 mb-2">${index + 1}. ${article.title || 'No Title'}</h4>
+                    <p class="text-sm text-gray-600 mb-2">${article.summary || 'No Summary'}</p>
+                    <div class="text-xs text-gray-500">
+                        <span>출처: ${article.site || 'Unknown'}</span>
+                        ${article.url ? ` • <a href="${article.url}" target="_blank" class="text-blue-600 hover:text-blue-800">원문 보기</a>` : ''}
+                    </div>
+                </div>
+            `;
+        });
+        html += '</div>';
+    }
+    
+    return html;
+}
+
+function closeArticleViewModal() {
+    const modal = document.getElementById('articleViewModal');
+    if (modal) {
+        modal.remove();
+    }
 }
 
 function closeScrapingManagementModal() {
