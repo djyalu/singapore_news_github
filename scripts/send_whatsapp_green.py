@@ -26,7 +26,7 @@ def get_latest_scraped_file():
     return max(files, key=os.path.getctime)
 
 def load_latest_news():
-    """최신 뉴스 데이터 로드"""
+    """최신 뉴스 데이터 로드 (데이터, 파일명 반환)"""
     # latest.json에서 파일명 확인
     latest_file = None
     if os.path.exists('data/latest.json'):
@@ -42,15 +42,16 @@ def load_latest_news():
         scraped_path = f'data/scraped/{latest_file}'
         if os.path.exists(scraped_path):
             with open(scraped_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                return json.load(f), latest_file
     
     # 또는 가장 최근 스크랩 파일 로드
     scraped_file = get_latest_scraped_file()
     if scraped_file:
+        filename = os.path.basename(scraped_file)
         with open(scraped_file, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            return json.load(f), filename
     
-    return None
+    return None, None
 
 def format_message(data):
     """뉴스 기사를 WhatsApp 메시지 형식으로 변환"""
@@ -213,7 +214,7 @@ def check_green_api_status():
         print(f"   - ❌ 상태 확인 오류: {type(e).__name__}: {e}")
         return False
 
-def save_history(channel_id, status, message_preview, article_count):
+def save_history(channel_id, status, message_preview, article_count, scraped_file=None):
     """발송 이력 저장"""
     history_file = f'data/history/{datetime.now().strftime("%Y%m")}.json'
     os.makedirs('data/history', exist_ok=True)
@@ -232,7 +233,8 @@ def save_history(channel_id, status, message_preview, article_count):
         'message_preview': message_preview[:200] + '...' if len(message_preview) > 200 else message_preview,
         'message_length': len(message_preview),
         'article_count': article_count,
-        'api': 'green-api'  # API 제공자 표시
+        'api': 'green-api',  # API 제공자 표시
+        'scraped_file': scraped_file  # 사용된 스크랩 파일명
     })
     
     with open(history_file, 'w', encoding='utf-8') as f:
@@ -274,7 +276,7 @@ def main():
     print(f"📱 대상 채널: {channel_id}")
     
     # 최신 뉴스 로드
-    news_data = load_latest_news()
+    news_data, scraped_filename = load_latest_news()
     if not news_data:
         print("❌ 발송할 뉴스가 없습니다.")
         return
@@ -307,7 +309,7 @@ def main():
     success = send_to_whatsapp_green(message, channel_id)
     
     # 발송 이력 저장
-    save_history(channel_id, success, message, article_count)
+    save_history(channel_id, success, message, article_count, scraped_filename)
     
     if success:
         print(f"\n✅ {article_count}개 기사를 WhatsApp으로 전송 완료!")

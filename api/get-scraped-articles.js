@@ -11,12 +11,12 @@ module.exports = async (req, res) => {
         return;
     }
     
-    const { date } = req.query;
+    const { date, file } = req.query;
     
-    if (!date) {
+    if (!date && !file) {
         return res.status(400).json({ 
             success: false, 
-            error: '날짜 파라미터가 필요합니다. 형식: YYYYMMDD' 
+            error: '날짜(date) 또는 파일명(file) 파라미터가 필요합니다.' 
         });
     }
     
@@ -28,34 +28,41 @@ module.exports = async (req, res) => {
         const owner = process.env.GITHUB_OWNER || 'djyalu';
         const repo = process.env.GITHUB_REPO || 'singapore_news_github';
         
-        // 해당 날짜의 스크랩 파일들 찾기
-        const { data: files } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path: 'data/scraped'
-        });
+        let targetFile;
         
-        // 해당 날짜의 파일들 필터링 (news_YYYYMMDD_*.json)
-        const dateFiles = files.filter(file => {
-            return file.name.startsWith(`news_${date}`) && file.name.endsWith('.json');
-        });
-        
-        if (dateFiles.length === 0) {
-            return res.status(200).json({ 
-                success: true, 
-                articles: [],
-                message: '해당 날짜의 스크랩 데이터가 없습니다.'
+        if (file) {
+            // 특정 파일명이 주어진 경우
+            targetFile = { name: file };
+        } else {
+            // 날짜 기준으로 검색
+            const { data: files } = await octokit.repos.getContent({
+                owner,
+                repo,
+                path: 'data/scraped'
             });
+            
+            // 해당 날짜의 파일들 필터링 (news_YYYYMMDD_*.json)
+            const dateFiles = files.filter(file => {
+                return file.name.startsWith(`news_${date}`) && file.name.endsWith('.json');
+            });
+            
+            if (dateFiles.length === 0) {
+                return res.status(200).json({ 
+                    success: true, 
+                    articles: [],
+                    message: '해당 날짜의 스크랩 데이터가 없습니다.'
+                });
+            }
+            
+            // 가장 최근 파일 선택 (파일명 역순 정렬)
+            targetFile = dateFiles.sort((a, b) => b.name.localeCompare(a.name))[0];
         }
-        
-        // 가장 최근 파일 선택 (파일명 역순 정렬)
-        const latestFile = dateFiles.sort((a, b) => b.name.localeCompare(a.name))[0];
         
         // 파일 내용 가져오기
         const { data: fileContent } = await octokit.repos.getContent({
             owner,
             repo,
-            path: `data/scraped/${latestFile.name}`
+            path: `data/scraped/${targetFile.name}`
         });
         
         // Base64 디코딩
@@ -65,8 +72,9 @@ module.exports = async (req, res) => {
         return res.status(200).json({
             success: true,
             articles: articles,
-            filename: latestFile.name,
-            date: date
+            filename: targetFile.name,
+            searchType: file ? 'file' : 'date',
+            ...(date && { date: date })
         });
         
     } catch (error) {

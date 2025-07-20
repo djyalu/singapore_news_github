@@ -1272,20 +1272,26 @@ async function findScrapedArticlesForHistory(recordId) {
     resultDiv.innerHTML = '<p class="text-gray-600">기사를 찾는 중...</p>';
     
     try {
-        // 전송 시간과 가장 가까운 스크랩 데이터 찾기
-        const sendTime = new Date(record.timestamp);
-        const sendDate = sendTime.toISOString().split('T')[0].replace(/-/g, '');
+        let response, data;
         
-        console.log('Searching for articles on date:', sendDate);
-        
-        // 해당 날짜의 스크랩 파일들 조회
-        const response = await fetch(`https://singapore-news-github.vercel.app/api/get-scraped-articles?date=${sendDate}`);
+        // 특정 스크랩 파일이 있으면 그 파일을 우선 조회
+        if (record.scraped_file) {
+            console.log('Searching for specific file:', record.scraped_file);
+            response = await fetch(`https://singapore-news-github.vercel.app/api/get-scraped-articles?file=${record.scraped_file}`);
+        } else {
+            // 파일 정보가 없으면 날짜 기준으로 검색
+            const sendTime = new Date(record.timestamp);
+            const sendDate = sendTime.toISOString().split('T')[0].replace(/-/g, '');
+            
+            console.log('Searching for articles on date:', sendDate);
+            response = await fetch(`https://singapore-news-github.vercel.app/api/get-scraped-articles?date=${sendDate}`);
+        }
         
         if (!response.ok) {
             throw new Error(`API request failed: ${response.status} ${response.statusText}`);
         }
         
-        const data = await response.json();
+        data = await response.json();
         console.log('API response:', data);
         
         if (data.success && data.articles && data.articles.length > 0) {
@@ -1939,9 +1945,13 @@ async function showHistoryDetail(recordId) {
     // 해당 시간에 가장 가까운 스크랩 데이터 찾기
     html += `
         <div class="mt-4">
-            <h4 class="font-medium text-gray-700 mb-2">스크랩된 기사 찾기</h4>
+            <h4 class="font-medium text-gray-700 mb-2">실제 전송된 기사</h4>
+            ${record.scraped_file ? 
+                `<p class="text-sm text-gray-600 mb-2">스크랩 파일: ${record.scraped_file}</p>` : 
+                '<p class="text-sm text-gray-600 mb-2">스크랩 파일 정보 없음 (날짜 기준 검색)</p>'
+            }
             <button onclick="findScrapedArticlesForHistory('${recordId}')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                해당 시간의 기사 보기
+                ${record.scraped_file ? '정확한 기사 보기' : '해당 시간의 기사 보기'}
             </button>
             <div id="scrapedArticlesResult" class="mt-4"></div>
         </div>
