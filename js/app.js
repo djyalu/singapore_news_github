@@ -2153,8 +2153,8 @@ async function updateTodayArticles() {
         const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
         if (response.ok) {
             const result = await response.json();
-            if (result.success && result.data) {
-                const articles = result.data;
+            if (result.success && result.articles) {
+                const articles = result.articles;
                 
                 // KST 기준 오늘 날짜 계산
                 const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
@@ -2889,42 +2889,50 @@ async function loadTodayArticlesModal() {
     
     title.textContent = '오늘 스크랩한 기사';
     
-    const scrapedData = [];
-    if (!scrapedData) {
-        content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
-        return;
-    }
-    
     try {
-        const data = JSON.parse(scrapedData);
-        const today = new Date().toDateString();
-        const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+        // 최신 스크랩 데이터 가져오기
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+        if (!response.ok) {
+            throw new Error('Failed to fetch scraped data');
+        }
         
-        // 날짜 유효성 검사
-        if (isNaN(lastUpdate.getTime())) {
-            lastUpdate = new Date();
+        const result = await response.json();
+        if (!result.success || !result.articles) {
+            content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        // KST 기준 오늘 날짜 계산
+        const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+        const todayKST = kstNow.toISOString().split('T')[0];
+        
+        // 파일명에서 날짜 추출
+        const fileDate = result.filename ? result.filename.substring(5, 13) : '';
+        const fileYYYY = fileDate.substring(0, 4);
+        const fileMM = fileDate.substring(4, 6);
+        const fileDD = fileDate.substring(6, 8);
+        const fileDateFormatted = `${fileYYYY}-${fileMM}-${fileDD}`;
+        
+        // 오늘 날짜가 아니면 표시하지 않음
+        if (fileDateFormatted !== todayKST) {
+            content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+            return;
         }
         
         let articles = [];
         
-        // 새로운 그룹별 통합 구조 처리
-        if (data.consolidatedArticles) {
-            if (lastUpdate.toDateString() === today) {
-                // 모든 그룹의 기사들을 하나의 배열로 변환
-                data.consolidatedArticles.forEach(group => {
-                    if (group.articles && Array.isArray(group.articles)) {
-                        articles = articles.concat(group.articles.map(article => ({
-                            ...article,
-                            source: article.site || group.group,
-                            group: group.group
-                        })));
-                    }
-                });
-            }
-        }
-        // 기존 구조 처리 (하위 호환성)
-        else if (data.articles && lastUpdate.toDateString() === today) {
-            articles = data.articles;
+        // API 응답은 그룹별 배열 구조
+        if (Array.isArray(data)) {
+            // 모든 그룹의 기사들을 하나의 배열로 변환
+            data.forEach(group => {
+                if (group.articles && Array.isArray(group.articles)) {
+                    articles = articles.concat(group.articles.map(article => ({
+                        ...article,
+                        source: article.site || group.group,
+                        group: group.group
+                    })));
+                }
+            });
         }
         
         if (articles.length === 0) {
