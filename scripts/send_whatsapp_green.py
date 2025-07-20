@@ -225,7 +225,7 @@ def save_history(channel_id, status, message_preview, article_count):
     
     history.append({
         'id': datetime.now().strftime('%Y%m%d%H%M%S'),
-        'timestamp': datetime.now().isoformat(),
+        'timestamp': datetime.utcnow().isoformat() + 'Z',
         'channel': channel_id,
         'status': 'success' if status else 'failed',
         'header': f"뉴스 {article_count}개 발송",

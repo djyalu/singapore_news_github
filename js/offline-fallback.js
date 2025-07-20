@@ -1,6 +1,25 @@
 // Offline Fallback Data Management
 // Chaos Engineering: 네트워크 실패시 대비책
 
+// 타임스탬프를 KST로 정확하게 변환하는 함수 (app.js와 동일)
+function formatTimestampToKST(timestamp) {
+    try {
+        const date = new Date(timestamp);
+        
+        // 타임스탬프가 'Z'로 끝나거나 timezone offset이 있으면 UTC로 처리
+        if (timestamp.includes('Z') || timestamp.includes('+') || timestamp.includes('-')) {
+            return date.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+        }
+        
+        // timezone 정보가 없는 경우 UTC로 가정하고 KST로 변환
+        const utcDate = new Date(timestamp + 'Z');
+        return utcDate.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+    } catch (error) {
+        console.error('Timestamp formatting error:', error);
+        return new Date(timestamp).toLocaleString('ko-KR');
+    }
+}
+
 const offlineFallback = {
     // 샘플 오프라인 데이터
     sampleData: [
@@ -106,7 +125,7 @@ window.displayOfflineData = function() {
                         <div class="article-item p-3 bg-white rounded mb-2">
                             <h5 class="font-semibold">${idx + 1}. ${article.title}</h5>
                             <p class="text-sm text-gray-600 mt-1">${article.summary}</p>
-                            <p class="text-xs text-gray-500 mt-2">📅 ${new Date(article.publish_date).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</p>
+                            <p class="text-xs text-gray-500 mt-2">📅 ${formatTimestampToKST(article.publish_date)}</p>
                         </div>
                     `).join('')}
                 </div>

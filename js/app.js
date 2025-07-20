@@ -2,6 +2,25 @@
 let currentPage = null;
 let isLoadingData = false; // Chaos Test: 중복 요청 방지 플래그
 
+// 타임스탬프를 KST로 정확하게 변환하는 함수
+function formatTimestampToKST(timestamp) {
+    try {
+        const date = new Date(timestamp);
+        
+        // 타임스탬프가 'Z'로 끝나거나 timezone offset이 있으면 UTC로 처리
+        if (timestamp.includes('Z') || timestamp.includes('+') || timestamp.includes('-')) {
+            return date.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+        }
+        
+        // timezone 정보가 없는 경우 UTC로 가정하고 KST로 변환
+        const utcDate = new Date(timestamp + 'Z');
+        return utcDate.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+    } catch (error) {
+        console.error('Timestamp formatting error:', error);
+        return new Date(timestamp).toLocaleString('ko-KR');
+    }
+}
+
 // 서버 기반 데이터 관리 함수들
 async function getDataFromServer() {
     return [];
@@ -1174,7 +1193,7 @@ async function loadTestHistory() {
         <div class="test-history-item">
             <div class="test-history-header">
                 <span class="test-status ${record.status}">${record.status === 'success' ? '✅ 성공' : '❌ 실패'}</span>
-                <span class="test-time">${new Date(record.timestamp).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</span>
+                <span class="test-time">${formatTimestampToKST(record.timestamp)}</span>
             </div>
             <div class="test-details">
                 <strong>채널:</strong> ${getChannelName(record.channel)} <br>
@@ -1770,7 +1789,7 @@ async function loadHistory() {
         const row = tbody.insertRow();
         const statusClass = record.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
         row.innerHTML = `
-            <td>${new Date(record.timestamp).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</td>
+            <td>${formatTimestampToKST(record.timestamp)}</td>
             <td>${record.header || '-'}</td>
             <td>${getChannelName(record.channel)}</td>
             <td>
@@ -1877,7 +1896,7 @@ async function showHistoryDetail(recordId) {
     const content = document.getElementById('historyDetailContent');
     const title = document.getElementById('historyModalTitle');
     
-    title.textContent = `전송 기록 - ${new Date(record.timestamp).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}`;
+    title.textContent = `전송 기록 - ${formatTimestampToKST(record.timestamp)}`;
     
     // 기본 정보 표시
     let html = `
@@ -2184,15 +2203,20 @@ async function updateTodayArticles() {
             
             if (result.success && result.articles) {
                 const articles = result.articles;
-                const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD 형식
             
                 // 배열인 경우 (그룹별 기사)
                 if (Array.isArray(articles)) {
+                    // 한국시간 기준 오늘 날짜 (UTC+9)
+                    const koreaTime = new Date(new Date().getTime() + (9 * 60 * 60 * 1000));
+                    const today = koreaTime.toISOString().split('T')[0]; // YYYY-MM-DD 형식
+                    
                     // 오늘 날짜의 기사만 카운트
                     todayCount = articles.reduce((sum, group) => {
                         // 타임스탬프가 오늘인지 확인
                         if (group.timestamp) {
-                            const groupDate = new Date(group.timestamp).toISOString().split('T')[0];
+                            // 한국시간으로 변환하여 비교
+                            const groupKoreaTime = new Date(new Date(group.timestamp).getTime() + (9 * 60 * 60 * 1000));
+                            const groupDate = groupKoreaTime.toISOString().split('T')[0];
                             if (groupDate === today) {
                                 return sum + (group.article_count || 0);
                             }
