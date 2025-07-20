@@ -6002,15 +6002,15 @@ async function loadAllScrapedArticlesFromGitHub() {
 
 // 파일 처리 공통 함수
 async function processScrapedFiles(files) {
-    // JSON 파일만 필터링하고 날짜순으로 정렬
-    const jsonFiles = files
-        .filter(file => file.name.endsWith('.json'))
+    // 뉴스 스크랩 파일만 필터링하고 날짜순으로 정렬
+    const newsFiles = files
+        .filter(file => file.name.startsWith('news_') && file.name.endsWith('.json'))
         .sort((a, b) => b.name.localeCompare(a.name));
     
     // 통계 업데이트
-    document.getElementById('totalFilesCount').textContent = jsonFiles.length;
+    document.getElementById('totalFilesCount').textContent = newsFiles.length;
     
-    if (jsonFiles.length === 0) {
+    if (newsFiles.length === 0) {
         document.getElementById('scrapingArticlesList').innerHTML = `
             <div class="text-center py-8">
                 <p class="text-gray-500">저장된 스크랩 데이터가 없습니다.</p>
@@ -6019,31 +6019,61 @@ async function processScrapedFiles(files) {
         return;
     }
     
-    // 날짜 범위 계산
-    const dates = jsonFiles.map(f => f.name.substring(0, 10));
-    document.getElementById('dateRangeInfo').textContent = `${dates[dates.length-1]} ~ ${dates[0]}`;
+    // 날짜 범위 계산 (news_YYYYMMDD_HHMMSS.json 형식에서 날짜 추출)
+    const dates = newsFiles.map(f => {
+        const match = f.name.match(/news_(\d{8})_\d{6}\.json/);
+        if (match) {
+            const dateStr = match[1]; // YYYYMMDD
+            return `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+        }
+        return f.name;
+    }).filter(date => date.includes('-')); // 유효한 날짜만 필터링
+    
+    if (dates.length > 0) {
+        document.getElementById('dateRangeInfo').textContent = `${dates[dates.length-1]} ~ ${dates[0]}`;
+    } else {
+        document.getElementById('dateRangeInfo').textContent = '날짜 정보 없음';
+    }
     
     // 파일 데이터 로드
     const allArticles = [];
     const siteSet = new Set();
     
     // 모든 파일 로드하도록 변경
-    showNotification(`${jsonFiles.length}개의 스크랩 파일을 로드 중...`, 'info');
+    showNotification(`${newsFiles.length}개의 스크랩 파일을 로드 중...`, 'info');
     
     let loadedCount = 0;
-    for (const file of jsonFiles) {
+    for (const file of newsFiles) {
         try {
             const fileResponse = await fetch(file.download_url);
             const fileData = await fileResponse.json();
             
+            // 파일명에서 날짜 추출
+            const dateMatch = file.name.match(/news_(\d{8})_(\d{6})\.json/);
+            const fileDate = dateMatch ? `${dateMatch[1]}_${dateMatch[2]}` : file.name;
+            
             // 배열인 경우 (현재 주요 구조)
             if (Array.isArray(fileData) && fileData.length > 0) {
                 fileData.forEach(group => {
-                    if (group.sites) group.sites.forEach(site => siteSet.add(site));
+                    // 사이트 수집 개선 - 다양한 형태의 사이트 정보 처리
+                    if (group.sites && Array.isArray(group.sites)) {
+                        group.sites.forEach(site => {
+                            if (site && typeof site === 'string') {
+                                siteSet.add(site.trim());
+                            }
+                        });
+                    }
+                    if (group.group && typeof group.group === 'string') {
+                        siteSet.add(group.group.trim());
+                    }
+                    if (group.site && typeof group.site === 'string') {
+                        siteSet.add(group.site.trim());
+                    }
+                    
                     // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
                     const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
                     allArticles.push({
-                        date: file.name.substring(0, 19),
+                        date: fileDate,
                         fileName: file.name,
                         group: {
                             ...group,
@@ -6055,11 +6085,25 @@ async function processScrapedFiles(files) {
             // consolidatedArticles 구조 (이전 버전 호환)
             else if (fileData && fileData.consolidatedArticles) {
                 fileData.consolidatedArticles.forEach(group => {
-                    if (group.sites) group.sites.forEach(site => siteSet.add(site));
+                    // 사이트 수집 개선
+                    if (group.sites && Array.isArray(group.sites)) {
+                        group.sites.forEach(site => {
+                            if (site && typeof site === 'string') {
+                                siteSet.add(site.trim());
+                            }
+                        });
+                    }
+                    if (group.group && typeof group.group === 'string') {
+                        siteSet.add(group.group.trim());
+                    }
+                    if (group.site && typeof group.site === 'string') {
+                        siteSet.add(group.site.trim());
+                    }
+                    
                     // articles 배열이 있으면 실제 길이로, 없으면 article_count 사용
                     const actualCount = group.articles ? group.articles.length : (group.article_count || 0);
                     allArticles.push({
-                        date: file.name.substring(0, 19),
+                        date: fileDate,
                         fileName: file.name,
                         group: {
                             ...group,
@@ -6074,7 +6118,7 @@ async function processScrapedFiles(files) {
             if (loadedCount % 5 === 0) {
                 document.getElementById('scrapingArticlesList').innerHTML = `
                     <div class="text-center py-8">
-                        <p class="text-sm text-gray-500">로딩 중... (${loadedCount}/${jsonFiles.length})</p>
+                        <p class="text-sm text-gray-500">로딩 중... (${loadedCount}/${newsFiles.length})</p>
                     </div>
                 `;
             }
@@ -6099,6 +6143,14 @@ async function processScrapedFiles(files) {
     }, 0);
     document.getElementById('totalArticlesCount').textContent = totalArticles;
     document.getElementById('totalSitesCount').textContent = siteSet.size;
+    
+    // 디버깅용 콘솔 로그
+    console.log('통계 정보:', {
+        totalFiles: newsFiles.length,
+        totalArticles: totalArticles,
+        sites: Array.from(siteSet).sort(),
+        dateRange: dates.length > 0 ? `${dates[dates.length-1]} ~ ${dates[0]}` : '없음'
+    });
     
     // 사이트 필터 옵션 추가
     const siteFilter = document.getElementById('siteFilter');
