@@ -389,9 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                     </svg>
                                     메시지 생성
                                 </button>
-                                <button type="button" onclick="toggleScrapedArticles()" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                    <span id="toggleArticlesText">접기</span>
-                                </button>
                             </div>
                         </div>
                         <div id="scrapedArticlesList" class="mt-4" style="display: block;">
