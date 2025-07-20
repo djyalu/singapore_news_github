@@ -2154,35 +2154,33 @@ async function updateTodayArticles() {
         if (response.ok) {
             const result = await response.json();
             if (result.success && result.articles) {
-                const articles = result.articles;
-                
                 // KST 기준 오늘 날짜 계산
                 const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
                 const todayKST = kstNow.toISOString().split('T')[0]; // YYYY-MM-DD 형식
                 
-                console.log('KST 오늘 날짜:', todayKST); // 디버깅용
-            
-                // 배열인 경우 (그룹별 기사)
-                if (Array.isArray(articles)) {
-                    // 오늘 날짜의 기사만 카운트
-                    todayCount = articles.reduce((sum, group) => {
-                        // 타임스탬프가 오늘인지 확인
-                        if (group.timestamp) {
-                            // timestamp를 KST로 변환하여 날짜 비교
-                            const groupDate = new Date(group.timestamp);
-                            const groupDateKST = new Date(groupDate.toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
-                            const groupDateStr = groupDateKST.toISOString().split('T')[0];
-                            
-                            console.log('그룹 날짜:', groupDateStr, '기사 수:', group.article_count); // 디버깅용
-                            
-                            if (groupDateStr === todayKST) {
-                                return sum + (group.article_count || 0);
-                            }
-                        }
-                        return sum;
-                    }, 0);
+                // 파일명에서 날짜 추출
+                const fileDate = result.filename ? result.filename.substring(5, 13) : '';
+                const fileYYYY = fileDate.substring(0, 4);
+                const fileMM = fileDate.substring(4, 6);
+                const fileDD = fileDate.substring(6, 8);
+                const fileDateFormatted = `${fileYYYY}-${fileMM}-${fileDD}`;
+                
+                console.log('오늘 날짜 (KST):', todayKST);
+                console.log('파일 날짜:', fileDateFormatted);
+                
+                // 오늘 날짜인 경우에만 카운트
+                if (fileDateFormatted === todayKST) {
+                    const articles = result.articles;
                     
-                    console.log('오늘 기사 총 개수:', todayCount); // 디버깅용
+                    // 배열인 경우 (그룹별 기사)
+                    if (Array.isArray(articles)) {
+                        // 모든 그룹의 기사 수를 합산
+                        todayCount = articles.reduce((sum, group) => {
+                            return sum + (group.article_count || 0);
+                        }, 0);
+                        
+                        console.log('오늘 기사 총 개수:', todayCount); // 디버깅용
+                    }
                 }
             }
         }
