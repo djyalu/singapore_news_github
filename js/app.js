@@ -5880,21 +5880,56 @@ function filterScrapedArticles() {
     
     // 날짜 범위 필터
     if (startDateFilter || endDateFilter) {
+        console.log('날짜 필터 적용:', { startDateFilter, endDateFilter });
+        console.log('필터링 전 데이터 수:', filtered.length);
+        
         filtered = filtered.filter(item => {
-            const itemDate = item.date.substring(0, 10); // YYYY-MM-DD 형식으로 추출
+            // 다양한 날짜 형식 처리
+            let itemDate = '';
+            
+            if (item.date) {
+                // news_20250719_105209 형식인 경우
+                if (item.date.match(/^\d{8}_\d{6}$/)) {
+                    const dateStr = item.date.substring(0, 8); // YYYYMMDD
+                    itemDate = `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+                }
+                // YYYY-MM-DD 형식인 경우
+                else if (item.date.match(/^\d{4}-\d{2}-\d{2}/)) {
+                    itemDate = item.date.substring(0, 10);
+                }
+                // 파일명에서 날짜 추출 시도
+                else if (item.fileName) {
+                    const match = item.fileName.match(/news_(\d{8})_\d{6}\.json/);
+                    if (match) {
+                        const dateStr = match[1];
+                        itemDate = `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+                    }
+                }
+            }
+            
+            console.log('아이템 날짜 변환:', { originalDate: item.date, fileName: item.fileName, convertedDate: itemDate });
+            
+            if (!itemDate) {
+                console.log('날짜 변환 실패, 아이템 제외:', item);
+                return false;
+            }
             
             // 시작 날짜 조건 확인
             if (startDateFilter && itemDate < startDateFilter) {
+                console.log('시작 날짜 조건 실패:', itemDate, '<', startDateFilter);
                 return false;
             }
             
             // 종료 날짜 조건 확인
             if (endDateFilter && itemDate > endDateFilter) {
+                console.log('종료 날짜 조건 실패:', itemDate, '>', endDateFilter);
                 return false;
             }
             
             return true;
         });
+        
+        console.log('필터링 후 데이터 수:', filtered.length);
     }
     
     // 사이트 필터
