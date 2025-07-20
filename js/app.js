@@ -3221,10 +3221,29 @@ function showSendSettings() {
     if (settingsNavLink) {
         // URL 파라미터 설정
         window.history.pushState({}, '', '?tab=delivery');
-        // 네비게이션 클릭
-        settingsNavLink.click();
+        
+        // 직접 클릭 이벤트 발생
+        const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+        });
+        settingsNavLink.dispatchEvent(clickEvent);
     } else {
         console.error('Settings navigation link not found');
+        // 대안: 현재 페이지를 직접 변경
+        updateNavigation();
+        const content = document.getElementById('content');
+        if (content && typeof getSettingsHTML === 'function') {
+            content.innerHTML = getSettingsHTML();
+            if (typeof initializeSettings === 'function') {
+                initializeSettings().then(() => {
+                    setTimeout(() => {
+                        switchSettingsTab('delivery');
+                    }, 100);
+                });
+            }
+        }
     }
 }
 
