@@ -125,7 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    function updateNavigation() {
+    // 중복 제거됨 - 전역 함수로 아래에서 정의
+    
+    // 로그인 폼 이벤트 리스너는 auth.js에서 처리됨
+    console.log('Login form event listener is handled in auth.js');
+    
+    // 전역 updateNavigation 함수
+    window.updateNavigation = function() {
+        console.log('updateNavigation called');
         const adminLinks = document.querySelectorAll('.admin-only');
         if (!isAdmin()) {
             adminLinks.forEach(link => link.style.display = 'none');
@@ -141,15 +148,21 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (e) {
             console.error('사용자 정보 표시 오류:', e);
         }
-    }
-    
-    // 로그인 폼 이벤트 리스너는 auth.js에서 처리됨
-    console.log('Login form event listener is handled in auth.js');
-    
+    };
+
     // 대시보드 초기화 함수 (전역 함수로 설정하여 auth.js에서 호출 가능)
     window.initializeDashboard = function() {
         console.log('initializeDashboard called');
-        checkAuth();
+        console.log('Authenticated user:', getCurrentUser());
+        
+        // 네비게이션 업데이트
+        window.updateNavigation();
+        setupNavigationListeners();
+        
+        // 대시보드 페이지 로드
+        if (!currentPage) {
+            loadPage('dashboard');
+        }
     };
     
     logoutBtn.addEventListener('click', function(e) {
