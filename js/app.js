@@ -143,41 +143,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    console.log('loginForm addEventListener attached successfully');
+    // 로그인 폼 이벤트 리스너는 auth.js에서 처리됨
+    console.log('Login form event listener is handled in auth.js');
     
-    loginForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        console.log('Login form submitted!');
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        console.log('로그인 시도:', username, password ? '***' : 'empty');
-        
-        // 서버 기반 인증 - localStorage 사용 안함
-        console.log('서버 기반 인증 사용');
-        
-        const loginResult = await login(username, password);
-        if (loginResult) {
-            console.log('로그인 성공');
-            try {
-                const mfaEnabled = window.isMFAEnabled ? await window.isMFAEnabled(username) : false;
-                if (mfaEnabled) {
-                    showMFAForm(username);
-                } else {
-                    checkAuth();
-                }
-            } catch (error) {
-                console.error('MFA 상태 확인 에러:', error);
-                checkAuth(); // MFA 체크 실패시 바로 로그인 진행
-            }
-        } else {
-            console.log('로그인 실패');
-            if (errorMessage) {
-                errorMessage.textContent = '잘못된 아이디 또는 비밀번호입니다.';
-            }
-            errorMessage.classList.remove('hidden');
-        }
-    });
+    // 대시보드 초기화 함수 (전역 함수로 설정하여 auth.js에서 호출 가능)
+    window.initializeDashboard = function() {
+        console.log('initializeDashboard called');
+        checkAuth();
+    };
     
     logoutBtn.addEventListener('click', function(e) {
         e.preventDefault();

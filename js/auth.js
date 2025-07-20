@@ -167,3 +167,110 @@ async function deleteUser(userId) {
         message: '사용자 삭제는 서버 환경 변수에서만 가능합니다.\n\nVercel 대시보드에서 AUTH_CONFIG 환경 변수를 수정하세요.' 
     };
 }
+
+// DOM 로드 완료 후 로그인 폼 이벤트 리스너 설정
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('[AUTH] DOM 로드 완료, 로그인 시스템 초기화');
+    
+    // 이미 로그인되어 있으면 대시보드로 이동
+    if (isAuthenticated()) {
+        console.log('[AUTH] 이미 로그인됨, 대시보드 표시');
+        showDashboard();
+        return;
+    }
+    
+    // 로그인 폼 이벤트 리스너 추가
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        console.log('[AUTH] 로그인 폼 이벤트 리스너 추가');
+        loginForm.addEventListener('submit', handleLogin);
+    } else {
+        console.error('[AUTH] 로그인 폼을 찾을 수 없습니다');
+    }
+});
+
+// 로그인 폼 처리
+async function handleLogin(e) {
+    e.preventDefault();
+    console.log('[AUTH] 로그인 폼 제출');
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    // 에러 메시지 초기화
+    const errorMessage = document.getElementById('errorMessage');
+    if (errorMessage) {
+        errorMessage.style.display = 'none';
+        errorMessage.textContent = '';
+        errorMessage.classList.add('hidden');
+        console.log('[AUTH] 에러 메시지 초기화됨');
+    }
+    
+    // 입력 검증
+    if (!username || !password) {
+        showLoginError('사용자명과 비밀번호를 입력해주세요.');
+        return;
+    }
+    
+    // 로그인 시도
+    const success = await login(username, password);
+    
+    if (success) {
+        console.log('[AUTH] 로그인 성공, 대시보드로 이동');
+        showDashboard();
+    } else {
+        showLoginError('로그인에 실패했습니다. 사용자명과 비밀번호를 확인해주세요.');
+    }
+}
+
+// 로그인 에러 표시
+function showLoginError(message) {
+    console.log('[AUTH] 에러 표시:', message);
+    const errorMessage = document.getElementById('errorMessage');
+    if (errorMessage) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+        errorMessage.classList.remove('hidden');
+        console.log('[AUTH] 에러 메시지 표시됨');
+    } else {
+        console.error('[AUTH] 에러 메시지 요소를 찾을 수 없음');
+        alert(message);
+    }
+}
+
+// 대시보드 표시
+function showDashboard() {
+    console.log('[AUTH] showDashboard 호출됨');
+    
+    const loginContainer = document.getElementById('loginContainer');
+    const mainContainer = document.getElementById('mainContainer');
+    
+    console.log('[AUTH] 컨테이너 요소들:', {
+        loginContainer: !!loginContainer,
+        mainContainer: !!mainContainer
+    });
+    
+    if (loginContainer && mainContainer) {
+        console.log('[AUTH] 컨테이너 표시 상태 변경');
+        loginContainer.style.display = 'none';
+        mainContainer.style.display = 'block';
+        
+        // app.js의 초기화 함수 호출 (있다면)
+        if (typeof initializeDashboard === 'function') {
+            console.log('[AUTH] initializeDashboard 함수 호출');
+            initializeDashboard();
+        } else {
+            console.error('[AUTH] initializeDashboard 함수를 찾을 수 없음');
+        }
+        
+        // 사용자 정보 업데이트 (있다면)
+        if (typeof updateNavigation === 'function') {
+            console.log('[AUTH] updateNavigation 함수 호출');
+            updateNavigation();
+        } else {
+            console.warn('[AUTH] updateNavigation 함수를 찾을 수 없음');
+        }
+    } else {
+        console.error('[AUTH] 필요한 컨테이너 요소를 찾을 수 없음');
+    }
+}
