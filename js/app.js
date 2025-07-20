@@ -3577,64 +3577,62 @@ async function clearScrapedArticles() {
             
             if (!filename) {
                 // latest.json에서 파일명 가져오기
-                const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped')
+                const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
                 if (latestResponse.ok) {
                     const latestData = await latestResponse.json();
-                    filename = latestData.latestFile;
+                    filename = latestData.filename;
+                    console.log('Got filename from API:', filename);
                 }
             }
             
             if (filename) {
-                // 삭제 플래그 사용하지 않음 (서버에서 직접 삭제)
-                
                 // GitHub에서 파일 삭제 시도
                 console.log('Attempting to delete GitHub file:', filename);
-                try {
-                    const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ filename: filename })
-                    });
-                    
-                    if (deleteResponse.ok) {
-                        const deleteResult = await deleteResponse.json();
-                        console.log('GitHub deletion response:', deleteResult);
-                        if (deleteResult.success) {
-                            console.log('GitHub file deleted successfully');
+                const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: filename })
+                });
+                
+                if (deleteResponse.ok) {
+                    const deleteResult = await deleteResponse.json();
+                    console.log('GitHub deletion response:', deleteResult);
+                    if (deleteResult.success) {
+                        console.log('GitHub file deleted successfully');
+                        
+                        // 삭제 성공 시에만 UI 업데이트
+                        const articlesList = document.getElementById('scrapedArticlesList');
+                        if (articlesList) {
+                            articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
                         }
+                        
+                        // 기사 수 업데이트
+                        const todayArticlesElement = document.getElementById('todayArticles');
+                        if (todayArticlesElement) {
+                            todayArticlesElement.textContent = '0';
+                        }
+                        
+                        showNotification('모든 기사가 서버에서 삭제되었습니다.', 'success');
+                        return; // 성공 시 여기서 종료
                     } else {
-                        console.log(`GitHub deletion failed with status: ${deleteResponse.status}`);
+                        showNotification('서버에서 파일 삭제에 실패했습니다: ' + (deleteResult.error || 'Unknown error'), 'error');
+                        return;
                     }
-                } catch (apiError) {
-                    console.error('GitHub deletion API error:', apiError);
+                } else {
+                    console.log(`GitHub deletion failed with status: ${deleteResponse.status}`);
+                    showNotification('서버 삭제 요청이 실패했습니다.', 'error');
+                    return;
                 }
+            } else {
+                showNotification('삭제할 파일을 찾을 수 없습니다.', 'error');
+                return;
             }
         } catch (error) {
             console.error('Error during deletion process:', error);
+            showNotification('삭제 중 오류가 발생했습니다: ' + error.message, 'error');
         }
-        
-        // 로컬 스토리지 삭제
-        // Server-based data removal;
-        // Server-based data removal;
-        // Server-based data removal;
-        
-        console.log('localStorage cleared');
-        
-        // UI 업데이트
-        const articlesList = document.getElementById('scrapedArticlesList');
-        if (articlesList) {
-            articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
-        }
-        
-        // 기사 수 업데이트
-        const todayArticlesElement = document.getElementById('todayArticles');
-        if (todayArticlesElement) {
-            todayArticlesElement.textContent = '0';
-        }
-        
-        showNotification('모든 기사가 서버에서 삭제되었습니다.', 'success');
     }
 }
 
