@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-6">Dashboard Functionality Test</h1>
+        
+        <div class="space-y-4">
+            <!-- Test API Endpoints -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">API Endpoint Tests</h2>
+                <div class="space-y-2">
+                    <button onclick="testSettings()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Test Settings API</button>
+                    <button onclick="testScrapedData()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Test Scraped Data API</button>
+                    <button onclick="testHistory()" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Test History API</button>
+                </div>
+                <div id="apiResults" class="mt-4 p-4 bg-gray-50 rounded text-sm font-mono overflow-auto max-h-96"></div>
+            </div>
+            
+            <!-- Dashboard Cards Preview -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Dashboard Cards Preview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="border p-4 rounded">
+                        <h3 class="font-semibold text-gray-600">오늘 스크랩한 기사</h3>
+                        <p id="todayArticles" class="text-2xl font-bold">Loading...</p>
+                    </div>
+                    <div class="border p-4 rounded">
+                        <h3 class="font-semibold text-gray-600">다음 전송 시간</h3>
+                        <p id="nextSendTime" class="text-2xl font-bold">Loading...</p>
+                    </div>
+                    <div class="border p-4 rounded">
+                        <h3 class="font-semibold text-gray-600">전송 설정</h3>
+                        <p id="sendChannelInfo" class="text-2xl font-bold">Loading...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Console Output -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Console Output</h2>
+                <div id="consoleOutput" class="p-4 bg-black text-green-400 rounded font-mono text-sm overflow-auto max-h-96"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'https://singapore-news-github.vercel.app/api';
+        
+        function log(message, type = 'info') {
+            const output = document.getElementById('consoleOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? 'text-red-400' : type === 'success' ? 'text-green-400' : 'text-gray-400';
+            output.innerHTML += `<div class="${color}">[${timestamp}] ${message}</div>`;
+            output.scrollTop = output.scrollHeight;
+        }
+        
+        async function testSettings() {
+            log('Testing Settings API...');
+            try {
+                const response = await fetch(`${API_BASE}/save-data?type=settings`);
+                const data = await response.json();
+                document.getElementById('apiResults').textContent = JSON.stringify(data, null, 2);
+                log('Settings API test completed', 'success');
+                
+                // Update dashboard card
+                if (data.success && data.data) {
+                    updateSendChannelInfo(data.data);
+                    updateNextSendTime(data.data);
+                }
+            } catch (error) {
+                log(`Settings API error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testScrapedData() {
+            log('Testing Scraped Data API...');
+            try {
+                const response = await fetch(`${API_BASE}/get-latest-scraped`);
+                const data = await response.json();
+                document.getElementById('apiResults').textContent = JSON.stringify(data, null, 2);
+                log('Scraped Data API test completed', 'success');
+                
+                // Update dashboard card
+                if (data.success && data.data) {
+                    updateTodayArticles(data.data);
+                }
+            } catch (error) {
+                log(`Scraped Data API error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testHistory() {
+            log('Testing History API...');
+            try {
+                const response = await fetch(`${API_BASE}/save-data?type=history`);
+                const data = await response.json();
+                document.getElementById('apiResults').textContent = JSON.stringify(data, null, 2);
+                log('History API test completed', 'success');
+            } catch (error) {
+                log(`History API error: ${error.message}`, 'error');
+            }
+        }
+        
+        function updateTodayArticles(articles) {
+            let count = 0;
+            if (Array.isArray(articles)) {
+                count = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+            }
+            document.getElementById('todayArticles').textContent = count;
+            log(`Updated today's articles count: ${count}`);
+        }
+        
+        function updateSendChannelInfo(settings) {
+            const element = document.getElementById('sendChannelInfo');
+            if (settings.sendChannel === 'whatsapp' && settings.whatsappChannel) {
+                const channelName = settings.whatsappChannel.includes('120363419092108413') ? 'Test Channel' : 'Backup Channel';
+                element.innerHTML = `<span class="text-green-600">✓ ${channelName}</span>`;
+                log(`Updated send channel: ${channelName}`);
+            } else {
+                element.innerHTML = '<span class="text-red-600">미설정</span>';
+                log('Send channel not configured');
+            }
+        }
+        
+        function updateNextSendTime(settings) {
+            const element = document.getElementById('nextSendTime');
+            if (settings.sendSchedule) {
+                const now = new Date();
+                const sendTime = settings.sendSchedule.time || '09:00';
+                const [hours, minutes] = sendTime.split(':');
+                
+                const nextSend = new Date();
+                nextSend.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+                
+                if (nextSend <= now) {
+                    nextSend.setDate(nextSend.getDate() + 1);
+                }
+                
+                element.textContent = nextSend.toLocaleString('ko-KR', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    weekday: 'short'
+                });
+                log(`Updated next send time: ${element.textContent}`);
+            } else {
+                element.textContent = '미설정';
+                log('Send schedule not configured');
+            }
+        }
+        
+        // Auto-run tests on load
+        window.addEventListener('DOMContentLoaded', async () => {
+            log('Dashboard test page loaded');
+            log('Running automatic tests...');
+            
+            await testSettings();
+            setTimeout(() => testScrapedData(), 1000);
+        });
+    </script>
+</body>
+</html>

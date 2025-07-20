@@ -2345,6 +2345,14 @@ async function loadScrapedArticles() {
     const articlesList = document.getElementById('scrapedArticlesList');
     if (!articlesList) return;
     
+    // Chaos Test: 중복 로드 방지
+    if (isLoadingData) {
+        console.log('이미 데이터를 로드하고 있습니다...');
+        return;
+    }
+    
+    isLoadingData = true;
+    
     // 서버에서 직접 데이터를 가져옴
     let data = null;
     
@@ -2431,6 +2439,9 @@ async function loadScrapedArticles() {
         }
     } catch (error) {
         console.error('GitHub 데이터 로드 오류:', error);
+    } finally {
+        // Chaos Engineering: 로딩 플래그 반드시 해제
+        isLoadingData = false;
     }
     
     // 데이터가 없는 경우
@@ -3839,16 +3850,29 @@ async function resetScrapeButton() {
     }
 }
 
-async function loadLatestDataFromGitHub(forceRefresh = false) {
+async function loadLatestDataFromGitHub(forceRefresh = false, retryCount = 0) {
+    const maxRetries = 3;
+    const retryDelay = 2000; // 2초
+    
     try {
-        console.log('GitHub에서 최신 데이터를 로드합니다...');
+        console.log(`GitHub에서 최신 데이터를 로드합니다... (시도 ${retryCount + 1}/${maxRetries + 1})`);
         
         // 삭제 플래그 확인
-        const deletedFiles = [];
+        const deletedFiles = []
         
         // 방법 1: GitHub Pages에서 직접 latest.json 읽기 (우선 시도)
         try {
-            const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+            // Chaos Test: API 타임아웃 설정 추가
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10초 타임아웃
+            
+            // Rate Limiter 적용
+            const fetchFn = window.rateLimitedFetch || fetch;
+            const latestResponse = await fetchFn('https://singapore-news-github.vercel.app/api/get-latest-scraped', {
+                signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+            
             if (latestResponse.ok) {
                 const latestInfo = await latestResponse.json();
                 console.log('Latest file info:', latestInfo);
@@ -3891,7 +3915,26 @@ async function loadLatestDataFromGitHub(forceRefresh = false) {
                 }
             }
         } catch (e) {
-            console.log('GitHub Pages 직접 읽기 실패, 다른 방법 시도...');
+            // Chaos Test: 상세한 에러 로깅 및 사용자 피드백
+            if (e.name === 'AbortError') {
+                console.error('API 타임아웃 발생:', e);
+                showNotification('서버 응답 시간 초과. 잠시 후 다시 시도해주세요.', 'error');
+            } else if (e.message.includes('NetworkError') || e.message.includes('Failed to fetch')) {
+                console.error('네트워크 에러:', e);
+                showNotification('네트워크 연결을 확인해주세요.', 'error');
+            } else {
+                console.error('GitHub Pages 직접 읽기 실패:', e);
+                // Chaos Test: 재시도 로직
+                if (retryCount < maxRetries) {
+                    console.log(`${retryDelay/1000}초 후 재시도합니다...`);
+                    setTimeout(() => {
+                        loadLatestDataFromGitHub(forceRefresh, retryCount + 1);
+                    }, retryDelay);
+                    return;
+                } else {
+                    showNotification('여러 번 시도했지만 데이터를 로드할 수 없습니다.', 'error');
+                }
+            }
         }
         
         // 방법 2: GitHub API 직접 호출 (rate limit 주의)

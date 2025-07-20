@@ -18,11 +18,15 @@ class TextProcessor:
         for ending in sentence_endings:
             pos = text.rfind(ending, 0, max_length)
             if pos > last_end:
-                last_end = pos + len(ending) - 1
+                last_end = pos
         
-        # 문장 끝을 찾았으면 거기까지 자르기
+        # 문장 끝을 찾았으면 거기까지 자르기 (문장 부호 포함)
         if last_end > 0:
-            return text[:last_end + 1]
+            # 문장 부호가 이미 있는지 확인
+            if text[last_end] in '.!?。！？':
+                return text[:last_end + 1]
+            else:
+                return text[:last_end + 1].rstrip() + '.'
         
         # 못 찾았으면 단어 단위로 자르기
         space_pos = text.rfind(' ', 0, max_length)

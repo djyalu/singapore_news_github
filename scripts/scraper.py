@@ -7,6 +7,8 @@ import re
 from collections import defaultdict
 from urllib.parse import urljoin, urlparse
 from ai_scraper import ai_scraper
+from text_processing import TextProcessor
+from deduplication import ArticleDeduplicator
 
 def load_settings():
     """서버에서 동적으로 설정을 불러오기"""
@@ -149,26 +151,40 @@ def is_meaningful_content(text):
     return total_score > 2  # 점수 기준을 3에서 2로 낮춤
 
 def post_process_article_content(article_data):
-    """추출된 기사 내용 후처리"""
+    """추출된 기사 내용 후처리 - 개선된 중복 제거"""
     if not article_data or not article_data.get('content'):
         return article_data
     
     content = article_data['content']
     
-    # 문장 단위로 분리하여 필터링
-    sentences = [s.strip() for s in content.split('.') if s.strip()]
-    filtered_sentences = []
+    # TextProcessor를 사용하여 깨끗한 문장 추출
+    sentences = TextProcessor.extract_sentences(content, min_length=20)
+    
+    # 중복 제거 (정규화된 비교)
+    unique_sentences = []
+    seen_normalized = set()
     
     for sentence in sentences:
-        # 진엄한 메뉴 문장 필터링
-        if not is_menu_sentence(sentence) and len(sentence) > 15:
-            # 추가 정제
-            cleaned_sentence = clean_menu_remnants(sentence)
-            if cleaned_sentence and len(cleaned_sentence) > 15:
-                filtered_sentences.append(cleaned_sentence)
+        # 메뉴 문장 필터링
+        if is_menu_sentence(sentence):
+            continue
+            
+        # 추가 정제
+        cleaned_sentence = clean_menu_remnants(sentence)
+        if not cleaned_sentence or len(cleaned_sentence) < 20:
+            continue
+            
+        # 정규화하여 중복 체크
+        normalized = cleaned_sentence.lower().strip()
+        if normalized not in seen_normalized:
+            seen_normalized.add(normalized)
+            unique_sentences.append(cleaned_sentence)
     
-    # 정제된 내용으로 업데이트
-    article_data['content'] = '. '.join(filtered_sentences[:10])  # 최대 10문장
+    # 안전하게 병합 및 자르기
+    if unique_sentences:
+        article_data['content'] = TextProcessor.merge_paragraphs(unique_sentences, max_length=1000)
+    else:
+        article_data['content'] = ''
     
     return article_data
 
@@ -654,7 +670,7 @@ def find_main_content_element(soup, selectors):
     return None
 
 def extract_pure_article_text(content_elem):
-    """순수 기사 텍스트만 추출"""
+    """순수 기사 텍스트만 추출 - 중복 제거 및 개선된 처리"""
     # 내부에서 추가 불필요 요소 제거
     unwanted_inner = [
         '.related-articles', '.related-content', '.see-also',
@@ -671,19 +687,43 @@ def extract_pure_article_text(content_elem):
         for elem in content_elem.select(selector):
             elem.decompose()
     
-    # 단락 추출
-    paragraphs = content_elem.find_all(['p', 'div'])
-    content_parts = []
+    # 단락 추출 - p 태그 우선, div는 p가 없을 때만
+    paragraphs = content_elem.find_all('p')
+    if not paragraphs:
+        paragraphs = content_elem.find_all('div')
+    
+    # 문장 단위로 수집하여 중복 제거
+    all_sentences = []
+    seen_sentences = set()
     
     for p in paragraphs:
         text = clean_text(p.get_text())
         
-        # 진짜 기사 내용인지 엄격하게 확인
-        if is_real_article_content(text):
-            content_parts.append(text)
+        # 진짜 기사 내용인지 확인
+        if not is_real_article_content(text):
+            continue
+            
+        # 메뉴 텍스트 제거
+        text = TextProcessor.clean_menu_text(text)
+        if not text:
+            continue
+            
+        # 문장 단위로 분리
+        sentences = TextProcessor.extract_sentences(text)
+        
+        for sentence in sentences:
+            # 정규화된 문장으로 중복 체크
+            normalized = sentence.lower().strip()
+            if normalized not in seen_sentences and len(sentence) > 20:
+                seen_sentences.add(normalized)
+                all_sentences.append(sentence)
     
-    # 최대 10개 단락, 1000자로 제한
-    return '. '.join(content_parts[:10])[:1000]
+    # 문장들을 병합하되 안전하게 자르기
+    if all_sentences:
+        merged_content = TextProcessor.merge_paragraphs(all_sentences, max_length=1000)
+        return merged_content
+    
+    return ''
 
 def is_real_article_content(text):
     """진짜 기사 내용인지 엄격하게 판단"""
