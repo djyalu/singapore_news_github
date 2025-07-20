@@ -106,7 +106,7 @@ window.displayOfflineData = function() {
                         <div class="article-item p-3 bg-white rounded mb-2">
                             <h5 class="font-semibold">${idx + 1}. ${article.title}</h5>
                             <p class="text-sm text-gray-600 mt-1">${article.summary}</p>
-                            <p class="text-xs text-gray-500 mt-2">📅 ${new Date(article.publish_date).toLocaleString('ko-KR')}</p>
+                            <p class="text-xs text-gray-500 mt-2">📅 ${new Date(article.publish_date).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</p>
                         </div>
                     `).join('')}
                 </div>

@@ -726,10 +726,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="search-header">
                         <h3>🔍 검색 조건</h3>
                         <div class="quick-filters">
-                            <button class="quick-filter-btn" onclick="setQuickFilter('today')">오늘</button>
-                            <button class="quick-filter-btn" onclick="setQuickFilter('week')">1주일</button>
-                            <button class="quick-filter-btn" onclick="setQuickFilter('month')">1개월</button>
-                            <button class="quick-filter-btn" onclick="setQuickFilter('all')">전체</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('today', this)">오늘</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('week', this)">1주일</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('month', this)">1개월</button>
+                            <button class="quick-filter-btn" onclick="setQuickFilter('all', this)">전체</button>
                         </div>
                     </div>
                     
@@ -794,6 +794,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     </thead>
                     <tbody></tbody>
                 </table>
+                
+                <!-- Empty State -->
+                <div id="historyEmptyState" class="empty-state hidden">
+                    <div class="empty-icon">📭</div>
+                    <h3>전송 기록이 없습니다</h3>
+                    <p>WhatsApp 전송을 실행하면 여기에 이력이 표시됩니다.</p>
+                </div>
             </div>
         `;
     }
@@ -1167,7 +1174,7 @@ async function loadTestHistory() {
         <div class="test-history-item">
             <div class="test-history-header">
                 <span class="test-status ${record.status}">${record.status === 'success' ? '✅ 성공' : '❌ 실패'}</span>
-                <span class="test-time">${new Date(record.timestamp).toLocaleString()}</span>
+                <span class="test-time">${new Date(record.timestamp).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</span>
             </div>
             <div class="test-details">
                 <strong>채널:</strong> ${getChannelName(record.channel)} <br>
@@ -1232,9 +1239,17 @@ async function findScrapedArticlesForHistory(recordId) {
     const history = window.currentHistoryData || [];
     const record = history.find(r => r.id === recordId);
     
-    if (!record) return;
+    if (!record) {
+        console.error('History record not found:', recordId);
+        return;
+    }
     
     const resultDiv = document.getElementById('scrapedArticlesResult');
+    if (!resultDiv) {
+        console.error('scrapedArticlesResult div not found');
+        return;
+    }
+    
     resultDiv.innerHTML = '<p class="text-gray-600">기사를 찾는 중...</p>';
     
     try {
@@ -1242,14 +1257,17 @@ async function findScrapedArticlesForHistory(recordId) {
         const sendTime = new Date(record.timestamp);
         const sendDate = sendTime.toISOString().split('T')[0].replace(/-/g, '');
         
+        console.log('Searching for articles on date:', sendDate);
+        
         // 해당 날짜의 스크랩 파일들 조회
         const response = await fetch(`https://singapore-news-github.vercel.app/api/get-scraped-articles?date=${sendDate}`);
         
         if (!response.ok) {
-            throw new Error('스크랩 데이터를 가져올 수 없습니다.');
+            throw new Error(`API request failed: ${response.status} ${response.statusText}`);
         }
         
         const data = await response.json();
+        console.log('API response:', data);
         
         if (data.success && data.articles && data.articles.length > 0) {
             // 기사 목록 표시
@@ -1752,7 +1770,7 @@ async function loadHistory() {
         const row = tbody.insertRow();
         const statusClass = record.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
         row.innerHTML = `
-            <td>${new Date(record.timestamp).toLocaleString('ko-KR')}</td>
+            <td>${new Date(record.timestamp).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</td>
             <td>${record.header || '-'}</td>
             <td>${getChannelName(record.channel)}</td>
             <td>
@@ -1804,7 +1822,7 @@ function resetHistoryFilters() {
     loadHistory();
 }
 
-function setQuickFilter(period) {
+function setQuickFilter(period, element) {
     const endDate = new Date();
     let startDate = new Date();
     
@@ -1830,7 +1848,9 @@ function setQuickFilter(period) {
     document.querySelectorAll('.quick-filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    event.target.classList.add('active');
+    if (element) {
+        element.classList.add('active');
+    }
     
     loadHistory();
 }
@@ -1857,7 +1877,7 @@ async function showHistoryDetail(recordId) {
     const content = document.getElementById('historyDetailContent');
     const title = document.getElementById('historyModalTitle');
     
-    title.textContent = `전송 기록 - ${new Date(record.timestamp).toLocaleString('ko-KR')}`;
+    title.textContent = `전송 기록 - ${new Date(record.timestamp).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}`;
     
     // 기본 정보 표시
     let html = `
@@ -1909,6 +1929,13 @@ async function showHistoryDetail(recordId) {
     `;
     
     content.innerHTML = html;
+    
+    // 모달 바깥 클릭시 닫기
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeHistoryDetailModal();
+        }
+    });
 }
 
 async function loadUsers() {
@@ -2153,8 +2180,10 @@ async function updateTodayArticles() {
         const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
         if (response.ok) {
             const result = await response.json();
-            if (result.success && result.data) {
-                const articles = result.data;
+            console.log('Latest scraped API response:', result); // 디버깅용
+            
+            if (result.success && result.articles) {
+                const articles = result.articles;
                 const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD 형식
             
                 // 배열인 경우 (그룹별 기사)
@@ -2642,7 +2671,7 @@ async function loadScrapedArticles() {
             html += `
                 <div class="scraped-articles-summary">
                     <p>📊 총 ${data.consolidatedArticles.length}개 그룹에서 ${totalArticles}개 기사 수집</p>
-                    <p>🕒 마지막 업데이트: ${lastUpdate.toLocaleString('ko-KR')}</p>
+                    <p>🕒 마지막 업데이트: ${lastUpdate.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}</p>
                 </div>
             `;
             
@@ -2880,52 +2909,44 @@ async function loadTodayArticlesModal() {
     const title = document.getElementById('modalTitle');
     
     title.textContent = '오늘 스크랩한 기사';
-    
-    const scrapedData = [];
-    if (!scrapedData) {
-        content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
-        return;
-    }
+    content.innerHTML = '<p class="text-center p-4">데이터를 불러오는 중...</p>';
     
     try {
-        const data = JSON.parse(scrapedData);
-        const today = new Date().toDateString();
-        const lastUpdate = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+        // 오늘 날짜의 스크랩 데이터 가져오기
+        const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
+        const response = await fetch(`https://singapore-news-github.vercel.app/api/get-scraped-articles?date=${today}`);
         
-        // 날짜 유효성 검사
-        if (isNaN(lastUpdate.getTime())) {
-            lastUpdate = new Date();
+        if (!response.ok) {
+            throw new Error('스크랩 데이터를 가져올 수 없습니다.');
         }
         
+        const data = await response.json();
+        
+        if (!data.success || !data.articles || data.articles.length === 0) {
+            content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        // API 응답에서 기사 추출
         let articles = [];
-        
-        // 새로운 그룹별 통합 구조 처리
-        if (data.consolidatedArticles) {
-            if (lastUpdate.toDateString() === today) {
-                // 모든 그룹의 기사들을 하나의 배열로 변환
-                data.consolidatedArticles.forEach(group => {
-                    if (group.articles && Array.isArray(group.articles)) {
-                        articles = articles.concat(group.articles.map(article => ({
-                            ...article,
-                            source: article.site || group.group,
-                            group: group.group
-                        })));
-                    }
-                });
+        data.articles.forEach(group => {
+            if (group.articles && Array.isArray(group.articles)) {
+                articles = articles.concat(group.articles.map(article => ({
+                    ...article,
+                    source: article.site || group.group,
+                    group: group.group
+                })));
             }
-        }
-        // 기존 구조 처리 (하위 호환성)
-        else if (data.articles && lastUpdate.toDateString() === today) {
-            articles = data.articles;
-        }
+        });
         
         if (articles.length === 0) {
             content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
             return;
         }
         
-        console.log('Loading today articles modal with', articles.length, 'articles'); // 디버깅용
+        console.log('Loading today articles modal with', articles.length, 'articles');
         renderSelectableArticlesList(articles, content);
+        
     } catch (error) {
         console.error('기사 로드 오류:', error);
         content.innerHTML = '<p class="error-message">기사를 불러오는 중 오류가 발생했습니다.</p>';
