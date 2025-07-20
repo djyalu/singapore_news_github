@@ -5561,10 +5561,10 @@ function getScrapingManagementHTML() {
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700 mb-2">빠른 날짜 선택</label>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <button onclick="setDateRange('today')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">오늘</button>
-                        <button onclick="setDateRange('week')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">최근 7일</button>
-                        <button onclick="setDateRange('month')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">최근 30일</button>
-                        <button onclick="setDateRange('clear')" class="px-3 py-1 text-xs bg-gray-50 border border-gray-300 text-gray-700 rounded hover:bg-gray-100">전체</button>
+                        <button id="dateBtn-today" onclick="setDateRange('today')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">오늘</button>
+                        <button id="dateBtn-week" onclick="setDateRange('week')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">최근 7일</button>
+                        <button id="dateBtn-month" onclick="setDateRange('month')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">최근 30일</button>
+                        <button id="dateBtn-clear" onclick="setDateRange('clear')" class="px-3 py-1 text-xs bg-green-100 border border-green-400 text-green-800 rounded font-medium">전체</button>
                     </div>
                 </div>
                 <div class="mt-4">
@@ -6179,6 +6179,25 @@ function setDateRange(type) {
     if (!startDateInput || !endDateInput) {
         console.error('날짜 입력 필드를 찾을 수 없습니다');
         return;
+    }
+    
+    // 모든 버튼 초기화 (비활성 상태)
+    const buttonTypes = ['today', 'week', 'month', 'clear'];
+    buttonTypes.forEach(btnType => {
+        const btn = document.getElementById(`dateBtn-${btnType}`);
+        if (btn) {
+            // 모든 버튼을 기본 스타일로 초기화
+            btn.className = 'px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100';
+            if (btnType === 'clear') {
+                btn.className = 'px-3 py-1 text-xs bg-gray-50 border border-gray-300 text-gray-700 rounded hover:bg-gray-100';
+            }
+        }
+    });
+    
+    // 선택된 버튼 활성화 스타일 적용
+    const selectedBtn = document.getElementById(`dateBtn-${type}`);
+    if (selectedBtn) {
+        selectedBtn.className = 'px-3 py-1 text-xs bg-green-100 border border-green-400 text-green-800 rounded font-medium';
     }
     
     // KST 기준 오늘 날짜 (더 간단한 방법)
