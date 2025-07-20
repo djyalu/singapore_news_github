@@ -3216,9 +3216,16 @@ function closeArticleDetail() {
 function showSendSettings() {
     console.log('showSendSettings called'); // 디버깅용
     
-    // URL 파라미터를 통해 전송 설정 탭으로 직접 이동
-    window.history.pushState({}, '', '?tab=delivery');
-    loadPage('settings');
+    // Settings 네비게이션 링크를 클릭하여 설정 페이지로 이동
+    const settingsNavLink = document.querySelector('a[data-page="settings"]');
+    if (settingsNavLink) {
+        // URL 파라미터 설정
+        window.history.pushState({}, '', '?tab=delivery');
+        // 네비게이션 클릭
+        settingsNavLink.click();
+    } else {
+        console.error('Settings navigation link not found');
+    }
 }
 
 // Server Status Functions
