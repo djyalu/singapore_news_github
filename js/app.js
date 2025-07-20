@@ -3566,76 +3566,92 @@ function exportStatusReport() {
 async function clearScrapedArticles() {
     console.log('clearScrapedArticles called');
     
-    if (confirm('정말로 오늘 스크랩한 모든 기사를 삭제하시겠습니까?\n\n주의: 삭제 후에는 새로고침해도 다시 나타나지 않습니다.')) {
+    if (confirm('정말로 스크랩된 모든 파일을 삭제하시겠습니까?\n\n주의: 이 작업은 되돌릴 수 없으며, 모든 스크랩 데이터가 영구적으로 삭제됩니다.')) {
         console.log('User confirmed deletion');
         
-        let filename = null;
-        
         try {
-            // 현재 파일명 가져오기
-            filename = null;
+            // 모든 뉴스 파일 목록 가져오기
+            const allFilesResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+            if (!allFilesResponse.ok) {
+                throw new Error('파일 목록을 가져올 수 없습니다.');
+            }
             
-            if (!filename) {
-                // latest.json에서 파일명 가져오기
-                const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
-                if (latestResponse.ok) {
-                    const latestData = await latestResponse.json();
-                    filename = latestData.filename;
-                    console.log('Got filename from API:', filename);
+            const allFilesData = await allFilesResponse.json();
+            if (!allFilesData.success || !allFilesData.files) {
+                throw new Error('파일 목록이 비어있습니다.');
+            }
+            
+            const newsFiles = allFilesData.files.filter(file => 
+                file.name.startsWith('news_') && file.name.endsWith('.json')
+            );
+            
+            if (newsFiles.length === 0) {
+                showNotification('삭제할 뉴스 파일이 없습니다.', 'info');
+                return;
+            }
+            
+            console.log(`Found ${newsFiles.length} news files to delete`);
+            
+            // 모든 파일 삭제
+            let deletedCount = 0;
+            let totalFiles = newsFiles.length;
+            
+            for (const file of newsFiles) {
+                try {
+                    console.log('Deleting file:', file.name);
+                    const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ filename: file.name })
+                    });
+                    
+                    if (deleteResponse.ok) {
+                        const deleteResult = await deleteResponse.json();
+                        if (deleteResult.success) {
+                            deletedCount++;
+                            console.log(`Deleted ${file.name} (${deletedCount}/${totalFiles})`);
+                        } else {
+                            console.error(`Failed to delete ${file.name}:`, deleteResult.error);
+                        }
+                    } else {
+                        console.error(`HTTP error deleting ${file.name}:`, deleteResponse.status);
+                    }
+                    
+                    // API 요청 간격 조절 (GitHub rate limiting 방지)
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                } catch (fileError) {
+                    console.error(`Error deleting ${file.name}:`, fileError);
                 }
             }
             
-            if (filename) {
-                // GitHub에서 파일 삭제 시도
-                console.log('Attempting to delete GitHub file:', filename);
-                const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ filename: filename })
-                });
+            // 삭제 완료 후 UI 업데이트
+            if (deletedCount > 0) {
+                // 잠시 대기 (GitHub API 반영 시간)
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 
-                if (deleteResponse.ok) {
-                    const deleteResult = await deleteResponse.json();
-                    console.log('GitHub deletion response:', deleteResult);
-                    if (deleteResult.success) {
-                        console.log('GitHub file deleted successfully');
-                        
-                        // 삭제 성공 후 잠시 대기 (GitHub API 반영 시간)
-                        await new Promise(resolve => setTimeout(resolve, 1000));
-                        
-                        // 삭제 성공 시에만 UI 업데이트
-                        const articlesList = document.getElementById('scrapedArticlesList');
-                        if (articlesList) {
-                            articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
-                        }
-                        
-                        // 기사 수 업데이트
-                        const todayArticlesElement = document.getElementById('todayArticles');
-                        if (todayArticlesElement) {
-                            todayArticlesElement.textContent = '0';
-                        }
-                        
-                        // 대시보드 데이터도 새로고침
-                        if (typeof updateTodayArticles === 'function') {
-                            await updateTodayArticles();
-                        }
-                        
-                        showNotification('모든 기사가 서버에서 삭제되었습니다.', 'success');
-                        return; // 성공 시 여기서 종료
-                    } else {
-                        showNotification('서버에서 파일 삭제에 실패했습니다: ' + (deleteResult.error || 'Unknown error'), 'error');
-                        return;
-                    }
-                } else {
-                    console.log(`GitHub deletion failed with status: ${deleteResponse.status}`);
-                    showNotification('서버 삭제 요청이 실패했습니다.', 'error');
-                    return;
+                // UI 업데이트
+                const articlesList = document.getElementById('scrapedArticlesList');
+                if (articlesList) {
+                    articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
                 }
+                
+                // 기사 수 업데이트
+                const todayArticlesElement = document.getElementById('todayArticles');
+                if (todayArticlesElement) {
+                    todayArticlesElement.textContent = '0';
+                }
+                
+                // 대시보드 데이터도 새로고침
+                if (typeof updateTodayArticles === 'function') {
+                    await updateTodayArticles();
+                }
+                
+                showNotification(`${deletedCount}개 파일이 서버에서 삭제되었습니다.`, 'success');
             } else {
-                showNotification('삭제할 파일을 찾을 수 없습니다.', 'error');
-                return;
+                showNotification('파일을 삭제할 수 없었습니다.', 'error');
             }
         } catch (error) {
             console.error('Error during deletion process:', error);
