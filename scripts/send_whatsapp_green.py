@@ -12,6 +12,7 @@ import glob
 from datetime import datetime
 import requests
 import time
+import pytz
 
 def load_settings():
     """설정 파일 로드"""
@@ -215,7 +216,11 @@ def check_green_api_status():
 
 def save_history(channel_id, status, message_preview, article_count):
     """발송 이력 저장"""
-    history_file = f'data/history/{datetime.now().strftime("%Y%m")}.json'
+    # KST 시간대 설정
+    kst = pytz.timezone('Asia/Seoul')
+    now_kst = datetime.now(kst)
+    
+    history_file = f'data/history/{now_kst.strftime("%Y%m")}.json'
     os.makedirs('data/history', exist_ok=True)
     
     history = []
@@ -224,8 +229,8 @@ def save_history(channel_id, status, message_preview, article_count):
             history = json.load(f)
     
     history.append({
-        'id': datetime.now().strftime('%Y%m%d%H%M%S'),
-        'timestamp': datetime.now().isoformat(),
+        'id': now_kst.strftime('%Y%m%d%H%M%S'),
+        'timestamp': now_kst.isoformat(),  # KST 타임존 정보 포함
         'channel': channel_id,
         'status': 'success' if status else 'failed',
         'header': f"뉴스 {article_count}개 발송",
