@@ -2572,12 +2572,12 @@ async function loadScrapedArticles() {
             if (latestResponse.ok) {
                 const apiResult = await latestResponse.json();
                 
-                // API 응답이 success와 data를 포함하는 경우
-                if (apiResult.success && apiResult.data) {
+                // API 응답이 success와 articles를 포함하는 경우
+                if (apiResult.success && apiResult.articles) {
                     result = {
                         success: true,
-                        articles: apiResult.data,
-                        articleCount: apiResult.data.reduce((sum, group) => sum + (group.article_count || 0), 0)
+                        articles: apiResult.articles,
+                        articleCount: apiResult.articles.reduce((sum, group) => sum + (group.article_count || 0), 0)
                     };
                 } else if (apiResult.error) {
                     console.log('API 에러:', apiResult.error);
@@ -3602,6 +3602,9 @@ async function clearScrapedArticles() {
                     if (deleteResult.success) {
                         console.log('GitHub file deleted successfully');
                         
+                        // 삭제 성공 후 잠시 대기 (GitHub API 반영 시간)
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        
                         // 삭제 성공 시에만 UI 업데이트
                         const articlesList = document.getElementById('scrapedArticlesList');
                         if (articlesList) {
@@ -3612,6 +3615,11 @@ async function clearScrapedArticles() {
                         const todayArticlesElement = document.getElementById('todayArticles');
                         if (todayArticlesElement) {
                             todayArticlesElement.textContent = '0';
+                        }
+                        
+                        // 대시보드 데이터도 새로고침
+                        if (typeof updateTodayArticles === 'function') {
+                            await updateTodayArticles();
                         }
                         
                         showNotification('모든 기사가 서버에서 삭제되었습니다.', 'success');
