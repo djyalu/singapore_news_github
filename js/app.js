@@ -5538,10 +5538,14 @@ function getScrapingManagementHTML() {
 
             <!-- Filters -->
             <div class="bg-white shadow rounded-lg p-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div>
-                        <label for="dateFilter" class="block text-sm font-medium text-gray-700">날짜 선택</label>
-                        <input type="date" id="dateFilter" onchange="filterScrapedArticles()" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <label for="startDateFilter" class="block text-sm font-medium text-gray-700">시작 날짜</label>
+                        <input type="date" id="startDateFilter" onchange="filterScrapedArticles()" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="endDateFilter" class="block text-sm font-medium text-gray-700">종료 날짜</label>
+                        <input type="date" id="endDateFilter" onchange="filterScrapedArticles()" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                     </div>
                     <div>
                         <label for="siteFilter" class="block text-sm font-medium text-gray-700">사이트</label>
@@ -5552,6 +5556,15 @@ function getScrapingManagementHTML() {
                     <div>
                         <label for="searchFilter" class="block text-sm font-medium text-gray-700">검색</label>
                         <input type="text" id="searchFilter" placeholder="제목 또는 내용 검색" onkeyup="filterScrapedArticles()" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">빠른 날짜 선택</label>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button onclick="setDateRange('today')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">오늘</button>
+                        <button onclick="setDateRange('week')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">최근 7일</button>
+                        <button onclick="setDateRange('month')" class="px-3 py-1 text-xs bg-blue-50 border border-blue-300 text-blue-700 rounded hover:bg-blue-100">최근 30일</button>
+                        <button onclick="setDateRange('clear')" class="px-3 py-1 text-xs bg-gray-50 border border-gray-300 text-gray-700 rounded hover:bg-gray-100">전체</button>
                     </div>
                 </div>
                 <div class="mt-4">
@@ -5851,7 +5864,8 @@ function toggleScrapingArticle(id) {
 
 // 스크랩 기사 필터링
 function filterScrapedArticles() {
-    const dateFilter = document.getElementById('dateFilter').value;
+    const startDateFilter = document.getElementById('startDateFilter').value;
+    const endDateFilter = document.getElementById('endDateFilter').value;
     const siteFilter = document.getElementById('siteFilter').value;
     const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
     const executionType = document.querySelector('input[name="executionType"]:checked')?.value || 'all';
@@ -5864,9 +5878,23 @@ function filterScrapedArticles() {
     
     let filtered = window.allScrapedArticles;
     
-    // 날짜 필터
-    if (dateFilter) {
-        filtered = filtered.filter(item => item.date.startsWith(dateFilter));
+    // 날짜 범위 필터
+    if (startDateFilter || endDateFilter) {
+        filtered = filtered.filter(item => {
+            const itemDate = item.date.substring(0, 10); // YYYY-MM-DD 형식으로 추출
+            
+            // 시작 날짜 조건 확인
+            if (startDateFilter && itemDate < startDateFilter) {
+                return false;
+            }
+            
+            // 종료 날짜 조건 확인
+            if (endDateFilter && itemDate > endDateFilter) {
+                return false;
+            }
+            
+            return true;
+        });
     }
     
     // 사이트 필터
@@ -5921,7 +5949,7 @@ function filterScrapedArticles() {
         } else if (executionType === 'manual') {
             statusText += ' (수동 실행만 표시)';
         }
-        if (dateFilter || siteFilter || searchFilter) {
+        if (startDateFilter || endDateFilter || siteFilter || searchFilter) {
             statusText += ' - 추가 필터 적용됨';
         }
         filterStatus.textContent = statusText;
@@ -6089,4 +6117,45 @@ async function processScrapedFiles(files) {
 // 스크랩 데이터 새로고침
 async function refreshScrapedArticles() {
     await loadAllScrapedArticles();
+}
+
+// 날짜 범위 빠른 설정
+function setDateRange(type) {
+    const startDateInput = document.getElementById('startDateFilter');
+    const endDateInput = document.getElementById('endDateFilter');
+    const today = new Date();
+    
+    // KST 시간으로 변환
+    const kstOffset = 9 * 60; // KST는 UTC+9
+    const kstToday = new Date(today.getTime() + (kstOffset * 60 * 1000));
+    
+    switch (type) {
+        case 'today':
+            const todayStr = kstToday.toISOString().split('T')[0];
+            startDateInput.value = todayStr;
+            endDateInput.value = todayStr;
+            break;
+            
+        case 'week':
+            const weekAgo = new Date(kstToday);
+            weekAgo.setDate(weekAgo.getDate() - 7);
+            startDateInput.value = weekAgo.toISOString().split('T')[0];
+            endDateInput.value = kstToday.toISOString().split('T')[0];
+            break;
+            
+        case 'month':
+            const monthAgo = new Date(kstToday);
+            monthAgo.setDate(monthAgo.getDate() - 30);
+            startDateInput.value = monthAgo.toISOString().split('T')[0];
+            endDateInput.value = kstToday.toISOString().split('T')[0];
+            break;
+            
+        case 'clear':
+            startDateInput.value = '';
+            endDateInput.value = '';
+            break;
+    }
+    
+    // 날짜 설정 후 필터링 실행
+    filterScrapedArticles();
 }
