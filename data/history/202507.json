@@ -198,5 +198,16 @@
     "message_length": 838,
     "article_count": 3,
     "api": "green-api"
+  },
+  {
+    "id": "20250720082058",
+    "timestamp": "2025-07-20T08:20:58.176563",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 4개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 20일 08:20\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 2개 그룹, 총 4개 기사\n\n【 News 】\n📍 출처: The Straits Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 싱가포르, 개발, 취업 관련 뉴스\n📢 Sky terraces and sea v...",
+    "message_length": 1251,
+    "article_count": 4,
+    "api": "green-api"
   }
 ]
