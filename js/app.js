@@ -1169,9 +1169,112 @@ async function loadTestHistory() {
 
 function getChannelName(channelId) {
     const channels = {
-        '120363421252284444@g.us': 'Singapore News Backup'
+        '120363421252284444@g.us': 'Singapore News Backup',
+        '120363317869470412@g.us': '테스트 채널'
     };
     return channels[channelId] || channelId;
+}
+
+function createHistoryDetailModal() {
+    const modal = document.createElement('div');
+    modal.id = 'historyDetailModal';
+    modal.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50';
+    modal.innerHTML = `
+        <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-2/3 shadow-lg rounded-md bg-white">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="historyModalTitle" class="text-lg font-medium text-gray-900">전송 상세 정보</h3>
+                <button onclick="closeHistoryDetailModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="historyDetailContent" class="max-h-96 overflow-y-auto">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    `;
+    return modal;
+}
+
+function closeHistoryDetailModal() {
+    const modal = document.getElementById('historyDetailModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
+}
+
+async function findScrapedArticlesForHistory(recordId) {
+    const history = window.currentHistoryData || [];
+    const record = history.find(r => r.id === recordId);
+    
+    if (!record) return;
+    
+    const resultDiv = document.getElementById('scrapedArticlesResult');
+    resultDiv.innerHTML = '<p class="text-gray-600">기사를 찾는 중...</p>';
+    
+    try {
+        // 전송 시간과 가장 가까운 스크랩 데이터 찾기
+        const sendTime = new Date(record.timestamp);
+        const sendDate = sendTime.toISOString().split('T')[0].replace(/-/g, '');
+        
+        // 해당 날짜의 스크랩 파일들 조회
+        const response = await fetch(`https://singapore-news-github.vercel.app/api/get-scraped-articles?date=${sendDate}`);
+        
+        if (!response.ok) {
+            throw new Error('스크랩 데이터를 가져올 수 없습니다.');
+        }
+        
+        const data = await response.json();
+        
+        if (data.success && data.articles && data.articles.length > 0) {
+            // 기사 목록 표시
+            let articlesHtml = '<div class="space-y-3">';
+            
+            data.articles.forEach((group, index) => {
+                articlesHtml += `
+                    <div class="border rounded-lg p-4">
+                        <h5 class="font-medium text-gray-900 mb-2">${group.group} (${group.article_count}개)</h5>
+                        <div class="space-y-2">
+                `;
+                
+                group.articles.forEach((article, idx) => {
+                    articlesHtml += `
+                        <div class="bg-gray-50 p-3 rounded">
+                            <h6 class="font-medium text-sm mb-1">${idx + 1}. ${article.title}</h6>
+                            <p class="text-xs text-gray-600 mb-1">${article.site}</p>
+                            <p class="text-sm text-gray-700">${article.summary}</p>
+                            <a href="${article.url}" target="_blank" class="text-xs text-blue-600 hover:underline">원문 보기 →</a>
+                        </div>
+                    `;
+                });
+                
+                articlesHtml += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            articlesHtml += '</div>';
+            resultDiv.innerHTML = articlesHtml;
+        } else {
+            resultDiv.innerHTML = '<p class="text-gray-600">해당 시간의 스크랩 데이터를 찾을 수 없습니다.</p>';
+        }
+    } catch (error) {
+        console.error('스크랩 데이터 조회 오류:', error);
+        resultDiv.innerHTML = '<p class="text-red-600">데이터를 불러오는 중 오류가 발생했습니다.</p>';
+    }
 }
 
 async function initializeSettings() {
@@ -1723,40 +1826,70 @@ async function showHistoryDetail(recordId) {
     const history = window.currentHistoryData || [];
     const record = history.find(r => r.id === recordId);
     
-    if (record && record.articles && record.articles.length > 0) {
-        // 기사가 있는 경우 모달로 표시
-        const modal = createArticlesModal();
-        document.body.appendChild(modal);
-        
-        const content = document.getElementById('articlesModalContent');
-        const title = document.getElementById('modalTitle');
-        
-        title.textContent = `전송 기록 - ${new Date(record.timestamp).toLocaleString('ko-KR')}`;
-        
-        let html = `
-            <div class="history-detail-info">
-                <div class="info-row">
-                    <span class="info-label">채널:</span>
-                    <span class="info-value">${getChannelName(record.channel)}</span>
+    if (!record) {
+        showNotification('전송 기록을 찾을 수 없습니다.', 'error');
+        return;
+    }
+    
+    // 모달 생성
+    const modal = createHistoryDetailModal();
+    document.body.appendChild(modal);
+    
+    const content = document.getElementById('historyDetailContent');
+    const title = document.getElementById('historyModalTitle');
+    
+    title.textContent = `전송 기록 - ${new Date(record.timestamp).toLocaleString('ko-KR')}`;
+    
+    // 기본 정보 표시
+    let html = `
+        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <span class="text-gray-600 text-sm">전송 채널</span>
+                    <p class="font-medium">${getChannelName(record.channel)}</p>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">상태:</span>
-                    <span class="info-value ${record.status}">${record.status === 'success' ? '✅ 성공' : '❌ 실패'}</span>
+                <div>
+                    <span class="text-gray-600 text-sm">전송 상태</span>
+                    <p class="font-medium ${record.status === 'success' ? 'text-green-600' : 'text-red-600'}">
+                        ${record.status === 'success' ? '✅ 성공' : '❌ 실패'}
+                    </p>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">기사 수:</span>
-                    <span class="info-value">${record.articles.length}개</span>
+                <div>
+                    <span class="text-gray-600 text-sm">기사 수</span>
+                    <p class="font-medium">${record.article_count || '-'}개</p>
+                </div>
+                <div>
+                    <span class="text-gray-600 text-sm">API</span>
+                    <p class="font-medium">${record.api || 'whapi'}</p>
                 </div>
             </div>
-            <hr style="margin: 20px 0;">
+        </div>
+    `;
+    
+    // 메시지 미리보기 표시
+    if (record.message_preview) {
+        html += `
+            <div class="mb-4">
+                <h4 class="font-medium text-gray-700 mb-2">전송 메시지 미리보기</h4>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <pre class="whitespace-pre-wrap text-sm text-gray-800 font-sans">${escapeHtml(record.message_preview)}</pre>
+                </div>
+            </div>
         `;
-        
-        renderArticlesList(record.articles, content);
-        content.innerHTML = html + content.innerHTML;
-    } else {
-        // 기사가 없는 경우 기본 정보만 표시
-        showNotification(`전송 시간: ${new Date(record.timestamp).toLocaleString()}, 상태: ${record.status === 'success' ? '성공' : '실패'}`, 'info');
     }
+    
+    // 해당 시간에 가장 가까운 스크랩 데이터 찾기
+    html += `
+        <div class="mt-4">
+            <h4 class="font-medium text-gray-700 mb-2">스크랩된 기사 찾기</h4>
+            <button onclick="findScrapedArticlesForHistory('${recordId}')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                해당 시간의 기사 보기
+            </button>
+            <div id="scrapedArticlesResult" class="mt-4"></div>
+        </div>
+    `;
+    
+    content.innerHTML = html;
 }
 
 function loadUsers() {
