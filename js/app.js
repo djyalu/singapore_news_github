@@ -2920,6 +2920,7 @@ async function loadTodayArticlesModal() {
         }
         
         let articles = [];
+        const data = result.articles;
         
         // API 응답은 그룹별 배열 구조
         if (Array.isArray(data)) {
