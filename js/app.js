@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                                 <div class="ml-5 w-0 flex-1">
                                     <dl>
-                                        <dt class="text-sm font-medium text-gray-500 truncate">오늘 스크랩한 기사</dt>
+                                        <dt class="text-sm font-medium text-gray-500 truncate scraped-articles-date-label">오늘 스크랩한 기사</dt>
                                         <dd class="text-lg font-medium text-gray-900" id="todayArticles">0</dd>
                                     </dl>
                                 </div>
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="px-4 py-5 sm:p-6">
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                             <div>
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">오늘 스크랩한 기사</h3>
+                                <h3 class="text-lg leading-6 font-medium text-gray-900 scraped-articles-date-label">오늘 스크랩한 기사</h3>
                                 <p class="mt-1 text-sm text-gray-500">실시간으로 수집된 싱가포르 뉴스 기사들</p>
                             </div>
                             <div class="mt-3 sm:mt-0 flex flex-wrap gap-2">
@@ -389,11 +389,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                     </svg>
                                     메시지 생성
                                 </button>
-                                <button type="button" onclick="clearScrapedArticles()" id="clearArticlesBtn" class="inline-flex items-center px-3 py-2 border border-red-300 text-sm leading-4 font-medium rounded-md text-red-700 bg-white hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                <button type="button" onclick="showScrapingManagement()" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    전체 삭제
+                                    스크랩 관리
                                 </button>
                                 <button type="button" onclick="toggleScrapedArticles()" class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                     <span id="toggleArticlesText">접기</span>
@@ -2189,20 +2190,26 @@ async function updateTodayArticles() {
                 console.log('오늘 날짜 (KST):', todayKST);
                 console.log('파일 날짜:', fileDateFormatted);
                 
-                // 오늘 날짜인 경우에만 카운트
-                if (fileDateFormatted === todayKST) {
-                    const articles = result.articles;
+                const articles = result.articles;
+                
+                // 배열인 경우 (그룹별 기사)
+                if (Array.isArray(articles)) {
+                    // 모든 그룹의 기사 수를 합산
+                    todayCount = articles.reduce((sum, group) => {
+                        return sum + (group.article_count || 0);
+                    }, 0);
                     
-                    // 배열인 경우 (그룹별 기사)
-                    if (Array.isArray(articles)) {
-                        // 모든 그룹의 기사 수를 합산
-                        todayCount = articles.reduce((sum, group) => {
-                            return sum + (group.article_count || 0);
-                        }, 0);
-                        
-                        console.log('오늘 기사 총 개수:', todayCount); // 디버깅용
-                    }
+                    console.log('기사 총 개수:', todayCount); // 디버깅용
                 }
+                
+                // 날짜 표시 업데이트
+                const isToday = fileDateFormatted === todayKST;
+                const dateDisplayElements = document.querySelectorAll('.scraped-articles-date-label');
+                const dateText = isToday ? '오늘 스크랩한 기사' : `${fileMM}/${fileDD} 스크랩한 기사`;
+                
+                dateDisplayElements.forEach(element => {
+                    element.textContent = dateText;
+                });
             }
         }
     } catch (error) {
@@ -3248,6 +3255,245 @@ function showSendSettings() {
                 });
             }
         }
+    }
+}
+
+function showScrapingManagement() {
+    console.log('showScrapingManagement called');
+    
+    // 스크랩 관리 모달 생성
+    const modal = createScrapingManagementModal();
+    document.body.appendChild(modal);
+    loadScrapingManagementData();
+}
+
+function createScrapingManagementModal() {
+    const modal = document.createElement('div');
+    modal.className = 'modal scraping-management-modal';
+    modal.id = 'scrapingManagementModal';
+    modal.innerHTML = `
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2>스크랩 관리</h2>
+                <button class="modal-close" onclick="closeScrapingManagementModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="scrapingManagementContent" class="scraping-management-content">
+                    <p class="loading">파일 목록을 불러오는 중...</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 모달 바깥 클릭시 닫기
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeScrapingManagementModal();
+        }
+    });
+    
+    return modal;
+}
+
+function closeScrapingManagementModal() {
+    const modal = document.getElementById('scrapingManagementModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+async function loadScrapingManagementData() {
+    const content = document.getElementById('scrapingManagementContent');
+    
+    try {
+        // 모든 파일 목록 가져오기
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+        if (!response.ok) {
+            throw new Error('파일 목록을 가져올 수 없습니다.');
+        }
+        
+        const data = await response.json();
+        if (!data.success || !data.files) {
+            throw new Error('파일 목록이 비어있습니다.');
+        }
+        
+        const newsFiles = data.files.filter(file => 
+            file.name.startsWith('news_') && file.name.endsWith('.json')
+        );
+        
+        if (newsFiles.length === 0) {
+            content.innerHTML = '<p class="no-data">스크랩된 파일이 없습니다.</p>';
+            return;
+        }
+        
+        // 날짜별로 그룹화
+        const filesByDate = {};
+        const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+        const todayKST = kstNow.toISOString().split('T')[0].replace(/-/g, '');
+        
+        newsFiles.forEach(file => {
+            const dateMatch = file.name.match(/news_(\\d{8})_\\d{6}\\.json/);
+            if (dateMatch) {
+                const fileDate = dateMatch[1];
+                if (!filesByDate[fileDate]) {
+                    filesByDate[fileDate] = [];
+                }
+                filesByDate[fileDate].push(file);
+            }
+        });
+        
+        // HTML 생성
+        let html = `
+            <div class="scraping-management-header">
+                <h3>스크랩된 파일 관리</h3>
+                <p class="text-sm text-gray-600">총 ${newsFiles.length}개 파일 | 날짜별로 정리되어 있습니다.</p>
+            </div>
+            <div class="file-groups">
+        `;
+        
+        // 날짜순으로 정렬 (최신순)
+        const sortedDates = Object.keys(filesByDate).sort((a, b) => b.localeCompare(a));
+        
+        sortedDates.forEach(dateStr => {
+            const files = filesByDate[dateStr];
+            const isToday = dateStr === todayKST;
+            const displayDate = `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+            const dayLabel = isToday ? ' (오늘)' : '';
+            
+            html += `
+                <div class="file-group" data-date="${dateStr}">
+                    <div class="file-group-header">
+                        <h4>${displayDate}${dayLabel} <span class="file-count">(${files.length}개 파일)</span></h4>
+                        <button onclick="deleteFileGroup('${dateStr}')" class="btn btn-danger btn-sm">
+                            🗑️ 이 날짜 전체 삭제
+                        </button>
+                    </div>
+                    <div class="file-list">
+            `;
+            
+            files.forEach(file => {
+                const timeMatch = file.name.match(/news_\\d{8}_(\\d{6})\\.json/);
+                const timeStr = timeMatch ? `${timeMatch[1].substring(0,2)}:${timeMatch[1].substring(2,4)}:${timeMatch[1].substring(4,6)}` : '';
+                const sizeKB = Math.round(file.size / 1024);
+                
+                html += `
+                    <div class="file-item">
+                        <div class="file-info">
+                            <span class="file-name">${file.name}</span>
+                            <span class="file-meta">${timeStr} • ${sizeKB}KB</span>
+                        </div>
+                        <button onclick="deleteIndividualFile('${file.name}')" class="btn btn-danger btn-xs">삭제</button>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        content.innerHTML = html;
+        
+    } catch (error) {
+        console.error('스크랩 관리 데이터 로드 오류:', error);
+        content.innerHTML = '<p class="error-message">파일 목록을 불러오는 중 오류가 발생했습니다.</p>';
+    }
+}
+
+async function deleteFileGroup(dateStr) {
+    const displayDate = `${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}`;
+    
+    if (!confirm(`${displayDate} 날짜의 모든 파일을 삭제하시겠습니까?\n\n이 작업은 되돌릴 수 없습니다.`)) {
+        return;
+    }
+    
+    try {
+        // 해당 날짜의 파일들 가져오기
+        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+        const data = await response.json();
+        
+        const filesToDelete = data.files.filter(file => {
+            const dateMatch = file.name.match(/news_(\\d{8})_\\d{6}\\.json/);
+            return dateMatch && dateMatch[1] === dateStr;
+        });
+        
+        if (filesToDelete.length === 0) {
+            showNotification('삭제할 파일이 없습니다.', 'info');
+            return;
+        }
+        
+        let deletedCount = 0;
+        
+        for (const file of filesToDelete) {
+            try {
+                const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename: file.name })
+                });
+                
+                const deleteResult = await deleteResponse.json();
+                if (deleteResult.success) {
+                    deletedCount++;
+                }
+                
+                // API 제한 방지를 위한 대기
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+            } catch (error) {
+                console.error(`Error deleting ${file.name}:`, error);
+            }
+        }
+        
+        showNotification(`${displayDate} 날짜의 ${deletedCount}개 파일이 삭제되었습니다.`, 'success');
+        
+        // 목록 새로고침
+        await loadScrapingManagementData();
+        
+        // 대시보드 업데이트
+        if (typeof updateTodayArticles === 'function') {
+            await updateTodayArticles();
+        }
+        
+    } catch (error) {
+        console.error('날짜별 삭제 오류:', error);
+        showNotification('삭제 중 오류가 발생했습니다: ' + error.message, 'error');
+    }
+}
+
+async function deleteIndividualFile(filename) {
+    if (!confirm(`${filename} 파일을 삭제하시겠습니까?\\n\\n이 작업은 되돌릴 수 없습니다.`)) {
+        return;
+    }
+    
+    try {
+        const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: filename })
+        });
+        
+        const deleteResult = await deleteResponse.json();
+        
+        if (deleteResult.success) {
+            showNotification(`${filename} 파일이 삭제되었습니다.`, 'success');
+            
+            // 목록 새로고침
+            await loadScrapingManagementData();
+            
+            // 대시보드 업데이트
+            if (typeof updateTodayArticles === 'function') {
+                await updateTodayArticles();
+            }
+        } else {
+            showNotification('파일 삭제에 실패했습니다: ' + (deleteResult.error || 'Unknown error'), 'error');
+        }
+        
+    } catch (error) {
+        console.error('개별 파일 삭제 오류:', error);
+        showNotification('삭제 중 오류가 발생했습니다: ' + error.message, 'error');
     }
 }
 
