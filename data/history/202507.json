@@ -187,5 +187,16 @@
     "message_length": 1558,
     "article_count": 6,
     "api": "green-api"
+  },
+  {
+    "id": "20250720071407",
+    "timestamp": "2025-07-20T07:14:07.128053",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 3개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 20일 07:14\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 3개 기사\n\n【 News 】\n📍 출처: The Straits Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 비즈니스, 교통, 경제 관련 뉴스\n📢 What kind of insurance...",
+    "message_length": 838,
+    "article_count": 3,
+    "api": "green-api"
   }
 ]
