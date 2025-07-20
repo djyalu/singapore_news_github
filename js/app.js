@@ -1,5 +1,6 @@
 // 현재 페이지 추적 (무한 루프 방지)
 let currentPage = null;
+let isLoadingData = false; // Chaos Test: 중복 요청 방지 플래그
 
 // 서버 기반 데이터 관리 함수들
 async function getDataFromServer() {
