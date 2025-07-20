@@ -108,10 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // 현재 사용자 정보 표시
-        const currentUser = getCurrentUser();
-        const userInfoElement = document.getElementById('currentUserInfo');
-        if (userInfoElement && currentUser) {
-            userInfoElement.textContent = `${currentUser.name} (${currentUser.userId})`;
+        try {
+            const currentUser = getCurrentUser();
+            const userInfoElement = document.getElementById('currentUserInfo');
+            if (userInfoElement && currentUser) {
+                userInfoElement.textContent = `${currentUser.name} (${currentUser.userId || currentUser.id})`;
+            }
+        } catch (e) {
+            console.error('사용자 정보 표시 오류:', e);
         }
     }
     
@@ -141,7 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             console.log('로그인 실패');
-            errorMessage.textContent = '잘못된 아이디 또는 비밀번호입니다.';
+            if (errorMessage) {
+                errorMessage.textContent = '잘못된 아이디 또는 비밀번호입니다.';
+            }
             errorMessage.classList.remove('hidden');
         }
     });
@@ -901,7 +907,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 checkAuth();
             } else {
                 const mfaErrorMessage = document.getElementById('mfaErrorMessage');
-                mfaErrorMessage.textContent = '잘못된 인증 코드입니다.';
+                if (mfaErrorMessage) {
+                    mfaErrorMessage.textContent = '잘못된 인증 코드입니다.';
+                }
                 mfaErrorMessage.classList.remove('hidden');
                 document.getElementById('mfaCode').value = '';
                 document.getElementById('mfaCode').focus();
@@ -912,7 +920,8 @@ document.addEventListener('DOMContentLoaded', function() {
             logout();
             document.getElementById('mfaContainer').classList.add('hidden');
             document.getElementById('mfaCode').value = '';
-            document.getElementById('mfaErrorMessage').textContent = '';
+            const mfaError = document.getElementById('mfaErrorMessage');
+            if (mfaError) mfaError.textContent = '';
         });
     }
     
@@ -1051,7 +1060,9 @@ function sendTestMessage() {
     
     // 버튼 비활성화 및 로딩 상태
     testSendBtn.disabled = true;
-    testSendBtn.textContent = '전송 중...';
+    if (testSendBtn) {
+        testSendBtn.textContent = '전송 중...';
+    }
     testResult.innerHTML = '<div class="info-message">테스트 메시지를 전송하고 있습니다...</div>';
     
     // 실제 메시지 처리 (시간 변수 치환)
@@ -1107,7 +1118,9 @@ function sendTestMessage() {
     })
     .finally(() => {
         testSendBtn.disabled = false;
-        testSendBtn.textContent = '테스트 전송';
+        if (testSendBtn) {
+            testSendBtn.textContent = '테스트 전송';
+        }
         loadTestHistory();
     });
 }
@@ -1726,7 +1739,9 @@ async function loadHistory() {
     // 결과 개수 표시
     const resultCount = document.getElementById('historyResultCount');
     if (resultCount) {
-        resultCount.textContent = `총 ${filteredHistory.length}건`;
+        if (resultCount) {
+            resultCount.textContent = `총 ${filteredHistory.length}건`;
+        }
     }
     
     // 최신 순으로 정렬
@@ -1759,11 +1774,15 @@ async function loadHistory() {
             emptyState.classList.remove('hidden');
             // Update empty state message based on whether we have any history
             if (history.length === 0) {
-                emptyState.querySelector('h3').textContent = '전송 기록이 없습니다';
-                emptyState.querySelector('p').textContent = 'WhatsApp 전송을 실행하면 여기에 이력이 표시됩니다.';
+                const h3 = emptyState.querySelector('h3');
+                const p = emptyState.querySelector('p');
+                if (h3) h3.textContent = '전송 기록이 없습니다';
+                if (p) p.textContent = 'WhatsApp 전송을 실행하면 여기에 이력이 표시됩니다.';
             } else {
-                emptyState.querySelector('h3').textContent = '검색 결과가 없습니다';
-                emptyState.querySelector('p').textContent = '필터 조건에 맞는 전송 기록이 없습니다.';
+                const h3Empty = emptyState.querySelector('h3');
+                const pEmpty = emptyState.querySelector('p');
+                if (h3Empty) h3Empty.textContent = '검색 결과가 없습니다';
+                if (pEmpty) pEmpty.textContent = '필터 조건에 맞는 전송 기록이 없습니다.';
             }
         }
     } else {
@@ -1892,12 +1911,29 @@ async function showHistoryDetail(recordId) {
     content.innerHTML = html;
 }
 
-function loadUsers() {
-    const users = getAllUsers();
+async function loadUsers() {
     const tbody = document.querySelector('#usersTable tbody');
-    tbody.innerHTML = '';
+    if (!tbody) return;
     
-    users.forEach(user => {
+    tbody.innerHTML = '<tr><td colspan="5" class="text-center">사용자 목록을 불러오는 중...</td></tr>';
+    
+    try {
+        const users = await getAllUsers();
+        tbody.innerHTML = '';
+        
+        // users가 배열인지 확인
+        if (!Array.isArray(users)) {
+            console.error('사용자 목록이 배열이 아닙니다:', users);
+            tbody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">사용자 데이터 형식 오류</td></tr>';
+            return;
+        }
+        
+        if (users.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" class="text-center">등록된 사용자가 없습니다.</td></tr>';
+            return;
+        }
+        
+        users.forEach(user => {
         const row = tbody.insertRow();
         row.innerHTML = `
             <td>${user.name}</td>
@@ -1910,7 +1946,11 @@ function loadUsers() {
                 ${user.id !== 'admin' ? `<button class="btn btn-danger" onclick="deleteUserConfirm('${user.id}')">삭제</button>` : ''}
             </td>
         `;
-    });
+        });
+    } catch (error) {
+        console.error('사용자 목록 로드 오류:', error);
+        tbody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">사용자 목록을 불러오는 중 오류가 발생했습니다.</td></tr>';
+    }
 }
 
 function showAddUserForm() {

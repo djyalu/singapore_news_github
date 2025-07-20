@@ -115,11 +115,27 @@ async function getAllUsers() {
     try {
         const apiUrl = 'https://singapore-news-github.vercel.app/api/auth';
         const response = await fetch(apiUrl);
-        const result = await response.json();
         
-        if (result.success && result.config) {
-            return result.config.users || [];
+        if (!response.ok) {
+            console.error('사용자 목록 API 응답 오류:', response.status);
+            return [];
         }
+        
+        const result = await response.json();
+        console.log('사용자 목록 API 응답:', result);
+        
+        if (result.success && result.config && result.config.users) {
+            const users = result.config.users;
+            // 배열인지 확인
+            if (Array.isArray(users)) {
+                return users;
+            } else {
+                console.error('users가 배열이 아닙니다:', typeof users, users);
+                return [];
+            }
+        }
+        
+        console.log('사용자 목록이 비어있거나 형식이 올바르지 않습니다');
         return [];
     } catch (error) {
         console.error('사용자 목록 조회 에러:', error);
@@ -129,16 +145,25 @@ async function getAllUsers() {
 
 // 사용자 관리는 서버측에서만 처리
 async function addUser(userData) {
-    console.warn('사용자 추가는 서버에서만 가능합니다. data/users.json 파일을 직접 수정하세요.');
-    return { success: false, message: '사용자 추가는 서버에서만 가능합니다.' };
+    console.warn('사용자 추가는 서버에서만 가능합니다.');
+    return { 
+        success: false, 
+        message: '사용자 추가는 서버 환경 변수에서만 가능합니다.\n\nVercel 대시보드에서 환경 변수를 수정하세요:\n1. Vercel 대시보드 접속\n2. Settings → Environment Variables\n3. AUTH_CONFIG 환경 변수 수정' 
+    };
 }
 
 async function updateUser(userId, updates) {
-    console.warn('사용자 수정은 서버에서만 가능합니다. data/users.json 파일을 직접 수정하세요.');
-    return { success: false, message: '사용자 수정은 서버에서만 가능합니다.' };
+    console.warn('사용자 수정은 서버에서만 가능합니다.');
+    return { 
+        success: false, 
+        message: '사용자 수정은 서버 환경 변수에서만 가능합니다.\n\nVercel 대시보드에서 AUTH_CONFIG 환경 변수를 수정하세요.' 
+    };
 }
 
 async function deleteUser(userId) {
-    console.warn('사용자 삭제는 서버에서만 가능합니다. data/users.json 파일을 직접 수정하세요.');
-    return { success: false, message: '사용자 삭제는 서버에서만 가능합니다.' };
+    console.warn('사용자 삭제는 서버에서만 가능합니다.');
+    return { 
+        success: false, 
+        message: '사용자 삭제는 서버 환경 변수에서만 가능합니다.\n\nVercel 대시보드에서 AUTH_CONFIG 환경 변수를 수정하세요.' 
+    };
 }
