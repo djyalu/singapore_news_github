@@ -920,19 +920,20 @@ def is_valid_article_url(url, domain):
     elif 'straitstimes.com' in domain:
         print(f"[DEBUG] Checking ST URL patterns for: {url}")
         
-        # Straits Times 기사 패턴 - 더 유연하게
+        # Straits Times 기사 패턴 - 대소문자 모두 허용하고 더 유연하게
         st_patterns = [
-            r'/singapore/[a-z0-9-]{5,}',          # 싱가포르 섹션
-            r'/asia/[a-z0-9-/]{5,}',              # 아시아 섹션
-            r'/world/[a-z0-9-/]{5,}',             # 월드 섹션
-            r'/business/[a-z0-9-/]{5,}',          # 비즈니스 섹션
-            r'/sport/[a-z0-9-/]{5,}',             # 스포츠 섹션
-            r'/life/[a-z0-9-/]{5,}',              # 라이프 섹션
-            r'/opinion/[a-z0-9-]{5,}',            # 오피니언 섹션
-            r'/tech/[a-z0-9-]{5,}',               # 기술 섹션
-            r'/politics/[a-z0-9-]{5,}',           # 정치 섹션
-            r'/\d{4}/\d{2}/\d{2}/[a-z0-9-]{5,}', # 날짜 패턴
-            r'/[a-z0-9-]{15,}$'                   # 긴 제목 URL
+            r'/singapore/[a-zA-Z0-9-]{5,}',          # 싱가포르 섹션
+            r'/asia/[a-zA-Z0-9-/]{5,}',              # 아시아 섹션
+            r'/world/[a-zA-Z0-9-/]{5,}',             # 월드 섹션
+            r'/business/[a-zA-Z0-9-/]{5,}',          # 비즈니스 섹션
+            r'/sport/[a-zA-Z0-9-/]{5,}',             # 스포츠 섹션
+            r'/life/[a-zA-Z0-9-/]{5,}',              # 라이프 섹션
+            r'/opinion/[a-zA-Z0-9-]{5,}',            # 오피니언 섹션
+            r'/tech/[a-zA-Z0-9-]{5,}',               # 기술 섹션
+            r'/politics/[a-zA-Z0-9-]{5,}',           # 정치 섹션
+            r'/\d{4}/\d{2}/\d{2}/[a-zA-Z0-9-]{5,}', # 날짜 패턴
+            r'/[a-zA-Z]{2,}/[a-zA-Z0-9-]{5,}',       # 두 글자 섹션
+            r'/[a-zA-Z0-9-]{10,}'                     # 일반 기사 패턴 (더 유연하게)
         ]
         
         # ST 특별 페이지들만 제외
