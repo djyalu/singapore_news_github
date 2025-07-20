@@ -162,3 +162,34 @@ python scripts/cleanup_old_data.py
 - @octokit/rest for GitHub API
 - requests, beautifulsoup4, selenium for scraping
 - google-generativeai for AI summaries
+
+## 작업 이력
+
+### 2025-07-20 시스템 복원 및 정리
+**시간**: 오후 10시 - 10시 42분  
+**상태**: ✅ 완료
+
+**수행 작업**:
+1. **시스템 복원**: 안정 버전(commit 11f65bd)으로 리셋
+2. **CSS 문법 오류 수정**: `border-transparent: 1px` → `border: 1px solid transparent`
+3. **시스템 정상 동작 확인**:
+   - Vercel API 엔드포인트 테스트 (모두 200 OK)
+   - GitHub Pages 대시보드 접근 확인
+   - 데이터 파일 상태 점검 (settings.json, sites.json, latest.json)
+   - 로그인 기능 동작 확인
+
+**파일 정리 (18개 파일 제거)**:
+- `js/app-minimal.js` - localStorage 사용 백업 파일
+- `test-*.html` (4개) - 테스트용 HTML 파일
+- `test_*.py` (10개) - 테스트용 Python 스크립트
+- `fix_*.js`, `fix_*.py` - 임시 수정 파일
+- `*_backup.*` - 백업 데이터 파일들
+
+**결과**:
+- sessionStorage 기반 인증 시스템으로 통일
+- 깔끔한 프로젝트 구조 확보
+- 모든 핵심 기능 정상 동작 확인
+
+**체크포인트**: 
+- `★ 25.7.20 오후 10시 30분 정상 동작 확인 버전`
+- `★ 정상 동작 확인 - 2025.7.20 오후 10시 42분`
