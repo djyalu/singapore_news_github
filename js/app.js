@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoutBtn = document.getElementById('logoutBtn');
     const errorMessage = document.getElementById('errorMessage');
     
+    if (!loginForm) {
+        console.error('loginForm element not found');
+        return;
+    }
+    
     function checkAuth() {
         if (isAuthenticated()) {
             loginContainer.style.display = 'none';
@@ -138,12 +143,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    console.log('loginForm addEventListener attached successfully');
+    
     loginForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+        console.log('Login form submitted!');
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         
-        console.log('로그인 시도:', username, password);
+        console.log('로그인 시도:', username, password ? '***' : 'empty');
         
         // 서버 기반 인증 - localStorage 사용 안함
         console.log('서버 기반 인증 사용');
@@ -4781,7 +4789,7 @@ async function deleteAllArticlesFromModal() {
                     } else {
                         console.log(`GitHub 삭제 API 실패 (${response.status}), 하지만 로컬 삭제는 완료됨`);
                     }
-        } catch (error) {
+                } catch (error) {
             console.error('삭제 중 오류:', error);
             showNotification('삭제 중 오류가 발생했습니다: ' + error.message, 'error');
         }
