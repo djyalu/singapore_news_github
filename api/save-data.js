@@ -53,20 +53,48 @@ module.exports = async (req, res) => {
             }
             
             // 파일 읽기
-            const { data: fileData } = await octokit.rest.repos.getContent({
-                owner,
-                repo,
-                path: filePath,
-            });
-            
-            const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
-            const jsonData = JSON.parse(content);
-            
-            return res.status(200).json({
-                success: true,
-                type: type,
-                data: jsonData
-            });
+            try {
+                const { data: fileData } = await octokit.rest.repos.getContent({
+                    owner,
+                    repo,
+                    path: filePath,
+                });
+                
+                const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
+                const jsonData = JSON.parse(content);
+                
+                return res.status(200).json({
+                    success: true,
+                    type: type,
+                    data: jsonData
+                });
+            } catch (fileError) {
+                // 파일이 없는 경우 빈 데이터 반환
+                if (fileError.status === 404) {
+                    let defaultData;
+                    switch(type) {
+                        case 'settings':
+                            defaultData = {};
+                            break;
+                        case 'sites':
+                        case 'history':
+                        case 'test-history':
+                        case 'scraped-cache':
+                            defaultData = [];
+                            break;
+                        default:
+                            defaultData = {};
+                    }
+                    
+                    return res.status(200).json({
+                        success: true,
+                        type: type,
+                        data: defaultData,
+                        isDefault: true
+                    });
+                }
+                throw fileError;
+            }
 
         } catch (error) {
             console.error('Data fetch error:', error);

@@ -9,12 +9,71 @@ from urllib.parse import urljoin, urlparse
 from ai_scraper import ai_scraper
 
 def load_settings():
-    with open('data/settings.json', 'r') as f:
-        return json.load(f)
+    """서버에서 동적으로 설정을 불러오기"""
+    try:
+        # 먼저 서버 API에서 최신 설정 시도
+        api_url = "https://singapore-news-github.vercel.app/api/save-data?type=settings"
+        response = requests.get(api_url, timeout=10)
+        
+        if response.status_code == 200:
+            result = response.json()
+            if result.get('success') and result.get('data'):
+                print("[SETTINGS] Loaded settings from server API")
+                return result['data']
+        
+        print("[SETTINGS] Server API failed, using local file")
+    except Exception as e:
+        print(f"[SETTINGS] Server API error: {e}, using local file")
+    
+    # API 실패시 로컬 파일 사용
+    try:
+        with open('data/settings.json', 'r') as f:
+            print("[SETTINGS] Loaded settings from local file")
+            return json.load(f)
+    except Exception as e:
+        print(f"[SETTINGS] Local file error: {e}, using default settings")
+        # 기본 설정 반환
+        return {
+            "scrapTarget": "recent",
+            "importantKeywords": "",
+            "summaryOptions": {"headline": True, "keywords": True, "content": True},
+            "sendChannel": "whatsapp",
+            "whatsappChannel": "",
+            "sendSchedule": {"period": "daily", "time": "08:00", "weekdays": [], "date": "1"},
+            "blockedKeywords": "",
+            "scrapingMethod": "traditional",
+            "scrapingMethodOptions": {
+                "ai": {"provider": "gemini", "model": "gemini-1.5-flash", "fallbackToTraditional": True},
+                "traditional": {"useEnhancedFiltering": True}
+            },
+            "monitoring": {"enabled": True}
+        }
 
 def load_sites():
-    with open('data/sites.json', 'r') as f:
-        return json.load(f)
+    """서버에서 동적으로 사이트 설정을 불러오기"""
+    try:
+        # 먼저 서버 API에서 최신 사이트 설정 시도
+        api_url = "https://singapore-news-github.vercel.app/api/save-data?type=sites"
+        response = requests.get(api_url, timeout=10)
+        
+        if response.status_code == 200:
+            result = response.json()
+            if result.get('success') and result.get('data'):
+                print("[SITES] Loaded sites from server API")
+                return result['data']
+        
+        print("[SITES] Server API failed, using local file")
+    except Exception as e:
+        print(f"[SITES] Server API error: {e}, using local file")
+    
+    # API 실패시 로컬 파일 사용
+    try:
+        with open('data/sites.json', 'r') as f:
+            print("[SITES] Loaded sites from local file")
+            return json.load(f)
+    except Exception as e:
+        print(f"[SITES] Local file error: {e}, using empty sites list")
+        return []
 
 def is_recent_article(article_date):
     if not article_date:
@@ -1034,8 +1093,40 @@ def get_article_links_generic(soup, base_url):
 
 def create_summary(article_data, settings):
     """설정에 따른 요약 생성"""
-    # 키워드 기반 요약만 사용 (AI 요약 비활성화)
-    return create_keyword_summary(article_data['title'], article_data['content'])
+    # 설정에서 AI 옵션 확인
+    ai_options = settings.get('scrapingMethodOptions', {}).get('ai', {})
+    provider = ai_options.get('provider', 'gemini')
+    
+    print(f"[SUMMARY] AI provider: {provider}")
+    print(f"[SUMMARY] Gemini API key available: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
+    
+    # Gemini API 사용 시도
+    if provider == 'gemini' and os.environ.get('GOOGLE_GEMINI_API_KEY'):
+        try:
+            print(f"[SUMMARY] Attempting Gemini API translation for: {article_data['title'][:50]}...")
+            from ai_summary_free import translate_to_korean_summary_gemini
+            gemini_summary = translate_to_korean_summary_gemini(
+                article_data['title'], 
+                article_data['content']
+            )
+            if gemini_summary:
+                print(f"[SUMMARY] Gemini API success: {gemini_summary[:100]}...")
+                return gemini_summary
+            else:
+                print(f"[SUMMARY] Gemini API returned empty result")
+        except Exception as e:
+            print(f"[SUMMARY] Gemini API 오류, 키워드 요약으로 대체: {str(e)}")
+    else:
+        print(f"[SUMMARY] Gemini API not available - provider: {provider}, key: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
+    
+    # Gemini 실패시 향상된 키워드 기반 요약 사용
+    print(f"[SUMMARY] Using enhanced keyword-based summary")
+    try:
+        from ai_summary_free import enhanced_keyword_summary
+        return enhanced_keyword_summary(article_data['title'], article_data['content'])
+    except Exception as e:
+        print(f"[SUMMARY] Enhanced summary failed, using basic: {str(e)}")
+        return create_keyword_summary(article_data['title'], article_data['content'])
 
 def create_keyword_summary(title, content):
     """향상된 키워드 기반 한글 요약"""
