@@ -6175,39 +6175,56 @@ async function refreshScrapedArticles() {
 function setDateRange(type) {
     const startDateInput = document.getElementById('startDateFilter');
     const endDateInput = document.getElementById('endDateFilter');
-    const today = new Date();
     
-    // KST 시간으로 변환
-    const kstOffset = 9 * 60; // KST는 UTC+9
-    const kstToday = new Date(today.getTime() + (kstOffset * 60 * 1000));
+    if (!startDateInput || !endDateInput) {
+        console.error('날짜 입력 필드를 찾을 수 없습니다');
+        return;
+    }
+    
+    // KST 기준 오늘 날짜 (더 간단한 방법)
+    const now = new Date();
+    const kstToday = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
+    const todayStr = kstToday.toISOString().split('T')[0];
+    
+    console.log('setDateRange 호출:', type, 'KST 오늘:', todayStr);
     
     switch (type) {
         case 'today':
-            const todayStr = kstToday.toISOString().split('T')[0];
             startDateInput.value = todayStr;
             endDateInput.value = todayStr;
+            console.log('오늘 날짜 설정:', todayStr);
             break;
             
         case 'week':
             const weekAgo = new Date(kstToday);
             weekAgo.setDate(weekAgo.getDate() - 7);
-            startDateInput.value = weekAgo.toISOString().split('T')[0];
-            endDateInput.value = kstToday.toISOString().split('T')[0];
+            const weekAgoStr = weekAgo.toISOString().split('T')[0];
+            startDateInput.value = weekAgoStr;
+            endDateInput.value = todayStr;
+            console.log('7일 범위 설정:', weekAgoStr, '~', todayStr);
             break;
             
         case 'month':
             const monthAgo = new Date(kstToday);
             monthAgo.setDate(monthAgo.getDate() - 30);
-            startDateInput.value = monthAgo.toISOString().split('T')[0];
-            endDateInput.value = kstToday.toISOString().split('T')[0];
+            const monthAgoStr = monthAgo.toISOString().split('T')[0];
+            startDateInput.value = monthAgoStr;
+            endDateInput.value = todayStr;
+            console.log('30일 범위 설정:', monthAgoStr, '~', todayStr);
             break;
             
         case 'clear':
             startDateInput.value = '';
             endDateInput.value = '';
+            console.log('날짜 필터 제거');
             break;
+            
+        default:
+            console.error('알 수 없는 날짜 범위 타입:', type);
+            return;
     }
     
     // 날짜 설정 후 필터링 실행
+    console.log('필터링 실행 중...');
     filterScrapedArticles();
 }
