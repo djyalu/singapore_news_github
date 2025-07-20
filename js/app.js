@@ -163,6 +163,10 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const page = this.getAttribute('data-page');
+                
+                // 일반 네비게이션 클릭 시 URL 파라미터 제거
+                window.history.pushState({}, '', window.location.pathname);
+                
                 loadPage(page);
                 
                 // Update active navigation state
