@@ -3570,76 +3570,80 @@ async function clearScrapedArticles() {
         console.log('User confirmed deletion');
         
         try {
-            // 모든 뉴스 파일 목록 가져오기
-            const allFilesResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
-            if (!allFilesResponse.ok) {
-                throw new Error('파일 목록을 가져올 수 없습니다.');
+            // 현재 표시 중인 파일 가져오기
+            const currentResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
+            if (!currentResponse.ok) {
+                throw new Error('현재 표시 중인 파일을 가져올 수 없습니다.');
             }
             
-            const allFilesData = await allFilesResponse.json();
-            if (!allFilesData.success || !allFilesData.files) {
-                throw new Error('파일 목록이 비어있습니다.');
+            const currentData = await currentResponse.json();
+            if (!currentData.success || !currentData.filename) {
+                throw new Error('현재 표시 중인 파일이 없습니다.');
             }
+            
+            const currentFilename = currentData.filename;
+            console.log('Current displayed file:', currentFilename);
+            
+            // 현재 파일의 날짜 확인
+            const dateMatch = currentFilename.match(/news_(\d{8})_\d{6}\.json/);
+            if (!dateMatch) {
+                throw new Error('파일명 형식이 올바르지 않습니다.');
+            }
+            
+            const fileDate = dateMatch[1]; // YYYYMMDD
             
             // KST 기준 오늘 날짜 계산
             const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
             const todayKST = kstNow.toISOString().split('T')[0].replace(/-/g, ''); // YYYYMMDD 형식
             
-            // 오늘 날짜의 파일만 필터링
-            const todayNewsFiles = allFilesData.files.filter(file => {
-                if (!file.name.startsWith('news_') || !file.name.endsWith('.json')) {
-                    return false;
-                }
-                
-                // 파일명에서 날짜 추출 (news_YYYYMMDD_HHMMSS.json)
-                const dateMatch = file.name.match(/news_(\d{8})_\d{6}\.json/);
-                if (dateMatch) {
-                    const fileDate = dateMatch[1]; // YYYYMMDD
-                    return fileDate === todayKST;
-                }
-                return false;
-            });
+            // 오늘 파일인지 확인
+            const isToday = fileDate === todayKST;
+            console.log(`File date: ${fileDate}, Today: ${todayKST}, Is today: ${isToday}`);
             
-            if (todayNewsFiles.length === 0) {
-                showNotification('오늘 스크랩한 파일이 없습니다.', 'info');
-                return;
+            // 오늘 파일이 아니면 경고 메시지와 함께 진행 여부 확인
+            if (!isToday) {
+                const confirmOld = confirm(`현재 표시 중인 기사는 ${fileDate.substring(0,4)}-${fileDate.substring(4,6)}-${fileDate.substring(6,8)} 날짜의 파일입니다.\n\n정말로 이 파일을 삭제하시겠습니까?`);
+                if (!confirmOld) {
+                    return;
+                }
             }
             
-            console.log(`Found ${todayNewsFiles.length} today's news files to delete (${todayKST})`);
+            console.log(`Deleting current displayed file: ${currentFilename}`);
             
-            // 오늘 파일들 삭제
+            // 현재 파일 삭제
             let deletedCount = 0;
-            let totalFiles = todayNewsFiles.length;
+            let totalFiles = 1;
             
-            for (const file of todayNewsFiles) {
-                try {
-                    console.log('Deleting file:', file.name);
-                    const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ filename: file.name })
-                    });
-                    
-                    if (deleteResponse.ok) {
-                        const deleteResult = await deleteResponse.json();
-                        if (deleteResult.success) {
-                            deletedCount++;
-                            console.log(`Deleted ${file.name} (${deletedCount}/${totalFiles})`);
-                        } else {
-                            console.error(`Failed to delete ${file.name}:`, deleteResult.error);
-                        }
+            try {
+                console.log('Deleting file:', currentFilename);
+                const deleteResponse = await fetch('https://singapore-news-github.vercel.app/api/delete-scraped-file', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: currentFilename })
+                });
+                
+                if (deleteResponse.ok) {
+                    const deleteResult = await deleteResponse.json();
+                    if (deleteResult.success) {
+                        deletedCount++;
+                        console.log(`Deleted ${currentFilename} successfully`);
                     } else {
-                        console.error(`HTTP error deleting ${file.name}:`, deleteResponse.status);
+                        console.error(`Failed to delete ${currentFilename}:`, deleteResult.error);
+                        showNotification('파일 삭제에 실패했습니다: ' + (deleteResult.error || 'Unknown error'), 'error');
+                        return;
                     }
-                    
-                    // API 요청 간격 조절 (GitHub rate limiting 방지)
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    
-                } catch (fileError) {
-                    console.error(`Error deleting ${file.name}:`, fileError);
+                } else {
+                    console.error(`HTTP error deleting ${currentFilename}:`, deleteResponse.status);
+                    showNotification('서버 삭제 요청이 실패했습니다.', 'error');
+                    return;
                 }
+                
+            } catch (fileError) {
+                console.error(`Error deleting ${currentFilename}:`, fileError);
+                showNotification('삭제 중 오류가 발생했습니다: ' + fileError.message, 'error');
+                return;
             }
             
             // 삭제 완료 후 UI 업데이트
@@ -3664,7 +3668,8 @@ async function clearScrapedArticles() {
                     await updateTodayArticles();
                 }
                 
-                showNotification(`오늘 스크랩한 ${deletedCount}개 파일이 서버에서 삭제되었습니다.`, 'success');
+                const dateStr = isToday ? '오늘 스크랩한' : `${fileDate.substring(0,4)}-${fileDate.substring(4,6)}-${fileDate.substring(6,8)}`;
+                showNotification(`${dateStr} 기사 파일이 서버에서 삭제되었습니다.`, 'success');
             } else {
                 showNotification('파일을 삭제할 수 없었습니다.', 'error');
             }
