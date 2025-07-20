@@ -1,6 +1,12 @@
 {
+<<<<<<< Updated upstream
   "lastUpdated": "2025-07-20T13:52:24.728Z",
   "latestFile": "news_20250719_105209.json",
   "scrapingMethod": "traditional",
   "executionType": "manual"
+=======
+  "lastUpdated": "2025-07-20T14:04:39.119925",
+  "latestFile": "news_20250720_140439.json",
+  "scrapingMethod": "ai_enhanced"
+>>>>>>> Stashed changes
 }
