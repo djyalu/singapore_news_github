@@ -15,6 +15,7 @@ permissions:
 jobs:
   scrape-and-send:
     runs-on: ubuntu-latest
+    timeout-minutes: 30  # 타임아웃 30분으로 증가
     
     steps:
     - uses: actions/checkout@v4

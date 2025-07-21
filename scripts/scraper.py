@@ -10,6 +10,9 @@ from ai_scraper import ai_scraper
 from text_processing import TextProcessor
 from deduplication import ArticleDeduplicator
 
+# 디버그 모드 설정 (환경 변수로 제어)
+DEBUG_MODE = os.environ.get('DEBUG_SCRAPER', 'false').lower() == 'true'
+
 def load_settings():
     """서버에서 동적으로 설정을 불러오기"""
     try:
@@ -1499,13 +1502,15 @@ def scrape_news_traditional():
                 continue
             
             # 기사별 처리
-            for article_url in links[:8]:  # 사이트당 최대 8개로 증가
+            for article_url in links[:3]:  # 사이트당 최대 3개로 축소 (성능 개선)
                 try:
-                    print(f"[DEBUG] Processing article: {article_url}")
+                    if DEBUG_MODE:
+                        print(f"[DEBUG] Processing article: {article_url}")
                     article_data = extract_article_content(article_url)
                     
                     if not article_data or not article_data['title']:
-                        print(f"[DEBUG] Skipping: no title or data")
+                        if DEBUG_MODE:
+                            print(f"[DEBUG] Skipping: no title or data")
                         continue
                         
                     if len(article_data['content']) < 30:

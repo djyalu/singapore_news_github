@@ -16,5 +16,13 @@
     "group_count": 3,
     "method": "ai_enhanced",
     "summary": "- Economy: 2개 기사<br>- News: 2개 기사<br>- Culture: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T08:56:48.472257",
+    "execution_time": "2025-07-21 08:56:48 KST",
+    "status": "failure",
+    "error_type": "BrokenPipeError",
+    "error_message": "[Errno 32] Broken pipe",
+    "stack_trace": "Traceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1484, in scrape_news_traditional\n    links = get_article_links_straits_times(soup, site['url'])\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1070, in get_article_links_straits_times\n    if is_valid_article_url(full_url, domain):\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 878, in is_valid_article_url\n    print(f\"[DEBUG] Checking URL: {url}\")\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1652, in <module>\n    output_file = scrape_news()\n                  ^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1450, in scrape_news\n    return scrape_news_traditional()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1586, in scrape_news_traditional\n    traceback.print_exc()\n  File \"/usr/lib/python3.12/traceback.py\", line 180, in print_exc\n    print_exception(sys.exception(), limit=limit, file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 125, in print_exception\n    te.print(file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 1050, in print\n    print(line, file=file, end=\"\")\nBrokenPipeError: [Errno 32] Broken pipe\n"
   }
 ]
