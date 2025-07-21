@@ -58,8 +58,12 @@ def format_message(data):
     if not data:
         return None
         
+    # KST 시간대로 변환
+    kst = pytz.timezone('Asia/Seoul')
+    now_kst = datetime.now(kst)
+    
     message = f"📰 *Singapore News Update*\n"
-    message += f"{datetime.now().strftime('%Y년 %m월 %d일 %H:%M')}\n"
+    message += f"{now_kst.strftime('%Y년 %m월 %d일 %H:%M')}\n"
     message += "━━━━━━━━━━━━━━━━━━━━━\n\n"
     
     # 데이터가 리스트 형식인 경우 (그룹별로 이미 정리됨)
