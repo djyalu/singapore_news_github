@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Wage strike by bus drivers ferrying passengers across Causeway causes morning disruption",
+        "url": "https://www.straitstimes.com/asia/se-asia/early-morning-bus-driver-strike-causes-disruption-at-johor-singapore-causeway",
+        "summary": "📰 싱가포르, 교통, 취업 관련 뉴스\n📢 Wage strike by bus drivers ferrying passengers across Causeway causes morning di...",
+        "content": "Find out what’s new on ST website and app. Cross-border bus operator Causeway Link said the service disruption lasted for about 45 minutes but had been fully resolved. Johor state Works, Transportation, Infrastructure and Communication Committee chairman Mohamad Fazli Mohamad Salleh confirmed that the strike involved drivers from a local bus company and took place around 6.30am. The drivers refused to transport passengers into Singapore, but the strike concluded by 8am. However, he acknowledged that some travellers opted to walk across the Causeway to Singapore. The exact number of people walking or drivers involved in the strike...",
+        "publish_date": "2025-07-21T15:08:12.476118"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesia’s Sumatra sees 14-fold spike in fire hotspots over 1.5 weeks, as Malaysia warns of haze",
+        "url": "https://www.channelnewsasia.com/asia/indonesias-sumatra-sees-14-fold-spike-in-fire-hotspots-over-15-weeks-malaysia-warns-haze-5249661",
+        "summary": "📰 국제 관련 뉴스\n📢 Indonesia’s Sumatra sees 14-fold spike in fire hotspots over 1.5 weeks, as Malay...",
+        "content": "Hotspots are satellite images with high infrared intensity, indicating sources of high heat, such as forest and land fires. This is up from 38 hotspots reported on Jul 12. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading “The trend (of number of hotspots) is increasing because Riau is entering the peak...",
+        "publish_date": "2025-07-21T15:08:13.725797"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-21T15:08:30.151256",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Reit ETFs see 40% AUM growth in past year as S-Reits regain appeal",
+        "url": "https://www.businesstimes.com.sg/companies-markets/reit-etfs-see-40-aum-growth-past-year-s-reits-regain-appeal",
+        "summary": "📰 싱가포르, 경제, 기술 관련 뉴스\n📢 Reit ETFs see 40% AUM growth in past year as S-Reits regain appeal",
+        "content": "[SINGAPORE] Over the past 12 months, Singapore-listed real estate investment trust (Reit) exchange-traded funds (ETFs) have seen more than S$300 million in net new inflows, reflecting continued investor demand. On average, the five Reit ETFs have posted total returns of 10.7 per cent over the past...",
+        "publish_date": "2025-07-21T15:08:16.901989"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-21T15:08:30.151276",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
