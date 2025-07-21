@@ -1,0 +1,39 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘I tap childhood memories to show children every connection matters’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-children-author-writing-local-flavour",
+        "summary": "📰 싱가포르, 음식, 문화 관련 뉴스\n📢 Your S’pore Story: ‘I tap childhood memories to show children every connection m...",
+        "content": "Find out what’s new on ST website and app. Kid-lit author Rachelyn Gordon with her book Curly, which touches on self-identity and staying true to oneself. Some had never even stepped into a hawker centre. She writes picture books that spotlight everyday Singapore culture, showing children that even the smallest connections can be meaningful",
+        "publish_date": "2025-07-21T13:43:57.548188"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "MOM looking into alleged fraudulent work injury claim against Sumo Salad; police investigating owner's death",
+        "url": "https://www.channelnewsasia.com/singapore/sumo-salad-well-jane-lee-work-injury-claim-5249836",
+        "summary": "📰 싱가포르, 취업, 법률 관련 뉴스\n📢 MOM looking into alleged fraudulent work injury claim against Sumo Salad; police...",
+        "content": "The Singapore Police Force (SPF) also said that investigations were ongoing into the unnatural death of Ms Jane Lee, Sumo Salad's owner. \"On that day, she was supposed to leave work early, but she deliberately stayed back",
+        "publish_date": "2025-07-21T13:43:59.397390"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesia’s Sumatra sees 14-fold spike in fire hotspots over 1.5 weeks, as Malaysia warns of haze",
+        "url": "https://www.channelnewsasia.com/asia/indonesias-sumatra-sees-14-fold-spike-in-fire-hotspots-over-15-weeks-malaysia-warns-haze-5249661",
+        "summary": "📰 국제 관련 뉴스\n📢 Indonesia’s Sumatra sees 14-fold spike in fire hotspots over 1.5 weeks, as Malay...",
+        "content": "Hotspots are satellite images with high infrared intensity, indicating sources of high heat, such as forest and land fires. This is up from 38 hotspots reported on Jul 12. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading “The trend (of number of hotspots) is increasing because Riau is entering the peak...",
+        "publish_date": "2025-07-21T13:44:01.334731"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-21T13:44:17.453206",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
