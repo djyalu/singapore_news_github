@@ -16,5 +16,14 @@
     "group_count": 3,
     "method": "ai_enhanced",
     "summary": "- Economy: 2개 기사<br>- News: 2개 기사<br>- Culture: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T01:37:16.919760",
+    "execution_time": "2025-07-21 01:37:16 KST",
+    "status": "success",
+    "article_count": 6,
+    "group_count": 3,
+    "method": "ai_enhanced",
+    "summary": "- News: 3개 기사<br>- Economy: 2개 기사<br>- Culture: 1개 기사"
   }
 ]
