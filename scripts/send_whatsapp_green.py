@@ -60,7 +60,7 @@ def format_message(data):
         
     message = f"📰 *Singapore News Update*\n"
     message += f"{datetime.now().strftime('%Y년 %m월 %d일 %H:%M')}\n"
-    message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+    message += "━━━━━━━━━━━━━━━━━━━━━\n\n"
     
     # 데이터가 리스트 형식인 경우 (그룹별로 이미 정리됨)
     if isinstance(data, list):
@@ -74,7 +74,7 @@ def format_message(data):
             
             message += f"【 {group_name} 】\n"
             message += f"📍 출처: {', '.join(sites)}\n"
-            message += "━━━━━━━━━━━━━━━━━━━━\n"
+            message += "━━━━━━━━━━━━━━━━━━━━━\n"
             
             for i, article in enumerate(group_articles, 1):
                 message += f"\n{i}. {article.get('summary', article.get('korean_summary', '요약 없음'))}\n"
@@ -82,9 +82,9 @@ def format_message(data):
                     message += f"   🔗 원문: {article['url']}\n"
                 message += "\n"
             
-            message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+            message += "━━━━━━━━━━━━━━━━━━━━━\n\n"
     
-    message += "\n━━━━━━━━━━━━━━━━━━━━\n"
+    message += "\n━━━━━━━━━━━━━━━━━━━━━\n"
     message += "🤖 Singapore News Scraper\n"
     message += "📱 Powered by Green API"
     
