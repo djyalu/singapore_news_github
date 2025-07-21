@@ -33,5 +33,22 @@
     "group_count": 3,
     "method": "ai_enhanced",
     "summary": "- News: 3개 기사<br>- Economy: 2개 기사<br>- Culture: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T11:10:22.506856",
+    "execution_time": "2025-07-21 11:10:22 KST",
+    "status": "failure",
+    "error_type": "BrokenPipeError",
+    "error_message": "[Errno 32] Broken pipe",
+    "stack_trace": "Traceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1494, in scrape_news_traditional\n    links = get_article_links_generic(soup, site['url'])\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1127, in get_article_links_generic\n    if is_valid_article_url(link['url'], domain):\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 899, in is_valid_article_url\n    print(f\"[DEBUG] Checking CNA URL patterns for: {url}\")\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1658, in <module>\n    output_file = scrape_news()\n                  ^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1457, in scrape_news\n    return scrape_news_traditional()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1592, in scrape_news_traditional\n    traceback.print_exc()\n  File \"/usr/lib/python3.12/traceback.py\", line 180, in print_exc\n    print_exception(sys.exception(), limit=limit, file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 125, in print_exception\n    te.print(file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 1050, in print\n    print(line, file=file, end=\"\")\nBrokenPipeError: [Errno 32] Broken pipe\n"
+  },
+  {
+    "timestamp": "2025-07-21T11:15:02.201617",
+    "execution_time": "2025-07-21 11:15:02 KST",
+    "status": "success",
+    "article_count": 1,
+    "group_count": 1,
+    "method": "traditional",
+    "summary": "- Economy: 1개 기사"
   }
 ]

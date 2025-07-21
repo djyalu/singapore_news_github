@@ -335,7 +335,8 @@ def validate_final_article_content(article_data):
     title = article_data['title'].strip()
     content = article_data['content'].strip()
     
-    print(f"[DEBUG] Final validation for: {title}")
+    if DEBUG_MODE:
+        print(f"[DEBUG] Final validation for: {title}")
     
     # 제목 검사 - 명백한 메뉴/네비게이션 제목들만
     invalid_titles = [
@@ -345,7 +346,8 @@ def validate_final_article_content(article_data):
     ]
     
     if any(invalid in title.lower() for invalid in invalid_titles):
-        print(f"[DEBUG] Invalid title detected: {title}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Invalid title detected: {title}")
         return False
     
     # 내용 검사 - 실제 뉴스 기사의 특징 확인 (더 관대하게)
@@ -368,29 +370,34 @@ def validate_final_article_content(article_data):
         # 기본적인 문서 구조가 있는지 확인
         sentences = content.split('.')
         if len(sentences) < 2 or len(content.split()) < 20:
-            print(f"[DEBUG] No news indicators and insufficient structure")
+            if DEBUG_MODE:
+                print(f"[DEBUG] No news indicators and insufficient structure")
             return False
     
     # 메뉴 텍스트 확인 - 더 엄격하게 (확실한 메뉴만)
     if is_menu_text(content) and news_score == 0:
-        print(f"[DEBUG] Menu text detected in content")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Menu text detected in content")
         return False
     
-    # 내용 길이 및 구조 확인 - 더 관대하게
+    # 내용 길이 및 구조 확인 - 훨씬 더 관대하게
     sentences = content.split('.')
-    valid_sentences = [s.strip() for s in sentences if len(s.strip()) > 10]
+    valid_sentences = [s.strip() for s in sentences if len(s.strip()) > 5]  # 10 -> 5로 완화
     
-    if len(valid_sentences) < 2:
-        print(f"[DEBUG] Insufficient valid sentences: {len(valid_sentences)}")
+    if len(valid_sentences) < 1:  # 2 -> 1로 완화
+        if DEBUG_MODE:
+            print(f"[DEBUG] Insufficient valid sentences: {len(valid_sentences)}")
         return False
     
-    # 단어 수 확인 - 더 관대하게 (20단어 이상)
+    # 단어 수 확인 - 훨씬 더 관대하게 (10단어 이상)
     words = content.split()
-    if len(words) < 20:
-        print(f"[DEBUG] Content too short: {len(words)} words")
+    if len(words) < 10:  # 20 -> 10으로 완화
+        if DEBUG_MODE:
+            print(f"[DEBUG] Content too short: {len(words)} words")
         return False
     
-    print(f"[DEBUG] Article validation passed - news_score: {news_score}, sentences: {len(valid_sentences)}, words: {len(words)}")
+    if DEBUG_MODE:
+        print(f"[DEBUG] Article validation passed - news_score: {news_score}, sentences: {len(valid_sentences)}, words: {len(words)}")
     return True
 
 def extract_article_content_straits_times(url, soup):
@@ -878,7 +885,8 @@ def extract_article_content(url):
 def is_valid_article_url(url, domain):
     """유효한 기사 URL인지 판단 - 더 유연한 접근"""
     url_lower = url.lower()
-    # print(f"[DEBUG] Checking URL: {url}")  # 너무 많은 출력 방지
+    if DEBUG_MODE:
+        print(f"[DEBUG] Checking URL: {url}")
     
     # 제외할 패턴들 - 핵심적인 것들만
     exclude_patterns = [
@@ -891,12 +899,14 @@ def is_valid_article_url(url, domain):
     
     # 제외 패턴 체크
     if any(pattern in url_lower for pattern in exclude_patterns):
-        print(f"[DEBUG] URL excluded by pattern: {url}") 
+        if DEBUG_MODE:
+            print(f"[DEBUG] URL excluded by pattern: {url}") 
         return False
     
     # 사이트별 기사 URL 패턴 - 더 유연하게
     if 'channelnewsasia.com' in domain or 'cna.com.sg' in domain:
-        print(f"[DEBUG] Checking CNA URL patterns for: {url}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking CNA URL patterns for: {url}")
         
         # CNA 기사 패턴 - 더 유연하게
         cna_patterns = [
@@ -913,15 +923,18 @@ def is_valid_article_url(url, domain):
         
         # 섹션 루트 페이지는 제외
         if url.rstrip('/').endswith(('/singapore', '/asia', '/world', '/business', '/sport', '/lifestyle')):
-            print(f"[DEBUG] CNA section root page excluded")
+            if DEBUG_MODE:
+                print(f"[DEBUG] CNA section root page excluded")
             return False
         
         matched = any(re.search(pattern, url) for pattern in cna_patterns)
-        print(f"[DEBUG] CNA URL pattern match: {matched}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] CNA URL pattern match: {matched}")
         return matched
     
     elif 'straitstimes.com' in domain:
-        # print(f"[DEBUG] Checking ST URL patterns for: {url}")  # 너무 많은 출력 방지
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking ST URL patterns for: {url}")
         
         # Straits Times 기사 패턴 - 대소문자 모두 허용하고 더 유연하게
         st_patterns = [
@@ -941,15 +954,18 @@ def is_valid_article_url(url, domain):
         
         # ST 특별 페이지들만 제외
         if any(exclude in url_lower for exclude in ['/multimedia/', '/graphics/', '/180']):
-            print(f"[DEBUG] ST special page excluded")
+            if DEBUG_MODE:
+                print(f"[DEBUG] ST special page excluded")
             return False
             
         matched = any(re.search(pattern, url) for pattern in st_patterns)
-        print(f"[DEBUG] ST URL pattern match: {matched}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] ST URL pattern match: {matched}")
         return matched
     
     elif 'businesstimes.com.sg' in domain:
-        print(f"[DEBUG] Checking BT URL patterns for: {url}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking BT URL patterns for: {url}")
         
         # Business Times 기사 패턴 - 더 유연하게
         bt_patterns = [
@@ -963,11 +979,13 @@ def is_valid_article_url(url, domain):
         ]
         
         matched = any(re.search(pattern, url) for pattern in bt_patterns)
-        print(f"[DEBUG] BT URL pattern match: {matched}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] BT URL pattern match: {matched}")
         return matched
     
     elif 'sbr.com.sg' in domain:
-        print(f"[DEBUG] Checking SBR URL patterns for: {url}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking SBR URL patterns for: {url}")
         
         # Singapore Business Review 기사 패턴
         sbr_patterns = [
@@ -983,11 +1001,13 @@ def is_valid_article_url(url, domain):
         ]
         
         matched = any(re.search(pattern, url) for pattern in sbr_patterns)
-        print(f"[DEBUG] SBR URL pattern match: {matched}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] SBR URL pattern match: {matched}")
         return matched
     
     elif 'moe.gov.sg' in domain:
-        print(f"[DEBUG] Checking MOE URL patterns for: {url}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking MOE URL patterns for: {url}")
         
         # Ministry of Education 페이지 패턴
         moe_patterns = [
@@ -1003,11 +1023,13 @@ def is_valid_article_url(url, domain):
         ]
         
         matched = any(re.search(pattern, url) for pattern in moe_patterns)
-        print(f"[DEBUG] MOE URL pattern match: {matched}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] MOE URL pattern match: {matched}")
         return matched
     
     elif 'nac.gov.sg' in domain:
-        print(f"[DEBUG] Checking NAC URL patterns for: {url}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking NAC URL patterns for: {url}")
         
         # National Arts Council 페이지 패턴
         nac_patterns = [
@@ -1024,7 +1046,8 @@ def is_valid_article_url(url, domain):
         ]
         
         matched = any(re.search(pattern, url) for pattern in nac_patterns)
-        print(f"[DEBUG] NAC URL pattern match: {matched}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] NAC URL pattern match: {matched}")
         return matched
     
     # 기본 패턴 (모든 사이트용) - 매우 관대하게
@@ -1054,11 +1077,13 @@ def is_valid_article_url(url, domain):
     
     # URL이 최소 길이 요건을 만족하는지 확인
     if len(url) < 30:  # 너무 짧은 URL은 기사가 아닐 가능성
-        print(f"[DEBUG] URL too short: {url}")
+        if DEBUG_MODE:
+            print(f"[DEBUG] URL too short: {url}")
         return False
     
     matched = any(re.search(pattern, url) for pattern in general_patterns)
-    print(f"[DEBUG] General URL pattern match: {matched} for {url}")
+    if DEBUG_MODE:
+        print(f"[DEBUG] General URL pattern match: {matched} for {url}")
     return matched
 
 def get_article_links_straits_times(soup, base_url):
@@ -1096,7 +1121,8 @@ def get_article_links_generic(soup, base_url):
     """범용 링크 추출 - 개선된 버전"""
     links = []
     domain = urlparse(base_url).netloc.lower()
-    print(f"[DEBUG] Generic link extraction for domain: {domain}")
+    if DEBUG_MODE:
+        print(f"[DEBUG] Generic link extraction for domain: {domain}")
     
     # 모든 링크를 수집하되, 더 똑똑한 필터링 적용
     all_links = []
@@ -1116,23 +1142,27 @@ def get_article_links_generic(soup, base_url):
                 'domain': urlparse(full_url).netloc.lower()
             })
     
-    print(f"[DEBUG] Found {len(all_links)} total links")
+    if DEBUG_MODE:
+        print(f"[DEBUG] Found {len(all_links)} total links")
     
     # 도메인 내 링크만 필터링
     same_domain_links = [link for link in all_links if domain in link['domain']]
-    print(f"[DEBUG] Found {len(same_domain_links)} same-domain links")
+    if DEBUG_MODE:
+        print(f"[DEBUG] Found {len(same_domain_links)} same-domain links")
     
     # 각 링크를 URL 패턴으로 검증
     for link in same_domain_links:
         if is_valid_article_url(link['url'], domain):
             links.append(link['url'])
-            print(f"[DEBUG] Added valid link: {link['url']}")
+            if DEBUG_MODE:
+                print(f"[DEBUG] Added valid link: {link['url']}")
             
             # 최대 15개까지만 수집
             if len(links) >= 15:
                 break
     
-    print(f"[DEBUG] Final link count for {domain}: {len(links)}")
+    if DEBUG_MODE:
+        print(f"[DEBUG] Final link count for {domain}: {len(links)}")
     return list(set(links))[:10]  # 중복 제거 후 최대 10개
 
 def create_summary(article_data, settings):
@@ -1141,27 +1171,33 @@ def create_summary(article_data, settings):
     ai_options = settings.get('scrapingMethodOptions', {}).get('ai', {})
     provider = ai_options.get('provider', 'gemini')
     
-    print(f"[SUMMARY] AI provider: {provider}")
-    print(f"[SUMMARY] Gemini API key available: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
+    if DEBUG_MODE:
+        print(f"[SUMMARY] AI provider: {provider}")
+        print(f"[SUMMARY] Gemini API key available: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
     
     # Gemini API 사용 시도
     if provider == 'gemini' and os.environ.get('GOOGLE_GEMINI_API_KEY'):
         try:
-            print(f"[SUMMARY] Attempting Gemini API translation for: {article_data['title'][:50]}...")
+            if DEBUG_MODE:
+                print(f"[SUMMARY] Attempting Gemini API translation for: {article_data['title'][:50]}...")
             from ai_summary_free import translate_to_korean_summary_gemini
             gemini_summary = translate_to_korean_summary_gemini(
                 article_data['title'], 
                 article_data['content']
             )
             if gemini_summary:
-                print(f"[SUMMARY] Gemini API success: {gemini_summary[:100]}...")
+                if DEBUG_MODE:
+                    print(f"[SUMMARY] Gemini API success: {gemini_summary[:100]}...")
                 return gemini_summary
             else:
-                print(f"[SUMMARY] Gemini API returned empty result")
+                if DEBUG_MODE:
+                    print(f"[SUMMARY] Gemini API returned empty result")
         except Exception as e:
-            print(f"[SUMMARY] Gemini API 오류, 키워드 요약으로 대체: {str(e)}")
+            if DEBUG_MODE:
+                print(f"[SUMMARY] Gemini API 오류, 키워드 요약으로 대체: {str(e)}")
     else:
-        print(f"[SUMMARY] Gemini API not available - provider: {provider}, key: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
+        if DEBUG_MODE:
+            print(f"[SUMMARY] Gemini API not available - provider: {provider}, key: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
     
     # Gemini 실패시 향상된 키워드 기반 요약 사용
     print(f"[SUMMARY] Using enhanced keyword-based summary")
@@ -1514,22 +1550,26 @@ def scrape_news_traditional():
                         continue
                         
                     if len(article_data['content']) < 30:
-                        print(f"[DEBUG] Skipping: content too short ({len(article_data['content'])} chars)")
+                        if DEBUG_MODE:
+                            print(f"[DEBUG] Skipping: content too short ({len(article_data['content'])} chars)")
                         continue
                     
                     # 제목부터 메뉴/네비게이션 페이지 확인
                     if is_menu_text(article_data['title']):
-                        print(f"[DEBUG] Skipping: menu title detected - {article_data['title']}")
+                        if DEBUG_MODE:
+                            print(f"[DEBUG] Skipping: menu title detected - {article_data['title']}")
                         continue
                     
                     # 랜딩 페이지 또는 메뉴 페이지인지 확인
                     if is_landing_page_content(article_data['content']):
-                        print(f"[DEBUG] Skipping: landing page content detected")
+                        if DEBUG_MODE:
+                            print(f"[DEBUG] Skipping: landing page content detected")
                         continue
                         
                     # 의미있는 기사 내용인지 확인
                     if not is_meaningful_content(article_data['content']):
-                        print(f"[DEBUG] Skipping: not meaningful content")
+                        if DEBUG_MODE:
+                            print(f"[DEBUG] Skipping: not meaningful content")
                         continue
                     
                     # 카테고리 페이지 필터링 (제목 기반)
@@ -1543,7 +1583,8 @@ def scrape_news_traditional():
                     ]
                     
                     if any(cat.lower() == article_data['title'].lower().strip() for cat in category_page_titles):
-                        print(f"[DEBUG] Skipping: category page title detected - {article_data['title']}")
+                        if DEBUG_MODE:
+                            print(f"[DEBUG] Skipping: category page title detected - {article_data['title']}")
                         continue
                     
                     full_text = f"{article_data['title']} {article_data['content']}"
