@@ -1757,6 +1757,15 @@ def scrape_news():
         else:
             print("AI scraping requested but AI model not available. Using traditional scraping with AI summaries...")
             return scrape_news_traditional()
+    elif scraping_method == 'rss':
+        print("Using RSS feed scraping...")
+        try:
+            from scraper_rss import scrape_news_rss
+            return scrape_news_rss()
+        except Exception as e:
+            print(f"RSS scraping failed: {e}")
+            print("Falling back to traditional scraping...")
+            return scrape_news_traditional()
     else:
         print("Using traditional scraping...")
         return scrape_news_traditional()
