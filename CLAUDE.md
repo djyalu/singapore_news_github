@@ -144,6 +144,10 @@ python scripts/cleanup_old_data.py
 2. **WhatsApp sending fails**: Verify `WHATSAPP_API_KEY`
 3. **Scraping fails**: Check news site selectors in `sites.json`
 4. **AI summary fails**: Verify `GOOGLE_GEMINI_API_KEY`
+5. **No articles scraped (0개 기사)**:
+   - URL 패턴이 너무 엄격한지 확인 (대소문자 구분 문제)
+   - 뉴스 사이트 HTML 구조 변경 확인
+   - `scripts/scraper.py`의 is_valid_article_url 함수 점검
 
 ### Log Locations
 - GitHub Actions: Actions tab in repository
@@ -153,7 +157,7 @@ python scripts/cleanup_old_data.py
 ## Development Notes
 - Korean language support throughout
 - Timezone: Korea Standard Time (KST)
-- Scheduled runs: 09:00, 13:00, 18:00 KST
+- Scheduled runs: 07:59 KST (하루 1회로 설정됨)
 - WhatsApp channels: Test and backup channels configured
 
 ## Dependencies
@@ -193,3 +197,44 @@ python scripts/cleanup_old_data.py
 **체크포인트**: 
 - `★ 25.7.20 오후 10시 30분 정상 동작 확인 버전`
 - `★ 정상 동작 확인 - 2025.7.20 오후 10시 42분`
+
+### 2025-07-21 스크랩 관리 기능 개선 및 스크래핑 오류 수정
+**시간**: 오전 9시 - 오후 6시  
+**상태**: ✅ 완료
+
+**수행 작업**:
+
+1. **스크랩 관리 페이지 개선**:
+   - 개별 파일 삭제 버튼 추가 (기존에 누락되어 있었음)
+   - 날짜 범위 필터링 기능 구현 (시작일/종료일 선택)
+   - 빠른 날짜 선택 버튼 추가 (오늘/최근 7일/최근 30일/전체)
+   - 라디오 버튼 방식으로 하나만 선택 가능하도록 구현
+   - 통계 정보 표시 오류 수정 (파일 수, 기사 수, 날짜 범위, 사이트 수)
+
+2. **스크래핑 실패 원인 분석 및 수정**:
+   - **문제**: 2025-07-20 오전 07:59 예약 스크래핑에서 0개 기사 수집
+   - **원인**: Straits Times URL 패턴 검증이 너무 엄격
+     - 소문자만 허용 (`[a-z0-9-]`)
+     - 모든 URL이 "ST URL pattern match: False"로 필터링됨
+   - **해결**: URL 패턴을 대소문자 모두 허용하도록 수정 (`[a-zA-Z0-9-]`)
+   - `scripts/scraper.py` 924-937줄 수정
+
+3. **UI/UX 개선 사항**:
+   - 날짜 필터링 시 다양한 날짜 형식 지원
+   - 디버깅 로그 추가로 문제 추적 용이
+   - KST 시간대 정확한 처리
+
+**기술적 세부사항**:
+- `processScrapedFiles()`: 통계 계산 로직 개선
+- `filterScrapedArticles()`: 날짜 범위 필터링 구현
+- `setDateRange()`: 빠른 날짜 선택 기능
+- `displayScrapedArticles()`: 삭제 버튼 추가
+
+**결과**:
+- 스크랩 관리 페이지에서 효율적인 데이터 관리 가능
+- URL 패턴 검증 개선으로 정상적인 기사 수집 가능
+- 사용자 친화적인 날짜 필터링 인터페이스
+
+**남은 과제**:
+- 다음 예약 실행(07:59 KST)에서 정상 작동 확인 필요
+- 다른 뉴스 사이트들의 URL 패턴도 점검 필요
