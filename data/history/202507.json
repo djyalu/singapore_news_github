@@ -341,5 +341,16 @@
     "message_length": 2793,
     "article_count": 11,
     "api": "green-api"
+  },
+  {
+    "id": "20250722005030",
+    "timestamp": "2025-07-22T00:50:30.160739+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 9개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 21일 15:50\n━━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 3개 그룹, 총 9개 기사\n\n【 Lifestyle 】\n📍 출처: Mothership\n━━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 싱가포르 최신 뉴스\n📢 'Entirely legitimate' for US v...",
+    "message_length": 2249,
+    "article_count": 9,
+    "api": "green-api"
   }
 ]
