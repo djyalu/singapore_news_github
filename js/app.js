@@ -4550,7 +4550,12 @@ async function startAutoRefreshMonitor() {
                     loadScrapedArticles();
                     updateTodayArticles();
                     
-                    const articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+                    let articleCount = 0;
+                    if (Array.isArray(articles)) {
+                        articleCount = articles.reduce((sum, group) => sum + (group.article_count || 0), 0);
+                    } else if (articles && typeof articles === 'object') {
+                        articleCount = articles.article_count || 1;
+                    }
                     showNotification(`새로운 뉴스 ${articleCount}개를 불러왔습니다!`, 'success');
                     
                     // 진행 상태 숨기기
@@ -4567,6 +4572,11 @@ async function startAutoRefreshMonitor() {
             }
         } catch (error) {
             console.error('자동 새로고침 확인 오류:', error);
+            // 오류 발생시 모니터링 중지
+            monitoringStopped = true;
+            hideProgressStatus();
+            showNotification('자동 새로고침 중 오류가 발생했습니다. 페이지를 새로고침해주세요.', 'error');
+            return;
         }
         
         // 최대 시도 횟수 확인
