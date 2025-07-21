@@ -40,5 +40,29 @@
     "name": "TODAY Online",
     "url": "https://www.todayonline.com",
     "period": "daily"
+  },
+  {
+    "group": "News",
+    "name": "The New Paper",
+    "url": "https://www.tnp.sg",
+    "period": "daily"
+  },
+  {
+    "group": "Technology",
+    "name": "Tech in Asia",
+    "url": "https://www.techinasia.com/singapore",
+    "period": "daily"
+  },
+  {
+    "group": "Economy",
+    "name": "The Edge Singapore",
+    "url": "https://www.theedgesingapore.com",
+    "period": "daily"
+  },
+  {
+    "group": "News",
+    "name": "AsiaOne",
+    "url": "https://www.asiaone.com/singapore",
+    "period": "daily"
   }
 ]

@@ -25,6 +25,12 @@ RSS_FEEDS = {
     'Yahoo Singapore': 'https://sg.news.yahoo.com/rss/',
     # TODAY Online RSS (if available)
     # 'TODAY Online': 'https://www.todayonline.com/feed',
+    # AsiaOne RSS
+    'AsiaOne': 'https://www.asiaone.com/rss.xml',
+    # Tech in Asia RSS
+    'Tech in Asia': 'https://www.techinasia.com/feed',
+    # The Edge Singapore RSS
+    # 'The Edge Singapore': 'https://www.theedgesingapore.com/rss',
 }
 
 # 그룹 매핑
@@ -37,6 +43,10 @@ SITE_GROUP_MAPPING = {
     'The Straits Times': 'News',
     'The Business Times': 'Economy',
     'TODAY Online': 'News',
+    'The New Paper': 'News',
+    'Tech in Asia': 'Technology',
+    'The Edge Singapore': 'Economy',
+    'AsiaOne': 'News',
 }
 
 def load_settings():
