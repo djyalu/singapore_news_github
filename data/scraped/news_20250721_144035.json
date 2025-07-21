@@ -1,0 +1,22 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Daily Debrief: What Happened Today (Jul 21)",
+        "url": "https://www.businesstimes.com.sg/singapore/daily-debrief-what-happened-today-jul-211",
+        "summary": "📰 싱가포르, 비즈니스, 교통 관련 뉴스\n📢 Daily Debrief: What Happened Today (Jul 21)",
+        "content": "MAS appoints first 3 asset managers to inject initial S$1.1 billion into Singapore equities. More than 100 global, regional and local asset managers have indicated their interest in the programme. It will consult on proposals later this year to strengthen investor protection through the enhancement of avenues to seek civil recourse. SIA, Singtel and more: Singapore’s top AI adopters could drive 3% GDP growth, says Morgan Stanley. IFAs account for 40.7% of the industry’s new business growth in 2024, outpacing tied agents, at 33.3%. All rights reserved.",
+        "publish_date": "2025-07-21T14:40:15.235537"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-21T14:40:35.467621",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

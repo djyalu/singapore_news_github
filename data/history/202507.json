@@ -231,5 +231,16 @@
     "message_length": 894,
     "article_count": 3,
     "api": "green-api"
+  },
+  {
+    "id": "20250721234040",
+    "timestamp": "2025-07-21T23:40:40.793487+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 1개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 21일 14:40\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 1개 기사\n\n【 Economy 】\n📍 출처: The Business Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 싱가포르, 비즈니스, 교통 관련 뉴스\n📢 Daily Debrief: W...",
+    "message_length": 414,
+    "article_count": 1,
+    "api": "green-api"
   }
 ]
