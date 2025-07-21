@@ -1,0 +1,30 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "What kind of insurance should young adults buy?",
+        "url": "https://www.straitstimes.com/business/what-kind-of-insurance-should-i-buy?ref=headstart",
+        "summary": "📰 비즈니스, 교통, 경제 관련 뉴스\n📢 What kind of insurance should young adults buy?",
+        "content": "Find out what’s new on ST website and app. Some can also find that insurance agents pressure them into buying products that they are not certain they need. In this episode, ST business correspondent Sue-Ann Tan looks at what you need to know before buying insurance. 18:05 What are investment-linked policies?. Read Sue-Ann Tan’s articles: https://str.sg/mvSa. Follow Sue-Ann Tan on LinkedIn: https://str.sg/A86X. Get business/career tips in ST’s Headstart newsletter: https://str.sg/headstart-nl",
+        "publish_date": "2025-07-21T14:46:27.315900"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Subsidies and grants for some 20,000 people miscalculated due to processing issue: MOH",
+        "url": "https://www.straitstimes.com/singapore/subsidies-and-grants-for-some-20000-people-miscalculated-due-to-processing-issue-moh",
+        "summary": "📰 정부, 기술 관련 뉴스\n📢 Subsidies and grants for some 20,000 people miscalculated due to processing issu...",
+        "content": "Find out what’s new on ST website and app. The ministry added that it has completed a reassessment of the affected individuals’ subsidy tiers. The majority of those affected received more subsidies and grants than they were entitled to, said the ministry. They will not have to return the excess subsidy or grant amounts that have already been paid out. Those who received less than they were entitled to will have the difference topped up by government agencies, said MOH. They will receive the reimbursement payments by November 2025.",
+        "publish_date": "2025-07-21T14:46:27.848264"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-21T14:46:52.569257",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
