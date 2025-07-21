@@ -509,6 +509,52 @@ def extract_article_content_nac(url, soup):
     
     return article
 
+def extract_article_content_independent(url, soup):
+    """The Independent Singapore 전용 콘텐츠 추출"""
+    article = {
+        'title': '',
+        'content': '',
+        'publish_date': datetime.now()
+    }
+    
+    # 제목 추출 - WordPress 기반
+    title_elem = soup.select_one('h1.entry-title, h1.td-post-title, h1, .post-title h1')
+    if title_elem:
+        article['title'] = clean_text(title_elem.get_text())
+    
+    # 전체 비필요 요소 먼저 제거
+    remove_unwanted_elements(soup)
+    
+    # 본문 추출 - WordPress 전용 선택자
+    content_elem = find_main_content_element(soup, [
+        '.td-post-content',            # TD Theme 콘텐츠
+        '.entry-content',              # WordPress 기본
+        '.post-content',               # 포스트 콘텐츠
+        'div[itemprop="articleBody"]', # 시맨틱 마크업
+        '.td-ss-main-content',         # TD 메인 콘텐츠
+        '.content-inner',              # 내부 콘텐츠
+        'article .content',            # article 내 콘텐츠
+        '.article-content'             # 기사 콘텐츠
+    ])
+    
+    if content_elem:
+        article['content'] = extract_pure_article_text(content_elem)
+    
+    # 날짜 추출
+    date_elem = soup.select_one('time, .td-post-date, .entry-date, .published')
+    if date_elem:
+        try:
+            if date_elem.get('datetime'):
+                article['publish_date'] = datetime.fromisoformat(date_elem['datetime'].replace('Z', '+00:00'))
+            else:
+                date_text = date_elem.get_text()
+                # 간단한 날짜 파싱 시도
+                article['publish_date'] = datetime.now()
+        except:
+            article['publish_date'] = datetime.now()
+    
+    return article
+
 def extract_article_content_business_times(url, soup):
     """The Business Times 전용 콘텐츠 추출"""
     article = {
@@ -858,9 +904,21 @@ def extract_article_content_generic(url, soup):
 def extract_article_content(url):
     """URL에 따라 적절한 추출 방법 선택"""
     try:
-        response = requests.get(url, timeout=10, headers={
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        })
+        # 더 나은 헤더 사용
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1'
+        }
+        
+        # Mothership의 경우 추가 헤더
+        if 'mothership' in url.lower():
+            headers['Referer'] = 'https://www.google.com/'
+        
+        response = requests.get(url, timeout=10, headers=headers)
         soup = BeautifulSoup(response.content, 'html.parser')
         
         # 도메인에 따라 다른 추출 방법 사용
@@ -877,6 +935,8 @@ def extract_article_content(url):
             article_data = extract_article_content_moe(url, soup)
         elif 'nac.gov.sg' in domain or 'catch.sg' in domain:
             article_data = extract_article_content_nac(url, soup)
+        elif 'theindependent.sg' in domain:
+            article_data = extract_article_content_independent(url, soup)
         else:
             article_data = extract_article_content_generic(url, soup)
         
@@ -1231,6 +1291,55 @@ def get_article_links_moe(soup, base_url):
             links.append(full_url)
     
     return list(set(links))[:10]
+
+def get_article_links_independent(soup, base_url):
+    """The Independent Singapore 전용 링크 추출"""
+    links = []
+    domain = urlparse(base_url).netloc.lower()
+    
+    # Independent는 WordPress 기반, 특정 셀렉터 사용
+    article_selectors = [
+        '.td-module-title a',          # 메인 기사 모듈
+        '.entry-title a',              # 엔트리 제목
+        'h3.entry-title a',            # h3 제목
+        '.td_module_wrap h3 a',        # TD 모듈 래퍼
+        '.td-big-grid-post .entry-title a',  # 큰 그리드 포스트
+        '.td_module_1 h3 a',           # TD 모듈 1
+        '.td_module_2 h3 a',           # TD 모듈 2
+        '.td_module_3 h3 a',           # TD 모듈 3
+        '.td_module_4 h3 a',           # TD 모듈 4
+        '.td_module_5 h3 a',           # TD 모듈 5
+        'article h3 a',                # article 내의 h3
+        '.post-title a'                # 포스트 제목
+    ]
+    
+    for selector in article_selectors:
+        for a in soup.select(selector):
+            href = a.get('href', '')
+            if not href:
+                continue
+                
+            full_url = urljoin(base_url, href)
+            link_text = a.get_text(strip=True)
+            
+            # 텍스트가 있고 충분히 긴 링크만
+            if link_text and len(link_text) > 10:
+                # Independent의 기사 URL 패턴 확인
+                if ('/news/' in full_url or 
+                    '/singapore/' in full_url or 
+                    '/politics/' in full_url or 
+                    '/lifestyle/' in full_url or 
+                    re.search(r'/\d{4}/\d{2}/\d{2}/', full_url)):
+                    links.append(full_url)
+                    if DEBUG_MODE:
+                        print(f"[DEBUG] Independent article found: {link_text[:50]}... -> {full_url}")
+    
+    # 중복 제거
+    unique_links = list(set(links))
+    if DEBUG_MODE:
+        print(f"[DEBUG] Independent total unique links found: {len(unique_links)}")
+    
+    return unique_links[:10]
 
 def get_article_links_generic(soup, base_url):
     """범용 링크 추출 - 개선된 버전"""
@@ -1661,12 +1770,32 @@ def scrape_news_traditional():
     blocked_keywords = [kw.strip() for kw in settings.get('blockedKeywords', '').split(',') if kw.strip()]
     important_keywords = [kw.strip() for kw in settings.get('importantKeywords', '').split(',') if kw.strip()]
     
+    # 더 나은 User-Agent 헤더들
+    user_agents = [
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'
+    ]
+    
     for site in sites:
         try:
             print(f"\n[SCRAPER] === Scraping {site['name']} ({site['url']}) ===")
-            response = requests.get(site['url'], timeout=10, headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            })
+            
+            # 사이트별로 다른 헤더 사용
+            headers = {
+                'User-Agent': user_agents[hash(site['name']) % len(user_agents)],
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Accept-Encoding': 'gzip, deflate',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1'
+            }
+            
+            # Mothership의 경우 추가 헤더
+            if 'mothership' in site['url'].lower():
+                headers['Referer'] = 'https://www.google.com/'
+            
+            response = requests.get(site['url'], timeout=10, headers=headers)
             
             print(f"[SCRAPER] HTTP Status: {response.status_code}")
             if response.status_code != 200:
@@ -1685,6 +1814,9 @@ def scrape_news_traditional():
             elif 'moe.gov.sg' in domain:
                 print(f"[SCRAPER] Using MOE specific extractor")
                 links = get_article_links_moe(soup, site['url'])
+            elif 'theindependent.sg' in domain:
+                print(f"[SCRAPER] Using Independent specific extractor")
+                links = get_article_links_independent(soup, site['url'])
             else:
                 print(f"[SCRAPER] Using generic extractor")
                 links = get_article_links_generic(soup, site['url'])
