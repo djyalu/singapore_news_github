@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "The Straits Times 4+",
+        "url": "https://itunes.apple.com/sg/app/the-straits-times-for-iphone/id547465441?mt=8",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 The Straits Times 4+",
+        "content": "Stay informed, your way.Stay informed with The Straits Times—where trusted journalism meets modern convenience. Get trusted news, trending stories, and lifestyle updates from Singapore and beyond—all in one app. The Straits Times app offers smart summaries, immersive visuals, podcasts, and a tailored experience with myST+.Free to download",
+        "publish_date": "2025-07-21T13:41:28.437734"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "MOM looking into alleged fraudulent work injury claim against Sumo Salad; police investigating owner's death",
+        "url": "https://www.channelnewsasia.com/singapore/sumo-salad-well-jane-lee-work-injury-claim-5249836",
+        "summary": "📰 싱가포르, 취업, 법률 관련 뉴스\n📢 MOM looking into alleged fraudulent work injury claim against Sumo Salad; police...",
+        "content": "The Singapore Police Force (SPF) also said that investigations were ongoing into the unnatural death of Ms Jane Lee, Sumo Salad's owner. \"On that day, she was supposed to leave work early, but she deliberately stayed back",
+        "publish_date": "2025-07-21T13:41:29.340762"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-21T13:41:44.406268",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Singtel unit prices S$160 million in fixed-rate notes at 2.726%",
+        "url": "https://www.businesstimes.com.sg/companies-markets/singtel-unit-prices-s160-million-fixed-rate-notes-2-726",
+        "summary": "📰 비즈니스, 교통, 금융 관련 뉴스\n📢 Singtel unit prices S$160 million in fixed-rate notes at 2.726%",
+        "content": "They will be issued on Jul 25 and mature 10 years from that date. They will be issued under Optus Finance’s Euro Medium Term Note programme, which has a size of three billion euros (S$4.5 billion). Net proceeds will be swapped for Australian dollars and used to fund Optus’ regular business operations. OCBC has been appointed as the sole lead manager and bookrunner for the issuance. All rights reserved.",
+        "publish_date": "2025-07-21T13:41:33.165956"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-21T13:41:44.406291",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
