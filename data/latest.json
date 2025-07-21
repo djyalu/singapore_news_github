@@ -1,5 +1,6 @@
 {
-  "lastUpdated": "2025-07-21T00:22:05.251314",
-  "latestFile": "news_20250721_002205.json",
-  "scrapingMethod": "ai_enhanced"
+  "lastUpdated": "2025-07-21T01:04:17.731731",
+  "latestFile": "news_20250721_010417.json",
+  "scrapingMethod": "traditional",
+  "executionType": "manual"
 }
