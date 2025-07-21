@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "What kind of insurance should young adults buy?",
+        "url": "https://www.straitstimes.com/business/what-kind-of-insurance-should-i-buy?ref=headstart",
+        "summary": "📰 비즈니스, 교통, 경제 관련 뉴스\n📢 What kind of insurance should young adults buy?",
+        "content": "Find out what’s new on ST website and app. Some can also find that insurance agents pressure them into buying products that they are not certain they need. In this episode, ST business correspondent Sue-Ann Tan looks at what you need to know before buying insurance. 18:05 What are investment-linked policies?. Read Sue-Ann Tan’s articles: https://str.sg/mvSa. Follow Sue-Ann Tan on LinkedIn: https://str.sg/A86X. Get business/career tips in ST’s Headstart newsletter: https://str.sg/headstart-nl",
+        "publish_date": "2025-07-21T15:09:18.334601"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "20,000 people affected by 'processing issue' with means-testing system managed by MOH",
+        "url": "https://www.channelnewsasia.com/singapore/moh-processing-issue-means-testing-system-subsidies-grants-5249476",
+        "summary": "📰 싱가포르, 비즈니스, 교통 관련 뉴스\n📢 20,000 people affected by 'processing issue' with means-testing system managed b...",
+        "content": "The rest received subsidies and grants that were lower than intended. HOMES typically uses income information from the Inland Revenue Authority of Singapore (IRAS) to means-test individuals with business income, said MOH",
+        "publish_date": "2025-07-21T15:09:20.542210"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "A three-room flat in Punggol fetched a record-high of $638,000",
+        "url": "https://sg.news.yahoo.com/three-room-flat-punggol-fetched-054850082.html",
+        "summary": "📰 싱가포르, 주택 관련 뉴스\n📢 A three-room flat in Punggol fetched a record-high of $638,000",
+        "content": "A three-room flat in Punggol was just sold for a record-high of $638,000. (Photo: Samuel Isaac Chua/EdgeProp Singapore). A three-room HDB flat at 406C Northshore Drive was recently sold for $638,000 ($885 psf). The 721-sq ft flat is located on the 19th to 21st storey. Northshore Residences I comprises five residential blocks and features a total of 588 flats. Northshore Residences II is a larger project, comprising seven residential blocks with 814 flats. Both projects offer a mix of two-room to five-room flats. Source: EdgeProp LandLens (as at 18 July 2025). As the owner has just fulfilled their minimum...",
+        "publish_date": "2025-07-21T15:09:24.684512"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-21T15:09:33.785227",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Daily Debrief: What Happened Today (Jul 21)",
+        "url": "https://www.businesstimes.com.sg/singapore/daily-debrief-what-happened-today-jul-211",
+        "summary": "📰 싱가포르, 비즈니스, 교통 관련 뉴스\n📢 Daily Debrief: What Happened Today (Jul 21)",
+        "content": "MAS appoints first 3 asset managers to inject initial S$1.1 billion into Singapore equities. More than 100 global, regional and local asset managers have indicated their interest in the programme. It will consult on proposals later this year to strengthen investor protection through the enhancement of avenues to seek civil recourse. SIA, Singtel and more: Singapore’s top AI adopters could drive 3% GDP growth, says Morgan Stanley. IFAs account for 40.7% of the industry’s new business growth in 2024, outpacing tied agents, at 33.3%. All rights reserved.",
+        "publish_date": "2025-07-21T15:09:21.688542"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-21T15:09:33.785249",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

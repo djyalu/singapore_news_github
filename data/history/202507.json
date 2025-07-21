@@ -275,5 +275,16 @@
     "message_length": 1041,
     "article_count": 3,
     "api": "green-api"
+  },
+  {
+    "id": "20250722000938",
+    "timestamp": "2025-07-22T00:09:38.586554+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 4개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 21일 15:09\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 2개 그룹, 총 4개 기사\n\n【 News 】\n📍 출처: Yahoo Singapore News, Channel NewsAsia, The Straits Times\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 비즈니...",
+    "message_length": 1104,
+    "article_count": 4,
+    "api": "green-api"
   }
 ]
