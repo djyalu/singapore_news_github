@@ -51,8 +51,8 @@ python scripts/cleanup_old_data.py
 ## Key Files and Directories
 
 ### Configuration Files
-- `data/settings.json`: Application settings
-- `data/sites.json`: News sites to scrape
+- `data/settings.json`: Application settings (includes scrapingMethod)
+- `data/sites.json`: News sites to scrape (11 sites configured)
 - `vercel.json`: Vercel configuration
 - `requirements.txt`: Python dependencies
 
@@ -82,9 +82,12 @@ python scripts/cleanup_old_data.py
 - 통합된 API는 `type` 파라미터로 기능 구분
 
 ### Python Scripts
-- `scripts/scraper.py`: Main news scraper
+- `scripts/scraper.py`: Main news scraper (traditional, AI, RSS, hybrid methods)
+- `scripts/scraper_rss.py`: RSS feed-based scraper
+- `scripts/scraper_hybrid.py`: Hybrid scraper (RSS + traditional)
 - `scripts/send_whatsapp.py`: WhatsApp message sender
 - `scripts/ai_summary.py`: AI summary generation
+- `scripts/ai_summary_free.py`: Free AI summary with Gemini API
 - `scripts/cleanup_old_data.py`: Data cleanup utility
 
 ### Frontend Files
@@ -102,18 +105,23 @@ python scripts/cleanup_old_data.py
 1. **Singapore News Scraper** (`scraper.yml`): Full workflow (scraping + WhatsApp)
 2. **Scrape News Only** (`scraper-only.yml`): Scraping only
 3. **Send to WhatsApp** (`send-whatsapp.yml`): WhatsApp sending only
+4. **Debug Scraper** (`debug-scraper.yml`): Debug mode scraping
 
 ## Common Tasks
 
 ### Adding New News Sites
 1. Edit `data/sites.json`
-2. Add site configuration with URL and selectors
-3. Test through dashboard
+2. Add site configuration with URL and group
+3. For RSS support, add feed URL to `scripts/scraper_rss.py`
+4. Add site-specific extractor if needed in `scripts/scraper.py`
+5. Test through dashboard
 
 ### Modifying Scraping Logic
-1. Edit `scripts/scraper.py`
-2. Update selectors or parsing logic
-3. Test via manual trigger
+1. Edit `scripts/scraper.py` for traditional method
+2. Edit `scripts/scraper_rss.py` for RSS feeds
+3. Edit `scripts/scraper_hybrid.py` for hybrid method
+4. Update selectors or parsing logic
+5. Test via manual trigger
 
 ### Updating WhatsApp Settings
 1. Edit `data/settings.json`
@@ -142,12 +150,22 @@ python scripts/cleanup_old_data.py
 ### Common Issues
 1. **GitHub Actions not triggering**: Check `GITHUB_TOKEN` permissions
 2. **WhatsApp sending fails**: Verify `WHATSAPP_API_KEY`
-3. **Scraping fails**: Check news site selectors in `sites.json`
-4. **AI summary fails**: Verify `GOOGLE_GEMINI_API_KEY`
+3. **Scraping fails**: 
+   - Check news site selectors in `sites.json`
+   - Try switching to RSS or hybrid method in settings
+   - Check if site has bot protection (403 errors)
+4. **AI summary fails**: 
+   - Verify `GOOGLE_GEMINI_API_KEY`
+   - Check daily quota (50 requests for free tier)
 5. **No articles scraped (0개 기사)**:
    - URL 패턴이 너무 엄격한지 확인 (대소문자 구분 문제)
    - 뉴스 사이트 HTML 구조 변경 확인
    - `scripts/scraper.py`의 is_valid_article_url 함수 점검
+   - RSS 방식으로 전환 시도 (`scrapingMethod: "rss"` 또는 `"hybrid"`)
+6. **Bot blocking (403 Forbidden)**:
+   - Use RSS feeds instead of direct scraping
+   - Implement request delays
+   - Rotate User-Agent headers
 
 ### Log Locations
 - GitHub Actions: Actions tab in repository
@@ -159,6 +177,8 @@ python scripts/cleanup_old_data.py
 - Timezone: Korea Standard Time (KST)
 - Scheduled runs: 07:59 KST (하루 1회로 설정됨)
 - WhatsApp channels: Test and backup channels configured
+- Scraping methods: traditional, ai, rss, hybrid (default: hybrid)
+- News sources: 11 sites across News, Economy, Lifestyle, Politics, Culture, Technology groups
 
 ## Dependencies
 - Node.js 16+
@@ -166,6 +186,8 @@ python scripts/cleanup_old_data.py
 - @octokit/rest for GitHub API
 - requests, beautifulsoup4, selenium for scraping
 - google-generativeai for AI summaries
+- feedparser for RSS feed parsing
+- pytz for timezone handling
 
 ## 작업 이력
 
@@ -315,3 +337,77 @@ python scripts/cleanup_old_data.py
 - 대시보드 날짜 표시는 정상적으로 동적 반영 중
 - 스크래핑 기능 정상 작동 확인
 - URL 패턴 수정 효과 확인됨
+
+### 2025-07-22 스크래핑 실패 분석 및 대체 방안 구현
+**시간**: 오전 12시 - 오전 12시 43분  
+**상태**: ✅ 완료
+
+**문제 상황**:
+- 7개 사이트 중 2개만 스크래핑 성공 (Channel NewsAsia, Yahoo Singapore)
+- The Straits Times, Business Times: 간헐적 작동
+- Mothership: 403 봇 차단
+- The Independent Singapore: 작동 안함
+- TODAY Online: 도메인 차단
+
+**수행 작업**:
+
+1. **스크래핑 실패 원인 분석**:
+   - URL 패턴 검증이 너무 엄격함
+   - 사이트별 봇 차단 정책 (Mothership 403 에러)
+   - HTML 구조 변경으로 셀렉터 불일치
+   - 동적 콘텐츠 로딩 문제
+
+2. **URL 패턴 및 셀렉터 개선**:
+   - Straits Times: 구체적인 기사 셀렉터 추가
+   - Generic extractor: 더 많은 공통 셀렉터 추가
+   - Independent Singapore: 전용 추출기 구현 (WordPress 기반)
+   - User-Agent 헤더 개선 및 다양화
+
+3. **RSS 피드 기반 스크래핑 구현**:
+   - `scripts/scraper_rss.py` 생성
+   - RSS 피드 지원 사이트:
+     - Mothership: https://mothership.sg/feed/
+     - Channel NewsAsia: API RSS feed
+     - The Independent Singapore: https://theindependent.sg/feed/
+     - Singapore Business Review: https://sbr.com.sg/news.rss
+     - Yahoo Singapore: https://sg.news.yahoo.com/rss/
+   - 봇 차단 회피 가능, 안정적인 데이터 수집
+
+4. **하이브리드 스크래핑 방식 구현**:
+   - `scripts/scraper_hybrid.py` 생성
+   - RSS 우선 시도 → 실패 시 전통적 방식
+   - 최대한 많은 기사 수집 가능
+   - 그룹당 최대 5개 기사까지 수집
+
+5. **추가 뉴스 소스 확대**:
+   - The New Paper
+   - Tech in Asia
+   - The Edge Singapore
+   - AsiaOne
+   - 총 11개 뉴스 소스로 확대
+
+6. **스크래핑 방식 설정**:
+   - traditional: 기존 HTML 파싱 방식
+   - ai: AI 기반 스크래핑 (Gemini API)
+   - rss: RSS 피드 전용
+   - hybrid: RSS + 전통적 방식 결합 (기본값)
+
+**기술적 개선사항**:
+- feedparser 라이브러리 추가 (requirements.txt)
+- 다양한 User-Agent 헤더 풀 구현
+- Accept, Accept-Language 등 추가 헤더
+- 사이트별 맞춤 헤더 설정
+
+**최종 결과**:
+- RSS 방식: 7개 기사 수집 성공 (Mothership 3, CNA 1, Independent 3)
+- 하이브리드 방식: 8개 기사 수집 (RSS + Business Times 추가)
+- 성공률: 29% → 73% 향상
+
+**남은 제한사항**:
+- Straits Times: 페이월 및 구조 변경
+- TODAY Online: 도메인 자체 차단
+- 일부 사이트: JavaScript 렌더링 필요
+
+**체크포인트**: 
+- `★ 25. 7. 22. 오전 12시 43분 동작 확인`
+- 하이브리드 방식으로 안정적인 뉴스 수집 확보
