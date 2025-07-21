@@ -724,7 +724,7 @@ def extract_pure_article_text(content_elem):
         for sentence in sentences:
             # 정규화된 문장으로 중복 체크
             normalized = sentence.lower().strip()
-            if normalized not in seen_sentences and len(sentence) > 20:
+            if normalized not in seen_sentences and len(sentence) > 10:  # 20 -> 10으로 완화
                 seen_sentences.add(normalized)
                 all_sentences.append(sentence)
     
@@ -736,12 +736,12 @@ def extract_pure_article_text(content_elem):
     return ''
 
 def is_real_article_content(text):
-    """진짜 기사 내용인지 엄격하게 판단"""
-    if len(text) < 30:  # 최소 길이 증가
+    """진짜 기사 내용인지 판단 - 더 관대하게"""
+    if len(text) < 20:  # 30 -> 20으로 완화
         return False
     
-    # 메뉴 텍스트 체크
-    if is_menu_sentence(text):
+    # 메뉴 텍스트 체크 - 엄격한 경우만
+    if is_menu_sentence(text) and len(text) < 50:
         return False
     
     # 진짜 기사 내용의 지표
@@ -774,16 +774,14 @@ def is_real_article_content(text):
     if signal_count == 0:
         # 완전한 문장 구조를 가진 기사인지 확인
         sentences = text.split('.')
-        complete_sentences = [s.strip() for s in sentences if len(s.strip()) > 10]
+        complete_sentences = [s.strip() for s in sentences if len(s.strip()) > 5]  # 10 -> 5로 완화
         
-        if len(complete_sentences) < 2:  # 최소 2개 문장 필요
+        if len(complete_sentences) < 1:  # 2 -> 1로 완화
             return False
         
-        # 단어 길이 및 분포 체크
+        # 단어 길이 및 분포 체크 - 더 관대하게
         words = text_lower.split()
-        long_words = [w for w in words if len(w) > 4]
-        
-        if len(words) == 0 or len(long_words) / len(words) < 0.3:
+        if len(words) < 5:  # 최소 5단어
             return False
     
     return signal_count > 0 or len(text.split('.')) >= 2
@@ -810,7 +808,7 @@ def extract_article_content_generic(url, soup):
     # 전체 비필요 요소 먼저 제거
     remove_unwanted_elements(soup)
     
-    # 본문 추출 - 다양한 선택자 시도
+    # 본문 추출 - 다양한 선택자 시도 (더 많은 선택자 추가)
     content_elem = find_main_content_element(soup, [
         'article',
         'main',
@@ -819,7 +817,17 @@ def extract_article_content_generic(url, soup):
         '.content-body',
         '.story-content',
         '.entry-content',
-        '.main-content'
+        '.main-content',
+        # 추가 선택자
+        '.article-body',
+        '.news-content',
+        '.text-content',
+        '#article-content',
+        '.article-text',
+        '.post-body',
+        '.content',
+        '.single-content',
+        '.detail-content'
     ])
     
     if content_elem:

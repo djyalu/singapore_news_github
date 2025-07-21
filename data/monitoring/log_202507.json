@@ -50,5 +50,41 @@
     "group_count": 1,
     "method": "traditional",
     "summary": "- Economy: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T13:01:22.241810",
+    "execution_time": "2025-07-21 13:01:22 KST",
+    "status": "success",
+    "article_count": 1,
+    "group_count": 1,
+    "method": "traditional",
+    "summary": "- Economy: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T13:01:52.982164",
+    "execution_time": "2025-07-21 13:01:52 KST",
+    "status": "success",
+    "article_count": 1,
+    "group_count": 1,
+    "method": "traditional",
+    "summary": "- Economy: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T13:04:18.061995",
+    "execution_time": "2025-07-21 13:04:18 KST",
+    "status": "success",
+    "article_count": 1,
+    "group_count": 1,
+    "method": "traditional",
+    "summary": "- News: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-21T13:04:43.791144",
+    "execution_time": "2025-07-21 13:04:43 KST",
+    "status": "success",
+    "article_count": 3,
+    "group_count": 2,
+    "method": "traditional",
+    "summary": "- News: 1개 기사<br>- Economy: 2개 기사"
   }
 ]
