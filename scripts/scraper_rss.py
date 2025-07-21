@@ -19,7 +19,12 @@ RSS_FEEDS = {
     'Singapore Business Review': 'https://sbr.com.sg/news.rss',
     'Channel NewsAsia': 'https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml',
     'The Independent Singapore': 'https://theindependent.sg/feed/',
-    # 추가 피드들을 여기에 넣을 수 있음
+    # Straits Times RSS (if available)
+    # 'The Straits Times': 'https://www.straitstimes.com/news/singapore/rss.xml',
+    # Yahoo News RSS
+    'Yahoo Singapore': 'https://sg.news.yahoo.com/rss/',
+    # TODAY Online RSS (if available)
+    # 'TODAY Online': 'https://www.todayonline.com/feed',
 }
 
 # 그룹 매핑
@@ -28,6 +33,10 @@ SITE_GROUP_MAPPING = {
     'Singapore Business Review': 'Economy',
     'Channel NewsAsia': 'News',
     'The Independent Singapore': 'Politics',
+    'Yahoo Singapore': 'News',
+    'The Straits Times': 'News',
+    'The Business Times': 'Economy',
+    'TODAY Online': 'News',
 }
 
 def load_settings():

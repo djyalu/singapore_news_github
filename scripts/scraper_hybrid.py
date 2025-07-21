@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+하이브리드 스크래퍼: RSS + 전통적 스크래핑 결합
+"""
+
+import json
+import os
+from datetime import datetime
+from collections import defaultdict
+
+# RSS 스크래퍼와 전통적 스크래퍼 가져오기
+from scraper_rss import scrape_news_rss, RSS_FEEDS
+from scraper import scrape_news_traditional, load_settings, load_sites
+
+def scrape_news_hybrid():
+    """하이브리드 방식: RSS 먼저 시도, 실패하면 전통적 방식"""
+    print("[HYBRID] Starting hybrid scraping (RSS + Traditional)...")
+    
+    settings = load_settings()
+    sites = load_sites()
+    
+    # RSS로 수집한 사이트 추적
+    rss_sites = set(RSS_FEEDS.keys())
+    rss_collected = set()
+    
+    # 먼저 RSS로 시도
+    print("\n[HYBRID] Phase 1: RSS Scraping")
+    articles_by_group = defaultdict(list)
+    
+    try:
+        # RSS 스크래핑 수행 (파일에 저장하지 않고 메모리에만)
+        from scraper_rss import scrape_rss_feed, SITE_GROUP_MAPPING
+        
+        for site_name, feed_url in RSS_FEEDS.items():
+            articles = scrape_rss_feed(feed_url, site_name, settings)
+            if articles:
+                group = SITE_GROUP_MAPPING.get(site_name, 'News')
+                articles_by_group[group].extend(articles)
+                rss_collected.add(site_name)
+                print(f"[HYBRID] RSS: Collected {len(articles)} articles from {site_name}")
+            else:
+                print(f"[HYBRID] RSS: No articles from {site_name}")
+                
+    except Exception as e:
+        print(f"[HYBRID] RSS scraping error: {e}")
+    
+    # 전통적 방식으로 나머지 사이트 수집
+    print("\n[HYBRID] Phase 2: Traditional Scraping for remaining sites")
+    
+    # RSS로 수집하지 못한 사이트들만 필터링
+    remaining_sites = [site for site in sites if site['name'] not in rss_collected]
+    
+    if remaining_sites:
+        print(f"[HYBRID] Sites to scrape traditionally: {[s['name'] for s in remaining_sites]}")
+        
+        # 임시로 sites.json 수정
+        original_sites = sites.copy()
+        
+        try:
+            # 임시 파일에 남은 사이트만 저장
+            temp_sites_file = 'data/sites_temp.json'
+            with open(temp_sites_file, 'w', encoding='utf-8') as f:
+                json.dump(remaining_sites, f, ensure_ascii=False, indent=2)
+            
+            # scraper.py가 임시 파일을 사용하도록 수정
+            import scraper
+            original_load_sites = scraper.load_sites
+            
+            def temp_load_sites():
+                with open(temp_sites_file, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            
+            scraper.load_sites = temp_load_sites
+            
+            # 전통적 스크래핑 수행
+            trad_output = scrape_news_traditional()
+            
+            # 결과 파일 읽기
+            if trad_output and os.path.exists(trad_output):
+                with open(trad_output, 'r', encoding='utf-8') as f:
+                    trad_data = json.load(f)
+                    
+                # 전통적 방식으로 수집한 기사들 추가
+                for group_data in trad_data:
+                    group = group_data['group']
+                    articles_by_group[group].extend(group_data['articles'])
+                    print(f"[HYBRID] Traditional: Added {len(group_data['articles'])} articles to {group}")
+                
+                # 임시 파일 삭제
+                os.remove(trad_output)
+            
+        except Exception as e:
+            print(f"[HYBRID] Traditional scraping error: {e}")
+        finally:
+            # 원래 함수 복구
+            scraper.load_sites = original_load_sites
+            # 임시 파일 삭제
+            if os.path.exists(temp_sites_file):
+                os.remove(temp_sites_file)
+    
+    # 전체 결과 통합
+    print("\n[HYBRID] Phase 3: Consolidating results")
+    consolidated_articles = []
+    
+    for group, group_articles in articles_by_group.items():
+        if not group_articles:
+            continue
+            
+        # 중복 제거 (제목 기준)
+        unique_articles = []
+        seen_titles = set()
+        for article in group_articles:
+            if article['title'] not in seen_titles:
+                seen_titles.add(article['title'])
+                unique_articles.append(article)
+        
+        # 각 그룹에서 최대 5개의 기사 (하이브리드는 더 많이)
+        selected_articles = unique_articles[:5]
+        
+        # 그룹별 통합 기사 생성
+        group_summary = {
+            'group': group,
+            'articles': selected_articles,
+            'article_count': len(selected_articles),
+            'sites': list(set(article['site'] for article in selected_articles)),
+            'timestamp': datetime.now().isoformat(),
+            'scraping_method': 'hybrid',
+            'execution_type': 'manual'
+        }
+        
+        consolidated_articles.append(group_summary)
+    
+    # 결과 저장
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    output_file = f'data/scraped/news_{timestamp}.json'
+    
+    os.makedirs('data/scraped', exist_ok=True)
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(consolidated_articles, f, ensure_ascii=False, indent=2)
+    
+    # latest.json 파일 업데이트
+    latest_info = {
+        'lastUpdated': datetime.now().isoformat(),
+        'latestFile': f'news_{timestamp}.json',
+        'scrapingMethod': 'hybrid',
+        'executionType': 'manual'
+    }
+    with open('data/latest.json', 'w', encoding='utf-8') as f:
+        json.dump(latest_info, f, ensure_ascii=False, indent=2)
+    
+    # 결과 요약
+    total_articles = sum(len(group['articles']) for group in consolidated_articles)
+    total_sites = len(set(article['site'] for group in consolidated_articles for article in group['articles']))
+    
+    print(f"\n[HYBRID] === Final Results ===")
+    print(f"[HYBRID] Total articles: {total_articles}")
+    print(f"[HYBRID] Total sites: {total_sites}")
+    print(f"[HYBRID] RSS sites: {len(rss_collected)} ({', '.join(rss_collected)})")
+    print(f"[HYBRID] Traditional sites: {len(remaining_sites)}")
+    print(f"[HYBRID] Output: {output_file}")
+    
+    return output_file
+
+if __name__ == "__main__":
+    output_file = scrape_news_hybrid()
+    print(f"\n[HYBRID] Scraping completed.")

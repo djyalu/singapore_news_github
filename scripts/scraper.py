@@ -1766,6 +1766,15 @@ def scrape_news():
             print(f"RSS scraping failed: {e}")
             print("Falling back to traditional scraping...")
             return scrape_news_traditional()
+    elif scraping_method == 'hybrid':
+        print("Using hybrid scraping (RSS + Traditional)...")
+        try:
+            from scraper_hybrid import scrape_news_hybrid
+            return scrape_news_hybrid()
+        except Exception as e:
+            print(f"Hybrid scraping failed: {e}")
+            print("Falling back to traditional scraping...")
+            return scrape_news_traditional()
     else:
         print("Using traditional scraping...")
         return scrape_news_traditional()
