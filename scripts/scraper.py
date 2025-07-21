@@ -929,10 +929,11 @@ def is_valid_article_url(url, domain):
             r'/[a-z0-9-]{10,}-\d+$'               # 긴 제목-숫자 패턴
         ]
         
-        # 섹션 루트 페이지는 제외
-        if url.rstrip('/').endswith(('/singapore', '/asia', '/world', '/business', '/sport', '/lifestyle')):
+        # 섹션 루트 페이지는 제외 (정확히 매칭)
+        url_path = urlparse(url).path.rstrip('/')
+        if url_path in ['/singapore', '/asia', '/world', '/business', '/sport', '/lifestyle', '/commentary']:
             if DEBUG_MODE:
-                print(f"[DEBUG] CNA section root page excluded")
+                print(f"[DEBUG] CNA section root page excluded: {url_path}")
             return False
         
         matched = any(re.search(pattern, url) for pattern in cna_patterns)
@@ -1058,6 +1059,80 @@ def is_valid_article_url(url, domain):
             print(f"[DEBUG] NAC URL pattern match: {matched}")
         return matched
     
+    # Yahoo Singapore
+    elif 'yahoo.com' in domain and 'sg' in domain:
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking Yahoo SG URL patterns for: {url}")
+        
+        yahoo_patterns = [
+            r'/[a-zA-Z0-9-]+-\d+\.html',           # Yahoo 기사 패턴 (제목-숫자.html)
+            r'/news/[a-zA-Z0-9-]+',                 # 뉴스 섹션
+            r'/singapore/[a-zA-Z0-9-]+',            # 싱가포르 섹션
+            r'/finance/[a-zA-Z0-9-]+',              # 금융 섹션
+            r'/lifestyle/[a-zA-Z0-9-]+',            # 라이프스타일 섹션
+            r'/[a-zA-Z0-9-]{15,}'                   # 긴 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in yahoo_patterns)
+        if DEBUG_MODE:
+            print(f"[DEBUG] Yahoo URL pattern match: {matched}")
+        return matched
+    
+    # Mothership
+    elif 'mothership.sg' in domain:
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking Mothership URL patterns for: {url}")
+        
+        mothership_patterns = [
+            r'/\d{4}/\d{2}/[a-zA-Z0-9-]+',         # 날짜 기반 URL
+            r'/[a-zA-Z0-9-]+-[a-zA-Z0-9-]+',       # 하이픈이 포함된 URL
+            r'/[a-zA-Z0-9-]{10,}'                   # 긴 제목 URL
+        ]
+        
+        # Mothership 제외 패턴
+        if any(exclude in url_lower for exclude in ['/category/', '/tag/', '/author/']):
+            return False
+            
+        matched = any(re.search(pattern, url) for pattern in mothership_patterns)
+        if DEBUG_MODE:
+            print(f"[DEBUG] Mothership URL pattern match: {matched}")
+        return matched
+    
+    # The Independent Singapore
+    elif 'theindependent.sg' in domain:
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking Independent SG URL patterns for: {url}")
+        
+        independent_patterns = [
+            r'/\d{4}/\d{2}/\d{2}/[a-zA-Z0-9-]+',  # 날짜 기반 URL
+            r'/[a-zA-Z0-9-]+-[a-zA-Z0-9-]+',       # 하이픈이 포함된 URL
+            r'/[a-zA-Z0-9-]{15,}'                   # 긴 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in independent_patterns)
+        if DEBUG_MODE:
+            print(f"[DEBUG] Independent URL pattern match: {matched}")
+        return matched
+    
+    # TODAY Online
+    elif 'todayonline.com' in domain:
+        if DEBUG_MODE:
+            print(f"[DEBUG] Checking TODAY URL patterns for: {url}")
+        
+        today_patterns = [
+            r'/singapore/[a-zA-Z0-9-]+',            # 싱가포르 섹션
+            r'/world/[a-zA-Z0-9-]+',                # 월드 섹션
+            r'/commentary/[a-zA-Z0-9-]+',           # 논평 섹션
+            r'/lifestyle/[a-zA-Z0-9-]+',            # 라이프스타일 섹션
+            r'/[a-zA-Z0-9-]+-\d+',                 # 제목-숫자 패턴
+            r'/[a-zA-Z0-9-]{15,}'                   # 긴 제목 URL
+        ]
+        
+        matched = any(re.search(pattern, url) for pattern in today_patterns)
+        if DEBUG_MODE:
+            print(f"[DEBUG] TODAY URL pattern match: {matched}")
+        return matched
+    
     # 기본 패턴 (모든 사이트용) - 매우 관대하게
     general_patterns = [
         r'/20\d{2}/\d{2}/\d{2}/[a-z0-9-]{3,}',   # 날짜 + 제목 패턴 (더 짧은 제목도 허용)
@@ -1099,15 +1174,47 @@ def get_article_links_straits_times(soup, base_url):
     links = []
     domain = urlparse(base_url).netloc.lower()
     
-    for a in soup.select('a[href]'):
-        href = a.get('href', '')
-        full_url = urljoin(base_url, href)
-        
-        # 유효한 기사 URL인지 확인
-        if is_valid_article_url(full_url, domain):
-            links.append(full_url)
+    # ST의 기사 링크 셀렉터들 - 더 구체적으로
+    article_selectors = [
+        'a[href*="/singapore/"][href*="-"]',  # 싱가포르 섹션 기사
+        'a[href*="/asia/"][href*="-"]',       # 아시아 섹션 기사
+        'a[href*="/world/"][href*="-"]',      # 월드 섹션 기사
+        'a[href*="/business/"][href*="-"]',   # 비즈니스 섹션 기사
+        'a[href*="/life/"][href*="-"]',       # 라이프 섹션 기사
+        'a[href*="/sport/"][href*="-"]',      # 스포츠 섹션 기사
+        'a[href*="/opinion/"][href*="-"]',    # 오피니언 섹션 기사
+        'h3 a[href]',                           # 헤드라인 링크
+        'h2 a[href]',                           # 서브헤드라인 링크
+        '.card-title a[href]',                  # 카드 제목 링크
+        '.headline a[href]',                    # 헤드라인 클래스 링크
+        'a[data-article-link]'                  # 기사 링크 속성
+    ]
     
-    return list(set(links))[:10]  # 중복 제거 후 10개까지
+    for selector in article_selectors:
+        for a in soup.select(selector):
+            href = a.get('href', '')
+            if not href:
+                continue
+                
+            full_url = urljoin(base_url, href)
+            
+            # 텍스트가 있는 링크만 (빈 링크 제외)
+            link_text = a.get_text(strip=True)
+            if not link_text or len(link_text) < 10:
+                continue
+            
+            # 유효한 기사 URL인지 확인
+            if is_valid_article_url(full_url, domain):
+                links.append(full_url)
+                if DEBUG_MODE:
+                    print(f"[DEBUG] ST article found: {link_text[:50]}... -> {full_url}")
+    
+    # 중복 제거
+    unique_links = list(set(links))
+    if DEBUG_MODE:
+        print(f"[DEBUG] ST total unique links found: {len(unique_links)}")
+    
+    return unique_links[:10]  # 최대 10개까지
 
 def get_article_links_moe(soup, base_url):
     """MOE 전용 링크 추출"""
@@ -1132,8 +1239,43 @@ def get_article_links_generic(soup, base_url):
     if DEBUG_MODE:
         print(f"[DEBUG] Generic link extraction for domain: {domain}")
     
+    # 일반적인 기사 링크 셀렉터들
+    article_selectors = [
+        'article a[href]',                      # article 태그 내의 링크
+        'h1 a[href]', 'h2 a[href]', 'h3 a[href]',  # 헤드라인 링크
+        '.headline a[href]',                    # headline 클래스
+        '.title a[href]',                       # title 클래스
+        '.post-title a[href]',                  # post-title 클래스
+        '.entry-title a[href]',                 # entry-title 클래스
+        '.news-title a[href]',                  # news-title 클래스
+        '.article-title a[href]',               # article-title 클래스
+        'a[href][title]',                       # title 속성이 있는 링크
+        '.content a[href]',                     # content 영역의 링크
+        '.main a[href]'                         # main 영역의 링크
+    ]
+    
     # 모든 링크를 수집하되, 더 똑똑한 필터링 적용
     all_links = []
+    
+    # 셀렉터별로 링크 수집
+    for selector in article_selectors:
+        for a in soup.select(selector):
+            href = a.get('href', '')
+            if not href:
+                continue
+                
+            full_url = urljoin(base_url, href)
+            link_text = a.get_text(strip=True)
+            
+            # 링크가 기본 조건을 만족하는지 확인
+            if len(full_url) > 30 and link_text and len(link_text) > 10:  # 링크와 충분한 텍스트
+                all_links.append({
+                    'url': full_url,
+                    'text': link_text,
+                    'domain': urlparse(full_url).netloc.lower()
+                })
+    
+    # 일반 a 태그도 확인 (위 셀렉터에서 놓친 경우)
     for a in soup.select('a[href]'):
         href = a.get('href', '')
         if not href:
@@ -1142,8 +1284,10 @@ def get_article_links_generic(soup, base_url):
         full_url = urljoin(base_url, href)
         link_text = a.get_text(strip=True)
         
-        # 링크가 기본 조건을 만족하는지 확인
-        if len(full_url) > 30 and link_text:  # 링크와 텍스트가 있어야 함
+        # 링크가 기사처럼 보이는지 확인 (텍스트 길이, URL 패턴 등)
+        if (len(full_url) > 50 and link_text and len(link_text) > 20 and 
+            '-' in full_url and  # 대부분의 기사 URL은 하이픈 포함
+            not any(exclude in full_url.lower() for exclude in ['login', 'register', 'subscribe'])):
             all_links.append({
                 'url': full_url,
                 'text': link_text,
@@ -1151,19 +1295,27 @@ def get_article_links_generic(soup, base_url):
             })
     
     if DEBUG_MODE:
-        print(f"[DEBUG] Found {len(all_links)} total links")
+        print(f"[DEBUG] Found {len(all_links)} total potential article links")
+    
+    # 중복 제거 (URL 기준)
+    seen_urls = set()
+    unique_links = []
+    for link in all_links:
+        if link['url'] not in seen_urls:
+            seen_urls.add(link['url'])
+            unique_links.append(link)
     
     # 도메인 내 링크만 필터링
-    same_domain_links = [link for link in all_links if domain in link['domain']]
+    same_domain_links = [link for link in unique_links if domain in link['domain']]
     if DEBUG_MODE:
-        print(f"[DEBUG] Found {len(same_domain_links)} same-domain links")
+        print(f"[DEBUG] Found {len(same_domain_links)} unique same-domain links")
     
     # 각 링크를 URL 패턴으로 검증
     for link in same_domain_links:
         if is_valid_article_url(link['url'], domain):
             links.append(link['url'])
             if DEBUG_MODE:
-                print(f"[DEBUG] Added valid link: {link['url']}")
+                print(f"[DEBUG] Added valid link: {link['text'][:50]}... -> {link['url']}")
             
             # 최대 15개까지만 수집
             if len(links) >= 15:
