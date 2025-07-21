@@ -63,8 +63,7 @@ def format_message(data):
     now_kst = datetime.now(kst)
     
     message = f"📰 *Singapore News Update*\n"
-    message += f"{now_kst.strftime('%Y년 %m월 %d일 %H:%M')}\n"
-    message += "━━━━━━━━━━━━━━━━━━━━━\n\n"
+    message += f"{now_kst.strftime('%Y년 %m월 %d일 %H:%M')}\n\n"
     
     # 데이터가 리스트 형식인 경우 (그룹별로 이미 정리됨)
     if isinstance(data, list):
@@ -77,19 +76,15 @@ def format_message(data):
             sites = group_data['sites']
             
             message += f"【 {group_name} 】\n"
-            message += f"📍 출처: {', '.join(sites)}\n"
-            message += "━━━━━━━━━━━━━━━━━━━━━\n"
+            message += f"📍 출처: {', '.join(sites)}\n\n"
             
             for i, article in enumerate(group_articles, 1):
                 message += f"\n{i}. {article.get('summary', article.get('korean_summary', '요약 없음'))}\n"
                 if article.get('url'):
                     message += f"   🔗 원문: {article['url']}\n"
                 message += "\n"
-            
-            message += "━━━━━━━━━━━━━━━━━━━━━\n\n"
     
-    message += "\n━━━━━━━━━━━━━━━━━━━━━\n"
-    message += "🤖 Singapore News Scraper\n"
+    message += "\n🤖 Singapore News Scraper\n"
     message += "📱 Powered by Green API"
     
     return message
