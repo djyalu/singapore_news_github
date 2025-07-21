@@ -253,5 +253,16 @@
     "message_length": 654,
     "article_count": 2,
     "api": "green-api"
+  },
+  {
+    "id": "20250721235208",
+    "timestamp": "2025-07-21T23:52:08.311262+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 2개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 21일 14:52\n━━━━━━━━━━━━━━━━━━━━\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 2개 기사\n\n【 News 】\n📍 출처: Channel NewsAsia\n━━━━━━━━━━━━━━━━━━━━\n\n1. 📰 국제 관련 뉴스\n📢 Indonesia’s Sumatra sees 14-fold ...",
+    "message_length": 700,
+    "article_count": 2,
+    "api": "green-api"
   }
 ]
