@@ -155,31 +155,37 @@ def enhanced_keyword_summary(title, content):
     # 날짜 추출
     dates = re.findall(r'\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2}(?:, \d{4})?|\d{1,2}/\d{1,2}/\d{2,4}', content[:500])
     
-    # 키워드 찾기
+    # 키워드 찾기 - 단어 경계를 고려한 정확한 매칭
     found_keywords = []
     text_lower = (title + ' ' + content[:500]).lower()
     
+    # 단어 경계를 고려한 정규식 패턴 사용
+    import re
     for eng, kor in sorted(keyword_mapping.items(), key=lambda x: len(x[0]), reverse=True):
-        if eng.lower() in text_lower:
+        # 단어 경계(\b)를 사용하여 정확한 단어만 매칭
+        pattern = r'\b' + re.escape(eng.lower()) + r'\b'
+        if re.search(pattern, text_lower):
             found_keywords.append(f"{kor}({eng.upper() if len(eng) <= 4 else eng.title()})")
-            text_lower = text_lower.replace(eng.lower(), '')  # 중복 방지
+            text_lower = re.sub(pattern, '', text_lower)  # 중복 방지
     
-    # 동작 찾기
+    # 동작 찾기 - 단어 경계를 고려한 정확한 매칭
     found_actions = []
     for eng, kor in action_mapping.items():
-        if eng in text_lower:
+        pattern = r'\b' + re.escape(eng) + r'\b'
+        if re.search(pattern, text_lower):
             found_actions.append(kor)
     
     # 제목 번역 시도
     korean_title = translate_title_intelligently(title, keyword_mapping, action_mapping)
     
-    # 제목에서 찾은 키워드로 분류
+    # 제목에서 찾은 키워드로 분류 - 단어 경계를 고려한 정확한 매칭
     title_keywords = []
     title_lower = title.lower()
     for eng, kor in sorted(keyword_mapping.items(), key=lambda x: len(x[0]), reverse=True):
-        if eng.lower() in title_lower:
+        pattern = r'\b' + re.escape(eng.lower()) + r'\b'
+        if re.search(pattern, title_lower):
             title_keywords.append(kor)
-            title_lower = title_lower.replace(eng.lower(), '', 1)
+            title_lower = re.sub(pattern, '', title_lower, count=1)
     
     # 제목 생성
     if korean_title and korean_title != title:
