@@ -875,7 +875,7 @@ def extract_article_content(url):
 def is_valid_article_url(url, domain):
     """유효한 기사 URL인지 판단 - 더 유연한 접근"""
     url_lower = url.lower()
-    print(f"[DEBUG] Checking URL: {url}")
+    # print(f"[DEBUG] Checking URL: {url}")  # 너무 많은 출력 방지
     
     # 제외할 패턴들 - 핵심적인 것들만
     exclude_patterns = [
@@ -918,7 +918,7 @@ def is_valid_article_url(url, domain):
         return matched
     
     elif 'straitstimes.com' in domain:
-        print(f"[DEBUG] Checking ST URL patterns for: {url}")
+        # print(f"[DEBUG] Checking ST URL patterns for: {url}")  # 너무 많은 출력 방지
         
         # Straits Times 기사 패턴 - 대소문자 모두 허용하고 더 유연하게
         st_patterns = [
