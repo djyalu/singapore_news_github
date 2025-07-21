@@ -1,0 +1,22 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Elon Musk is cashing in on the AI romance boom",
+        "url": "https://www.straitstimes.com/opinion/elon-musk-is-cashing-in-on-the-ai-romance-boom",
+        "summary": "📰 제목: AI 관련 뉴스\n🔍 주요 키워드: AI(AI)\n📊 주요 수치: ,\n📝 AI(AI)이(가) , 기록",
+        "content": "He is a no-holds-barred kind of tech billionaire. So too are his new AI companions. Find out what’s new on ST website and app. She tells me we’re in a jazz club. “I’m in my little black dress, giving you a sultry glance while we slide...",
+        "publish_date": "2025-07-21T13:04:02.032562"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-21T13:04:18.055545",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

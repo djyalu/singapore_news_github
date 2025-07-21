@@ -1,0 +1,22 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "IPCG accuses Deutsche Bank of breaching agreement, files lawsuit",
+        "url": "https://www.businesstimes.com.sg/companies-markets/ipcg-accuses-deutsche-bank-breaching-agreement-files-lawsuit",
+        "summary": "📰 제목: 법률 관련 뉴스\n🔍 주요 키워드: 투자(Investment), 싱가포르(Singapore), 법률(LAW)\n📊 주요 수치: ,, ,, ,\n📝 투자(Investment)이(가) , 기록",
+        "content": "Singapore-based IPCG holds a Capital Markets Services licence from the Monetary Authority of Singapore, and advises high-net-worth individuals and family offices. Eric Chen, a senior director at IPCG, previously managed Splendor Lights through a Limited Power of Attorney, authorising IPCG to handle Splendor Lights’ investments at Deutsche. At the time, Splendor Lights’ assets managed by IPCG at Deutsche were worth about US$42.8 million.",
+        "publish_date": "2025-07-21T13:01:40.025986"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-21T13:01:52.975720",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

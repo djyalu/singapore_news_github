@@ -3,8 +3,8 @@
 .env.local
 
 # Data files
-data/scraped/*
-data/history/*
+# data/scraped/*  # 주석 처리하여 스크래핑 파일들이 커밋되도록 함
+# data/history/*  # 주석 처리하여 히스토리 파일들이 커밋되도록 함
 !data/scraped/.gitkeep
 !data/history/.gitkeep
 

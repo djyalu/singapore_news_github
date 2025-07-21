@@ -1,0 +1,50 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "The unspoken reason people sometimes quit their jobs: Loneliness",
+        "url": "https://www.straitstimes.com/opinion/the-unspoken-reason-people-sometimes-quit-their-jobs-loneliness?ref=headstart",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n🔍 주요 키워드: 버스(BUS), AI(AI)\n📊 주요 수치: ,\n📝 버스(BUS)이(가) , 기록",
+        "content": "Helping employees feel a sense of belonging should be regarded as a core business strategy. Find out what’s new on ST website and app. Later, she said that our small act of waiting meant the world to her.",
+        "publish_date": "2025-07-21T13:04:31.199445"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-21T13:04:43.781434",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Will NTT DC Reit recover from its weak debut?",
+        "url": "https://www.businesstimes.com.sg/opinion-features/will-ntt-dc-reit-recover-its-weak-debut",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n🔍 주요 키워드: AI(AI)\n📊 주요 수치: 599.9, ,, 4.6\n📝 AI(AI)이(가) 599.9 기록",
+        "content": "Based on the nearly 599.9 million units available, the offering was approximately 4.6 times subscribed. An additional 51.5 million units were over-alloted. NTT DC Reit also came to market at a seemingly opportune moment",
+        "publish_date": "2025-07-21T13:04:34.048903"
+      },
+      {
+        "site": "The Business Times",
+        "title": "CGSI downgrades Wilmar, lowers price target amid heightened regulatory risk from Indonesia",
+        "url": "https://www.businesstimes.com.sg/companies-markets/cgsi-downgrades-wilmar-lowers-price-target-amid-heightened-regulatory-risk-indonesia",
+        "summary": "📰 제목: 가격 인도네시아\n🔍 주요 키워드: 인도네시아(Indonesia), 가격(Price), 버스(BUS), AI(AI)\n📌 주요 동향: 출시, 투자\n📊 주요 수치: 15,, ,\n📅 날짜: Jul 15\n📝 인도네시아(Indonesia)이(가) 15, 기록 / 인도네시아(Indonesia)에서 출시",
+        "content": "Earlier on Jul 15, Indonesia Business Post reported that the Indonesian National Police Food Task Force had launched an investigation into four major rice producers including Wilmar. This was over allegations of mislabelling, where lower-grade medium-grain rice was blended with premium rice and sold as higher quality.",
+        "publish_date": "2025-07-21T13:04:34.461174"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-21T13:04:43.781462",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
