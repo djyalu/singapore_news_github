@@ -31,6 +31,8 @@ RSS_FEEDS = {
     'Tech in Asia': 'https://www.techinasia.com/feed',
     # The Edge Singapore RSS
     # 'The Edge Singapore': 'https://www.theedgesingapore.com/rss',
+    # MustShareNews RSS
+    'MustShareNews': 'https://mustsharenews.com/feed/',
 }
 
 # 그룹 매핑
@@ -47,6 +49,7 @@ SITE_GROUP_MAPPING = {
     'Tech in Asia': 'Technology',
     'The Edge Singapore': 'Economy',
     'AsiaOne': 'News',
+    'MustShareNews': 'News',
 }
 
 def load_settings():

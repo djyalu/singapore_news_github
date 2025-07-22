@@ -76,5 +76,11 @@
     "name": "MustShareNews",
     "url": "https://mustsharenews.com/category/singapore/",
     "period": "daily"
+  },
+  {
+    "group": "Economy",
+    "name": "Singapore Business Review",
+    "url": "https://sbr.com.sg",
+    "period": "daily"
   }
 ]
