@@ -70,5 +70,11 @@
     "name": "Lianhe Zaobao",
     "url": "https://www.zaobao.com.sg/",
     "period": "daily"
+  },
+  {
+    "group": "News",
+    "name": "MustShareNews",
+    "url": "https://mustsharenews.com/category/singapore/",
+    "period": "daily"
   }
 ]
