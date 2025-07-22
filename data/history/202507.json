@@ -418,5 +418,16 @@
     "message_length": 964,
     "article_count": 4,
     "api": "green-api"
+  },
+  {
+    "id": "20250722233929",
+    "timestamp": "2025-07-22T23:39:29.998988+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 4개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 22일 23:39\n\n📊 오늘의 주요 뉴스: 2개 그룹, 총 4개 기사\n\n【 News 】\n📍 출처: The Straits Times, The New Paper, Yahoo Singapore News\n\n\n1. 📰 교통, 기술 관련 뉴스\n📢 Taxi driver ‘adding shift’ to be...",
+    "message_length": 944,
+    "article_count": 4,
+    "api": "green-api"
   }
 ]

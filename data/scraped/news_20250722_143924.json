@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Taxi driver ‘adding shift’ to be a YouTuber",
+        "url": "https://www.straitstimes.com/singapore/taxi-driver-adding-shift-to-be-a-youtuber",
+        "summary": "📰 교통, 기술 관련 뉴스\n📢 Taxi driver ‘adding shift’ to be a YouTuber",
+        "content": "Find out what’s new on ST website and app. The 48-year-old drives 10 hours daily and spends nearly as much time making videos. Like the friendly cabbie making conversation with his passenger, Mr Jui’s videos are candid and honest. Find out more about the conversation with senior transport correspondent Lee Nian Tjoe in the shownotes below. 14:20 Trying to create an online community that is more forward-looking and positive",
+        "publish_date": "2025-07-22T14:38:55.682972"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Shaw Plaza losing its spark? Closures of Mui Kee and Picolino raise bigger questions",
+        "url": "https://sg.news.yahoo.com/style/shaw-plaza-losing-spark-closures-020026990.html",
+        "summary": "📰 교통, 음식, 기술 관련 뉴스\n📢 Shaw Plaza losing its spark? Closures of Mui Kee and Picolino raise bigger quest...",
+        "content": "There’s a silent churn happening at Shaw Plaza, Balestier’s once bustling neighbourhood mall. What’s more telling is that both restaurants are part of the prestigious Les Amis Group. Surprisingly, it wasn’t announced through the brand’s official socials. Likewise, Picolino, an Italian bistro tucked just a few units away, quietly shut its doors earlier this month without much hoo-ha. Both restaurants were launched with much anticipation during Shaw Plaza’s post-renovation revival in 2023, but it seems that initial excitement has waned. For starters, the mall is facing stiff competition from food options in the area. With Balestier’s rows of shophouse bak kut teh...",
+        "publish_date": "2025-07-22T14:39:05.417867"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Outfit on a mission to make amends",
+        "url": "https://www.tnp.sg/racing/outfit-mission-make-amends?ref=",
+        "summary": "📰 싱가포르, 교통, 취업 관련 뉴스\n📢 Outfit on a mission to make amends",
+        "content": "Trainer Ong's six-year-old catches the eye with smart gallop at Sungai Besi trackwork. Outfit won five races in Singapore, three with previous trainer Shane Baertschiger and two with Ong. However, the Happy Baby Stable-owned galloper's last two runs were disappointing.",
+        "publish_date": "2025-07-22T14:39:16.744673"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "The New Paper",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-22T14:39:24.704804",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Temasek unit Azalea is back with another PE-based bond offering – Astrea 9",
+        "url": "https://www.businesstimes.com.sg/companies-markets/temasek-unit-azalea-back-another-pe-based-bond-offering-astrea-9",
+        "summary": "📰 보건, 기술, 법률 관련 뉴스\n📢 Temasek unit Azalea is back with another PE-based bond offering – Astrea 9",
+        "content": "The indicative total size of the new issuance, Astrea 9 Private Equity Bonds, is US$780 million. The funds invested in 1,086 companies in industries ranging from information technology and industrials to healthcare, financials and consumer discretionary. The coupon rates of the bonds will be announced later. The issuance will have three classes of bonds: A-1, A-2 and B Payment-in-Kind (PIK)",
+        "publish_date": "2025-07-22T14:39:03.017043"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-22T14:39:24.704818",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
