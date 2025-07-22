@@ -14,8 +14,8 @@ from scraper_rss import scrape_news_rss, RSS_FEEDS
 from scraper import scrape_news_traditional, load_settings, load_sites
 
 def scrape_news_hybrid():
-    """하이브리드 방식: RSS 먼저 시도, 실패하면 전통적 방식"""
-    print("[HYBRID] Starting hybrid scraping (RSS + Traditional)...")
+    """하이브리드 방식: RSS + Enhanced + Selenium"""
+    print("[HYBRID] Starting hybrid scraping (RSS + Enhanced + Selenium)...")
     
     settings = load_settings()
     sites = load_sites()
@@ -45,59 +45,62 @@ def scrape_news_hybrid():
     except Exception as e:
         print(f"[HYBRID] RSS scraping error: {e}")
     
-    # 전통적 방식으로 나머지 사이트 수집
-    print("\n[HYBRID] Phase 2: Traditional Scraping for remaining sites")
+    # Enhanced 스크래핑으로 나머지 사이트 수집
+    print("\n[HYBRID] Phase 2: Enhanced Scraping for remaining sites")
     
     # RSS로 수집하지 못한 사이트들만 필터링
     remaining_sites = [site for site in sites if site['name'] not in rss_collected]
     
-    if remaining_sites:
-        print(f"[HYBRID] Sites to scrape traditionally: {[s['name'] for s in remaining_sites]}")
-        
-        # 임시로 sites.json 수정
-        original_sites = sites.copy()
+    # Selenium이 필요한 사이트와 일반 사이트 분리
+    selenium_required = ['TODAY Online', 'The Edge Singapore', 'Tech in Asia', 'AsiaOne']
+    enhanced_sites = [s for s in remaining_sites if s['name'] not in selenium_required]
+    selenium_sites = [s for s in remaining_sites if s['name'] in selenium_required]
+    
+    # Enhanced 스크래핑 수행
+    if enhanced_sites:
+        print(f"[HYBRID] Enhanced scraping for: {[s['name'] for s in enhanced_sites]}")
         
         try:
-            # 임시 파일에 남은 사이트만 저장
-            temp_sites_file = 'data/sites_temp.json'
-            with open(temp_sites_file, 'w', encoding='utf-8') as f:
-                json.dump(remaining_sites, f, ensure_ascii=False, indent=2)
+            # Enhanced 스크래퍼 임포트 및 실행
+            from scraper_enhanced import scrape_site
             
-            # scraper.py가 임시 파일을 사용하도록 수정
-            import scraper
-            original_load_sites = scraper.load_sites
-            
-            def temp_load_sites():
-                with open(temp_sites_file, 'r', encoding='utf-8') as f:
-                    return json.load(f)
-            
-            scraper.load_sites = temp_load_sites
-            
-            # 전통적 스크래핑 수행
-            trad_output = scrape_news_traditional()
-            
-            # 결과 파일 읽기
-            if trad_output and os.path.exists(trad_output):
-                with open(trad_output, 'r', encoding='utf-8') as f:
-                    trad_data = json.load(f)
+            for site in enhanced_sites:
+                try:
+                    articles = scrape_site(site)
+                    if articles:
+                        group = site.get('group', 'News')
+                        articles_by_group[group].extend(articles)
+                        print(f"[HYBRID] Enhanced: Collected {len(articles)} articles from {site['name']}")
+                except Exception as e:
+                    print(f"[HYBRID] Enhanced scraping error for {site['name']}: {e}")
                     
-                # 전통적 방식으로 수집한 기사들 추가
-                for group_data in trad_data:
-                    group = group_data['group']
-                    articles_by_group[group].extend(group_data['articles'])
-                    print(f"[HYBRID] Traditional: Added {len(group_data['articles'])} articles to {group}")
-                
-                # 임시 파일 삭제
-                os.remove(trad_output)
+        except ImportError:
+            print("[HYBRID] Enhanced scraper not available, falling back to traditional")
+            # 전통적 방식으로 폴백
+            if enhanced_sites:
+                remaining_sites = enhanced_sites
+    
+    # Selenium 스크래핑 수행 (GitHub Actions가 아닌 경우에만)
+    if selenium_sites and not os.environ.get('GITHUB_ACTIONS'):
+        print(f"\n[HYBRID] Phase 3: Selenium scraping for: {[s['name'] for s in selenium_sites]}")
+        
+        try:
+            from scraper_selenium import scrape_with_selenium
             
+            selenium_articles = scrape_with_selenium([s['name'] for s in selenium_sites])
+            
+            # 그룹별로 기사 추가
+            for article in selenium_articles:
+                site_info = next((s for s in sites if s['name'] == article['site']), {})
+                group = site_info.get('group', 'News')
+                articles_by_group[group].append(article)
+            
+            print(f"[HYBRID] Selenium: Collected {len(selenium_articles)} articles total")
+            
+        except ImportError:
+            print("[HYBRID] Selenium not available (normal in GitHub Actions)")
         except Exception as e:
-            print(f"[HYBRID] Traditional scraping error: {e}")
-        finally:
-            # 원래 함수 복구
-            scraper.load_sites = original_load_sites
-            # 임시 파일 삭제
-            if os.path.exists(temp_sites_file):
-                os.remove(temp_sites_file)
+            print(f"[HYBRID] Selenium scraping error: {e}")
     
     # 전체 결과 통합
     print("\n[HYBRID] Phase 3: Consolidating results")

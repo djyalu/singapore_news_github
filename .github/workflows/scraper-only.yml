@@ -27,12 +27,13 @@ jobs:
         mkdir -p data/scraped
         mkdir -p data/history
     
-    - name: Run scraper only
+    - name: Run hybrid scraper only
       env:
         GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
+        GITHUB_ACTIONS: true  # Selenium 사용 안함
       run: |
-        python scripts/scraper.py
+        python scripts/scraper_hybrid.py
     
     - name: Save scraped data
       env:

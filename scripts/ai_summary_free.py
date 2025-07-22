@@ -3,6 +3,7 @@ import requests
 import json
 from googletrans import Translator
 import google.generativeai as genai
+import time
 
 def translate_to_korean_summary_gemini(title, content):
     """Google Gemini API를 사용한 무료 한글 요약"""
@@ -20,7 +21,7 @@ def translate_to_korean_summary_gemini(title, content):
         content = content.strip()
         if not content:
             content = "내용 없음"
-        content_preview = content[:800] if len(content) > 800 else content
+        content_preview = content[:500] if len(content) > 500 else content
         
         prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
 
@@ -38,6 +39,9 @@ def translate_to_korean_summary_gemini(title, content):
 예시:
 제목: 싱가포르 정부, 새로운 주택 정책 발표
 내용: 싱가포르 정부가 주택 가격 상승을 억제하기 위한 새로운 정책을 발표했습니다. 이 정책은 내년부터 시행될 예정입니다."""
+        
+        # API 요청 전 짧은 지연 (분당 15개 제한 준수)
+        time.sleep(4)  # 4초 지연 = 분당 최대 15개 요청
         
         response = model.generate_content(prompt)
         if response and response.text:
