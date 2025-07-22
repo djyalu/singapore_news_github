@@ -1,0 +1,40 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The New Paper",
+        "title": "July 23 South Africa (Scottsville) form analysis",
+        "url": "https://www.tnp.sg/racing/july-23-south-africa-scottsville-form-analysis?ref=",
+        "summary": "📰 정치 관련 뉴스\n📢 July 23 South Africa (Scottsville) form analysis",
+        "content": "Many first-timers, so keep an eye on the betting. She is down in distance but should run well. (13) BELLIGERENT improved nicely second time and should be primed for this. (10) GOOD OMEN has drawn wide, but improved in his last run behind Group 1...",
+        "publish_date": "2025-07-22T14:51:38.856563"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Unhealthy air quality in Malaysia, NEA warns of potential transboundary haze",
+        "url": "https://www.asiaone.com/malaysia/unhealthy-air-quality-malaysia-nea-warns-potential-transboundary-haze",
+        "summary": "📰 보건, 문화, 환경 관련 뉴스\n📢 Unhealthy air quality in Malaysia, NEA warns of potential transboundary haze",
+        "content": "Malaysia's Air Pollutant Index (API) recorded eight readings above 100 as at Monday (July 21) morning. According to the National Environment Agency (NEA), dry conditions were observed over most parts of the southern Asean region overnight, while wet...",
+        "publish_date": "2025-07-22T14:51:42.343875"
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Man stabs 22-year-old with knife at Orchard Timezone arcade after being kicked out of racing game team",
+        "url": "https://mustsharenews.com/timezone-arcade-knife/",
+        "summary": "📰 법률 관련 뉴스\n📢 Man stabs 22-year-old with knife at Orchard Timezone arcade after being kicked o...",
+        "content": "Wang joined the victim’s group, which would gather at the Timezone in ION Orchard to play. The victim thus continuously received one-time passwords (OTPs), leading him to become uneasy. He called the police afterwards. On 8 Sept 2024, the victim confronted Wang about the OTPs at the Timezone arcade",
+        "publish_date": "2025-07-22T14:51:46.802928"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "MustShareNews",
+      "The New Paper",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-22T14:52:04.610851",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
