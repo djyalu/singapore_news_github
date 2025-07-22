@@ -16,7 +16,7 @@ import re
 # RSS 피드 목록
 RSS_FEEDS = {
     'Mothership': 'https://mothership.sg/feed/',
-    'Singapore Business Review': 'https://sbr.com.sg/news.rss',
+    # 'Singapore Business Review': 'https://sbr.com.sg/news.rss',  # 403 Forbidden
     'Channel NewsAsia': 'https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml',
     'The Independent Singapore': 'https://theindependent.sg/feed/',
     # Straits Times RSS (if available)
@@ -25,14 +25,20 @@ RSS_FEEDS = {
     'Yahoo Singapore': 'https://sg.news.yahoo.com/rss/',
     # TODAY Online RSS (if available)
     # 'TODAY Online': 'https://www.todayonline.com/feed',
-    # AsiaOne RSS
-    'AsiaOne': 'https://www.asiaone.com/rss.xml',
-    # Tech in Asia RSS
-    'Tech in Asia': 'https://www.techinasia.com/feed',
+    # AsiaOne RSS - 404 Not Found
+    # 'AsiaOne': 'https://www.asiaone.com/rss.xml',
+    # Tech in Asia RSS - 403 Forbidden
+    # 'Tech in Asia': 'https://www.techinasia.com/feed',
     # The Edge Singapore RSS
     # 'The Edge Singapore': 'https://www.theedgesingapore.com/rss',
-    # MustShareNews RSS
-    'MustShareNews': 'https://mustsharenews.com/feed/',
+    # MustShareNews RSS - Singapore specific
+    'MustShareNews': 'https://mustsharenews.com/category/singapore/feed/',
+    # Lianhe Zaobao RSS
+    'Lianhe Zaobao': 'https://www.zaobao.com.sg/rss',
+    # Coconuts Singapore RSS
+    'Coconuts Singapore': 'https://coconuts.co/singapore/feed/',
+    # Time Out Singapore RSS - 없을 수 있음
+    # 'Time Out Singapore': 'https://www.timeout.com/singapore/feed',
 }
 
 # 그룹 매핑
@@ -50,6 +56,9 @@ SITE_GROUP_MAPPING = {
     'The Edge Singapore': 'Economy',
     'AsiaOne': 'News',
     'MustShareNews': 'News',
+    'Lianhe Zaobao': 'Chinese',
+    'Coconuts Singapore': 'Lifestyle',
+    'Time Out Singapore': 'Culture',
 }
 
 def load_settings():

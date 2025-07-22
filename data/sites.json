@@ -82,5 +82,17 @@
     "name": "Singapore Business Review",
     "url": "https://sbr.com.sg",
     "period": "daily"
+  },
+  {
+    "group": "Lifestyle",
+    "name": "Coconuts Singapore",
+    "url": "https://coconuts.co/singapore",
+    "period": "daily"
+  },
+  {
+    "group": "Culture",
+    "name": "Time Out Singapore",
+    "url": "https://www.timeout.com/singapore",
+    "period": "daily"
   }
 ]
