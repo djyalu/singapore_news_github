@@ -1,0 +1,59 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Changi Airport handles 17.5 million passengers in Q2 2025",
+        "url": "https://www.straitstimes.com/singapore/transport/changi-airports-passenger-traffic-crosses-17-5-million-mark-in-q2-2025",
+        "summary": "📰 싱가포르, 교통, 공항 관련 뉴스\n📢 Changi Airport handles 17.5 million passengers in Q2 2025",
+        "content": "Find out what’s new on ST website and app. Changi Airport handled 67.7 million passengers in 2024, 99.1 per cent of the record 68.3 million handled in 2019. The latest statistics were released by airport operator Changi Airport Group (CAG) in a press release on July 22. Traffic between Singapore and China registered a 15.8 per cent year-on-year...",
+        "publish_date": "2025-07-22T14:47:10.686345"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Astronomer CEO's Replacement Says Coldplay Kiss Cam Controversy Has Been 'Surreal' but They're 'Moving Forward'",
+        "url": "https://sg.news.yahoo.com/astronomer-ceos-replacement-says-coldplay-174704192.html",
+        "summary": "📰 비즈니스, 교통, 기술 관련 뉴스\n📢 Astronomer CEO's Replacement Says Coldplay Kiss Cam Controversy Has Been 'Surrea...",
+        "content": "\"Over the past few years, our business has experienced incredible growth. \"The events of the past few days have received a level of media attention that few companies—let alone startups in...",
+        "publish_date": "2025-07-22T14:47:27.524660"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Shaw Plaza losing its spark? Closures of Mui Kee and Picolino raise bigger questions",
+        "url": "https://sg.news.yahoo.com/style/shaw-plaza-losing-spark-closures-020026990.html",
+        "summary": "📰 교통, 음식, 기술 관련 뉴스\n📢 Shaw Plaza losing its spark? Closures of Mui Kee and Picolino raise bigger quest...",
+        "content": "There’s a silent churn happening at Shaw Plaza, Balestier’s once bustling neighbourhood mall. What’s more telling is that both restaurants are part of the prestigious Les Amis Group. Surprisingly, it wasn’t announced through the brand’s official socials. Likewise, Picolino, an Italian bistro tucked just a few units away, quietly shut its doors earlier this month without much hoo-ha. Both restaurants were launched with much anticipation during Shaw Plaza’s post-renovation revival in 2023, but it seems that initial excitement has waned. For starters, the mall is facing stiff competition from food options in the area. With Balestier’s rows of shophouse bak kut teh...",
+        "publish_date": "2025-07-22T14:47:30.472539"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-22T14:48:06.069155",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "New S$30 million members-only club Vanta to open in MacDonald House",
+        "url": "https://www.businesstimes.com.sg/singapore/new-s30-million-members-only-club-vanta-open-macdonald-house",
+        "summary": "📰 싱가포르, 음식, 기술 관련 뉴스\n📢 New S$30 million members-only club Vanta to open in MacDonald House",
+        "content": "Michelin-starred ‘Demon Chef’ Alvin Leung will curate the food at the venue, which will start operating in December. [SINGAPORE] New members-only club Vanta will open in MacDonald House in December, after a S$30 million renovation. Michelin-starred Canadian chef and TV personality, Alvin Leung (also known as “Demon Chef”) of Hong Kong’s Bo Innovation, will curate the club’s culinary programme. Meanwhile, a whisky, wine and sake programme featuring tastings of spirits, masterclasses with distillers and sommeliers and an immersive exploration...",
+        "publish_date": "2025-07-22T14:47:17.948787"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-22T14:48:06.069175",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
