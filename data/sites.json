@@ -64,5 +64,11 @@
     "name": "AsiaOne",
     "url": "https://www.asiaone.com/singapore",
     "period": "daily"
+  },
+  {
+    "group": "Chinese",
+    "name": "Lianhe Zaobao",
+    "url": "https://www.zaobao.com.sg/",
+    "period": "daily"
   }
 ]
