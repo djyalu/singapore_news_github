@@ -1,0 +1,59 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Two dead after fire breaks out in Toa Payoh flat",
+        "url": "https://www.channelnewsasia.com/singapore/two-dead-in-fire-toa-payoh-flat-scdf-5252016",
+        "summary": "📰 기술 관련 뉴스\n📢 Two dead after fire breaks out in Toa Payoh flat",
+        "content": "“Upon arrival, the living room of a second-floor unit was on fire. Firefighters entered the smoke-filled unit and extinguished the fire with a water jet,” SCDF said. During firefighting operations, firefighters found two unresponsive people inside the unit. Both were brought out and were pronounced dead at the scene by a paramedic. The cause of the fire is under investigation, SCDF said.",
+        "publish_date": "2025-07-22T14:19:38.459002"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Four-year-old girl dies of hunger in Gaza as Israel throttles food supply",
+        "url": "https://sg.news.yahoo.com/four-old-gazan-girl-dies-154420951.html",
+        "summary": "📰 음식, 기술 관련 뉴스\n📢 Four-year-old girl dies of hunger in Gaza as Israel throttles food supply",
+        "content": "Four-year old Razan Abu Zaher gave up her fight for life on Sunday. Her skeletal body was laid out on a slab of stone. CNN first met Razan a month ago. She was already weak with hunger and pitifully thin",
+        "publish_date": "2025-07-22T14:19:44.911431"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Switzerland revives wartime bunkers amid heightened security concerns",
+        "url": "https://sg.news.yahoo.com/switzerland-revives-wartime-bunkers-amid-101155063.html",
+        "summary": "📰 창이, 기술, 관광 관련 뉴스\n📢 Switzerland revives wartime bunkers amid heightened security concerns",
+        "content": "Switzerland is seeking to revive its system of wartime bunkers, many of which have remained unused since the 1990s. While many bunkers were once fitted with advanced defence systems to shield against Soviet missile threats, their use declined after the Cold War. Budget cuts and changing defence priorities led to many of the sites being sold to civilians. Buyers found surprising new uses for them, from cheese cellars and art galleries to data storage hubs and hotels",
+        "publish_date": "2025-07-22T14:19:46.029621"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-22T14:20:07.566975",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Temasek unit Azalea is back with another PE-based bond offering – Astrea 9",
+        "url": "https://www.businesstimes.com.sg/companies-markets/temasek-unit-azalea-back-another-pe-based-bond-offering-astrea-9",
+        "summary": "📰 보건, 기술, 법률 관련 뉴스\n📢 Temasek unit Azalea is back with another PE-based bond offering – Astrea 9",
+        "content": "The indicative total size of the new issuance, Astrea 9 Private Equity Bonds, is US$780 million. The funds invested in 1,086 companies in industries ranging from information technology and industrials to healthcare, financials and consumer discretionary. The coupon rates of the bonds will be announced later. The issuance will have three classes of bonds: A-1, A-2 and B Payment-in-Kind (PIK)",
+        "publish_date": "2025-07-22T14:19:42.074870"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-22T14:20:07.566993",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
