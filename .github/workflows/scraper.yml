@@ -34,7 +34,7 @@ jobs:
         mkdir -p data/scraped
         mkdir -p data/history
     
-    - name: Run hybrid scraper
+    - name: Run scraper (respects settings.json)
       env:
         GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
@@ -42,7 +42,7 @@ jobs:
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         GITHUB_ACTIONS: true  # Selenium 사용 안함
       run: |
-        python scripts/scraper_hybrid.py
+        python scripts/scraper.py
       continue-on-error: true  # 스크래핑 실패해도 계속 진행
     
     - name: Check scraping results
