@@ -77,20 +77,24 @@ jobs:
         git config --local user.name "GitHub Action"
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
         
-        # Stash any local changes first
-        git stash || echo "Nothing to stash"
+        # Force clean state
+        git reset --hard HEAD || true
         
-        # Pull latest changes to avoid conflicts
-        git pull origin main || echo "No remote changes to pull"
+        # Pull latest changes
+        git pull origin main --no-rebase || echo "No remote changes to pull"
         
-        # Apply stashed changes
-        git stash pop || echo "No stash to apply"
-        
+        # Add new files (will overwrite any conflicts)
         git add data/scraped/*.json data/history/*.json data/latest.json || echo "No files to add"
-        git commit -m "Update scraping and history data [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
+        git commit -m "Update scraped data [$(date '+%Y-%m-%d %H:%M:%S')]" || echo "No changes to commit"
         
-        # Retry push with merge if needed
-        git push || (git pull origin main --no-rebase && git push)
+        # Push with retry
+        for i in 1 2 3; do
+          git push && break || {
+            echo "Push attempt $i failed, pulling and retrying..."
+            git pull origin main --no-rebase --strategy=ours || true
+            sleep 2
+          }
+        done
     
     - name: Create workflow summary
       if: always()
