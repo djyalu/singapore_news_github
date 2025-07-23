@@ -1,0 +1,39 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘I tap childhood memories to show children every connection matters’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-children-author-writing-local-flavour",
+        "summary": "📰 싱가포르, 음식, 문화 관련 뉴스\n📢 Your S’pore Story: ‘I tap childhood memories to show children every connection m...",
+        "content": "Find out what’s new on ST website and app. Kid-lit author Rachelyn Gordon with her book Curly, which touches on self-identity and staying true to oneself. Some had never even stepped into a hawker centre. She writes picture books that spotlight everyday Singapore culture, showing children that even the smallest connections can be meaningful",
+        "publish_date": "2025-07-24T00:20:48.377351+09:00"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Two found dead after fire in Toa Payoh flat",
+        "url": "https://www.straitstimes.com/singapore/two-found-dead-after-fire-in-toa-payoh-flat",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Two found dead after fire in Toa Payoh flat",
+        "content": "Find out what’s new on ST website and app. They entered the smoke-filled flat and extinguished the flames using a water jet. “During the firefighting operation, firefighters found two unresponsive persons inside the unit and immediately carried them out,” SCDF said. Videos circulating on social media show several residents at the block’s void deck being assisted by police officers. Flashing sirens from emergency vehicles can be seen reflected against...",
+        "publish_date": "2025-07-24T00:20:49.484785+09:00"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Cyclist charged over death of elderly pedestrian after collision",
+        "url": "https://www.tnp.sg/news/cyclist-charged-over-death-elderly-pedestrian-after-collision?ref=home-top-list",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Cyclist charged over death of elderly pedestrian after collision",
+        "content": "Lester Lu Su Min, 49, was charged with causing the 70-year-old man's death. The incident allegedly happened when Lu was cycling along Upper Bukit Timah Road towards Jalan Anak Bukit shortly after 6.30am on March 6, 2024. Lu's case will be mentioned again in court on July 24",
+        "publish_date": "2025-07-23T17:48:36+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "The New Paper"
+    ],
+    "timestamp": "2025-07-24T00:21:17.613440+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
