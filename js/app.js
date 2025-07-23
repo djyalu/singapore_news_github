@@ -2646,22 +2646,25 @@ async function loadScrapedArticles() {
         
         if (result && result.success) {
             console.log('Scraped articles result:', result); // 디버깅용
+            console.log('Result articles length:', result.articles ? result.articles.length : 0); // 디버깅용
             // 새로운 그룹별 데이터 구조 처리
             if (result.articles) {
                 // 그룹별 통합 데이터 구조인지 확인
                 if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
+                    console.log('Using consolidated articles structure'); // 디버깅용
                     data = {
                         lastUpdated: result.lastUpdated || (apiResult && apiResult.lastUpdated),
                         consolidatedArticles: result.articles
                     };
                 } else {
+                    console.log('Using legacy articles structure'); // 디버깅용
                     // 기존 구조 (하위 호환성)
                     data = {
                         lastUpdated: result.lastUpdated || (apiResult && apiResult.lastUpdated),
                         articles: result.articles
                     };
                 }
-                console.log('Processed data:', data); // 디버깅용
+                console.log('Processed data structure:', data.consolidatedArticles ? 'consolidated' : 'legacy', 'articles:', data.consolidatedArticles ? data.consolidatedArticles.length : (data.articles ? data.articles.length : 0)); // 디버깅용
             }
         }
     } catch (error) {
