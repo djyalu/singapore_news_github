@@ -2,6 +2,7 @@ import os
 import re
 import json
 import time
+import hashlib
 from typing import Dict, List, Optional, Tuple
 import google.generativeai as genai
 from bs4 import BeautifulSoup
@@ -20,13 +21,9 @@ class AIScraper:
             try:
                 genai.configure(api_key=self.api_key)
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
-                # Test the API key with a simple request
-                test_response = self.model.generate_content("Hello")
-                if test_response:
-                    print(f"[AI_SCRAPER] Gemini model initialized and tested successfully")
-                else:
-                    print(f"[AI_SCRAPER] Gemini model test failed, disabling AI features")
-                    self.model = None
+                # 초기 테스트 생략 (요청 수 절약)
+                print(f"[AI_SCRAPER] Gemini model initialized successfully (test skipped)")
+                # 첫 번째 실제 사용 시에 유효성 검사
             except Exception as e:
                 print(f"[AI_SCRAPER] Failed to initialize Gemini model: {e}")
                 self.model = None
@@ -35,27 +32,86 @@ class AIScraper:
         
         # Rate limiting for free tier (15 requests per minute)
         self.last_request_time = 0
-        self.request_delay = 4.5  # ~13 requests per minute to stay under limit
+        self.request_delay = 4.2  # 14 requests per minute (조금 더 빠르게)
         
-        # 배치 처리를 위한 URL 큐 (향후 구현 예정)
+        # 요청 카운터와 윈도우 관리 (1분 단위)
+        self.request_timestamps = []
+        self.max_requests_per_minute = 14  # 15개 제한에 가깝게 설정
+        
+        # 배치 처리를 위한 URL 큐
         self.url_queue = []
-        self.batch_size = 5  # 한 번에 5개씩 처리
+        self.batch_size = 5  # 한 번에 5개씩 처리 (효율성 향상)
         
-        # URL 캐시 (AI 호출 최소화)
+        # 캐시 시스템 강화
         self.url_cache = {}  # {url: is_valid}
         self.content_cache = {}  # {url: classification}
+        self.summary_cache = {}  # {content_hash: summary}
 
     def _rate_limit(self):
-        """Rate limiting to avoid quota errors"""
+        """Rate limiting to avoid quota errors with sliding window"""
         current_time = time.time()
+        
+        # 슬라이딩 윈도우: 1분 이전의 요청들을 제거
+        cutoff_time = current_time - 60  # 60초 전
+        self.request_timestamps = [t for t in self.request_timestamps if t > cutoff_time]
+        
+        # 현재 윈도우에 최대 요청 수 초과 시 대기
+        if len(self.request_timestamps) >= self.max_requests_per_minute:
+            oldest_request = min(self.request_timestamps)
+            wait_time = 60 - (current_time - oldest_request) + 1  # 1초 여유
+            if wait_time > 0:
+                print(f"[AI_SCRAPER] Rate limit reached. Waiting {wait_time:.1f} seconds...")
+                time.sleep(wait_time)
+                current_time = time.time()
+        
+        # 기존 지연 로직도 유지 (추가 안전 장치)
         time_since_last = current_time - self.last_request_time
         if time_since_last < self.request_delay:
             sleep_time = self.request_delay - time_since_last
+            print(f"[AI_SCRAPER] Rate limiting: waiting {sleep_time:.1f}s between requests")
             time.sleep(sleep_time)
+        
+        # 요청 시점 기록
         self.last_request_time = time.time()
+        self.request_timestamps.append(self.last_request_time)
+    
+    def get_usage_stats(self) -> Dict[str, any]:
+        """배치 AI 사용량 통계 반환"""
+        current_time = time.time()
+        cutoff_time = current_time - 60
+        recent_requests = [t for t in self.request_timestamps if t > cutoff_time]
+        
+        return {
+            'total_requests_sent': len(self.request_timestamps),
+            'requests_last_minute': len(recent_requests),
+            'remaining_quota': max(0, self.max_requests_per_minute - len(recent_requests)),
+            'cache_sizes': {
+                'url_cache': len(self.url_cache),
+                'content_cache': len(self.content_cache),
+                'summary_cache': len(self.summary_cache)
+            },
+            'api_key_present': bool(self.api_key),
+            'model_available': bool(self.model)
+        }
+    
+    def clear_old_cache(self, max_age_minutes: int = 60):
+        """오래된 캐시 항목 제거"""
+        # 실제 사용에서는 캐시에 타임스탬프를 추가해야 하지만
+        # 지금은 간단하게 전체 삭제
+        if len(self.url_cache) > 1000:
+            self.url_cache.clear()
+            print("[AI_SCRAPER] Cleared URL cache (size limit reached)")
+        
+        if len(self.content_cache) > 500:
+            self.content_cache.clear()
+            print("[AI_SCRAPER] Cleared content cache (size limit reached)")
+            
+        if len(self.summary_cache) > 200:
+            self.summary_cache.clear()
+            print("[AI_SCRAPER] Cleared summary cache (size limit reached)")
     
     def is_valid_article_url_ai(self, url: str, page_title: str = "", link_text: str = "") -> bool:
-        """AI를 사용해 URL이 유효한 기사 링크인지 판단"""
+        """AI를 사용해 URL이 유효한 기사 링크인지 판단 (개선된 버전)"""
         # 캐시 확인
         if url in self.url_cache:
             return self.url_cache[url]
@@ -71,6 +127,13 @@ class AIScraper:
             return True  # 패턴 검증을 통과했으면 기사로 간주
         
         try:
+            # 우선순위 기반 AI 사용 결정
+            if not self._should_use_ai('normal'):
+                # AI 요청 수 제한 초과 시 패턴 기반 판단만 사용
+                is_valid = self._is_obvious_article_url(url)
+                self.url_cache[url] = is_valid
+                return is_valid
+            
             # URL이 명백히 기사 패턴이면 AI 검증 스킵
             if self._is_obvious_article_url(url):
                 self.url_cache[url] = True
@@ -208,15 +271,27 @@ URL: {url}
         return any(re.search(pattern, url_lower) for pattern in obvious_patterns)
 
     def classify_content_ai(self, html_content: str, url: str) -> Dict[str, any]:
-        """AI를 사용해 HTML 콘텐츠를 분류"""
+        """AI를 사용해 HTML 콘텐츠를 분류 (캐시 기능 추가)"""
         if not self.model:
             return self._fallback_content_classification(html_content)
         
+        # 콘텐츠 캐시 확인
+        content_hash = self._get_content_hash(html_content[:1000])  # 처음 1000자로 해시 생성
+        if content_hash in self.content_cache:
+            return self.content_cache[content_hash]
+        
+        # AI 사용 여부 결정
+        if not self._should_use_ai('high'):  # 콘텐츠 분류는 중요하므로 high priority
+            print(f"[AI_SCRAPER] Skipping AI classification due to rate limit, using fallback")
+            fallback_result = self._fallback_content_classification(html_content)
+            self.content_cache[content_hash] = fallback_result
+            return fallback_result
+        
         try:
             self._rate_limit()  # Apply rate limiting
-            # HTML을 텍스트로 변환 (처음 2000자)
+            # HTML을 텍스트로 변환 (처음 1500자로 축소)
             soup = BeautifulSoup(html_content, 'html.parser')
-            text_content = soup.get_text()[:2000]
+            text_content = soup.get_text()[:1500]  # 요청 사이즈 축소
             
             prompt = f"""
 다음 웹페이지 콘텐츠를 분석해서 분류해주세요:
@@ -244,17 +319,24 @@ URL: {url}
             response = self.model.generate_content(prompt)
             if response and response.text:
                 classification = response.text.strip().upper()
-                return {
+                result = {
                     'type': classification,
                     'is_article': classification == 'NEWS_ARTICLE',
                     'confidence': 'high' if classification in ['NEWS_ARTICLE', 'MENU_PAGE', 'LANDING_PAGE'] else 'low'
                 }
+                # 성공한 결과를 캐시에 저장
+                self.content_cache[content_hash] = result
+                return result
             else:
-                return self._fallback_content_classification(html_content)
+                fallback_result = self._fallback_content_classification(html_content)
+                self.content_cache[content_hash] = fallback_result
+                return fallback_result
                 
         except Exception as e:
             print(f"AI content classification error: {e}")
-            return self._fallback_content_classification(html_content)
+            fallback_result = self._fallback_content_classification(html_content)
+            self.content_cache[content_hash] = fallback_result
+            return fallback_result
 
     def _fallback_content_classification(self, html_content: str) -> Dict[str, any]:
         """AI 실패 시 폴백 콘텐츠 분류 - 개선된 버전"""

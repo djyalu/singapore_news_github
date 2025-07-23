@@ -1,0 +1,80 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "HK’s Kenny Bee, Eric Tsang distance themselves from Malaysia’s Namewee after taking group photo",
+        "url": "https://www.straitstimes.com/life/entertainment/hks-kenny-bee-eric-tsang-distance-themselves-from-malaysias-namewee-after-taking-group-photo",
+        "summary": "📰 제목: 말레이시아 관련 뉴스\n🔍 주요 키워드: 말레이시아(Malaysia)\n📊 주요 수치: 30, 19\n📅 날짜: July 19\n📝 말레이시아(Malaysia)이(가) 30 기록 / July 19부터 시행",
+        "content": "Find out what’s new on ST website and app. Namewee (in dark glasses) in a now-deleted photo of himself with Kenny Bee (right) and Eric Tsang (second from left). Hong Kong singer Kenny Bee and actor Eric Tsang have swiftly distanced themselves from controversial Malaysian rapper-actor Namewee after a group photo of them was criticised by netizens. Happy 30 Years concert at Resorts World Genting on July 19",
+        "publish_date": "2025-07-23T00:27:31.441753"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Shaw Plaza losing its spark? Closures of Mui Kee and Picolino raise bigger questions",
+        "url": "https://sg.news.yahoo.com/style/shaw-plaza-losing-spark-closures-020026990.html",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n📊 주요 수치: ,, ,, ,\n📝 싱가포르 최신 동향",
+        "content": "There’s a silent churn happening at Shaw Plaza, Balestier’s once bustling neighbourhood mall. What’s more telling is that both restaurants are part of the prestigious Les Amis Group. Surprisingly, it wasn’t announced through the brand’s official socials. Likewise, Picolino, an Italian bistro tucked just a few units away, quietly shut its doors earlier this month without much hoo-ha. Both restaurants were launched with much anticipation during Shaw Plaza’s post-renovation revival in 2023, but it seems that initial excitement has waned. For starters, the mall is facing stiff competition from food options in the area. With Balestier’s rows of shophouse bak kut teh...",
+        "publish_date": "2025-07-23T00:27:41.262142"
+      },
+      {
+        "site": "The New Paper",
+        "title": "S'poreans aged 21 to 59 can now claim $600 SG60 vouchers",
+        "url": "https://www.tnp.sg/news/sporeans-aged-21-59-can-now-claim-600-sg60-vouchers?ref=home-top-list",
+        "summary": "📰 제목: 21 59 $600\n📊 주요 수치: 21, 59, 2025\n📅 날짜: July 22\n📝 July 22부터 시행",
+        "content": "Singaporeans aged 21 to 59 in 2025 can start claiming their $600 SG60 vouchers from July 22. Ms Low said that more than $127.6 million has been spent to date. Some $76.6 million has been spent at hawkers and heartland merchants, and more than $51 million at supermarkets. The list of participating outlets is available on go.gov.sg/sg60voucher.",
+        "publish_date": "2025-07-23T00:27:56.852496"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times",
+      "The New Paper"
+    ],
+    "timestamp": "2025-07-23T00:28:22.832452+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Aoxin Q&M Dental CEO resigns as whistle-blower report lodged",
+        "url": "https://www.businesstimes.com.sg/companies-markets/aoxin-qm-dental-ceo-resigns-whistle-blower-report-lodged",
+        "summary": "📰 제목: 싱가포르 주요 발표/계획 뉴스\n📊 주요 수치: ,, 2017,\n📝 싱가포르 최신 동향",
+        "content": "This comes after the company’s audit committee (AC) received a whistle-blower report against Dr Shao on Monday. The committee has launched an investigation into the matter, it said. Dr Shao has held his positions since 2017, and will...",
+        "publish_date": "2025-07-23T00:27:35.843975"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-23T00:28:22.832495+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Culture",
+    "articles": [
+      {
+        "site": "Time Out Singapore",
+        "title": "The ultimate guide to Katong and Joo Chiat",
+        "url": "https://www.timeout.com/singapore/things-to-do/the-ultimate-guide-to-joo-chiat-katong",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n🔍 주요 키워드: 그랩(GRAB)\n📊 주요 수치: ,, ,, ,\n📝 그랩(GRAB)이(가) , 기록",
+        "content": "Take a jaunt down Koon Seng Road where you’ll find the popular eye-candies adorned in ceramic Peranakan floral motifs, geometrical tiles, pastel hues and even Chinese couplets which are said to bring good fortune. While you can’t photograph its interiors, Rumah Bebe has eye-catching cerulean exteriors and bright Peranakan tiles that your ‘gram desperately needs. Lace up and grab your camera – we’re going shophousing.",
+        "publish_date": "2025-07-23T00:28:18.333068"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Time Out Singapore"
+    ],
+    "timestamp": "2025-07-23T00:28:22.832508+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

@@ -2,12 +2,16 @@ import os
 import json
 import glob
 from datetime import datetime, timedelta
+import pytz
 
 def cleanup_old_data(retention_days=30, max_size_mb=50):
     """
     30일 이전 또는 전체 용량 50MB 초과 시 오래된 데이터부터 삭제
     """
-    cutoff_date = datetime.now() - timedelta(days=retention_days)
+    # KST 기준으로 삭제 기준일 설정
+    kst = pytz.timezone('Asia/Seoul')
+    now_kst = datetime.now(kst).replace(tzinfo=None)  # naive datetime으로 변환
+    cutoff_date = now_kst - timedelta(days=retention_days)
     deleted_files = []
     
     print(f"Cleaning up data older than {cutoff_date.strftime('%Y-%m-%d')} or exceeding {max_size_mb}MB...")

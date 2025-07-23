@@ -2,6 +2,7 @@ import json
 import os
 import requests
 from datetime import datetime, timedelta
+import pytz
 from bs4 import BeautifulSoup
 import re
 from collections import defaultdict
@@ -1711,8 +1712,10 @@ def scrape_news_ai():
         
         consolidated_articles.append(group_summary)
     
-    # 결과 저장
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    # 결과 저장 (KST 기준)
+    kst = pytz.timezone('Asia/Seoul')
+    now_kst = datetime.now(kst)
+    timestamp = now_kst.strftime('%Y%m%d_%H%M%S')
     output_file = f'data/scraped/news_{timestamp}.json'
     
     os.makedirs('data/scraped', exist_ok=True)
@@ -1720,9 +1723,9 @@ def scrape_news_ai():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(consolidated_articles, f, ensure_ascii=False, indent=2)
     
-    # latest.json 파일 업데이트
+    # latest.json 파일 업데이트 (KST 기준)
     latest_info = {
-        'lastUpdated': datetime.now().isoformat(),
+        'lastUpdated': now_kst.isoformat(),
         'latestFile': f'news_{timestamp}.json',
         'scrapingMethod': 'ai_enhanced'
     }
@@ -1742,13 +1745,27 @@ def scrape_news():
     print(f"[SCRAPER] AI model status: {ai_scraper.model is not None}")
     print(f"[SCRAPER] AI API key: {bool(ai_scraper.api_key)}")
     
+    # AI 사용량 통계 출력
+    if ai_scraper.model:
+        stats = ai_scraper.get_usage_stats()
+        print(f"[AI_SCRAPER] Usage stats: {stats['requests_last_minute']}/{stats['remaining_quota']} quota, caches: {stats['cache_sizes']}")
+        
+        # 오래된 캐시 정리
+        ai_scraper.clear_old_cache()
+    
     if scraping_method == 'ai':
         if ai_scraper.model:
-            print("Using AI-enhanced scraping...")
+            print("[AI_SCRAPER] ========== STARTING AI-ENHANCED SCRAPING ==========")
+            print(f"[AI_SCRAPER] Model: {ai_scraper.model.model_name if hasattr(ai_scraper.model, 'model_name') else 'gemini-1.5-flash'}")
+            print(f"[AI_SCRAPER] Rate limit: {ai_scraper.max_requests_per_minute} requests/min")
+            print(f"[AI_SCRAPER] Batch size: {ai_scraper.batch_size}")
             try:
                 return scrape_news_ai()
             except Exception as e:
-                print(f"AI scraping failed: {e}")
+                print(f"[AI_SCRAPER] ========== AI SCRAPING FAILED ==========")
+                print(f"[AI_SCRAPER] Error: {e}")
+                import traceback
+                print(f"[AI_SCRAPER] Traceback: {traceback.format_exc()}")
                 if settings.get('scrapingMethodOptions', {}).get('ai', {}).get('fallbackToTraditional', True):
                     print("Falling back to traditional scraping with AI summaries...")
                     return scrape_news_traditional()
@@ -1962,20 +1979,26 @@ def scrape_news_traditional():
         selected_articles = unique_articles[:3]
         
         # 그룹별 통합 기사 생성
+        # KST 타임존 생성
+        kst = pytz.timezone('Asia/Seoul')
+        now_kst = datetime.now(kst)
+        
         group_summary = {
             'group': group,
             'articles': selected_articles,
             'article_count': len(selected_articles),
             'sites': list(set(article['site'] for article in selected_articles)),
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': now_kst.isoformat(),
             'scraping_method': 'traditional',
             'execution_type': 'scheduled' if os.environ.get('GITHUB_EVENT_NAME') == 'schedule' else 'manual'
         }
         
         consolidated_articles.append(group_summary)
     
-    # 결과 저장
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    # 결과 저장 (KST 기준)
+    kst = pytz.timezone('Asia/Seoul')
+    now_kst = datetime.now(kst)
+    timestamp = now_kst.strftime('%Y%m%d_%H%M%S')
     output_file = f'data/scraped/news_{timestamp}.json'
     
     os.makedirs('data/scraped', exist_ok=True)
@@ -1986,9 +2009,9 @@ def scrape_news_traditional():
     # GitHub Actions 환경변수로 배치 실행 여부 확인
     is_scheduled = os.environ.get('GITHUB_EVENT_NAME') == 'schedule'
     
-    # latest.json 파일 업데이트
+    # latest.json 파일 업데이트 (KST 기준)
     latest_info = {
-        'lastUpdated': datetime.now().isoformat(),
+        'lastUpdated': now_kst.isoformat(),
         'latestFile': f'news_{timestamp}.json',
         'scrapingMethod': 'traditional',
         'executionType': 'scheduled' if is_scheduled else 'manual'
