@@ -17,7 +17,26 @@ if DEBUG_MODE:
     print("[WARNING] DEBUG mode is enabled. This may cause BrokenPipeError in GitHub Actions.")
 
 def load_settings():
-    """서버에서 동적으로 설정을 불러오기"""
+    """
+    서버에서 동적으로 설정을 불러오기
+    
+    Returns:
+        dict: 애플리케이션 설정 딕셔너리
+            - scrapTarget: 스크래핑 대상 (recent/important)
+            - importantKeywords: 중요 키워드 목록
+            - summaryOptions: 요약 옵션 설정
+            - sendChannel: 전송 채널 (whatsapp)
+            - whatsappChannel: WhatsApp 채널 ID
+            - sendSchedule: 전송 스케줄 설정
+            - blockedKeywords: 차단 키워드 목록
+            - scrapingMethod: 스크래핑 방식 (traditional/ai/rss/hybrid)
+            - monitoring: 모니터링 설정
+    
+    우선순위:
+        1. Vercel API 서버에서 최신 설정 가져오기
+        2. 로컬 settings.json 파일
+        3. 하드코딩된 기본 설정
+    """
     try:
         # 먼저 서버 API에서 최신 설정 시도
         api_url = "https://singapore-news-github.vercel.app/api/save-data?type=settings"
@@ -58,7 +77,22 @@ def load_settings():
         }
 
 def load_sites():
-    """서버에서 동적으로 사이트 설정을 불러오기"""
+    """
+    서버에서 동적으로 사이트 설정을 불러오기
+    
+    Returns:
+        list: 뉴스 사이트 설정 리스트
+            각 사이트 딕셔너리 구조:
+            - name: 사이트 이름
+            - url: 사이트 URL
+            - group: 카테고리 그룹 (News/Economy/Politics 등)
+            - enabled: 활성화 여부
+    
+    우선순위:
+        1. Vercel API 서버에서 최신 사이트 목록 가져오기
+        2. 로컬 sites.json 파일
+        3. 빈 리스트 반환 (오류 시)
+    """
     try:
         # 먼저 서버 API에서 최신 사이트 설정 시도
         api_url = "https://singapore-news-github.vercel.app/api/save-data?type=sites"
@@ -84,20 +118,62 @@ def load_sites():
         return []
 
 def is_recent_article(article_date):
+    """
+    기사가 최근 것인지 확인 (2일 이내)
+    
+    Args:
+        article_date (datetime): 기사 발행일
+    
+    Returns:
+        bool: 2일 이내면 True, 아니면 False
+              날짜가 없으면 True 반환 (보수적 접근)
+    """
     if not article_date:
         return True
     return (datetime.now() - article_date).days <= 2
 
 def contains_keywords(text, keywords):
+    """
+    텍스트에 키워드가 포함되어 있는지 확인
+    
+    Args:
+        text (str): 검색할 텍스트
+        keywords (list): 키워드 리스트
+    
+    Returns:
+        bool: 키워드 중 하나라도 포함되어 있으면 True
+    """
     text_lower = text.lower()
     return any(keyword.lower() in text_lower for keyword in keywords)
 
 def is_blocked(text, blocked_keywords):
+    """
+    텍스트가 차단 키워드를 포함하는지 확인
+    
+    Args:
+        text (str): 검사할 텍스트
+        blocked_keywords (list): 차단 키워드 리스트
+    
+    Returns:
+        bool: 차단 키워드가 포함되어 있으면 True
+    """
     text_lower = text.lower()
     return any(keyword.lower() in text_lower for keyword in blocked_keywords)
 
 def clean_text(text):
-    """텍스트 정제 - HTML 태그, 특수문자, 공백 제거"""
+    """
+    텍스트 정제 - HTML 태그, 특수문자, 공백 제거
+    
+    Args:
+        text (str): 원본 텍스트
+    
+    Returns:
+        str: 정제된 텍스트
+            - HTML 태그 제거
+            - 연속된 공백을 단일 공백으로
+            - 앞뒤 공백 제거
+            - 기본값은 빈 문자열
+    """
     # 줄바꿈을 공백으로 변경
     text = text.replace('\r\n', ' ').replace('\n', ' ').replace('\r', ' ')
     # 다중 공백을 단일 공백으로
