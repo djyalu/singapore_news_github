@@ -2,7 +2,7 @@ name: Singapore News Scraper
 
 on:
   schedule:
-    - cron: '55 22 * * *'
+    - cron: '55 22 * * *'  # 매일 07:55 KST 실행
   workflow_dispatch:  # 수동 실행 가능
   push:
     paths:
