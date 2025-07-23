@@ -11,8 +11,10 @@ from ai_scraper import ai_scraper
 from text_processing import TextProcessor
 from deduplication import ArticleDeduplicator
 
-# 디버그 모드 설정 (환경 변수로 제어)
+# 디버그 모드 설정 (환경 변수로 제어) - BrokenPipeError 방지를 위해 기본값 False
 DEBUG_MODE = os.environ.get('DEBUG_SCRAPER', 'false').lower() == 'true'
+if DEBUG_MODE:
+    print("[WARNING] DEBUG mode is enabled. This may cause BrokenPipeError in GitHub Actions.")
 
 def load_settings():
     """서버에서 동적으로 설정을 불러오기"""

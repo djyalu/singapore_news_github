@@ -15,20 +15,30 @@ class AIScraper:
         self.api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
         print(f"[AI_SCRAPER] Initializing... API key present: {bool(self.api_key)}")
         print(f"[AI_SCRAPER] API key length: {len(self.api_key) if self.api_key else 0}")
+        if self.api_key:
+            # API 키 앞뒤 5자만 표시 (보안)
+            key_preview = f"{self.api_key[:5]}...{self.api_key[-5:]}" if len(self.api_key) > 10 else "KEY_TOO_SHORT"
+            print(f"[AI_SCRAPER] API key preview: {key_preview}")
         
         self.model = None
         if self.api_key:
             try:
+                print("[AI_SCRAPER] Configuring Gemini API...")
                 genai.configure(api_key=self.api_key)
+                print("[AI_SCRAPER] Creating GenerativeModel...")
                 self.model = genai.GenerativeModel('gemini-1.5-flash')
-                # 초기 테스트 생략 (요청 수 절약)
-                print(f"[AI_SCRAPER] Gemini model initialized successfully (test skipped)")
-                # 첫 번째 실제 사용 시에 유효성 검사
+                print(f"[AI_SCRAPER] Gemini model initialized successfully")
+                print(f"[AI_SCRAPER] Model type: {type(self.model)}")
             except Exception as e:
-                print(f"[AI_SCRAPER] Failed to initialize Gemini model: {e}")
+                print(f"[AI_SCRAPER] ERROR: Failed to initialize Gemini model")
+                print(f"[AI_SCRAPER] Error type: {type(e).__name__}")
+                print(f"[AI_SCRAPER] Error message: {str(e)}")
+                import traceback
+                print(f"[AI_SCRAPER] Traceback:\n{traceback.format_exc()}")
                 self.model = None
         else:
-            print("Warning: GOOGLE_GEMINI_API_KEY not found. AI features will be disabled.")
+            print("[AI_SCRAPER] ERROR: GOOGLE_GEMINI_API_KEY not found in environment")
+            print("[AI_SCRAPER] Available env vars:", list(os.environ.keys())[:10], "...")  # 처음 10개만
         
         # Rate limiting for free tier (15 requests per minute)
         self.last_request_time = 0
@@ -163,10 +173,15 @@ URL: {url}
                 self.url_cache[url] = is_valid
                 return is_valid
             else:
+                print(f"[AI_SCRAPER] WARNING: Empty response from AI for URL validation")
                 return self._fallback_url_validation(url)
                 
         except Exception as e:
-            print(f"AI URL validation error: {e}")
+            print(f"[AI_SCRAPER] ERROR in URL validation for {url}")
+            print(f"[AI_SCRAPER] Error type: {type(e).__name__}")
+            print(f"[AI_SCRAPER] Error message: {str(e)}")
+            if hasattr(e, 'status_code'):
+                print(f"[AI_SCRAPER] Status code: {e.status_code}")
             return self._fallback_url_validation(url)
 
     def _fallback_url_validation(self, url: str) -> bool:
@@ -328,12 +343,17 @@ URL: {url}
                 self.content_cache[content_hash] = result
                 return result
             else:
+                print(f"[AI_SCRAPER] WARNING: Empty response from AI for content classification")
                 fallback_result = self._fallback_content_classification(html_content)
                 self.content_cache[content_hash] = fallback_result
                 return fallback_result
                 
         except Exception as e:
-            print(f"AI content classification error: {e}")
+            print(f"[AI_SCRAPER] ERROR in content classification")
+            print(f"[AI_SCRAPER] Error type: {type(e).__name__}")
+            print(f"[AI_SCRAPER] Error message: {str(e)}")
+            if hasattr(e, 'status_code'):
+                print(f"[AI_SCRAPER] Status code: {e.status_code}")
             fallback_result = self._fallback_content_classification(html_content)
             self.content_cache[content_hash] = fallback_result
             return fallback_result
@@ -419,10 +439,15 @@ CONTENT: [기사 본문 - 첫 500자 정도]
                 result = self._parse_ai_extraction_result(response.text)
                 return result
             else:
+                print(f"[AI_SCRAPER] WARNING: Empty response from AI for article extraction")
                 return self._fallback_article_extraction(html_content, url)
                 
         except Exception as e:
-            print(f"AI article extraction error: {e}")
+            print(f"[AI_SCRAPER] ERROR in article extraction for {url}")
+            print(f"[AI_SCRAPER] Error type: {type(e).__name__}")
+            print(f"[AI_SCRAPER] Error message: {str(e)}")
+            if hasattr(e, 'status_code'):
+                print(f"[AI_SCRAPER] Status code: {e.status_code}")
             return self._fallback_article_extraction(html_content, url)
 
     def _parse_ai_extraction_result(self, ai_response: str) -> Dict[str, str]:
