@@ -2006,6 +2006,8 @@ def scrape_news():
             return scrape_news_hybrid()
         except Exception as e:
             print(f"Hybrid scraping failed: {e}")
+            import traceback
+            print(f"Hybrid scraping traceback:\n{traceback.format_exc()}")
             print("Falling back to traditional scraping...")
             return scrape_news_traditional()
     else:
