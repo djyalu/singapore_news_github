@@ -1,0 +1,59 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "‘Priority is to keep Trump close to us’: Manila accepts lacklustre tariff deal",
+        "url": "https://www.straitstimes.com/asia/se-asia/philippines-gets-minor-us-tariff-cut-but-defence-ties-remain-intact",
+        "summary": "📰 경제, 기술 관련 뉴스\n📢 ‘Priority is to keep Trump close to us’: Manila accepts lacklustre tariff deal",
+        "content": "Find out what’s new on ST website and app. In exchange, the Philippines has agreed to remove tariffs on key American goods, including cars. It was not the outcome Manila had hoped for. Philippine trade negotiators had initially aimed to secure a free trade agreement or a...",
+        "publish_date": "2025-07-24T07:58:12.740601+09:00"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ozzy Osbourne’s Final Reported Photo Before His Death Is Heartbreaking",
+        "url": "https://sg.news.yahoo.com/ozzy-osbourne-final-reported-photo-224145417.html",
+        "summary": "📰 보건, 취업, 기술 관련 뉴스\n📢 Ozzy Osbourne’s Final Reported Photo Before His Death Is Heartbreaking",
+        "content": "Ozzy Osbourne’s Final Reported Photo Before His Death Is Heartbreaking originally appeared on Parade. The Black Sabbath frontman passed away on Tuesday, July 22, after a long battle with Parkinson’s disease. Ozzy’s wife, Sharon Osbourne, spoke ahead of the show about his determination to perform despite his declining health. “Ozzy's working with his therapist every single day. He’s doing really well, actually,” she reportedly said at the time",
+        "publish_date": "2025-07-23T07:41:45+09:00"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-24T07:58:31.449904+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "MAS’ S$5 billion investment fund set to lift undervalued, small-cap stocks: analysts",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mas-s5-billion-investment-fund-set-lift-undervalued-small-cap-stocks-analysts",
+        "summary": "📰 싱가포르, 경제 관련 뉴스\n📢 MAS’ S$5 billion investment fund set to lift undervalued, small-cap stocks: anal...",
+        "content": "Each is likely to take a different approach. Fullerton Fund Management and Avanda Investment Management on Monday announced that they will launch new funds focused on Singapore equities. Fullerton Fund Management’s Singapore equities unit trust will be invested in stocks listed on the Singapore Exchange (SGX), with exposure to stocks across all market capitalisations",
+        "publish_date": "2025-07-24T07:58:15.486751+09:00"
+      },
+      {
+        "site": "The Business Times",
+        "title": "Amro cuts all Asean+3 economies’ growth forecasts – except Vietnam’s",
+        "url": "https://www.businesstimes.com.sg/international/asean/amro-cuts-all-asean3-economies-growth-forecasts-except-vietnams",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Amro cuts all Asean+3 economies’ growth forecasts – except Vietnam’s",
+        "content": "Regional impact from wide-ranging US tariffs are projected to be more significant in 2026. Amro chief economist He Dong said in a press briefing on Wednesday: “The bumping up of...",
+        "publish_date": "2025-07-24T07:58:15.793898+09:00"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T07:58:31.449935+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
