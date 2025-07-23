@@ -2580,6 +2580,7 @@ async function loadScrapedArticles() {
     
     // 서버에서 직접 데이터를 가져옴
     let data = null;
+    let apiResult = null; // apiResult를 함수 레벨에서 선언
     
     // GitHub에서 최신 데이터 가져오기 시도
     try {
@@ -2594,13 +2595,14 @@ async function loadScrapedArticles() {
         try {
             const latestResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
             if (latestResponse.ok) {
-                const apiResult = await latestResponse.json();
+                apiResult = await latestResponse.json(); // 함수 레벨 변수에 할당
                 
                 // API 응답이 success와 articles를 포함하는 경우
                 if (apiResult.success && apiResult.articles) {
                     result = {
                         success: true,
                         articles: apiResult.articles,
+                        lastUpdated: apiResult.lastUpdated, // lastUpdated도 포함
                         articleCount: apiResult.articles.reduce((sum, group) => sum + (group.article_count || 0), 0)
                     };
                 } else if (apiResult.error) {
@@ -2649,13 +2651,13 @@ async function loadScrapedArticles() {
                 // 그룹별 통합 데이터 구조인지 확인
                 if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
                     data = {
-                        lastUpdated: apiResult.lastUpdated || result.lastUpdated,
+                        lastUpdated: result.lastUpdated || (apiResult && apiResult.lastUpdated),
                         consolidatedArticles: result.articles
                     };
                 } else {
                     // 기존 구조 (하위 호환성)
                     data = {
-                        lastUpdated: apiResult.lastUpdated || result.lastUpdated,
+                        lastUpdated: result.lastUpdated || (apiResult && apiResult.lastUpdated),
                         articles: result.articles
                     };
                 }
