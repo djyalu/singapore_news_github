@@ -14,97 +14,86 @@ from collections import defaultdict
 from scraper_rss import scrape_news_rss, RSS_FEEDS
 from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
 
+def create_basic_summary(title, content):
+    """기본 키워드 기반 요약 생성"""
+    # 간단한 한국어 요약 생성
+    content_preview = content[:100] + "..." if len(content) > 100 else content
+    return f"📰 싱가포르 최신 뉴스\n📢 {title[:50]}{'...' if len(title) > 50 else ''}"
+
 def scrape_news_hybrid():
-    """하이브리드 방식: RSS + Enhanced + Selenium"""
-    print("[HYBRID] Starting hybrid scraping (RSS + Enhanced + Selenium)...")
+    """하이브리드 방식: Traditional 링크 수집 + AI 요약"""
+    print("[HYBRID] Starting hybrid scraping (Traditional Links + AI Summary)...")
     
     settings = load_settings()
     sites = load_sites()
     
-    # RSS로 수집한 사이트 추적
-    rss_sites = set(RSS_FEEDS.keys())
-    rss_collected = set()
-    
-    # 먼저 RSS로 시도
-    print("\n[HYBRID] Phase 1: RSS Scraping")
+    # Phase 1: Traditional 방식으로 기사 링크 수집
+    print("\n[HYBRID] Phase 1: Traditional Link Collection")
     articles_by_group = defaultdict(list)
     
+    # Traditional 스크래퍼로 기사 링크와 기본 정보 수집
     try:
-        # RSS 스크래핑 수행 (파일에 저장하지 않고 메모리에만)
-        from scraper_rss import scrape_rss_feed, SITE_GROUP_MAPPING
-        
-        for site_name, feed_url in RSS_FEEDS.items():
-            articles = scrape_rss_feed(feed_url, site_name, settings)
-            if articles:
-                group = SITE_GROUP_MAPPING.get(site_name, 'News')
-                articles_by_group[group].extend(articles)
-                rss_collected.add(site_name)
-                print(f"[HYBRID] RSS: Collected {len(articles)} articles from {site_name}")
-            else:
-                print(f"[HYBRID] RSS: No articles from {site_name}")
-                
+        traditional_articles = scrape_news_traditional(sites, settings)
+        if traditional_articles:
+            for group_data in traditional_articles:
+                group = group_data['group']
+                for article in group_data['articles']:
+                    articles_by_group[group].append({
+                        'site': article['site'],
+                        'title': article['title'],
+                        'url': article['url'],
+                        'content': article['content'],
+                        'publish_date': article['publish_date'],
+                        'extracted_by': 'traditional'
+                    })
+            print(f"[HYBRID] Traditional: Collected articles from {len(traditional_articles)} groups")
     except Exception as e:
-        print(f"[HYBRID] RSS scraping error: {e}")
+        print(f"[HYBRID] Traditional scraping error: {e}")
     
-    # Enhanced 스크래핑으로 나머지 사이트 수집
-    print("\n[HYBRID] Phase 2: Enhanced Scraping for remaining sites")
+    # Phase 2: AI 요약 생성
+    print("\n[HYBRID] Phase 2: AI Summary Generation")
     
-    # RSS로 수집하지 못한 사이트들만 필터링
-    remaining_sites = [site for site in sites if site['name'] not in rss_collected]
+    # AI 요약이 가능한지 확인
+    ai_available = bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))
     
-    # Selenium이 필요한 사이트와 일반 사이트 분리
-    selenium_required = ['TODAY Online', 'The Edge Singapore', 'Tech in Asia', 'AsiaOne']
-    enhanced_sites = [s for s in remaining_sites if s['name'] not in selenium_required]
-    selenium_sites = [s for s in remaining_sites if s['name'] in selenium_required]
-    
-    # Enhanced 스크래핑 수행
-    if enhanced_sites:
-        print(f"[HYBRID] Enhanced scraping for: {[s['name'] for s in enhanced_sites]}")
-        
+    if ai_available:
         try:
-            # Enhanced 스크래퍼 임포트 및 실행
-            from scraper_enhanced import scrape_site
+            from ai_summary_free import translate_to_korean_summary_gemini
             
-            for site in enhanced_sites:
-                try:
-                    articles = scrape_site(site)
-                    if articles:
-                        group = site.get('group', 'News')
-                        articles_by_group[group].extend(articles)
-                        print(f"[HYBRID] Enhanced: Collected {len(articles)} articles from {site['name']}")
-                except Exception as e:
-                    print(f"[HYBRID] Enhanced scraping error for {site['name']}: {e}")
-                    
+            # 각 기사에 대해 AI 요약 생성
+            for group, group_articles in articles_by_group.items():
+                for article in group_articles:
+                    try:
+                        # Gemini API로 한국어 요약 생성
+                        ai_summary = translate_to_korean_summary_gemini(
+                            article['title'], 
+                            article['content']
+                        )
+                        
+                        if ai_summary:
+                            article['summary'] = ai_summary
+                            article['extracted_by'] = 'hybrid_ai'
+                            print(f"[HYBRID] AI summary generated for: {article['title'][:50]}...")
+                        else:
+                            # AI 요약 실패시 기본 요약 사용
+                            article['summary'] = create_basic_summary(article['title'], article['content'])
+                            print(f"[HYBRID] Using basic summary for: {article['title'][:50]}...")
+                            
+                    except Exception as e:
+                        print(f"[HYBRID] AI summary error for {article['title'][:30]}: {e}")
+                        article['summary'] = create_basic_summary(article['title'], article['content'])
         except ImportError:
-            print("[HYBRID] Enhanced scraper not available, falling back to traditional")
-            # 전통적 방식으로 폴백
-            if enhanced_sites:
-                remaining_sites = enhanced_sites
+            print("[HYBRID] AI summary module not available, using basic summaries")
+            ai_available = False
     
-    # Selenium 스크래핑 수행 (GitHub Actions가 아닌 경우에만)
-    if selenium_sites and not os.environ.get('GITHUB_ACTIONS'):
-        print(f"\n[HYBRID] Phase 3: Selenium scraping for: {[s['name'] for s in selenium_sites]}")
-        
-        try:
-            from scraper_selenium import scrape_with_selenium
-            
-            selenium_articles = scrape_with_selenium([s['name'] for s in selenium_sites])
-            
-            # 그룹별로 기사 추가
-            for article in selenium_articles:
-                site_info = next((s for s in sites if s['name'] == article['site']), {})
-                group = site_info.get('group', 'News')
-                articles_by_group[group].append(article)
-            
-            print(f"[HYBRID] Selenium: Collected {len(selenium_articles)} articles total")
-            
-        except ImportError:
-            print("[HYBRID] Selenium not available (normal in GitHub Actions)")
-        except Exception as e:
-            print(f"[HYBRID] Selenium scraping error: {e}")
+    if not ai_available:
+        print("[HYBRID] Using basic keyword summaries")
+        for group, group_articles in articles_by_group.items():
+            for article in group_articles:
+                article['summary'] = create_basic_summary(article['title'], article['content'])
     
-    # 전체 결과 통합
-    print("\n[HYBRID] Phase 3: Consolidating results")
+    # Phase 3: 결과 통합 및 최종 처리
+    print("\n[HYBRID] Phase 3: Final Processing")
     consolidated_articles = []
     
     for group, group_articles in articles_by_group.items():
@@ -129,8 +118,8 @@ def scrape_news_hybrid():
             'article_count': len(selected_articles),
             'sites': list(set(article['site'] for article in selected_articles)),
             'timestamp': get_kst_now_iso(),
-            'scraping_method': 'hybrid',
-            'execution_type': 'manual'
+            'scraping_method': 'hybrid_ai',
+            'execution_type': 'auto'
         }
         
         consolidated_articles.append(group_summary)
@@ -148,8 +137,8 @@ def scrape_news_hybrid():
     latest_info = {
         'lastUpdated': get_kst_now_iso(),
         'latestFile': f'news_{timestamp}.json',
-        'scrapingMethod': 'hybrid',
-        'executionType': 'manual'
+        'scrapingMethod': 'hybrid_ai',
+        'executionType': 'auto'
     }
     with open('data/latest.json', 'w', encoding='utf-8') as f:
         json.dump(latest_info, f, ensure_ascii=False, indent=2)
@@ -159,10 +148,11 @@ def scrape_news_hybrid():
     total_sites = len(set(article['site'] for group in consolidated_articles for article in group['articles']))
     
     print(f"\n[HYBRID] === Final Results ===")
+    print(f"[HYBRID] Scraping Method: Traditional Links + AI Summary")
     print(f"[HYBRID] Total articles: {total_articles}")
     print(f"[HYBRID] Total sites: {total_sites}")
-    print(f"[HYBRID] RSS sites: {len(rss_collected)} ({', '.join(rss_collected)})")
-    print(f"[HYBRID] Traditional sites: {len(remaining_sites)}")
+    print(f"[HYBRID] AI summaries: {sum(1 for group in consolidated_articles for article in group['articles'] if article.get('extracted_by') == 'hybrid_ai')}")
+    print(f"[HYBRID] Basic summaries: {sum(1 for group in consolidated_articles for article in group['articles'] if article.get('extracted_by') != 'hybrid_ai')}")
     print(f"[HYBRID] Output: {output_file}")
     
     return output_file
