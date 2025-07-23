@@ -1,0 +1,79 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Prosecution says judge who acquitted duo of bribing ex-LTA official had copied defence arguments",
+        "url": "https://www.straitstimes.com/singapore/courts-crime/prosecution-says-judge-who-acquitted-duo-of-bribing-ex-lta-official-had-copied-defence-arguments",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Prosecution says judge who acquitted duo of bribing ex-LTA official had copied d...",
+        "content": "Find out what’s new on ST website and app. Chief Justice Menon will give his decision at a later date. In October 2024, the two men were cleared by then District...",
+        "publish_date": "2025-07-24T00:32:19.214600+09:00"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Money, housing and isolation the biggest struggles for youth leaving children’s homes: Study",
+        "url": "https://www.straitstimes.com/singapore/money-housing-and-isolation-the-biggest-struggles-for-youth-leaving-childrens-homes-study?ref=singapore",
+        "summary": "📰 싱가포르, 주택 관련 뉴스\n📢 Money, housing and isolation the biggest struggles for youth leaving children’s ...",
+        "content": "Find out what’s new on ST website and app. Singapore has about 500 children in 19 residential homes. The majority had, at most, ITE-level qualifications and a median monthly income of $800",
+        "publish_date": "2025-07-24T00:32:19.869031+09:00"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Man sees deadly brain cancer vanish after experimental treatment",
+        "url": "https://sg.news.yahoo.com/man-sees-deadly-brain-cancer-053100218.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Man sees deadly brain cancer vanish after experimental treatment",
+        "content": "Most people with glioblastoma die within 12-18 months. Mr Trotman, 43, was diagnosed with glioblastoma in October 2022. Dr Paul Mulholland, the consultant medical oncologist who treated Mr Trotman, said:...",
+        "publish_date": "2025-07-21T14:31:00+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-24T00:32:48.667888+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Speculation swirls about Japan PM Ishiba’s future",
+        "url": "https://www.businesstimes.com.sg/international/global/speculation-swirls-about-japan-pm-ishibas-future",
+        "summary": "📰 장관, 정치, 국제 관련 뉴스\n📢 Speculation swirls about Japan PM Ishiba’s future",
+        "content": "[TOKYO] Japanese Prime Minister Shigeru Ishiba denied discussing his resignation with party elders on Wednesday (Jul 23), as media speculation about his future intensified after a weekend election debacle. But Ishiba told reporters after that gathering: “There was no discussion of whether I...",
+        "publish_date": "2025-07-24T00:32:29.154042+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:32:48.667917+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Culture",
+    "articles": [
+      {
+        "site": "Time Out Singapore",
+        "title": "The Projector returns to Golden Mile Tower this August",
+        "url": "https://www.timeout.com/singapore/news/local-indie-cinema-the-projector-returns-to-golden-mile-tower-this-august-072325",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The Projector returns to Golden Mile Tower this August",
+        "content": "Screenings will officially resume in August 2025. Local indie cinema The Projector is going back to its roots. It also regularly hosts themed events, comedy shows, live music performances and more. It first opened in 2014 on the top floor of Golden Mile Tower, transforming a...",
+        "publish_date": "2025-07-23T05:07:15+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Time Out Singapore"
+    ],
+    "timestamp": "2025-07-24T00:32:48.667930+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
