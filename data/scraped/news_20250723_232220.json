@@ -1,0 +1,94 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Japan’s PM Ishiba denies talk he will quit following election drubbing",
+        "url": "https://www.straitstimes.com/asia/east-asia/japan-prime-minister-ishiba-to-resign-mainichi-newspaper-reports",
+        "summary": "📰 장관, 정치, 기술 관련 뉴스\n📢 Japan’s PM Ishiba denies talk he will quit following election drubbing",
+        "content": "TOKYO - Japanese Prime Minister Shigeru Ishiba denied talk on July 23 that he would quit after a source and media reports said he plans to step down following a bruising upper house election defeat.",
+        "publish_date": "2025-07-23T14:20:51.345867",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Who could replace Japan’s Ishiba as leader of the ruling party?",
+        "url": "https://www.straitstimes.com/asia/east-asia/who-could-replace-japans-ishiba-as-leader-of-the-ruling-party",
+        "summary": "📰 경제, 장관, 정치 관련 뉴스\n📢 Who could replace Japan’s Ishiba as leader of the ruling party?",
+        "content": "Japan's Prime Minister Shigeru Ishiba plans to announce his resignation by the end of August, media said on July 23, following a bruising defeat in an Upper House election. That step would trigger a leadership race in his Liberal Democratic Party (LDP), with the winner facing a Parliament vote to become prime minister of the world’s fourth-largest economy.",
+        "publish_date": "2025-07-23T14:21:01.028297",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Trump piles up trade deals as Asia agrees to open up to American goods",
+        "url": "https://www.straitstimes.com/world/united-states/trump-piles-up-trade-deals-as-asia-agrees-to-open-up-to-american-goods",
+        "summary": "📰 경제, 정치, 기술 관련 뉴스\n📢 Trump piles up trade deals as Asia agrees to open up to American goods",
+        "content": "AUSTIN – It’s not easy to catch Washington’s formidable trade lobbies and relentless, scoop-hungry journalists off-guard. Yet on July 22, US President Donald Trump did just that. On a day when analysts were poised to dissect a potential deal with the Philippines, awaited after President Ferdinand Marcos Jr’s visit to the White House, Mr Trump blindsided everyone with a “massive” deal with Japan.",
+        "publish_date": "2025-07-23T14:21:07.783099",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-23T14:22:20.316919",
+    "scraping_method": "ai_enhanced"
+  },
+  {
+    "group": "Politics",
+    "articles": [
+      {
+        "site": "The Independent Singapore",
+        "title": "Netizen questions if SPH Media staff celebrated for ‘keeping print alive’ were also affected by layoffs",
+        "url": "https://theindependent.sg/netizen-questions-if-sph-media-staff-celebrated-for-keeping-print-alive-were-also-affected-by-layoffs/",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Netizen questions if SPH Media staff celebrated for ‘keeping print alive’ were a...",
+        "content": "SINGAPORE: A netizen online has questioned whether SPH Media staff recently featured  for “keeping print alive” in the city-state were among those affected by fresh retrenchments announced by SPH Media on Tuesday evening (July 22).",
+        "publish_date": "2025-07-23T14:21:39.876461",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "The Independent Singapore",
+        "title": "EC centre worker says ‘distasteful’ comments from ‘entitled parents’ are taking a toll on their mental health",
+        "url": "https://theindependent.sg/ec-centre-worker-says-distasteful-comments-from-entitled-parents-are-taking-a-toll-on-their-mental-health/",
+        "summary": "📰 싱가포르, 보건, 취업 관련 뉴스\n📢 EC centre worker says ‘distasteful’ comments from ‘entitled parents’ are taking ...",
+        "content": "Photo: Freepik/fwstudio (for illustration purposes only).     \n\n\n\n\nJobs\n\n3 min.Read\n\nEC centre worker says ‘distasteful’ comments from ‘entitled parents’ are taking a toll on their mental health\n\n\n\nBy Anna Maria Romero\n\nJuly 23, 2025 \n\n\n\nFacebookTwitterWhatsAppLinkedinTelegram\n\n\n\n\n\n\nSINGAPORE: A local Redditor who works in a public early childhood (EC) centre asked for advice on how to not be affected at work. Although they love children, what they find the hardest is being at the receiving end of “condescending and distasteful remarks” from “horribly entitled” parents.\nIn a July 22 (Tuesday) post on r/askSingapore, u/strugglingsince99 wrote, ”the worst comments I heard in my career come from these parents,” and added that the stress from these comments has taken a toll on their mental health and well-being.\n\n“I’m thinking of resigning. I’m burnt out. I have drafted out my resignation email and filled up the form,” they wrote, although they can’t resign at the moment for financial reas",
+        "publish_date": "2025-07-23T14:21:45.191826",
+        "extracted_by": "fallback",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Independent Singapore"
+    ],
+    "timestamp": "2025-07-23T14:22:20.316930",
+    "scraping_method": "ai_enhanced"
+  }
+]
