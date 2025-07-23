@@ -2599,12 +2599,14 @@ async function loadScrapedArticles() {
                 
                 // API 응답이 success와 articles를 포함하는 경우
                 if (apiResult.success && apiResult.articles) {
+                    console.log('DEBUG: API Result', apiResult);
                     result = {
                         success: true,
                         articles: apiResult.articles,
                         lastUpdated: apiResult.lastUpdated, // lastUpdated도 포함
                         articleCount: apiResult.articles.reduce((sum, group) => sum + (group.article_count || 0), 0)
                     };
+                    console.log('DEBUG: Result created', result);
                 } else if (apiResult.error) {
                     console.log('API 에러:', apiResult.error);
                     articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
@@ -2676,6 +2678,12 @@ async function loadScrapedArticles() {
     
     // 데이터가 없는 경우
     if (!data || (!data.consolidatedArticles && !data.articles)) {
+        console.log('DEBUG: No data found', {
+            data: data,
+            hasConsolidated: data && data.consolidatedArticles,
+            hasArticles: data && data.articles,
+            apiResult: apiResult
+        });
         articlesList.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
         return;
     }
