@@ -1,0 +1,42 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 싱가포르, 주택, 경제 관련 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit M...",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-24T00:31:40.569453+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:32:03.081734+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The New Paper",
+        "title": "'999-year leasehold?': Redditor is dead serious about columbarium booking",
+        "url": "https://www.tnp.sg/news/999-year-leasehold-redditor-dead-serious-about-columbarium-booking?ref=home-top-list",
+        "summary": "📰 부동산, 경제 관련 뉴스\n📢 '999-year leasehold?': Redditor is dead serious about columbarium booking",
+        "content": "\"Is it time to speculate on this 'property' market?\" he asked. There was even a banner celebrating top sales staff, just like property agents. Which made the Redditor wonder: \"Is it time to speculate on this 'property' market?\". \"If people spend five figures on a stupid columbarium place for me, imma rise from the...",
+        "publish_date": "2025-07-23T11:39:30+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The New Paper"
+    ],
+    "timestamp": "2025-07-24T00:32:03.081779+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
