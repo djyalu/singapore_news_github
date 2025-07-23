@@ -2202,6 +2202,7 @@ async function updateTodayArticles() {
                                 todayCount += fileCount;
                                 
                                 console.log(`${file.name}: ${fileCount}개 기사`);
+                                console.log('Articles structure:', articles); // 디버깅용
                             }
                         }
                     } catch (error) {
@@ -2925,6 +2926,9 @@ async function loadTodayArticlesModal() {
     title.textContent = '오늘 스크랩한 기사';
     
     try {
+        console.log('loadTodayArticlesModal called'); // 디버깅용
+        console.log('cachedTodayArticles:', window.cachedTodayArticles); // 디버깅용
+        
         // 캐시된 오늘 기사가 있으면 사용
         if (window.cachedTodayArticles && window.cachedTodayArticles.length > 0) {
             let articles = [];
@@ -2970,6 +2974,9 @@ async function loadTodayArticlesModal() {
             const fileDate = file.name.substring(5, 13); // news_YYYYMMDD_...
             return fileDate === todayYYYYMMDD;
         });
+        
+        console.log('Today YYYYMMDD:', todayYYYYMMDD); // 디버깅용
+        console.log('Today files:', todayFiles); // 디버깅용
         
         if (todayFiles.length === 0) {
             content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
