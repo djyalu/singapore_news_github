@@ -1582,8 +1582,18 @@ def scrape_news_ai():
                 links = site_result.get('links', [])
                 print(f"[AI] Found {len(links)} article links from {site['name']}")
                 
-                # 각 링크에 대해 기사 추출
-                for article_url in links[:5]:  # 사이트당 최대 5개
+                # 각 링크에 대해 기사 추출 (최적화)
+                # 우선순위 사이트는 더 많이, 낮은 우선순위는 적게
+                priority_limits = {
+                    'The Straits Times': 4,
+                    'Channel NewsAsia': 4,
+                    'The Business Times': 3,
+                    'Yahoo Singapore News': 3,
+                    'Mothership': 3
+                }
+                max_links = priority_limits.get(site['name'], 2)  # 기본값 2개
+                
+                for article_url in links[:max_links]:
                     try:
                         print(f"[AI] Processing article: {article_url}")
                         
@@ -1865,7 +1875,17 @@ def scrape_news_traditional():
                 continue
             
             # 기사별 처리
-            for article_url in links[:3]:  # 사이트당 최대 3개로 축소 (성능 개선)
+            # 우선순위별 링크 수 설정
+            priority_limits = {
+                'The Straits Times': 3,
+                'Channel NewsAsia': 3,
+                'The Business Times': 2,
+                'Yahoo Singapore News': 2,
+                'Mothership': 2
+            }
+            max_links = priority_limits.get(site['name'], 1)  # 기본값 1개
+            
+            for article_url in links[:max_links]:
                 try:
                     if DEBUG_MODE:
                         print(f"[DEBUG] Processing article: {article_url}")
