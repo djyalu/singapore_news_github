@@ -119,17 +119,50 @@ module.exports = async (req, res) => {
             });
         }
 
-        // 가장 최신 파일의 내용 가져오기
-        const latestFile = newsFiles[0];
-        const { data: fileContent } = await octokit.rest.repos.getContent({
-            owner,
-            repo,
-            path: latestFile.path,
-        });
-
-        // Base64 디코딩
-        const content = Buffer.from(fileContent.content, 'base64').toString('utf-8');
-        const articles = JSON.parse(content);
+        // 빈 파일이 아닌 실제 기사가 있는 파일 찾기
+        let latestFile = null;
+        let articles = [];
+        
+        for (const file of newsFiles) {
+            try {
+                const { data: fileContent } = await octokit.rest.repos.getContent({
+                    owner,
+                    repo,
+                    path: file.path,
+                });
+                
+                // Base64 디코딩
+                const content = Buffer.from(fileContent.content, 'base64').toString('utf-8');
+                const fileArticles = JSON.parse(content);
+                
+                // 기사가 있는 파일인지 확인
+                if (Array.isArray(fileArticles) && fileArticles.length > 0) {
+                    // 그룹별 구조인지 확인하고 실제 기사 수 계산
+                    const articleCount = fileArticles.reduce((sum, group) => {
+                        if (group.articles && Array.isArray(group.articles)) {
+                            return sum + group.articles.length;
+                        }
+                        return sum;
+                    }, 0);
+                    
+                    if (articleCount > 0) {
+                        latestFile = file;
+                        articles = fileArticles;
+                        break; // 첫 번째 유효한 파일을 찾으면 중단
+                    }
+                }
+            } catch (error) {
+                console.error(`Error reading file ${file.name}:`, error);
+                continue; // 다음 파일로 진행
+            }
+        }
+        
+        if (!latestFile) {
+            return res.status(404).json({
+                success: false,
+                error: '스크래핑된 데이터가 없습니다.'
+            });
+        }
 
         // 파일명에서 날짜 추출
         const dateMatch = latestFile.name.match(/news_(\d{8})_(\d{6})\.json/);
@@ -146,11 +179,16 @@ module.exports = async (req, res) => {
             timestamp = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`).toISOString();
         }
 
+        // 실제 기사 수 계산
+        const totalArticleCount = articles.reduce((sum, group) => {
+            return sum + (group.article_count || 0);
+        }, 0);
+
         return res.status(200).json({
             success: true,
             filename: latestFile.name,
             lastUpdated: timestamp,
-            articleCount: articles.length,
+            articleCount: totalArticleCount,
             articles: articles
         });
 
