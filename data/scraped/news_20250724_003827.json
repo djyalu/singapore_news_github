@@ -1,0 +1,68 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "2 foreigners arrested for shop theft at Changi Airport",
+        "url": "https://www.straitstimes.com/singapore/courts-crime/2-foreigners-arrested-for-shop-theft-at-changi-airport",
+        "summary": "📰 공항, 창이, 법률 관련 뉴스\n📢 2 foreigners arrested for shop theft at Changi Airport",
+        "content": "Find out what’s new on ST website and app. All five stolen items were recovered from the duo, who will be charged on July 23. The missing bottles of perfume were later discovered by the outlet’s staff during their stock-take. Police did not say when the suspects were nabbed.",
+        "publish_date": "2025-07-24T00:38:03.896829+09:00"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Thailand recalls ambassador, expels Cambodian envoy in border row",
+        "url": "https://www.channelnewsasia.com/asia/thailand-cambodia-tensions-recall-ambassador-expel-envoy-border-dispute-5254361",
+        "summary": "📰 정부, 기술, 국제 관련 뉴스\n📢 Thailand recalls ambassador, expels Cambodian envoy in border row",
+        "content": "Thailand has downgraded diplomatic relations with Cambodia, it said. Cambodia’s government did not immediately respond to a request for comment. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2025-07-24T00:38:04.971411+09:00"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Man sees deadly brain cancer vanish after experimental treatment",
+        "url": "https://sg.news.yahoo.com/man-sees-deadly-brain-cancer-053100218.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Man sees deadly brain cancer vanish after experimental treatment",
+        "content": "Most people with glioblastoma die within 12-18 months. Mr Trotman, 43, was diagnosed with glioblastoma in October 2022. Dr Paul Mulholland, the consultant medical oncologist who treated Mr Trotman, said:...",
+        "publish_date": "2025-07-21T14:31:00+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-24T00:38:27.477036+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 싱가포르, 주택, 경제 관련 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit M...",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-24T00:38:06.998573+09:00"
+      },
+      {
+        "site": "The Business Times",
+        "title": "S$15.8 million deal at Leedon Residence tops Q2 resale gains with seller earning S$3.3 million profit",
+        "url": "https://www.businesstimes.com.sg/property/s15-8-million-deal-leedon-residence-tops-q2-resale-gains-seller-earning-s3-3-million-profit",
+        "summary": "📰 부동산, 기술 관련 뉴스\n📢 S$15.8 million deal at Leedon Residence tops Q2 resale gains with seller earning...",
+        "content": "Executive condos remain the most profitable by percentage, with sellers reaping profits of up to 143%. This made it the most profitable resale transaction by quantum in the second quarter of 2025",
+        "publish_date": "2025-07-24T00:38:07.618374+09:00"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:38:27.477085+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
