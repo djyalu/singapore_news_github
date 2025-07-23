@@ -10,9 +10,15 @@ from datetime import datetime
 import pytz
 from collections import defaultdict
 
-# RSS 스크래퍼와 전통적 스크래퍼 가져오기
-from scraper_rss import scrape_news_rss, RSS_FEEDS
-from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
+# 전통적 스크래퍼 가져오기
+try:
+    from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
+except ImportError:
+    # 상대 임포트 시도
+    import sys
+    import os
+    sys.path.append(os.path.dirname(__file__))
+    from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
 
 def create_basic_summary(title, content):
     """기본 키워드 기반 요약 생성"""
@@ -67,7 +73,14 @@ def scrape_news_hybrid():
     
     if ai_available:
         try:
-            from ai_summary_free import translate_to_korean_summary_gemini
+            # AI 요약 모듈 임포트 시도
+            try:
+                from ai_summary_free import translate_to_korean_summary_gemini
+            except ImportError:
+                import sys
+                import os
+                sys.path.append(os.path.dirname(__file__))
+                from ai_summary_free import translate_to_korean_summary_gemini
             
             # 각 기사에 대해 AI 요약 생성
             for group, group_articles in articles_by_group.items():
