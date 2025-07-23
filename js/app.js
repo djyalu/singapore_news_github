@@ -2642,6 +2642,7 @@ async function loadScrapedArticles() {
         }
         
         if (result && result.success) {
+            console.log('Scraped articles result:', result); // 디버깅용
             // 새로운 그룹별 데이터 구조 처리
             if (result.articles) {
                 // 그룹별 통합 데이터 구조인지 확인
@@ -2657,8 +2658,7 @@ async function loadScrapedArticles() {
                         articles: result.articles
                     };
                 }
-                // Server-based data storage;
-                
+                console.log('Processed data:', data); // 디버깅용
             }
         }
     } catch (error) {
