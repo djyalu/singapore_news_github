@@ -33,8 +33,13 @@ def scrape_news_hybrid():
     
     # Traditional 스크래퍼로 기사 링크와 기본 정보 수집
     try:
-        traditional_articles = scrape_news_traditional(sites, settings)
-        if traditional_articles:
+        traditional_file = scrape_news_traditional()
+        if traditional_file and os.path.exists(traditional_file):
+            # Traditional 스크래핑 결과 파일 읽기
+            with open(traditional_file, 'r', encoding='utf-8') as f:
+                traditional_articles = json.load(f)
+            
+            # 기사 데이터를 하이브리드 구조로 변환
             for group_data in traditional_articles:
                 group = group_data['group']
                 for article in group_data['articles']:
@@ -46,9 +51,13 @@ def scrape_news_hybrid():
                         'publish_date': article['publish_date'],
                         'extracted_by': 'traditional'
                     })
-            print(f"[HYBRID] Traditional: Collected articles from {len(traditional_articles)} groups")
+            print(f"[HYBRID] Traditional: Loaded articles from {len(traditional_articles)} groups")
+        else:
+            print("[HYBRID] Traditional scraping returned no file or file not found")
     except Exception as e:
         print(f"[HYBRID] Traditional scraping error: {e}")
+        import traceback
+        traceback.print_exc()
     
     # Phase 2: AI 요약 생성
     print("\n[HYBRID] Phase 2: AI Summary Generation")

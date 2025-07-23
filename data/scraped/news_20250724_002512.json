@@ -1,0 +1,40 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "‘Priority is to keep Trump close to us’: Manila accepts lacklustre tariff deal",
+        "url": "https://www.straitstimes.com/asia/se-asia/philippines-gets-minor-us-tariff-cut-but-defence-ties-remain-intact",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n🔍 주요 키워드: 무역(Trade)\n📌 주요 동향: 폐쇄\n📊 주요 수치: ,, ,\n📝 무역(Trade)이(가) , 기록 / 무역(Trade)에서 폐쇄",
+        "content": "Find out what’s new on ST website and app. In exchange, the Philippines has agreed to remove tariffs on key American goods, including cars. It was not the outcome Manila had hoped for. Philippine trade negotiators had initially aimed to secure a free trade agreement or a...",
+        "publish_date": "2025-07-24T00:24:16.210716+09:00"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/italy-closely-following-news-possible-150045513.html",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n🔍 주요 키워드: 정부(Government), 장관(Minister), 인도(India)\n📊 주요 수치: ,, ,, ,\n📝 정부(Government)이(가) , 기록",
+        "content": "MILAN (Reuters) -The Italian government is closely following news about a possible sale of truckmaker Iveco Group to India's Tata Motors, Industry Minister Adolfo Urso told a parliamentary hearing on Wednesday. Since last Friday, when Reuters published the news, Iveco shares have risen over 25%",
+        "publish_date": "2025-07-24T00:00:45+09:00"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Cyclist charged over death of elderly pedestrian after collision",
+        "url": "https://www.tnp.sg/news/cyclist-charged-over-death-elderly-pedestrian-after-collision?ref=",
+        "summary": "📰 제목: 싱가포르 최신 뉴스\n📊 주요 수치: ,, 49,, 70\n📅 날짜: March 6, 2024, July 24\n📝 March 6, 2024부터 시행",
+        "content": "Lester Lu Su Min, 49, was charged with causing the 70-year-old man's death. The incident allegedly happened when Lu was cycling along Upper Bukit Timah Road towards Jalan Anak Bukit shortly after 6.30am on March 6, 2024. Lu's case will be mentioned again in court on July 24",
+        "publish_date": "2025-07-23T17:48:36+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The New Paper",
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-24T00:25:12.329890+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

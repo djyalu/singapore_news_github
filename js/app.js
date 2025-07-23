@@ -2950,25 +2950,8 @@ async function loadTodayArticlesModal() {
         console.log('loadTodayArticlesModal called'); // 디버깅용
         console.log('cachedTodayArticles:', window.cachedTodayArticles); // 디버깅용
         
-        // 캐시된 오늘 기사가 있으면 사용
-        if (window.cachedTodayArticles && window.cachedTodayArticles.length > 0) {
-            let articles = [];
-            window.cachedTodayArticles.forEach(group => {
-                if (group.articles && Array.isArray(group.articles)) {
-                    articles = articles.concat(group.articles.map(article => ({
-                        ...article,
-                        source: article.site || group.group,
-                        group: group.group
-                    })));
-                }
-            });
-            
-            if (articles.length > 0) {
-                console.log('Using cached today articles:', articles.length, 'articles');
-                renderSelectableArticlesList(articles, content);
-                return;
-            }
-        }
+        // 캐시 사용하지 않고 항상 최신 데이터 가져오기 (캐시 불일치 문제 해결)
+        console.log('Skipping cache, fetching fresh data for modal');
         
         // 캐시가 없으면 직접 오늘의 모든 파일 가져오기
         const now = new Date();
