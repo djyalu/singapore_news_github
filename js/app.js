@@ -2160,46 +2160,65 @@ async function refreshDashboard(event) {
 async function updateTodayArticles() {
     // 서버에서 최신 스크랩 데이터 확인
     let todayCount = 0;
+    let todayArticles = [];
     
     try {
-        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
-        if (response.ok) {
-            const result = await response.json();
-            if (result.success && result.articles) {
-                // KST 기준 오늘 날짜 계산
-                const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
-                const todayKST = kstNow.toISOString().split('T')[0]; // YYYY-MM-DD 형식
+        // KST 기준 오늘 날짜 계산 (더 정확한 방법)
+        const now = new Date();
+        const kstOffset = 9 * 60; // KST는 UTC+9
+        const kstTime = new Date(now.getTime() + (kstOffset + now.getTimezoneOffset()) * 60000);
+        const todayYYYYMMDD = kstTime.getFullYear().toString() + 
+                            String(kstTime.getMonth() + 1).padStart(2, '0') + 
+                            String(kstTime.getDate()).padStart(2, '0');
+        
+        console.log('오늘 날짜 (KST YYYYMMDD):', todayYYYYMMDD);
+        
+        // 먼저 파일 목록 가져오기
+        const listResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+        if (listResponse.ok) {
+            const listResult = await listResponse.json();
+            if (listResult.success && listResult.files) {
+                // 오늘 날짜의 파일들만 필터링
+                const todayFiles = listResult.files.filter(file => {
+                    const fileDate = file.name.substring(5, 13); // news_YYYYMMDD_...
+                    return fileDate === todayYYYYMMDD;
+                });
                 
-                // 파일명에서 날짜 추출
-                const fileDate = result.filename ? result.filename.substring(5, 13) : '';
-                const fileYYYY = fileDate.substring(0, 4);
-                const fileMM = fileDate.substring(4, 6);
-                const fileDD = fileDate.substring(6, 8);
-                const fileDateFormatted = `${fileYYYY}-${fileMM}-${fileDD}`;
+                console.log(`오늘의 파일 수: ${todayFiles.length}`);
                 
-                console.log('오늘 날짜 (KST):', todayKST);
-                console.log('파일 날짜:', fileDateFormatted);
-                
-                const articles = result.articles;
-                
-                // 배열인 경우 (그룹별 기사)
-                if (Array.isArray(articles)) {
-                    // 모든 그룹의 기사 수를 합산
-                    todayCount = articles.reduce((sum, group) => {
-                        return sum + (group.article_count || 0);
-                    }, 0);
-                    
-                    console.log('기사 총 개수:', todayCount); // 디버깅용
+                // 각 파일의 내용 가져오기
+                for (const file of todayFiles) {
+                    try {
+                        const contentResponse = await fetch(file.download_url);
+                        if (contentResponse.ok) {
+                            const articles = await contentResponse.json();
+                            if (Array.isArray(articles) && articles.length > 0) {
+                                todayArticles = todayArticles.concat(articles);
+                                
+                                // 각 그룹의 기사 수 합산
+                                const fileCount = articles.reduce((sum, group) => {
+                                    return sum + (group.article_count || 0);
+                                }, 0);
+                                todayCount += fileCount;
+                                
+                                console.log(`${file.name}: ${fileCount}개 기사`);
+                            }
+                        }
+                    } catch (error) {
+                        console.error(`파일 로드 오류 (${file.name}):`, error);
+                    }
                 }
                 
                 // 날짜 표시 업데이트
-                const isToday = fileDateFormatted === todayKST;
-                const dateDisplayElements = document.querySelectorAll('.scraped-articles-date-label');
-                const dateText = isToday ? '오늘 스크랩한 기사' : `${fileMM}/${fileDD} 스크랩한 기사`;
+                if (todayFiles.length > 0) {
+                    const dateDisplayElements = document.querySelectorAll('.scraped-articles-date-label');
+                    dateDisplayElements.forEach(element => {
+                        element.textContent = '오늘 스크랩한 기사';
+                    });
+                }
                 
-                dateDisplayElements.forEach(element => {
-                    element.textContent = dateText;
-                });
+                // todayArticles를 글로벌 변수에 저장 (showArticlesList에서 사용)
+                window.cachedTodayArticles = todayArticles;
             }
         }
     } catch (error) {
@@ -2906,42 +2925,10 @@ async function loadTodayArticlesModal() {
     title.textContent = '오늘 스크랩한 기사';
     
     try {
-        // 최신 스크랩 데이터 가져오기
-        const response = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped');
-        if (!response.ok) {
-            throw new Error('Failed to fetch scraped data');
-        }
-        
-        const result = await response.json();
-        if (!result.success || !result.articles) {
-            content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
-            return;
-        }
-        
-        // KST 기준 오늘 날짜 계산
-        const kstNow = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"}));
-        const todayKST = kstNow.toISOString().split('T')[0];
-        
-        // 파일명에서 날짜 추출
-        const fileDate = result.filename ? result.filename.substring(5, 13) : '';
-        const fileYYYY = fileDate.substring(0, 4);
-        const fileMM = fileDate.substring(4, 6);
-        const fileDD = fileDate.substring(6, 8);
-        const fileDateFormatted = `${fileYYYY}-${fileMM}-${fileDD}`;
-        
-        // 오늘 날짜가 아니면 표시하지 않음
-        if (fileDateFormatted !== todayKST) {
-            content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
-            return;
-        }
-        
-        let articles = [];
-        const data = result.articles;
-        
-        // API 응답은 그룹별 배열 구조
-        if (Array.isArray(data)) {
-            // 모든 그룹의 기사들을 하나의 배열로 변환
-            data.forEach(group => {
+        // 캐시된 오늘 기사가 있으면 사용
+        if (window.cachedTodayArticles && window.cachedTodayArticles.length > 0) {
+            let articles = [];
+            window.cachedTodayArticles.forEach(group => {
                 if (group.articles && Array.isArray(group.articles)) {
                     articles = articles.concat(group.articles.map(article => ({
                         ...article,
@@ -2950,6 +2937,68 @@ async function loadTodayArticlesModal() {
                     })));
                 }
             });
+            
+            if (articles.length > 0) {
+                console.log('Using cached today articles:', articles.length, 'articles');
+                renderSelectableArticlesList(articles, content);
+                return;
+            }
+        }
+        
+        // 캐시가 없으면 직접 오늘의 모든 파일 가져오기
+        const now = new Date();
+        const kstOffset = 9 * 60;
+        const kstTime = new Date(now.getTime() + (kstOffset + now.getTimezoneOffset()) * 60000);
+        const todayYYYYMMDD = kstTime.getFullYear().toString() + 
+                            String(kstTime.getMonth() + 1).padStart(2, '0') + 
+                            String(kstTime.getDate()).padStart(2, '0');
+        
+        // 파일 목록 가져오기
+        const listResponse = await fetch('https://singapore-news-github.vercel.app/api/get-latest-scraped?all=true');
+        if (!listResponse.ok) {
+            throw new Error('Failed to fetch file list');
+        }
+        
+        const listResult = await listResponse.json();
+        if (!listResult.success || !listResult.files) {
+            content.innerHTML = '<p class="no-data">스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        // 오늘 날짜의 파일들만 필터링
+        const todayFiles = listResult.files.filter(file => {
+            const fileDate = file.name.substring(5, 13); // news_YYYYMMDD_...
+            return fileDate === todayYYYYMMDD;
+        });
+        
+        if (todayFiles.length === 0) {
+            content.innerHTML = '<p class="no-data">오늘 스크랩된 기사가 없습니다.</p>';
+            return;
+        }
+        
+        let articles = [];
+        
+        // 각 파일의 내용 가져오기
+        for (const file of todayFiles) {
+            try {
+                const contentResponse = await fetch(file.download_url);
+                if (contentResponse.ok) {
+                    const fileArticles = await contentResponse.json();
+                    if (Array.isArray(fileArticles)) {
+                        fileArticles.forEach(group => {
+                            if (group.articles && Array.isArray(group.articles)) {
+                                articles = articles.concat(group.articles.map(article => ({
+                                    ...article,
+                                    source: article.site || group.group,
+                                    group: group.group
+                                })));
+                            }
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error(`파일 로드 오류 (${file.name}):`, error);
+            }
         }
         
         if (articles.length === 0) {
