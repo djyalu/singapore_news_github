@@ -120,6 +120,35 @@ class AIScraper:
             self.summary_cache.clear()
             print("[AI_SCRAPER] Cleared summary cache (size limit reached)")
     
+    def _get_content_hash(self, content: str) -> str:
+        """콘텐츠의 해시값 생성"""
+        return hashlib.md5(content.encode('utf-8')).hexdigest()
+    
+    def _should_use_ai(self, priority: str = 'medium') -> bool:
+        """AI 사용 여부 결정 (rate limiting 고려)"""
+        if not self.model:
+            return False
+        
+        # 현재 분당 요청 수 확인
+        current_time = time.time()
+        cutoff_time = current_time - 60
+        recent_requests = [t for t in self.request_timestamps if t > cutoff_time]
+        
+        # 우선순위별 임계값
+        thresholds = {
+            'high': 12,    # 중요한 작업은 거의 항상 AI 사용
+            'medium': 8,   # 중간 우선순위는 여유가 있을 때
+            'low': 4       # 낮은 우선순위는 매우 여유가 있을 때만
+        }
+        
+        threshold = thresholds.get(priority, 8)
+        can_use_ai = len(recent_requests) < threshold
+        
+        if not can_use_ai:
+            print(f"[AI_SCRAPER] Skipping AI for {priority} priority task (quota: {len(recent_requests)}/{self.max_requests_per_minute})")
+        
+        return can_use_ai
+    
     def is_valid_article_url_ai(self, url: str, page_title: str = "", link_text: str = "") -> bool:
         """AI를 사용해 URL이 유효한 기사 링크인지 판단 (개선된 버전)"""
         # 캐시 확인
