@@ -9,6 +9,7 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 30  # AI 스크래핑 고려
     
     steps:
     - uses: actions/checkout@v4
@@ -27,13 +28,14 @@ jobs:
         mkdir -p data/scraped
         mkdir -p data/history
     
-    - name: Run hybrid scraper only
+    - name: Run scraper (respects settings.json method)
       env:
         GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
         GITHUB_ACTIONS: true  # Selenium 사용 안함
       run: |
-        python scripts/scraper_hybrid.py
+        echo "Starting scraper with method from settings.json..."
+        python scripts/scraper.py
     
     - name: Save scraped data
       env:
