@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Taxi driver ‘adding shift’ to be a YouTuber",
+        "url": "https://www.straitstimes.com/singapore/taxi-driver-adding-shift-to-be-a-youtuber",
+        "summary": "📰 교통, 기술 관련 뉴스\n📢 Taxi driver ‘adding shift’ to be a YouTuber",
+        "content": "Find out what’s new on ST website and app. The 48-year-old drives 10 hours daily and spends nearly as much time making videos. Like the friendly cabbie making conversation with his passenger, Mr Jui’s videos are candid and honest. Find out more about the conversation with senior transport correspondent Lee Nian Tjoe in the shownotes below. 14:20 Trying to create an online community that is more forward-looking and positive",
+        "publish_date": "2025-07-24T00:41:20.771239+09:00"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ozzy Osbourne’s Final Reported Photo Before His Death Is Heartbreaking",
+        "url": "https://sg.news.yahoo.com/ozzy-osbourne-final-reported-photo-224145417.html",
+        "summary": "📰 보건, 취업, 기술 관련 뉴스\n📢 Ozzy Osbourne’s Final Reported Photo Before His Death Is Heartbreaking",
+        "content": "Ozzy Osbourne’s Final Reported Photo Before His Death Is Heartbreaking originally appeared on Parade. The Black Sabbath frontman passed away on Tuesday, July 22, after a long battle with Parkinson’s disease. Ozzy’s wife, Sharon Osbourne, spoke ahead of the show about his determination to perform despite his declining health. “Ozzy's working with his therapist every single day. He’s doing really well, actually,” she reportedly said at the time",
+        "publish_date": "2025-07-23T07:41:45+09:00"
+      },
+      {
+        "site": "MustShareNews",
+        "title": "MS Investigates: Why is S’pore still so obsessed with mala after all these years?",
+        "url": "https://mustsharenews.com/mala-craze-stronger/",
+        "summary": "📰 싱가포르, 음식, 기술 관련 뉴스\n📢 MS Investigates: Why is S’pore still so obsessed with mala after all these years...",
+        "content": "It’s been more than a decade since the mala craze took Singapore by storm. In fact, it might have gotten stronger. From traditional hawker stalls to fancy hotpot chains, this numbing, spicy Sichuan flavour continues to dominate local menus and palates alike",
+        "publish_date": "2025-07-23T18:27:23+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "MustShareNews",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-24T00:41:38.987875+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "MAS’ S$5 billion investment fund set to lift undervalued, small-cap stocks: analysts",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mas-s5-billion-investment-fund-set-lift-undervalued-small-cap-stocks-analysts",
+        "summary": "📰 싱가포르, 경제 관련 뉴스\n📢 MAS’ S$5 billion investment fund set to lift undervalued, small-cap stocks: anal...",
+        "content": "Each is likely to take a different approach. Fullerton Fund Management and Avanda Investment Management on Monday announced that they will launch new funds focused on Singapore equities. Fullerton Fund Management’s Singapore equities unit trust will be invested in stocks listed on the Singapore Exchange (SGX), with exposure to stocks across all market capitalisations",
+        "publish_date": "2025-07-24T00:41:24.239995+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:41:38.987916+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
