@@ -2655,14 +2655,14 @@ async function loadScrapedArticles() {
                 if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
                     console.log('Using consolidated articles structure'); // 디버깅용
                     data = {
-                        lastUpdated: result.lastUpdated || (apiResult && apiResult.lastUpdated),
+                        lastUpdated: result.lastUpdated || (apiResult ? apiResult.lastUpdated : null),
                         consolidatedArticles: result.articles
                     };
                 } else {
                     console.log('Using legacy articles structure'); // 디버깅용
                     // 기존 구조 (하위 호환성)
                     data = {
-                        lastUpdated: result.lastUpdated || (apiResult && apiResult.lastUpdated),
+                        lastUpdated: result.lastUpdated || (apiResult ? apiResult.lastUpdated : null),
                         articles: result.articles
                     };
                 }
