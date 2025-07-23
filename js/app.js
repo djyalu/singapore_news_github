@@ -2134,7 +2134,13 @@ function setupDashboardEventListeners() {
     }
     
     if (todayArticlesCard) {
-        todayArticlesCard.addEventListener('click', () => showArticlesList('today'));
+        console.log('todayArticlesCard 이벤트 리스너 추가'); // 디버깅용
+        todayArticlesCard.addEventListener('click', () => {
+            console.log('todayArticlesCard clicked!'); // 디버깅용
+            showArticlesList('today');
+        });
+    } else {
+        console.error('todayArticlesCard element not found'); // 디버깅용
     }
     
     if (sendSettingsCard) {
@@ -2829,6 +2835,7 @@ async function loadScrapedArticles() {
 
 // Articles Modal Functions
 function showArticlesList(type) {
+    console.log('showArticlesList called with type:', type); // 디버깅용
     const modal = createArticlesModal();
     document.body.appendChild(modal);
     
