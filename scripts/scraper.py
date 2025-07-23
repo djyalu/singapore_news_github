@@ -1595,9 +1595,14 @@ def scrape_news_ai():
                 }
                 max_links = priority_limits.get(site['name'], 2)  # 기본값 2개
                 
-                for article_url in links[:max_links]:
+                # 링크가 없으면 건너뛰기
+                if not links:
+                    print(f"[AI] No links to process for {site['name']}")
+                    continue
+                    
+                for idx, article_url in enumerate(links[:max_links]):
                     try:
-                        print(f"[AI] Processing article: {article_url}")
+                        print(f"[AI] Processing article {idx+1}/{min(len(links), max_links)}: {article_url}")
                         
                         # AI로 기사 추출
                         article_result = ai_scraper.scrape_with_ai(article_url)

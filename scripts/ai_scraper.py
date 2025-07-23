@@ -134,11 +134,11 @@ class AIScraper:
         cutoff_time = current_time - 60
         recent_requests = [t for t in self.request_timestamps if t > cutoff_time]
         
-        # 우선순위별 임계값
+        # 우선순위별 임계값 (더 관대하게 설정)
         thresholds = {
-            'high': 12,    # 중요한 작업은 거의 항상 AI 사용
-            'medium': 8,   # 중간 우선순위는 여유가 있을 때
-            'low': 4       # 낮은 우선순위는 매우 여유가 있을 때만
+            'high': 14,    # 중요한 작업은 거의 항상 AI 사용 (limit까지)
+            'medium': 10,  # 중간 우선순위는 10개까지
+            'low': 6       # 낮은 우선순위는 6개까지
         }
         
         threshold = thresholds.get(priority, 8)

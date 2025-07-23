@@ -15,7 +15,7 @@
     "date": "1"
   },
   "blockedKeywords": "  violence, kill, murder, suicide, rape, torture, drugs, cocaine, heroin, meth, marijuana, porn, pornography,\n  nude, vape, e-cigarette, juul, gambling, gore, homicide, trafficking, kidnap, kidnapping, terrorism, bomb,\n  explosion, molestation, pedophile, pedophilia, prostitution, human trafficking, self-harm, cutting, abuse,\n  assault, brutality, alcohol, drunk, weapon, gun, shooting, stabbing, bully, bullying, domestic violence,\n  child abuse, addiction, overdose",
-  "scrapingMethod": "ai",
+  "scrapingMethod": "hybrid",
   "scrapingMethodOptions": {
     "ai": {
       "provider": "gemini",
