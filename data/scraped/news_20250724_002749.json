@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "2 foreigners arrested for shop theft at Changi Airport",
+        "url": "https://www.straitstimes.com/singapore/courts-crime/2-foreigners-arrested-for-shop-theft-at-changi-airport",
+        "summary": "📰 공항, 창이, 법률 관련 뉴스\n📢 2 foreigners arrested for shop theft at Changi Airport",
+        "content": "Find out what’s new on ST website and app. All five stolen items were recovered from the duo, who will be charged on July 23. The missing bottles of perfume were later discovered by the outlet’s staff during their stock-take. Police did not say when the suspects were nabbed.",
+        "publish_date": "2025-07-24T00:27:25.946121+09:00"
+      },
+      {
+        "site": "MustShareNews",
+        "title": "MS Investigates: Why is S’pore still so obsessed with mala after all these years?",
+        "url": "https://mustsharenews.com/mala-craze-stronger/",
+        "summary": "📰 싱가포르, 음식, 기술 관련 뉴스\n📢 MS Investigates: Why is S’pore still so obsessed with mala after all these years...",
+        "content": "It’s been more than a decade since the mala craze took Singapore by storm. In fact, it might have gotten stronger. From traditional hawker stalls to fancy hotpot chains, this numbing, spicy Sichuan flavour continues to dominate local menus and palates alike",
+        "publish_date": "2025-07-23T18:27:23+09:00"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "MustShareNews",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-24T00:27:49.238582+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 싱가포르, 주택, 경제 관련 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit M...",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-24T00:27:30.144921+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:27:49.238626+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
