@@ -1,0 +1,94 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Japan’s PM Ishiba denies talk he will quit following election drubbing",
+        "url": "https://www.straitstimes.com/asia/east-asia/japan-prime-minister-ishiba-to-resign-mainichi-newspaper-reports",
+        "summary": "📰 장관, 정치, 기술 관련 뉴스\n📢 Japan’s PM Ishiba denies talk he will quit following election drubbing",
+        "content": "TOKYO - Japanese Prime Minister Shigeru Ishiba denied talk on July 23 that he would quit after a source and media reports said he plans to step down following a bruising upper house election defeat.",
+        "publish_date": "2025-07-23T14:20:36.843677",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Who could replace Japan’s Ishiba as leader of the ruling party?",
+        "url": "https://www.straitstimes.com/asia/east-asia/who-could-replace-japans-ishiba-as-leader-of-the-ruling-party",
+        "summary": "📰 경제, 장관, 법률 관련 뉴스\n📢 Who could replace Japan’s Ishiba as leader of the ruling party?",
+        "content": "Who could replace Japan’s Ishiba as leader of the ruling party?Find out what’s new on ST website and app.Japan's Prime Minister Shigeru Ishiba attends a press conference at the headquarters of the Liberal Democratic Party in Tokyo on July 21.PHOTO: REUTERSFollow topic:JapanPublished Jul 23, 2025, 12:48 PMUpdated Jul 23, 2025, 03:25 PMTOKYO - Japan's Prime Minister Shigeru Ishiba plans to announce his resignation by the end of August, media said on July 23, following a bruising defeat in an Upper House election. That step would trigger a leadership race in his Liberal Democratic Party (LDP), with the winner facing a Parliament vote to become prime minister of the world’s fourth-largest economy.However, the selection process may not be smooth, since the LDP and its junior coalition partner Komeito lack a majority in both houses of Parliament.Here are the LDP lawmakers who might throw their hats in the ring:Sanae Takaichi, 64A Yomiuri newspaper poll following July 20’s election showed Ms ",
+        "publish_date": "2025-07-23T14:20:42.101329",
+        "extracted_by": "fallback",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Trump piles up trade deals as Asia agrees to open up to American goods",
+        "url": "https://www.straitstimes.com/world/united-states/trump-piles-up-trade-deals-as-asia-agrees-to-open-up-to-american-goods",
+        "summary": "📰 경제, 정치, 기술 관련 뉴스\n📢 Trump piles up trade deals as Asia agrees to open up to American goods",
+        "content": "News analysisTrump piles up trade deals as Asia agrees to open up to American goods  Find out what’s new on ST website and app.US President Donald Trump with Japanese PM Shigeru Ishiba outside the West Wing of the White House in Washington, DC, on Feb 7.PHOTO: AFPBhagyashree GarekarFollow topic:Donald TrumpSummarySummaryTrump announced a \"massive\" US$550 billion deal with Japan, confirmed by negotiator Ryosei Akazawa, involving market access for US goods.Other deals with the Philippines, Indonesia, and Vietnam include tariff changes and commitments to purchase US products, establishing precedents for other Asian nations.Trump's tariff strategy aims to open markets for US goods and reduce imports, though experts debate its long-term economic impact and potential contradictions.AI generatedPublished Jul 23, 2025, 01:55 PMUpdated Jul 23, 2025, 09:32 PMAUSTIN – It’s not easy to catch Washington’s formidable trade lobbies and relentless, scoop-hungry journalists off-guard. Yet on July 22, U",
+        "publish_date": "2025-07-23T14:20:46.307484",
+        "extracted_by": "fallback",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-23T14:21:53.837891",
+    "scraping_method": "ai_enhanced"
+  },
+  {
+    "group": "Politics",
+    "articles": [
+      {
+        "site": "The Independent Singapore",
+        "title": "Netizen questions if SPH Media staff celebrated for ‘keeping print alive’ were also affected by layoffs",
+        "url": "https://theindependent.sg/netizen-questions-if-sph-media-staff-celebrated-for-keeping-print-alive-were-also-affected-by-layoffs/",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Netizen questions if SPH Media staff celebrated for ‘keeping print alive’ were a...",
+        "content": "SINGAPORE: A netizen online has questioned whether SPH Media staff recently featured  for “keeping print alive” in the city-state were among those affected by fresh retrenchments announced by SPH Media on Tuesday evening (July 22).",
+        "publish_date": "2025-07-23T14:21:19.356962",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      },
+      {
+        "site": "The Independent Singapore",
+        "title": "EC centre worker says ‘distasteful’ comments from ‘entitled parents’ are taking a toll on their mental health",
+        "url": "https://theindependent.sg/ec-centre-worker-says-distasteful-comments-from-entitled-parents-are-taking-a-toll-on-their-mental-health/",
+        "summary": "📰 싱가포르, 보건, 취업 관련 뉴스\n📢 EC centre worker says ‘distasteful’ comments from ‘entitled parents’ are taking ...",
+        "content": "SINGAPORE: A local Redditor who works in a public early childhood (EC) centre asked for advice on how to not be affected at work. Although they love children, what they find the hardest is being at the receiving end of “condescending and distasteful remarks” from “horribly entitled” parents.",
+        "publish_date": "2025-07-23T14:21:26.156881",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "medium"
+        }
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Independent Singapore"
+    ],
+    "timestamp": "2025-07-23T14:21:53.837927",
+    "scraping_method": "ai_enhanced"
+  }
+]
