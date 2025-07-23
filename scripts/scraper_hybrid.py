@@ -7,11 +7,12 @@
 import json
 import os
 from datetime import datetime
+import pytz
 from collections import defaultdict
 
 # RSS 스크래퍼와 전통적 스크래퍼 가져오기
 from scraper_rss import scrape_news_rss, RSS_FEEDS
-from scraper import scrape_news_traditional, load_settings, load_sites
+from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
 
 def scrape_news_hybrid():
     """하이브리드 방식: RSS + Enhanced + Selenium"""
@@ -127,7 +128,7 @@ def scrape_news_hybrid():
             'articles': selected_articles,
             'article_count': len(selected_articles),
             'sites': list(set(article['site'] for article in selected_articles)),
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': get_kst_now_iso(),
             'scraping_method': 'hybrid',
             'execution_type': 'manual'
         }
@@ -135,7 +136,7 @@ def scrape_news_hybrid():
         consolidated_articles.append(group_summary)
     
     # 결과 저장
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    timestamp = get_kst_now().strftime('%Y%m%d_%H%M%S')
     output_file = f'data/scraped/news_{timestamp}.json'
     
     os.makedirs('data/scraped', exist_ok=True)
@@ -145,7 +146,7 @@ def scrape_news_hybrid():
     
     # latest.json 파일 업데이트
     latest_info = {
-        'lastUpdated': datetime.now().isoformat(),
+        'lastUpdated': get_kst_now_iso(),
         'latestFile': f'news_{timestamp}.json',
         'scrapingMethod': 'hybrid',
         'executionType': 'manual'

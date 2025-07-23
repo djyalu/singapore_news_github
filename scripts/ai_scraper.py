@@ -3,11 +3,24 @@ import re
 import json
 import time
 import hashlib
+from datetime import datetime
+import pytz
 from typing import Dict, List, Optional, Tuple
 import google.generativeai as genai
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin, urlparse
+
+# KST 타임존 설정
+KST = pytz.timezone('Asia/Seoul')
+
+def get_kst_now():
+    """현재 한국 시간(KST) 반환"""
+    return datetime.now(KST)
+
+def get_kst_now_iso():
+    """현재 한국 시간을 ISO 형식 문자열로 반환"""
+    return get_kst_now().isoformat()
 
 class AIScraper:
     def __init__(self):
@@ -785,7 +798,8 @@ CONTENT: [기사 본문 - 첫 500자 정도]
                 'title': article_data['title'],
                 'content': article_data['content'],
                 'url': url,
-                'extracted_by': article_data['extracted_by']
+                'extracted_by': article_data['extracted_by'],
+                'html': html_content  # HTML 콘텐츠 추가
             }
             
         except requests.RequestException as e:

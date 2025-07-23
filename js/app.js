@@ -2172,7 +2172,8 @@ async function updateTodayArticles() {
         // KST 기준 오늘 날짜 계산 (더 정확한 방법)
         const now = new Date();
         const kstOffset = 9 * 60; // KST는 UTC+9
-        const kstTime = new Date(now.getTime() + (kstOffset + now.getTimezoneOffset()) * 60000);
+        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const kstTime = new Date(utcTime + (kstOffset * 60000));
         const todayYYYYMMDD = kstTime.getFullYear().toString() + 
                             String(kstTime.getMonth() + 1).padStart(2, '0') + 
                             String(kstTime.getDate()).padStart(2, '0');
@@ -2648,13 +2649,13 @@ async function loadScrapedArticles() {
                 // 그룹별 통합 데이터 구조인지 확인
                 if (result.articles.length > 0 && result.articles[0].group && result.articles[0].articles) {
                     data = {
-                        lastUpdated: result.lastUpdated,
+                        lastUpdated: apiResult.lastUpdated || result.lastUpdated,
                         consolidatedArticles: result.articles
                     };
                 } else {
                     // 기존 구조 (하위 호환성)
                     data = {
-                        lastUpdated: result.lastUpdated,
+                        lastUpdated: apiResult.lastUpdated || result.lastUpdated,
                         articles: result.articles
                     };
                 }

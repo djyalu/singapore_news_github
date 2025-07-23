@@ -16,6 +16,99 @@ DEBUG_MODE = os.environ.get('DEBUG_SCRAPER', 'false').lower() == 'true'
 if DEBUG_MODE:
     print("[WARNING] DEBUG mode is enabled. This may cause BrokenPipeError in GitHub Actions.")
 
+# KST 타임존 설정
+KST = pytz.timezone('Asia/Seoul')
+
+def get_kst_now():
+    """현재 한국 시간(KST) 반환"""
+    return datetime.now(KST)
+
+def get_kst_now_iso():
+    """현재 한국 시간을 ISO 형식 문자열로 반환"""
+    return get_kst_now().isoformat()
+
+def extract_publish_date(soup, default_to_now=True):
+    """
+    HTML에서 기사 발행일 추출
+    
+    Returns:
+        datetime: 발행일 (KST) 또는 None
+    """
+    # 메타 태그에서 발행일 찾기
+    date_meta_names = [
+        'article:published_time', 'article:published', 'publish_date',
+        'publication_date', 'date', 'DC.date', 'sailthru.date',
+        'parsely-pub-date', 'datePublished'
+    ]
+    
+    for name in date_meta_names:
+        meta = soup.find('meta', {'property': name}) or soup.find('meta', {'name': name})
+        if meta and meta.get('content'):
+            try:
+                # ISO 형식 파싱 시도
+                pub_date = datetime.fromisoformat(meta['content'].replace('Z', '+00:00'))
+                # KST로 변환
+                if pub_date.tzinfo is None:
+                    pub_date = KST.localize(pub_date)
+                else:
+                    pub_date = pub_date.astimezone(KST)
+                return pub_date
+            except:
+                pass
+    
+    # time 태그에서 찾기
+    time_tag = soup.find('time', {'datetime': True})
+    if time_tag:
+        try:
+            pub_date = datetime.fromisoformat(time_tag['datetime'].replace('Z', '+00:00'))
+            if pub_date.tzinfo is None:
+                pub_date = KST.localize(pub_date)
+            else:
+                pub_date = pub_date.astimezone(KST)
+            return pub_date
+        except:
+            pass
+    
+    # JSON-LD 구조화 데이터에서 찾기
+    scripts = soup.find_all('script', {'type': 'application/ld+json'})
+    for script in scripts:
+        try:
+            data = json.loads(script.string)
+            if isinstance(data, dict):
+                if 'datePublished' in data:
+                    pub_date = datetime.fromisoformat(data['datePublished'].replace('Z', '+00:00'))
+                    if pub_date.tzinfo is None:
+                        pub_date = KST.localize(pub_date)
+                    else:
+                        pub_date = pub_date.astimezone(KST)
+                    return pub_date
+        except:
+            pass
+    
+    # 텍스트에서 날짜 패턴 찾기
+    date_patterns = [
+        r'(\d{4}[-/]\d{1,2}[-/]\d{1,2})',  # 2024-01-23 or 2024/01/23
+        r'(\d{1,2}[-/]\d{1,2}[-/]\d{4})',  # 23-01-2024 or 23/01/2024
+        r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},?\s+\d{4}',  # Jan 23, 2024
+        r'\d{1,2}\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}'  # 23 January 2024
+    ]
+    
+    text = soup.get_text()[:2000]  # 처음 2000자만 검색
+    for pattern in date_patterns:
+        match = re.search(pattern, text)
+        if match:
+            try:
+                from dateutil import parser
+                pub_date = parser.parse(match.group(0))
+                pub_date = KST.localize(pub_date)
+                # 미래 날짜는 무시
+                if pub_date <= get_kst_now():
+                    return pub_date
+            except:
+                pass
+    
+    return get_kst_now() if default_to_now else None
+
 def load_settings():
     """
     서버에서 동적으로 설정을 불러오기
@@ -130,7 +223,7 @@ def is_recent_article(article_date):
     """
     if not article_date:
         return True
-    return (datetime.now() - article_date).days <= 2
+    return (get_kst_now() - article_date).days <= 2
 
 def contains_keywords(text, keywords):
     """
@@ -484,7 +577,7 @@ def extract_article_content_straits_times(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': get_kst_now()
     }
     
     # 제목 추출
@@ -515,9 +608,9 @@ def extract_article_content_straits_times(url, soup):
             if date_elem.get('datetime'):
                 article['publish_date'] = datetime.fromisoformat(date_elem['datetime'].replace('Z', '+00:00'))
             else:
-                article['publish_date'] = datetime.now()
+                article['publish_date'] = get_kst_now()
         except:
-            article['publish_date'] = datetime.now()
+            article['publish_date'] = get_kst_now()
     
     return article
 
@@ -526,7 +619,7 @@ def extract_article_content_moe(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': get_kst_now()
     }
     
     # 제목 추출
@@ -568,7 +661,7 @@ def extract_article_content_nac(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': get_kst_now()
     }
     
     # NAC는 주로 이벤트 정보
@@ -584,7 +677,7 @@ def extract_article_content_nac(url, soup):
     # 날짜는 이벤트 날짜로
     date_elem = soup.select_one('.event-date, .programme-date')
     if date_elem:
-        article['publish_date'] = datetime.now()  # 간단히 현재 날짜 사용
+        article['publish_date'] = get_kst_now()  # 간단히 현재 날짜 사용
     
     return article
 
@@ -593,7 +686,7 @@ def extract_article_content_independent(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': get_kst_now()
     }
     
     # 제목 추출 - WordPress 기반
@@ -628,9 +721,9 @@ def extract_article_content_independent(url, soup):
             else:
                 date_text = date_elem.get_text()
                 # 간단한 날짜 파싱 시도
-                article['publish_date'] = datetime.now()
+                article['publish_date'] = get_kst_now()
         except:
-            article['publish_date'] = datetime.now()
+            article['publish_date'] = get_kst_now()
     
     return article
 
@@ -639,7 +732,7 @@ def extract_article_content_business_times(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': get_kst_now()
     }
     
     # 제목 추출
@@ -674,7 +767,7 @@ def extract_article_content_cna(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': get_kst_now()
     }
     
     # 제목 추출
@@ -916,8 +1009,15 @@ def extract_article_content_generic(url, soup):
     article = {
         'title': '',
         'content': '',
-        'publish_date': datetime.now()
+        'publish_date': None
     }
+    
+    # 발행일 추출 시도
+    publish_date = extract_publish_date(soup, default_to_now=False)
+    if publish_date:
+        article['publish_date'] = publish_date
+    else:
+        article['publish_date'] = get_kst_now()
     
     # 제목 추출
     title_elem = soup.find('h1')
@@ -1709,11 +1809,23 @@ def scrape_news_ai():
                         
                         print(f"[AI] Article passed validation: {article_result['title']}")
                         
+                        # 기사 HTML에서 발행일 추출 시도
+                        publish_date = None
+                        if article_result.get('html'):
+                            try:
+                                soup = BeautifulSoup(article_result['html'], 'html.parser')
+                                publish_date = extract_publish_date(soup, default_to_now=True)
+                            except:
+                                pass
+                        
+                        if not publish_date:
+                            publish_date = get_kst_now()
+                        
                         # 요약 생성
                         article_data = {
                             'title': article_result['title'],
                             'content': article_result['content'],
-                            'publish_date': datetime.now()
+                            'publish_date': publish_date
                         }
                         summary = create_summary(article_data, settings)
                         print(f"[AI] Generated summary: {summary[:100]}...")
@@ -1725,7 +1837,7 @@ def scrape_news_ai():
                             'url': article_url,
                             'summary': summary,
                             'content': article_result['content'],
-                            'publish_date': datetime.now().isoformat(),
+                            'publish_date': publish_date.isoformat() if isinstance(publish_date, datetime) else publish_date,
                             'extracted_by': article_result.get('extracted_by', 'ai'),
                             'ai_classification': article_result.get('classification', {})
                         })
@@ -1745,10 +1857,22 @@ def scrape_news_ai():
                     if not is_blocked(full_text, blocked_keywords):
                         if settings['scrapTarget'] != 'important' or contains_keywords(full_text, important_keywords):
                             
+                            # 발행일 추출 시도
+                            publish_date = None
+                            if site_result.get('html'):
+                                try:
+                                    soup = BeautifulSoup(site_result['html'], 'html.parser')
+                                    publish_date = extract_publish_date(soup, default_to_now=True)
+                                except:
+                                    pass
+                            
+                            if not publish_date:
+                                publish_date = get_kst_now()
+                            
                             article_data = {
                                 'title': site_result['title'],
                                 'content': site_result['content'],
-                                'publish_date': datetime.now()
+                                'publish_date': publish_date
                             }
                             summary = create_summary(article_data, settings)
                             
@@ -1758,7 +1882,7 @@ def scrape_news_ai():
                                 'url': site['url'],
                                 'summary': summary,
                                 'content': site_result['content'],
-                                'publish_date': datetime.now().isoformat(),
+                                'publish_date': publish_date.isoformat() if isinstance(publish_date, datetime) else publish_date,
                                 'extracted_by': site_result.get('extracted_by', 'ai'),
                                 'ai_classification': site_result.get('classification', {})
                             })
@@ -1799,15 +1923,14 @@ def scrape_news_ai():
             'articles': selected_articles,
             'article_count': len(selected_articles),
             'sites': list(set(article['site'] for article in selected_articles)),
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': get_kst_now_iso(),
             'scraping_method': 'ai_enhanced'
         }
         
         consolidated_articles.append(group_summary)
     
     # 결과 저장 (KST 기준)
-    kst = pytz.timezone('Asia/Seoul')
-    now_kst = datetime.now(kst)
+    now_kst = get_kst_now()
     timestamp = now_kst.strftime('%Y%m%d_%H%M%S')
     output_file = f'data/scraped/news_{timestamp}.json'
     
@@ -2099,8 +2222,7 @@ def scrape_news_traditional():
         consolidated_articles.append(group_summary)
     
     # 결과 저장 (KST 기준)
-    kst = pytz.timezone('Asia/Seoul')
-    now_kst = datetime.now(kst)
+    now_kst = get_kst_now()
     timestamp = now_kst.strftime('%Y%m%d_%H%M%S')
     output_file = f'data/scraped/news_{timestamp}.json'
     
