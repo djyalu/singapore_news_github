@@ -1,0 +1,58 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Two found dead after fire in Toa Payoh flat",
+        "url": "https://www.straitstimes.com/singapore/two-found-dead-after-fire-in-toa-payoh-flat",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Two found dead after fire in Toa Payoh flat",
+        "content": "Find out what’s new on ST website and app. They entered the smoke-filled flat and extinguished the flames using a water jet. “During the firefighting operation, firefighters found two unresponsive persons inside the unit and immediately carried them out,” SCDF said. Videos circulating on social media show several residents at the block’s void deck being assisted by police officers. Flashing sirens from emergency vehicles can be seen reflected against...",
+        "publish_date": "2025-07-24T00:42:57.276737+09:00"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "High miles earn rates, bespoke card number, concierge on call: What you get with this premium offering",
+        "url": "https://www.straitstimes.com/life/top-miles-rates-bespoke-card-number-concierge-on-call-premium-card-dcs",
+        "summary": "📰 교통 관련 뉴스\n📢 High miles earn rates, bespoke card number, concierge on call: What you get with...",
+        "content": "The DCS Imperium World Elite Card offers practical luxury features – from industry-leading rewards to personalised service that busy professionals will value. Premium credit cards have long promised luxurious experiences, offering access to priority perks and enviable rewards. Enter the DCS Imperium World Elite Card. While high earn rates are expected of premium credit cards, the DCS...",
+        "publish_date": "2025-07-24T00:42:57.872538+09:00"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘I tap childhood memories to show children every connection matters’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-children-author-writing-local-flavour",
+        "summary": "📰 싱가포르, 음식, 문화 관련 뉴스\n📢 Your S’pore Story: ‘I tap childhood memories to show children every connection m...",
+        "content": "Find out what’s new on ST website and app. Kid-lit author Rachelyn Gordon with her book Curly, which touches on self-identity and staying true to oneself. Some had never even stepped into a hawker centre. She writes picture books that spotlight everyday Singapore culture, showing children that even the smallest connections can be meaningful",
+        "publish_date": "2025-07-24T00:42:58.423944+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-24T00:43:23.428851+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 싱가포르, 주택, 경제 관련 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit M...",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-24T00:43:04.837956+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:43:23.428896+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
