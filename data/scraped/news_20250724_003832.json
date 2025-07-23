@@ -1,0 +1,80 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 싱가포르, 주택, 경제 관련 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit M...",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-24T00:38:18.274034+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-24T00:38:32.961081+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/italy-closely-following-news-possible-150045513.html",
+        "summary": "📰 정부, 장관, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "MILAN (Reuters) -The Italian government is closely following news about a possible sale of truckmaker Iveco Group to India's Tata Motors, Industry Minister Adolfo Urso told a parliamentary hearing on Wednesday. Since last Friday, when Reuters published the news, Iveco shares have risen over 25%",
+        "publish_date": "2025-07-24T00:00:45+09:00"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Cyclist charged over death of elderly pedestrian after collision",
+        "url": "https://www.tnp.sg/news/cyclist-charged-over-death-elderly-pedestrian-after-collision?ref=home-top-list",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Cyclist charged over death of elderly pedestrian after collision",
+        "content": "Lester Lu Su Min, 49, was charged with causing the 70-year-old man's death. The incident allegedly happened when Lu was cycling along Upper Bukit Timah Road towards Jalan Anak Bukit shortly after 6.30am on March 6, 2024. Lu's case will be mentioned again in court on July 24",
+        "publish_date": "2025-07-23T17:48:36+09:00"
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Jail for Indonesian men arrested with contraband after illegally landing on Pulau Tekong",
+        "url": "https://mustsharenews.com/indonesian-men-tekong-jail/",
+        "summary": "📰 싱가포르, 법률, 범죄 관련 뉴스\n📢 Jail for Indonesian men arrested with contraband after illegally landing on Pula...",
+        "content": "The men had 2,700 packets of contraband cigarettes on their boat. Ridwan Akarin, Ripan, and Mahyudin had previously been separately convicted of immigration offences in Singapore between 2021 and 2024. They served their sentences and were promptly removed from the country, according to The Straits Times (ST). Source: Singapore Police Force and Immigration & Checkpoints Authority. Additionally, Ardy loaded the boat with four wrapped boxes containing contraband cigarettes",
+        "publish_date": "2025-07-23T17:05:01+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The New Paper",
+      "Yahoo Singapore News",
+      "MustShareNews"
+    ],
+    "timestamp": "2025-07-24T00:38:32.961113+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Culture",
+    "articles": [
+      {
+        "site": "Time Out Singapore",
+        "title": "The Projector returns to Golden Mile Tower this August",
+        "url": "https://www.timeout.com/singapore/news/local-indie-cinema-the-projector-returns-to-golden-mile-tower-this-august-072325",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The Projector returns to Golden Mile Tower this August",
+        "content": "Screenings will officially resume in August 2025. Local indie cinema The Projector is going back to its roots. It also regularly hosts themed events, comedy shows, live music performances and more. It first opened in 2014 on the top floor of Golden Mile Tower, transforming a...",
+        "publish_date": "2025-07-23T05:07:15+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Time Out Singapore"
+    ],
+    "timestamp": "2025-07-24T00:38:32.961128+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
