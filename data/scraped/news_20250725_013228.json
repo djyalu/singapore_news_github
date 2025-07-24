@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Wrestling legend Hulk Hogan dies aged 71: US media",
+        "url": "https://www.straitstimes.com/life/entertainment/wrestling-legend-hulk-hogan-dies-aged-71-us-media",
+        "content": "Find out what’s new on ST website and app. Hulk Hogan was known for his towering 2m-tall physique, bandana and distinctive blond handlebar moustache. TMZ also reported the news, citing unnamed sources",
+        "publish_date": "2025-07-25T01:32:00.999856+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 레슬링 레전드 헐크 호건 사망, 향년 71세\n\n내용: 미국 언론들이 전한 소식에 따르면, 키 2미터의 거구이자 특유의 반다나, 금발의 핸들바 머스타치 스타일로 알려진 레슬링 레전드 헐크 호건이 사망ました. TMZ는 익명의 소식통을 인용하여 이 소식을 전했다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "1,300 names and addresses from traffic police records leaked online",
+        "url": "https://www.channelnewsasia.com/singapore/traffic-police-data-leak-names-addresses-tnt-ransomware-5256191",
+        "content": "In April, TNT faced a ransomware attack. The names and addresses are believed to have been compromised then. SPF will be contacting individuals affected by the leak \"as a matter of...",
+        "publish_date": "2025-07-25T01:32:04.446548+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 교통경찰 기록에서 유출된 1,300건의 개인정보\n\n내용: 4월, TNT가 랜섬웨어 공격을 당해 유출된 것으로 추정되는 싱가포르 교통경찰의 기록에 포함된 이름과 주소 1,300건이 온라인에 유출되었다. 싱가포르 경찰은 유출된 개인정보가 포함된 문서를 접한 것으로 추정되는 개개인과 연락할 예정이다. 이번 사고는 개인정보 보호에 큰 위협이 되고 있다."
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Woman in S’pore facing 82 charges after 79 dogs found inside landed home",
+        "url": "https://mustsharenews.com/woman-charged-79-dogs/",
+        "content": "Julia Nicole Moss was formally charged in court on Tuesday (23 July), according to Channel News Asia (CNA). Any exceptions must be approved in advance by the Animal & Veterinary Service (AVS). However, Moss did not obtain any such approvals or licences for the animals. Apart from failing to license the dogs, Moss also faces charges for not complying with a directive issued by...",
+        "publish_date": "2025-07-24T18:45:34+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 싱가포르 여성, 79마리의 개를 집에서 키워 82개 혐의에 직면하다\n내용: 줄리아 니콜 모스는 7월 23일 법정에 출두하여 79마리의 개를 자신의 고급 주택에서 키운 혐의로 기소되었다. 동물 및 수의학 서비스는 사전에 승인해야 하는 예외 사항이지만, 모스는 이 개들을 키우기 위해 어떤 승인이나 면허도 받지 않았다. 면허 미비 외에도 모스는 동물 관련 지침을 준수하지 않은 혐의로 추가 기소되었다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia",
+      "MustShareNews"
+    ],
+    "timestamp": "2025-07-25T01:32:28.034250+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
