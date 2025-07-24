@@ -1,0 +1,134 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Live: People evacuated from border regions amid deadly Thailand-Cambodia clash",
+        "url": "https://www.straitstimes.com/asia/live-thai-and-cambodian-militaries-clash-at-disputed-border",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Live: People evacuated from border regions amid deadly Thailand-Cambodia clash",
+        "content": "The clash came after Thailand recalled its envoy to Cambodia, while Phnom Penh said forces had responded in self-defence.",
+        "publish_date": "2025-07-24T13:16:17+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "The Straits Times",
+        "title": "‘Vampire coach’: Coercive blood sampling in school casts spotlight on Taiwan’s culture of obedience",
+        "url": "https://www.straitstimes.com/asia/east-asia/vampire-coach-coercive-blood-sampling-in-school-casts-spotlight-on-taiwans-obedient-culture",
+        "summary": "📰 교육, 문화, 기술 관련 뉴스\n📢 ‘Vampire coach’: Coercive blood sampling in school casts spotlight on Taiwan’s c...",
+        "content": "TAIPEI – A case involving a “vampire coach” who forced her football team to give blood samples for research – in exchange for academic credits – has shone the spotlight on Taiwan’s deep-seated culture of obedience to figures of authority.",
+        "publish_date": "2025-07-24T17:20:00+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Arsenal vs AC Milan in Singapore: Arsenal's manager 'would love to have a full stadium'; Toa Payoh flat fire: Male victim known to be a 'hoarder', say residents",
+        "url": "https://sg.news.yahoo.com/live/singapore-live-news-arsenal-vs-ac-milan-in-singapore-arsenals-manager-would-love-to-have-a-full-stadium-toa-payoh-flat-fire-male-victim-known-to-be-a-hoarder-say-residents-015055236.html",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Arsenal vs AC Milan in Singapore: Arsenal's manager 'would love to have a full s...",
+        "content": "Premier League runners-up Arsenal beat Italian giants AC Milan in a pre-season friendly at the National Stadium in Singapore. However, there is still room for improvement and it's got nothing to do with the club's performance. At a post-match press conference on Wednesday (23 July), Arsenal's manager Mikel Arteta commented on the noticeable empty seats in the venue.",
+        "publish_date": "2025-07-24T18:56:09+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-24T20:34:38.410867+09:00",
+    "scraping_method": "ai_enhanced"
+  },
+  {
+    "group": "Politics",
+    "articles": [
+      {
+        "site": "The Independent Singapore",
+        "title": "Singapore’s core inflation stays at 0.6% in June, below economists’ forecast",
+        "url": "https://theindependent.sg/singapores-core-inflation-stays-at-0-6-in-june-below-economists-forecast/",
+        "summary": "📰 싱가포르, 교통 관련 뉴스\n📢 Singapore’s core inflation stays at 0.6% in June, below economists’ forecast",
+        "content": "SINGAPORE: Singapore’s core inflation, which excludes private road transport and accommodation costs, was at 0.6% in June — the same as in May but lower than the 0.7% forecast in a Reuters poll of economists.",
+        "publish_date": "2025-07-24T18:52:34+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "The Independent Singapore",
+        "title": "Singaporean man shocked as friend with master’s degree only gets S$3.2k–S$3.5k job offers",
+        "url": "https://theindependent.sg/singaporean-man-shocked-as-friend-with-masters-degree-only-gets-s3-2k-s3-5k-job-offers/",
+        "summary": "📰 싱가포르, 취업 관련 뉴스\n📢 Singaporean man shocked as friend with master’s degree only gets S$3.2k–S$3.5k j...",
+        "content": "SINGAPORE: It seems that holding a master’s degree no longer guarantees a well-paying job these days, as one Singaporean man recently discovered through his friend’s experience.",
+        "publish_date": "2025-07-24T17:21:05+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Independent Singapore"
+    ],
+    "timestamp": "2025-07-24T20:34:38.410895+09:00",
+    "scraping_method": "ai_enhanced"
+  },
+  {
+    "group": "Chinese",
+    "articles": [
+      {
+        "site": "Lianhe Zaobao",
+        "title": "泰柬边境冲突升级 泰F-16战斗机打击柬军两处设施",
+        "url": "https://www.zaobao.com.sg/realtime/world/story20250724-7211910?ref=today-news-section-card-1",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 泰柬边境冲突升级 泰F-16战斗机打击柬军两处设施",
+        "content": "泰国陆军第二军区在社交媒体发文说，当地时间星期四（7月24日）上午10时58分（新加坡时间上午11时58分），泰方出动空军F-16战机，摧毁柬埔寨两处军事设施。新华社引述泰国陆军24日在社交媒体所发消息说，柬方当天上午向泰国素林府（Surin）一个社区发射两枚BM-21火箭炮，造成三名平民受伤，泰方立即疏散了这个地区的民众。另据泰国公共电视台24日引述素林府官员的消息报道，两枚柬方炮弹击中当地村庄，造成两人死亡，两人受伤。",
+        "publish_date": "2025-07-24T20:34:13.539278+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      },
+      {
+        "site": "Lianhe Zaobao",
+        "title": "佩通坦谴责柬方发动冲突 泰看守首相称并未与柬宣战",
+        "url": "https://www.zaobao.com.sg/realtime/world/story20250724-7215644?ref=today-news-section-card-2",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 佩通坦谴责柬方发动冲突 泰看守首相称并未与柬宣战",
+        "content": "泰国遭停职首相佩通坦谴责柬埔寨在泰国边境挑起暴力活动，并表示全力支持在国际法律框架内采取的所有政府、军事和外交报复措施。",
+        "publish_date": "2025-07-24T20:34:21.422763+09:00",
+        "extracted_by": "ai",
+        "ai_classification": {
+          "type": "NEWS_ARTICLE",
+          "is_article": true,
+          "confidence": "high"
+        }
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Lianhe Zaobao"
+    ],
+    "timestamp": "2025-07-24T20:34:38.410905+09:00",
+    "scraping_method": "ai_enhanced"
+  }
+]
