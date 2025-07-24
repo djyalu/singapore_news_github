@@ -103,5 +103,59 @@
     "group_count": 3,
     "method": "traditional",
     "summary": "- News: 3개 기사<br>- Economy: 1개 기사<br>- Culture: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-24T08:54:48.958427",
+    "execution_time": "2025-07-24 08:54:48 KST",
+    "status": "success",
+    "article_count": 1,
+    "group_count": 1,
+    "method": "traditional",
+    "summary": "- News: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:03:51.143728",
+    "execution_time": "2025-07-25 01:03:51 KST",
+    "status": "success",
+    "article_count": 6,
+    "group_count": 3,
+    "method": "traditional",
+    "summary": "- News: 3개 기사<br>- Economy: 2개 기사<br>- Culture: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:06:37.891401",
+    "execution_time": "2025-07-25 01:06:37 KST",
+    "status": "success",
+    "article_count": 5,
+    "group_count": 2,
+    "method": "hybrid_ai",
+    "summary": "- News: 3개 기사<br>- Economy: 2개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:10:36.788326",
+    "execution_time": "2025-07-25 01:10:36 KST",
+    "status": "success",
+    "article_count": 5,
+    "group_count": 2,
+    "method": "hybrid_ai",
+    "summary": "- News: 3개 기사<br>- Economy: 2개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:11:24.683306",
+    "execution_time": "2025-07-25 01:11:24 KST",
+    "status": "success",
+    "article_count": 3,
+    "group_count": 2,
+    "method": "hybrid_ai",
+    "summary": "- News: 2개 기사<br>- Economy: 1개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:12:55.979795",
+    "execution_time": "2025-07-25 01:12:55 KST",
+    "status": "success",
+    "article_count": 4,
+    "group_count": 2,
+    "method": "hybrid_ai",
+    "summary": "- News: 3개 기사<br>- Economy: 1개 기사"
   }
 ]

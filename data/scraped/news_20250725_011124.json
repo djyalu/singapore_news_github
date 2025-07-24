@@ -1,0 +1,54 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Snap Insight: As Thailand and Cambodia escalate border spat, the personal ties that once united now fuel hostility",
+        "url": "https://www.channelnewsasia.com/commentary/thailand-cambodia-border-fighting-death-thaksin-shinawatra-hun-sen-snap-insight-5256031",
+        "content": "SINGAPORE: Thailand and Cambodia escalated their ongoing border spat on Thursday (Jul 24), with troops exchanging fire, fighter jets deployed and reports of civilian casualties emerging. Prime Minister Hun Manet said on Facebook that Cambodia had “no choice but to respond with armed forces against armed aggression”. Suspended Thai Prime Minister Paetongtarn Shinawatra wrote on Instagram subsequently that his father, Cambodian Senate President and former leader Hun Sen, was “acting like a victim”",
+        "publish_date": "2025-07-25T01:11:02.520418+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Snap Insight: As Thailand and Cambodia escalate bo..."
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Rider nearly run over by oncoming taxi after falling & skidding on PIE",
+        "url": "https://mustsharenews.com/rider-falls-taxi/",
+        "content": "An 18-year-old rider was conveyed to the hospital after the incident. Responding to MS News‘ queries, the Singapore Police Force (SPF) confirmed that they were alerted to the road traffic accident at 5.30pm",
+        "publish_date": "2025-07-24T12:49:12+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Rider nearly run over by oncoming taxi after falli..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "MustShareNews",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-25T01:11:24.677310+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Reits, institutional investors and funds in ‘buy mode’ as debt costs ease",
+        "url": "https://www.businesstimes.com.sg/property/reits-institutional-investors-and-funds-buy-mode-debt-costs-ease",
+        "content": "[SINGAPORE] Real estate investment trusts (Reits), investors and funds have turned “more acquisitive” in Singapore this year, even as geopolitical and macroeconomic uncertainties persist. It is an overwhelming amount of portfolio and foreign direct...",
+        "publish_date": "2025-07-25T01:11:08.225124+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Reits, institutional investors and funds in ‘buy m..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:11:24.677338+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

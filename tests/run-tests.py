@@ -117,7 +117,15 @@ class TestRunner:
         env['PYTHONPATH'] = f"{self.project_root}:{self.project_root}/scripts:{env.get('PYTHONPATH', '')}"
         
         command = [
-            'python', '-m', 'pytest', 'tests/',
+            'python', '-m', 'pytest', 
+            'tests/test_scraper.py',
+            'tests/test_ai_scraper.py',
+            'tests/test_rss_scraper.py',
+            'tests/test_hybrid_scraper.py',
+            'tests/test_whatsapp.py',
+            'tests/test_cleanup.py',
+            'tests/test_email.py',
+            'tests/test_data_validation.py',
             '--verbose',
             '--cov=scripts',
             f'--cov-report=html:{self.coverage_dir}/python',
@@ -126,6 +134,10 @@ class TestRunner:
             f'--junit-xml={self.reports_dir}/python-results.xml',
             '--tb=short'
         ]
+        
+        # Add parallel execution if requested
+        if hasattr(self, 'parallel') and self.parallel:
+            command.extend(['-n', 'auto', '--dist', 'loadscope'])
         
         try:
             result = subprocess.run(
@@ -220,65 +232,62 @@ class TestRunner:
         """Run security analysis"""
         self.print_status("Running security tests...")
         
-        security_issues = 0
+        # Run dedicated security test file
+        env = os.environ.copy()
+        env['PYTHONPATH'] = f"{self.project_root}:{self.project_root}/scripts:{env.get('PYTHONPATH', '')}"
         
-        # Check for hardcoded secrets
-        secret_patterns = [
-            r'password.*=.*["\'].*["\']',
-            r'api.*key.*=.*["\'].*["\']',
-            r'token.*=.*["\'].*["\']',
-            r'secret.*=.*["\'].*["\']'
+        command = [
+            'python', '-m', 'pytest', 'tests/test_security.py',
+            '--verbose',
+            f'--junit-xml={self.reports_dir}/security-results.xml',
+            '--tb=short'
         ]
         
-        import re
-        
-        for pattern in secret_patterns:
-            for file_pattern in ['**/*.py', '**/*.js', '**/*.json']:
-                for file_path in self.project_root.glob(file_pattern):
-                    if file_path.is_file() and not str(file_path).startswith(str(self.test_dir)):
-                        try:
-                            content = file_path.read_text(encoding='utf-8')
-                            if re.search(pattern, content, re.IGNORECASE):
-                                self.print_warning(f"Potential hardcoded secret in {file_path}")
-                                security_issues += 1
-                        except:
-                            continue
-        
-        if security_issues == 0:
-            self.print_success("No obvious security issues found")
-        else:
-            self.print_warning(f"Found {security_issues} potential security issues")
-        
-        self.test_results['security'] = {
-            'status': 'completed',
-            'issues_found': security_issues
-        }
-        return True
+        try:
+            result = subprocess.run(
+                command,
+                cwd=self.project_root,
+                env=env,
+                check=True
+            )
+            self.test_results['security'] = {'status': 'success'}
+            self.print_success("Security tests completed successfully")
+            return True
+        except subprocess.CalledProcessError as e:
+            self.test_results['security'] = {'status': 'failed', 'exit_code': e.returncode}
+            self.print_error("Security tests failed")
+            return False
 
     def run_performance_tests(self):
-        """Run basic performance checks"""
+        """Run performance tests"""
         self.print_status("Running performance tests...")
         
-        issues = 0
+        # Run dedicated performance test file
+        env = os.environ.copy()
+        env['PYTHONPATH'] = f"{self.project_root}:{self.project_root}/scripts:{env.get('PYTHONPATH', '')}"
         
-        # Check file sizes
-        for file_pattern in ['**/*.py', '**/*.js']:
-            for file_path in self.project_root.glob(file_pattern):
-                if file_path.is_file() and not str(file_path).startswith(str(self.test_dir)):
-                    try:
-                        line_count = len(file_path.read_text(encoding='utf-8').splitlines())
-                        if line_count > 1000:
-                            self.print_warning(f"Large file: {file_path} ({line_count} lines)")
-                            issues += 1
-                    except:
-                        continue
+        command = [
+            'python', '-m', 'pytest', 'tests/test_performance.py',
+            '--verbose',
+            '-m', 'not stress',  # Skip stress tests in regular runs
+            f'--junit-xml={self.reports_dir}/performance-results.xml',
+            '--tb=short'
+        ]
         
-        self.test_results['performance'] = {
-            'status': 'completed',
-            'issues_found': issues
-        }
-        self.print_success("Performance tests completed")
-        return True
+        try:
+            result = subprocess.run(
+                command,
+                cwd=self.project_root,
+                env=env,
+                check=True
+            )
+            self.test_results['performance'] = {'status': 'success'}
+            self.print_success("Performance tests completed successfully")
+            return True
+        except subprocess.CalledProcessError as e:
+            self.test_results['performance'] = {'status': 'failed', 'exit_code': e.returncode}
+            self.print_error("Performance tests failed")
+            return False
 
     def generate_report(self):
         """Generate comprehensive test report"""
@@ -333,6 +342,9 @@ class TestRunner:
         """Run all specified tests"""
         success = True
         
+        # Store parallel flag
+        self.parallel = args.parallel
+        
         # Install dependencies unless skipped
         if not args.skip_install:
             try:
@@ -384,11 +396,21 @@ def main():
     parser.add_argument('--e2e', action='store_true', help='Run E2E tests only')
     parser.add_argument('--security', action='store_true', help='Run security tests only')
     parser.add_argument('--performance', action='store_true', help='Run performance tests only')
+    parser.add_argument('--parallel', action='store_true', help='Run tests in parallel')
+    parser.add_argument('--benchmark', action='store_true', help='Run performance benchmarks')
+    parser.add_argument('--coverage-only', action='store_true', help='Generate coverage report only')
     
     args = parser.parse_args()
     
     # If no specific test type is specified, run all
     args.all = not any([args.python, args.javascript, args.api, args.e2e, args.security, args.performance])
+    
+    # Handle coverage-only mode
+    if args.coverage_only:
+        print("Generating coverage report from existing data...")
+        runner = TestRunner()
+        runner.generate_report()
+        sys.exit(0)
     
     runner = TestRunner()
     

@@ -1,0 +1,137 @@
+{
+  "timestamp": "2025-07-24T21:00:18.381856",
+  "duration": 0.8180501461029053,
+  "results": {
+    "passed": 20,
+    "failed": 1,
+    "errors": 1,
+    "skipped": 3,
+    "tests": [
+      {
+        "name": "Import scripts.scraper",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.ai_scraper",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.scraper_rss",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.scraper_hybrid",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.send_whatsapp_green",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.cleanup_old_data",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.ai_summary_free",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.site_selectors",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.text_processing",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.deduplication",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Import scripts.monitoring",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Scraper function tests",
+        "status": "error",
+        "message": "cannot import name 'extract_domain' from 'scripts.scraper' (/mnt/d/projects/singapore_news_github/scripts/scraper.py)"
+      },
+      {
+        "name": "JSON validation: data/settings.json",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Settings structure validation",
+        "status": "fail",
+        "message": "Missing fields: ['whatsappChannels']"
+      },
+      {
+        "name": "JSON validation: data/sites.json",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "JSON validation: data/latest.json",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "AI Scraper tests",
+        "status": "skip",
+        "message": "Module not available"
+      },
+      {
+        "name": "RSS Scraper tests",
+        "status": "skip",
+        "message": "Module not available"
+      },
+      {
+        "name": "WhatsApp tests",
+        "status": "skip",
+        "message": "Module not available"
+      },
+      {
+        "name": "Security check: ai_scraper.py",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Security check: ai_scraper_optimized.py",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Security check: ai_summary.py",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Security check: ai_summary_free.py",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "Security check: batch_ai_processor.py",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "clean_text performance",
+        "status": "pass",
+        "message": "100 iterations in 0.064s"
+      }
+    ]
+  }
+}

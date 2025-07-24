@@ -11,6 +11,14 @@ from ai_scraper import get_ai_scraper
 from text_processing import TextProcessor
 from deduplication import ArticleDeduplicator
 
+# AI 요약 함수들 import
+try:
+    from ai_summary_simple import translate_to_korean_summary_cohere, translate_to_korean_summary_gemini, translate_to_korean_summary_fallback
+    AI_SUMMARY_AVAILABLE = True
+except ImportError as e:
+    print(f"[AI_SUMMARY] Import error: {e}")
+    AI_SUMMARY_AVAILABLE = False
+
 # 디버그 모드 설정 (환경 변수로 제어) - BrokenPipeError 방지를 위해 기본값 False
 DEBUG_MODE = os.environ.get('DEBUG_SCRAPER', 'false').lower() == 'true'
 if DEBUG_MODE:
@@ -1892,9 +1900,9 @@ def create_summary(article_data, settings, site_name=''):
             'key_env': 'GOOGLE_GEMINI_API_KEY'
         },
         {
-            'name': 'Google Translate',
-            'function': 'translate_to_korean_summary_googletrans', 
-            'key_env': None  # Google Translate는 API 키 불필요 (무료)
+            'name': 'Fallback',
+            'function': 'translate_to_korean_summary_fallback', 
+            'key_env': None  # Fallback은 API 키 불필요
         }
     ]
     
@@ -1914,15 +1922,17 @@ def create_summary(article_data, settings, site_name=''):
             print(f"[SUMMARY] {api_name}: No API key required, attempting...")
         
         try:
-            # 동적으로 함수 import 및 호출
-            from ai_summary_free import translate_to_korean_summary_gemini, translate_to_korean_summary_cohere, translate_to_korean_summary_googletrans
+            # AI 요약 함수 확인
+            if not AI_SUMMARY_AVAILABLE:
+                print(f"[SUMMARY] AI summary functions not available, skipping {api_name}")
+                continue
             
             if function_name == 'translate_to_korean_summary_gemini':
                 ai_function = translate_to_korean_summary_gemini
             elif function_name == 'translate_to_korean_summary_cohere':
                 ai_function = translate_to_korean_summary_cohere
-            elif function_name == 'translate_to_korean_summary_googletrans':
-                ai_function = translate_to_korean_summary_googletrans
+            elif function_name == 'translate_to_korean_summary_fallback':
+                ai_function = translate_to_korean_summary_fallback
             else:
                 print(f"[SUMMARY] {api_name}: Unknown function, skipping")
                 continue
@@ -2142,7 +2152,8 @@ def scrape_news_ai():
                         article_data = {
                             'title': article_result['title'],
                             'content': article_result['content'],
-                            'publish_date': publish_date
+                            'publish_date': publish_date,
+                            'url': article_url
                         }
                         summary_result = create_summary(article_data, settings, site['name'])
                         summary_text = summary_result['text'] if isinstance(summary_result, dict) else summary_result
@@ -2191,7 +2202,8 @@ def scrape_news_ai():
                             article_data = {
                                 'title': site_result['title'],
                                 'content': site_result['content'],
-                                'publish_date': publish_date
+                                'publish_date': publish_date,
+                                'url': site['url']
                             }
                             summary_result = create_summary(article_data, settings, site['name'])
                             summary_text = summary_result['text'] if isinstance(summary_result, dict) else summary_result
@@ -2492,6 +2504,7 @@ def scrape_news_traditional():
                     print(f"[DEBUG] Article passed all validations: {article_data['title']}")
                     
                     # 요약 생성
+                    article_data['url'] = article_url  # URL 추가
                     summary_result = create_summary(article_data, settings, site['name'])
                     summary_text = summary_result['text'] if isinstance(summary_result, dict) else summary_result
                     summary_api = summary_result.get('extracted_by', 'traditional') if isinstance(summary_result, dict) else 'traditional'

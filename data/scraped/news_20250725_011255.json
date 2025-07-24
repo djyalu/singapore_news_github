@@ -1,0 +1,64 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "2 foreigners arrested for shop theft at Changi Airport",
+        "url": "https://www.straitstimes.com/singapore/courts-crime/2-foreigners-arrested-for-shop-theft-at-changi-airport",
+        "content": "Find out what’s new on ST website and app. All five stolen items were recovered from the duo, who will be charged on July 23. The missing bottles of perfume were later discovered by the outlet’s staff during their stock-take. Police did not say when the suspects were nabbed.",
+        "publish_date": "2025-07-25T01:12:12.739707+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 창이 공항에서 적발된 외국인의 상점 절도\n\n내용: ST 웹사이트와 앱에서 확인 가능한 소식에 따르면, 두 외국인이 창이 공항에서 상점 절도 혐의로 체포되었다. 7월 23일 기소될 예정인 범인들로부터 도난 당한 물품 5가지가 모두 회수되었다. 향수 병이 도난 당했다는 사실은 상점의 재고 조사 중 발견되었으며, 경찰은 범인이 언제 체포되었는지는 밝히지 않았다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Gives Telling 6-Word Response On Epstein Fallout Behind Closed Doors: Report",
+        "url": "https://sg.news.yahoo.com/trump-gives-telling-6-word-153641591.html",
+        "content": "President Donald Trump seems genuinely concerned about the impact the Jeffrey Epstein files controversy could have on him, according to Thursday’s edition of Politico Playbook. Trump sought to distance himself from Epstein and his criminal activity, while conceding that the issue could raise serious problems for his administration. “They’re going to fuck me anyways,” Trump reportedly said, according to the Republican source cited by Playbook",
+        "publish_date": "2025-07-25T00:36:41+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 트럼프, 에프슈타인 스캔들로 고심 중 \"어차피 날 공격할 거야\"\n\n내용: 도널드 트럼프 대통령이 제프리 에프슈타인의 범죄와 관련하여 거리두기에 나섰다. 그는 에프슈타인 논란으로 자신의 행정부에 심각한 문제가 생길 수 있다며 우려를 표했다. 트럼프는 \"어차피 내게 적대적이니 상관없다\"고 말한 것으로 전해진다."
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Rider nearly run over by oncoming taxi after falling & skidding on PIE",
+        "url": "https://mustsharenews.com/rider-falls-taxi/",
+        "content": "An 18-year-old rider was conveyed to the hospital after the incident. Responding to MS News‘ queries, the Singapore Police Force (SPF) confirmed that they were alerted to the road traffic accident at 5.30pm",
+        "publish_date": "2025-07-24T12:49:12+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Rider nearly run over by oncoming taxi after falli..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "MustShareNews",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T01:12:55.961841+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Reits, institutional investors and funds in ‘buy mode’ as debt costs ease",
+        "url": "https://www.businesstimes.com.sg/property/reits-institutional-investors-and-funds-buy-mode-debt-costs-ease",
+        "content": "[SINGAPORE] Real estate investment trusts (Reits), investors and funds have turned “more acquisitive” in Singapore this year, even as geopolitical and macroeconomic uncertainties persist. It is an overwhelming amount of portfolio and foreign direct...",
+        "publish_date": "2025-07-25T01:12:18.731483+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Reits, institutional investors and funds in ‘buy m..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:12:55.961865+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

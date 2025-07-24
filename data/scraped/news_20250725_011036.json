@@ -1,0 +1,73 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Taxi driver ‘adding shift’ to be a YouTuber",
+        "url": "https://www.straitstimes.com/singapore/taxi-driver-adding-shift-to-be-a-youtuber",
+        "content": "Find out what’s new on ST website and app. The 48-year-old drives 10 hours daily and spends nearly as much time making videos. Like the friendly cabbie making conversation with his passenger, Mr Jui’s videos are candid and honest. Find out more about the conversation with senior transport correspondent Lee Nian Tjoe in the shownotes below. 14:20 Trying to create an online community that is more forward-looking and positive",
+        "publish_date": "2025-07-25T01:10:10.679960+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Taxi driver ‘adding shift’ to be a YouTuber"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Public warned against water activities near Tuas Second Link after chemical tank falls into sea",
+        "url": "https://www.channelnewsasia.com/singapore/tuas-second-link-chemical-tank-fall-sea-public-warned-5256901",
+        "content": "NEA and other agencies were alerted by their Malaysian counterparts to the incident. \"We understand that the other tanker remained intact with no chemical spill on the bridge,\" said NEA. The chemical tank contained propylene glycol: a non-hazardous, biodegradable liquid. The chemical is commonly used in food, pharmaceuticals and cosmetics. NEA said that the Singapore Food Agency (SFA) has alerted...",
+        "publish_date": "2025-07-25T01:10:13.921943+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Public warned against water activities near Tuas S..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Did Ozzy Osbourne really bite the head off a live bat?",
+        "url": "https://sg.news.yahoo.com/did-ozzy-osbourne-really-bite-032405767.html",
+        "content": "When it comes to the unruly world of rock, shocking behaviour is rarely frowned upon. Most of the time it's practically mandatory. You don't get a nickname like that by accident. But, over the years, recollections have differed on the precise turn of events. Sometimes that was because people's memories clashed. But mostly it depended on which version of the story...",
+        "publish_date": "2025-07-23T18:29:26+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Did Ozzy Osbourne really bite the head off a live ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T01:10:36.780670+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-25T01:10:19.013769+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with ..."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Mapletree Logistics Trust posts 12.4% fall in Q1 DPU to S$0.01812",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mapletree-logistics-trust-posts-12-4-fall-q1-dpu-s0-01812",
+        "content": "However, excluding the one-off divestment gains, the distributable income would have fallen 6.2 per cent on the year from S$98 million. The DPU would have gone down 7.3 per cent from S$0.01954",
+        "publish_date": "2025-07-25T01:10:19.549000+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mapletree Logistics Trust posts 12.4% fall in Q1 D..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:10:36.780701+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

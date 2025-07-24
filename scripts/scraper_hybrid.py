@@ -67,44 +67,77 @@ def scrape_news_hybrid():
     # Phase 2: AI 요약 생성
     print("\n[HYBRID] Phase 2: AI Summary Generation")
     
-    # AI 요약이 가능한지 확인
-    ai_available = bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))
+    # AI 요약이 가능한지 확인 (Cohere 또는 Gemini)
+    cohere_available = bool(os.environ.get('COHERE_API_KEY'))
+    gemini_available = bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))
+    ai_available = cohere_available or gemini_available
+    
+    print(f"[HYBRID] Cohere API available: {cohere_available}")
+    print(f"[HYBRID] Gemini API available: {gemini_available}")
     
     if ai_available:
         try:
             # AI 요약 모듈 임포트 시도
             try:
-                from ai_summary_free import translate_to_korean_summary_gemini
+                from ai_summary_simple import translate_to_korean_summary_cohere, translate_to_korean_summary_gemini
             except ImportError:
                 import sys
-                import os
                 sys.path.append(os.path.dirname(__file__))
-                from ai_summary_free import translate_to_korean_summary_gemini
+                from ai_summary_simple import translate_to_korean_summary_cohere, translate_to_korean_summary_gemini
             
             # 각 기사에 대해 AI 요약 생성
+            ai_count = 0
+            max_ai_summaries = 2  # 최대 AI 요약 수 제한
+            
             for group, group_articles in articles_by_group.items():
                 for article in group_articles:
+                    if ai_count >= max_ai_summaries:
+                        print(f"[HYBRID] AI summary limit reached ({max_ai_summaries})")
+                        article['summary'] = create_basic_summary(article['title'], article['content'])
+                        continue
+                        
                     try:
-                        # Gemini API로 한국어 요약 생성
-                        ai_summary = translate_to_korean_summary_gemini(
-                            article['title'], 
-                            article['content']
-                        )
+                        ai_summary = None
+                        api_used = None
+                        
+                        # Cohere API 우선 시도
+                        if cohere_available and ai_count < max_ai_summaries:
+                            print(f"[HYBRID] Trying Cohere API for: {article['title'][:50]}...")
+                            ai_summary = translate_to_korean_summary_cohere(
+                                article['title'], 
+                                article['content']
+                            )
+                            if ai_summary:
+                                api_used = 'cohere'
+                                ai_count += 1
+                        
+                        # Cohere 실패시 Gemini 시도
+                        if not ai_summary and gemini_available and ai_count < max_ai_summaries:
+                            print(f"[HYBRID] Trying Gemini API for: {article['title'][:50]}...")
+                            ai_summary = translate_to_korean_summary_gemini(
+                                article['title'], 
+                                article['content']
+                            )
+                            if ai_summary:
+                                api_used = 'gemini'
+                                ai_count += 1
                         
                         if ai_summary:
                             article['summary'] = ai_summary
-                            article['extracted_by'] = 'hybrid_ai'
-                            print(f"[HYBRID] AI summary generated for: {article['title'][:50]}...")
+                            article['extracted_by'] = f'hybrid_{api_used}'
+                            print(f"[HYBRID] AI summary generated using {api_used} ({ai_count}/{max_ai_summaries})")
                         else:
                             # AI 요약 실패시 기본 요약 사용
                             article['summary'] = create_basic_summary(article['title'], article['content'])
+                            article['extracted_by'] = 'hybrid_fallback'
                             print(f"[HYBRID] Using basic summary for: {article['title'][:50]}...")
                             
                     except Exception as e:
                         print(f"[HYBRID] AI summary error for {article['title'][:30]}: {e}")
                         article['summary'] = create_basic_summary(article['title'], article['content'])
-        except ImportError:
-            print("[HYBRID] AI summary module not available, using basic summaries")
+                        article['extracted_by'] = 'hybrid_error'
+        except ImportError as e:
+            print(f"[HYBRID] AI summary module import error: {e}")
             ai_available = False
     
     if not ai_available:

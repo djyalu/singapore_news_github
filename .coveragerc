@@ -1,0 +1,99 @@
+[run]
+# Coverage.py configuration
+
+# Source packages
+source = 
+    scripts
+    api
+
+# Omit files from coverage
+omit = 
+    */tests/*
+    */test_*
+    */__pycache__/*
+    */venv/*
+    */env/*
+    */.pytest_cache/*
+    */node_modules/*
+    setup.py
+    */migrations/*
+    */conftest.py
+
+# Enable branch coverage
+branch = True
+
+# Parallel coverage (for multiprocessing)
+parallel = True
+
+# Context for coverage
+context = test
+
+[report]
+# Reporting options
+
+# Skip covered files in report
+skip_covered = False
+
+# Skip empty files
+skip_empty = True
+
+# Precision for coverage percentages
+precision = 2
+
+# Show missing line numbers
+show_missing = True
+
+# Exclude lines from coverage
+exclude_lines =
+    # Standard pragma
+    pragma: no cover
+    
+    # Debug-only code
+    def __repr__
+    if self\.debug
+    if settings\.DEBUG
+    
+    # Defensive programming
+    raise AssertionError
+    raise NotImplementedError
+    
+    # Non-runnable code
+    if 0:
+    if __name__ == .__main__.:
+    
+    # Abstract methods
+    @(abc\.)?abstractmethod
+    
+    # Type checking
+    if TYPE_CHECKING:
+    
+    # Caught exceptions
+    except ImportError:
+    except Exception:
+
+# Fail under threshold
+fail_under = 80
+
+[html]
+# HTML report directory
+directory = tests/coverage/python
+
+# HTML report title
+title = Singapore News Scraper Coverage Report
+
+[xml]
+# XML report output
+output = tests/coverage/python/coverage.xml
+
+[json]
+# JSON report output
+output = tests/coverage/python/coverage.json
+pretty_print = true
+
+[paths]
+# Paths to combine coverage from different locations
+source =
+    scripts/
+    ./scripts/
+    api/
+    ./api/

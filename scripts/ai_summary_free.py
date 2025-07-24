@@ -1,10 +1,25 @@
 import os
 import requests
 import json
-from googletrans import Translator
-import google.generativeai as genai
 import time
 
+# Google Translate를 먼저 import
+try:
+    from googletrans import Translator
+    GOOGLETRANS_AVAILABLE = True
+except ImportError:
+    GOOGLETRANS_AVAILABLE = False
+    print("[AI_SUMMARY] Google Translate library not available")
+
+# Gemini API
+try:
+    import google.generativeai as genai
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GEMINI_AVAILABLE = False
+    print("[AI_SUMMARY] Gemini library not available")
+
+# Cohere API
 try:
     import cohere
     COHERE_AVAILABLE = True
@@ -14,6 +29,10 @@ except ImportError:
 
 def translate_to_korean_summary_gemini(title, content):
     """Google Gemini API를 사용한 무료 한글 요약"""
+    if not GEMINI_AVAILABLE:
+        print("[AI_SUMMARY] Gemini API not available")
+        return None
+    
     try:
         # Gemini API 키 확인
         api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
@@ -241,6 +260,10 @@ def translate_to_korean_summary_cohere(title, content):
 
 def translate_to_korean_summary_googletrans(title, content):
     """googletrans 라이브러리를 사용한 무료 번역"""
+    if not GOOGLETRANS_AVAILABLE:
+        print("[AI_SUMMARY] Google Translate not available")
+        return None
+    
     try:
         translator = Translator()
         

@@ -1,0 +1,73 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Deadly Thai-Cambodian dispute puts Asean’s relevance on the line",
+        "url": "https://www.straitstimes.com/asia/se-asia/deadly-thai-cambodian-dispute-puts-aseans-relevance-on-the-line",
+        "content": "Find out what’s new on ST website and app. Cambodian soldiers reloading the BM-21 multiple rocket launcher in Preah Vihear province on July 24, amid border hostilities with Thailand. SINGAPORE – The deadly border dispute between Thailand and Cambodia is once again testing Asean’s longstanding principle of non-interference, say analysts. Clashes between its two member states on July 24",
+        "publish_date": "2025-07-25T01:06:12.276905+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Deadly Thai-Cambodian dispute puts Asean’s relevan..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asian-markets-extend-gains-us-024513627.html",
+        "content": "Stock markets mostly bumped upwards Thursday as hopes grew that the European Union could strike a trade deal with the United States, while Tesla shares nosedived on poor earnings results. Briefing.com analyst Patrick O'Hare said Trump's Tuesday trade announcement with Japan had raised hopes about further agreements. \"There is underlying enthusiasm for more trade deals being struck before the August 1 deadline,\" O'Hare said. This was boosted further by \"optimism surrounding trade talks between the US and EU\", said Joshua Mahony, chief market analyst at Rostro trading group. Google parent Alphabet was among the early gainers,...",
+        "publish_date": "2025-07-25T00:59:52+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Motorcycle skids, gets dragged by taxi on PIE",
+        "url": "https://www.tnp.sg/news/motorcycle-skids-gets-dragged-taxi-pie?ref=",
+        "content": "The rider was taken to hospital while the taxi driver is assisting with investigations. The police told Stomp they were alerted to the incident at about 5.30pm. The rider was taken conscious to the hospital, a police spokesperson said. A 69-year-old taxi driver is assisting with investigations. A video posted on ROADS.sg's Facebook page shows the motorcycle skidding and falling onto the road. The taxi did not stop throughout the incident. Netizens speculated that the rider may have hit a pothole before losing control of his bike. Many also questioned why the taxi driver failed to stop after the collision. Stomp has contacted Strides Premier for comment.",
+        "publish_date": "2025-07-24T17:33:19+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcycle skids, gets dragged by taxi on PIE"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The New Paper",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:06:37.885118+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Mapletree Logistics Trust posts 12.4% fall in Q1 DPU to S$0.01812",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mapletree-logistics-trust-posts-12-4-fall-q1-dpu-s0-01812",
+        "content": "However, excluding the one-off divestment gains, the distributable income would have fallen 6.2 per cent on the year from S$98 million. The DPU would have gone down 7.3 per cent from S$0.01954",
+        "publish_date": "2025-07-25T01:06:18.282609+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mapletree Logistics Trust posts 12.4% fall in Q1 D..."
+      },
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-25T01:06:18.843174+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:06:37.885155+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
