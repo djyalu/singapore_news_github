@@ -14,8 +14,8 @@
     "weekdays": [],
     "date": "1"
   },
-  "blockedKeywords": "  violence, kill, murder, suicide, rape, torture, drugs, cocaine, heroin, meth, marijuana, porn, pornography,\n  nude, vape, e-cigarette, juul, gambling, gore, homicide, trafficking, kidnap, kidnapping, terrorism, bomb,\n  explosion, molestation, pedophile, pedophilia, prostitution, human trafficking, self-harm, cutting, abuse,\n  assault, brutality, alcohol, drunk, weapon, gun, shooting, stabbing, bully, bullying, domestic violence,\n  child abuse, addiction, overdose",
-  "scrapingMethod": "ai",
+  "blockedKeywords": "violence, kill, murder, suicide, rape, torture, drugs, cocaine, heroin, meth, marijuana, porn, pornography, nude, vape, e-cigarette, juul, gambling, gore, homicide, trafficking, kidnap, kidnapping, terrorism, bomb, explosion, molestation, pedophile, pedophilia, prostitution, human trafficking, self-harm, cutting, abuse, assault, brutality, alcohol, drunk, weapon, gun, shooting, stabbing, bully, bullying, domestic violence, child abuse, addiction, overdose",
+  "scrapingMethod": "traditional",
   "scrapingMethodOptions": {
     "ai": {
       "provider": "gemini",
