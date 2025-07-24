@@ -1796,18 +1796,21 @@ def should_use_ai_summary(article_data, site_name):
         'Top Stories',
         'Homepage',
         'Main Page',
-        'Asia and the World',  # CNA 홈페이지 추가
-        'out of Asia'  # CNA 홈페이지 키워드
+        'Asia and the World',
+        'out of Asia',
+        'Breaking News',  # 추가
+        'Live Coverage'   # 추가
     ]
     
-    # 제목에 홈페이지 지시자 포함 시 제외
+    # 제목에 홈페이지 지시자 포함 시 제외 (대소문자 무시)
+    title_lower = title.lower()
     for indicator in homepage_indicators:
-        if indicator in title:
+        if indicator.lower() in title_lower:
             print(f"[AI_FILTER] SKIP: Homepage indicator '{indicator}' found in title")
             return False
     
     # 제목이 너무 길고 일반적이면 홈페이지로 의심
-    if len(title) > 80 and ('Coverage' in title or 'Analysis' in title):
+    if len(title) > 80 and ('coverage' in title_lower or 'analysis' in title_lower):
         print(f"[AI_FILTER] SKIP: Long generic title detected (length: {len(title)})")
         return False
     

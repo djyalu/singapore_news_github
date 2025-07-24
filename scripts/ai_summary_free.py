@@ -10,8 +10,12 @@ def translate_to_korean_summary_gemini(title, content):
     try:
         # Gemini API 키 확인
         api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
+        print(f"[AI_SUMMARY] Environment check - API key present: {bool(api_key)}")
+        print(f"[AI_SUMMARY] Environment check - API key length: {len(api_key) if api_key else 0}")
+        
         if not api_key:
             print("[AI_SUMMARY] ERROR: Gemini API key not found in environment")
+            print(f"[AI_SUMMARY] Available env vars: {list(os.environ.keys())[:10]}...")  # 첫 10개만
             return None
         
         print(f"[AI_SUMMARY] Attempting Gemini API summary for: {title[:50]}...")
@@ -65,8 +69,7 @@ def translate_to_korean_summary_gemini(title, content):
             response = model.generate_content(prompt, 
                                             generation_config={
                                                 "temperature": 0.7,
-                                                "max_output_tokens": 300,
-                                                "timeout": 10  # 10초 타임아웃
+                                                "max_output_tokens": 300
                                             })
         except Exception as api_error:
             print(f"[AI_SUMMARY] API call failed: {type(api_error).__name__}: {str(api_error)}")
