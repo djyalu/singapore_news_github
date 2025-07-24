@@ -1,0 +1,81 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Made in China: C-beauty craze hits S’pore as new generation of brands offer quality for cheap",
+        "url": "https://www.straitstimes.com/life/style/made-in-china-c-beauty-craze-hits-spore-as-new-generation-of-brands-offer-quality-for-cheap?ref=headstart",
+        "content": "Find out what’s new on ST website and app. Before he created popular C-beauty make-up brands Judydoll and Joocyee, the 37-year-old spent eight years studying and working here",
+        "publish_date": "2025-07-25T01:41:23.391214+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 중국산 화장품의 인기가新加坡를 강타하다\n내용: 37세 창업가 조씨가 만든 저렴이 화장품 브랜드가 싱가포르에서 인기다. 그는 8년간 싱가포르에서 유학하고 일하며 판무인형과 주시 등의 브랜드를 성공했다. 중국산 화장품이 가성비로 승부하며新加坡에서 각광받고 있다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "1,300 names and addresses from traffic police records leaked online",
+        "url": "https://www.channelnewsasia.com/singapore/traffic-police-data-leak-names-addresses-tnt-ransomware-5256191",
+        "content": "In April, TNT faced a ransomware attack. The names and addresses are believed to have been compromised then. SPF will be contacting individuals affected by the leak \"as a matter of...",
+        "publish_date": "2025-07-25T01:41:28.636893+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 교통 경찰 기록에서 유출된 1,300건의 개인 정보\n내용: 4월, TNT가 랜섬웨어 공격을 당해 유출된 것으로 추정되는 1,300건의 이름과 주소가 온라인에 유출됐다. 싱가포르 경찰은 개인정보 유출 피해자에게 연락할 예정이다. 이번 유출로 개인정보가 노출된 것은 이번이 두 번째이다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Public warned against water activities near Tuas Second Link after chemical tank falls into sea",
+        "url": "https://www.channelnewsasia.com/singapore/tuas-second-link-chemical-tank-fall-sea-public-warned-5256901",
+        "content": "NEA and other agencies were alerted by their Malaysian counterparts to the incident. \"We understand that the other tanker remained intact with no chemical spill on the bridge,\" said NEA. The chemical tank contained propylene glycol: a non-hazardous, biodegradable liquid. The chemical is commonly used in food, pharmaceuticals and cosmetics. NEA said that the Singapore Food Agency (SFA) has alerted...",
+        "publish_date": "2025-07-25T01:41:29.890625+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 투아스 세컨드 링크에서 화학탱크 바다로 추락, 국민들에게 경고\n내용: NEA와 다른 기관들은 말레이 측의 경고로 incident에 대처했다. 비위해롭고 생분해성 액체인 프로필렌 글리콜을 실은 화학탱크가 바다에 떨어졌다. 이 화학물질은 음식, 의약품, 화장품 등에 commonly 사용된다. NEA는 싱가포르 식품청(SFA)이 경고와 함께 상황을 주시하고 있다고 전했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:44:46.045824+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Indonesia palm oil producers on alert as Sumatra fires coincide with peak harvest",
+        "url": "https://www.businesstimes.com.sg/international/asean/indonesia-palm-oil-producers-alert-sumatra-fires-coincide-peak-harvest",
+        "content": "Analyst warns fires and haze could hamper palm oil harvesting operations and logistics, reducing yields and creating short-term tightness in the market. “In the weeks ahead, our fire response teams remain on high alert,” said Craig Tribolet, the company’s deputy director of sustainability. Tribolet said April Group has implemented a no-burn policy since 1993 and follows a fire management...",
+        "publish_date": "2025-07-25T01:41:33.735974+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 수마트라 산불, 인도네시아 팜유 생산에 비상\n\n내용: 분석가에 따르면, 인도네시아 수마트라섬의 산불이 팜유 수확 철과 맞물려 팜유 생산 및 수확에 차질을 줄 수 있다. 크레이그 트리볼렛 지속가능성 담당 부이사는 \"우리 소방팀이 수주 동안 고도의 경각심을 유지할 것\"이라며, 산불로 인한 연기로 인해 수확량이 줄어들고 시장에 단기적 긴toggl이 생길 수 있다고 경고했다.\n\nIndonesia palm oil producers on alert as Sumatra fires coincide with peak harvest."
+      },
+      {
+        "site": "The Business Times",
+        "title": "New S$30 million members-only club Vanta to open in MacDonald House",
+        "url": "https://www.businesstimes.com.sg/singapore/new-s30-million-members-only-club-vanta-open-macdonald-house",
+        "content": "Michelin-starred ‘Demon Chef’ Alvin Leung will curate the food at the venue, which will start operating in December. [SINGAPORE] New members-only club Vanta will open in MacDonald House in December, after a S$30 million renovation. Michelin-starred Canadian chef and TV personality, Alvin Leung (also known as “Demon Chef”) of Hong Kong’s Bo Innovation, will curate the club’s culinary programme",
+        "publish_date": "2025-07-25T01:41:35.795985+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New S$30 million members-only club Vanta to open i..."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Mapletree Logistics Trust posts 12.4% fall in Q1 DPU to S$0.01812",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mapletree-logistics-trust-posts-12-4-fall-q1-dpu-s0-01812",
+        "content": "However, excluding the one-off divestment gains, the distributable income would have fallen 6.2 per cent on the year from S$98 million. The DPU would have gone down 7.3 per cent from S$0.01954",
+        "publish_date": "2025-07-25T01:41:37.426578+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 메이플트리 로지스틱스 트러스트, 1분기 DPU 12.4% 하락해 0.01812 싱가포르 달러 기록\n내용: 메이플트리 로지스틱스 트러스트의 1분기 DPU가 전년 동기 대비 12.4% 하락한 0.01812 싱가포르 달러를 기록했습니다. 일회성 매각 수익을 제외하면 분배 가능 수입이 6.2% 줄어든 9,800만 싱가포르 달러, DPU는 7.3% 하락한 0.01954 싱가포르 달러입니다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:44:46.045856+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
