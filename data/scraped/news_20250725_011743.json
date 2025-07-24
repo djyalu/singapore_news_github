@@ -1,0 +1,64 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "1,300 names and addresses from traffic police records leaked online",
+        "url": "https://www.channelnewsasia.com/singapore/traffic-police-data-leak-names-addresses-tnt-ransomware-5256191",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 1,300 names and addresses from traffic police records leaked...",
+        "content": "In April, TNT faced a ransomware attack. The names and addresses are believed to have been compromised then. SPF will be contacting individuals affected by the leak \"as a matter of...",
+        "publish_date": "2025-07-25T01:17:24.586071+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "India's Modi and UK PM Starmer ink trade deal",
+        "url": "https://sg.news.yahoo.com/indias-modi-uk-pm-starmer-112625117.html",
+        "summary": "📰 장관, 경제, 정치 관련 뉴스\n📢 India's Modi and UK PM Starmer ink trade deal",
+        "content": "Prime Minister Keir Starmer praised Britain's \"unique bonds\" with India as he and his Indian counterpart Narendra Modi formally signed a recently announced UK-India trade deal during talks on Thursday. The UK and India hope the accord will boost trade...",
+        "publish_date": "2025-07-25T00:43:22+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "The New Paper",
+        "title": "July 25 South Africa (Fairview) form anaylsis",
+        "url": "https://www.tnp.sg/racing/july-25-south-africa-fairview-form-anaylsis?ref=",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 July 25 South Africa (Fairview) form anaylsis",
+        "content": "He tries even further this time. He was in good form before that. (5) GLOBAL SCENE made good late progress last time, so should like this distance. (6) SEMPRE BELLA improved on the Polytrack but could have more to offer. (4) INCENDIARY should like this longer distance and could show vast improvement. More was expected from (2) BEACH QUEEN but she appeared to hate the Polytrack. She is better than that run suggests and can bounce back to beat these rivals. (1) GENTEEL is not reliable but can contest the finish",
+        "publish_date": "2025-07-24T23:28:58+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "The New Paper"
+    ],
+    "timestamp": "2025-07-25T01:17:43.994878+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Helping seniors to navigate investing and spending in retirement is a must",
+        "url": "https://www.businesstimes.com.sg/opinion-features/helping-seniors-navigate-investing-and-spending-retirement-must",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Helping seniors to navigate investing and spending in retire...",
+        "content": "[SINGAPORE] Retail investors here have come a long way from decades ago when fund launches were regarded as initial public offerings of stocks. This misconception was common in the early days of unit trusts. Today, many investors have become familiar with the factors that make for successful retirement investing: starting early; reducing expenses; investing regularly into a core portfolio; and, of course, keeping a long horizon",
+        "publish_date": "2025-07-25T01:17:25.914099+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:17:43.994925+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

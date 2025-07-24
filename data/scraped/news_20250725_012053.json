@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "1,300 names and addresses from traffic police records leaked online",
+        "url": "https://www.channelnewsasia.com/singapore/traffic-police-data-leak-names-addresses-tnt-ransomware-5256191",
+        "content": "In April, TNT faced a ransomware attack. The names and addresses are believed to have been compromised then. SPF will be contacting individuals affected by the leak \"as a matter of...",
+        "publish_date": "2025-07-25T01:20:31.974056+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 1,300 names and addresses from traffic police reco..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Snap Insight: As Thailand and Cambodia escalate border spat, the personal ties that once united now fuel hostility",
+        "url": "https://www.channelnewsasia.com/commentary/thailand-cambodia-border-fighting-death-thaksin-shinawatra-hun-sen-snap-insight-5256031",
+        "content": "SINGAPORE: Thailand and Cambodia escalated their ongoing border spat on Thursday (Jul 24), with troops exchanging fire, fighter jets deployed and reports of civilian casualties emerging. Prime Minister Hun Manet said on Facebook that Cambodia had “no choice but to respond with armed forces against armed aggression”. Suspended Thai Prime Minister Paetongtarn Shinawatra wrote on Instagram subsequently that his father, Cambodian Senate President and former leader Hun Sen, was “acting like a victim”",
+        "publish_date": "2025-07-25T01:20:32.639294+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Snap Insight: As Thailand and Cambodia escalate bo..."
+      },
+      {
+        "site": "The New Paper",
+        "title": "Motorcycle skids, gets dragged by taxi on PIE",
+        "url": "https://www.tnp.sg/news/motorcycle-skids-gets-dragged-taxi-pie?ref=home-top-list",
+        "content": "The rider was taken to hospital while the taxi driver is assisting with investigations. The police told Stomp they were alerted to the incident at about 5.30pm. The rider was taken conscious to the hospital, a police spokesperson said. A 69-year-old taxi driver is assisting with investigations. A video posted on ROADS.sg's Facebook page shows the motorcycle skidding and falling onto the road. The taxi did not stop throughout the incident. Netizens speculated that the rider may have hit a pothole before losing control of his bike. Many also questioned why the taxi driver failed to stop after the collision. Stomp has contacted Strides Premier for comment.",
+        "publish_date": "2025-07-24T17:33:19+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcycle skids, gets dragged by taxi on PIE"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The New Paper"
+    ],
+    "timestamp": "2025-07-25T01:20:53.656648+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
