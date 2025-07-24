@@ -1756,48 +1756,108 @@ def get_article_links_generic(soup, base_url):
         print(f"[DEBUG] Final link count for {domain}: {len(links)}")
     return list(set(links))[:10]  # 중복 제거 후 최대 10개
 
-def create_summary(article_data, settings):
-    """설정에 따른 요약 생성"""
+# AI 요약 사용량 추적 (전역 변수)
+AI_SUMMARY_COUNT = 0
+MAX_AI_SUMMARIES = 3  # 세션당 최대 3개
+
+def reset_ai_summary_count():
+    """AI 요약 카운터 리셋"""
+    global AI_SUMMARY_COUNT
+    AI_SUMMARY_COUNT = 0
+    print(f"[AI_SUMMARY] Counter reset. Max summaries: {MAX_AI_SUMMARIES}")
+
+def should_use_ai_summary(article_data, site_name):
+    """AI 요약 사용 여부 결정 (주요 뉴스 우선)"""
+    global AI_SUMMARY_COUNT
+    
+    # 이미 최대 개수에 도달했으면 사용하지 않음
+    if AI_SUMMARY_COUNT >= MAX_AI_SUMMARIES:
+        return False
+    
+    # 홈페이지 콘텐츠 필터링 강화
+    title = article_data.get('title', '')
+    url = article_data.get('url', '')
+    
+    # 홈페이지 필터링
+    homepage_indicators = [
+        'Breaking News and Analysis',
+        'Real-Time Coverage',
+        'Latest News',
+        'Top Stories',
+        'Homepage',
+        'Main Page'
+    ]
+    
+    if any(indicator in title for indicator in homepage_indicators):
+        print(f"[AI_SUMMARY] Skipping homepage content: {title[:50]}...")
+        return False
+    
+    # URL이 루트 도메인이면 홈페이지로 간주
+    if url.rstrip('/').count('/') <= 2:
+        print(f"[AI_SUMMARY] Skipping root URL: {url}")
+        return False
+    
+    # 주요 사이트 우선순위
+    priority_sites = [
+        'The Straits Times',
+        'Channel NewsAsia', 
+        'The Business Times',
+        'The Independent Singapore'
+    ]
+    
+    # 우선순위 사이트는 AI 요약 적용
+    if site_name in priority_sites:
+        return True
+    
+    # 일반 사이트는 제한적으로 적용
+    return AI_SUMMARY_COUNT < 2  # 처음 2개만
+
+def create_summary(article_data, settings, site_name=''):
+    """설정에 따른 요약 생성 (AI 사용량 제한)"""
+    global AI_SUMMARY_COUNT
+    
+    # AI 요약 사용 여부 결정
+    use_ai = should_use_ai_summary(article_data, site_name)
+    
+    if not use_ai:
+        print(f"[SUMMARY] Using keyword summary (AI count: {AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES})")
+        return create_enhanced_keyword_summary(article_data['title'], article_data['content'])
+    
     # 설정에서 AI 옵션 확인
     ai_options = settings.get('scrapingMethodOptions', {}).get('ai', {})
     provider = ai_options.get('provider', 'gemini')
     
-    if DEBUG_MODE:
-        print(f"[SUMMARY] AI provider: {provider}")
-        print(f"[SUMMARY] Gemini API key available: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
+    print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for: {article_data['title'][:50]}...")
     
     # Gemini API 사용 시도
     if provider == 'gemini' and os.environ.get('GOOGLE_GEMINI_API_KEY'):
         try:
-            if DEBUG_MODE:
-                print(f"[SUMMARY] Attempting Gemini API translation for: {article_data['title'][:50]}...")
             from ai_summary_free import translate_to_korean_summary_gemini
             gemini_summary = translate_to_korean_summary_gemini(
                 article_data['title'], 
                 article_data['content']
             )
             if gemini_summary:
-                if DEBUG_MODE:
-                    print(f"[SUMMARY] Gemini API success: {gemini_summary[:100]}...")
+                AI_SUMMARY_COUNT += 1
+                print(f"[SUMMARY] AI success! ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}) - {gemini_summary[:50]}...")
                 return gemini_summary
             else:
-                if DEBUG_MODE:
-                    print(f"[SUMMARY] Gemini API returned empty result")
+                print(f"[SUMMARY] AI returned empty result, using fallback")
         except Exception as e:
-            if DEBUG_MODE:
-                print(f"[SUMMARY] Gemini API 오류, 키워드 요약으로 대체: {str(e)}")
-    else:
-        if DEBUG_MODE:
-            print(f"[SUMMARY] Gemini API not available - provider: {provider}, key: {bool(os.environ.get('GOOGLE_GEMINI_API_KEY'))}")
+            print(f"[SUMMARY] AI error: {str(e)}, using fallback")
     
-    # Gemini 실패시 향상된 키워드 기반 요약 사용
+    # AI 실패 시 향상된 키워드 기반 요약 사용
     print(f"[SUMMARY] Using enhanced keyword-based summary")
+    return create_enhanced_keyword_summary(article_data['title'], article_data['content'])
+
+def create_enhanced_keyword_summary(title, content):
+    """향상된 키워드 기반 요약"""
     try:
         from ai_summary_free import enhanced_keyword_summary
-        return enhanced_keyword_summary(article_data['title'], article_data['content'])
+        return enhanced_keyword_summary(title, content)
     except Exception as e:
         print(f"[SUMMARY] Enhanced summary failed, using basic: {str(e)}")
-        return create_keyword_summary(article_data['title'], article_data['content'])
+        return create_keyword_summary(title, content)
 
 def create_keyword_summary(title, content):
     """향상된 키워드 기반 한글 요약"""
@@ -1972,7 +2032,7 @@ def scrape_news_ai():
                             'content': article_result['content'],
                             'publish_date': publish_date
                         }
-                        summary = create_summary(article_data, settings)
+                        summary = create_summary(article_data, settings, site['name'])
                         print(f"[AI] Generated summary: {summary[:100]}...")
                         
                         # 그룹별로 기사 수집
@@ -2019,7 +2079,7 @@ def scrape_news_ai():
                                 'content': site_result['content'],
                                 'publish_date': publish_date
                             }
-                            summary = create_summary(article_data, settings)
+                            summary = create_summary(article_data, settings, site['name'])
                             
                             articles_by_group[site['group']].append({
                                 'site': site['name'],
@@ -2099,6 +2159,9 @@ def scrape_news_ai():
 
 def scrape_news():
     """메인 스크랩 함수 - 설정에 따라 방식 선택"""
+    # AI 요약 카운터 리셋
+    reset_ai_summary_count()
+    
     settings = load_settings()
     scraping_method = settings.get('scrapingMethod', 'traditional')
     
@@ -2313,7 +2376,7 @@ def scrape_news_traditional():
                     print(f"[DEBUG] Article passed all validations: {article_data['title']}")
                     
                     # 요약 생성
-                    summary = create_summary(article_data, settings)
+                    summary = create_summary(article_data, settings, site['name'])
                     print(f"[DEBUG] Generated summary: {summary[:100]}...")
                     
                     # 그룹별로 기사 수집
