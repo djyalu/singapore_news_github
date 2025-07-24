@@ -1,0 +1,81 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Made in China: C-beauty craze hits S’pore as new generation of brands offer quality for cheap",
+        "url": "https://www.straitstimes.com/life/style/made-in-china-c-beauty-craze-hits-spore-as-new-generation-of-brands-offer-quality-for-cheap?ref=headstart",
+        "summary": "📰 제목: 중국산 화장품 열풍, 싱가포르 강타\n\n내용: 중국에서 제작된 화장품이 싱가포르에서 새로운 열풍을 일으키는 중. 37세 창업자가 만든 저렴하고 품질 좋은 신생 브랜드가 인기 급상승 중으로, 그가 만든 브랜드 Judydoll과 Joocyee가 대표적임. 싱가포르에서 유학 및 취업 경험이 있는 그는 현지 시장을 잘 파악해 성공했다.",
+        "content": "Find out what’s new on ST website and app. Before he created popular C-beauty make-up brands Judydoll and Joocyee, the 37-year-old spent eight years studying and working here",
+        "publish_date": "2025-07-25T01:41:23.391214+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "1,300 names and addresses from traffic police records leaked online",
+        "url": "https://www.channelnewsasia.com/singapore/traffic-police-data-leak-names-addresses-tnt-ransomware-5256191",
+        "summary": "📰 제목: 교통경찰 기록에서 1,300명의 개인정보 유출\n내용: 4월, TNT가 랜섬웨어 공격을 당해 유출된 것으로 추정되는 싱가포르 교통경찰의 기록에 있는 1,300명 이상의 이름과 주소가 온라인에 유출되었다. 경찰은 유출된 개인정보로 영향을 받은 개개인과 연락을 취할 예정이다. 이번 사고는 개인정보 보호에 큰 경종을 울리고 있다.",
+        "content": "In April, TNT faced a ransomware attack. The names and addresses are believed to have been compromised then. SPF will be contacting individuals affected by the leak \"as a matter of...",
+        "publish_date": "2025-07-25T01:41:28.636893+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Public warned against water activities near Tuas Second Link after chemical tank falls into sea",
+        "url": "https://www.channelnewsasia.com/singapore/tuas-second-link-chemical-tank-fall-sea-public-warned-5256901",
+        "summary": "📰 제목: 투아스 세컨드 링크 인근에서 화학 탱크가 바다로 추락, 수영 활동 주의보\n\n내용: NEA와 다른 기관들은 말레이 측의 경고로 사고 소식을 접했다. NEA에 따르면, 다른 탱커는 무사하며 교량 위에서 화학 물질이 유출되진 않았다고 한다. 해당 화학 탱크에는 식음료와 의약품, 화장품에 commonly 사용되는 비위해성, 생분해성 액체인 프로필렌 글리콜이 들어있었다. NEA는 싱가포르 식량청(SFA)이 경고 조치를 취했다.",
+        "content": "NEA and other agencies were alerted by their Malaysian counterparts to the incident. \"We understand that the other tanker remained intact with no chemical spill on the bridge,\" said NEA. The chemical tank contained propylene glycol: a non-hazardous, biodegradable liquid. The chemical is commonly used in food, pharmaceuticals and cosmetics. NEA said that the Singapore Food Agency (SFA) has alerted...",
+        "publish_date": "2025-07-25T01:41:29.890625+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:42:11.297035+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Indonesia palm oil producers on alert as Sumatra fires coincide with peak harvest",
+        "url": "https://www.businesstimes.com.sg/international/asean/indonesia-palm-oil-producers-alert-sumatra-fires-coincide-peak-harvest",
+        "summary": "📰 제목: 수마트라 화재, 정점 맞은 야자수 기름 수확에 경고신호\n\n내용: 분석가에 따르면, 인도네시아 수마트라섬의 화재가 야자수 기름 수확에 큰 영향을 끼칠 수 있음. 특히 화재와 연기로 인해 수확과 물류에 차질이 생기면서 수확량이 줄어들고 시장에 단기적 긴축이 생길 수 있음. 크레이그 트리볼레트(Craig Tribolet)는 \"향후 몇 주 동안 우리 소방팀은 고강도 대비를 유지할 것\"이라고 언급함.\n\n***\n\n위 요약 본문은 요구사항을 바탕으로 작성되었습니다. 더 자세한 요약 본이 필요하신 경우 원본 뉴스를 일부 발췌하여 제공해 드릴 수 있습니다.",
+        "content": "Analyst warns fires and haze could hamper palm oil harvesting operations and logistics, reducing yields and creating short-term tightness in the market. “In the weeks ahead, our fire response teams remain on high alert,” said Craig Tribolet, the company’s deputy director of sustainability. Tribolet said April Group has implemented a no-burn policy since 1993 and follows a fire management...",
+        "publish_date": "2025-07-25T01:41:33.735974+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Business Times",
+        "title": "New S$30 million members-only club Vanta to open in MacDonald House",
+        "url": "https://www.businesstimes.com.sg/singapore/new-s30-million-members-only-club-vanta-open-macdonald-house",
+        "summary": "📰 제목: 맥도널드 하우스에 들어서는 3,000만 달러짜리 신규 회원제 클럽, '반타'\n\n내용: 미슐랭 스타 셰프 '데몬 셰프' 알빈 리가 요리 총괄. 12월 개장 목표. 싱가포르 맥도널드 하우스에 3,000만 달러를 들여 새 단장한 회원제 클럽 '반타'가 문 연다. 미슐랭 스타 셰프인 알빈 르унг이 클럽의 요리를 총괄하며, 그는 홍콩의 '보 인베션'으로도 유명하다.",
+        "content": "Michelin-starred ‘Demon Chef’ Alvin Leung will curate the food at the venue, which will start operating in December. [SINGAPORE] New members-only club Vanta will open in MacDonald House in December, after a S$30 million renovation. Michelin-starred Canadian chef and TV personality, Alvin Leung (also known as “Demon Chef”) of Hong Kong’s Bo Innovation, will curate the club’s culinary programme",
+        "publish_date": "2025-07-25T01:41:35.795985+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Business Times",
+        "title": "Mapletree Logistics Trust posts 12.4% fall in Q1 DPU to S$0.01812",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mapletree-logistics-trust-posts-12-4-fall-q1-dpu-s0-01812",
+        "summary": "📰 제목: 메이플트리 로지스틱스 트러스트, 1분기 DPU 12.4% 하락해 0.01812싱가포르 달러 기록\n내용: 메이플트리 로지스틱스 트러스트의 1분기 배당금이 전년 동기 대비 12.4% 하락한 0.01812 싱가포르 달러를 기록했습니다. 일회성 매각 수익을 제외하면 배당 수익은 6.2%, DPU는 7.3% 하락했습니다.",
+        "content": "However, excluding the one-off divestment gains, the distributable income would have fallen 6.2 per cent on the year from S$98 million. The DPU would have gone down 7.3 per cent from S$0.01954",
+        "publish_date": "2025-07-25T01:41:37.426578+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:42:11.297078+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
