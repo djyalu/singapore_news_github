@@ -1,0 +1,64 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Reits, institutional investors and funds in ‘buy mode’ as debt costs ease",
+        "url": "https://www.businesstimes.com.sg/property/reits-institutional-investors-and-funds-buy-mode-debt-costs-ease",
+        "content": "[SINGAPORE] Real estate investment trusts (Reits), investors and funds have turned “more acquisitive” in Singapore this year, even as geopolitical and macroeconomic uncertainties persist. It is an overwhelming amount of portfolio and foreign direct...",
+        "publish_date": "2025-07-25T01:15:42.559827+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 부동산 투자신탁, 채권 비용 완화로 매수 모드에 돌입\n\n내용: 싱가포르의 부동산 투자신탁(Reits), 기관투자자, 펀드들이 올해 매수 세가 강해지고 있다. 지질정치적, 거시경제적 불확실성에도 불구하고 많은 수의 포트폴리오와 외국 직접 투자가 유입되고 있으며, 채권 비용이 낮아진 것이 부동산 투자를 부추기고 있다. 전문가들은 이 추세가 당분간 지속될 것으로 전망한다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:16:05.950695+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "India's Modi and UK PM Starmer ink trade deal",
+        "url": "https://sg.news.yahoo.com/indias-modi-uk-pm-starmer-112625117.html",
+        "content": "Prime Minister Keir Starmer praised Britain's \"unique bonds\" with India as he and his Indian counterpart Narendra Modi formally signed a recently announced UK-India trade deal during talks on Thursday. The UK and India hope the accord will boost trade...",
+        "publish_date": "2025-07-25T00:43:22+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인도 모디와 영국 총리의 무역 협정 서명\n\n내용: 영국 총리와 인도 총리가 목요일 회담에서 영국-인도 간 무역 협정을 공식 서명했다. 이 협정은 양국 간 무역 증진을 목적으로 하며, 영국 총리는 양국의 '독특한 유대 관계'를 강조했다. 이 협정으로 영국은 인도와의 무역에서 관세를 절감하고, 교통, 과학기술, 청정에너지 등 다양한 분야에서 협력을 강화할 전망이다."
+      },
+      {
+        "site": "The New Paper",
+        "title": "Pasar malam stalls block cycling path, sparks online debate",
+        "url": "https://www.tnp.sg/news/pasar-malam-stalls-block-cycling-path-sparks-online-debate?ref=home-top-list",
+        "content": "Tables and chairs were seen blocking cycling paths at a Hougang night market. It showed a cycling path lined with makeshift night market stalls, while the pedestrian path next to it remained unobstructed. Several users identified the location as Hougang Street 61, a regular venue for night markets. Some saw the humour in the situation. \"Start of a new sport: bicycle hurdles,\" commented...",
+        "publish_date": "2025-07-24T10:22:54+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pasar malam stalls block cycling path, sparks onli..."
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Toa Payoh flat fire: Unit was allegedly cluttered, neighbours say complaints went ignored",
+        "url": "https://mustsharenews.com/toa-payoh-flat-fire-complaints/",
+        "content": "A cleaner also claimed that one of the occupants regularly played with fire. Both the deceased, who were cousins, were found unconscious in the unit’s bathroom and later pronounced dead. Neighbours and a cleaner have since stepped forward with troubling accounts, alleging hoarding, fireplay, and repeated complaints that went unheeded, said Shin Min Daily News (SMDN). The affected unit had reportedly been in a cluttered state for a long time. “There was a foul smell from the flat, and people would hold their breath walking past",
+        "publish_date": "2025-07-24T12:59:43+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Toa Payoh flat fire: Unit was allegedly cluttered,..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The New Paper",
+      "Yahoo Singapore News",
+      "MustShareNews"
+    ],
+    "timestamp": "2025-07-25T01:16:05.950731+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

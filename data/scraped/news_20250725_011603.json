@@ -1,0 +1,64 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Reits, institutional investors and funds in ‘buy mode’ as debt costs ease",
+        "url": "https://www.businesstimes.com.sg/property/reits-institutional-investors-and-funds-buy-mode-debt-costs-ease",
+        "summary": "📰 제목: 부동산 투자신탁(REITs), 채권 비용 완화로 인해 매수 모드로 전환\n내용: 싱가포르의 부동산 투자신탁과 기관투자자들이 올해 매수 세력으로 전환했다. 지오폴리틱스 및 거시경제 불확실성에도 불구하고, 많은 양의 포트폴리오와 외국 직접 투자가 싱가포르로 유입되고 있다. 전문가들은 채권 수익률이 안정되고, 차입 비용이 낮아진 것이 투자 활성화에 긍정적 신호로 해석된다고 분석한다.",
+        "content": "[SINGAPORE] Real estate investment trusts (Reits), investors and funds have turned “more acquisitive” in Singapore this year, even as geopolitical and macroeconomic uncertainties persist. It is an overwhelming amount of portfolio and foreign direct...",
+        "publish_date": "2025-07-25T01:15:42.559827+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:16:03.366380+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "India's Modi and UK PM Starmer ink trade deal",
+        "url": "https://sg.news.yahoo.com/indias-modi-uk-pm-starmer-112625117.html",
+        "summary": "📰 장관, 경제, 정치 관련 뉴스\n📢 India's Modi and UK PM Starmer ink trade deal",
+        "content": "Prime Minister Keir Starmer praised Britain's \"unique bonds\" with India as he and his Indian counterpart Narendra Modi formally signed a recently announced UK-India trade deal during talks on Thursday. The UK and India hope the accord will boost trade...",
+        "publish_date": "2025-07-25T00:43:22+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Pasar malam stalls block cycling path, sparks online debate",
+        "url": "https://www.tnp.sg/news/pasar-malam-stalls-block-cycling-path-sparks-online-debate?ref=home-top-list",
+        "summary": "📰 경제, 기술 관련 뉴스\n📢 Pasar malam stalls block cycling path, sparks online debate",
+        "content": "Tables and chairs were seen blocking cycling paths at a Hougang night market. It showed a cycling path lined with makeshift night market stalls, while the pedestrian path next to it remained unobstructed. Several users identified the location as Hougang Street 61, a regular venue for night markets. Some saw the humour in the situation. \"Start of a new sport: bicycle hurdles,\" commented...",
+        "publish_date": "2025-07-24T10:22:54+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Toa Payoh flat fire: Unit was allegedly cluttered, neighbours say complaints went ignored",
+        "url": "https://mustsharenews.com/toa-payoh-flat-fire-complaints/",
+        "summary": "📰 기술 관련 뉴스\n📢 Toa Payoh flat fire: Unit was allegedly cluttered, neighbours say complaints wen...",
+        "content": "A cleaner also claimed that one of the occupants regularly played with fire. Both the deceased, who were cousins, were found unconscious in the unit’s bathroom and later pronounced dead. Neighbours and a cleaner have since stepped forward with troubling accounts, alleging hoarding, fireplay, and repeated complaints that went unheeded, said Shin Min Daily News (SMDN). The affected unit had reportedly been in a cluttered state for a long time. “There was a foul smell from the flat, and people would hold their breath walking past",
+        "publish_date": "2025-07-24T12:59:43+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The New Paper",
+      "Yahoo Singapore News",
+      "MustShareNews"
+    ],
+    "timestamp": "2025-07-25T01:16:03.366427+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

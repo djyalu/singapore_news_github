@@ -37,6 +37,7 @@ jobs:
     - name: Run AI-enabled scraper (respects settings.json)
       env:
         GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
+        COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
         SMTP_USER: ${{ secrets.SMTP_USER }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
