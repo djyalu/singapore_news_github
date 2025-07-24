@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import re
 from collections import defaultdict
 from urllib.parse import urljoin, urlparse
-from ai_scraper import ai_scraper
+from ai_scraper import get_ai_scraper
 from text_processing import TextProcessor
 from deduplication import ArticleDeduplicator
 
@@ -1749,6 +1749,7 @@ def scrape_news_ai():
             print(f"AI Scraping {site['name']}...")
             
             # AI 스크래퍼로 사이트 분석
+            ai_scraper = get_ai_scraper()
             site_result = ai_scraper.scrape_with_ai(site['url'])
             
             if site_result['type'] == 'error':
@@ -1781,6 +1782,7 @@ def scrape_news_ai():
                         print(f"[AI] Processing article {idx+1}/{min(len(links), max_links)}: {article_url}")
                         
                         # AI로 기사 추출
+                        ai_scraper = get_ai_scraper()
                         article_result = ai_scraper.scrape_with_ai(article_url)
                         
                         if article_result['type'] != 'article':
@@ -1958,6 +1960,9 @@ def scrape_news():
     scraping_method = settings.get('scrapingMethod', 'traditional')
     
     print(f"[SCRAPER] Selected method: {scraping_method}")
+    
+    # AI 스크래퍼 초기화 (지연 초기화)
+    ai_scraper = get_ai_scraper()
     print(f"[SCRAPER] AI model status: {ai_scraper.model is not None}")
     print(f"[SCRAPER] AI API key: {bool(ai_scraper.api_key)}")
     

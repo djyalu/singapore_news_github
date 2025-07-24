@@ -819,5 +819,13 @@ CONTENT: [기사 본문 - 첫 500자 정도]
                 'url': url
             }
 
-# 전역 인스턴스
-ai_scraper = AIScraper()
+# 전역 인스턴스 - 지연 초기화를 위해 None으로 설정
+ai_scraper = None
+
+def get_ai_scraper():
+    """AI 스크래퍼 인스턴스를 가져오거나 생성"""
+    global ai_scraper
+    if ai_scraper is None:
+        print("[AI_SCRAPER] Creating new AIScraper instance...")
+        ai_scraper = AIScraper()
+    return ai_scraper
