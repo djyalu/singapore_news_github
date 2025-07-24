@@ -1933,7 +1933,10 @@ def create_summary(article_data, settings, site_name=''):
             if summary_result:
                 AI_SUMMARY_COUNT += 1
                 print(f"[SUMMARY] {api_name} SUCCESS! ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}) - {summary_result[:100]}...")
-                return summary_result
+                return {
+                    'text': summary_result,
+                    'extracted_by': api_name.lower()
+                }
             else:
                 print(f"[SUMMARY] {api_name}: Returned empty result, trying next API")
                 
@@ -1954,7 +1957,10 @@ def create_summary(article_data, settings, site_name=''):
     result = create_enhanced_keyword_summary(article_data['title'], article_data['content'])
     print(f"[SUMMARY] Fallback summary result: {result[:100]}...")
     print(f"[SUMMARY] ========== SUMMARY GENERATION END ===========")
-    return result
+    return {
+        'text': result,
+        'extracted_by': 'keyword_fallback'
+    }
 
 def create_enhanced_keyword_summary(title, content):
     """향상된 키워드 기반 요약"""
@@ -2138,18 +2144,20 @@ def scrape_news_ai():
                             'content': article_result['content'],
                             'publish_date': publish_date
                         }
-                        summary = create_summary(article_data, settings, site['name'])
-                        print(f"[AI] Generated summary: {summary[:100]}...")
+                        summary_result = create_summary(article_data, settings, site['name'])
+                        summary_text = summary_result['text'] if isinstance(summary_result, dict) else summary_result
+                        summary_api = summary_result.get('extracted_by', 'ai') if isinstance(summary_result, dict) else 'ai'
+                        print(f"[AI] Generated summary: {summary_text[:100]}...")
                         
                         # 그룹별로 기사 수집
                         articles_by_group[site['group']].append({
                             'site': site['name'],
                             'title': article_result['title'],
                             'url': article_url,
-                            'summary': summary,
+                            'summary': summary_text,
                             'content': article_result['content'],
                             'publish_date': publish_date.isoformat() if isinstance(publish_date, datetime) else publish_date,
-                            'extracted_by': article_result.get('extracted_by', 'ai'),
+                            'extracted_by': f"ai_{summary_api}",
                             'ai_classification': article_result.get('classification', {})
                         })
                         
@@ -2185,16 +2193,18 @@ def scrape_news_ai():
                                 'content': site_result['content'],
                                 'publish_date': publish_date
                             }
-                            summary = create_summary(article_data, settings, site['name'])
+                            summary_result = create_summary(article_data, settings, site['name'])
+                            summary_text = summary_result['text'] if isinstance(summary_result, dict) else summary_result
+                            summary_api = summary_result.get('extracted_by', 'ai') if isinstance(summary_result, dict) else 'ai'
                             
                             articles_by_group[site['group']].append({
                                 'site': site['name'],
                                 'title': site_result['title'],
                                 'url': site['url'],
-                                'summary': summary,
+                                'summary': summary_text,
                                 'content': site_result['content'],
                                 'publish_date': publish_date.isoformat() if isinstance(publish_date, datetime) else publish_date,
-                                'extracted_by': site_result.get('extracted_by', 'ai'),
+                                'extracted_by': f"ai_{summary_api}",
                                 'ai_classification': site_result.get('classification', {})
                             })
                             
@@ -2482,17 +2492,20 @@ def scrape_news_traditional():
                     print(f"[DEBUG] Article passed all validations: {article_data['title']}")
                     
                     # 요약 생성
-                    summary = create_summary(article_data, settings, site['name'])
-                    print(f"[DEBUG] Generated summary: {summary[:100]}...")
+                    summary_result = create_summary(article_data, settings, site['name'])
+                    summary_text = summary_result['text'] if isinstance(summary_result, dict) else summary_result
+                    summary_api = summary_result.get('extracted_by', 'traditional') if isinstance(summary_result, dict) else 'traditional'
+                    print(f"[DEBUG] Generated summary: {summary_text[:100]}...")
                     
                     # 그룹별로 기사 수집
                     articles_by_group[site['group']].append({
                         'site': site['name'],
                         'title': article_data['title'],
                         'url': article_url,
-                        'summary': summary,
+                        'summary': summary_text,
                         'content': article_data['content'],
-                        'publish_date': article_data['publish_date'].isoformat() if article_data['publish_date'] else None
+                        'publish_date': article_data['publish_date'].isoformat() if article_data['publish_date'] else None,
+                        'extracted_by': f"traditional_{summary_api}"
                     })
                     
                 except Exception as e:
