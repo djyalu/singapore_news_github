@@ -5,6 +5,13 @@ from googletrans import Translator
 import google.generativeai as genai
 import time
 
+try:
+    import cohere
+    COHERE_AVAILABLE = True
+except ImportError:
+    COHERE_AVAILABLE = False
+    print("[AI_SUMMARY] Cohere library not available")
+
 def translate_to_korean_summary_gemini(title, content):
     """Google Gemini API를 사용한 무료 한글 요약"""
     try:
@@ -114,6 +121,121 @@ def translate_to_korean_summary_gemini(title, content):
         else:
             import traceback
             print(f"[AI_SUMMARY] TRACEBACK:\n{traceback.format_exc()}")
+            
+        return None
+
+def translate_to_korean_summary_cohere(title, content):
+    """Cohere API를 사용한 한글 요약"""
+    try:
+        if not COHERE_AVAILABLE:
+            print("[AI_SUMMARY] ERROR: Cohere library not installed")
+            return None
+            
+        # Cohere API 키 확인
+        api_key = os.environ.get('COHERE_API_KEY')
+        print(f"[AI_SUMMARY] Cohere check - API key present: {bool(api_key)}")
+        print(f"[AI_SUMMARY] Cohere check - API key length: {len(api_key) if api_key else 0}")
+        
+        if not api_key:
+            print("[AI_SUMMARY] ERROR: Cohere API key not found in environment")
+            return None
+        
+        print(f"[AI_SUMMARY] Attempting Cohere API summary for: {title[:50]}...")
+        
+        # Cohere 클라이언트 초기화
+        co = cohere.Client(api_key)
+        
+        # 내용 길이 제한 및 정제
+        content = content.strip()
+        if not content:
+            print("[AI_SUMMARY] WARNING: Empty content provided")
+            content = "내용 없음"
+        
+        # 홈페이지 전체 콘텐츠인지 확인
+        if len(content) > 3000 or content.count('\n\n\n') > 8:
+            print(f"[AI_SUMMARY] WARNING: Content too long ({len(content)} chars), likely homepage content")
+            # 첫 번째 의미있는 단락만 추출
+            paragraphs = [p.strip() for p in content.split('\n') if p.strip() and len(p.strip()) > 50]
+            if paragraphs:
+                content = ' '.join(paragraphs[:2])  # 처음 2개 단락만
+            else:
+                content = content[:600]
+        
+        content_preview = content[:600] if len(content) > 600 else content
+        print(f"[AI_SUMMARY] Content length for Cohere API: {len(content_preview)} chars")
+        
+        prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
+
+제목: {title}
+내용: {content_preview}
+
+요구사항:
+1. 제목을 먼저 한국어로 번역
+2. 핵심 내용을 2-3문장으로 요약
+3. 중요한 수치, 날짜, 인물명은 정확히 포함
+4. 자연스러운 한국어 표현 사용
+5. 응답 형식: "제목: [한국어 제목]\\n내용: [요약 내용]"
+
+예시:
+제목: 싱가포르 정부, 새로운 주택 정책 발표
+내용: 싱가포르 정부가 주택 가격 상승을 억제하기 위한 새로운 정책을 발표했습니다."""
+        
+        # API 요청 전 짧은 지연 (분당 20개 제한 준수)
+        time.sleep(3)  # 3초 지연 = 분당 최대 20개 요청
+        
+        print("[AI_SUMMARY] Calling Cohere API...")
+        start_time = time.time()
+        
+        try:
+            response = co.chat(
+                model="command-r",
+                message=prompt,
+                max_tokens=300,
+                temperature=0.7
+            )
+        except Exception as api_error:
+            print(f"[AI_SUMMARY] Cohere API call failed: {type(api_error).__name__}: {str(api_error)}")
+            return None
+            
+        api_time = time.time() - start_time
+        print(f"[AI_SUMMARY] Cohere API response time: {api_time:.2f}s")
+        
+        if response and response.text:
+            # 응답 텍스트 정제
+            summary_text = response.text.strip()
+            print(f"[AI_SUMMARY] Cohere raw response length: {len(summary_text)} chars")
+            
+            # 불필요한 마크다운 제거
+            summary_text = summary_text.replace('**', '').replace('*', '').replace('#', '')
+            
+            # 응답 형식 확인 및 정제
+            if '제목:' in summary_text and '내용:' in summary_text:
+                print("[AI_SUMMARY] SUCCESS: Cohere proper format received")
+                return f"📰 {summary_text}"
+            else:
+                # 형식이 맞지 않으면 기본 형식으로 변환
+                print("[AI_SUMMARY] WARNING: Cohere response format incorrect, reformatting")
+                lines = summary_text.split('\n')
+                clean_summary = ' '.join([line.strip() for line in lines if line.strip()])
+                return f"📰 제목: {title}\n📝 내용: {clean_summary}"
+        else:
+            print("[AI_SUMMARY] ERROR: Cohere API returned empty response")
+            return None
+        
+    except Exception as e:
+        error_type = type(e).__name__
+        print(f"[AI_SUMMARY] Cohere ERROR: {error_type}: {str(e)}")
+        
+        # 특정 에러에 대한 상세 처리
+        if "quota" in str(e).lower() or "rate" in str(e).lower():
+            print("[AI_SUMMARY] COHERE QUOTA EXCEEDED: API rate limit reached")
+        elif "timeout" in str(e).lower():
+            print("[AI_SUMMARY] COHERE TIMEOUT: API request timed out")
+        elif "invalid" in str(e).lower() or "unauthorized" in str(e).lower():
+            print("[AI_SUMMARY] COHERE INVALID REQUEST: Check API key")
+        else:
+            import traceback
+            print(f"[AI_SUMMARY] COHERE TRACEBACK:\n{traceback.format_exc()}")
             
         return None
 

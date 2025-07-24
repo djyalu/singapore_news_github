@@ -1879,31 +1879,75 @@ def create_summary(article_data, settings, site_name=''):
     
     print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for {site_name}")
     
-    # Gemini API 사용 시도
-    if provider == 'gemini' and api_key:
-        print(f"[SUMMARY] Starting Gemini API call...")
+    # 멀티 API 폴백 시스템: Gemini → Cohere → Google Translate
+    ai_apis = [
+        {
+            'name': 'Gemini',
+            'function': 'translate_to_korean_summary_gemini',
+            'key_env': 'GOOGLE_GEMINI_API_KEY'
+        },
+        {
+            'name': 'Cohere', 
+            'function': 'translate_to_korean_summary_cohere',
+            'key_env': 'COHERE_API_KEY'
+        },
+        {
+            'name': 'Google Translate',
+            'function': 'translate_to_korean_summary_googletrans', 
+            'key_env': None  # Google Translate는 API 키 불필요 (무료)
+        }
+    ]
+    
+    for api_info in ai_apis:
+        api_name = api_info['name']
+        function_name = api_info['function']
+        key_env = api_info['key_env']
+        
+        # API 키 필요한 경우 확인
+        if key_env:
+            api_key_check = os.environ.get(key_env)
+            if not api_key_check:
+                print(f"[SUMMARY] {api_name}: API key not found, skipping")
+                continue
+            print(f"[SUMMARY] {api_name}: API key present, attempting...")
+        else:
+            print(f"[SUMMARY] {api_name}: No API key required, attempting...")
+        
         try:
-            from ai_summary_free import translate_to_korean_summary_gemini
-            print(f"[SUMMARY] Imported translate_to_korean_summary_gemini successfully")
+            # 동적으로 함수 import 및 호출
+            from ai_summary_free import translate_to_korean_summary_gemini, translate_to_korean_summary_cohere, translate_to_korean_summary_googletrans
             
-            gemini_summary = translate_to_korean_summary_gemini(
-                article_data['title'], 
-                article_data['content']
-            )
-            print(f"[SUMMARY] Gemini API returned: {type(gemini_summary)}, length: {len(gemini_summary) if gemini_summary else 0}")
-            
-            if gemini_summary:
-                AI_SUMMARY_COUNT += 1
-                print(f"[SUMMARY] AI SUCCESS! ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}) - {gemini_summary[:100]}...")
-                return gemini_summary
+            if function_name == 'translate_to_korean_summary_gemini':
+                ai_function = translate_to_korean_summary_gemini
+            elif function_name == 'translate_to_korean_summary_cohere':
+                ai_function = translate_to_korean_summary_cohere
+            elif function_name == 'translate_to_korean_summary_googletrans':
+                ai_function = translate_to_korean_summary_googletrans
             else:
-                print(f"[SUMMARY] AI returned empty result, using fallback")
+                print(f"[SUMMARY] {api_name}: Unknown function, skipping")
+                continue
+            
+            print(f"[SUMMARY] {api_name}: Calling API...")
+            summary_result = ai_function(article_data['title'], article_data['content'])
+            
+            if summary_result:
+                AI_SUMMARY_COUNT += 1
+                print(f"[SUMMARY] {api_name} SUCCESS! ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}) - {summary_result[:100]}...")
+                return summary_result
+            else:
+                print(f"[SUMMARY] {api_name}: Returned empty result, trying next API")
+                
         except Exception as e:
-            print(f"[SUMMARY] AI ERROR: {type(e).__name__}: {str(e)}")
-            import traceback
-            print(f"[SUMMARY] AI ERROR TRACEBACK:\n{traceback.format_exc()}")
-    else:
-        print(f"[SUMMARY] AI not available - provider: {provider}, api_key: {bool(api_key)}")
+            print(f"[SUMMARY] {api_name} ERROR: {type(e).__name__}: {str(e)}")
+            # Quota exceeded인 경우 다음 API로 넘어가기
+            if "quota" in str(e).lower() or "rate" in str(e).lower():
+                print(f"[SUMMARY] {api_name}: Quota/Rate limit exceeded, trying next API")
+                continue
+            else:
+                import traceback
+                print(f"[SUMMARY] {api_name} TRACEBACK:\n{traceback.format_exc()}")
+    
+    print(f"[SUMMARY] All AI APIs failed, using enhanced keyword fallback")
     
     # AI 실패 시 향상된 키워드 기반 요약 사용
     print(f"[SUMMARY] Using enhanced keyword-based summary (fallback)")
