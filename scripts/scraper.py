@@ -215,7 +215,7 @@ def is_recent_article(article_date):
     기사가 최근 것인지 확인 (2일 이내)
     
     Args:
-        article_date (datetime): 기사 발행일
+        article_date (datetime or str): 기사 발행일 (datetime 객체 또는 ISO 형식 문자열)
     
     Returns:
         bool: 2일 이내면 True, 아니면 False
@@ -223,6 +223,23 @@ def is_recent_article(article_date):
     """
     if not article_date:
         return True
+    
+    # 문자열인 경우 datetime으로 변환
+    if isinstance(article_date, str):
+        try:
+            # ISO 형식 문자열 파싱
+            from datetime import datetime
+            article_date = datetime.fromisoformat(article_date.replace('Z', '+00:00'))
+        except (ValueError, AttributeError):
+            # 파싱 실패 시 True 반환 (보수적 접근)
+            return True
+    
+    # timezone-aware 날짜로 변환
+    if article_date.tzinfo is None:
+        import pytz
+        kst = pytz.timezone('Asia/Seoul')
+        article_date = kst.localize(article_date)
+    
     return (get_kst_now() - article_date).days <= 2
 
 def contains_keywords(text, keywords):
@@ -231,11 +248,18 @@ def contains_keywords(text, keywords):
     
     Args:
         text (str): 검색할 텍스트
-        keywords (list): 키워드 리스트
+        keywords (str or list): 키워드 리스트 또는 쉼표로 구분된 문자열
     
     Returns:
         bool: 키워드 중 하나라도 포함되어 있으면 True
     """
+    if not text or not keywords:
+        return False
+    
+    # 문자열인 경우 리스트로 변환
+    if isinstance(keywords, str):
+        keywords = [k.strip() for k in keywords.split(',') if k.strip()]
+    
     text_lower = text.lower()
     return any(keyword.lower() in text_lower for keyword in keywords)
 
@@ -245,13 +269,87 @@ def is_blocked(text, blocked_keywords):
     
     Args:
         text (str): 검사할 텍스트
-        blocked_keywords (list): 차단 키워드 리스트
+        blocked_keywords (str or list): 차단 키워드 리스트 또는 쉼표로 구분된 문자열
     
     Returns:
         bool: 차단 키워드가 포함되어 있으면 True
     """
+    if not text or not blocked_keywords:
+        return False
+    
+    # 문자열인 경우 리스트로 변환
+    if isinstance(blocked_keywords, str):
+        blocked_keywords = [k.strip() for k in blocked_keywords.split(',') if k.strip()]
+    
     text_lower = text.lower()
     return any(keyword.lower() in text_lower for keyword in blocked_keywords)
+
+def validate_article(article):
+    """
+    기사 데이터 구조 검증
+    
+    Args:
+        article (dict): 검증할 기사 데이터
+    
+    Returns:
+        bool: 유효한 기사면 True, 아니면 False
+    """
+    # 필수 필드 확인
+    required_fields = ['title', 'url', 'site', 'group']
+    
+    # 모든 필수 필드가 있는지 확인
+    if not all(field in article for field in required_fields):
+        return False
+    
+    # 필드 값이 비어있지 않은지 확인
+    for field in required_fields:
+        value = article.get(field)
+        if not value or (isinstance(value, str) and not value.strip()):
+            return False
+    
+    # URL 형식 확인
+    url = article.get('url', '')
+    if not url.startswith(('http://', 'https://')):
+        return False
+    
+    return True
+
+def validate_scraped_data(data):
+    """
+    스크랩된 데이터 전체 구조 검증
+    
+    Args:
+        data (dict): 검증할 스크랩 데이터
+    
+    Returns:
+        bool: 유효한 데이터면 True, 아니면 False
+    """
+    # 필수 필드 확인
+    required_fields = ['timestamp', 'articles', 'stats']
+    return all(field in data for field in required_fields)
+
+def sanitize_path(file_path, base_path):
+    """
+    경로 순회 공격 방지를 위한 경로 검증
+    
+    Args:
+        file_path (str): 검증할 파일 경로
+        base_path (str): 허용된 기본 경로
+    
+    Returns:
+        str: 안전한 경로 또는 None
+    """
+    import os
+    
+    # 절대 경로로 변환
+    abs_base = os.path.abspath(base_path)
+    abs_file = os.path.abspath(os.path.join(abs_base, file_path))
+    
+    # 기본 경로 내에 있는지 확인
+    if abs_file.startswith(abs_base):
+        return abs_file
+    else:
+        return None
 
 def clean_text(text):
     """
@@ -267,6 +365,25 @@ def clean_text(text):
             - 앞뒤 공백 제거
             - 기본값은 빈 문자열
     """
+    # None 또는 빈 값 처리
+    if not text:
+        return ''
+    
+    # 문자열로 변환
+    text = str(text)
+    
+    # 위험한 태그와 내용 제거 (script, style, iframe 등)
+    text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.IGNORECASE | re.DOTALL)
+    text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.IGNORECASE | re.DOTALL)
+    text = re.sub(r'<iframe[^>]*>.*?</iframe>', '', text, flags=re.IGNORECASE | re.DOTALL)
+    
+    # 나머지 HTML 태그 제거
+    text = re.sub(r'<[^>]+>', '', text)
+    
+    # HTML 엔티티 디코드
+    text = text.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+    text = text.replace('&quot;', '"').replace('&#39;', "'").replace('&nbsp;', ' ')
+    
     # 줄바꿈을 공백으로 변경
     text = text.replace('\r\n', ' ').replace('\n', ' ').replace('\r', ' ')
     # 다중 공백을 단일 공백으로

@@ -16,7 +16,6 @@ try:
 except ImportError:
     # 상대 임포트 시도
     import sys
-    import os
     sys.path.append(os.path.dirname(__file__))
     from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
 

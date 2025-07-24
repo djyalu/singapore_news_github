@@ -1,0 +1,22 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "MustShareNews",
+        "title": "Recent BPLRT disruptions linked to newly installed power system, LTA investigating",
+        "url": "https://mustsharenews.com/bplrt-disruptions/",
+        "summary": "📰 제목: 육상교통청 관련 뉴스\n🔍 주요 키워드: 교통(Transport), 육상교통청(LTA)\n📝 교통(Transport), 육상교통청(LTA) 관련 소식",
+        "content": "SMRT has since linked both disruptions to a newly installed power system. The Land Transport Authority (LTA) is conducting a thorough investigation into the issue. Both cases are reportedly linked to the “newly installed Power SCADA system”",
+        "publish_date": "2025-07-23T16:04:53+09:00"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "MustShareNews"
+    ],
+    "timestamp": "2025-07-24T08:54:48.935379+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
