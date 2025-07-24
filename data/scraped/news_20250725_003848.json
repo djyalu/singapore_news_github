@@ -1,0 +1,31 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Taxi driver ‘adding shift’ to be a YouTuber",
+        "url": "https://www.straitstimes.com/singapore/taxi-driver-adding-shift-to-be-a-youtuber",
+        "summary": "📰 교통, 기술 관련 뉴스\n📢 Taxi driver ‘adding shift’ to be a YouTuber",
+        "content": "Find out what’s new on ST website and app. The 48-year-old drives 10 hours daily and spends nearly as much time making videos. Like the friendly cabbie making conversation with his passenger, Mr Jui’s videos are candid and honest. Find out more about the conversation with senior transport correspondent Lee Nian Tjoe in the shownotes below. 14:20 Trying to create an online community that is more forward-looking and positive",
+        "publish_date": "2025-07-25T00:38:25.125906+09:00"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Chocolate Finance raises US$15 million; CEO says it may still offer instant withdrawals in future",
+        "url": "https://www.channelnewsasia.com/singapore/chocolate-finance-axs-withdrawal-series-15-million-5255681",
+        "summary": "📰 금융, 기술, 국제 관련 뉴스\n📢 Chocolate Finance raises US$15 million; CEO says it may still offer instant with...",
+        "content": "The funds were raised from Nikko Asset Management, returning investors Peak XV (previously known as Sequoia Capital India and Southeast Asia), Prosus, Saison Capital and Chocolate Finance’s founder Walter de Oude. It expects to launch there in the first quarter of 2026. The company came under scrutiny in March when it halted instant withdrawals after receiving an “unusually high” volume of requests. Customers withdrew S$500 million (US$392 million) in about two weeks –...",
+        "publish_date": "2025-07-25T00:38:27.859093+09:00"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T00:38:48.170498+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
