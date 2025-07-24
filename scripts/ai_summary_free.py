@@ -11,8 +11,10 @@ def translate_to_korean_summary_gemini(title, content):
         # Gemini API 키 확인
         api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
         if not api_key:
-            print("Gemini API key not found")
+            print("[AI_SUMMARY] ERROR: Gemini API key not found in environment")
             return None
+        
+        print(f"[AI_SUMMARY] Attempting Gemini API summary for: {title[:50]}...")
         
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel('gemini-1.5-flash')
@@ -20,8 +22,21 @@ def translate_to_korean_summary_gemini(title, content):
         # 내용 길이 제한 및 정제
         content = content.strip()
         if not content:
+            print("[AI_SUMMARY] WARNING: Empty content provided")
             content = "내용 없음"
-        content_preview = content[:500] if len(content) > 500 else content
+        
+        # 홈페이지 전체 콘텐츠인지 확인
+        if len(content) > 5000 or content.count('\n\n\n') > 10:
+            print(f"[AI_SUMMARY] WARNING: Content too long ({len(content)} chars) or too many empty lines, likely homepage content")
+            # 첫 번째 의미있는 단락만 추출
+            paragraphs = [p.strip() for p in content.split('\n') if p.strip() and len(p.strip()) > 50]
+            if paragraphs:
+                content = ' '.join(paragraphs[:3])  # 처음 3개 단락만
+            else:
+                content = content[:500]
+        
+        content_preview = content[:800] if len(content) > 800 else content
+        print(f"[AI_SUMMARY] Content length for API: {len(content_preview)} chars")
         
         prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
 
@@ -43,27 +58,60 @@ def translate_to_korean_summary_gemini(title, content):
         # API 요청 전 짧은 지연 (분당 15개 제한 준수)
         time.sleep(4)  # 4초 지연 = 분당 최대 15개 요청
         
-        response = model.generate_content(prompt)
+        print("[AI_SUMMARY] Calling Gemini API...")
+        start_time = time.time()
+        
+        try:
+            response = model.generate_content(prompt, 
+                                            generation_config={
+                                                "temperature": 0.7,
+                                                "max_output_tokens": 300,
+                                                "timeout": 10  # 10초 타임아웃
+                                            })
+        except Exception as api_error:
+            print(f"[AI_SUMMARY] API call failed: {type(api_error).__name__}: {str(api_error)}")
+            return None
+            
+        api_time = time.time() - start_time
+        print(f"[AI_SUMMARY] API response time: {api_time:.2f}s")
+        
         if response and response.text:
             # 응답 텍스트 정제
             summary_text = response.text.strip()
+            print(f"[AI_SUMMARY] Raw response length: {len(summary_text)} chars")
+            
             # 불필요한 마크다운 제거
             summary_text = summary_text.replace('**', '').replace('*', '').replace('#', '')
             
             # 응답 형식 확인 및 정제
             if '제목:' in summary_text and '내용:' in summary_text:
+                print("[AI_SUMMARY] SUCCESS: Proper format received")
                 return f"📰 {summary_text}"
             else:
                 # 형식이 맞지 않으면 기본 형식으로 변환
+                print("[AI_SUMMARY] WARNING: Response format incorrect, reformatting")
                 lines = summary_text.split('\n')
                 clean_summary = ' '.join([line.strip() for line in lines if line.strip()])
                 return f"📰 제목: {title}\n📝 내용: {clean_summary}"
         else:
-            print("Gemini API returned empty response")
+            print("[AI_SUMMARY] ERROR: Gemini API returned empty response")
             return None
         
     except Exception as e:
-        print(f"Gemini API error: {str(e)}")
+        error_type = type(e).__name__
+        print(f"[AI_SUMMARY] ERROR: {error_type}: {str(e)}")
+        
+        # 특정 에러에 대한 상세 처리
+        if "quota" in str(e).lower():
+            print("[AI_SUMMARY] QUOTA EXCEEDED: API rate limit reached")
+        elif "timeout" in str(e).lower():
+            print("[AI_SUMMARY] TIMEOUT: API request timed out")
+        elif "invalid" in str(e).lower():
+            print("[AI_SUMMARY] INVALID REQUEST: Check API key or request format")
+        else:
+            import traceback
+            print(f"[AI_SUMMARY] TRACEBACK:\n{traceback.format_exc()}")
+            
         return None
 
 def translate_to_korean_summary_googletrans(title, content):

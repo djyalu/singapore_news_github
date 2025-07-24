@@ -341,6 +341,10 @@ def sanitize_path(file_path, base_path):
     """
     import os
     
+    # 백슬래시를 슬래시로 정규화
+    if file_path:
+        file_path = file_path.replace('\\', '/')
+    
     # 절대 경로로 변환
     abs_base = os.path.abspath(base_path)
     abs_file = os.path.abspath(os.path.join(abs_base, file_path))
@@ -376,6 +380,9 @@ def clean_text(text):
     text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.IGNORECASE | re.DOTALL)
     text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.IGNORECASE | re.DOTALL)
     text = re.sub(r'<iframe[^>]*>.*?</iframe>', '', text, flags=re.IGNORECASE | re.DOTALL)
+    
+    # br 태그를 공백으로 변환
+    text = re.sub(r'<br\s*/?>', ' ', text, flags=re.IGNORECASE)
     
     # 나머지 HTML 태그 제거
     text = re.sub(r'<[^>]+>', '', text)
@@ -448,6 +455,25 @@ def post_process_article_content(article_data):
         return article_data
     
     content = article_data['content']
+    
+    # 홈페이지 콘텐츠 감지 및 처리
+    if len(content) > 3000 and content.count('\n\n\n') > 10:
+        print(f"[SCRAPER] WARNING: Homepage-like content detected ({len(content)} chars, many empty lines)")
+        # 처음 몇 개의 의미있는 단락만 추출
+        paragraphs = []
+        for p in content.split('\n\n'):
+            p_clean = p.strip()
+            if p_clean and len(p_clean) > 100 and not is_menu_sentence(p_clean):
+                paragraphs.append(p_clean)
+            if len(paragraphs) >= 5:  # 최대 5개 단락
+                break
+        
+        if paragraphs:
+            content = '\n\n'.join(paragraphs)
+            print(f"[SCRAPER] Extracted {len(paragraphs)} meaningful paragraphs")
+        else:
+            content = content[:1000]
+            print(f"[SCRAPER] No meaningful paragraphs found, truncated to 1000 chars")
     
     # TextProcessor를 사용하여 깨끗한 문장 추출
     sentences = TextProcessor.extract_sentences(content, min_length=20)
