@@ -1764,19 +1764,29 @@ def reset_ai_summary_count():
     """AI 요약 카운터 리셋"""
     global AI_SUMMARY_COUNT
     AI_SUMMARY_COUNT = 0
-    print(f"[AI_SUMMARY] Counter reset. Max summaries: {MAX_AI_SUMMARIES}")
+    print(f"[AI_SUMMARY] ========== COUNTER RESET ==========")
+    print(f"[AI_SUMMARY] Max summaries per session: {MAX_AI_SUMMARIES}")
+    print(f"[AI_SUMMARY] Current count reset to: {AI_SUMMARY_COUNT}")
+    print(f"[AI_SUMMARY] ===========================================")
 
 def should_use_ai_summary(article_data, site_name):
     """AI 요약 사용 여부 결정 (주요 뉴스 우선)"""
     global AI_SUMMARY_COUNT
     
+    print(f"[AI_FILTER] Checking AI eligibility for {site_name}: {article_data.get('title', '')[:50]}...")
+    print(f"[AI_FILTER] Current AI count: {AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}")
+    
     # 이미 최대 개수에 도달했으면 사용하지 않음
     if AI_SUMMARY_COUNT >= MAX_AI_SUMMARIES:
+        print(f"[AI_FILTER] SKIP: Maximum AI summaries reached ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES})")
         return False
     
     # 홈페이지 콘텐츠 필터링 강화
     title = article_data.get('title', '')
     url = article_data.get('url', '')
+    
+    print(f"[AI_FILTER] Title: {title}")
+    print(f"[AI_FILTER] URL: {url}")
     
     # 홈페이지 필터링 강화
     homepage_indicators = [
@@ -1791,18 +1801,21 @@ def should_use_ai_summary(article_data, site_name):
     ]
     
     # 제목에 홈페이지 지시자 포함 시 제외
-    if any(indicator in title for indicator in homepage_indicators):
-        print(f"[AI_SUMMARY] Skipping homepage content: {title[:50]}...")
-        return False
+    for indicator in homepage_indicators:
+        if indicator in title:
+            print(f"[AI_FILTER] SKIP: Homepage indicator '{indicator}' found in title")
+            return False
     
     # 제목이 너무 길고 일반적이면 홈페이지로 의심
     if len(title) > 80 and ('Coverage' in title or 'Analysis' in title):
-        print(f"[AI_SUMMARY] Skipping likely homepage (long generic title): {title[:50]}...")
+        print(f"[AI_FILTER] SKIP: Long generic title detected (length: {len(title)})")
         return False
     
     # URL이 루트 도메인이면 홈페이지로 간주
-    if url.rstrip('/').count('/') <= 2:
-        print(f"[AI_SUMMARY] Skipping root URL: {url}")
+    url_parts = url.rstrip('/').count('/')
+    print(f"[AI_FILTER] URL parts count: {url_parts}")
+    if url_parts <= 2:
+        print(f"[AI_FILTER] SKIP: Root URL detected (parts: {url_parts})")
         return False
     
     # 주요 사이트 우선순위
@@ -1813,54 +1826,88 @@ def should_use_ai_summary(article_data, site_name):
         'The Independent Singapore'
     ]
     
+    print(f"[AI_FILTER] Priority sites: {priority_sites}")
+    print(f"[AI_FILTER] Site '{site_name}' is priority: {site_name in priority_sites}")
+    
     # 우선순위 사이트는 AI 요약 적용 (더 엄격한 기준)
     if site_name in priority_sites:
         # 우선순위 사이트도 제목 길이와 내용 품질 검사
-        if len(title) < 20 or len(title) > 150:
-            print(f"[AI_SUMMARY] Skipping priority site due to title length: {len(title)}")
+        title_len = len(title)
+        print(f"[AI_FILTER] Priority site title length: {title_len}")
+        if title_len < 20 or title_len > 150:
+            print(f"[AI_FILTER] SKIP: Priority site title length out of range (20-150): {title_len}")
             return False
+        print(f"[AI_FILTER] ACCEPT: Priority site passed all checks")
         return True
     
     # 일반 사이트는 더 엄격하게
-    return AI_SUMMARY_COUNT < 1  # 우선순위 사이트 외에는 1개만
+    can_use = AI_SUMMARY_COUNT < 1
+    print(f"[AI_FILTER] Non-priority site can use AI: {can_use} (count: {AI_SUMMARY_COUNT} < 1)")
+    return can_use
 
 def create_summary(article_data, settings, site_name=''):
     """설정에 따른 요약 생성 (AI 사용량 제한)"""
     global AI_SUMMARY_COUNT
     
+    print(f"[SUMMARY] ========== SUMMARY GENERATION START ===========")
+    print(f"[SUMMARY] Site: {site_name}")
+    print(f"[SUMMARY] Title: {article_data.get('title', '')[:80]}...")
+    print(f"[SUMMARY] Current AI count: {AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}")
+    
     # AI 요약 사용 여부 결정
     use_ai = should_use_ai_summary(article_data, site_name)
     
+    print(f"[SUMMARY] AI eligibility result: {use_ai}")
+    
     if not use_ai:
         print(f"[SUMMARY] Using keyword summary (AI count: {AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES})")
-        return create_enhanced_keyword_summary(article_data['title'], article_data['content'])
+        result = create_enhanced_keyword_summary(article_data['title'], article_data['content'])
+        print(f"[SUMMARY] Keyword summary result: {result[:100]}...")
+        return result
     
     # 설정에서 AI 옵션 확인
     ai_options = settings.get('scrapingMethodOptions', {}).get('ai', {})
     provider = ai_options.get('provider', 'gemini')
+    api_key = os.environ.get('GOOGLE_GEMINI_API_KEY')
     
-    print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for {site_name}: {article_data['title'][:50]}...")
+    print(f"[SUMMARY] AI provider: {provider}")
+    print(f"[SUMMARY] API key present: {bool(api_key)}")
+    print(f"[SUMMARY] API key length: {len(api_key) if api_key else 0}")
+    
+    print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for {site_name}")
     
     # Gemini API 사용 시도
-    if provider == 'gemini' and os.environ.get('GOOGLE_GEMINI_API_KEY'):
+    if provider == 'gemini' and api_key:
+        print(f"[SUMMARY] Starting Gemini API call...")
         try:
             from ai_summary_free import translate_to_korean_summary_gemini
+            print(f"[SUMMARY] Imported translate_to_korean_summary_gemini successfully")
+            
             gemini_summary = translate_to_korean_summary_gemini(
                 article_data['title'], 
                 article_data['content']
             )
+            print(f"[SUMMARY] Gemini API returned: {type(gemini_summary)}, length: {len(gemini_summary) if gemini_summary else 0}")
+            
             if gemini_summary:
                 AI_SUMMARY_COUNT += 1
-                print(f"[SUMMARY] AI success! ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}) - {gemini_summary[:50]}...")
+                print(f"[SUMMARY] AI SUCCESS! ({AI_SUMMARY_COUNT}/{MAX_AI_SUMMARIES}) - {gemini_summary[:100]}...")
                 return gemini_summary
             else:
                 print(f"[SUMMARY] AI returned empty result, using fallback")
         except Exception as e:
-            print(f"[SUMMARY] AI error: {str(e)}, using fallback")
+            print(f"[SUMMARY] AI ERROR: {type(e).__name__}: {str(e)}")
+            import traceback
+            print(f"[SUMMARY] AI ERROR TRACEBACK:\n{traceback.format_exc()}")
+    else:
+        print(f"[SUMMARY] AI not available - provider: {provider}, api_key: {bool(api_key)}")
     
     # AI 실패 시 향상된 키워드 기반 요약 사용
-    print(f"[SUMMARY] Using enhanced keyword-based summary")
-    return create_enhanced_keyword_summary(article_data['title'], article_data['content'])
+    print(f"[SUMMARY] Using enhanced keyword-based summary (fallback)")
+    result = create_enhanced_keyword_summary(article_data['title'], article_data['content'])
+    print(f"[SUMMARY] Fallback summary result: {result[:100]}...")
+    print(f"[SUMMARY] ========== SUMMARY GENERATION END ===========")
+    return result
 
 def create_enhanced_keyword_summary(title, content):
     """향상된 키워드 기반 요약"""
