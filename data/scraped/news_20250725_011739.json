@@ -1,0 +1,73 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Taxi driver ‘adding shift’ to be a YouTuber",
+        "url": "https://www.straitstimes.com/singapore/taxi-driver-adding-shift-to-be-a-youtuber",
+        "content": "Find out what’s new on ST website and app. The 48-year-old drives 10 hours daily and spends nearly as much time making videos. Like the friendly cabbie making conversation with his passenger, Mr Jui’s videos are candid and honest. Find out more about the conversation with senior transport correspondent Lee Nian Tjoe in the shownotes below. 14:20 Trying to create an online community that is more forward-looking and positive",
+        "publish_date": "2025-07-25T01:17:14.577725+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Taxi driver ‘adding shift’ to be a YouTuber"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Public warned against water activities near Tuas Second Link after chemical tank falls into sea",
+        "url": "https://www.channelnewsasia.com/singapore/tuas-second-link-chemical-tank-fall-sea-public-warned-5256901",
+        "content": "NEA and other agencies were alerted by their Malaysian counterparts to the incident. \"We understand that the other tanker remained intact with no chemical spill on the bridge,\" said NEA. The chemical tank contained propylene glycol: a non-hazardous, biodegradable liquid. The chemical is commonly used in food, pharmaceuticals and cosmetics. NEA said that the Singapore Food Agency (SFA) has alerted...",
+        "publish_date": "2025-07-25T01:17:17.188178+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Public warned against water activities near Tuas S..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "India's Modi and UK PM Starmer ink trade deal",
+        "url": "https://sg.news.yahoo.com/indias-modi-uk-pm-starmer-112625117.html",
+        "content": "Prime Minister Keir Starmer praised Britain's \"unique bonds\" with India as he and his Indian counterpart Narendra Modi formally signed a recently announced UK-India trade deal during talks on Thursday. The UK and India hope the accord will boost trade...",
+        "publish_date": "2025-07-25T00:43:22+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 India's Modi and UK PM Starmer ink trade deal"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:17:39.604480+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-25T01:17:19.180250+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 HDB offers more than 5,500 BTO flats in July with ..."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Helping seniors to navigate investing and spending in retirement is a must",
+        "url": "https://www.businesstimes.com.sg/opinion-features/helping-seniors-navigate-investing-and-spending-retirement-must",
+        "content": "[SINGAPORE] Retail investors here have come a long way from decades ago when fund launches were regarded as initial public offerings of stocks. This misconception was common in the early days of unit trusts. Today, many investors have become familiar with the factors that make for successful retirement investing: starting early; reducing expenses; investing regularly into a core portfolio; and, of course, keeping a long horizon",
+        "publish_date": "2025-07-25T01:17:20.027969+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Helping seniors to navigate investing and spending..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:17:39.604511+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
