@@ -1879,17 +1879,17 @@ def create_summary(article_data, settings, site_name=''):
     
     print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for {site_name}")
     
-    # 멀티 API 폴백 시스템: Gemini → Cohere → Google Translate
+    # 멀티 API 폴백 시스템: Cohere → Gemini → Google Translate
     ai_apis = [
-        {
-            'name': 'Gemini',
-            'function': 'translate_to_korean_summary_gemini',
-            'key_env': 'GOOGLE_GEMINI_API_KEY'
-        },
         {
             'name': 'Cohere', 
             'function': 'translate_to_korean_summary_cohere',
             'key_env': 'COHERE_API_KEY'
+        },
+        {
+            'name': 'Gemini',
+            'function': 'translate_to_korean_summary_gemini',
+            'key_env': 'GOOGLE_GEMINI_API_KEY'
         },
         {
             'name': 'Google Translate',
