@@ -1,0 +1,63 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "2 foreigners arrested for shop theft at Changi Airport",
+        "url": "https://www.straitstimes.com/singapore/courts-crime/2-foreigners-arrested-for-shop-theft-at-changi-airport",
+        "summary": "📰 제목: 창이 공항에서 적발된 외국인의 상점 절도 사건\n\n내용: ST 웹사이트와 앱에서 새롭게 공개된 소식에 따르면, 두 외국인이 창이 공항에서 상점 절도 혐의로 체포되었다. 이들에게서 도난당한 물품 5점은 모두 회수되었으며, 용의자들에 대한 심문이 7월 23일에 이루어질 예정이다. 향수병 5개의 도난 사실은 상점 직원에 의해 발견되었으며, 경찰은 용의자 체포 시점을 밝히지 않았다.",
+        "content": "Find out what’s new on ST website and app. All five stolen items were recovered from the duo, who will be charged on July 23. The missing bottles of perfume were later discovered by the outlet’s staff during their stock-take. Police did not say when the suspects were nabbed.",
+        "publish_date": "2025-07-25T01:22:37.990571+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Complimenting your partner could actually be harmful, expert warns — two things you should never say",
+        "url": "https://sg.news.yahoo.com/style/complimenting-partner-could-actually-harmful-201627413.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Complimenting your partner could actually be harmful, expert warns — two things ...",
+        "content": "Compliments can certainly go a long way in making someone feel special and loved. While you might think everyone loves a little flattery, one expert warns that some compliments may have unintended negative impacts on romantic relationships. “Compliments can be disarming. They make us feel chosen and understood in ways that other words rarely do,” the psychologist explained. “But sometimes, the praise that feels the most flattering is also the praise that teaches us to edit ourselves.”. If your partner grew up playing the peacekeeper in chaotic situations, this compliment might feel like overdue recognition. Yet, it can also come across as a reward for their silence.",
+        "publish_date": "2025-07-23T05:16:27+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Did Ozzy Osbourne really bite the head off a live bat?",
+        "url": "https://sg.news.yahoo.com/did-ozzy-osbourne-really-bite-032405767.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Did Ozzy Osbourne really bite the head off a live bat?",
+        "content": "When it comes to the unruly world of rock, shocking behaviour is rarely frowned upon. Most of the time it's practically mandatory. You don't get a nickname like that by accident. But, over the years, recollections have differed on the precise turn of events. Sometimes that was because people's memories clashed. But mostly it depended on which version of the story...",
+        "publish_date": "2025-07-23T18:29:26+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:23:07.448678+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 제목: 7월에 HDB, 부킷 메라, 클레멘티, 토아 파요에 고급 공영주택 5,500유닛 공급\n내용: 이 달의 공영주택 청약에는 부킷 메라, 클레멘티, 토아 파요에 위치한 고급 주택 4개 단지가 포함된다. 고급 주택은 인기가 높고 시세도 높지만, 추가 보조금 지급으로 싱가포르인들에게 더 합리적인 가격에 공급된다. 이번에 공급되는 고급 단지는 알렉산드라 피크스, 알렉산드라 비스타, 클레멘티 에메랄드, 토아 파요 어센트로 총 5,500여 가구이다.",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-25T01:22:44.011106+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:23:07.448717+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
