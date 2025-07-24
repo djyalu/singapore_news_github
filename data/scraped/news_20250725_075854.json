@@ -1,0 +1,123 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "IMF reaches staff-level agreement for $2 billion disbursement to Argentina",
+        "url": "https://www.straitstimes.com/world/imf-reaches-staff-level-agreement-for-2-billion-disbursement-to-argentina",
+        "summary": "📰 제목: IMF, 아르헨티나에 20억 달러 자금 지원 합의\n\n내용: 국제통화기금(IMF)이 아르헨티나에 20억 달러의 자금 지원과 관련해 staff-level 합의에 도달했다. IMF는 성명을 통해 아르헨티나 측과 재정 건전성 유지에 대한 합의가 이루어졌고, 덕분에 아르헨티나 정부는 예정보다 빨리 국제 자본시장에서 자금을 조달할 수 있게 되었다고 밝혔다.",
+        "content": "Find out what’s new on ST website and app. REUTERS/Benoit Tessier/File Photo. \"Notably, Argentina has re-accessed international capital markets earlier than anticipated,\" the IMF added. The lender said that agreements had been reached with Argentina on safeguarding its fiscal...",
+        "publish_date": "2025-07-25T07:58:08.486995+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘We would climb up and down Bukit Timah Hill about six times’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-youngest-singaporean-everest-base-camp",
+        "summary": "📰 제목: 당신의 싱가포르 이야기: '우리는 부킷 티마 힐을 약 6번 올라갔다 내려왔다'\n내용: 42세 Zikri는 싱가포르에서 요가 학교를 운영하며, 그의 아들 아비안은 유치원 대신 전국 기록에 도전한다. 아비안은 다른 아이들과는 다르게 유치원 대신 아빠와 함께 하루에 부킷 티마 힐을 약 6번 등산하는 기록을 세우고 있다.",
+        "content": "Find out what’s new on ST website and app. While other children his age are attending preschool and learning to play musical instruments, Abyan Imtiaz Irkiz is busy setting national records. And not just any record either. Mr Zikri, 42, runs a yoga school in Singapore with his wife, while Abyan...",
+        "publish_date": "2025-07-25T07:58:09.786333+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/stmicro-buy-part-nxp-semiconductors-214620764.html",
+        "summary": "📰 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "The unit generated revenue of about $300 million last year, STMicro said in a statement. The deal is expected to close in the first half of 2026",
+        "publish_date": "2025-07-25T06:46:20+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T07:58:54.073855+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "GIC posts 3.8% 20-year annualised real rate of return; expects returns ahead will be more volatile",
+        "url": "https://www.businesstimes.com.sg/companies-markets/gic-posts-3-8-20-year-annualised-real-rate-return-expects-returns-ahead-will-be-more-volatile",
+        "summary": "📰 제목: 국부펀드 GIC, 20년 실수익률 3.8% 발표...투자환경 변화로 향후 변동성 커질 듯\n\n내용: 싱가포르의 국부펀드인 GIC가 20년 기준 연 실수익률 3.8%를 기록했습니다. GIC의 수장인 림 차우 키아트는 현재 투자 환경이 시장 사이클이나 구조적 트렌드를 넘어선 변화에 직면해 있으며, 글로벌 질서의 토대를 흔들고 있다고 경고했습니다. 그는 사이클상 더 높은 변동성과 함께 인구 변화와 글로벌 공급망 재편 같은 구조적 변화가 이어질 것으로 내다봤습니다.",
+        "content": "“The forces shaping today’s investment environment go beyond any market cycle or structural trend. They strike at the foundations of the global order. They are rewriting the rules of global investing,” said Lim Chow Kiat, chief executive of GIC. Cyclically, there is a more volatile growth and inflation environment. Structural shifts – such as demographic changes and a reconfiguration of global supply chains – will...",
+        "publish_date": "2025-07-25T07:58:20.065949+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Business Times",
+        "title": "Helping seniors to navigate investing and spending in retirement is a must",
+        "url": "https://www.businesstimes.com.sg/opinion-features/helping-seniors-navigate-investing-and-spending-retirement-must",
+        "summary": "📰 제목: 은퇴한 노인들을 위한 투자 및 지출 가이드의 중요성\n\n내용: 싱가포르의 소매 투자자들이 은퇴 후 투자에 대해 미숙한 점을 보완할 가이드가 필요하다. 예전에는 펀드 출시가 주식시장의 상장과 혼동되곤 했었다. 오늘날에는 투자의 성공요소로 '조기 투자', '지출 감소', '정기적 투자', '장기적 관점 유지' 등을 인지하고 있지만, 노후를 위한 재정 계획에 있어 더 많은 교육과 지도가 요구된다.",
+        "content": "[SINGAPORE] Retail investors here have come a long way from decades ago when fund launches were regarded as initial public offerings of stocks. This misconception was common in the early days of unit trusts. Today, many investors have become familiar with the factors that make for successful retirement investing: starting early; reducing expenses; investing regularly into a core portfolio; and, of course, keeping a long horizon",
+        "publish_date": "2025-07-25T07:58:21.826334+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Business Times",
+        "title": "Indonesia palm oil producers on alert as Sumatra fires coincide with peak harvest",
+        "url": "https://www.businesstimes.com.sg/international/asean/indonesia-palm-oil-producers-alert-sumatra-fires-coincide-peak-harvest",
+        "summary": "📰 제목: 수마트라 화재, 정점 맞은 야자수 기름 수확에 경고신호\n\n내용: 분석가에 따르면, 인도네시아 수마트라 섬의 화재가 야자수 기름의 수확에 악영향을 끼쳐 시장에 단기적 긴밀함을 유발할 수 있음. 크레이그 트리볼렛 April Group 부사장은 \"우리 소방팀이 수주 동안 고강도 대기 상태를 유지할 것\"이라며, 회사는 1993년부터 소각 금지를 시행해왔고 화재 관리 절차도 준수하고 있다고 덧붙임.",
+        "content": "Analyst warns fires and haze could hamper palm oil harvesting operations and logistics, reducing yields and creating short-term tightness in the market. “In the weeks ahead, our fire response teams remain on high alert,” said Craig Tribolet, the company’s deputy director of sustainability. Tribolet said April Group has implemented a no-burn policy since 1993 and follows a fire management...",
+        "publish_date": "2025-07-25T07:58:23.453025+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T07:58:54.073902+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Chinese",
+    "articles": [
+      {
+        "site": "Lianhe Zaobao",
+        "title": "新加坡米其林指南名单出炉 一星餐馆少10家",
+        "url": "https://www.zaobao.com.sg/realtime/singapore/story20250724-7212810?ref=today-news-section-card-7",
+        "summary": "📰 싱가포르, 관광 관련 뉴스\n📢 新加坡米其林指南名单出炉 一星餐馆少10家",
+        "content": "Sushi Sakuta（寿司，The Capitol Kempinski Hotel Singapore）. Iggy’s（欧式当代， Voco Orchard Singapore）. 四川饭店（广东和四川，Hilton Singapore Orchard）. 夏宫（广东，Conrad Singapore Orchard）. 夏苑（广东，The Ritz-Carlton, Millenia Singapore）. Sushi Ichi（寿司，Singapore Marriott Tang Plaza Hotel）",
+        "publish_date": "2025-07-25T07:58:41.075682+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Lianhe Zaobao"
+    ],
+    "timestamp": "2025-07-25T07:58:54.073918+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Culture",
+    "articles": [
+      {
+        "site": "Time Out Singapore",
+        "title": "There’s a colourful SG60-themed container display at Tanjong Pagar Terminal",
+        "url": "https://www.timeout.com/singapore/news/theres-a-colourful-sg60-themed-container-display-at-tanjong-pagar-terminal-072425",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 There’s a colourful SG60-themed container display at Tanjong Pagar Terminal",
+        "content": "To mark the nation’s diamond jubilee, the port operator has unveiled a limited-time installation at Tanjong Pagar Terminal, Singapore’s very first container port. This isn’t the first time PSA has celebrated a national milestone with a container...",
+        "publish_date": "2025-07-24T05:42:17+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Time Out Singapore"
+    ],
+    "timestamp": "2025-07-25T07:58:54.073929+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
