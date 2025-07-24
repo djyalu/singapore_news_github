@@ -1766,7 +1766,7 @@ def get_article_links_generic(soup, base_url):
 
 # AI 요약 사용량 추적 (전역 변수)
 AI_SUMMARY_COUNT = 0
-MAX_AI_SUMMARIES = 2  # 세션당 최대 2개 (적절한 품질 유지)
+MAX_AI_SUMMARIES = 25  # 세션당 최대 25개 (Cohere 월 1000개 제한 고려)
 
 def reset_ai_summary_count():
     """AI 요약 카운터 리셋"""

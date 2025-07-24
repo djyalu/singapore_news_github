@@ -87,7 +87,7 @@ def scrape_news_hybrid():
             
             # 각 기사에 대해 AI 요약 생성
             ai_count = 0
-            max_ai_summaries = 2  # 최대 AI 요약 수 제한
+            max_ai_summaries = 25  # 최대 AI 요약 수 제한 (Cohere 월 1000개 제한 고려)
             
             for group, group_articles in articles_by_group.items():
                 for article in group_articles:
