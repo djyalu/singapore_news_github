@@ -1,0 +1,72 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "China says ‘deeply concerned’ over deadly Cambodia-Thailand border clashes",
+        "url": "https://www.straitstimes.com/asia/east-asia/china-says-deeply-concerned-over-deadly-cambodia-thailand-border-clashes",
+        "content": "Find out what’s new on ST website and app. The conflict blazed up on July 24, with Cambodia firing rockets and artillery shells into Thailand. Follow our live coverage here. deadly clashes between Cambodia and Thailand. “We are deeply concerned over the current developments (and) hope both sides can properly resolve issues through dialogue and consultations,” foreign ministry spokesman Guo Jiakun said. The squabble has dragged on for decades, flaring into bloody military...",
+        "publish_date": "2025-07-25T01:38:50.237300+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 중국, 캄보디아-태국 국경 충돌에 '심각한 우려' 표명\n\n내용: 중국은 캄보디아와 태국의 국경에서 발생한 유혈 충돌에 대해 깊이 우려하고 있다고 밝혔다. 이번冲突은 7월 24일 캄보디아가 로켓과 포탄을 태국으로 발사하며 시작됐다. 중국 외무성 대변인 궈 자쿤은 양측이 대화를 통해 문제를 해결하기를 희망한다며, 현 상황에 대해 심각한 우려를 표명했다. 수십 년간 이어져 온 영토 분쟁이 다시 한번 유혈 충돌로 번진 것이다."
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Wrestling legend Hulk Hogan dies aged 71: US media",
+        "url": "https://www.straitstimes.com/life/entertainment/wrestling-legend-hulk-hogan-dies-aged-71-us-media",
+        "content": "Find out what’s new on ST website and app. Hulk Hogan was known for his towering 2m-tall physique, bandana and distinctive blond handlebar moustache. TMZ also reported the news, citing unnamed sources",
+        "publish_date": "2025-07-25T01:38:53.653629+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 레슬링 레전드 헐크 호건, 71세로 사망\n\n내용: 미국 언론들이 보도와 동시에 TMZ도 익명의 소식통을 인용하여 2미터가 넘는 거구이자 특유의 반다나, 금발의 수염으로 유명한 프로레슬러 헐크 호건의 사망 소식을 알렸다. 그는 71세의 나이에 생을 마감했다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Snap Insight: As Thailand and Cambodia escalate border spat, the personal ties that once united now fuel hostility",
+        "url": "https://www.channelnewsasia.com/commentary/thailand-cambodia-border-fighting-death-thaksin-shinawatra-hun-sen-snap-insight-5256031",
+        "content": "SINGAPORE: Thailand and Cambodia escalated their ongoing border spat on Thursday (Jul 24), with troops exchanging fire, fighter jets deployed and reports of civilian casualties emerging. Prime Minister Hun Manet said on Facebook that Cambodia had “no choice but to respond with armed forces against armed aggression”. Suspended Thai Prime Minister Paetongtarn Shinawatra wrote on Instagram subsequently that his father, Cambodian Senate President and former leader Hun Sen, was “acting like a victim”",
+        "publish_date": "2025-07-25T01:38:55.862408+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 태국과 캄보디아, 국경분쟁 격화, 친분이 있던 관계에서 적대관계로\n\n내용: 7월 24일, 태국과 캄보디아가 국경분쟁을 격화시키며 군대가 교전했다. 캄보디아는 무력침격을 받은 것이므로 무력으로 대응할 수밖에 없다고 주장했고, 태국의 현직 총리와 캄보디아 전 지도자의 딸인 부총리 간에 설전이 오갔다. 이번 분쟁으로 민간인 사상자가 발생한 것으로 보고된다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-25T01:39:44.917075+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Reits, institutional investors and funds in ‘buy mode’ as debt costs ease",
+        "url": "https://www.businesstimes.com.sg/property/reits-institutional-investors-and-funds-buy-mode-debt-costs-ease",
+        "content": "[SINGAPORE] Real estate investment trusts (Reits), investors and funds have turned “more acquisitive” in Singapore this year, even as geopolitical and macroeconomic uncertainties persist. It is an overwhelming amount of portfolio and foreign direct...",
+        "publish_date": "2025-07-25T01:39:02.738693+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 부동산 투자신탁, 채권 비용 완화로 매수 모드로 전환\n내용: 싱가포르의 부동산 투자신탁(Reits), 투자자, 펀드들이 올해 매수 태세로 전환했다. 지질정치적, 거시경제적 불확실성에도 고액 자산가와 외국 직접투자자들이 활발히 투자에 나서며, 매도자 우위 시장이 지속되고 있다. 특히 부동산 자산에 대한 수요가 증가해, 일부 업체들은 매각 대상을 찾기 어려울 정도이다."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Indonesia palm oil producers on alert as Sumatra fires coincide with peak harvest",
+        "url": "https://www.businesstimes.com.sg/international/asean/indonesia-palm-oil-producers-alert-sumatra-fires-coincide-peak-harvest",
+        "content": "Analyst warns fires and haze could hamper palm oil harvesting operations and logistics, reducing yields and creating short-term tightness in the market. “In the weeks ahead, our fire response teams remain on high alert,” said Craig Tribolet, the company’s deputy director of sustainability. Tribolet said April Group has implemented a no-burn policy since 1993 and follows a fire management...",
+        "publish_date": "2025-07-25T01:39:04.234330+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Indonesia palm oil producers on alert as Sumatra f..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:39:44.917107+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
