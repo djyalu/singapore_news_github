@@ -1758,7 +1758,7 @@ def get_article_links_generic(soup, base_url):
 
 # AI 요약 사용량 추적 (전역 변수)
 AI_SUMMARY_COUNT = 0
-MAX_AI_SUMMARIES = 3  # 세션당 최대 3개
+MAX_AI_SUMMARIES = 2  # 세션당 최대 2개 (적절한 품질 유지)
 
 def reset_ai_summary_count():
     """AI 요약 카운터 리셋"""
@@ -1778,18 +1778,26 @@ def should_use_ai_summary(article_data, site_name):
     title = article_data.get('title', '')
     url = article_data.get('url', '')
     
-    # 홈페이지 필터링
+    # 홈페이지 필터링 강화
     homepage_indicators = [
         'Breaking News and Analysis',
-        'Real-Time Coverage',
+        'Real-Time Coverage',  
         'Latest News',
         'Top Stories',
         'Homepage',
-        'Main Page'
+        'Main Page',
+        'Asia and the World',  # CNA 홈페이지 추가
+        'out of Asia'  # CNA 홈페이지 키워드
     ]
     
+    # 제목에 홈페이지 지시자 포함 시 제외
     if any(indicator in title for indicator in homepage_indicators):
         print(f"[AI_SUMMARY] Skipping homepage content: {title[:50]}...")
+        return False
+    
+    # 제목이 너무 길고 일반적이면 홈페이지로 의심
+    if len(title) > 80 and ('Coverage' in title or 'Analysis' in title):
+        print(f"[AI_SUMMARY] Skipping likely homepage (long generic title): {title[:50]}...")
         return False
     
     # URL이 루트 도메인이면 홈페이지로 간주
@@ -1805,12 +1813,16 @@ def should_use_ai_summary(article_data, site_name):
         'The Independent Singapore'
     ]
     
-    # 우선순위 사이트는 AI 요약 적용
+    # 우선순위 사이트는 AI 요약 적용 (더 엄격한 기준)
     if site_name in priority_sites:
+        # 우선순위 사이트도 제목 길이와 내용 품질 검사
+        if len(title) < 20 or len(title) > 150:
+            print(f"[AI_SUMMARY] Skipping priority site due to title length: {len(title)}")
+            return False
         return True
     
-    # 일반 사이트는 제한적으로 적용
-    return AI_SUMMARY_COUNT < 2  # 처음 2개만
+    # 일반 사이트는 더 엄격하게
+    return AI_SUMMARY_COUNT < 1  # 우선순위 사이트 외에는 1개만
 
 def create_summary(article_data, settings, site_name=''):
     """설정에 따른 요약 생성 (AI 사용량 제한)"""
@@ -1827,7 +1839,7 @@ def create_summary(article_data, settings, site_name=''):
     ai_options = settings.get('scrapingMethodOptions', {}).get('ai', {})
     provider = ai_options.get('provider', 'gemini')
     
-    print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for: {article_data['title'][:50]}...")
+    print(f"[SUMMARY] Attempting AI summary ({AI_SUMMARY_COUNT + 1}/{MAX_AI_SUMMARIES}) for {site_name}: {article_data['title'][:50]}...")
     
     # Gemini API 사용 시도
     if provider == 'gemini' and os.environ.get('GOOGLE_GEMINI_API_KEY'):
