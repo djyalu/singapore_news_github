@@ -24,6 +24,16 @@
     },
     "traditional": {
       "useEnhancedFiltering": true
+    },
+    "hybrid": {
+      "linkCollection": "traditional",
+      "summarization": "multiAPI",
+      "apiPriority": [
+        "cohere",
+        "gemini",
+        "googletrans"
+      ],
+      "description": "Traditional 링크 수집 + 멀티 API 요약"
     }
   },
   "monitoring": {
