@@ -1,0 +1,67 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "China says ‘deeply concerned’ over deadly Cambodia-Thailand border clashes",
+        "url": "https://www.straitstimes.com/asia/east-asia/china-says-deeply-concerned-over-deadly-cambodia-thailand-border-clashes",
+        "summary": "📰 개발, 기술, 국제 관련 뉴스\n📢 China says ‘deeply concerned’ over deadly Cambodia-Thailand border clashes",
+        "content": "Find out what’s new on ST website and app. The conflict blazed up on July 24, with Cambodia firing rockets and artillery shells into Thailand. Follow our live coverage here. deadly clashes between Cambodia and Thailand. “We are deeply concerned over the current developments (and) hope both sides can properly resolve issues through dialogue and consultations,” foreign ministry spokesman Guo Jiakun said. The squabble has dragged on for decades, flaring into bloody military...",
+        "publish_date": "2025-07-25T00:47:44.152575+09:00"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Chocolate Finance raises US$15 million; CEO says it may still offer instant withdrawals in future",
+        "url": "https://www.channelnewsasia.com/singapore/chocolate-finance-axs-withdrawal-series-15-million-5255681",
+        "summary": "📰 금융, 기술, 국제 관련 뉴스\n📢 Chocolate Finance raises US$15 million; CEO says it may still offer instant with...",
+        "content": "The funds were raised from Nikko Asset Management, returning investors Peak XV (previously known as Sequoia Capital India and Southeast Asia), Prosus, Saison Capital and Chocolate Finance’s founder Walter de Oude. It expects to launch there in the first quarter of 2026. The company came under scrutiny in March when it halted instant withdrawals after receiving an “unusually high” volume of requests. Customers withdrew S$500 million (US$392 million) in about two weeks –...",
+        "publish_date": "2025-07-25T00:47:45.839084+09:00"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Snap Insight: As Thailand and Cambodia escalate border spat, the personal ties that once united now fuel hostility",
+        "url": "https://www.channelnewsasia.com/commentary/thailand-cambodia-border-fighting-death-thaksin-shinawatra-hun-sen-snap-insight-5256031",
+        "summary": "📰 싱가포르, 장관, 창이 관련 뉴스\n📢 Snap Insight: As Thailand and Cambodia escalate border spat, the personal ties t...",
+        "content": "SINGAPORE: Thailand and Cambodia escalated their ongoing border spat on Thursday (Jul 24), with troops exchanging fire, fighter jets deployed and reports of civilian casualties emerging. Prime Minister Hun Manet said on Facebook that Cambodia had “no choice but to respond with armed forces against armed aggression”. Suspended Thai Prime Minister Paetongtarn Shinawatra wrote on Instagram subsequently that his father, Cambodian Senate President and former leader Hun Sen, was “acting like a victim”",
+        "publish_date": "2025-07-25T00:47:46.220809+09:00"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T00:48:04.036162+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Indonesia palm oil producers on alert as Sumatra fires coincide with peak harvest",
+        "url": "https://www.businesstimes.com.sg/international/asean/indonesia-palm-oil-producers-alert-sumatra-fires-coincide-peak-harvest",
+        "summary": "📰 정책, 경제, 환경 관련 뉴스\n📢 Indonesia palm oil producers on alert as Sumatra fires coincide with peak harves...",
+        "content": "Analyst warns fires and haze could hamper palm oil harvesting operations and logistics, reducing yields and creating short-term tightness in the market. “In the weeks ahead, our fire response teams remain on high alert,” said Craig Tribolet, the company’s deputy director of sustainability. Tribolet said April Group has implemented a no-burn policy since 1993 and follows a fire management...",
+        "publish_date": "2025-07-25T00:47:47.033018+09:00"
+      },
+      {
+        "site": "The Business Times",
+        "title": "New S$30 million members-only club Vanta to open in MacDonald House",
+        "url": "https://www.businesstimes.com.sg/singapore/new-s30-million-members-only-club-vanta-open-macdonald-house",
+        "summary": "📰 싱가포르, 음식, 기술 관련 뉴스\n📢 New S$30 million members-only club Vanta to open in MacDonald House",
+        "content": "Michelin-starred ‘Demon Chef’ Alvin Leung will curate the food at the venue, which will start operating in December. [SINGAPORE] New members-only club Vanta will open in MacDonald House in December, after a S$30 million renovation. Michelin-starred Canadian chef and TV personality, Alvin Leung (also known as “Demon Chef”) of Hong Kong’s Bo Innovation, will curate the club’s culinary programme",
+        "publish_date": "2025-07-25T00:47:47.341544+09:00"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T00:48:04.036222+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
