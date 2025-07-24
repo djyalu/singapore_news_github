@@ -166,5 +166,23 @@
     "group_count": 2,
     "method": "hybrid_ai",
     "summary": "- Economy: 1개 기사<br>- News: 3개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:35:19.840760",
+    "execution_time": "2025-07-25 01:35:19 KST",
+    "status": "success",
+    "article_count": 4,
+    "group_count": 2,
+    "method": "hybrid_ai",
+    "summary": "- News: 2개 기사<br>- Economy: 2개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T01:37:25.231772",
+    "execution_time": "2025-07-25 01:37:25 KST",
+    "status": "success",
+    "article_count": 5,
+    "group_count": 2,
+    "method": "hybrid_ai",
+    "summary": "- News: 3개 기사<br>- Economy: 2개 기사"
   }
 ]

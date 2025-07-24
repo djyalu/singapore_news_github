@@ -1,0 +1,72 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘We would climb up and down Bukit Timah Hill about six times’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-youngest-singaporean-everest-base-camp",
+        "summary": "📰 제목: 당신의 싱가포르 이야기: '우리는 부킷 티마 언덕을 약 6번 오를 거예요'\n내용: 42세 남자인 자크리 씨는 싱가포르에서 요가 학교를 운영하며, 그의 아들 아비아나 임티아즈가 국가 기록을 세우는 데 바쁩니다. 아비아나는 다른 또래 아이들처럼 유치원에 다니며 악기를 배우는 대신, 무려 6번이나 부킷 티마 힐을 오르는 기록을 세웠습니다. 아비아나는 운동에 소질과 열정이 넘치며, 아버지와 함께 운동하는 것을 좋아합니다.",
+        "content": "Find out what’s new on ST website and app. While other children his age are attending preschool and learning to play musical instruments, Abyan Imtiaz Irkiz is busy setting national records. And not just any record either. Mr Zikri, 42, runs a yoga school in Singapore with his wife, while Abyan...",
+        "publish_date": "2025-07-25T01:36:34.020202+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Made in China: C-beauty craze hits S’pore as new generation of brands offer quality for cheap",
+        "url": "https://www.straitstimes.com/life/style/made-in-china-c-beauty-craze-hits-spore-as-new-generation-of-brands-offer-quality-for-cheap?ref=headstart",
+        "summary": "📰 제목: 중국산 화장품의 인기가 싱가포르를 강타하다\n\n내용: 중국에서 만든 화장품이 싱가포르에서 각광받고 있다. 고품질에 저렴한 가격대의 신생 브랜드들이 singaporeans의 마음을 사로잡고 있다. 대표적으로 Judydoll과 Joocyee가 있는데, 두 브랜드를 만든 37세 창업자는 8년간 싱가포르에서 공부하고 일한 경험이 있다.",
+        "content": "Find out what’s new on ST website and app. Before he created popular C-beauty make-up brands Judydoll and Joocyee, the 37-year-old spent eight years studying and working here",
+        "publish_date": "2025-07-25T01:36:36.273704+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Public warned against water activities near Tuas Second Link after chemical tank falls into sea",
+        "url": "https://www.channelnewsasia.com/singapore/tuas-second-link-chemical-tank-fall-sea-public-warned-5256901",
+        "summary": "📰 제목: 투아스 세컨드 링크에서 화학탱크 바다로 추락, 국민들 경고\n\n내용: NEA와 다른 기관들이 말레이시아 측의 경고로 사고 소식 알림. 비위해롭지만 가연성 화학물질인 프로필렌 글리콜이 바다에 유출될 뻔했으나 다행히도 탱크 한 대가 바다에 빠진 것 외에 다른 탱크는 손상되지 않음. 식음료와 의약품, 화장품 등에 사용되는 이 화학물질에 대해 싱가포르 식품청은 국민들에게 주의를 당부함.",
+        "content": "NEA and other agencies were alerted by their Malaysian counterparts to the incident. \"We understand that the other tanker remained intact with no chemical spill on the bridge,\" said NEA. The chemical tank contained propylene glycol: a non-hazardous, biodegradable liquid. The chemical is commonly used in food, pharmaceuticals and cosmetics. NEA said that the Singapore Food Agency (SFA) has alerted...",
+        "publish_date": "2025-07-25T01:36:39.723835+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:37:18.893623+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "summary": "📰 제목: 7월, HDB에서 5,500여 가구가 넘는 분양 아파트 제공 - 부킷 메라, 클레멘티, 토아 파요에 신규 프로젝트 4종 분양\n내용: 이 달의 분양에는 고급 아파트 카테고리인 부킷 메라, 클레멘티, 토아 파요의 신규 프로젝트 4종이 포함된다. HDB에서는 이번 분양에 고가인 프라임 아파트의 가격을 좀 더 저렴하게 유지하기 위해 추가 보조금을 지원한다. 프라임 아파트는 입지조건이 우수하여 높은 시세를 형성한다.",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-25T01:36:43.382067+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Business Times",
+        "title": "Mapletree Logistics Trust posts 12.4% fall in Q1 DPU to S$0.01812",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mapletree-logistics-trust-posts-12-4-fall-q1-dpu-s0-01812",
+        "summary": "📰 제목: 메이플트리 로지스틱스 트러스트, 1분기 DPU 12.4% 하락해 0.01812 싱가포르 달러 기록\n\n내용: 메이플트리 로지스틱스 트러스트의 1분기 배당금이 전년 동기 대비 12.4% 하락한 0.01812 싱가포르 달러를 기록했습니다. 일회성 매각 수익을 제외하면 배당 수입은 6.2%, DPU는 7.3% 하락한 수치입니다.",
+        "content": "However, excluding the one-off divestment gains, the distributable income would have fallen 6.2 per cent on the year from S$98 million. The DPU would have gone down 7.3 per cent from S$0.01954",
+        "publish_date": "2025-07-25T01:36:45.899947+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:37:18.893664+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

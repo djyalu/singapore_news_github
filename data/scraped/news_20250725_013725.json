@@ -1,0 +1,72 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘We would climb up and down Bukit Timah Hill about six times’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-youngest-singaporean-everest-base-camp",
+        "content": "Find out what’s new on ST website and app. While other children his age are attending preschool and learning to play musical instruments, Abyan Imtiaz Irkiz is busy setting national records. And not just any record either. Mr Zikri, 42, runs a yoga school in Singapore with his wife, while Abyan...",
+        "publish_date": "2025-07-25T01:36:34.020202+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 당신의 싱가포르 이야기: '우리는 부킷 티마 힐을 약 6번 오른다'\n내용: ST 웹사이트와 앱에서 새로운 소식을 알아보세요. 동년배 아이들이 유치원을 다니며 악기를 배우는 동안, 아비안 임티아즈 이르키즈라는 소년은 싱가포르 전국 기록에 도전하고 있습니다. 그의 나이 겨우 4세입니다. 지크리 씨(42세)는 싱가포르에서 요가 학교를 운영하며, 아비안은 그의 기록에 도전하는 데 바쁜 나날을 보내고 있습니다."
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Made in China: C-beauty craze hits S’pore as new generation of brands offer quality for cheap",
+        "url": "https://www.straitstimes.com/life/style/made-in-china-c-beauty-craze-hits-spore-as-new-generation-of-brands-offer-quality-for-cheap?ref=headstart",
+        "content": "Find out what’s new on ST website and app. Before he created popular C-beauty make-up brands Judydoll and Joocyee, the 37-year-old spent eight years studying and working here",
+        "publish_date": "2025-07-25T01:36:36.273704+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 중국산 화장품, 싱가포르 강타…신흥 브랜드가 내세운 가성비 무기로 열풍\n내용: 중국에서 만든 화장품이 싱가포르에서 인기다. 판판(Fanfan)이라는 37세 사업가는 합리적인 가격에 고품질인 자사 화장품 브랜드로 싱가포르에서 선풍적인 인기를 끄는 중. 그는 8년간 싱가포르에서 유학 및 취업하며 현지 시장을 파악한 뒤, 중국에서 화장품 브랜드를 성공시켜 현지로 역수출했다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Public warned against water activities near Tuas Second Link after chemical tank falls into sea",
+        "url": "https://www.channelnewsasia.com/singapore/tuas-second-link-chemical-tank-fall-sea-public-warned-5256901",
+        "content": "NEA and other agencies were alerted by their Malaysian counterparts to the incident. \"We understand that the other tanker remained intact with no chemical spill on the bridge,\" said NEA. The chemical tank contained propylene glycol: a non-hazardous, biodegradable liquid. The chemical is commonly used in food, pharmaceuticals and cosmetics. NEA said that the Singapore Food Agency (SFA) has alerted...",
+        "publish_date": "2025-07-25T01:36:39.723835+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 투아스 세컨드 링크 인근에서 화학 탱크가 바다로 추락, 국민에 경고\n내용: NEA와 다른 기관들은 말레이 측의 경고로 사건에 대처했다. 비위해롭고 생분해성 액체인 프로필렌 글리콜이 담긴 화학 탱크가 바다로 떨어졌다. 이 화학 물질은 음식, 약품, 화장품 등에 commonly 사용되며, 싱가포르 식약처(SFA)에서 추가 상황을 모니터링하고 있다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T01:37:25.223647+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "HDB offers more than 5,500 BTO flats in July with four Prime projects in Bukit Merah, Clementi, Toa Payoh",
+        "url": "https://www.businesstimes.com.sg/singapore/hdb-offers-more-5500-bto-flats-july-four-prime-projects-bukit-merah-clementi-toa-payoh",
+        "content": "Four Prime category projects were offered, in Bukit Merah (Alexandra Peaks and Alexandra Vista), Clementi (Clementi Emerald) and Toa Payoh (Toa Payoh Ascent). This round, HDB has also raised the additional subsidies for Prime flats to keep flats more affordable for Singaporeans. Prime flats command higher market values due to their more favourable attributes, and thus...",
+        "publish_date": "2025-07-25T01:36:43.382067+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 7월에 HDB, 부킷 메라, 클레멘티, 토아 파요에서 5,500여 가구 분양\n내용: 이 달의 분양 가구 수는 5,500여 가구로, 부킷 메라(알렉산드라 피크, 알렉산드라 비스타), 클레멘티(클레멘티 에메랄드), 토아 파요(토아 파요 어센트)에 위치한 Prime 카테고리 프로젝트가 포함된다. 고가임에도 인기있는 Prime 아파트의 경우 추가 보조금을 지원하여 싱가포르인들을 위한 가격을 낮추었다."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Mapletree Logistics Trust posts 12.4% fall in Q1 DPU to S$0.01812",
+        "url": "https://www.businesstimes.com.sg/companies-markets/mapletree-logistics-trust-posts-12-4-fall-q1-dpu-s0-01812",
+        "content": "However, excluding the one-off divestment gains, the distributable income would have fallen 6.2 per cent on the year from S$98 million. The DPU would have gone down 7.3 per cent from S$0.01954",
+        "publish_date": "2025-07-25T01:36:45.899947+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 메이플트리 로지스틱스 트러스트, 1분기 DPU 12.4% 하락해 0.01812 싱가포르 달러 기록\n\n내용: 메이플트리 로지스틱스 트러스트의 1분기 배당금이 전년 동기 대비 12.4% 하락한 0.01812 싱가포르 달러를 기록했습니다. 일회성 매각 수익을 제외하면 배당금은 6.2%, DPU는 7.3% 하락한 수치입니다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T01:37:25.223675+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

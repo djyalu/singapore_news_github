@@ -415,14 +415,14 @@ def is_meaningful_content(text):
     if is_menu_text(text) and len(text) < 100:
         return False
     
-    # 기본 구조 체크
+    # 기본 구조 체크 - 완화
     sentences = text.split('.')
-    if len(sentences) < 2:
+    if len(sentences) < 1:  # 최소 1문장으로 완화
         return False
     
-    # 단어 수 체크
+    # 단어 수 체크 - 완화
     words = text.split()
-    if len(words) < 30:
+    if len(words) < 20:  # 30 -> 20으로 완화
         return False
     
     # 진엄한 기사 내용 패턴 - 더 넓은 범위
@@ -2424,13 +2424,16 @@ def scrape_news_traditional():
             # 기사별 처리
             # 우선순위별 링크 수 설정
             priority_limits = {
-                'The Straits Times': 3,
-                'Channel NewsAsia': 3,
-                'The Business Times': 2,
-                'Yahoo Singapore News': 2,
-                'Mothership': 2
+                'The Straits Times': 5,
+                'Channel NewsAsia': 5,
+                'The Business Times': 4,
+                'Yahoo Singapore News': 4,
+                'Mothership': 4,
+                'The Independent Singapore': 3,
+                'MustShareNews': 3,
+                'AsiaOne': 3
             }
-            max_links = priority_limits.get(site['name'], 1)  # 기본값 1개
+            max_links = priority_limits.get(site['name'], 2)  # 기본값 2개
             
             for article_url in links[:max_links]:
                 try:
