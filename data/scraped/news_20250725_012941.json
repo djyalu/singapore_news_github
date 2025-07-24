@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Wrestling legend Hulk Hogan dies aged 71: US media",
+        "url": "https://www.straitstimes.com/life/entertainment/wrestling-legend-hulk-hogan-dies-aged-71-us-media",
+        "summary": "📰 제목: 레슬링 레전드 헐크 호건 사망, 향년 71세\n내용: 미국 언론들이 보고한 바에 따르면, 수 많은 팬들을 가진 헐크 호건이 사망했다고 한다. 그는 2미터가 넘는 건장한 체격과 반다나, 트레이드마크인 금발의 핸들바 머스타치 수염으로 유명했다. TMZ는 익명의 소식통을 인용하여 이 소식을 전했다.",
+        "content": "Find out what’s new on ST website and app. Hulk Hogan was known for his towering 2m-tall physique, bandana and distinctive blond handlebar moustache. TMZ also reported the news, citing unnamed sources",
+        "publish_date": "2025-07-25T01:29:14.493246+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘Response has always been positive until I posted my nasi lemak character’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-drawing-hawker-fantasy-characters",
+        "summary": "📰 제목: 당신의 싱가포르 이야기: '나시 레막 캐릭터 게시할 때까지 반응이 좋았어요'\n\n내용: 아티스트 앤디 추는 싱가포르의 다양한 맛을 캐릭터로 승화했습니다. 그의 작품에 따르면, 말레이지아 사람들이 불만을 표출했습니다. 그들은 나시 레막이 싱가포르 음식이 아니라며 그의 작품이 오해를 불러일으킨다고 주장했습니다. 그러나 이 논란은 싱가포르에 작은 승리가 되었습니다.",
+        "content": "Find out what’s new on ST website and app. Artist Andy Choo brings local flavours to life with his illustrated cast of hawker-inspired heroes. The cheat code to going viral. According to a comment on Mr Andy Choo’s artwork, it is making Malaysians angry. The origin of well-loved hawker dishes has long been a prickly subject between Singapore and Malaysia. Dozens of Malaysians flooded his page with comments, accusing him of claiming the national dish as Singaporean. Still, the nasi lemak debacle – while unintended – felt like a small win",
+        "publish_date": "2025-07-25T01:29:17.126478+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "India's Modi and UK PM Starmer ink trade deal",
+        "url": "https://sg.news.yahoo.com/indias-modi-uk-pm-starmer-112625117.html",
+        "summary": "📰 장관, 경제, 정치 관련 뉴스\n📢 India's Modi and UK PM Starmer ink trade deal",
+        "content": "Prime Minister Keir Starmer praised Britain's \"unique bonds\" with India as he and his Indian counterpart Narendra Modi formally signed a recently announced UK-India trade deal during talks on Thursday. The UK and India hope the accord will boost trade...",
+        "publish_date": "2025-07-25T00:43:22+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T01:29:41.809525+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

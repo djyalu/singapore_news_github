@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Wrestling legend Hulk Hogan dies aged 71: US media",
+        "url": "https://www.straitstimes.com/life/entertainment/wrestling-legend-hulk-hogan-dies-aged-71-us-media",
+        "summary": "📰 제목: 레슬링 전설 헐크 호건, 71세로 사망\n\n내용: 미국 매체들에 따르면, 키 2미터의 거구이자 특유의 반다나, 금발의 수염으로 유명한 프로레슬러 헐크 호건이 71세의 나이로 사망했다고 한다. TMZ는 익명의 소식통을 인용하여 이 소식을 전했다.",
+        "content": "Find out what’s new on ST website and app. Hulk Hogan was known for his towering 2m-tall physique, bandana and distinctive blond handlebar moustache. TMZ also reported the news, citing unnamed sources",
+        "publish_date": "2025-07-25T01:32:00.999856+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "1,300 names and addresses from traffic police records leaked online",
+        "url": "https://www.channelnewsasia.com/singapore/traffic-police-data-leak-names-addresses-tnt-ransomware-5256191",
+        "summary": "📰 제목: 교통경찰의 1,300건의 개인정보 누출\n내용: 4월, TNT가 랜섬웨어 공격을 당해 누출된 것으로 추정되는 싱가포르 교통경찰의 1,300건의 이름과 주소가 온라인에 유출되었다. 싱가포르 경찰은 영향을 받은 개개인과 연락할 예정이다. 이번 유출은 4월의 사이버 공격과 관련되어 있다.",
+        "content": "In April, TNT faced a ransomware attack. The names and addresses are believed to have been compromised then. SPF will be contacting individuals affected by the leak \"as a matter of...",
+        "publish_date": "2025-07-25T01:32:04.446548+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "MustShareNews",
+        "title": "Woman in S’pore facing 82 charges after 79 dogs found inside landed home",
+        "url": "https://mustsharenews.com/woman-charged-79-dogs/",
+        "summary": "📰 법률, 기술, 국제 관련 뉴스\n📢 Woman in S’pore facing 82 charges after 79 dogs found inside landed home",
+        "content": "Julia Nicole Moss was formally charged in court on Tuesday (23 July), according to Channel News Asia (CNA). Any exceptions must be approved in advance by the Animal & Veterinary Service (AVS). However, Moss did not obtain any such approvals or licences for the animals. Apart from failing to license the dogs, Moss also faces charges for not complying with a directive issued by...",
+        "publish_date": "2025-07-24T18:45:34+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Channel NewsAsia",
+      "MustShareNews"
+    ],
+    "timestamp": "2025-07-25T01:32:25.195624+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
