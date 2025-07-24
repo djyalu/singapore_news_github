@@ -549,8 +549,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         <select id="scrapingMethod">
                             <option value="traditional">전통적 방식 (Pattern-based)</option>
                             <option value="ai">AI 방식 (Gemini AI)</option>
+                            <option value="hybrid">하이브리드 방식 (Traditional + 멀티 API)</option>
                         </select>
-                        <small class="text-gray-500 block mt-1">AI 방식은 Google Gemini API를 사용합니다 (일일 50회 제한)</small>
+                        <small class="text-gray-500 block mt-1">
+                            • AI 방식: Google Gemini API 사용 (일일 50회 제한)<br>
+                            • 하이브리드: 안정적 링크 수집 + 멀티 API 요약 (Cohere→Gemini→Google Translate)
+                        </small>
                     </div>
                     </div>
                     
