@@ -1,5 +1,8 @@
 # CLAUDE.md - Singapore News Scraper Project
 
+**Version**: 1.1.0  
+**Last Updated**: 2025-07-25
+
 ## Project Overview
 This is a Singapore News Scraper system that automatically scrapes Singapore news websites, generates Korean summaries using Google Gemini API, and sends them via WhatsApp. The system runs on GitHub Actions with a web dashboard hosted on GitHub Pages and API endpoints on Vercel.
 
