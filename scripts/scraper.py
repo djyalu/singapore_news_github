@@ -19,6 +19,27 @@ except ImportError:
     SITE_STRATEGY_AVAILABLE = False
     print("[WARNING] Site access strategy module not available")
 
+try:
+    from alternative_sources import AlternativeSources
+    ALTERNATIVE_SOURCES_AVAILABLE = True
+except ImportError:
+    ALTERNATIVE_SOURCES_AVAILABLE = False
+    print("[WARNING] Alternative sources module not available")
+
+try:
+    from scraper_cloudflare import CloudflareScraper
+    CLOUDFLARE_SCRAPER_AVAILABLE = True
+except ImportError:
+    CLOUDFLARE_SCRAPER_AVAILABLE = False
+    print("[WARNING] Cloudflare scraper not available")
+
+try:
+    from scraper_browser import BrowserScraper
+    BROWSER_SCRAPER_AVAILABLE = True
+except ImportError:
+    BROWSER_SCRAPER_AVAILABLE = False
+    print("[WARNING] Browser scraper not available")
+
 # AI 요약 함수들 import
 try:
     from ai_summary_simple import translate_to_korean_summary_cohere, translate_to_korean_summary_gemini, translate_to_korean_summary_fallback
@@ -1313,8 +1334,53 @@ def extract_article_content(url):
         # 봇 탐지 회피를 위한 랜덤 딜레이 (1-3초)
         time.sleep(random.uniform(1, 3))
         
-        response = requests.get(url, timeout=10, headers=headers)
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # 일반 방법으로 시도
+        response = None
+        soup = None
+        
+        try:
+            response = requests.get(url, timeout=10, headers=headers, cookies=cookies)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+            elif response.status_code in [403, 503]:  # 차단됨
+                print(f"[SCRAPER] Blocked with status {response.status_code}, trying alternatives...")
+                raise Exception("Blocked")
+        except:
+            # 대체 방법들 시도
+            domain = extract_domain(url)
+            content = None
+            method = None
+            
+            # 1. Cloudflare 우회 시도
+            if CLOUDFLARE_SCRAPER_AVAILABLE and domain in ['mothership.sg', 'todayonline.com']:
+                print(f"[SCRAPER] Trying Cloudflare bypass for {domain}")
+                cf_scraper = CloudflareScraper()
+                content = cf_scraper.fetch_with_cloudflare_bypass(url)
+                if content:
+                    soup = BeautifulSoup(content, 'html.parser')
+                    method = 'cloudflare_bypass'
+            
+            # 2. 대체 소스 시도
+            if not soup and ALTERNATIVE_SOURCES_AVAILABLE:
+                print(f"[SCRAPER] Trying alternative sources for {domain}")
+                alt_sources = AlternativeSources()
+                content, method = alt_sources.get_alternative_content(url, domain)
+                if content:
+                    soup = BeautifulSoup(content, 'html.parser')
+            
+            # 3. Selenium 시도 (JavaScript 필수 사이트)
+            if not soup and BROWSER_SCRAPER_AVAILABLE and domain in ['todayonline.com', 'techinasia.com']:
+                print(f"[SCRAPER] Trying Selenium for {domain}")
+                browser = BrowserScraper()
+                content = browser.get_page_with_js(url)
+                if content:
+                    soup = BeautifulSoup(content, 'html.parser')
+                    method = 'selenium'
+                browser.close_driver()
+            
+            if not soup:
+                print(f"[SCRAPER] All methods failed for {url}")
+                return None
         
         # 도메인에 따라 다른 추출 방법 사용
         domain = urlparse(url).netloc.lower()

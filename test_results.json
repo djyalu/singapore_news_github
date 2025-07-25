@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-07-25T16:48:21.713165",
-  "duration": 1.3374216556549072,
+  "timestamp": "2025-07-25T17:05:23.250774",
+  "duration": 1.1755805015563965,
   "results": {
-    "passed": 31,
-    "failed": 1,
+    "passed": 32,
+    "failed": 0,
     "errors": 0,
     "skipped": 3,
     "tests": [
@@ -94,8 +94,8 @@
       },
       {
         "name": "extract_domain('https://localhost:8080/test')",
-        "status": "fail",
-        "message": "Expected 'localhost', got 'localhost:8080'"
+        "status": "pass",
+        "message": ""
       },
       {
         "name": "contains_keywords('Singapore news today...')",
@@ -180,7 +180,7 @@
       {
         "name": "clean_text performance",
         "status": "pass",
-        "message": "100 iterations in 0.090s"
+        "message": "100 iterations in 0.088s"
       }
     ]
   }
