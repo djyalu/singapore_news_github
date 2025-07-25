@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-07-25T01:49:31.195778",
+  "tests": [
+    {
+      "name": "핵심 함수 테스트",
+      "status": "pass",
+      "duration": 0.871330976486206,
+      "message": ""
+    },
+    {
+      "name": "AI 스크래퍼 테스트",
+      "status": "pass",
+      "duration": 0.004219532012939453,
+      "message": ""
+    },
+    {
+      "name": "설정 및 데이터 테스트",
+      "status": "pass",
+      "duration": 1.807654619216919,
+      "message": ""
+    },
+    {
+      "name": "스크래핑 방식별 테스트",
+      "status": "pass",
+      "duration": 0.3825099468231201,
+      "message": ""
+    },
+    {
+      "name": "성능 테스트",
+      "status": "pass",
+      "duration": 0.002118825912475586,
+      "message": ""
+    },
+    {
+      "name": "보안 테스트",
+      "status": "fail",
+      "duration": 3.457069396972656e-05,
+      "message": "Test returned False"
+    }
+  ]
+}

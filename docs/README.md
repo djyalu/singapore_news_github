@@ -11,6 +11,7 @@ Welcome to the comprehensive documentation for the Singapore News Scraper projec
 ### User Documentation
 - **[User Guide](./USER_GUIDE.md)** - Comprehensive guide for end users
 - **[사용자 매뉴얼 (Korean)](../USER_MANUAL.md)** - Korean user manual
+- **[상세 사용자 매뉴얼 v1.1.0](./USER_MANUAL_DETAILED.md)** - Detailed user manual with v1.1.0 features
 
 ### Developer Documentation
 - **[Developer Guide](./DEVELOPER_GUIDE.md)** - Technical guide for developers
@@ -133,7 +134,7 @@ If you need help:
 
 ## 🔄 Documentation Updates
 
-Last updated: July 2025
+Last updated: July 25, 2025
 
 Recent changes:
 - Added comprehensive API documentation
@@ -141,6 +142,7 @@ Recent changes:
 - Created developer guide
 - Improved installation instructions
 - Added user guide in Korean
+- Created detailed user manual v1.1.0 with Cohere AI features
 
 ---
 

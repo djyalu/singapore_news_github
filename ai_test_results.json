@@ -1,0 +1,106 @@
+{
+  "timestamp": "2025-07-25T01:50:52.020482",
+  "ai_tests": [
+    {
+      "name": "AI 스크래퍼 모듈 임포트",
+      "success": true,
+      "message": ""
+    },
+    {
+      "name": "AIScraper 인스턴스 생성",
+      "success": true,
+      "message": "API 키: 없음, 모델: 미초기화"
+    },
+    {
+      "name": "AI 메서드 존재 확인",
+      "success": true,
+      "message": "6개 메서드 모두 존재"
+    },
+    {
+      "name": "AI 최적화 모듈 임포트",
+      "success": true,
+      "message": ""
+    },
+    {
+      "name": "사이트 우선순위 설정",
+      "success": true,
+      "message": "High: 3, Medium: 6, Low: 7"
+    },
+    {
+      "name": "API 예산 계산",
+      "success": true,
+      "message": "총 100회 (High: 50, Medium: 35, Low: 15)"
+    },
+    {
+      "name": "캐시 시스템 초기화",
+      "success": true,
+      "message": "URL: 0, 콘텐츠: 0, 요약: 0"
+    },
+    {
+      "name": "URL 캐시 기능",
+      "success": true,
+      "message": "캐시 항목: 0 → 3"
+    },
+    {
+      "name": "캐시 히트 성능",
+      "success": true,
+      "message": "캐시 히트 시간: 0.0000초"
+    },
+    {
+      "name": "Rate Limiting 검증",
+      "success": false,
+      "message": "'AIScraper' object has no attribute 'wait_between_requests'"
+    },
+    {
+      "name": "현재 스크래핑 방식",
+      "success": true,
+      "message": "설정된 방식: hybrid"
+    },
+    {
+      "name": "멀티 API 설정",
+      "success": true,
+      "message": "API 우선순위: cohere → gemini → googletrans"
+    },
+    {
+      "name": "예상 처리량 계산",
+      "success": true,
+      "message": "총 46개 링크, 예상 시간: 3.2분"
+    },
+    {
+      "name": "Google Gemini API",
+      "success": false,
+      "message": "API 키 필요"
+    },
+    {
+      "name": "Cohere API 키",
+      "success": false,
+      "message": "API 키 필요"
+    },
+    {
+      "name": "멀티 API 폴백 체인",
+      "success": true,
+      "message": "폴백 순서: cohere → gemini → googletrans"
+    },
+    {
+      "name": "Traditional 폴백",
+      "success": true,
+      "message": "AI 실패 시 Traditional 방식 사용"
+    },
+    {
+      "name": "URL 검증 성능",
+      "success": true,
+      "message": "25838 URLs/초 (0.004초)"
+    },
+    {
+      "name": "캐시 효율성",
+      "success": true,
+      "message": "캐시율: 103.0%"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 16,
+    "failed": 3,
+    "success_rate": 0.8421052631578947
+  }
+}

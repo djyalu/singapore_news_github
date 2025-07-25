@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-07-24T21:00:18.381856",
-  "duration": 0.8180501461029053,
+  "timestamp": "2025-07-25T01:48:19.460104",
+  "duration": 1.1688060760498047,
   "results": {
-    "passed": 20,
+    "passed": 19,
     "failed": 1,
-    "errors": 1,
+    "errors": 2,
     "skipped": 3,
     "tests": [
       {
@@ -39,8 +39,8 @@
       },
       {
         "name": "Import scripts.ai_summary_free",
-        "status": "pass",
-        "message": ""
+        "status": "error",
+        "message": "module 'httpcore' has no attribute 'SyncHTTPTransport'"
       },
       {
         "name": "Import scripts.site_selectors",
@@ -123,14 +123,14 @@
         "message": ""
       },
       {
-        "name": "Security check: batch_ai_processor.py",
+        "name": "Security check: ai_summary_simple.py",
         "status": "pass",
         "message": ""
       },
       {
         "name": "clean_text performance",
         "status": "pass",
-        "message": "100 iterations in 0.064s"
+        "message": "100 iterations in 0.053s"
       }
     ]
   }
