@@ -36,7 +36,26 @@ def translate_to_korean_summary_cohere(title, content):
         # 콘텐츠 길이 제한 (토큰 절약)
         content_preview = content[:600] if len(content) > 600 else content
         
-        prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
+        # 중국어 감지 (간단한 방법)
+        is_chinese = any(ord(char) >= 0x4e00 and ord(char) <= 0x9fff for char in (title + content_preview)[:100])
+        
+        if is_chinese:
+            prompt = f"""다음 중국어 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
+이것은 중국어로 된 뉴스입니다. 중국어를 정확히 이해하고 한국어로 번역해주세요.
+
+제목: {title}
+내용: {content_preview}
+
+요구사항:
+1. 중국어 제목을 한국어로 정확히 번역
+2. 중국어 내용의 핵심을 한국어로 2-3문장 요약
+3. 중요한 수치, 날짜, 인물명은 정확히 포함
+4. 자연스러운 한국어 표현 사용
+5. 응답 형식: "제목: [한국어 제목]\\n내용: [요약 내용]"
+
+한국어 요약:"""
+        else:
+            prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
 
 제목: {title}
 내용: {content_preview}
@@ -94,7 +113,26 @@ def translate_to_korean_summary_gemini(title, content):
         # 콘텐츠 길이 제한
         content_preview = content[:600] if len(content) > 600 else content
         
-        prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
+        # 중국어 감지 (간단한 방법)
+        is_chinese = any(ord(char) >= 0x4e00 and ord(char) <= 0x9fff for char in (title + content_preview)[:100])
+        
+        if is_chinese:
+            prompt = f"""다음 중국어 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
+이것은 중국어로 된 뉴스입니다. 중국어를 정확히 이해하고 한국어로 번역해주세요.
+
+제목: {title}
+내용: {content_preview}
+
+요구사항:
+1. 중국어 제목을 한국어로 정확히 번역
+2. 중국어 내용의 핵심을 한국어로 2-3문장 요약
+3. 중요한 수치, 날짜, 인물명은 정확히 포함
+4. 자연스러운 한국어 표현 사용
+5. 응답 형식: "제목: [한국어 제목]\\n내용: [요약 내용]"
+
+한국어 요약:"""
+        else:
+            prompt = f"""다음 싱가포르 뉴스를 한국어로 정확하고 간결하게 요약해주세요.
 
 제목: {title}
 내용: {content_preview}
