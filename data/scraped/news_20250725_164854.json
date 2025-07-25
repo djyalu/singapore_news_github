@@ -1,0 +1,63 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘Response has always been positive until I posted my nasi lemak character’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-drawing-hawker-fantasy-characters",
+        "content": "Find out what’s new on ST website and app. Artist Andy Choo brings local flavours to life with his illustrated cast of hawker-inspired heroes. The cheat code to going viral. According to a comment on Mr Andy Choo’s artwork, it is making Malaysians angry. The origin of well-loved hawker dishes has long been a prickly subject between Singapore and Malaysia. Dozens of Malaysians flooded his page with comments, accusing him of claiming the national dish as Singaporean. Still, the nasi lemak debacle – while unintended – felt like a small win",
+        "publish_date": "2025-07-25T16:46:41.877761+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 당신의 싱가포르 이야기: '나시 레막 캐릭터를 올릴 때까지 반응이 좋았어요'\n\n내용: 예술가 Andy Choo는 그의 일러스트로 현지 음식을 생생하게 표현하여 웹사이트와 앱에서 새로운 소식을 전한다. 한 댓글에 따르면 그의 작품은 말레이시언들을 화나게 하고 있다. 싱가포르와 말레이시아之间에서 사랑받는 거리 음식의 기원 문제는 민감한 문제이다. 수십 명의 말레이시아 사람들이 Andy Choo의 페이지에 댓글을 쏟아내며, 그가 말레이시아의 국민 음식을 싱가포르의 것으로 주장한다고 비난했다. 하지만 의도치 않게 발생한 나시 레막 논란은 작은 승리를 안겨주었다."
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Astronomer executives’ Coldplay scandal: Why it went viral and the obsession with public shaming",
+        "url": "https://www.straitstimes.com/singapore/astronomer-executives-coldplay-scandal-why-it-went-viral-and-the-obsession-with-public-shaming",
+        "content": "Find out what’s new on ST website and app. A tech CEO's alleged affair with his HR chief came to light during a Coldplay concert. they were featured on the kiss cam at a Coldplay concert in Boston. Their reaction was so suspicious that the band’s frontman Chris Martin quipped: “Either they are having an affair or they’re just very shy.”. Internet sleuths uncovered their names and job titles – he’s Andy Byron the now-former chief executive at the company; she’s...",
+        "publish_date": "2025-07-25T16:46:46.283929+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 천문학 임원들의 콜드플레이 스캔들: 왜 그것이 바이럴되었는지, 그리고 공적인 수치심에 대한 집착은 왜인가\n내용: ST 웹사이트와 앱에서 새로운 소식을 확인하세요. 테크 기업 CEO의 HR 책임자와의 불륜이 콜드플레이 콘서트에서 밝혀졌습니다. 두 사람은 보스턴에서 열린 콜드플레이 콘서트에서 키스캠에 포착되었는데, 그들의 반응이 너무 의심스러워 밴드의 프론트맨인 크리스 마틴이 \"그들 중 한 명은 다른 사람과 바람을 피우고 있거나 매우 부끄러워하는 것 같아요.\"라고 농담까지 했습니다. 네티즌들은 그들의 신원을 밝혀냈고, 그 남자는 앤디 바이런이라는 사실이 드러났습니다. 그는 현재 해고된 상태이며, 그녀는 HR 책임자입니다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "What's behind Indonesia’s US$25 billion plan to help villagers and why are experts concerned?",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-cooperative-rural-communities-financial-risks-5257691",
+        "content": "They warned that the programme could suffer the same fate as a failed Suharto-era policy, which was riddled with mismanagement and corruption practices. Subscribe to CNA’s Morning Brief An automated curation...",
+        "publish_date": "2025-07-25T16:47:03.047316+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인도네시아의 250억 달러 마을 지원 계획, 그 이면에는 무엇이 있나\n\n내용: 인도네시아 정부는 250억 달러 규모의 마을 지원 계획을 발표했다. 그러나 전문가들은 이 계획이 수하르토 시대 실패한 정책과 비슷하다며 우려를 표한다. 당시 정책은 부패와 관리 부실로 얼룩졌었다. 이 계획이 또 다른 실패로 이어질 수 있다는 걱정이 전문가들 사이에서 나오고 있다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T16:48:54.608365+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "JPMorgan raises STI target, upgrades real estate sector",
+        "url": "https://www.businesstimes.com.sg/companies-markets/jpmorgan-raises-sti-target-upgrades-real-estate-sector",
+        "content": "Analysts stress that the Singapore dollar is a safe-haven currency as the US dollar weakens. [SINGAPORE] Analysts from JPMorgan raised their target on the Straits Times Index (STI), with a higher base and bull target of 4,500 and 5,000, respectively. They also reiterated that Singapore’s equities market is their No 1 “overweight” market in South-east Asia. In the broader market, gainers outnumbered losers 254 to 226, with 1.2 billion securities valued at S$851 million changing hands",
+        "publish_date": "2025-07-25T16:47:21.012101+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: JP 모건, 스트레이츠 타임스 지수 목표 상향 조정\n내용: JP 모건 애널리스트들은 싱가포르 달러가 안전자통화로 미국 달러 대비 강세를 보일 것으로 전망했다. 또한, 그들은 스트레이츠 타임스 지수(STI)의 목표치를 상향 조정하며, 싱가포르 증시가 동남아시아에서 가장 비중을 높게 평가한다고 밝혔다. 이날 거래소에서 상승 종목이 하락 종목보다 많았으며, 12억 S$어치 주식이 거래되었다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T16:48:54.608393+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
