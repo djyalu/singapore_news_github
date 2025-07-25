@@ -1,6 +1,6 @@
 # Singapore News Scraper
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/djyalu/singapore_news_github/releases)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/djyalu/singapore_news_github/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 싱가포르 뉴스를 자동으로 스크래핑하고 WhatsApp으로 전송하는 시스템입니다.
