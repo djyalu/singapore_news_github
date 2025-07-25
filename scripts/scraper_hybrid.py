@@ -19,6 +19,30 @@ except ImportError:
     sys.path.append(os.path.dirname(__file__))
     from scraper import scrape_news_traditional, load_settings, load_sites, get_kst_now, get_kst_now_iso
 
+def is_blocked_content(text, blocked_keywords):
+    """텍스트가 차단 키워드를 포함하는지 확인 (강화된 버전)"""
+    if not text or not blocked_keywords:
+        return False
+    
+    # 문자열인 경우 리스트로 변환
+    if isinstance(blocked_keywords, str):
+        blocked_keywords = [k.strip() for k in blocked_keywords.split(',') if k.strip()]
+    
+    text_lower = text.lower()
+    
+    # 각 키워드 확인 및 로깅
+    matched_keywords = []
+    for keyword in blocked_keywords:
+        keyword_clean = keyword.lower().strip()
+        if keyword_clean and keyword_clean in text_lower:
+            matched_keywords.append(keyword_clean)
+    
+    if matched_keywords:
+        print(f"[HYBRID] Matched blocked keywords: {matched_keywords[:5]}")
+        return True
+    
+    return False
+
 def create_basic_summary(title, content):
     """기본 키워드 기반 요약 생성"""
     # 간단한 한국어 요약 생성
@@ -45,9 +69,25 @@ def scrape_news_hybrid():
                 traditional_articles = json.load(f)
             
             # 기사 데이터를 하이브리드 구조로 변환
+            blocked_keywords = settings.get('blockedKeywords', '')
             for group_data in traditional_articles:
                 group = group_data['group']
                 for article in group_data['articles']:
+                    # 강화된 키워드 필터링 적용
+                    full_text = f"{article['title']} {article['content']}"
+                    
+                    # 디버그: 키워드 필터링 로그
+                    print(f"[HYBRID] Checking keywords for: {article['title'][:60]}...")
+                    
+                    is_blocked_result = is_blocked_content(full_text, blocked_keywords)
+                    print(f"[HYBRID] Keyword filtering result: {'BLOCKED' if is_blocked_result else 'ALLOWED'}")
+                    
+                    if is_blocked_result:
+                        print(f"[HYBRID] SKIPPING: blocked by keywords - {article['title'][:60]}...")
+                        continue
+                    else:
+                        print(f"[HYBRID] ACCEPTING: passed keyword filter - {article['title'][:60]}...")
+                        
                     articles_by_group[group].append({
                         'site': article['site'],
                         'title': article['title'],

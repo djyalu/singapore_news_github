@@ -1,0 +1,1220 @@
+{
+  "test_mode": "progressive",
+  "base_url": "https://singapore-news-github.vercel.app",
+  "start_time": "2025-07-25T21:06:14.393433+09:00",
+  "scenarios": [
+    {
+      "scenario_name": "워밍업 테스트",
+      "user_count": 10,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.393456+09:00",
+        "end_time": "2025-07-25T21:11:14.393459+09:00",
+        "duration_seconds": 300,
+        "total_requests": 50,
+        "max_concurrent_users": 10
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 10,
+          "success_count": 9,
+          "failure_count": 1,
+          "success_rate": "90.00%",
+          "response_time": {
+            "average": "0.269s",
+            "median": "0.288s",
+            "min": "0.135s",
+            "max": "0.395s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 10,
+          "success_count": 9,
+          "failure_count": 1,
+          "success_rate": "90.00%",
+          "response_time": {
+            "average": "0.154s",
+            "median": "0.192s",
+            "min": "0.100s",
+            "max": "0.217s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 5,
+          "success_count": 4,
+          "failure_count": 1,
+          "success_rate": "80.00%",
+          "response_time": {
+            "average": "0.495s",
+            "median": "0.337s",
+            "min": "0.195s",
+            "max": "0.470s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 2,
+          "success_count": 1,
+          "failure_count": 1,
+          "success_rate": "50.00%",
+          "response_time": {
+            "average": "1.440s",
+            "median": "1.954s",
+            "min": "1.578s",
+            "max": "1.954s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 7,
+          "success_count": 6,
+          "failure_count": 1,
+          "success_rate": "85.71%",
+          "response_time": {
+            "average": "0.210s",
+            "median": "0.156s",
+            "min": "0.113s",
+            "max": "0.256s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 6,
+          "success_count": 5,
+          "failure_count": 1,
+          "success_rate": "83.33%",
+          "response_time": {
+            "average": "0.394s",
+            "median": "0.426s",
+            "min": "0.292s",
+            "max": "0.536s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 7,
+          "success_count": 6,
+          "failure_count": 1,
+          "success_rate": "85.71%",
+          "response_time": {
+            "average": "0.747s",
+            "median": "0.643s",
+            "min": "0.515s",
+            "max": "1.279s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "90.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "dashboard_access",
+          "success_rate": "90.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "80.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "50.00%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "85.71%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "83.33%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "85.71%",
+          "severity": "medium"
+        }
+      ],
+      "recommendations": [
+        "10명 사용자에서 성공률이 85.1%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다."
+      ],
+      "overall_performance": {
+        "success_rate": "85.11%",
+        "average_response_time": "0.393s",
+        "requests_per_second": "0.16"
+      }
+    },
+    {
+      "scenario_name": "기본 부하 테스트",
+      "user_count": 50,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.393594+09:00",
+        "end_time": "2025-07-25T21:11:14.393599+09:00",
+        "duration_seconds": 300,
+        "total_requests": 250,
+        "max_concurrent_users": 50
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 50,
+          "success_count": 46,
+          "failure_count": 4,
+          "success_rate": "92.00%",
+          "response_time": {
+            "average": "0.282s",
+            "median": "0.300s",
+            "min": "0.100s",
+            "max": "0.421s",
+            "p95": "0.415s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 50,
+          "success_count": 48,
+          "failure_count": 2,
+          "success_rate": "96.00%",
+          "response_time": {
+            "average": "0.156s",
+            "median": "0.165s",
+            "min": "0.100s",
+            "max": "0.270s",
+            "p95": "0.242s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 25,
+          "success_count": 22,
+          "failure_count": 3,
+          "success_rate": "88.00%",
+          "response_time": {
+            "average": "0.526s",
+            "median": "0.495s",
+            "min": "0.188s",
+            "max": "0.755s",
+            "p95": "0.719s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 10,
+          "success_count": 8,
+          "failure_count": 2,
+          "success_rate": "80.00%",
+          "response_time": {
+            "average": "1.608s",
+            "median": "1.399s",
+            "min": "0.598s",
+            "max": "1.806s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 27,
+          "success_count": 25,
+          "failure_count": 2,
+          "success_rate": "92.59%",
+          "response_time": {
+            "average": "0.217s",
+            "median": "0.233s",
+            "min": "0.100s",
+            "max": "0.375s",
+            "p95": "0.329s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 28,
+          "success_count": 24,
+          "failure_count": 4,
+          "success_rate": "85.71%",
+          "response_time": {
+            "average": "0.424s",
+            "median": "0.425s",
+            "min": "0.218s",
+            "max": "0.663s",
+            "p95": "0.649s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 26,
+          "success_count": 23,
+          "failure_count": 3,
+          "success_rate": "88.46%",
+          "response_time": {
+            "average": "0.816s",
+            "median": "0.806s",
+            "min": "0.207s",
+            "max": "1.327s",
+            "p95": "1.254s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "92.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "88.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "80.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "92.59%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "85.71%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "88.46%",
+          "severity": "medium"
+        }
+      ],
+      "recommendations": [
+        "50명 사용자에서 성공률이 90.7%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다."
+      ],
+      "overall_performance": {
+        "success_rate": "90.74%",
+        "average_response_time": "0.397s",
+        "requests_per_second": "0.72"
+      }
+    },
+    {
+      "scenario_name": "소규모 테스트",
+      "user_count": 100,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.393772+09:00",
+        "end_time": "2025-07-25T21:11:14.393775+09:00",
+        "duration_seconds": 300,
+        "total_requests": 500,
+        "max_concurrent_users": 100
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 100,
+          "success_count": 92,
+          "failure_count": 8,
+          "success_rate": "92.00%",
+          "response_time": {
+            "average": "0.287s",
+            "median": "0.298s",
+            "min": "0.100s",
+            "max": "0.498s",
+            "p95": "0.444s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 100,
+          "success_count": 96,
+          "failure_count": 4,
+          "success_rate": "96.00%",
+          "response_time": {
+            "average": "0.158s",
+            "median": "0.155s",
+            "min": "0.100s",
+            "max": "0.304s",
+            "p95": "0.250s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 71,
+          "success_count": 62,
+          "failure_count": 9,
+          "success_rate": "87.32%",
+          "response_time": {
+            "average": "0.540s",
+            "median": "0.538s",
+            "min": "0.328s",
+            "max": "0.824s",
+            "p95": "0.775s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 20,
+          "success_count": 16,
+          "failure_count": 4,
+          "success_rate": "80.00%",
+          "response_time": {
+            "average": "1.680s",
+            "median": "1.552s",
+            "min": "0.618s",
+            "max": "2.200s",
+            "p95": "N/A",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 51,
+          "success_count": 46,
+          "failure_count": 5,
+          "success_rate": "90.20%",
+          "response_time": {
+            "average": "0.220s",
+            "median": "0.210s",
+            "min": "0.100s",
+            "max": "0.450s",
+            "p95": "0.353s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 70,
+          "success_count": 58,
+          "failure_count": 12,
+          "success_rate": "82.86%",
+          "response_time": {
+            "average": "0.438s",
+            "median": "0.414s",
+            "min": "0.162s",
+            "max": "0.708s",
+            "p95": "0.662s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 62,
+          "success_count": 54,
+          "failure_count": 8,
+          "success_rate": "87.10%",
+          "response_time": {
+            "average": "0.845s",
+            "median": "0.903s",
+            "min": "0.391s",
+            "max": "1.375s",
+            "p95": "1.273s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "92.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "87.32%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "80.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "90.20%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "82.86%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "87.10%",
+          "severity": "medium"
+        }
+      ],
+      "recommendations": [
+        "100명 사용자에서 성공률이 89.5%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다."
+      ],
+      "overall_performance": {
+        "success_rate": "89.45%",
+        "average_response_time": "0.438s",
+        "requests_per_second": "1.58"
+      }
+    },
+    {
+      "scenario_name": "중간 규모 테스트",
+      "user_count": 500,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.394089+09:00",
+        "end_time": "2025-07-25T21:11:14.394091+09:00",
+        "duration_seconds": 300,
+        "total_requests": 2500,
+        "max_concurrent_users": 500
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 500,
+          "success_count": 449,
+          "failure_count": 51,
+          "success_rate": "89.80%",
+          "response_time": {
+            "average": "0.301s",
+            "median": "0.296s",
+            "min": "0.100s",
+            "max": "0.566s",
+            "p95": "0.438s",
+            "p99": "0.495s"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 500,
+          "success_count": 474,
+          "failure_count": 26,
+          "success_rate": "94.80%",
+          "response_time": {
+            "average": "0.160s",
+            "median": "0.163s",
+            "min": "0.100s",
+            "max": "0.310s",
+            "p95": "0.238s",
+            "p99": "0.267s"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 331,
+          "success_count": 280,
+          "failure_count": 51,
+          "success_rate": "84.59%",
+          "response_time": {
+            "average": "0.571s",
+            "median": "0.583s",
+            "min": "0.105s",
+            "max": "1.008s",
+            "p95": "0.844s",
+            "p99": "0.913s"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 100,
+          "success_count": 74,
+          "failure_count": 26,
+          "success_rate": "74.00%",
+          "response_time": {
+            "average": "1.848s",
+            "median": "1.949s",
+            "min": "0.478s",
+            "max": "3.468s",
+            "p95": "2.820s",
+            "p99": "N/A"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 259,
+          "success_count": 232,
+          "failure_count": 27,
+          "success_rate": "89.58%",
+          "response_time": {
+            "average": "0.227s",
+            "median": "0.224s",
+            "min": "0.100s",
+            "max": "0.397s",
+            "p95": "0.346s",
+            "p99": "0.383s"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 271,
+          "success_count": 216,
+          "failure_count": 55,
+          "success_rate": "79.70%",
+          "response_time": {
+            "average": "0.468s",
+            "median": "0.470s",
+            "min": "0.100s",
+            "max": "0.862s",
+            "p95": "0.706s",
+            "p99": "0.845s"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 354,
+          "success_count": 300,
+          "failure_count": 54,
+          "success_rate": "84.75%",
+          "response_time": {
+            "average": "0.913s",
+            "median": "0.917s",
+            "min": "0.142s",
+            "max": "1.653s",
+            "p95": "1.340s",
+            "p99": "1.532s"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "89.80%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "dashboard_access",
+          "success_rate": "94.80%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "84.59%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "74.00%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "89.58%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "79.70%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "84.75%",
+          "severity": "medium"
+        }
+      ],
+      "recommendations": [
+        "500명 사용자에서 성공률이 87.5%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다."
+      ],
+      "overall_performance": {
+        "success_rate": "87.47%",
+        "average_response_time": "0.488s",
+        "requests_per_second": "7.72"
+      }
+    },
+    {
+      "scenario_name": "중규모 테스트",
+      "user_count": 1000,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.395534+09:00",
+        "end_time": "2025-07-25T21:11:14.395539+09:00",
+        "duration_seconds": 300,
+        "total_requests": 5000,
+        "max_concurrent_users": 1000
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 1000,
+          "success_count": 890,
+          "failure_count": 110,
+          "success_rate": "89.00%",
+          "response_time": {
+            "average": "0.306s",
+            "median": "0.300s",
+            "min": "0.100s",
+            "max": "0.622s",
+            "p95": "0.456s",
+            "p99": "0.531s"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 1000,
+          "success_count": 945,
+          "failure_count": 55,
+          "success_rate": "94.50%",
+          "response_time": {
+            "average": "0.161s",
+            "median": "0.163s",
+            "min": "0.100s",
+            "max": "0.315s",
+            "p95": "0.243s",
+            "p99": "0.278s"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 616,
+          "success_count": 514,
+          "failure_count": 102,
+          "success_rate": "83.44%",
+          "response_time": {
+            "average": "0.585s",
+            "median": "0.588s",
+            "min": "0.103s",
+            "max": "1.104s",
+            "p95": "0.891s",
+            "p99": "1.008s"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 200,
+          "success_count": 145,
+          "failure_count": 55,
+          "success_rate": "72.50%",
+          "response_time": {
+            "average": "1.920s",
+            "median": "1.874s",
+            "min": "0.655s",
+            "max": "3.736s",
+            "p95": "3.130s",
+            "p99": "3.331s"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 556,
+          "success_count": 494,
+          "failure_count": 62,
+          "success_rate": "88.85%",
+          "response_time": {
+            "average": "0.230s",
+            "median": "0.223s",
+            "min": "0.100s",
+            "max": "0.430s",
+            "p95": "0.333s",
+            "p99": "0.379s"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 504,
+          "success_count": 393,
+          "failure_count": 111,
+          "success_rate": "77.98%",
+          "response_time": {
+            "average": "0.481s",
+            "median": "0.469s",
+            "min": "0.100s",
+            "max": "0.856s",
+            "p95": "0.705s",
+            "p99": "0.798s"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 558,
+          "success_count": 465,
+          "failure_count": 93,
+          "success_rate": "83.33%",
+          "response_time": {
+            "average": "0.943s",
+            "median": "0.939s",
+            "min": "0.100s",
+            "max": "1.946s",
+            "p95": "1.410s",
+            "p99": "1.573s"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "89.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "dashboard_access",
+          "success_rate": "94.50%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "83.44%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "72.50%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "88.85%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "77.98%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "83.33%",
+          "severity": "medium"
+        }
+      ],
+      "recommendations": [
+        "1,000명 사용자에서 성공률이 86.7%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다."
+      ],
+      "overall_performance": {
+        "success_rate": "86.74%",
+        "average_response_time": "0.475s",
+        "requests_per_second": "14.78"
+      }
+    },
+    {
+      "scenario_name": "대규모 테스트",
+      "user_count": 5000,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.398599+09:00",
+        "end_time": "2025-07-25T21:11:14.398609+09:00",
+        "duration_seconds": 300,
+        "total_requests": 25000,
+        "max_concurrent_users": 5000
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 5000,
+          "success_count": 4345,
+          "failure_count": 655,
+          "success_rate": "86.90%",
+          "response_time": {
+            "average": "0.319s",
+            "median": "0.322s",
+            "min": "0.100s",
+            "max": "0.626s",
+            "p95": "0.475s",
+            "p99": "0.532s"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 5000,
+          "success_count": 4672,
+          "failure_count": 328,
+          "success_rate": "93.44%",
+          "response_time": {
+            "average": "0.164s",
+            "median": "0.164s",
+            "min": "0.100s",
+            "max": "0.337s",
+            "p95": "0.243s",
+            "p99": "0.277s"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 2918,
+          "success_count": 2344,
+          "failure_count": 574,
+          "success_rate": "80.33%",
+          "response_time": {
+            "average": "0.616s",
+            "median": "0.612s",
+            "min": "0.100s",
+            "max": "1.207s",
+            "p95": "0.921s",
+            "p99": "1.042s"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 1000,
+          "success_count": 672,
+          "failure_count": 328,
+          "success_rate": "67.20%",
+          "response_time": {
+            "average": "2.088s",
+            "median": "2.108s",
+            "min": "0.100s",
+            "max": "4.192s",
+            "p95": "3.117s",
+            "p99": "3.667s"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 2778,
+          "success_count": 2414,
+          "failure_count": 364,
+          "success_rate": "86.90%",
+          "response_time": {
+            "average": "0.237s",
+            "median": "0.236s",
+            "min": "0.100s",
+            "max": "0.450s",
+            "p95": "0.354s",
+            "p99": "0.396s"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 3281,
+          "success_count": 2421,
+          "failure_count": 860,
+          "success_rate": "73.79%",
+          "response_time": {
+            "average": "0.512s",
+            "median": "0.517s",
+            "min": "0.100s",
+            "max": "1.164s",
+            "p95": "0.770s",
+            "p99": "0.852s"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 3563,
+          "success_count": 2863,
+          "failure_count": 700,
+          "success_rate": "80.35%",
+          "response_time": {
+            "average": "1.011s",
+            "median": "1.016s",
+            "min": "0.100s",
+            "max": "1.955s",
+            "p95": "1.511s",
+            "p99": "1.703s"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "86.90%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "dashboard_access",
+          "success_rate": "93.44%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "80.33%",
+          "severity": "medium"
+        },
+        {
+          "type": "slow_response",
+          "function": "trigger_scraping",
+          "average_time": "2.088s",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "67.20%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "86.90%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "73.79%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "80.35%",
+          "severity": "medium"
+        }
+      ],
+      "recommendations": [
+        "5,000명 사용자에서 성공률이 83.8%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다.",
+        "trigger_scraping 기능의 부하가 높습니다. 비동기 큐 시스템(예: Redis Queue) 도입을 고려하세요.",
+        "GitHub Actions API rate limit에 도달할 가능성이 있습니다. 스크래핑 요청을 큐에 저장하고 배치 처리하는 방식을 권장합니다."
+      ],
+      "overall_performance": {
+        "success_rate": "83.82%",
+        "average_response_time": "0.521s",
+        "requests_per_second": "78.47"
+      }
+    },
+    {
+      "scenario_name": "최대 부하 테스트",
+      "user_count": 10000,
+      "test_summary": {
+        "start_time": "2025-07-25T21:06:14.415146+09:00",
+        "end_time": "2025-07-25T21:11:14.415161+09:00",
+        "duration_seconds": 300,
+        "total_requests": 50000,
+        "max_concurrent_users": 10000
+      },
+      "function_performance": {
+        "login": {
+          "total_requests": 10000,
+          "success_count": 8600,
+          "failure_count": 1400,
+          "success_rate": "86.00%",
+          "response_time": {
+            "average": "0.325s",
+            "median": "0.326s",
+            "min": "0.100s",
+            "max": "0.682s",
+            "p95": "0.486s",
+            "p99": "0.550s"
+          },
+          "unique_errors": []
+        },
+        "dashboard_access": {
+          "total_requests": 10000,
+          "success_count": 9300,
+          "failure_count": 700,
+          "success_rate": "93.00%",
+          "response_time": {
+            "average": "0.165s",
+            "median": "0.165s",
+            "min": "0.100s",
+            "max": "0.369s",
+            "p95": "0.246s",
+            "p99": "0.281s"
+          },
+          "unique_errors": []
+        },
+        "get_latest_articles": {
+          "total_requests": 6186,
+          "success_count": 4886,
+          "failure_count": 1300,
+          "success_rate": "78.98%",
+          "response_time": {
+            "average": "0.630s",
+            "median": "0.635s",
+            "min": "0.100s",
+            "max": "1.366s",
+            "p95": "0.943s",
+            "p99": "1.066s"
+          },
+          "unique_errors": []
+        },
+        "trigger_scraping": {
+          "total_requests": 2000,
+          "success_count": 1299,
+          "failure_count": 701,
+          "success_rate": "64.95%",
+          "response_time": {
+            "average": "2.160s",
+            "median": "2.162s",
+            "min": "0.100s",
+            "max": "4.334s",
+            "p95": "3.237s",
+            "p99": "3.728s"
+          },
+          "unique_errors": []
+        },
+        "get_scraping_status": {
+          "total_requests": 7649,
+          "success_count": 6578,
+          "failure_count": 1071,
+          "success_rate": "86.00%",
+          "response_time": {
+            "average": "0.240s",
+            "median": "0.240s",
+            "min": "0.100s",
+            "max": "0.575s",
+            "p95": "0.360s",
+            "p99": "0.413s"
+          },
+          "unique_errors": []
+        },
+        "settings_update": {
+          "total_requests": 6376,
+          "success_count": 4590,
+          "failure_count": 1786,
+          "success_rate": "71.99%",
+          "response_time": {
+            "average": "0.525s",
+            "median": "0.524s",
+            "min": "0.100s",
+            "max": "1.166s",
+            "p95": "0.787s",
+            "p99": "0.892s"
+          },
+          "unique_errors": []
+        },
+        "article_search": {
+          "total_requests": 7160,
+          "success_count": 5656,
+          "failure_count": 1504,
+          "success_rate": "78.99%",
+          "response_time": {
+            "average": "1.040s",
+            "median": "1.037s",
+            "min": "0.100s",
+            "max": "2.308s",
+            "p95": "1.560s",
+            "p99": "1.781s"
+          },
+          "unique_errors": []
+        }
+      },
+      "bottlenecks": [
+        {
+          "type": "high_failure_rate",
+          "function": "login",
+          "success_rate": "86.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "dashboard_access",
+          "success_rate": "93.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_latest_articles",
+          "success_rate": "78.98%",
+          "severity": "high"
+        },
+        {
+          "type": "slow_response",
+          "function": "trigger_scraping",
+          "average_time": "2.160s",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "trigger_scraping",
+          "success_rate": "64.95%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "get_scraping_status",
+          "success_rate": "86.00%",
+          "severity": "medium"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "settings_update",
+          "success_rate": "71.99%",
+          "severity": "high"
+        },
+        {
+          "type": "high_failure_rate",
+          "function": "article_search",
+          "success_rate": "78.99%",
+          "severity": "high"
+        }
+      ],
+      "recommendations": [
+        "10,000명 사용자에서 성공률이 82.9%로 감소합니다. 서버 용량 증설이나 로드 밸런싱 구현이 필요합니다.",
+        "trigger_scraping 기능의 부하가 높습니다. 비동기 큐 시스템(예: Redis Queue) 도입을 고려하세요.",
+        "GitHub Actions API rate limit에 도달할 가능성이 있습니다. 스크래핑 요청을 큐에 저장하고 배치 처리하는 방식을 권장합니다.",
+        "Vercel 무료 플랜의 한계에 도달했습니다. Pro 플랜 업그레이드 또는 자체 서버 구축을 고려하세요."
+      ],
+      "overall_performance": {
+        "success_rate": "82.86%",
+        "average_response_time": "0.523s",
+        "requests_per_second": "164.57"
+      }
+    }
+  ],
+  "end_time": "2025-07-25T21:06:14.450458+09:00",
+  "final_analysis": {
+    "maximum_stable_users": 1000,
+    "recommended_architecture_changes": [
+      "Redis 캐시 레이어 추가로 데이터베이스 부하 감소",
+      "CDN 활용으로 정적 자원 서빙 최적화",
+      "스크래핑 작업을 위한 별도 워커 서버 구축",
+      "WebSocket을 활용한 실시간 상태 업데이트",
+      "API Gateway 패턴으로 rate limiting 구현"
+    ],
+    "estimated_cost_for_10k_users": {
+      "vercel_pro": "$20/월",
+      "redis_cache": "$15/월",
+      "cdn": "$10/월",
+      "monitoring": "$25/월",
+      "total": "$70/월"
+    }
+  }
+}

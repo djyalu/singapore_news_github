@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/every-worker-america-earned-same-120711952.html",
+        "content": "Where software engineers, janitors, teachers and hedge fund managers all earn the exact same paycheck. Profits are shared, and there’s a five-year plan to distribute ownership equally. Read Next: 4 Housing Markets That Have Plummeted in Value Over the Past 5 Years. The short answer: The results would be complicated, and maybe even chaotic",
+        "publish_date": "2025-07-23T21:07:11+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Iran meets European powers amid threats of UN sanctions snapback",
+        "url": "https://sg.news.yahoo.com/iran-meets-european-powers-amid-113017467.html",
+        "content": "Iranian diplomats met counterparts from Germany, Britain and France on Friday for renewed nuclear talks, amid warnings that the three European powers could trigger \"snapback\" sanctions outlined under the 2015 deal. There was no immediate information given by either side about the meeting",
+        "publish_date": "2025-07-25T20:30:17+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Iran meets European powers amid threats of UN sanc..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcyclist, 23, dies in accident involving lorry near Woodlands Checkpoint",
+        "url": "https://www.asiaone.com/singapore/motorcyclist-23-dies-accident-involving-lorry-near-woodlands-checkpoint",
+        "content": "A 23-year-old motorcyclist died after an accident with a lorry near Woodlands Checkpoint on Friday (July 25) morning. A lorry is seen stationary on the road shoulder. The police said a 39-year-old male lorry driver is assisting with investigations, which are ongoing. It advised arriving travellers to expect delays and co-operate with officers directing...",
+        "publish_date": "2025-07-25T13:15:57+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcyclist, 23, dies in accident involving lorry..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Company director fined for collecting $112k in kickbacks from migrant workers",
+        "url": "https://www.asiaone.com/singapore/company-director-fined-collecting-112k-kickbacks-migrant-workers",
+        "content": "Twelve other charges were taken into consideration for his sentencing, said the Ministry of Manpower (MOM) in a press release. In 2020, Loo and the four individuals collected amounts ranging from $900...",
+        "publish_date": "2025-07-25T13:20:48+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Company director fined for collecting $112k in kic..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-25T21:04:21.850269+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

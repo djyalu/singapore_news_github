@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Thailand warns clashes with Cambodia could move towards war as 138,000 flee fighting",
+        "url": "https://www.channelnewsasia.com/asia/thailand-cambodia-border-civilians-flee-clashes-5257761",
+        "content": "SURIN, Thailand: Thailand's acting Prime Minister Phumtham Wechayachai warned Friday (Jul 25) that cross-border clashes with Cambodia that have uprooted more than 130,000 people \"could develop into war\", as the countries traded deadly strikes for a second day",
+        "publish_date": "2025-07-25T20:41:25.060641+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Thailand warns clashes with Cambodia could move to..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Iran meets European powers amid threats of UN sanctions snapback",
+        "url": "https://sg.news.yahoo.com/iran-meets-european-powers-amid-113017467.html",
+        "content": "Iranian diplomats met counterparts from Germany, Britain and France on Friday for renewed nuclear talks, amid warnings that the three European powers could trigger \"snapback\" sanctions outlined under the 2015 deal. There was no immediate information given by either side about the meeting",
+        "publish_date": "2025-07-25T20:30:17+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Iran meets European powers amid threats of UN sanc..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcyclist, 23, dies in accident involving lorry near Woodlands Checkpoint",
+        "url": "https://www.asiaone.com/singapore/motorcyclist-23-dies-accident-involving-lorry-near-woodlands-checkpoint",
+        "content": "A 23-year-old motorcyclist died after an accident with a lorry near Woodlands Checkpoint on Friday (July 25) morning. A lorry is seen stationary on the road shoulder. The police said a 39-year-old male lorry driver is assisting with investigations, which are ongoing. It advised arriving travellers to expect delays and co-operate with officers directing...",
+        "publish_date": "2025-07-25T13:15:57+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcyclist, 23, dies in accident involving lorry..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-25T20:44:28.372185+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
