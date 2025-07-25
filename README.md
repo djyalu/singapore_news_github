@@ -10,6 +10,7 @@
 - [📖 전체 문서](./docs/README.md) - 모든 문서 목록
 - [🚀 설치 가이드](./docs/INSTALLATION_GUIDE.md) - 상세 설치 안내
 - [👤 사용자 가이드](./docs/USER_GUIDE.md) - 사용법 안내
+- [📘 상세 사용자 매뉴얼](./docs/USER_MANUAL_DETAILED.md) - v1.1.0 기능 포함 상세 매뉴얼
 - [💻 개발자 가이드](./docs/DEVELOPER_GUIDE.md) - 개발 문서
 - [🔧 API 문서](./docs/API_DOCUMENTATION.md) - API 레퍼런스
 - [🔍 문제 해결](./docs/TROUBLESHOOTING_GUIDE.md) - 문제 해결 가이드
