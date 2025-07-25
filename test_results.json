@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-07-25T17:05:23.250774",
-  "duration": 1.1755805015563965,
+  "timestamp": "2025-07-25T17:56:05.416630",
+  "duration": 1.2759931087493896,
   "results": {
     "passed": 32,
     "failed": 0,
@@ -180,7 +180,7 @@
       {
         "name": "clean_text performance",
         "status": "pass",
-        "message": "100 iterations in 0.088s"
+        "message": "100 iterations in 0.100s"
       }
     ]
   }
