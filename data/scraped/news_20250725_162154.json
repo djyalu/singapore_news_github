@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Astronomer executives’ Coldplay scandal: Why it went viral and the obsession with public shaming",
+        "url": "https://www.straitstimes.com/singapore/astronomer-executives-coldplay-scandal-why-it-went-viral-and-the-obsession-with-public-shaming",
+        "content": "Find out what’s new on ST website and app. A tech CEO's alleged affair with his HR chief came to light during a Coldplay concert. they were featured on the kiss cam at a Coldplay concert in Boston. Their reaction was so suspicious that the band’s frontman Chris Martin quipped: “Either they are having an affair or they’re just very shy.”. Internet sleuths uncovered their names and job titles – he’s Andy Byron the now-former chief executive at the company; she’s...",
+        "publish_date": "2025-07-25T16:21:12.647058+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 천문학 임원진의 콜드플레이 스캔들: 왜 화제가 되었는가, 그리고 공공의 망신주기에 대한 집착\n내용: ST 웹사이트와 앱에서 새로운 소식을 확인하세요. 테크 기업 CEO의 HR 담당 수장과 불륜이 콜드플레이 콘서트에서 포착되었습니다. 두 사람은 보스턴에서 열린 콘서트의 키스캠에 잡혔고, 밴드의 프론트맨인 크리스 마틴조차 무대에서 그들의 반응이 의심스럽다며 농담을 할 정도였습니다. 온라인 추적자들이 그들의 신원을 밝혀냈고, CEO인 앤디 바이런과 HR 책임자라는 사실이 드러나면서 바이런은 곧바로 해고되었습니다."
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Hulk Hogan, who helped turn pro wrestling into a billion-dollar spectacle, dies at 71",
+        "url": "https://www.straitstimes.com/life/entertainment/wrestling-legend-hulk-hogan-dies-aged-71-us-media",
+        "content": "Find out what’s new on ST website and app. Hulk Hogan made professional wrestling a global phenomenon and loudly supported Donald Trump for US president. “WWE is saddened to learn WWE Hall of Famer Hulk Hogan has passed away. Hogan was taken to a hospital, where he was pronounced dead, they said",
+        "publish_date": "2025-07-25T16:21:15.194359+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 프로레슬링 전설 헐크 호건 사망, 향년 71세\n\n내용: 세계 프로레슬링계 거물인 헐크 호건이 사망하여 WWE가 슬픔에 빠졌다. 그는 프로레슬링을 세계적인 현상으로 만드는데 기여했으며, 도널드 트럼프 미국 대통령을 공개 지지했다. 호건은 병원에 이송되었으나 71세의 나이로 사망 선고를 받았다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ex-Biden chief of staff told congressional staffers that Clinton, Sullivan raised concerns about Biden’s waning support",
+        "url": "https://sg.news.yahoo.com/ex-biden-chief-staff-told-055924095.html",
+        "content": "Klain said Clinton made the comment in 2023, that source said. And he told the committee that after Biden’s weak performance at CNN’s Presidential Debate last June, which furthered questions about his mental acuity, Sullivan told him that Biden “was losing support.”. Klain served as White House chief of staff for Biden’s first two years; Clinton was not in...",
+        "publish_date": "2025-07-25T14:59:24+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 클린턴과 설리번, 바이든의 지지도 하락에 관해 우려 표해\n\n내용: 전 바이든 수석 보좌관인 클라인(Klain)이 의회 직원들에게 밝힌 바에 따르면, 힐러리 클린턴이 2023년에 바이든의 지지도 하락에 대해 언급했으며, 지난 6월 CNN 대통령 토론회에서 바이든의 부진한 모습이 보인 후 설리번이 클라인에게 바이든의 지지도가 떨어지고 있다고 전했다. 클라인은 바이든의 첫 2년간 백악관 비서실장이었다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-07-25T16:21:54.320051+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
