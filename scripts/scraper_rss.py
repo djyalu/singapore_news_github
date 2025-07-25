@@ -13,32 +13,38 @@ from collections import defaultdict
 from urllib.parse import urlparse
 import re
 
-# RSS 피드 목록
+# RSS 피드 목록 (2025년 7월 업데이트)
 RSS_FEEDS = {
+    # 정상 작동 피드
     'Mothership': 'https://mothership.sg/feed/',
-    # 'Singapore Business Review': 'https://sbr.com.sg/news.rss',  # 403 Forbidden
     'Channel NewsAsia': 'https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml',
     'The Independent Singapore': 'https://theindependent.sg/feed/',
-    # Straits Times RSS (if available)
-    # 'The Straits Times': 'https://www.straitstimes.com/news/singapore/rss.xml',
-    # Yahoo News RSS
     'Yahoo Singapore': 'https://sg.news.yahoo.com/rss/',
-    # TODAY Online RSS (if available)
-    # 'TODAY Online': 'https://www.todayonline.com/feed',
-    # AsiaOne RSS - 404 Not Found
-    # 'AsiaOne': 'https://www.asiaone.com/rss.xml',
-    # Tech in Asia RSS - 403 Forbidden
-    # 'Tech in Asia': 'https://www.techinasia.com/feed',
-    # The Edge Singapore RSS
-    # 'The Edge Singapore': 'https://www.theedgesingapore.com/rss',
-    # MustShareNews RSS - Singapore specific
     'MustShareNews': 'https://mustsharenews.com/category/singapore/feed/',
-    # Lianhe Zaobao RSS
     'Lianhe Zaobao': 'https://www.zaobao.com.sg/rss',
-    # Coconuts Singapore RSS
     'Coconuts Singapore': 'https://coconuts.co/singapore/feed/',
-    # Time Out Singapore RSS - 없을 수 있음
-    # 'Time Out Singapore': 'https://www.timeout.com/singapore/feed',
+    
+    # 추가 RSS 피드 (새로 발견)
+    'The Online Citizen': 'https://www.theonlinecitizen.com/feed/',
+    'Seedly': 'https://blog.seedly.sg/rss/',  # 금융 뉴스
+    'SG Magazine': 'https://sg.asia-city.com/rss.xml',  # 라이프스타일
+    'VulcanPost Singapore': 'https://vulcanpost.com/category/singapore/feed/',  # 스타트업/테크
+    
+    # Google News 피드 (카테고리별)
+    'Google News Singapore': 'https://news.google.com/rss/search?q=Singapore&hl=en-SG&gl=SG&ceid=SG:en',
+    'Google News Business': 'https://news.google.com/rss/search?q=Singapore+business&hl=en-SG&gl=SG&ceid=SG:en',
+    'Google News Tech': 'https://news.google.com/rss/search?q=Singapore+technology&hl=en-SG&gl=SG&ceid=SG:en',
+    
+    # Reddit Singapore (JSON 피드를 RSS로 변환)
+    # 'Reddit Singapore': 'https://www.reddit.com/r/singapore/.rss?sort=hot&limit=10',
+    
+    # 차단되거나 작동하지 않는 피드들
+    # 'Singapore Business Review': 'https://sbr.com.sg/news.rss',  # 403 Forbidden
+    # 'The Straits Times': 'https://www.straitstimes.com/news/singapore/rss.xml',  # 없음
+    # 'TODAY Online': 'https://www.todayonline.com/feed',  # 차단
+    # 'AsiaOne': 'https://www.asiaone.com/rss.xml',  # 404
+    # 'Tech in Asia': 'https://www.techinasia.com/feed',  # 403
+    # 'The Edge Singapore': 'https://www.theedgesingapore.com/rss',  # 없음
 }
 
 # 그룹 매핑
@@ -48,6 +54,13 @@ SITE_GROUP_MAPPING = {
     'Channel NewsAsia': 'News',
     'The Independent Singapore': 'Politics',
     'Yahoo Singapore': 'News',
+    'The Online Citizen': 'Politics',
+    'Seedly': 'Economy',
+    'SG Magazine': 'Lifestyle',
+    'VulcanPost Singapore': 'Tech',
+    'Google News Singapore': 'News',
+    'Google News Business': 'Economy',
+    'Google News Tech': 'Tech',
     'The Straits Times': 'News',
     'The Business Times': 'Economy',
     'TODAY Online': 'News',

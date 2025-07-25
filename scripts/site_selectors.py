@@ -18,6 +18,8 @@ class SiteSelectors:
                 'meta[property="og:title"]',
                 '.article-headline h1',
                 'h1.display-3',  # 새로운 디자인
+                'h1.display-4',  # 2025년 디자인
+                '.st-article-headline',
                 'h1'
             ],
             'content': [
@@ -26,7 +28,10 @@ class SiteSelectors:
                 '.paywall-content',
                 '.story-content',
                 'div.content-body',
-                'article[role="article"]'
+                'article[role="article"]',
+                '.st-article-content',  # 2025년 추가
+                '[class*="RichTextContainer"]',  # React 컴포넌트
+                'div[class*="article__body"]'
             ],
             'date': [
                 'time[datetime]',

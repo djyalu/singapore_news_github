@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-07-25T01:48:19.460104",
-  "duration": 1.1688060760498047,
+  "timestamp": "2025-07-25T16:48:21.713165",
+  "duration": 1.3374216556549072,
   "results": {
-    "passed": 19,
+    "passed": 31,
     "failed": 1,
-    "errors": 2,
+    "errors": 0,
     "skipped": 3,
     "tests": [
       {
@@ -39,8 +39,8 @@
       },
       {
         "name": "Import scripts.ai_summary_free",
-        "status": "error",
-        "message": "module 'httpcore' has no attribute 'SyncHTTPTransport'"
+        "status": "pass",
+        "message": ""
       },
       {
         "name": "Import scripts.site_selectors",
@@ -63,9 +63,59 @@
         "message": ""
       },
       {
-        "name": "Scraper function tests",
-        "status": "error",
-        "message": "cannot import name 'extract_domain' from 'scripts.scraper' (/mnt/d/projects/singapore_news_github/scripts/scraper.py)"
+        "name": "clean_text('  Hello   World  \n\n...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "clean_text('Test\n\nMultiple\nLines...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "clean_text('   ...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "clean_text('Normal text...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "extract_domain('https://www.example.com/article')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "extract_domain('http://subdomain.test.org/page')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "extract_domain('https://localhost:8080/test')",
+        "status": "fail",
+        "message": "Expected 'localhost', got 'localhost:8080'"
+      },
+      {
+        "name": "contains_keywords('Singapore news today...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "contains_keywords('Random text without keywords...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "contains_keywords('This is a TEST case...')",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "contains_keywords('...')",
+        "status": "pass",
+        "message": ""
       },
       {
         "name": "JSON validation: data/settings.json",
@@ -74,8 +124,8 @@
       },
       {
         "name": "Settings structure validation",
-        "status": "fail",
-        "message": "Missing fields: ['whatsappChannels']"
+        "status": "pass",
+        "message": ""
       },
       {
         "name": "JSON validation: data/sites.json",
@@ -130,7 +180,7 @@
       {
         "name": "clean_text performance",
         "status": "pass",
-        "message": "100 iterations in 0.053s"
+        "message": "100 iterations in 0.090s"
       }
     ]
   }

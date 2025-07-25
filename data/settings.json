@@ -8,6 +8,10 @@
   },
   "sendChannel": "whatsapp",
   "whatsappChannel": "120363421252284444@g.us",
+  "whatsappChannels": {
+    "primary": "120363421252284444@g.us",
+    "test": ""
+  },
   "sendSchedule": {
     "period": "daily",
     "time": "07:55",

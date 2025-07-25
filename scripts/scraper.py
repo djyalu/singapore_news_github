@@ -12,6 +12,12 @@ from urllib.parse import urljoin, urlparse
 from ai_scraper import get_ai_scraper
 from text_processing import TextProcessor
 from deduplication import ArticleDeduplicator
+try:
+    from site_access_strategy import SiteAccessStrategy
+    SITE_STRATEGY_AVAILABLE = True
+except ImportError:
+    SITE_STRATEGY_AVAILABLE = False
+    print("[WARNING] Site access strategy module not available")
 
 # AI 요약 함수들 import
 try:
@@ -36,6 +42,21 @@ def get_kst_now():
 def get_kst_now_iso():
     """현재 한국 시간을 ISO 형식 문자열로 반환"""
     return get_kst_now().isoformat()
+
+def extract_domain(url):
+    """URL에서 도메인 추출"""
+    try:
+        parsed = urlparse(url)
+        domain = parsed.netloc
+        # 포트 번호 제거
+        if ':' in domain:
+            domain = domain.split(':')[0]
+        # www. 제거
+        if domain.startswith('www.'):
+            domain = domain[4:]
+        return domain
+    except:
+        return url
 
 def extract_publish_date(soup, default_to_now=True):
     """
@@ -1250,37 +1271,40 @@ def extract_article_content_generic(url, soup):
 def extract_article_content(url):
     """URL에 따라 적절한 추출 방법 선택"""
     try:
-        # User-Agent 로테이션을 위한 리스트
-        USER_AGENTS = [
-            # Chrome
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            # Firefox
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0',
-            # Safari
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15',
-            # Edge
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0',
-            # Mobile
-            'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1',
-            'Mozilla/5.0 (Linux; Android 13; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
-        ]
-        
-        # 랜덤하게 User-Agent 선택
-        import random
-        selected_ua = random.choice(USER_AGENTS)
-        
-        # 더 나은 헤더 사용
-        headers = {
-            'User-Agent': selected_ua,
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Accept-Encoding': 'gzip, deflate',
-            'Connection': 'keep-alive',
-            'Upgrade-Insecure-Requests': '1'
-        }
+        # 사이트별 접근 전략 사용
+        if SITE_STRATEGY_AVAILABLE:
+            strategy = SiteAccessStrategy.get_strategy(url)
+            headers = strategy['headers']
+            cookies = strategy['cookies']
+            retry_count = strategy['retry_count']
+            
+            # 접근 전 딜레이
+            SiteAccessStrategy.apply_delay(strategy)
+            
+            if DEBUG_MODE:
+                print(f"[DEBUG] Using strategy for {url}")
+                print(f"[DEBUG] User-Agent: {headers['User-Agent'][:50]}...")
+                print(f"[DEBUG] Delay: {strategy['delay']:.2f}s")
+        else:
+            # 폴백: 기존 User-Agent 로테이션
+            USER_AGENTS = [
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+                'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1'
+            ]
+            
+            selected_ua = random.choice(USER_AGENTS)
+            headers = {
+                'User-Agent': selected_ua,
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Accept-Encoding': 'gzip, deflate',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1'
+            }
+            cookies = {}
+            retry_count = 2
         
         # Mothership의 경우 추가 헤더
         if 'mothership' in url.lower():
@@ -2130,13 +2154,16 @@ def scrape_news_ai():
                 # 각 링크에 대해 기사 추출 (최적화)
                 # 우선순위 사이트는 더 많이, 낮은 우선순위는 적게
                 priority_limits = {
-                    'The Straits Times': 4,
-                    'Channel NewsAsia': 4,
-                    'The Business Times': 3,
-                    'Yahoo Singapore News': 3,
-                    'Mothership': 3
+                    'The Straits Times': 5,
+                    'Channel NewsAsia': 5,
+                    'The Business Times': 4,
+                    'Yahoo Singapore News': 4,
+                    'Mothership': 4,
+                    'The Independent Singapore': 3,
+                    'MustShareNews': 3,
+                    'AsiaOne': 3
                 }
-                max_links = priority_limits.get(site['name'], 2)  # 기본값 2개
+                max_links = priority_limits.get(site['name'], 3)  # 기본값 3개
                 
                 # 링크가 없으면 건너뛰기
                 if not links:
@@ -2288,8 +2315,8 @@ def scrape_news_ai():
                 seen_titles.add(article['title'])
                 unique_articles.append(article)
         
-        # 각 그룹에서 최대 3개의 주요 기사만 선택
-        selected_articles = unique_articles[:3]
+        # 각 그룹에서 최대 5개의 주요 기사 선택 (기존 3개에서 증가)
+        selected_articles = unique_articles[:5]
         
         # 그룹별 통합 기사 생성
         group_summary = {
@@ -2593,8 +2620,8 @@ def scrape_news_traditional():
                 seen_titles.add(article['title'])
                 unique_articles.append(article)
         
-        # 각 그룹에서 최대 3개의 주요 기사만 선택
-        selected_articles = unique_articles[:3]
+        # 각 그룹에서 최대 5개의 주요 기사 선택 (기존 3개에서 증가)
+        selected_articles = unique_articles[:5]
         
         # 그룹별 통합 기사 생성
         # KST 타임존 생성
