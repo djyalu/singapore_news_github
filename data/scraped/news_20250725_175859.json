@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Taiwan's opposition protests ahead of recall vote",
+        "url": "https://sg.news.yahoo.com/taiwans-opposition-protests-ahead-recall-211513627.html",
+        "summary": "📰 제목: 대만 야권, 권력 회수 시위 진행\n\n내용: 대만에서 시민 단체가 주도하는 권력 회수 투표가 8월 23일에 진행되는 가운데, 야권에서 이에 항의하는 시위가 벌어졌다. 이번 투표는 몇 달간 정치와 헤드라인, 소셜미디어를 지배해왔다. 특히 여당인 국민당가 7명의 의원에 대해 회수 투표가 진행될 예정이다.",
+        "content": "Another seven face recall elections on August 23. Started by civic groups this year, the recall campaign has dominated politics, headlines and social media feeds for months",
+        "publish_date": "2025-07-25T17:26:45+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Avoid water activities around Tuas Second Link, Raffles Marina after chemical tank accident: NEA",
+        "url": "https://www.asiaone.com/singapore/avoid-water-activities-around-tuas-second-link-raffles-marina-after-chemical-tank",
+        "summary": "📰 교통, 음식, 기술 관련 뉴스\n📢 Avoid water activities around Tuas Second Link, Raffles Marina after chemical ta...",
+        "content": "They include wakeboarding, windsurfing and water immersion training. Propylene glycol is not classified as a hazardous substance and is biodegradable. The chemical is commonly used in food, pharmaceuticals and cosmetics, said NEA.",
+        "publish_date": "2025-07-25T10:15:38+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-25T17:58:59.846750+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
