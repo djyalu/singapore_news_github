@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Thailand warns clashes with Cambodia could move towards war as 138,000 flee fighting",
+        "url": "https://www.channelnewsasia.com/asia/thailand-cambodia-border-civilians-flee-clashes-5257761",
+        "summary": "📰 제목: 태국, 캄보디아와의 충돌에 \"전쟁 가능성\" 경고, 13만8천명 대피\n\n내용: 7월 25일, 태국 서린의 임시총리 푸뭏타 위쟈차이가 캄보디아와의 국경 충돌이 \"전쟁으로 번질 수 있다\"고 경고했다. 이 충돌로 인해 13만 8천 명이 대피했으며, 양측은 이틀째 치명적인 공격을 주고받았다.",
+        "content": "SURIN, Thailand: Thailand's acting Prime Minister Phumtham Wechayachai warned Friday (Jul 25) that cross-border clashes with Cambodia that have uprooted more than 130,000 people \"could develop into war\", as the countries traded deadly strikes for a second day",
+        "publish_date": "2025-07-25T17:10:47.107239+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Hong Kong issues bounties for 19 overseas activists on subversion charges",
+        "url": "https://sg.news.yahoo.com/hong-kong-issues-bounties-19-061003943.html",
+        "summary": "📰 법률, 범죄, 기술 관련 뉴스\n📢 Hong Kong issues bounties for 19 overseas activists on subversion charges",
+        "content": "Hong Kong police announced bounties Friday for information leading to the arrest of 19 overseas activists, accusing them of national security crimes. Political dissent in Hong Kong has been quashed since Beijing imposed a sweeping national security law in 2020 after huge, sometimes violent pro-democracy protests the year before. Many opposition figures have fled abroad, while others have been arrested and sentenced to years in jail",
+        "publish_date": "2025-07-25T16:54:23+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Avoid water activities around Tuas Second Link, Raffles Marina after chemical tank accident: NEA",
+        "url": "https://www.asiaone.com/singapore/avoid-water-activities-around-tuas-second-link-raffles-marina-after-chemical-tank",
+        "summary": "📰 교통, 음식, 기술 관련 뉴스\n📢 Avoid water activities around Tuas Second Link, Raffles Marina after chemical ta...",
+        "content": "They include wakeboarding, windsurfing and water immersion training. Propylene glycol is not classified as a hazardous substance and is biodegradable. The chemical is commonly used in food, pharmaceuticals and cosmetics, said NEA.",
+        "publish_date": "2025-07-25T10:15:38+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-25T17:13:36.180042+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
