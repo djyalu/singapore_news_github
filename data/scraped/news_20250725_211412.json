@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Working as one: How S’pore’s security forces collaborate behind the scenes to keep the nation safe",
+        "url": "https://www.straitstimes.com/singapore/ministry-of-home-affairs-how-the-home-team-works-together-to-keep-singapore-safe",
+        "content": "Over decades, the Home Team has grown into a unified force committed to keeping Singapore safe. Today’s threats move fast – and so does the Home Team. But the nation’s safety did not happen by chance. Trace some of the Home Team’s key milestones and developments captured in The Straits Times headlines. From once operating independently to now co-developing intelligent systems across different agencies, the Home Team’s integrated approach is built on a...",
+        "publish_date": "2025-07-25T21:11:11.164657+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 하나된 힘으로 국가를 지킨다: 싱가포르의 보안 부대 협업 이야기\n내용: 싱가포르의 홈팀(Home Team)은 수십 년간 통합된 보안 체계를 구축해왔다. 그들은 한 발 빠르게 움직이는 최신 위협에 대응하기 위해, 다양한 기관에서 지능형 시스템을 공동 개발하며 협업하고 있다. 과거 각자 운영되던 시절에서 벗어나 이제는 긴밀히 협동하는 체제로 바뀌면서, 싱가포르의 안보를 지탱해왔다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Cayenne Coupe S.",
+        "url": "https://sg.news.yahoo.com/test-drove-byds-latest-midsize-000956004.html",
+        "content": "In April, BYD outsold Tesla in Europe for the first time. Our reviewer was impressed by the midsize SUV's handling. The lineup reflects a strategy designed to match drivers' needs in nearly every stage of life. The midsize SUV has two variants: Premium and AWD Performance. I test drove the higher-end AWD Performance model, which is priced at 219,000 yuan, or about $30,500. In the first half of 2025, BYD overtook Toyota to become Singapore's top-selling car brand",
+        "publish_date": "2025-07-25T09:09:56+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: BYD의 최신 중형 SUV, 포르쉐 카예엔 쿠페 S보다 빠른 가속력 선봬\n\n내용: 중국 자동차 브랜드 BYD가 싱가포르에서 선전하며, 2025년 상반기 토요타를 제치고 판매 1위를 기록했습니다. 기자가 시승한 BYD의 중형 SUV는 주행 성능이 우수하며, 두 가지 트림으로 판매되는데, 고성능 AWD 퍼포먼스 모델의 가격은 약 30,500달러입니다. BYD는 지난 4월 유럽에서 테슬라를 제치고 전기차 판매량 1위를 기록하기도 했습니다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Stock markets turn lower as trade deal rally fades",
+        "url": "https://sg.news.yahoo.com/asian-markets-turn-lower-trade-024350196.html",
+        "content": "Stock markets mostly fell Friday as the latest trade-related rally lost momentum, with investors also digesting a mixed batch of corporate earnings. London and Frankfurt stock markets both fell on Friday, while Paris edged up",
+        "publish_date": "2025-07-25T20:09:34+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 미중 무역협상 열기 식으며 증시 하락세\n내용: 런던과 프랑크푸르트 증시는 하락한 반면 파리는 소폭 상승했다. 기업 실적이 엇갈린 가운데, 투자자들이 미중 무역협상 합의에 대한 기대감이 사그라들면서 금요일 대부분 증시가 하락세를 나타냈다. \n\n---\n\n싱가포르 뉴스 요약 요청에 감사드립니다!"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T21:14:12.383816+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

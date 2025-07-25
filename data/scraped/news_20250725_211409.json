@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Working as one: How S’pore’s security forces collaborate behind the scenes to keep the nation safe",
+        "url": "https://www.straitstimes.com/singapore/ministry-of-home-affairs-how-the-home-team-works-together-to-keep-singapore-safe",
+        "summary": "📰 제목: 하나된 힘으로 nation의 안전을 지킨다, 싱가포르의 보안군\n내용: 싱가포르의 홈팀(Home Team)은 수십 년에 걸쳐 통합된 보안 세력으로 발전해왔다. 그들은 지능형 시스템을 공동 개발하여 국가 방위에 만반의 준비를 갖추었다. 과거 각자 운영되던 기관들이 협력하여 지능형 접근 방식으로 발전해온 과정은 스트레이츠 타임스(The Straits Times)의 헤드라인에 고스란히 담겨있다.",
+        "content": "Over decades, the Home Team has grown into a unified force committed to keeping Singapore safe. Today’s threats move fast – and so does the Home Team. But the nation’s safety did not happen by chance. Trace some of the Home Team’s key milestones and developments captured in The Straits Times headlines. From once operating independently to now co-developing intelligent systems across different agencies, the Home Team’s integrated approach is built on a...",
+        "publish_date": "2025-07-25T21:11:11.164657+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Cayenne Coupe S.",
+        "url": "https://sg.news.yahoo.com/test-drove-byds-latest-midsize-000956004.html",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Caye...",
+        "content": "In April, BYD outsold Tesla in Europe for the first time. Our reviewer was impressed by the midsize SUV's handling. The lineup reflects a strategy designed to match drivers' needs in nearly every stage of life. The midsize SUV has two variants: Premium and AWD Performance. I test drove the higher-end AWD Performance model, which is priced at 219,000 yuan, or about $30,500. In the first half of 2025, BYD overtook Toyota to become Singapore's top-selling car brand",
+        "publish_date": "2025-07-25T09:09:56+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Stock markets turn lower as trade deal rally fades",
+        "url": "https://sg.news.yahoo.com/asian-markets-turn-lower-trade-024350196.html",
+        "summary": "📰 취업, 경제 관련 뉴스\n📢 Stock markets turn lower as trade deal rally fades",
+        "content": "Stock markets mostly fell Friday as the latest trade-related rally lost momentum, with investors also digesting a mixed batch of corporate earnings. London and Frankfurt stock markets both fell on Friday, while Paris edged up",
+        "publish_date": "2025-07-25T20:09:34+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T21:14:09.027827+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
