@@ -1,0 +1,82 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Thailand warns clashes with Cambodia could move towards war as 138,000 flee fighting",
+        "url": "https://www.channelnewsasia.com/asia/thailand-cambodia-border-civilians-flee-clashes-5257761",
+        "summary": "📰 제목: 태국, \"캄보디아와의 충돌, 전쟁으로 번질 수 있어\" 경고...13만 8천 명 피난\n\n내용: 7월 25일, 태국 대행 총리 푸띠암 위차야차이가 태국과 캄보디아 간의 국경 충돌이 전쟁으로 비화할 수 있다고 경고했다. 이 충돌로 인해 13만 8천 명이 피난하는 상황이다. 두 나라 간에 두 번째 치명적인 공격이 이어지며 긴장이 고조되고 있다.",
+        "content": "SURIN, Thailand: Thailand's acting Prime Minister Phumtham Wechayachai warned Friday (Jul 25) that cross-border clashes with Cambodia that have uprooted more than 130,000 people \"could develop into war\", as the countries traded deadly strikes for a second day",
+        "publish_date": "2025-07-25T16:56:48.023191+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "What's behind Indonesia’s US$25 billion plan to help villagers and why are experts concerned?",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-cooperative-rural-communities-financial-risks-5257691",
+        "summary": "📰 제목: 인도네시아의 250억 달러 마을 지원 계획, 그 뒷면에는 무엇이 있나\n\n내용: 인도네시아 정부는 250억 달러 규모의 마을 지원 계획을 발표했다. 그러나 전문가들은 이 계획이 수하르토 시대 실패한 정책과 비슷하다고 경고한다. 당시 정책은 심각한 관리 부실과 부패로 점철됐다. 이에 전문가들은 이번 계획도 같은 문제를 안을 수 있다며 우려를 표했다.",
+        "content": "They warned that the programme could suffer the same fate as a failed Suharto-era policy, which was riddled with mismanagement and corruption practices. Subscribe to CNA’s Morning Brief An automated curation...",
+        "publish_date": "2025-07-25T16:56:54.539892+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "UK, Australia back embattled submarine deal with US",
+        "url": "https://sg.news.yahoo.com/uk-australia-back-embattled-submarine-072126223.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 UK, Australia back embattled submarine deal with US",
+        "content": "Under the 2021 AUKUS deal, Australia would acquire at least three Virginia-class submarines from the United States within 15 years, eventually manufacturing its own subs.",
+        "publish_date": "2025-07-25T16:21:26+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ukraine says Starlink's global outage hit its military communications",
+        "url": "https://sg.news.yahoo.com/ukraine-says-starlinks-global-outage-074426687.html",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Ukraine says Starlink's global outage hit its military communications",
+        "content": "(1941 GMT) on Thursday. He updated his post later to say that by about 1:05 a.m. on Friday the issue had been resolved",
+        "publish_date": "2025-07-25T16:44:26+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Unwell firefighter taken to hospital after kitchen fire at Boon Lay flat",
+        "url": "https://www.asiaone.com/singapore/unwell-firefighter-taken-hospital-after-kitchen-fire-boon-lay-flat",
+        "summary": "📰 기술 관련 뉴스\n📢 Unwell firefighter taken to hospital after kitchen fire at Boon Lay flat",
+        "content": "Residents had gathered at the playground and walkways below the block. A reporter from Chinese publication 8world who was at the scene heard glass shattering. About 100 had evacuated, according to the report. SCDF said the fire was extinguished with a water jet and a hose reel. A firefighter experienced fatigue and felt unwell during the operation. The firefighter has since been discharged and given three days of medical leave. The fire was likely caused by unattended cooking,...",
+        "publish_date": "2025-07-25T11:57:28+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T16:59:47.070963+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Thailand rejects international mediation to end fighting with Cambodia",
+        "url": "https://www.businesstimes.com.sg/international/asean/thailand-rejects-international-mediation-end-fighting-cambodia",
+        "summary": "📰 제목: 태국, 캄보디아와의 분쟁에 국제 중재 거부\n\n내용: 니코른뎃(Nikorndej)은 인터뷰에서 \"아직 제3국의 중재는 필요치 않다\"며, 캄보디아와 태국의 국경 분쟁에 대한 국제 중재를 거부했다. 양국은 서로를 비난하며 국경지대에서 무력 충돌을 이어가고 있으며, 이번 분쟁으로 인한 사상자 수도 증가하고 있다. 태국 정부는 자국 영토에 대한 캄보디아의 침범을 주장하며, 캄보디아도 이에 맞서고 있는 상황이다.",
+        "content": "“I don’t think we need any mediation from a third country yet,” Nikorndej said in an interview. Cambodia and Thailand accuse each other of...",
+        "publish_date": "2025-07-25T16:57:15.145058+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T16:59:47.071001+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

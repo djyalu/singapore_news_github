@@ -1,0 +1,82 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Thailand warns clashes with Cambodia could move towards war as 138,000 flee fighting",
+        "url": "https://www.channelnewsasia.com/asia/thailand-cambodia-border-civilians-flee-clashes-5257761",
+        "content": "SURIN, Thailand: Thailand's acting Prime Minister Phumtham Wechayachai warned Friday (Jul 25) that cross-border clashes with Cambodia that have uprooted more than 130,000 people \"could develop into war\", as the countries traded deadly strikes for a second day",
+        "publish_date": "2025-07-25T16:56:48.023191+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 태국, 캄보디아와의 충돌에 \"전쟁 가능성\" 경고, 13만 8천 명 피난\n\n내용: 7월 25일, 태국 대리총리 푸띠담 위차야차이가 캄보디아와의 국경 충돌이 \"전쟁으로 번질 수 있다\"고 경고했다. 양국 간 두 번째 교전 날인 이날, 충돌로 인해 13만 8천 명이 피난했으며, 사망자도 발생했다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "What's behind Indonesia’s US$25 billion plan to help villagers and why are experts concerned?",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-cooperative-rural-communities-financial-risks-5257691",
+        "content": "They warned that the programme could suffer the same fate as a failed Suharto-era policy, which was riddled with mismanagement and corruption practices. Subscribe to CNA’s Morning Brief An automated curation...",
+        "publish_date": "2025-07-25T16:56:54.539892+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인도네시아의 250억 달러 마을 지원 계획, 그 뒤에는 무엇이 있나\n\n내용: 인도네시아 정부는 마을 주민들을 위해 250억 달러의 거액을 투입하는 계획을 세웠다. 그러나 전문가들은 이 계획이 수하르토 시대 실패한 정책과 비슷하다며 우려를 표하고 있다. 당시 정책은 방만한 운영과 부패로 얼룩졌었다. 이번 계획이 같은 실수를 반복할 수 있다는 걱정이 전문가들 사이에서 나오고 있다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "UK, Australia back embattled submarine deal with US",
+        "url": "https://sg.news.yahoo.com/uk-australia-back-embattled-submarine-072126223.html",
+        "content": "Under the 2021 AUKUS deal, Australia would acquire at least three Virginia-class submarines from the United States within 15 years, eventually manufacturing its own subs.",
+        "publish_date": "2025-07-25T16:21:26+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 영국과 호주, 미 수중함 정박 지원\n\n내용: 2021년 AUKUS 협정에 따라 영국과 호주는 향후 15년 내로 미국으로부터 최신 버지니아급 잠수함 3척 이상을 도입하며, 이후 자체 잠수함 제조도 계획 중이다. 이는 미-호주 간 긴밀한 협력을 강조하는 것으로, 양국은 안보와 국익에 중대한 사안으로 여긴다. AUKUS는 미국, 영국, 호주의 안보 동맹으로, 중국이 인도태평양 지역에서 영향력을 확대하는 데 대응하기 위해 체결됐다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ukraine says Starlink's global outage hit its military communications",
+        "url": "https://sg.news.yahoo.com/ukraine-says-starlinks-global-outage-074426687.html",
+        "content": "(1941 GMT) on Thursday. He updated his post later to say that by about 1:05 a.m. on Friday the issue had been resolved",
+        "publish_date": "2025-07-25T16:44:26+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 우크라이나가 글로벌 위성 인터넷 중단으로 군사통신이 차질\n내용: 어제 목요일 오후 7시 41분경, 우크라이나의 군사통신이 엘론 머스크의 스타링크 위성 인터넷 서비스 중단으로 차질을 빚었다. 약 1시간 후인 금요일 새벽 1시 5분경 복구되었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Unwell firefighter taken to hospital after kitchen fire at Boon Lay flat",
+        "url": "https://www.asiaone.com/singapore/unwell-firefighter-taken-hospital-after-kitchen-fire-boon-lay-flat",
+        "content": "Residents had gathered at the playground and walkways below the block. A reporter from Chinese publication 8world who was at the scene heard glass shattering. About 100 had evacuated, according to the report. SCDF said the fire was extinguished with a water jet and a hose reel. A firefighter experienced fatigue and felt unwell during the operation. The firefighter has since been discharged and given three days of medical leave. The fire was likely caused by unattended cooking,...",
+        "publish_date": "2025-07-25T11:57:28+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 분 레이 아파트 주방 화재로 소방관 병원 이송\n내용: 싱가포르 분 레이 아파트에서 발생한 주방 화재로 소방관 1명이 피로감과 건강 이상 증세를 보여 병원에 이송되었다. 화재는 조리 중 방치된 음식으로 인해 발생했으며, 약 100명의 주민들이 대피했다. 소방당국에 의해 화재는 신속히 진압되었으며, 해당 소방관은 이후 퇴원 조치되었다."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T16:59:52.720480+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Thailand rejects international mediation to end fighting with Cambodia",
+        "url": "https://www.businesstimes.com.sg/international/asean/thailand-rejects-international-mediation-end-fighting-cambodia",
+        "content": "“I don’t think we need any mediation from a third country yet,” Nikorndej said in an interview. Cambodia and Thailand accuse each other of...",
+        "publish_date": "2025-07-25T16:57:15.145058+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 태국, 캄보디아와의 무력충돌에 대한 국제 중재 거부\n\n내용: Nikorndej는 인터뷰에서 \"아직 제3국의 중재는 필요치 않다\"며, 캄보디아와 태국의 국경분쟁에 대한 국제 중재를 거부했다. 양국은 서로를 향해 적대 행위를 중단하라며 비난하고 있는 상황.\n\n이 충돌로 인해 수백 명의 난민이 발생했으며, 양국 간 긴장은 고조되고 있다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T16:59:52.720508+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
