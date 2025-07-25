@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-07-25T17:56:05.416630",
-  "duration": 1.2759931087493896,
+  "timestamp": "2025-07-25T20:44:58.058973",
+  "duration": 1.2360320091247559,
   "results": {
-    "passed": 32,
+    "passed": 47,
     "failed": 0,
     "errors": 0,
-    "skipped": 3,
+    "skipped": 1,
     "tests": [
       {
         "name": "Import scripts.scraper",
@@ -138,19 +138,84 @@
         "message": ""
       },
       {
-        "name": "AI Scraper tests",
-        "status": "skip",
-        "message": "Module not available"
+        "name": "AI scraper module import",
+        "status": "pass",
+        "message": ""
       },
       {
-        "name": "RSS Scraper tests",
+        "name": "RateLimiter class",
         "status": "skip",
-        "message": "Module not available"
+        "message": "Not found in module"
       },
       {
-        "name": "WhatsApp tests",
-        "status": "skip",
-        "message": "Module not available"
+        "name": "AI function: get_ai_scraper",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "AI function: AIScraper",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "RSS scraper module import",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "RSS function: scrape_news_rss",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "RSS function: scrape_rss_feed",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "RSS function: is_recent_article",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "RSS dependency: feedparser",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp module import",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp function: format_message",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp function: send_to_whatsapp_green",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp function: check_green_api_status",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp formatting: Contains URL",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp formatting: Has Korean content",
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "name": "WhatsApp formatting: Non-empty message",
+        "status": "pass",
+        "message": ""
       },
       {
         "name": "Security check: ai_scraper.py",
@@ -180,7 +245,7 @@
       {
         "name": "clean_text performance",
         "status": "pass",
-        "message": "100 iterations in 0.100s"
+        "message": "100 iterations in 0.091s"
       }
     ]
   }
