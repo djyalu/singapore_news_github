@@ -1,0 +1,123 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "IMF reaches staff-level agreement for $2 billion disbursement to Argentina",
+        "url": "https://www.straitstimes.com/world/imf-reaches-staff-level-agreement-for-2-billion-disbursement-to-argentina",
+        "content": "Find out what’s new on ST website and app. REUTERS/Benoit Tessier/File Photo. \"Notably, Argentina has re-accessed international capital markets earlier than anticipated,\" the IMF added. The lender said that agreements had been reached with Argentina on safeguarding its fiscal...",
+        "publish_date": "2025-07-25T07:58:08.486995+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: IMF, 아르헨티나에 20억 달러 지원 합의\n\n내용: IMF는 아르헨티나에 20억 달러의 자금 지원에 대한 staff-level 합의에 도달했다. 이는 아르헨티나 측이 기대보다 일찍 국제 자본시장에 접근할 수 있게 된 것을 의미하며, IMF는 아르헨티나의 재정건전성 확보를 위한 노력에도 동의했다."
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Your S’pore Story: ‘We would climb up and down Bukit Timah Hill about six times’",
+        "url": "https://www.straitstimes.com/singapore/st180-your-singapore-story-youngest-singaporean-everest-base-camp",
+        "content": "Find out what’s new on ST website and app. While other children his age are attending preschool and learning to play musical instruments, Abyan Imtiaz Irkiz is busy setting national records. And not just any record either. Mr Zikri, 42, runs a yoga school in Singapore with his wife, while Abyan...",
+        "publish_date": "2025-07-25T07:58:09.786333+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 당신의 싱가포르 이야기: '우리는 부킷 티마 힐을 약 6번 오른다'\n내용: 42세의 Zikri는 싱가포르의 요가 학교를 운영하며, 그의 아들 아비안 임티아즈 이르크즈(Abyan Imtiaz Irkiz)는 유치원 대신 국립 기록을 세우고 있다. 아비안은 다른 아이들과는 달리 유치원 instead에 국립 스포츠 센터에서 운동과 체력을 단련한다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/stmicro-buy-part-nxp-semiconductors-214620764.html",
+        "content": "The unit generated revenue of about $300 million last year, STMicro said in a statement. The deal is expected to close in the first half of 2026",
+        "publish_date": "2025-07-25T06:46:20+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 파이낸스의 ST마이크론 매각 소식 \n\n내용: ST마이크론이 지난해 약 3억 달러의 매출을 기록한 자회사 지분을 매각한다. 매각 대상 기업은 내년 상반기에 거래가 완료되는 대로 ST마이크론과 별개로 운영될 예정이다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-25T07:59:10.604489+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "GIC posts 3.8% 20-year annualised real rate of return; expects returns ahead will be more volatile",
+        "url": "https://www.businesstimes.com.sg/companies-markets/gic-posts-3-8-20-year-annualised-real-rate-return-expects-returns-ahead-will-be-more-volatile",
+        "content": "“The forces shaping today’s investment environment go beyond any market cycle or structural trend. They strike at the foundations of the global order. They are rewriting the rules of global investing,” said Lim Chow Kiat, chief executive of GIC. Cyclically, there is a more volatile growth and inflation environment. Structural shifts – such as demographic changes and a reconfiguration of global supply chains – will...",
+        "publish_date": "2025-07-25T07:58:20.065949+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 국부펀드 GIC, 20년 실수익률 3.8% 발표...투자 환경 불확실성 경고\n\n내용: 싱가포르의 국부펀드인 GIC가 20년 기준 연실수익률 3.8%를 기록했다고 발표했습니다. GIC의 수장인 림 차우 키아트는 향후 수익률이 더 변동적일 것으로 전망하며, 투자 환경이 불확실성에 직면해 있다고 경고했습니다. 사이클상 변동성이 커지고, 인구 통계 변화와 글로벌 공급망 재편 같은 구조적 변화가 지속되고 있습니다."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Helping seniors to navigate investing and spending in retirement is a must",
+        "url": "https://www.businesstimes.com.sg/opinion-features/helping-seniors-navigate-investing-and-spending-retirement-must",
+        "content": "[SINGAPORE] Retail investors here have come a long way from decades ago when fund launches were regarded as initial public offerings of stocks. This misconception was common in the early days of unit trusts. Today, many investors have become familiar with the factors that make for successful retirement investing: starting early; reducing expenses; investing regularly into a core portfolio; and, of course, keeping a long horizon",
+        "publish_date": "2025-07-25T07:58:21.826334+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 은퇴한 노인들을 위한 투자 및 지출 가이드가 필수적이다\n\n내용: 싱가포르의 소매 투자자들이 투자 펀드 출시를 주식 공개와 혼동했던 과거와 달리, 이제는 성공적인 은퇴 투자의 요소를 잘 인지하고 있다. 이를 위해선 조기 투자, 지출 감소, 핵심 포트폴리오로의 정기 투자, 장기간 투자 등 전략이 필요하며, 이를 통해 안정적인 수익을 기대할 수 있다."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Indonesia palm oil producers on alert as Sumatra fires coincide with peak harvest",
+        "url": "https://www.businesstimes.com.sg/international/asean/indonesia-palm-oil-producers-alert-sumatra-fires-coincide-peak-harvest",
+        "content": "Analyst warns fires and haze could hamper palm oil harvesting operations and logistics, reducing yields and creating short-term tightness in the market. “In the weeks ahead, our fire response teams remain on high alert,” said Craig Tribolet, the company’s deputy director of sustainability. Tribolet said April Group has implemented a no-burn policy since 1993 and follows a fire management...",
+        "publish_date": "2025-07-25T07:58:23.453025+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 수마트라 산불, 인도네시아 팜유 생산에 비상\n\n내용: 수마트라섬의 산불이 팜유 수확 최성기에 발생하면서 수확 작업과 물류에 차질이 우려되고 있다.  분석가들은 산불과 스모그로 인해 팜유 생산량 감소와 단기적인 시장 긴축이 발생할 수 있다고 경고했다.  에이프릴 그룹의 크레이그 트리볼렛 지속가능성 부대표는 1993년부터 무방화 정책을 시행하고 있으며 화재 관리에 만전을 기하고 있다고 밝혔다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-07-25T07:59:10.604525+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Chinese",
+    "articles": [
+      {
+        "site": "Lianhe Zaobao",
+        "title": "新加坡米其林指南名单出炉 一星餐馆少10家",
+        "url": "https://www.zaobao.com.sg/realtime/singapore/story20250724-7212810?ref=today-news-section-card-7",
+        "content": "Sushi Sakuta（寿司，The Capitol Kempinski Hotel Singapore）. Iggy’s（欧式当代， Voco Orchard Singapore）. 四川饭店（广东和四川，Hilton Singapore Orchard）. 夏宫（广东，Conrad Singapore Orchard）. 夏苑（广东，The Ritz-Carlton, Millenia Singapore）. Sushi Ichi（寿司，Singapore Marriott Tang Plaza Hotel）",
+        "publish_date": "2025-07-25T07:58:41.075682+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 新加坡米其林指南名单出炉 一星餐馆少10家"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Lianhe Zaobao"
+    ],
+    "timestamp": "2025-07-25T07:59:10.604535+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Culture",
+    "articles": [
+      {
+        "site": "Time Out Singapore",
+        "title": "There’s a colourful SG60-themed container display at Tanjong Pagar Terminal",
+        "url": "https://www.timeout.com/singapore/news/theres-a-colourful-sg60-themed-container-display-at-tanjong-pagar-terminal-072425",
+        "content": "To mark the nation’s diamond jubilee, the port operator has unveiled a limited-time installation at Tanjong Pagar Terminal, Singapore’s very first container port. This isn’t the first time PSA has celebrated a national milestone with a container...",
+        "publish_date": "2025-07-24T05:42:17+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 탄종 파가 터미널에 SG60 주제색 컨테이너 전시\n\n내용: 싱가포르의 창고 운영 업체인 PSA는 싱가포르의 첫 컨테이너 항만인 탄종 파가 터미널에 국가 60주년 기념으로 한정된 기간 동안 전시되는 색색깔의 컨테이너를 공개했다. PSA는 이전에 싱가포르의 국가적 행사를 컨테이너로 기념한 적이 있으며, 이번에는 7월 31일까지 전시된다. 이 설치물은 매일 오전 9시부터 오후 6시까지 일반에 공개된다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Time Out Singapore"
+    ],
+    "timestamp": "2025-07-25T07:59:10.604542+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
