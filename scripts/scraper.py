@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 import pytz
 from bs4 import BeautifulSoup
 import re
+import random
+import time
 from collections import defaultdict
 from urllib.parse import urljoin, urlparse
 from ai_scraper import get_ai_scraper
@@ -141,6 +143,9 @@ def load_settings():
     try:
         # 먼저 서버 API에서 최신 설정 시도
         api_url = "https://singapore-news-github.vercel.app/api/save-data?type=settings"
+        # API 호출 전 짧은 딜레이
+        time.sleep(random.uniform(0.2, 0.5))
+        
         response = requests.get(api_url, timeout=10)
         
         if response.status_code == 200:
@@ -320,6 +325,12 @@ def validate_article(article):
     if not url.startswith(('http://', 'https://')):
         return False
     
+    # 위험한 URL 스킴 차단
+    dangerous_schemes = ['javascript:', 'data:', 'vbscript:', 'file:', 'about:']
+    url_lower = url.lower()
+    if any(scheme in url_lower for scheme in dangerous_schemes):
+        return False
+    
     return True
 
 def validate_scraped_data(data):
@@ -388,6 +399,11 @@ def clean_text(text):
     text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.IGNORECASE | re.DOTALL)
     text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.IGNORECASE | re.DOTALL)
     text = re.sub(r'<iframe[^>]*>.*?</iframe>', '', text, flags=re.IGNORECASE | re.DOTALL)
+    
+    # 위험한 URL 스킴 제거 (XSS 방지)
+    text = re.sub(r'javascript:', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'data:', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'vbscript:', '', text, flags=re.IGNORECASE)
     
     # br 태그를 공백으로 변환
     text = re.sub(r'<br\s*/?>', ' ', text, flags=re.IGNORECASE)
@@ -1234,9 +1250,31 @@ def extract_article_content_generic(url, soup):
 def extract_article_content(url):
     """URL에 따라 적절한 추출 방법 선택"""
     try:
+        # User-Agent 로테이션을 위한 리스트
+        USER_AGENTS = [
+            # Chrome
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            # Firefox
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0',
+            # Safari
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15',
+            # Edge
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0',
+            # Mobile
+            'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1',
+            'Mozilla/5.0 (Linux; Android 13; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
+        ]
+        
+        # 랜덤하게 User-Agent 선택
+        import random
+        selected_ua = random.choice(USER_AGENTS)
+        
         # 더 나은 헤더 사용
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'User-Agent': selected_ua,
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.5',
             'Accept-Encoding': 'gzip, deflate',
@@ -1247,6 +1285,9 @@ def extract_article_content(url):
         # Mothership의 경우 추가 헤더
         if 'mothership' in url.lower():
             headers['Referer'] = 'https://www.google.com/'
+        
+        # 봇 탐지 회피를 위한 랜덤 딜레이 (1-3초)
+        time.sleep(random.uniform(1, 3))
         
         response = requests.get(url, timeout=10, headers=headers)
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -2386,6 +2427,9 @@ def scrape_news_traditional():
             # Mothership의 경우 추가 헤더
             if 'mothership' in site['url'].lower():
                 headers['Referer'] = 'https://www.google.com/'
+            
+            # 사이트 접속 전 랜덤 딜레이 (0.5-2초)
+            time.sleep(random.uniform(0.5, 2))
             
             response = requests.get(site['url'], timeout=10, headers=headers)
             
