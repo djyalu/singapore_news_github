@@ -184,5 +184,31 @@
     "group_count": 2,
     "method": "hybrid_ai",
     "summary": "- News: 3개 기사<br>- Economy: 2개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T20:44:28.379033",
+    "execution_time": "2025-07-25 20:44:28 KST",
+    "status": "success",
+    "article_count": 3,
+    "group_count": 1,
+    "method": "hybrid_ai",
+    "summary": "- News: 3개 기사"
+  },
+  {
+    "timestamp": "2025-07-25T20:45:43.445742",
+    "execution_time": "2025-07-25 20:45:43 KST",
+    "status": "failure",
+    "error_type": "BrokenPipeError",
+    "error_message": "[Errno 32] Broken pipe",
+    "stack_trace": "Traceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2542, in scrape_news_traditional\n    links = get_article_links_straits_times(soup, site['url'])\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1728, in get_article_links_straits_times\n    if is_valid_article_url(full_url, domain):\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1467, in is_valid_article_url\n    print(f\"[DEBUG] Checking ST URL patterns for: {url}\")\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper_hybrid.py\", line 56, in scrape_news_hybrid\n    traditional_file = scrape_news_traditional()\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2671, in scrape_news_traditional\n    traceback.print_exc()\n  File \"/usr/lib/python3.12/traceback.py\", line 180, in print_exc\n    print_exception(sys.exception(), limit=limit, file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 125, in print_exception\n    te.print(file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 1050, in print\n    print(line, file=file, end=\"\")\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2479, in scrape_news\n    return scrape_news_hybrid()\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper_hybrid.py\", line 87, in scrape_news_hybrid\n    traceback.print_exc()\n  File \"/usr/lib/python3.12/traceback.py\", line 180, in print_exc\n    print_exception(sys.exception(), limit=limit, file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 125, in print_exception\n    te.print(file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 1050, in print\n    print(line, file=file, end=\"\")\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2542, in scrape_news_traditional\n    links = get_article_links_straits_times(soup, site['url'])\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 1731, in get_article_links_straits_times\n    print(f\"[DEBUG] ST article found: {link_text[:50]}... -> {full_url}\")\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2742, in <module>\n    output_file = scrape_news()\n                  ^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2485, in scrape_news\n    return scrape_news_traditional()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/projects/singapore_news_github/scripts/scraper.py\", line 2671, in scrape_news_traditional\n    traceback.print_exc()\n  File \"/usr/lib/python3.12/traceback.py\", line 180, in print_exc\n    print_exception(sys.exception(), limit=limit, file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 125, in print_exception\n    te.print(file=file, chain=chain)\n  File \"/usr/lib/python3.12/traceback.py\", line 1050, in print\n    print(line, file=file, end=\"\")\nBrokenPipeError: [Errno 32] Broken pipe\n"
+  },
+  {
+    "timestamp": "2025-07-25T21:04:21.858761",
+    "execution_time": "2025-07-25 21:04:21 KST",
+    "status": "success",
+    "article_count": 4,
+    "group_count": 1,
+    "method": "hybrid_ai",
+    "summary": "- News: 4개 기사"
   }
 ]

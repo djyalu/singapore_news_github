@@ -4,19 +4,37 @@ Welcome to the comprehensive documentation for the Singapore News Scraper projec
 
 ## 📚 Documentation Overview
 
-### Getting Started
+### 🚀 Getting Started
 - **[Installation Guide](./INSTALLATION_GUIDE.md)** - Step-by-step setup instructions
 - **[Quick Start](../README.md)** - Basic overview and quick setup
+- **[Deployment Guide](./DEPLOYMENT_GUIDE.md)** - DevOps deployment instructions
 
-### User Documentation
+### 👥 User Documentation
+- **[한국어 사용자 매뉴얼](./USER_MANUAL_KR.md)** - Complete Korean user manual ⭐ NEW
 - **[User Guide](./USER_GUIDE.md)** - Comprehensive guide for end users
-- **[사용자 매뉴얼 (Korean)](../USER_MANUAL.md)** - Korean user manual
-- **[상세 사용자 매뉴얼 v1.1.0](./USER_MANUAL_DETAILED.md)** - Detailed user manual with v1.1.0 features
+- **[Detailed User Manual v1.1.0](./USER_MANUAL_DETAILED.md)** - Advanced features guide
 
-### Developer Documentation
+### 🔧 Administrator & Developer
+- **[Admin Guide](./ADMIN_GUIDE.md)** - System administrator manual ⭐ NEW
 - **[Developer Guide](./DEVELOPER_GUIDE.md)** - Technical guide for developers
-- **[API Documentation](./API_DOCUMENTATION.md)** - Complete API reference
-- **[Architecture Overview](./DEPLOYMENT_STRUCTURE.md)** - System architecture details
+- **[API Reference](./API_REFERENCE.md)** - Complete API documentation ⭐ NEW
+- **[System Architecture](./ARCHITECTURE.md)** - Detailed system design ⭐ NEW
+
+### 🛠️ Operations & Monitoring
+- **[Performance Tuning](./PERFORMANCE_TUNING.md)** - Optimization guide ⭐ NEW
+- **[Monitoring Dashboard](./MONITORING_DASHBOARD.md)** - Monitoring setup ⭐ NEW
+- **[Backup & Recovery](./BACKUP_RECOVERY.md)** - Data protection guide ⭐ NEW
+- **[Security Guide](./SECURITY_GUIDE.md)** - Security best practices ⭐ NEW
+
+### 🔍 Troubleshooting & Support
+- **[Extended Troubleshooting](./TROUBLESHOOTING_EXTENDED.md)** - Advanced problem solving ⭐ NEW
+- **[Basic Troubleshooting](./TROUBLESHOOTING_GUIDE.md)** - Common issues
+- **[Vercel Setup](./VERCEL_SETUP.md)** - Vercel configuration
+
+### 🤝 Contributing & History
+- **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute ⭐ NEW
+- **[Detailed Changelog](./CHANGELOG_DETAILED.md)** - Complete change history ⭐ NEW
+- **[Legacy API Docs](./API_DOCUMENTATION.md)** - Original API reference
 
 ### Configuration & Setup
 - **[Vercel Setup](./VERCEL_SETUP.md)** - Vercel deployment guide
