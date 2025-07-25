@@ -462,5 +462,16 @@
     "message_length": 2395,
     "article_count": 11,
     "api": "green-api"
+  },
+  {
+    "id": "20250725164955",
+    "timestamp": "2025-07-25T16:49:55.208681+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 5개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 07월 25일 16:49\n\n📊 오늘의 주요 뉴스: 2개 그룹, 총 5개 기사\n\n【 News 】\n📍 출처: Channel NewsAsia, The Straits Times\n\n\n1. 📰 제목: 당신의 싱가포르 이야기: '우리는 부킷 티마 힐을 약 6번 오른다'\n내용: ST 웹사이트와 앱에서 새로운 소식을...",
+    "message_length": 1938,
+    "article_count": 5,
+    "api": "green-api"
   }
 ]
