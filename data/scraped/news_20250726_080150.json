@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "House Ethics report finds AOC ‘impermissibly accepted gifts’ related to 2021 Met Gala appearance",
+        "url": "https://sg.news.yahoo.com/house-ethics-report-finds-aoc-214956772.html",
+        "summary": "📰 제목: 하원 윤리보고서, AOC의 2021 메트 갈라 참석과 관련해 부적절하게 선물 수수 결론\n내용: 하원 윤리위원회는 알렉산드리아 오카시오-코르테즈 하원의원이 2021년 메트 갈라 참석과 관련해 하원 윤리규정을 위반했다고 결론지었다. 하원 '선물 규정'은 의원들에게 선물 수수를 엄격히 제한하며, 일부 예외를 제외하고는 금품 및 혜택, 할인, 서비스를 수수해서는 안 된다고 명시한다. 다만 윤리위원회는 오카시오-코르테즈 의원이 고의로 비용을 적게 지불했다는 증거는 찾지 못했다고 밝히며, 선물의 고의성 여부는 별개로 선물 수수에 대한 규정을 위반했다는 사실은 변화없다.",
+        "content": "The House Ethics Committee found that Democratic Rep. Alexandria Ocasio-Cortez “impermissibly accepted gifts” in connection with her 2021 appearance at the Met Gala, violating a House rule. The House “gift rule” prohibits lawmakers from knowingly accepting gifts, including favors, discounts, or services, with some exceptions. The ethics panel said it did not find evidence that Ocasio-Cortez “intentionally underpaid” for costs...",
+        "publish_date": "2025-07-26T06:49:56+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Cayenne Coupe S.",
+        "url": "https://sg.news.yahoo.com/test-drove-byds-latest-midsize-000956004.html",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Caye...",
+        "content": "In April, BYD outsold Tesla in Europe for the first time. Our reviewer was impressed by the midsize SUV's handling. The lineup reflects a strategy designed to match drivers' needs in nearly every stage of life. The midsize SUV has two variants: Premium and AWD Performance. I test drove the higher-end AWD Performance model, which is priced at 219,000 yuan, or about $30,500. In the first half of 2025, BYD overtook Toyota to become Singapore's top-selling car brand",
+        "publish_date": "2025-07-25T09:09:56+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Company director fined for collecting $112k in kickbacks from migrant workers",
+        "url": "https://www.asiaone.com/singapore/company-director-fined-collecting-112k-kickbacks-migrant-workers",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Company director fined for collecting $112k in kickbacks from migrant workers",
+        "content": "Twelve other charges were taken into consideration for his sentencing, said the Ministry of Manpower (MOM) in a press release. In 2020, Loo and the four individuals collected amounts ranging from $900...",
+        "publish_date": "2025-07-25T13:20:48+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-26T08:01:50.553189+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

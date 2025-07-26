@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "House Ethics report finds AOC ‘impermissibly accepted gifts’ related to 2021 Met Gala appearance",
+        "url": "https://sg.news.yahoo.com/house-ethics-report-finds-aoc-214956772.html",
+        "content": "The House Ethics Committee found that Democratic Rep. Alexandria Ocasio-Cortez “impermissibly accepted gifts” in connection with her 2021 appearance at the Met Gala, violating a House rule. The House “gift rule” prohibits lawmakers from knowingly accepting gifts, including favors, discounts, or services, with some exceptions. The ethics panel said it did not find evidence that Ocasio-Cortez “intentionally underpaid” for costs...",
+        "publish_date": "2025-07-26T06:49:56+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 하원 윤리위원회, AOC의 2021 메트 갈라 참석과 관련해 부적절하게 선물 수수 결론\n내용: 하원 윤리위원회는 알렉산드리아 오카시오-코르테즈 하원의원이 2021년 메트 갈라 참석과 관련해 하원 규정을 어기고 부적절하게 선물을 받은 것을 발견했다. 하원 '선물 규정'은 일부 예외를 제외하고 의원들에게 선물 수수를 금지하고 있다. 윤리패널은 오카시오-코르테즈 의원이 고의로 비용을 적게 지불했다는 증거는 찾지 못했으며, 단지 선물을 받은 사실만으로 규정 위반이라고 설명했다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Cayenne Coupe S.",
+        "url": "https://sg.news.yahoo.com/test-drove-byds-latest-midsize-000956004.html",
+        "content": "In April, BYD outsold Tesla in Europe for the first time. Our reviewer was impressed by the midsize SUV's handling. The lineup reflects a strategy designed to match drivers' needs in nearly every stage of life. The midsize SUV has two variants: Premium and AWD Performance. I test drove the higher-end AWD Performance model, which is priced at 219,000 yuan, or about $30,500. In the first half of 2025, BYD overtook Toyota to become Singapore's top-selling car brand",
+        "publish_date": "2025-07-25T09:09:56+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 비야디의 최신 중형 SUV, 포르쉐보다 빠른 가속력\n\n내용: 중국 전기차 업체 비야디(BYD)의 중형 SUV를 시승했다. 이 차는 유럽에서 처음으로 테슬라를 제치고 판매량 1위를 기록한 모델로, 높은 가성비가 강점이다. 두 가지 트림이 있는데, 고성능 모델인 AWD 퍼포먼스 버전을 시승해보니 주행성능이 우수했다. 2025년 상반기, 비야디는 싱가포르에서 토요타를 제치고 가장 많이 팔린 자동차 브랜드가 되었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Company director fined for collecting $112k in kickbacks from migrant workers",
+        "url": "https://www.asiaone.com/singapore/company-director-fined-collecting-112k-kickbacks-migrant-workers",
+        "content": "Twelve other charges were taken into consideration for his sentencing, said the Ministry of Manpower (MOM) in a press release. In 2020, Loo and the four individuals collected amounts ranging from $900...",
+        "publish_date": "2025-07-25T13:20:48+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 회사 대표, 외국인 노동자로부터 뇌물 받아 11만 2천 불 벌금형\n내용: 싱가포르의 한 회사 대표가 외국인 노동자들에게서 뇌물을 받은 혐의로 적발되어 112,000달러의 벌금형을 받았다. 2020년에 alone least 4명과 뇌물을 주고받았으며, 이 가운데 12건의 추가 혐의가 고려되어 형량에 반영되었다. 당국은 뇌물 수수 사실 적발을 위해 외국인 노동자들에게도 수사를 확대할 예정이라고 밝혔다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-26T08:01:54.206573+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
