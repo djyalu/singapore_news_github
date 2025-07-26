@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ecuador deports hundreds of Colombian inmates as Bogota cries foul",
+        "url": "https://sg.news.yahoo.com/ecuador-deports-more-800-colombian-183608331.html",
+        "content": "Ecuadoran authorities said Saturday they had deported hundreds of Colombian prisoners via a land border crossing, after Bogota protested that the move came without prior agreement. In 2024, Ecuadoran President Daniel Noboa announced his intention to deport Colombian inmates to ease overcrowding in the country's prisons. Small groups were transferred starting in April. But Colombian President Gustavo Petro opposed the move, saying that a joint plan was needed to safeguard the prisoners' rights. Governor Diana Pozo had previously told reporters that 800 prisoners had been transported through the crossing. \"This action reaffirms the Ecuadoran government's commitment to internal security and...",
+        "publish_date": "2025-07-27T07:45:51+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 에콰도르, 콜롬비아 수백 명 수감자 추방에 보고타 항의\n내용: 에콰도르 당국이 수백 명의 콜롬비아 수감자를 육상 국경으로 추방했다. 이는 감옥 과밀 문제를 해결하기 위함이나, 전격적으로 이뤄져 콜롬비아가 항의했다. 에콰도르 대통령 노보아는 지난해 해당 계획을 발표했고, 4월 이래 소규모 그룹을 이송했다. 그러나 콜롬비아 대통령 페트로가 수감자 권리 보호를 위한 공동 계획이 필요하다고 반대했다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-27T08:01:34.383355+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
