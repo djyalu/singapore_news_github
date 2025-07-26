@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Polls open in Taiwan's high-stakes recall election",
+        "url": "https://sg.news.yahoo.com/polls-open-taiwans-high-stakes-002649586.html",
+        "summary": "📰 제목: 대만 여당 의원 거취를 판가름할 기억选举\n내용: 대만에서 여당인 국민당(KMT) 소속 의원 24인에 대한 해임 투표가 현지시각 8시 경 시작됐다. 또 다른 7인의 국민당 의원은 8월 23일 투표가 예정되어 있다. 이번 투표는 국민당이 대선에서 패배한 이후 첫 주요 정치 행사다.",
+        "content": "Polling stations opened around Taiwan at 8:00 am (0000 GMT) with 24 KMT lawmakers facing potential recall. Elections for another seven KMT lawmakers will be held on August 23",
+        "publish_date": "2025-07-26T09:26:49+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Cayenne Coupe S.",
+        "url": "https://sg.news.yahoo.com/test-drove-byds-latest-midsize-000956004.html",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Caye...",
+        "content": "In April, BYD outsold Tesla in Europe for the first time. Our reviewer was impressed by the midsize SUV's handling. The lineup reflects a strategy designed to match drivers' needs in nearly every stage of life. The midsize SUV has two variants: Premium and AWD Performance. I test drove the higher-end AWD Performance model, which is priced at 219,000 yuan, or about $30,500. In the first half of 2025, BYD overtook Toyota to become Singapore's top-selling car brand",
+        "publish_date": "2025-07-25T09:09:56+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Rare sambar deer put down after getting badly injured in Mandai Road accident",
+        "url": "https://sg.news.yahoo.com/rare-sambar-deer-put-down-092413734.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Rare sambar deer put down after getting badly injured in Mandai Road accident",
+        "content": "NParks immediately asked Mandai Wildlife Group for veterinary assistance because its offices are located in Mandai Lake Road, near the accident spot. Mr How said motorists should drive within the speed limit, and be alert to...",
+        "publish_date": "2025-07-25T18:24:13+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-26T10:34:47.543148+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Polls open in Taiwan's high-stakes recall election",
+        "url": "https://sg.news.yahoo.com/polls-open-taiwans-high-stakes-002649586.html",
+        "content": "Polling stations opened around Taiwan at 8:00 am (0000 GMT) with 24 KMT lawmakers facing potential recall. Elections for another seven KMT lawmakers will be held on August 23",
+        "publish_date": "2025-07-26T09:26:49+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 대만 여당 의원 recall 선거 시작\n\n내용: 대만에서 여당인 국민당(KMT) 의원 24인에 대한 해임 투표가 현지시각 8시에 시작됐다. 또 다른 7인의 국민당 의원은 8월 23일에 투표가 진행된다. 이번 선거는 국민당 정부에 대한 신임 투표가 될 전망이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "I test drove BYD's latest midsize SUV. It accelerates faster than a Porsche Cayenne Coupe S.",
+        "url": "https://sg.news.yahoo.com/test-drove-byds-latest-midsize-000956004.html",
+        "content": "In April, BYD outsold Tesla in Europe for the first time. Our reviewer was impressed by the midsize SUV's handling. The lineup reflects a strategy designed to match drivers' needs in nearly every stage of life. The midsize SUV has two variants: Premium and AWD Performance. I test drove the higher-end AWD Performance model, which is priced at 219,000 yuan, or about $30,500. In the first half of 2025, BYD overtook Toyota to become Singapore's top-selling car brand",
+        "publish_date": "2025-07-25T09:09:56+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: BYD의 최신 중형 SUV, 포르쉐 카이엔 쿠페 S보다 빠른 가속력 과시\n\n내용: 중국 자동차 브랜드 BYD가 싱가포르에서 돌풍을 일으키고 있다. BYD는 2025년 상반기, 토요타를 제치고 싱가포르에서 가장 많이 팔린 자동차 브랜드가 되었다. 기자는 BYD의 중형 SUV인 '아워 테스트 드라이브' 버전을 시승했는데, 고성능 모델인 이 차는 30,500달러의 가격을 유리한 성능과 경쟁하며, 테슬라를 제치고 유럽에서 가장 잘 팔리는 전기차가 되었다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Rare sambar deer put down after getting badly injured in Mandai Road accident",
+        "url": "https://sg.news.yahoo.com/rare-sambar-deer-put-down-092413734.html",
+        "content": "NParks immediately asked Mandai Wildlife Group for veterinary assistance because its offices are located in Mandai Lake Road, near the accident spot. Mr How said motorists should drive within the speed limit, and be alert to...",
+        "publish_date": "2025-07-25T18:24:13+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 만다이 도로에서 교통사고로 부상한 희귀 사슴 안락사\n내용: 사고가 난 장소에 가까운 만다이 레이크 로드에 사무실이 있는 국립공원국(NParks)은 만다이 와일드라이프 그룹에 수의사 지원을 요청했다. 이 사슴은 사고로 심각한 부상을 입었으며, 수의사는 안락사가 최선이라고 판断했다. 국립공원국 대변인은 운전자들이 속도 제한을 준수하고 주의를 기울여야 한다고 당부했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-26T10:34:50.664357+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
