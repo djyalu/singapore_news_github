@@ -1,0 +1,5 @@
+GitHub Actions Keep-Alive Trigger
+Last activated: 2025-07-26 10:18:00 KST
+Purpose: Reactivate scheduled workflows
+
+This file is used to trigger GitHub Actions workflows and prevent them from being automatically disabled due to inactivity (60-day rule).
