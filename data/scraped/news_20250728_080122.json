@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "EU, US strike biggest trade deal",
+        "url": "https://www.channelnewsasia.com/world/eu-us-trade-deal-trump-tariffs-5261376",
+        "summary": "📰 제목: EU와 US, 역대급 무역협정 체결\n\n내용: 트럼프 대통령은 EU와 미국이 역대 최대의 무역협정을 체결했다고 발표했습니다. 새로운 협정에 따라 EU는 미국산 제품에 부과하던 15%의 관세를 철폐하고, 자동차와 제약, 반도체 등 전 산업에 걸쳐 자유무역을 시행합니다.",
+        "content": "\"We've reached a deal. It's a good deal for everybody. This is probably the biggest deal ever reached in any capacity,\" said Trump. Trump said the 15 per cent tariff would apply across the board, including for Europe's crucial automobile sector, pharmaceuticals and semiconductors. As part of the deal, Trump said the 27-nation EU bloc had agreed...",
+        "publish_date": "2025-07-28T07:58:41.173295+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ye Lai Xiang Laksa: Humble stall with popular $4.50 Laksa in Woodlands",
+        "url": "https://sg.news.yahoo.com/style/ye-lai-xiang-laksa-humble-060057564.html",
+        "summary": "📰 음식, 기술 관련 뉴스\n📢 Ye Lai Xiang Laksa: Humble stall with popular $4.50 Laksa in Woodlands",
+        "content": "I headed down to Marsiling Mall Hawker Centre around 2pm on a weekday. Its bright orange storefront instantly captivated my attention. I suppose I should have come at an earlier time!",
+        "publish_date": "2025-07-27T19:00:57+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-28T08:01:22.718439+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
