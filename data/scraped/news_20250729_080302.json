@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Former Colombian President Álvaro Uribe found guilty in witness tampering case",
+        "url": "https://sg.news.yahoo.com/former-colombian-president-lvaro-uribe-215900402.html",
+        "summary": "📰 제목: 전 콜롬비아 대통령, 증인 매수 혐의 유죄\n\n내용: 알바로 우르베, 전 콜롬비아 대통령이 증인 매수 혐의에 대해 유죄 판결을 받았다. 판사는 67일간 이어진 재판에서 알바로 우르베가 무죄를 주장했지만, 증인 매수 및 부패 혐의로 유죄를 선고했다. 판결문 낭독은 아직 진행 중이다.",
+        "content": "Álvaro Uribe, president of Colombia from 2002 to 2010, was found guilty Monday of bribery in a witness tampering case. The judge is still reading the sentence. He maintained that position throughout the 67-day trial, during which he clashed with Senator Iván Cepeda, of the ruling Pacto Histórico party. This is a developing story and will be updated.",
+        "publish_date": "2025-07-29T06:59:00+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Tanjong Katong Road South closed indefinitely for repairs following sinkhole, bus services diverted",
+        "url": "https://www.asiaone.com/singapore/tanjong-katong-road-south-closed-indefinitely-repairs-following-sinkhole-bus-services",
+        "summary": "📰 교통, 기술 관련 뉴스\n📢 Tanjong Katong Road South closed indefinitely for repairs following sinkhole, bu...",
+        "content": "The Land Transport Authority (LTA) announced on Sunday that the closure affects the road between Mountbatten Road and East Coast Parkway (ECP)",
+        "publish_date": "2025-07-27T11:35:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Tanjong Katong sinkhole: What to do if your vehicle falls into one",
+        "url": "https://www.asiaone.com/singapore/tanjong-katong-sinkhole-what-do-if-your-vehicle-falls-one",
+        "summary": "📰 싱가포르, 교통, 취업 관련 뉴스\n📢 Tanjong Katong sinkhole: What to do if your vehicle falls into one",
+        "content": "Last Saturday (July 26), the ground opened beneath her, swallowing her — and her vehicle — whole. She reportedly exited the vehicle on her own. A section of Tanjong Katong Road South has since been closed until further notice amid urgent repair works, the Land Transport Authority announced on Sunday. Responding to queries from AsiaOne, the Automobile Association of Singapore (AAS) shared some essential steps to keeping safe...",
+        "publish_date": "2025-07-28T19:10:50+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-29T08:03:02.776005+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

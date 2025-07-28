@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Former Colombian President Álvaro Uribe found guilty in witness tampering case",
+        "url": "https://sg.news.yahoo.com/former-colombian-president-lvaro-uribe-215900402.html",
+        "content": "Álvaro Uribe, president of Colombia from 2002 to 2010, was found guilty Monday of bribery in a witness tampering case. The judge is still reading the sentence. He maintained that position throughout the 67-day trial, during which he clashed with Senator Iván Cepeda, of the ruling Pacto Histórico party. This is a developing story and will be updated.",
+        "publish_date": "2025-07-29T06:59:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 전 콜롬비아 대통령, 증인 매수 혐의 유죄\n\n내용: 알바로 우르베 전 콜롬비아 대통령이 증인 매수 혐의에 대해 유죄 판결을 받았다. 2002년부터 2010년까지 집권한 그는 증인 협박 및 매수 혐의에 대한 67일간의 재판에서 무죄를 주장했지만, 판사는 그의 주장을 기각하고 유죄를 선고했다. 이번 판결은 이반 세페다 패토 히스토리코당 상원의원과의 논란 속에서 내려진 것이다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Tanjong Katong Road South closed indefinitely for repairs following sinkhole, bus services diverted",
+        "url": "https://www.asiaone.com/singapore/tanjong-katong-road-south-closed-indefinitely-repairs-following-sinkhole-bus-services",
+        "content": "The Land Transport Authority (LTA) announced on Sunday that the closure affects the road between Mountbatten Road and East Coast Parkway (ECP)",
+        "publish_date": "2025-07-27T11:35:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 탄종 가통 로드 남쪽에 싱크홀 수리로 인한 무기한 도로 폐쇄\n내용: land Transport Authority는 일요일, 탄종 가통 로드 사우스와 마운트배튼 로드, 이스트 코스트 파크웨이 사이 도로가 침하 수리 작업으로 인해 무기한 폐쇄된다고 발표하였다. 버스 노선은 우회하여 운행된다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Tanjong Katong sinkhole: What to do if your vehicle falls into one",
+        "url": "https://www.asiaone.com/singapore/tanjong-katong-sinkhole-what-do-if-your-vehicle-falls-one",
+        "content": "Last Saturday (July 26), the ground opened beneath her, swallowing her — and her vehicle — whole. She reportedly exited the vehicle on her own. A section of Tanjong Katong Road South has since been closed until further notice amid urgent repair works, the Land Transport Authority announced on Sunday. Responding to queries from AsiaOne, the Automobile Association of Singapore (AAS) shared some essential steps to keeping safe...",
+        "publish_date": "2025-07-28T19:10:50+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 탄종 카통의 싱크홀, 차량이 빠졌을 때 대처법\n\n내용: 지난 토요일 (7월 26일), 한 여성의 차량이 싱크홀에 빠지는 사고가发生了. 여성은 스스로 차량에서 빠져나왔으며, 탄종 카통 로드는 긴급 수리작업으로 인해 당분간 폐쇄된다. 자동차협회는 차량이 싱크홀에 빠졌을 때 안전수칙을 안내했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-29T08:03:06.091185+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
