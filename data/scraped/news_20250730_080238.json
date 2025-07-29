@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Owner of burnt Toa Payoh flat fears for future, says his three children now have 'nothing'",
+        "url": "https://www.channelnewsasia.com/singapore/i-saw-my-house-burning-owner-toa-payoh-flat-fire-worries-over-future-5265171",
+        "summary": "📰 제목: 토아 페이오 아파트 화재로 가장 피해 커진 소유자, 앞날에 대한 두려움 표해\n\n내용: 55세 남성 탄 씨는 자신의 아파트가 불타오르는 것을 보고 \"모든 것이 끝났다\"라고 생각했다. 화재는 10층에 위치한 그의 집에서 시작되어 위층으로까지 번졌다. 화재는 오후 3시 30분경 진압됐다. 이 화재로 7명이 병원에 입원했으며, 탄 씨의 아내와 가사도우미도 부상자로 포함됐다. 탄 씨는 현재 세 아이와 '낮은 것'만 남았다고 걱정했다.",
+        "content": "“I looked up and saw my house burning. I told myself, ‘it’s gone’,” the 55-year-old told CNA. The fire from Mr Tan’s home on the 10th floor later spread to the unit above. The fires were extinguished at about 3.30pm, said a Singapore Civil Defence Force (SCDF) spokesperson. Seven people were taken to the hospital on Tuesday afternoon, including a child and a firefighter. His wife, 41, and maid were among those who were taken to the Singapore General Hospital.",
+        "publish_date": "2025-07-30T07:59:11.579537+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "A Marine veteran’s wife, detained by ICE while still breastfeeding, has been released",
+        "url": "https://sg.news.yahoo.com/marine-veteran-wife-detained-ice-220325839.html",
+        "summary": "📰 정치, 기술 관련 뉴스\n📢 A Marine veteran’s wife, detained by ICE while still breastfeeding, has been rel...",
+        "content": "A Marine Corps veteran’s wife has been released from US Immigration and Customs Enforcement detention following advocacy from Sen. John Kennedy, a Louisiana Republican who backs President Donald Trump’s hardline immigration crackdown. Kennedy’s constituent services representative, Christy Tate, congratulated Adrian Clouatre on his wife’s release and thanked him for his...",
+        "publish_date": "2025-07-30T07:03:25+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "DJ Koo still goes to see Barbie Hsu every day",
+        "url": "https://sg.news.yahoo.com/style/dj-koo-still-goes-see-031700815.html",
+        "summary": "📰 기술 관련 뉴스\n📢 DJ Koo still goes to see Barbie Hsu every day",
+        "content": "\"I immediately thought, could that be DJ Koo. As we got closer, it really was. He politely said thank you to us,\" the netizen said. He is really the most affectionate man I have ever seen. I hope he can get over the pain.\"",
+        "publish_date": "2025-07-29T12:17:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-30T08:02:38.129469+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

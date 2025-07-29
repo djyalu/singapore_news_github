@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Owner of burnt Toa Payoh flat fears for future, says his three children now have 'nothing'",
+        "url": "https://www.channelnewsasia.com/singapore/i-saw-my-house-burning-owner-toa-payoh-flat-fire-worries-over-future-5265171",
+        "content": "“I looked up and saw my house burning. I told myself, ‘it’s gone’,” the 55-year-old told CNA. The fire from Mr Tan’s home on the 10th floor later spread to the unit above. The fires were extinguished at about 3.30pm, said a Singapore Civil Defence Force (SCDF) spokesperson. Seven people were taken to the hospital on Tuesday afternoon, including a child and a firefighter. His wife, 41, and maid were among those who were taken to the Singapore General Hospital.",
+        "publish_date": "2025-07-30T07:59:11.579537+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 토아 페이오 아파트 화재로 가장 피해 입은 주민, 미래에 대한 두려움 호소\n내용: 싱가포르에 사는 55세 남성 탄 씨는 불에 타버린 아파트가 자신의 집이라는 걸 보고 \"모든 것이 끝났다\"고 생각했다. 화재는 탄 씨의 10층 아파트에서 시작되어 위층으로까지 번졌다. 이 화재로 7명이 병원에 입원했고, 탄 씨의 아내와 가사도우미도 부상했다. 화재 진화는 오후 3시 30분경에 완료되었다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "A Marine veteran’s wife, detained by ICE while still breastfeeding, has been released",
+        "url": "https://sg.news.yahoo.com/marine-veteran-wife-detained-ice-220325839.html",
+        "content": "A Marine Corps veteran’s wife has been released from US Immigration and Customs Enforcement detention following advocacy from Sen. John Kennedy, a Louisiana Republican who backs President Donald Trump’s hardline immigration crackdown. Kennedy’s constituent services representative, Christy Tate, congratulated Adrian Clouatre on his wife’s release and thanked him for his...",
+        "publish_date": "2025-07-30T07:03:25+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 바다사병의 아내, 수유 중 구금됐다가 풀려나\n\n내용: 미국 이민세관단속국이 구금했던 바다사병의 아내가 존 케네디 의원의 중재로 풀려났다. 그녀는 수감생활 중에도 아이를 출산했고, 수유 중이었다. 케네디 의원은 도널드 트럼프 대통령의 엄격한 이민정책을 지지하는 인물이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "DJ Koo still goes to see Barbie Hsu every day",
+        "url": "https://sg.news.yahoo.com/style/dj-koo-still-goes-see-031700815.html",
+        "content": "\"I immediately thought, could that be DJ Koo. As we got closer, it really was. He politely said thank you to us,\" the netizen said. He is really the most affectionate man I have ever seen. I hope he can get over the pain.\"",
+        "publish_date": "2025-07-29T12:17:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 구준엽, 매일 바비 수를 찾아가다\n\n내용: 한 네티즌이 DJ Koo (구준엽)로 추정되는 인물을 목격했다는 글을 올림. 그는 매일 한 여자를 만나러 가며, 그 여자는 대만 배우 Barbie Hsu인 것으로 추정. 네티즌은 그의 성실한 모습에 감탄함."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-07-30T08:02:41.026517+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
