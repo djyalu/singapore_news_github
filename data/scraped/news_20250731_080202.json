@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says US will impose 15% tariff on South Korean imports",
+        "url": "https://www.channelnewsasia.com/east-asia/south-korea-trump-us-tariff-5268561",
+        "summary": "📰 제목: 트럼프, 한국산 수입품에 15% 관세 부과 발표\n\n내용: 미국 대통령이 추가로 투자가 발표될 것이라고 밝히며, 한국 대통령 이재명이 향후 2주 내에 백악관을 방문할 것이라고 언급했다. 이번 방문에서 양국의 무역 불균군에 대한 논의가 이루어질 전망이다. 미국은 한국과의 무역에서 적자가 누적되고 있다며, 이를 해소하기 위한 협상을 원하고 있다.",
+        "content": "The US president said additional investments would be announced later. South Korean President Lee Jae Myung will visit the White House \"within the next two weeks\" for a...",
+        "publish_date": "2025-07-31T07:58:37.249324+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Lower-income NTUC union members can get up to $120 in e-vouchers",
+        "url": "https://sg.news.yahoo.com/lower-income-ntuc-union-members-054400296.html",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 Lower-income NTUC union members can get up to $120 in e-vouchers",
+        "content": "SINGAPORE – Lower-income union members can apply for up to $120 in e-vouchers that will help them with their daily expenses, said NTUC",
+        "publish_date": "2025-07-30T14:44:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-31T08:02:02.121436+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

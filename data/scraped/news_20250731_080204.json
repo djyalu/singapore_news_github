@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says US will impose 15% tariff on South Korean imports",
+        "url": "https://www.channelnewsasia.com/east-asia/south-korea-trump-us-tariff-5268561",
+        "content": "The US president said additional investments would be announced later. South Korean President Lee Jae Myung will visit the White House \"within the next two weeks\" for a...",
+        "publish_date": "2025-07-31T07:58:37.249324+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 트럼프, \"미국, 한국산 수입품에 15% 관세 부과할 것\"\n\n내용: 미국 대통령이 추가로 투자할 것을 발표했으며, 한국 대통령 이재명은 백악관을 \"향후 두 주 안에\" 방문하여 회담을 가질 예정이라고 밝힘. 양국 간 무역 관계와 관련하여, 미국은 한국산 제품에 대한 15%의 관세를 부과하기로 결정했으며, 이는 양국 간 무역 협정에 대한 재협상이 이뤄지는 동안 지속될 전망이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Lower-income NTUC union members can get up to $120 in e-vouchers",
+        "url": "https://sg.news.yahoo.com/lower-income-ntuc-union-members-054400296.html",
+        "content": "SINGAPORE – Lower-income union members can apply for up to $120 in e-vouchers that will help them with their daily expenses, said NTUC",
+        "publish_date": "2025-07-30T14:44:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 저소득 노조원들, 최대 120싱가포르 달러 어치 전자 쿠폰 수령 가능\n내용: 싱가포르의 NTUC가 저소득 노조원들을 위해 일상생활에 도움이 되는 전자 쿠폰을 최대 120싱가포르 달러 어치 지원한다. 이 쿠폰은 노조원들의 생계비 부담을 덜어주기 위한 목적으로 제공된다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-07-31T08:02:04.242386+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
