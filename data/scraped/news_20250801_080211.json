@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Messi and his wife keep it wholesome after being caught on Coldplay's notorious kiss cam",
+        "url": "https://sg.news.yahoo.com/messi-wife-keep-wholesome-being-145451271.html",
+        "summary": "📰 제목: 메시와 그의 아내, 콜드플레이의 키스캠에서 포착되다\n내용: 리오넬 메시와 그의 아내 안토넬라 로쿠조 및 세 아이들이 콜드플레이 공연에서 키스캠에 포착됐다. 공연 중 마틴이 메시를 향한 세레나드를 부르며, 그의 아름다운 형제로 부르며 순수하고 따뜻한 분위기를 자아냈다. 다른 커플과 달리 부부 사이에 부끄러워하거나 스캔들 낌새는 전혀 없었다.",
+        "content": "But unlike that other notorious recent couple, there was no dodging, ducking, or scandal here. Just pure, wholesome vibes with his wife, Antonela Roccuzzo, and their three kids. \"Well Leo, my beautiful brother,\" Martin serenaded mid-show. \"You and your wife are looking so fine",
+        "publish_date": "2025-07-30T23:54:51+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Gas workers uncover 1,000-year-old mummy in Peru",
+        "url": "https://sg.news.yahoo.com/gas-workers-uncover-1-000-221108674.html",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Gas workers uncover 1,000-year-old mummy in Peru",
+        "content": "The mummy was found last week in a tomb underneath a street north of Lima, said archaeologist Jesus Bahamonde. It was believed to be part of a large, ancient cemetery. Lima, a city with over 10 million inhabitants, also houses more than 500 archaeological sites. Gas company Calidda has reported more than 2,200 chance archaeological discoveries since 2004.",
+        "publish_date": "2025-08-01T07:11:08+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "3 taken to hospital after fire in Marsiling flat",
+        "url": "https://sg.news.yahoo.com/3-taken-hospital-fire-marsiling-145000968.html",
+        "summary": "📰 기술 관련 뉴스\n📢 3 taken to hospital after fire in Marsiling flat",
+        "content": "The living room and bedroom of the 13th floor unit was on fire. The flames were extinguished with a water jet, SCDF said in a Facebook post. Seven people, including a child and a firefighter, were taken...",
+        "publish_date": "2025-07-30T23:50:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "The New Paper",
+        "title": "Single ticket snags $12.8 million Toto jackpot in July 31 draw",
+        "url": "https://www.tnp.sg/news/single-ticket-snags-128-million-toto-jackpot-july-31-draw?ref=",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Single ticket snags $12.8 million Toto jackpot in July 31 draw",
+        "content": "The winning numbers were 7,19, 20, 21, 22, 29. The additional number was 37. The winning ticket was bought through the Singapore Pools account betting service under the QuickPick Ordinary Entry. The June 19 draw saw a single winner walk away with $12.3 million after the jackpot...",
+        "publish_date": "2025-08-01T07:50:50+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Tanjong Katong sinkhole: ItsRainingRaincoats raises $72,000 within 2 days for migrant workers who rescued woman",
+        "url": "https://www.asiaone.com/singapore/tanjong-katong-sinkhole-itsrainingraincoats-raises-72000-within-2-days-migrant-workers",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Tanjong Katong sinkhole: ItsRainingRaincoats raises $72,000 within 2 days for mi...",
+        "content": "The fundraising campaign by ItsRainingRaincoats on Giving.sg, which started on Monday (July 28), saw more than $24,000 raised within 24 hours. More than $72,000 have been raised from over 1,600 donors as of Wednesday afternoon",
+        "publish_date": "2025-07-30T13:50:57+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "The New Paper"
+    ],
+    "timestamp": "2025-08-01T08:02:11.921818+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
