@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesia's Mount Lewotobi Laki-laki erupts",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-volcano-mount-lewotobi-laki-laki-erupt-5272651",
+        "content": "JAKARTA: Indonesia's Mount Lewotobi Laki-laki in East Nusa Tenggara Province erupted on Friday (Aug 1), spewing a more than 10km high ash column, the country's volcanology agency said",
+        "publish_date": "2025-08-02T07:58:56.168368+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인도네시아 레워토비 라카리 산이 분화\n\n내용: 인도네시아의 레워토비 라카리 산이 8월 1일 분화하여, 화산재 기둥이 10km 이상 치솟았다. 인도네시아 화산학 기관이 전한 바로는, 분화로 인한 부상자나 사망자는 없으나, 당국은 주변 지역 주민들에게 경고했다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "What screen time does to children's brains is more complicated than it seems",
+        "url": "https://sg.news.yahoo.com/screen-time-does-childrens-brains-234438922.html",
+        "content": "Zoe will be responding to reader comments about this article between 11am and 12pm (BST) today. So I told him it was time to stop. A full-blown tantrum erupted. My older children are navigating social media, virtual reality and online gaming, and sometimes that concerns me too. I hear them tease each other about needing to \"touch grass\" – disconnect from the tech and get outdoors.",
+        "publish_date": "2025-07-31T08:44:38+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 화면에 노출된 아이들의 뇌는 더 복잡하다\n\n내용: 이 기사는 아이들의 화면 시간(screen time)이 뇌에 미치는 영향에 대해 논의한다. 한 어머니는 자신의 경험을 예로 들어, 아이들이 사회미디어, 가상현실, 온라인 게임에 빠지면 현실과 단절된 모습을 보며 걱정한다고 말한다. 오늘 오전 11시부터 12시까지 이 기사에 대한 독자의 질문에 답하는 시간이 마련되어 있다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-02T08:02:08.841358+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
