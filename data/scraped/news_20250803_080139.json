@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Intern's viral email reignites debate on Gen Z work culture",
+        "url": "https://sg.news.yahoo.com/interns-viral-email-reignites-debate-111235347.html",
+        "content": "We hired a college intern. Today's his first day. Here's what he just sent me. pic.twitter.com/VRyD3jMdKO. — Roshan Patel (@roshanpateI) July 28, 2025. Today’s his first day. Here’s what he just sent me.”. The easy quick fix suggestion set tongues wagging and...",
+        "publish_date": "2025-07-31T20:12:35+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인턴의 이메일, 세대간 업무 문화 논란 재점화\n내용: 한 인턴 직원이 첫날 보낸 이메일이 화제다. 해당 인턴은 직무의 간단한 문제 해결책을 제안하며, 이를 세대 간 업무 문화의 차이로 해석하는 이들이 있다. 많은 사람들이 해당 이메일을 소셜미디어에 공유하며 논란은 가열되고 있다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$12.8m Toto jackpot won by single ticket bought online",
+        "url": "https://www.asiaone.com/singapore/128m-toto-jackpot-won-single-ticket-bought-online",
+        "content": "A single ticket bought online snagged over $12.8 million in prize money at the latest Toto cascade draw on Thursday (July 31). A cascade draw is triggered when there are no Group 1 winners for three consecutive draws. The jackpot can only snowball up to the fourth draw under Toto rules. There were 20 Group 2 winners who shared the prize of $73,408",
+        "publish_date": "2025-08-01T11:29:52+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 온라인으로 purchased된 단 한 장의 티켓, 1,280만 달러 당첨\n내용: 목요일(7월 31일) 열린 최신 토토 복권 추첨에서 온라인으로 purchased된 단 한 장의 티켓이 1,280만 달러가 넘는 상금을 거머쥐었다. 3회 연속 1등 당첨자가 나오지 않아 카스케이드 추첨이 진행된 것이다. 토토 복권 규정에 따라 4회차까지 잭팟은 계속 커질 수 있다. 20장의 그룹 2 티켓이 7만 3,408달러의 상금을 나누어 가졌다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-03T08:01:39.799247+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

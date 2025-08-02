@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Intern's viral email reignites debate on Gen Z work culture",
+        "url": "https://sg.news.yahoo.com/interns-viral-email-reignites-debate-111235347.html",
+        "summary": "📰 제목: 인턴의 이메일이 재점화시킨 Z세대 직장 문화 논란\n내용: 한 회사가 고용한 대학 인턴이 첫날 보낸 이메일이 화제다. 해당 인턴은 간편한 해결책을 제안하며, \"우선 급한 대로 내일부터라도 적용 가능할 것\"이라 전했다. 이메일이 소셜미디어에서 바이럴되며 세대 간 직장 문화에 대한 논의를 촉발했다.",
+        "content": "We hired a college intern. Today's his first day. Here's what he just sent me. pic.twitter.com/VRyD3jMdKO. — Roshan Patel (@roshanpateI) July 28, 2025. Today’s his first day. Here’s what he just sent me.”. The easy quick fix suggestion set tongues wagging and...",
+        "publish_date": "2025-07-31T20:12:35+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$12.8m Toto jackpot won by single ticket bought online",
+        "url": "https://www.asiaone.com/singapore/128m-toto-jackpot-won-single-ticket-bought-online",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $12.8m Toto jackpot won by single ticket bought online",
+        "content": "A single ticket bought online snagged over $12.8 million in prize money at the latest Toto cascade draw on Thursday (July 31). A cascade draw is triggered when there are no Group 1 winners for three consecutive draws. The jackpot can only snowball up to the fourth draw under Toto rules. There were 20 Group 2 winners who shared the prize of $73,408",
+        "publish_date": "2025-08-01T11:29:52+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-03T08:01:37.629908+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
