@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Texas Democrats leave the state to prevent vote on GOP-drawn congressional map",
+        "url": "https://sg.news.yahoo.com/texas-democrats-leave-state-prevent-211002452.html",
+        "summary": "📰 제목: 텍사스의 민주당이 떠나다, GOP의 국회 지도에 대한 표결을 막기 위하여\n\n내용: 미국은 인구 통계 조사가 이뤄진 후 매 10년마다 국회 선거구 경계를 재조정한다. 텍사스 주의회에서 민주당이 대거 탈주하며 의장단 소집에 필요한 법정 인원 수인 2/3를 밑돈 상황이다. 이를 통해 GOP의 선거구도 재조정 안건 표결을 막는 전략이다.",
+        "content": "States typically redraw congressional district boundaries once every 10 years following the release of updated population data from the United States census. Two-thirds of the Texas House is required for a quorum, the minimum amount...",
+        "publish_date": "2025-08-04T06:10:02+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "How Pamela Anderson and Liam Neeson's 'Very Grounded' Relationship Blossomed (Exclusive Source)",
+        "url": "https://sg.news.yahoo.com/pamela-anderson-liam-neesons-very-171427156.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 How Pamela Anderson and Liam Neeson's 'Very Grounded' Relationship Blossomed (Ex...",
+        "content": "Pamela Anderson and Liam Neeson are enjoying a quiet, low-key connection that’s built on mutual respect and shared values. “Pam and Liam really enjoy each other’s company. They’re taking things slow and it’s actually very grounded,” a source exclusively tells PEOPLE. “The relationship blossomed out of a mutual appreciation for the simpler things in life. They’ve bonded over their shared love of nature, classic films and a slower pace. Neither of them are chasing the spotlight and they value their privacy at this point in their life.”. Anderson, 58, has been living a more stripped-down, natural lifestyle for the past few years. “I just thought, ‘I’m doing this for all the girls out there.’”",
+        "publish_date": "2025-08-02T02:14:27+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Safeguards in place to deter fraudulent injury claims at workplace: MOM",
+        "url": "https://www.asiaone.com/singapore/safeguards-place-deter-fraudulent-injury-claims-workplace-mom",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Safeguards in place to deter fraudulent injury claims at workplace: MOM",
+        "content": "On average, 28,500 WIC claims are made each year, of which around 26,800 are paid out, the ministry said. MOM said that there are three safeguards in place, which separately come under the purview...",
+        "publish_date": "2025-08-01T17:48:09+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-04T08:01:45.254005+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

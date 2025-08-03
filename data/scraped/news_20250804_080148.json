@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Texas Democrats leave the state to prevent vote on GOP-drawn congressional map",
+        "url": "https://sg.news.yahoo.com/texas-democrats-leave-state-prevent-211002452.html",
+        "content": "States typically redraw congressional district boundaries once every 10 years following the release of updated population data from the United States census. Two-thirds of the Texas House is required for a quorum, the minimum amount...",
+        "publish_date": "2025-08-04T06:10:02+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 텍사스의 민주당이 하원 퇴장으로 GOP의 신의주 지도 표결을 막다\n\n내용: 미국은 인구 조사가 실시되는 해의 다음 해에 하원 선거구 경계를 재조정한다. 텍사스의 민주당원들은 하원 정족수인 2/3를 채우지 않고 탈주하여, GOP가 그린 신의주 지도의 표결을 막았다. 이는 GOP안이 극단적으로 편향된 것이라는 이유에서다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "How Pamela Anderson and Liam Neeson's 'Very Grounded' Relationship Blossomed (Exclusive Source)",
+        "url": "https://sg.news.yahoo.com/pamela-anderson-liam-neesons-very-171427156.html",
+        "content": "Pamela Anderson and Liam Neeson are enjoying a quiet, low-key connection that’s built on mutual respect and shared values. “Pam and Liam really enjoy each other’s company. They’re taking things slow and it’s actually very grounded,” a source exclusively tells PEOPLE. “The relationship blossomed out of a mutual appreciation for the simpler things in life. They’ve bonded over their shared love of nature, classic films and a slower pace. Neither of them are chasing the spotlight and they value their privacy at this point in their life.”. Anderson, 58, has been living a more stripped-down, natural lifestyle for the past few years. “I just thought, ‘I’m doing this for all the girls out there.’”",
+        "publish_date": "2025-08-02T02:14:27+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 파멜라 앤더슨과 리암 니슨, 땅에 발 딛고 있는 연애\n내용: 파멜라 앤더슨과 리암 니슨은 서로의 company를 즐기고 있으며, 느리고 안정적으로 그들의 관계를 키워나가고 있다. 두 사람은 자연, 고전 영화, 여유로운 삶을 즐기며 서로에게 호감을 느끼고 있으며, 사생활을 중시하며 스포트라이트를 피하고 있다. 파멜라 앤더슨은 더 자연스러운 삶에 초점을 맞추고 있다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Safeguards in place to deter fraudulent injury claims at workplace: MOM",
+        "url": "https://www.asiaone.com/singapore/safeguards-place-deter-fraudulent-injury-claims-workplace-mom",
+        "content": "On average, 28,500 WIC claims are made each year, of which around 26,800 are paid out, the ministry said. MOM said that there are three safeguards in place, which separately come under the purview...",
+        "publish_date": "2025-08-01T17:48:09+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: workplace에서 부상 위장한 사기적 청구에 대비한 안전장치 마련\n내용: 매년 28,500건의 산업재해보상보험 청구가 접수되며, 이 중 약 26,800건이 승인된다. 고용노동부는 3가지 안전장치를 도입하여 사기적 청구를 방지할 예정이다. 각각의 안전장치는 다른 부서에서 관리하며, 청구의 승인 과정에 엄격함을 더할 것이다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-04T08:01:48.323655+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
