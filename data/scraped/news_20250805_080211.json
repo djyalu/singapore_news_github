@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Diners welcome colour-coded labels at nasi padang, economy rice stalls but call for clearer prices",
+        "url": "https://www.channelnewsasia.com/singapore/colour-coding-nasi-padang-economy-rise-useful-5272146",
+        "summary": "📰 제목: 식당가에서 환영받는 색상별 가격표시\n\n내용: 쿠푸(Koufu) 식당가에서 시행중인 색상 코딩 시스템이 호응을 얻고 있다. 이 시스템은 해산물, 고기, 채소 등의 음식 가격을 색상으로 구분하여 손님들이 가격을 쉽게 비교할 수 있게 돕는다. 손님들은 이 시스템이 가시적으로 가격을 비교할 수 있게 해주어 좋다고 말하지만, 일부 품목은 개별 가격표시가 필요하다고 지적한다.",
+        "content": "At Koufu, labels categorise dishes such as seafood (S$2.50), meat (S$1.50) and vegetables (S$1), while premium items are individually priced.",
+        "publish_date": "2025-08-05T07:58:35.237432+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shaping Tomorrow",
+        "url": "https://www.channelnewsasia.com/watch/shaping-tomorrow/backed-trust-100-years-amex-in-singapore-5269056",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Shaping Tomorrow",
+        "content": "SG60: Shaping Tomorrow is a compelling video series that brings to life the Singapore stories of our most cherished brands",
+        "publish_date": "2025-08-05T07:58:45.167520+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Intel's credit rating downgraded by Fitch on demand challenges",
+        "url": "https://sg.news.yahoo.com/intels-credit-rating-downgraded-fitch-224455009.html",
+        "summary": "📰 경제, 기술 관련 뉴스\n📢 Intel's credit rating downgraded by Fitch on demand challenges",
+        "content": "(Reuters) -Fitch downgrading U.S. Fitch downgraded Intel to BBB from BBB-plus, placing it just two notches shy of junk credit status. The downgrade follows Fitch's assessment that Santa Clara, California-headquartered Intel faces heightened challenges maintaining demand for its products. Fitch cited growing competition from peers such as Dutch rival NXP Semiconductors, Broadcom Inc and Advanced Micro Devices. Fitch added that while Intel holds a better market position than other similarly rated peers, its financial structure is relatively weaker and it faces \"higher execution risk.\"",
+        "publish_date": "2025-08-05T07:44:55+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-05T08:02:11.494706+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

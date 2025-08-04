@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Diners welcome colour-coded labels at nasi padang, economy rice stalls but call for clearer prices",
+        "url": "https://www.channelnewsasia.com/singapore/colour-coding-nasi-padang-economy-rise-useful-5272146",
+        "content": "At Koufu, labels categorise dishes such as seafood (S$2.50), meat (S$1.50) and vegetables (S$1), while premium items are individually priced.",
+        "publish_date": "2025-08-05T07:58:35.237432+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 식당가에서 환영받는 색상별 가격표시\n내용: 쿠푸(Koufu) 식당가에서 시행중인 색상별 코딩 시스템이 호응을 얻고 있다. 이 시스템은 해산물(2.50S$), 육류(1.50S$), 채소(1S$) 등 음식 가격을 색상으로 구분하여 손님들이 가격을 쉽게 비교할 수 있게 도와준다. 다만 일부 손님들은 premium 메뉴의 개별 가격표시가 좀 더 뚜렷했으면 한다고 의견을 내기도 했다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shaping Tomorrow",
+        "url": "https://www.channelnewsasia.com/watch/shaping-tomorrow/backed-trust-100-years-amex-in-singapore-5269056",
+        "content": "SG60: Shaping Tomorrow is a compelling video series that brings to life the Singapore stories of our most cherished brands",
+        "publish_date": "2025-08-05T07:58:45.167520+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 내일을 여는 싱가포르\n\n내용: SG60: 내일을 여는 싱가포르는 싱가포르의 가장 사랑받는 브랜드들의 이야기를 영상으로 보여주는 시리즈로, 미래를 향한 비전을 제시한다. 이 시리즈는 싱가포르의 브랜드들이 지난 60년간 어떻게 발전해왔고, 혁신과 창의성으로 가득한 싱가포르의 내일을 그려본다. 시청자는 이 시리즈를 통해 싱가포르의 역동적인 발전상을 생생하게 느낄 수 있다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Intel's credit rating downgraded by Fitch on demand challenges",
+        "url": "https://sg.news.yahoo.com/intels-credit-rating-downgraded-fitch-224455009.html",
+        "content": "(Reuters) -Fitch downgrading U.S. Fitch downgraded Intel to BBB from BBB-plus, placing it just two notches shy of junk credit status. The downgrade follows Fitch's assessment that Santa Clara, California-headquartered Intel faces heightened challenges maintaining demand for its products. Fitch cited growing competition from peers such as Dutch rival NXP Semiconductors, Broadcom Inc and Advanced Micro Devices. Fitch added that while Intel holds a better market position than other similarly rated peers, its financial structure is relatively weaker and it faces \"higher execution risk.\"",
+        "publish_date": "2025-08-05T07:44:55+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인텔의 신용등급, 피치에 의해 하향 조정되어 junk 수준 근접\n\n내용: 피치는 인텔의 신용등급을 BBB로 하향 조정했다. 이는 인텔이 제품 수요를 유지하는 데 직면한 도전과제가 이유다. 피치는 네덜란드의 NXP 세미컨덕터즈, 브로드컴 인코, 어드밴스드 마이크로 디바이스즈 등 경쟁사들과의 경쟁 격화를 지적하며, 인텔의 시장 입지는 상대적으로 약하고 재무 구조가 불안정하며 '높은 실행 위험'에 직면해 있다고 설명했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-05T08:02:14.750436+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
