@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shaping Tomorrow",
+        "url": "https://www.channelnewsasia.com/watch/shaping-tomorrow/financial-safety-net-trusted-generations-5271876",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Shaping Tomorrow",
+        "content": "SG60: Shaping Tomorrow is a compelling video series that brings to life the Singapore stories of our most cherished brands",
+        "publish_date": "2025-08-06T07:59:14.624943+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "13 taken to hospital after accident involving SBS buses, car in Tampines",
+        "url": "https://sg.news.yahoo.com/13-taken-hospital-accident-involving-084500194.html",
+        "summary": "📰 제목: 탬피네스 버스 사고로 13명 병원 이송\n\n내용: 싱가포르에서 SBS 버스 두 대와 자동차가 사고를 당해 13명이 병원에 이송되었다. 이 중 5명은 창이 종합병원에, 8명은 센갱 일반병원에 각각 후송되었으며, 나머지 승객들과 버스 운전자들은 외래 진료를 받았다.",
+        "content": "The Singapore Civil Defence Force said it took five people to Changi General Hospital and eight to Sengkang General Hospital. The other passengers and the bus driver received outpatient treatment",
+        "publish_date": "2025-08-05T17:45:00+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Netanyahu to urge ‘full conquest’ of Gaza as ceasefire talks reach an impasse",
+        "url": "https://sg.news.yahoo.com/israel-considers-expanding-gaza-war-125033745.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Netanyahu to urge ‘full conquest’ of Gaza as ceasefire talks reach an impasse",
+        "content": "Israel’s Ynet cited senior officials close to Netanyahu as saying: “The die is cast – we’re going for full conquest. If the Chief of Staff doesn’t agree – he should resign.”",
+        "publish_date": "2025-08-06T07:00:21+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-06T08:02:30.621360+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
