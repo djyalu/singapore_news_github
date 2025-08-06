@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Swiss president meets US Secretary of State for last-minute trade talks",
+        "url": "https://www.channelnewsasia.com/world/swiss-president-meets-us-secretary-state-last-minute-trade-talks-5281041",
+        "content": "The Swiss delegation, which includes Business Minister Guy Parmelin, landed in Washington on Tuesday for final negotiations. \"Look at the European Union – they promised to buy LNG. Switzerland imports LNG too — maybe that's one path,\" Parmelin said over the weekend. Keller-Sutter said after the meeting that the discussion was “very friendly and open”, but she did...",
+        "publish_date": "2025-08-07T07:59:04.463279+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 스위스와 미국의 급작스러운 무역 협상\n\n내용: 스위스의 구이 파름린 사업 장관을 포함한 사절단이 워싱턴에 도착하여 마지막 협상을 준비 중이다. 스위스는 액화천연가스(LNG) 수입의 잠재적 경로로 미국과의 협상을 원한다. 협상 후 케러-슈터 장관은 논의가 우호적이고 개방적이었다고 전했다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/mas-1-1-billion-injection-093000009.html",
+        "content": "We previously wrote about five smaller companies that will benefit from the Monetary Authority of Singapore’s (MAS) S$1.1 billion capital injection to revitalise the Singapore stock market. This money has been assigned to three fund managers who will deploy the funds into smaller, neglected stocks. We decided to dig around and uncovered five more stocks that we believe will benefit from this massive liquidity injection. Revenue rose 7.1% year on year to S$764.7 million while gross profit jumped 9.6% year on year to S$235.6 million.",
+        "publish_date": "2025-08-05T18:30:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 파이낸스의 싱가포르 증시 전망\n내용: 싱가포르의 증시 부흥을 위해 Monetary Authority of Singapore(MAS)가 11억 달러를 투자한다. 이 자금은 3명의 펀드 매니저에게 배정되어 소외된 소형 주식을 대상으로 하며, 이를 통해 5개의 기업이 수혜를 입을 것으로 기대된다. meanwhile, 수익은 7.1%, 총 수익은 9.6%의 성장률을 기록했다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "5 durians for $488: Punggol residents accuse door-to-door salesman of selling them sour, unripe fruits",
+        "url": "https://www.asiaone.com/singapore/5-durians-488-punggol-residents-accuse-door-door-salesman-selling-them-sour-unripe-fruits",
+        "content": "They wanted to indulge in the king of fruits but ended up feeling cheated. Two Punggol residents have accused a door-to-door salesman of peddling sour and unripe durians at astronomical prices, reported Shin Min Daily News",
+        "publish_date": "2025-08-05T13:50:57+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 5개에 488싱가포르 달러, 신맛 나는 청과일 두리안\n내용: 푼골 지역의 주민들이 방문 판매원에게 속았다고 주장함. 그는 고가임에도 신선도나 맛이 떨어지는 두리안을 팔아 큰 돈을 벌었다는 혐의임. 신 민 일보의 보도에 따르면, 두 주민은 비싼 가격에 King of Fruits인 두리안을 구매했지만, 실망스러운 맛에 속았다고 느낌."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-07T08:02:20.384209+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Swiss president meets US Secretary of State for last-minute trade talks",
+        "url": "https://www.channelnewsasia.com/world/swiss-president-meets-us-secretary-state-last-minute-trade-talks-5281041",
+        "summary": "📰 제목: 스위스 대통령, 미 국무장관과 급작스러운 무역 협상 위해 워싱턴 방문\n\n내용: 스위스 대표단, 사업부 장관 가이 파멜린을 비롯하여 워싱턴에 도착. LNG 수입에 대한 협상을 위해 미국 방문한 것으로 보이며, 스위스 사업부 장관은 EU의 예시처럼 스위스가 LNG를 수입할 수 있다고 제안. 스위스의 카린 케러-수터 장관은 협상이 우호적이고 개방적이었다고 언급.",
+        "content": "The Swiss delegation, which includes Business Minister Guy Parmelin, landed in Washington on Tuesday for final negotiations. \"Look at the European Union – they promised to buy LNG. Switzerland imports LNG too — maybe that's one path,\" Parmelin said over the weekend. Keller-Sutter said after the meeting that the discussion was “very friendly and open”, but she did...",
+        "publish_date": "2025-08-07T07:59:04.463279+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/mas-1-1-billion-injection-093000009.html",
+        "summary": "📰 싱가포르, 경제, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "We previously wrote about five smaller companies that will benefit from the Monetary Authority of Singapore’s (MAS) S$1.1 billion capital injection to revitalise the Singapore stock market. This money has been assigned to three fund managers who will deploy the funds into smaller, neglected stocks. We decided to dig around and uncovered five more stocks that we believe will benefit from this massive liquidity injection. Revenue rose 7.1% year on year to S$764.7 million while gross profit jumped 9.6% year on year to S$235.6 million.",
+        "publish_date": "2025-08-05T18:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "5 durians for $488: Punggol residents accuse door-to-door salesman of selling them sour, unripe fruits",
+        "url": "https://www.asiaone.com/singapore/5-durians-488-punggol-residents-accuse-door-door-salesman-selling-them-sour-unripe-fruits",
+        "summary": "📰 기술 관련 뉴스\n📢 5 durians for $488: Punggol residents accuse door-to-door salesman of selling th...",
+        "content": "They wanted to indulge in the king of fruits but ended up feeling cheated. Two Punggol residents have accused a door-to-door salesman of peddling sour and unripe durians at astronomical prices, reported Shin Min Daily News",
+        "publish_date": "2025-08-05T13:50:57+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-07T08:02:17.027745+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
