@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Why are major car-sharing firms not stepping into the point-to-point void amid BlueSG's pause?",
+        "url": "https://www.channelnewsasia.com/singapore/car-sharing-point-point-bluesg-pause-getgo-tribecar-drive-lah-5283071",
+        "content": "The company is the only car-sharing platform that offers point-to-point services in Singapore. Experts said its move to suspend operations was likely influenced by losses caused by an ageing fleet. GetGo’s chief executive and co-founder Toh Ting Feng said a point-to-point car-sharing model would present...",
+        "publish_date": "2025-08-08T07:59:13.820950+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 블루SG 중단에도 왜 주요 카셰어링 업체들은 점대점 서비스를 제공하지 않는가?\n내용: 블루SG의 공백에도 불구하고 주요 카셰어링 업체들이 점대점 시장에 진출하지 않는 이유는 고령화되는 차량으로 인한 손실 때문일 수 있다. 게트고의 CEO이자 공동 창업자인 토우 팅 펑에 따르면, 점대점 카셰어링 모델은 도심에서의 주차 문제와 차량 유지비로 인해 수익성 확보가 어렵다. 이에 따라, 차라리 역과 사무실과 같은 특정 장所に 차량을 배정하는 것이 더 효율적이다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-08T08:02:31.939518+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
