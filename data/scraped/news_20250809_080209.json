@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shaping Tomorrow",
+        "url": "https://www.channelnewsasia.com/watch/shaping-tomorrow/building-futures-and-transforming-lives-through-real-estate-5275541",
+        "content": "SG60: Shaping Tomorrow is a compelling video series that brings to life the Singapore stories of our most cherished brands",
+        "publish_date": "2025-08-09T07:58:54.332980+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 내일의 싱가포르를 그리다\n\n내용: SG60는 싱가포르의 가장 사랑받는 브랜드들의 이야기를 영상으로 그린 시리즈로, '내일의 싱가포르'의 비전을 보여준다. 이 시리즈는 싱가포르의 브랜드들이 과거와 현재, 미래를 연결하며 어떻게 발전해왔는지 생생하게 보여준다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Fire extinguished, historic mosque-cathedral in southern Spain 'saved'",
+        "url": "https://sg.news.yahoo.com/fire-extinguished-historic-mosque-cathedral-224000743.html",
+        "content": "Widely shared videos had shown flames and smoke billowing from inside the major tourist attraction, visited by two million people per year. \"The monument is saved. \"Luckily, the rapid and magnificent intervention of the Cordoba firefighters averted a catastrophe",
+        "publish_date": "2025-08-09T07:40:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 남부의 역사적인 모스크-대성당 화재 진압\n\n내용: annual 200만명이 방문하는 관광 명소인 스페인의 남부 모스크-대성당에서 화재가 발생했으나 신속한 소방대의 진압으로 큰 불상사는 막았다. 다행히도 코르도바 소방대의 빠른 대처로 катастроф를 피할 수 있었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "4 Certis officers charged after receiving over $9,700 in bribes, leaking operational information",
+        "url": "https://www.asiaone.com/singapore/4-certis-officers-charged-after-receiving-over-9700-bribes-leaking-operational",
+        "content": "They are Sri Daniah Abdul Razak, Muhammad Haaziq Karudin, Muhammad Khairul Amir Suhaimi and Mohammad Aziffi Selamat. The Corruption Practices Investigation Bureau (CPIB) and Singapore Customs said that the four were contract employees for the Immigration and Checkpoints Authority. Their alleged offences are linked with a Singaporean named Muhammad Sukaimi Gasali, who was also charged on Friday. CPIB and Singapore Customs said in a press release that...",
+        "publish_date": "2025-08-08T13:25:20+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 부패 공무원 4명, 뇌물 수수와 정보 유출로 기소\n내용: 싱가포르의 이민국 계약직 직원인 스리 다니아 압둘 라자크, 무함마드 하이지크 카루딘, 무함마드 카이어르 아미르 수하임, 모하맛 아지피 셀라맛 등 4명이 뇌물 수수 및 업무상 기밀 유출 혐의로 기소되었다. 이들은 뇌물로 총 9,700달러 이상을 받은 것으로 조사되었으며, 싱가포르 국적 무함마드 수카이미 가살리도 이들과 공모한 혐의로 함께 기소되었다. 싱가포르 반부패 기관인 CPIB와 세관은 이들을 엄중히 처벌할 예정이라고 밝혔다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-09T08:02:09.755334+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

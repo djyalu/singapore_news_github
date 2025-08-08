@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shaping Tomorrow",
+        "url": "https://www.channelnewsasia.com/watch/shaping-tomorrow/building-futures-and-transforming-lives-through-real-estate-5275541",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Shaping Tomorrow",
+        "content": "SG60: Shaping Tomorrow is a compelling video series that brings to life the Singapore stories of our most cherished brands",
+        "publish_date": "2025-08-09T07:58:54.332980+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Fire extinguished, historic mosque-cathedral in southern Spain 'saved'",
+        "url": "https://sg.news.yahoo.com/fire-extinguished-historic-mosque-cathedral-224000743.html",
+        "summary": "📰 제목: 화재 진압, 역사적인 스페인 모스크-대성당 구해\n\n내용:每年吸引二百萬人參觀的熱門旅遊景點，西班牙南部一座歷史悠久的清真寺大教堂，遭大火侵襲。所幸科爾多瓦消防隊員迅速到場滅火，避免了一場災難，及時拯救了這座地標性建築。火勢已得到控制，目前沒有人員傷亡。",
+        "content": "Widely shared videos had shown flames and smoke billowing from inside the major tourist attraction, visited by two million people per year. \"The monument is saved. \"Luckily, the rapid and magnificent intervention of the Cordoba firefighters averted a catastrophe",
+        "publish_date": "2025-08-09T07:40:00+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "4 Certis officers charged after receiving over $9,700 in bribes, leaking operational information",
+        "url": "https://www.asiaone.com/singapore/4-certis-officers-charged-after-receiving-over-9700-bribes-leaking-operational",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 4 Certis officers charged after receiving over $9,700 in bribes, leaking operati...",
+        "content": "They are Sri Daniah Abdul Razak, Muhammad Haaziq Karudin, Muhammad Khairul Amir Suhaimi and Mohammad Aziffi Selamat. The Corruption Practices Investigation Bureau (CPIB) and Singapore Customs said that the four were contract employees for the Immigration and Checkpoints Authority. Their alleged offences are linked with a Singaporean named Muhammad Sukaimi Gasali, who was also charged on Friday. CPIB and Singapore Customs said in a press release that...",
+        "publish_date": "2025-08-08T13:25:20+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-09T08:02:06.732266+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
