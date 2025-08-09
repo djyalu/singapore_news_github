@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "SAF regular dies after being found unconscious at Hendon Camp pool; death not training related: Mindef",
+        "url": "https://www.asiaone.com/singapore/saf-regular-dies-after-being-found-unconscious-hendon-camp-pool-death-not-training",
+        "content": "CPR and AED were administered immediately. Despite resuscitation efforts, he was pronounced dead at 7.44am, Mindef stated. Mindef noted that his death was not related to training. \"We are also rendering assistance to the family during this time of grief.\"",
+        "publish_date": "2025-08-09T11:49:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 싱가포르 국군 사망 사건, 훈련과는 무관해\n\n내용: 싱가포르 국군인 regular가 헨돈 캠프 풀에서 의식을 잃고 사망하는 사건이 있었다. 구조대가 현장에 곧바로 도착해 심폐소생술을 시도했지만, 7시 44분에 사망이 확인되었다. 싱가포르 국방부는 이 사건이 훈련과 관련없음을 밝히며, 유가족에게도 지원을 아끼지 않을 것이라고 전했다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-10T08:01:46.147851+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
