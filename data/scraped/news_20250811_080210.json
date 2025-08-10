@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Buyer bags three-storey corner terraced house at Villa Verde ahead of auction",
+        "url": "https://sg.news.yahoo.com/buyer-bags-three-storey-corner-030000585.html",
+        "summary": "📰 제목: 경매 앞서 Villa Verde의 삼층 귀퉁이 테라스 주택 낙찰\n\n내용: 차오추캉 지역의 베르데 그로브에 위치한 삼층 귀퉁이 테라스 주택이 경매에 부쳐지기 앞서 280만 불에 낙찰되었다. 이 부동산은 모기지 매물로 책정가격이 280만 불이었다.",
+        "content": "The property was offered as a mortgagee sale with a guide price of $2.8 million. (Photo: Knight Frank Singapore). A three-storey corner terrace house along Verde Grove in the Choa Chu Kang area has been sold ahead of auction. The house was a mortgagee sale with a guide price of $2.8 million",
+        "publish_date": "2025-08-08T12:00:00+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Fire breaks out on Arthur’s Seat, Edinburgh’s famous dormant volcano",
+        "url": "https://sg.news.yahoo.com/fire-breaks-arthur-seat-edinburgh-221041742.html",
+        "summary": "📰 법률, 기술, 관광 관련 뉴스\n📢 Fire breaks out on Arthur’s Seat, Edinburgh’s famous dormant volcano",
+        "content": "No casualties were reported, it added. The first calls about the fire came in around 4:05 p.m. local time (11:05 a.m. ET), the fire service said, telling CNN more than five hours after this that the blaze was still not extinguished. Video posted to social media showed thick clouds of smoke billowing from the site. Police advised motorists and pedestrians to avoid the area. Arthur’s Seat sits 251m (823.5 ft) above sea level, according to the Scottish tourism...",
+        "publish_date": "2025-08-11T07:10:41+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-11T08:02:10.927238+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

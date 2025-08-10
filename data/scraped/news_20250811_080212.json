@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Buyer bags three-storey corner terraced house at Villa Verde ahead of auction",
+        "url": "https://sg.news.yahoo.com/buyer-bags-three-storey-corner-030000585.html",
+        "content": "The property was offered as a mortgagee sale with a guide price of $2.8 million. (Photo: Knight Frank Singapore). A three-storey corner terrace house along Verde Grove in the Choa Chu Kang area has been sold ahead of auction. The house was a mortgagee sale with a guide price of $2.8 million",
+        "publish_date": "2025-08-08T12:00:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 경매 앞둔 빌라 베르데의 삼층코너 테라스 하우스, 매매 성사\n내용: 초아 추캉 지역에 위치한 삼층 테라스 하우스가 경매에 부쳐지기 앞서 280만 불에 매매되었다. 이 부동산은 담보권자가 매물로 내놓은 것으로, 가이드 가격은 280만 불이었다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Fire breaks out on Arthur’s Seat, Edinburgh’s famous dormant volcano",
+        "url": "https://sg.news.yahoo.com/fire-breaks-arthur-seat-edinburgh-221041742.html",
+        "content": "No casualties were reported, it added. The first calls about the fire came in around 4:05 p.m. local time (11:05 a.m. ET), the fire service said, telling CNN more than five hours after this that the blaze was still not extinguished. Video posted to social media showed thick clouds of smoke billowing from the site. Police advised motorists and pedestrians to avoid the area. Arthur’s Seat sits 251m (823.5 ft) above sea level, according to the Scottish tourism...",
+        "publish_date": "2025-08-11T07:10:41+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 에딘버러의 유명 휴화산, 아서 좌에서 화재 발생\n\n내용: 오늘 오후 4시경(현지 시간) 에딘버러의 명소인 아서 좌에서 화재가 발생했다. 수백 미터에 달하는 연기가 영상에서 포착됐으며, 현재 진화가 진행 중이다. 다행히 인명 피해는 없는 것으로 보고됐다. 경찰은 화재 지역으로의 접근을 통제하고 있다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-11T08:02:12.871076+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
