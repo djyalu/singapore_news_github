@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "India pushes ahead with US trade talks despite tariff hike to 50%",
+        "url": "https://www.channelnewsasia.com/world/india-pushes-ahead-us-trade-talks-despite-tariff-hike-50-5289066",
+        "content": "Earlier, junior finance minister Pankaj Chaudhary told lawmakers that about 55 per cent of India’s merchandise exports to the US would be...",
+        "publish_date": "2025-08-12T07:58:39.128255+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인도가 미국과 무역협상을 계속하는 가운데 관세율 50%로 인상\n\n내용: 인도 정부는 미국과의 무역협상을 지속하겠다는 입장이지만, 미국이 인도 상품에 부과하는 관세가 최대 50%로 인상됨에 따라 양국 간 무역긴장감이 고조되고 있다. 파나지 차우다리 재무 차관은 인도 상품의 약 55%가 미국으로 수출되는 상황에서 이번 관세 인상이 인도 경제에 큰 영향을 끼칠 것이라고 국회에 보고했다. 인도는 미국과의 협상에서 관세 인하와 시장 접근성 개선을 목표로 삼고 있다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-12T08:01:59.218616+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
