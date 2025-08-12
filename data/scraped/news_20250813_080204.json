@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/sheng-siong-share-price-achieved-233000720.html",
+        "summary": "📰 제목: 야후 파이낸스의 상승세\n\n내용: 싱가포르의 대표 주가지수인 블루칩 지수가 상승세를 보이고 있다. 수퍼마켓 운영 기업인 야후 파이낸스의 주가도 최근 급상승했다가 차익실현 매물로 주가가 하락했다. 이 기업의 매출은 7.1% 상승한 7억 6,470만 달러, 순이익은 3.5% 상승한 7,230만 달러를 기록했고, 현금보유액은 3억 6,720만 달러로 탄탄한 재무상태를 유지했다. 하지만 주가는 고공행진을 계속할지 불투명하다.",
+        "content": "But it’s not just the bellwether blue-chip index that is doing well. However, the group’s share price has since declined to S$2.10 because of profit-taking. Can investors expect the supermarket operator to continue doing well. Will its share price go on to break new records?. Revenue rose 7.1% year on year to S$764.7 million. The retailer’s net profit stood at S$72.3 million, up 3.5% year on year. The group continued to maintain a rock-solid balance sheet flush with cash of S$367.2...",
+        "publish_date": "2025-08-12T08:30:00+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-13T08:02:04.108014+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
