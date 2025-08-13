@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump wants to extend federal control over Washington police",
+        "url": "https://www.channelnewsasia.com/world/trump-extend-federal-control-washington-police-5293201",
+        "summary": "📰 제목: 트럼프, 워싱턴 경찰에 연방통제 강화 추진\n\n내용: 트럼프 대통령은 워싱턴 D.C.의 메트로пол탄 경찰부에 대한 연방정부의 통제 강화를 원한다. 그는 이를 다른 미국 도시들의 모델로 삼을 수 있다고 주장했지만, 워싱턴 경찰에 대한 연방 통제가 다른 도시에서 어떻게 시행될 수 있을지는 불분명하다. 이 계획은 의회의 승인이 필요하다.",
+        "content": "Trump also asserted that any congressional action could serve as a model for other US cities. It was not clear how Trump's takeover of Washington's Metropolitan Police Department could be replicated elsewhere",
+        "publish_date": "2025-08-14T07:58:39.240321+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Catch ’em all but dump the fries. Pokémon fans leave McDonald’s Japan in massive food waste drama",
+        "url": "https://sg.news.yahoo.com/catch-em-dump-fries-pok-050945587.html",
+        "summary": "📰 음식, 국제 관련 뉴스\n📢 Catch ’em all but dump the fries. Pokémon fans leave McDonald’s Japan in massive...",
+        "content": "Piles of untouched Happy Meals littered sidewalks outside McDonald’s restaurants in Japan over the weekend, as frenzied customers scrambled to buy limited-edition sets with Pokémon cards",
+        "publish_date": "2025-08-13T16:17:35+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-14T08:01:55.375518+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
