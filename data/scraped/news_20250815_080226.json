@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Maggie Cheung is now on Red Note",
+        "url": "https://sg.news.yahoo.com/style/maggie-cheung-now-red-note-061200350.html",
+        "content": "In this garden of life, we walk together. Whether the road is smooth or rough, let's share the scenery of this journey together,\" she expressed. \"Timing is very personal. When you feel like it's the right moment, then it is,\" she said. Maggie also revealed that she will be sharing various new things on her account, including \"new things, fun things, useful things, beautiful things, meaningful things, things worth learning, things worth...",
+        "publish_date": "2025-08-13T15:22:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 매기 청, 레드 노트에 합류하다\n\n내용: 매기 청이 자신의 삶의 여정에서 다양한 새롭고, 재미있고, 유익한 일을 공유할 예정이라며 레드 노트에 동참한다고 알렸다. 그녀는 '인생의 정원'에서 함께 걸어가자고 초대하며, 여정이 매끄럽든 거칠든 상관없이 여정의 풍경을 함께 즐기자고 말했다. 또한, 적당한 타이밍은 각자 느끼는 것이 다르지만, 본인은 지금이 적기라고 생각한다고 밝혔다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Donald Trump Reveals What He Told Melania After Hunter Biden’s Epstein Relationship Comments",
+        "url": "https://sg.news.yahoo.com/donald-trump-reveals-told-melania-222835972.html",
+        "content": "President Donald Trump has shared his reaction to first lady Melania Trump’s $1 billion defamation threat against former President Joe Biden’s son Hunter Biden. Melania Trump’s lawyer, Alejandro Brito, denied the claims in an Aug. 6 letter addressed to Hunter Biden and his attorney, Abbe Lowell. The letter was first reported Wednesday by Fox News Digital",
+        "publish_date": "2025-08-15T07:28:35+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 멜라니아, 헌터 바이든의 에프스티운 관계 발언에 1조 원 손해배상 청구\n\n내용: 도널드 트럼프 전 미국 대통령이 아내 멜라니아가 조 바이든 전 부통령의 아들인 헌터 바이든을 상대로 한 1조 원 손해배상 청구에 대한 반응을 밝혔다. 이는 헌터 바이든이 에프스티븐의 성범죄에 연루되었다는 발언에 대한 것으로, 멜라니아 측 변호인은 '사실무근'이라며 반박했다. Fox News Digital은 변호인의 편지를 최초로 보도하였으며, 이 편지는 헌터 바이든과 그의 변호인에게 발송되었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman taken to hospital after 2 cars collide along Joo Chiat Road",
+        "url": "https://www.asiaone.com/singapore/woman-taken-hospital-after-2-cars-collide-along-joo-chiat-road",
+        "content": "An ambulance can be seen parked on the side road. Debris was also seen scattered across the road between the two cars. Responding to queries from AsiaOne, the police and...",
+        "publish_date": "2025-08-14T12:37:36+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 주 치아트 로드에서 차량 충돌 사고, 여성 병원 이송\n\n내용: 싱가포르의 주 치아트 로드에서 두 차량이 충돌하는 사고가 발생했다. 이 사고로 한 여성이 병원으로 이송되었다. 현장에는 앰뷸런스가 대기하고 있으며, 도로에는 파편들이 흩어져 있다. 경찰은 아시아원(AsiaOne)의 질문에 대응하여 조사가 진행중이라고 전했다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Jalan Bukit Merah flat fire may have started from PMD's battery pack in living room: SCDF",
+        "url": "https://www.asiaone.com/singapore/2-dead-about-60-evacuated-after-fire-jalan-bukit-merah-flat",
+        "content": "The police do not suspect foul play and investigations are ongoing. Around 60 residents from the affected block were evacuated by the police...",
+        "publish_date": "2025-08-14T11:52:53+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 부킷 메라 길 아파트 화재, 전동 모빌리티 기기 배터리로 인해 발생했을 가능성 높아\n내용: 경찰은 외부의 고의적인 범행 가능성은 낮은 것으로 보고 있으며, 이번 화재로 인해 약 60명의 주민들이 대피했다. 화재 원인에 대한 조사 중인 것으로 알려져 있다."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-15T08:02:26.595561+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

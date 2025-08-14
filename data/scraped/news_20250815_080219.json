@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Maggie Cheung is now on Red Note",
+        "url": "https://sg.news.yahoo.com/style/maggie-cheung-now-red-note-061200350.html",
+        "summary": "📰 제목: 매기 청, 레드 노트에 합류하다\n내용: 배우 매기 청이 자신의 삶의 여정을 공유하는 플랫폼, 레드 노트에 동참한다. 그녀는 '인생의 정원'에서 함께 걸어갈 것을 초대하며, 순탄하거나 험난하거나 여정의 풍경을 함께 공유하자고 전했다. 또한, 적당한 타이밍은 각자 느끼는 것이 다르지만, 본인은 지금이 적기라고 생각한다고 밝혔다. 매기 청은 다양한 새롭고, 재미있며, 유익한 콘텐츠를 레드 노트에서 공유할 예정이다.",
+        "content": "In this garden of life, we walk together. Whether the road is smooth or rough, let's share the scenery of this journey together,\" she expressed. \"Timing is very personal. When you feel like it's the right moment, then it is,\" she said. Maggie also revealed that she will be sharing various new things on her account, including \"new things, fun things, useful things, beautiful things, meaningful things, things worth learning, things worth...",
+        "publish_date": "2025-08-13T15:22:00+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Donald Trump Reveals What He Told Melania After Hunter Biden’s Epstein Relationship Comments",
+        "url": "https://sg.news.yahoo.com/donald-trump-reveals-told-melania-222835972.html",
+        "summary": "📰 법률, 정치, 기술 관련 뉴스\n📢 Donald Trump Reveals What He Told Melania After Hunter Biden’s Epstein Relations...",
+        "content": "President Donald Trump has shared his reaction to first lady Melania Trump’s $1 billion defamation threat against former President Joe Biden’s son Hunter Biden. Melania Trump’s lawyer, Alejandro Brito, denied the claims in an Aug. 6 letter addressed to Hunter Biden and his attorney, Abbe Lowell. The letter was first reported Wednesday by Fox News Digital",
+        "publish_date": "2025-08-15T07:28:35+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman taken to hospital after 2 cars collide along Joo Chiat Road",
+        "url": "https://www.asiaone.com/singapore/woman-taken-hospital-after-2-cars-collide-along-joo-chiat-road",
+        "summary": "📰 법률, 국제 관련 뉴스\n📢 Woman taken to hospital after 2 cars collide along Joo Chiat Road",
+        "content": "An ambulance can be seen parked on the side road. Debris was also seen scattered across the road between the two cars. Responding to queries from AsiaOne, the police and...",
+        "publish_date": "2025-08-14T12:37:36+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Jalan Bukit Merah flat fire may have started from PMD's battery pack in living room: SCDF",
+        "url": "https://www.asiaone.com/singapore/2-dead-about-60-evacuated-after-fire-jalan-bukit-merah-flat",
+        "summary": "📰 법률 관련 뉴스\n📢 Jalan Bukit Merah flat fire may have started from PMD's battery pack in living r...",
+        "content": "The police do not suspect foul play and investigations are ongoing. Around 60 residents from the affected block were evacuated by the police...",
+        "publish_date": "2025-08-14T11:52:53+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-15T08:02:19.039654+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
