@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Beloved Japanese all-you-can-eat buffet closing, enjoy 20% off till end Aug",
+        "url": "https://sg.news.yahoo.com/style/beloved-japanese-eat-buffet-closing-020018526.html",
+        "summary": "📰 제목: 국민 일본 뷔페, 8월 말까지 20% 할인\n내용: 싱가포르의 인기 일본 뷔페 레스토랑이 폐점 세일을 한다. originally S$42.80인 평일 점심 뷔페를 할인된 가격에 즐길 수 있으며, 다양한 음식들 além de Angus 고기, 가재와 같은 해산물도 제공한다. 8월 30일까지 유료 쿠폰이나 회원 혜택을 사용해야 하며, 미사용 혜택은 소멸된다.",
+        "content": "Here, you can experience the best of both worlds. That means weekday lunch for the Regular Adult Combo (originally S$42.80) now comes with extra savings, where options span everything from tender chicken to pork belly, Angus beef, and even giant mussels. Customers are also reminded to redeem any vouchers or membership perks before 30 Aug, as unused benefits will...",
+        "publish_date": "2025-08-14T11:00:18+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "More seniors remain employed after retirement and re-employment ages raised in 2022: MOM study",
+        "url": "https://www.asiaone.com/singapore/more-seniors-remain-employed-after-retirement-and-re-employment-ages-raised-2022-mom",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 More seniors remain employed after retirement and re-employment ages raised in 2...",
+        "content": "The effects of raising re-employment age were examined by tracking around 160,000 residents born between 1954 and 1956. Currently, resident senior workers who join their companies before turning 55 can keep their jobs until they meet the minimum...",
+        "publish_date": "2025-08-14T15:30:11+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-16T08:01:56.821855+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

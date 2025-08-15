@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Beloved Japanese all-you-can-eat buffet closing, enjoy 20% off till end Aug",
+        "url": "https://sg.news.yahoo.com/style/beloved-japanese-eat-buffet-closing-020018526.html",
+        "content": "Here, you can experience the best of both worlds. That means weekday lunch for the Regular Adult Combo (originally S$42.80) now comes with extra savings, where options span everything from tender chicken to pork belly, Angus beef, and even giant mussels. Customers are also reminded to redeem any vouchers or membership perks before 30 Aug, as unused benefits will...",
+        "publish_date": "2025-08-14T11:00:18+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 사랑받던 일본식 뷔페, 8월 말까지 20% 할인\n내용: Singapur 국민 뷔페로 사랑받던 곳이 폐점을 앞두었다. 이번 달 말까지 평일 점심 regular 성인 콤보가 20% 할인된 가격에 제공되며, 치킨, 삼겹살, 앵거스 비프, 홍합 등 다양한 식재료를 즐길 수 있다. 또한, 8월 30일까지 유료 쿠폰이나 회원 혜택을 사용해야 하며, 미사용 혜택은 소멸된다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "More seniors remain employed after retirement and re-employment ages raised in 2022: MOM study",
+        "url": "https://www.asiaone.com/singapore/more-seniors-remain-employed-after-retirement-and-re-employment-ages-raised-2022-mom",
+        "content": "The effects of raising re-employment age were examined by tracking around 160,000 residents born between 1954 and 1956. Currently, resident senior workers who join their companies before turning 55 can keep their jobs until they meet the minimum...",
+        "publish_date": "2025-08-14T15:30:11+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 은퇴 후 고령 근로자의 재고용 연령, 2022년에 상향: 노동부 연구\n내용: 1954년부터 1956년생 약 16만 명의 주민을 추적한 결과, 올해 고령 근로자의 재고용 연령이 상향된 후 더 많은 고령자들이 은퇴 후에도 일자리를 유지하는 것으로 나타났다. 현재 55세 전에 취업한 주민 고령 근로자는 최소 retirement 나이까지 일자리를 보장받으며, 이번 연구는 고령 근로자의 취업률 제고에 긍정적 영향을 끼친 것으로 보인다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-16T08:01:59.447930+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
