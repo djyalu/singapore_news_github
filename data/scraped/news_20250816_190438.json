@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Malaysian couple set on fire in Bangkok: Family worry medical fees may exceed Thai compensation",
+        "url": "https://www.channelnewsasia.com/asia/malaysia-tourists-set-fire-bangkok-compensation-family-worry-5297751",
+        "content": "This is under its assistance scheme for tourists injured in specific criminal offences or accidents. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and...",
+        "publish_date": "2025-08-16T19:01:18.265111+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 방콕서 불에 탄 말레이 커플, 의료비로 고통\n내용: 관광객 대상 범죄 피해 지원 제도에 따라 보상받으려던 말레이 커플이 의료비가 보상 범위를 초과할까 걱정이다. 가족들은 고액의 치료비에 대한 부담을 안고 있다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Planes struggle to land battling fierce winds as Typhoon Podul slams Taiwan",
+        "url": "https://sg.news.yahoo.com/planes-struggle-land-battling-fierce-190000312.html",
+        "content": "Pilots trying to land at Taiwan Taoyuan International Airport on August 12, faced fierce crosswinds from Typhoon Podul. Dramatic footage captured planes swaying side-to-side and bouncing as they landed on the runway. Some flights were forced to perform go-arounds before landing on their second attempt.",
+        "publish_date": "2025-08-16T04:00:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 폭풍우 속 비행기 착륙 도전\n\n내용: 타이페이의 강풍이 몰아친 8월 12일, 파일럿들은 타이뻬이 국제공항에 착륙하려다 난도를 겪었다. 착륙하는 비행기가 흔들리는 영상이 촬영되었는데, 일부 비행기는 여러 번 시도 끝에 착륙했다. 타이푼 포둘의 영향으로 인해 강풍이 불었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Power fault on Sengkang-Punggol LRT line: Service fully restored, says SBS Transit",
+        "url": "https://www.asiaone.com/singapore/power-fault-sengkang-punggol-lrt-line-service-being-restored-says-sbs-transit",
+        "content": "Services on the Sengkang-Punggol LRT (SPLRT) have been fully restored by about 12.50pm, said SBS Transit. Free regular bus and bridging bus services have stopped. This facilitated inspection of cables and will enable repairs to take place more efficiently in the evening. In a Facebook post at about 12.40pm, SBS Transit group chief executive Jeffrey Sim said that at...",
+        "publish_date": "2025-08-15T10:24:44+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 센갱-펑골 경전철 전력 고장, SBS 트랜짓에 의해 오후 12시 50분 경 복구 완료\n내용: SBS 트랜짓은 센갱-펑골 경전철(SPLRT)의 전력 고장 문제가 오후 12시 50분경 완전히 해결되었다 밝혔다. 무료 버스 서비스 운영이 중단되고, 경전철 노선의 케이블 점검과 저녁 시간의 효율적인 수리가 이루어졌다. 제프리 심 SBS 트랜짓 그룹 최고경영자는 페이스북 게시물을 통해 점검과 수사가 진행 중이며 오후 내내 순차적으로 복구될 것이라고 전했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-16T19:04:38.817569+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

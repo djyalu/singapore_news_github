@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Malaysian couple set on fire in Bangkok: Family worry medical fees may exceed Thai compensation",
+        "url": "https://www.channelnewsasia.com/asia/malaysia-tourists-set-fire-bangkok-compensation-family-worry-5297751",
+        "summary": "📰 제목: 방콕서 불에 탄 말레이 커플, 의료비로 고통\n내용: 태국에서 휴가를 보내던 말레이지아 커플이 불에 타 중상을 입었다. 가족들은 의료비가 태국의 보상금 한도를 초과할까 걱정하고 있다. 싱가포르의 관광객 지원 제도에 따르면, 특정 범죄나 사고로 부상당했을 시 지원이 가능하나, EU 거주자는 대상에서 제외된다.",
+        "content": "This is under its assistance scheme for tourists injured in specific criminal offences or accidents. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and...",
+        "publish_date": "2025-08-16T19:01:18.265111+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Planes struggle to land battling fierce winds as Typhoon Podul slams Taiwan",
+        "url": "https://sg.news.yahoo.com/planes-struggle-land-battling-fierce-190000312.html",
+        "summary": "📰 공항, 기술 관련 뉴스\n📢 Planes struggle to land battling fierce winds as Typhoon Podul slams Taiwan",
+        "content": "Pilots trying to land at Taiwan Taoyuan International Airport on August 12, faced fierce crosswinds from Typhoon Podul. Dramatic footage captured planes swaying side-to-side and bouncing as they landed on the runway. Some flights were forced to perform go-arounds before landing on their second attempt.",
+        "publish_date": "2025-08-16T04:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Power fault on Sengkang-Punggol LRT line: Service fully restored, says SBS Transit",
+        "url": "https://www.asiaone.com/singapore/power-fault-sengkang-punggol-lrt-line-service-being-restored-says-sbs-transit",
+        "summary": "📰 교통, 기술 관련 뉴스\n📢 Power fault on Sengkang-Punggol LRT line: Service fully restored, says SBS Trans...",
+        "content": "Services on the Sengkang-Punggol LRT (SPLRT) have been fully restored by about 12.50pm, said SBS Transit. Free regular bus and bridging bus services have stopped. This facilitated inspection of cables and will enable repairs to take place more efficiently in the evening. In a Facebook post at about 12.40pm, SBS Transit group chief executive Jeffrey Sim said that at...",
+        "publish_date": "2025-08-15T10:24:44+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-16T19:04:35.087828+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
