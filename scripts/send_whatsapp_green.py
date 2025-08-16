@@ -114,8 +114,8 @@ def send_to_whatsapp_green(message, phone_number):
         return False
     
     # API 엔드포인트
-    # Green API 공식 URL: https://api.green-api.com
-    base_url = "https://api.green-api.com"
+    # Green API 인스턴스별 URL 사용
+    base_url = f"https://{instance_id}.api.greenapi.com"
     api_url = f"{base_url}/waInstance{instance_id}/sendMessage/{api_token}"
     
     # 전화번호 형식 변환
@@ -184,8 +184,8 @@ def check_green_api_status():
         return False
     
     try:
-        # Green API 공식 URL 사용
-        base_url = "https://api.green-api.com"
+        # Green API 인스턴스별 URL 사용
+        base_url = f"https://{instance_id}.api.greenapi.com"
         url = f"{base_url}/waInstance{instance_id}/getStateInstance/{api_token}"
         
         print(f"   - 상태 확인 URL: {base_url}/waInstance{instance_id}/getStateInstance/***")
