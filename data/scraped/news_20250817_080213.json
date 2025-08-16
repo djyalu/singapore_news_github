@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "More seniors remain employed after retirement and re-employment ages raised in 2022: MOM study",
+        "url": "https://www.asiaone.com/singapore/more-seniors-remain-employed-after-retirement-and-re-employment-ages-raised-2022-mom",
+        "summary": "📰 제목: 은퇴 후 고령 근로자의 재고용 연령, 2022년에 상향 조정되어 고용 유지 증가\n내용: 1954년부터 1956년생 약 16만 명의 주민을 대상으로 재고용 연령 상향의 효과를 검토한 결과, 55세 전에 취업한 고령 근로자의 고용률이 상승했다. 현재 55세 이상 근로자의 고용 최소 연령은 상향 조정되어 고령자의 고용 안정에 기여하고 있다.",
+        "content": "The effects of raising re-employment age were examined by tracking around 160,000 residents born between 1954 and 1956. Currently, resident senior workers who join their companies before turning 55 can keep their jobs until they meet the minimum...",
+        "publish_date": "2025-08-14T15:30:11+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'No hawkers have been penalised': Bukit Canberra Hawker Centre says stallholders don't have to provide free meals",
+        "url": "https://www.asiaone.com/singapore/no-hawkers-have-been-penalised-bukit-canberra-hawker-centre-says-stallholders-dont-have",
+        "summary": "📰 음식 관련 뉴스\n📢 'No hawkers have been penalised': Bukit Canberra Hawker Centre says stallholders...",
+        "content": "The hawker centre is managed and operated by Canopy Hawkers Group, a subsidiary of Food Canopy. Seetoh's remarks about hawkers being \"contractually forced\" to provide budget meals priced up to...",
+        "publish_date": "2025-08-16T13:38:36+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-17T08:02:13.901174+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

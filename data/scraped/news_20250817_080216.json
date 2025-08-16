@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "More seniors remain employed after retirement and re-employment ages raised in 2022: MOM study",
+        "url": "https://www.asiaone.com/singapore/more-seniors-remain-employed-after-retirement-and-re-employment-ages-raised-2022-mom",
+        "content": "The effects of raising re-employment age were examined by tracking around 160,000 residents born between 1954 and 1956. Currently, resident senior workers who join their companies before turning 55 can keep their jobs until they meet the minimum...",
+        "publish_date": "2025-08-14T15:30:11+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 퇴직 및 재고용 연령 상향으로 노년층 고용률 증가\n내용: 2022년 고령 근로자의 고용률이 상승했다. 지난해 연령 상향 조치 후 약 16만 명의 주민을 대상으로 조사한 결과, 55세 이상 고령층의 고용률이 상승한 것으로 나타났다. 이번 연구는 싱가포르 근로자들이 평균적으로 퇴직 후에도 더 오래 일할 수 있도록 장려하는 데에 도움이 될 것으로 기대된다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'No hawkers have been penalised': Bukit Canberra Hawker Centre says stallholders don't have to provide free meals",
+        "url": "https://www.asiaone.com/singapore/no-hawkers-have-been-penalised-bukit-canberra-hawker-centre-says-stallholders-dont-have",
+        "content": "The hawker centre is managed and operated by Canopy Hawkers Group, a subsidiary of Food Canopy. Seetoh's remarks about hawkers being \"contractually forced\" to provide budget meals priced up to...",
+        "publish_date": "2025-08-16T13:38:36+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 부킷 캐스이버 Food Court, 무료 식사 제공 의무 없다\n내용: Food Canopy의 자회사인 Canopy Hawkers Group이 운영하는 부킷 캐스이버 Food Court 측은 식당 운영자들이 저가 식사를 제공할 계약상 의무가 없기에 아무도 벌금 type의 페널티를 내지 않았다고 밝혔다. 일부에서는 식사 가격을 최저 S$3으로 책정해야 한다는 압박을 받고 있다는 주장도 있었지만, 당국은 이를 부인했다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-17T08:02:16.413738+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
