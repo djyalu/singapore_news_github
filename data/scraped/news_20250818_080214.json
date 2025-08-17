@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "European leaders to join Zelenskyy in Trump meeting",
+        "url": "https://www.channelnewsasia.com/world/european-leaders-join-zelenskyy-ukraine-talks-trump-5298786",
+        "summary": "📰 제목: 트럼프-젤렌스키 회담에 유럽 지도자들 동참\n\n내용: 우크라이나의 대통령 젤렌스키는 미국 트럼프 대통령과의 회담에 유럽 각국의 지도자들과 함께할 예정이라고 밝혔다. 그는 \"트럼프 대통령이 말한 안보 보장 약속이 푸틴의 생각보다 훨씬 중요하다\"라고 강조했다. 한편으로, 그는 미국 측의 안보 보장 제안을 '역사적'이라고 평가했다. 프랑스 대통령 에마뉘엘 마크롱을 비롯하여 다른 유럽 지도자들 또한 회담에 참여할 전망이다.",
+        "content": "\"What President Trump said about security guarantees is much more important to me than Putin's thoughts, because Putin will not give any security guarantees,\" he said. Zelenskyy later said on social media that the US offer regarding security guarantees was \"historic\". French President Emmanuel Macron, who will take part in the...",
+        "publish_date": "2025-08-18T07:58:36.758564+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "‘Universe’s biggest blessing’: Woman and friend help neighbour give birth at home",
+        "url": "https://sg.news.yahoo.com/universe-biggest-blessing-woman-friend-115500176.html",
+        "summary": "📰 기술 관련 뉴스\n📢 ‘Universe’s biggest blessing’: Woman and friend help neighbour give birth at hom...",
+        "content": "“Around noon, I was having mild contractions. “At around 10pm, my contractions got even more intense. I told my husband we had to go. Ms Amalina’s husband Dzukri Bachtiar, 40, a field service engineer, said he managed to remain calm.",
+        "publish_date": "2025-08-16T20:55:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Motorcyclist dies after multi-vehicle collision on TPE",
+        "url": "https://sg.news.yahoo.com/motorcyclist-dies-multi-vehicle-collision-043500831.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Motorcyclist dies after multi-vehicle collision on TPE",
+        "content": "He was unconscious when he was taken there. The Straits Times understands the man who died was taken to Sengkang General Hospital. Following that, a helmet can be seen rolling on the road from the...",
+        "publish_date": "2025-08-17T13:35:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NDR2025: Govt to study new laws to protect kids from harmful, toxic content online",
+        "url": "https://www.asiaone.com/singapore/ndr2025-govt-study-new-laws-protect-kids-harmful-toxic-content-online",
+        "summary": "📰 법률, 환경 관련 뉴스\n📢 NDR2025: Govt to study new laws to protect kids from harmful, toxic content onli...",
+        "content": "\"But today's environment is on a wholly different scale. Everyone is online — always connected, and always within reach on their phones.\". \"When young people become overly immersed in the virtual world, they...",
+        "publish_date": "2025-08-17T21:36:16+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-18T08:02:14.493032+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
