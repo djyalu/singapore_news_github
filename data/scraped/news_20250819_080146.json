@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Hamas accepts proposed deal for ceasefire with Israel and hostage release, Egyptian source says",
+        "url": "https://www.channelnewsasia.com/world/hamas-accepts-proposed-deal-ceasefire-israel-and-hostage-release-egyptian-source-says-5301126",
+        "summary": "📰 제목: 하마스가 제안한 이스라엘과의 휴전 협상 수락\n내용:埃及(이집트) 소식통에 따르면 하마스가 이스라엘과 휴전하고 인질도释放하는 협상안을 수락했다. 하마스 고위 관계자인 바셈 나임이 페이스북을 통해 확인했으며, 다른 팔레스타인 파벌들도 중재인들에게 승인을 알렸다고 한다. 이집트과 카타르가 미국 지원 하에 양측의 중재역을 맡았다. 이스라엘 측은 20명이 생존해 있다고 믿고 있다.",
+        "content": "Senior Hamas official Basem Naim confirmed the group's approval on Facebook. Hamas said other Palestinian factions informed mediators of their approval also. Egypt and Qatar have been mediating between the sides with US support. Israeli officials believe 20 are alive.",
+        "publish_date": "2025-08-19T07:58:37.750684+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Sandwich Thrower Becomes Early Symbol Of Trump’s D.C. ‘Crime Emergency’",
+        "url": "https://sg.news.yahoo.com/sandwich-thrower-becomes-early-symbol-214608305.html",
+        "summary": "📰 교통, 법률, 범죄 관련 뉴스\n📢 Sandwich Thrower Becomes Early Symbol Of Trump’s D.C. ‘Crime Emergency’",
+        "content": "WASHINGTON ― As a dozen U.S. Marshals patrolled the busy U Street corridor on Friday night, they faced angry D.C. residents who felt they had no need to be there. “Only if it’s a footlong,” the officer said. 10 after federal law enforcement officers descended on the city",
+        "publish_date": "2025-08-19T06:46:08+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "In cramped, sweaty Hong Kong, climate change is making things worse for the poorest",
+        "url": "https://sg.news.yahoo.com/cramped-sweaty-hong-kong-climate-230015681.html",
+        "summary": "📰 교육, 환경 관련 뉴스\n📢 In cramped, sweaty Hong Kong, climate change is making things worse for the poor...",
+        "content": "On a sweltering summer afternoon in Hong Kong, Yeung Fong-yan’s flat felt like an oven. Her 13-year-old grandson had just returned home from school, exhausted and drenched in sweat after climbing nine floors to reach their apartment",
+        "publish_date": "2025-08-17T21:36:25+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "SAF commences airdrop operations in Gaza, thanks Jordan for invitation",
+        "url": "https://www.asiaone.com/singapore/saf-commences-airdrop-operations-gaza-thanks-jordan-invitation",
+        "summary": "📰 싱가포르, 정부, 보건 관련 뉴스\n📢 SAF commences airdrop operations in Gaza, thanks Jordan for invitation",
+        "content": "The Singapore Armed Forces (SAF) has commenced airdrop operations to deliver humanitarian aid to Gaza. The aid comprises medical supplies from the Ministry of Health, and food supplies from various non-governmental organisations (NGOs). The NGOs include Humanity Matters, Caritas Humanitarian Aid and Relief Initiative Singapore, Mercy Relief, and the Rahmatan Lil Alamin Foundation. These were coordinated through the Changi Regional Humanitarian Assistance and Disaster Relief Coordination Centre.",
+        "publish_date": "2025-08-18T12:00:17+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-19T08:01:46.494288+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
