@@ -9,5 +9,16 @@
     "message_length": 1734,
     "article_count": 5,
     "api": "green-api"
+  },
+  {
+    "id": "20250818205849",
+    "timestamp": "2025-08-18T20:58:49.844624+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 2개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 08월 18일 20:58\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 2개 기사\n\n【 News 】\n📍 출처: AsiaOne, Yahoo Singapore News\n\n\n1. 📰 제목: 사랑받던 일본식 뷔페, 8월 말까지 20% 할인\n내용: Singapur 국민 뷔페로 사랑받던 곳이 폐점을 앞두었다. 이번 ...",
+    "message_length": 857,
+    "article_count": 2,
+    "api": "green-api"
   }
 ]
