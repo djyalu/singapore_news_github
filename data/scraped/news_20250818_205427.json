@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Three foreigners arrested for working illegally as delivery riders",
+        "url": "https://www.channelnewsasia.com/singapore/foreigners-arrested-illegal-delivery-riders-enforcement-checks-mom-koh-poh-koon-ndca-5299581",
+        "content": "His post included a video of the checks being conducted. Around 375 delivery workers were checked during MOM's operations. Three foreigners were arrested and are under investigation for allegedly working illegally as delivery riders",
+        "publish_date": "2025-08-18T20:51:02.782298+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 불법으로 배달업무 종사한 외국인 3명 체포\n\n내용: 싱가포르 노동부(MOM)가 실시한 단속 작전 중 배달 근로자 375명에 대한 검거 영상이 공개되었다. 영상에는 3명의 외국인이 불법으로 배달 라이더로 일하다 체포되는 장면이 담겨 있으며, 현재 조사가 진행 중이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Beyond chow mein: Can a new wave of restaurants help China win hearts?",
+        "url": "https://sg.news.yahoo.com/beyond-chow-mein-wave-restaurants-220720819.html",
+        "content": "All of this on a walk down Liang Seah Street in Singapore. Chinese food is having a moment outside China, driven by huge success and intense competition back home. And nowhere is this clearer than in Singapore, where ethnically Chinese people make up more than three-quarters of the multicultural population. And yet, as an increasingly authoritarian China tries hard to win the world over, a...",
+        "publish_date": "2025-08-18T14:48:35+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 차우민을 넘어선 중국음식의 인기에 대해 \n\n내용: 최근 중국 음식이 세계적으로 각광받고 있다. 특히 중국음식이 인기를 끌고 있는 싱가포르는 중국계 주민이 전체 인구의 75%를 차지할 만큼 중국 문화의 영향력이 크다. 여기에서 더 나아가 중국은 세계에 대한 영향력을 키우려 노력하고 있는데, 중국 음식点的 성공이 그 시작이 될 수 있을지 관심을 모은다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "In cramped, sweaty Hong Kong, climate change is making things worse for the poorest",
+        "url": "https://sg.news.yahoo.com/cramped-sweaty-hong-kong-climate-230015681.html",
+        "content": "On a sweltering summer afternoon in Hong Kong, Yeung Fong-yan’s flat felt like an oven. Her 13-year-old grandson had just returned home from school, exhausted and drenched in sweat after climbing nine floors to reach their apartment",
+        "publish_date": "2025-08-17T21:36:25+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 홍콩의 가난한 이들에게 더워지는 기후는 고통이다\n\n내용: 홍콩의 여름, 야엉 폰얀의 아파트는 오븐 같았다. 13세 손자가 학교에서 돌아와 9층을 올라와 땀에 젖었다. 기후 변화로 홍콩의 빈민들은 더운 여름을 버티기 힘들다. 고층 아파트에 에어컨도 없는데, 정부 지원은 미비하다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NDR2025: Govt to study new laws to protect kids from harmful, toxic content online",
+        "url": "https://www.asiaone.com/singapore/ndr2025-govt-study-new-laws-protect-kids-harmful-toxic-content-online",
+        "content": "\"But today's environment is on a wholly different scale. Everyone is online — always connected, and always within reach on their phones.\". \"When young people become overly immersed in the virtual world, they...",
+        "publish_date": "2025-08-17T21:36:16+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: NDR2025: 정부, 아이들 보호할 새 법안 검토 중\n\n내용: 싱가포르 정부는 NDR2025에서 아이들을 유해하고 독성 강한 온라인 콘텐츠로부터 보호하기 위해 새로운 법안을 검토할 예정이라 밝혔다. 오늘날 모두가 항상 온라인에 접속되어 있고, 스마트폰으로 쉽게 접근할 수 있게 되면서, 가상 세계에 과도하게 몰입하는 젊은이들이 늘고 있어 우려된다고 배경을 설명했다. 따라서 정부는 아이들이 위험한 콘텐츠에 노출되지 않게 보호하는 새로운 법안을 연구할 계획이다."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-18T20:54:27.194645+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

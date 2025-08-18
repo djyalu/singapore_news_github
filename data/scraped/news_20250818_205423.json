@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Three foreigners arrested for working illegally as delivery riders",
+        "url": "https://www.channelnewsasia.com/singapore/foreigners-arrested-illegal-delivery-riders-enforcement-checks-mom-koh-poh-koon-ndca-5299581",
+        "summary": "📰 제목: 불법으로 배달 업무 종사한 외국인 3명 체포\n\n내용: 싱가포르 노동부(MOM)가 배달 업무를 단속한 결과, 375명의 배달 근로자들이 점검되었으며 이 중 3명의 외국인이 불법으로 일하다 체포되었다. 이들은 조사 중이다.",
+        "content": "His post included a video of the checks being conducted. Around 375 delivery workers were checked during MOM's operations. Three foreigners were arrested and are under investigation for allegedly working illegally as delivery riders",
+        "publish_date": "2025-08-18T20:51:02.782298+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Beyond chow mein: Can a new wave of restaurants help China win hearts?",
+        "url": "https://sg.news.yahoo.com/beyond-chow-mein-wave-restaurants-220720819.html",
+        "summary": "📰 싱가포르, 취업, 음식 관련 뉴스\n📢 Beyond chow mein: Can a new wave of restaurants help China win hearts?",
+        "content": "All of this on a walk down Liang Seah Street in Singapore. Chinese food is having a moment outside China, driven by huge success and intense competition back home. And nowhere is this clearer than in Singapore, where ethnically Chinese people make up more than three-quarters of the multicultural population. And yet, as an increasingly authoritarian China tries hard to win the world over, a...",
+        "publish_date": "2025-08-18T14:48:35+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "In cramped, sweaty Hong Kong, climate change is making things worse for the poorest",
+        "url": "https://sg.news.yahoo.com/cramped-sweaty-hong-kong-climate-230015681.html",
+        "summary": "📰 교육, 환경 관련 뉴스\n📢 In cramped, sweaty Hong Kong, climate change is making things worse for the poor...",
+        "content": "On a sweltering summer afternoon in Hong Kong, Yeung Fong-yan’s flat felt like an oven. Her 13-year-old grandson had just returned home from school, exhausted and drenched in sweat after climbing nine floors to reach their apartment",
+        "publish_date": "2025-08-17T21:36:25+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NDR2025: Govt to study new laws to protect kids from harmful, toxic content online",
+        "url": "https://www.asiaone.com/singapore/ndr2025-govt-study-new-laws-protect-kids-harmful-toxic-content-online",
+        "summary": "📰 법률, 환경 관련 뉴스\n📢 NDR2025: Govt to study new laws to protect kids from harmful, toxic content onli...",
+        "content": "\"But today's environment is on a wholly different scale. Everyone is online — always connected, and always within reach on their phones.\". \"When young people become overly immersed in the virtual world, they...",
+        "publish_date": "2025-08-17T21:36:16+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-18T20:54:23.288025+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
