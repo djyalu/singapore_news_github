@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Company director fined for collecting $112k in kickbacks from migrant workers",
+        "url": "https://www.asiaone.com/singapore/company-director-fined-collecting-112k-kickbacks-migrant-workers",
+        "content": "Twelve other charges were taken into consideration for his sentencing, said the Ministry of Manpower (MOM) in a press release. In 2020, Loo and the four individuals collected amounts ranging from $900...",
+        "publish_date": "2025-07-25T13:20:48+09:00",
+        "extracted_by": "traditional",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Company director fined for collecting $112k in kic..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-07-26T10:28:29.288922+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

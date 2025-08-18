@@ -210,5 +210,14 @@
     "group_count": 1,
     "method": "hybrid_ai",
     "summary": "- News: 4개 기사"
+  },
+  {
+    "timestamp": "2025-07-26T10:28:29.297459",
+    "execution_time": "2025-07-26 10:28:29 KST",
+    "status": "success",
+    "article_count": 1,
+    "group_count": 1,
+    "method": "hybrid_ai",
+    "summary": "- News: 1개 기사"
   }
 ]
