@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "3 foreigners arrested for working illegally as delivery riders: Koh Poh Koon",
+        "url": "https://www.asiaone.com/singapore/3-foreigners-arrested-working-illegally-delivery-riders-koh-poh-koon",
+        "summary": "📰 제목: 불법으로 배달업무 종사한 외국인 3명 체포\n\n내용: 싱가포르에서 섬 전역에 걸쳐 실시된 수사에서 불법으로 배달 라이더로 일한 외국인 3명이 체포되었다. 노동부(MOM)의 단속으로 적발된 이들은 근로 비자가 없는 것으로 밝혀졌다. 최근 몇 주간 지속된 단속으로 불법 외국인 노동자 문제에 대한 단속이 강화되고 있다.",
+        "content": "Three foreigners have been arrested in Singapore for allegedly working illegally as delivery riders in Singapore. This comes after the Ministry of Manpower (MOM) conducted islandwide operations over the last few weeks",
+        "publish_date": "2025-08-18T17:10:12+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-20T08:01:22.558941+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
