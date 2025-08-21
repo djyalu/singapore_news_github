@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Zhao Lusi garners more than 23 million followers on RedNote",
+        "url": "https://sg.news.yahoo.com/style/zhao-lusi-garners-more-23-063500826.html",
+        "summary": "📰 제목: 조루시, 레드노트 팔로워 2천3백만 명 돌파\n\n내용: 중국 배우 조루시가 위보(웨이보)는 그만두지만, 외부와 소통하기 위해 소셜미디어에 의존도는 줄여나갈 계획이다. 조루시는 레드노트에서 2천3백여만 명의 팔로워를 확보하며 인기를 이어가고 있다.",
+        "content": "However, despite having left Weibo, Lusi said that she plans to reduce her reliance on social media to interact with the outside world",
+        "publish_date": "2025-08-21T15:35:00+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-22T08:01:32.829082+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
