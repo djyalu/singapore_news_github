@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Macron hits out at Trump over Right-wing influencer who called Brigitte a man",
+        "url": "https://sg.news.yahoo.com/macron-hits-trump-over-ex-192438105.html",
+        "content": "Ms Owens serialised the subject in an eight-part podcast she released this year, called Becoming Brigitte. Since then, Ms Owens has intensified her claims, slamming the libel action...",
+        "publish_date": "2025-08-21T04:24:38+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 마크롱, 트럼프에 분노…우파 인플루언서가 브리지트 여사 '남성비하'\n내용: 우파 인플루언서 미셸 오웬스는 포드캐스트 시리즈 '비커밍 브리지트'에서 브리지트 마크롱 여사를 두고 '남성처럼 행동한다'고 주장하며 도를 넘어선 공격. 이에 마크롱 대통령은 libel action(명예훼손 소송)으로 대응할 예정."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Free breakfast for P6 pupils at Cheers, FairPrice Xpress outlets in September",
+        "url": "https://sg.news.yahoo.com/free-breakfast-p6-pupils-cheers-045500083.html",
+        "content": "Each bundle, which is worth more than $20, will include fresh fruits, wholemeal bread, chicken essence, Milo and cereal. Each pupil is entitled to one breakfast bundle, which will be distributed on a first come, first served basis.",
+        "publish_date": "2025-08-21T13:55:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 9월, Cheers와 FairPrice Xpress 매장에서 초등 6학년생에게 무료 아침 식사 제공\n\n내용: 20달러 상당의 아침 식사 패키지가 신선한 과일, 통곡물 빵, 치킨 에센스, 밀크シェ이크, 시리얼 등으로 구성되어 있으며, 선착순으로 각 학생에게 한 개씩 무료로 제공된다. 이 프로그램은 학생들의 건강한 생활 습관 형성을 장려하기 위해 기획되었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman seeking man who helped to save 4-year-old son from drowning in hotel pool",
+        "url": "https://www.asiaone.com/singapore/woman-seeking-man-who-helped-save-4-year-old-son-drowning-hotel-pool",
+        "content": "SCDF said they sent one person to KK Women's and Children's Hospital. \"Without (the bystander), I wouldn't dare to imagine where we would be today. Because of them, Jasper has a second life,\" Wang said.",
+        "publish_date": "2025-08-21T12:23:24+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 수영장에서 침착하게 구조한 남성에 대한 감사 전하는 어머니\n\n내용: 한 어머니가 4세 아들의 생명을 구해준 남성을 찾아 감사를 전하고 있다. 소식통에 따르면, 아이는 싱가포르의 한 호텔 수영장에서 의식을 잃고 물속에 빠졌고, 신원을 알 수 없는 남성이 신속히 구조했다. 아이는 곧바로 병원에 이송되어 회복 중이며, 어머니는 구조자의 도움 없이는 오늘의 상황을 상상조차 할 수 없다며 감사를 전했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-22T06:15:18.870870+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
