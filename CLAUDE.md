@@ -987,3 +987,35 @@ python scripts/cleanup_old_data.py
 
 **체크포인트**: 
 - `★ 2025-08-18 오후 5시 30분 WhatsApp 테스트 및 자동 스케줄 확인 완료`
+
+### 2025-08-21 WhatsApp 전송 문제 해결
+**시간**: 오후 11시 - 오후 11시 50분  
+**상태**: ✅ 완료
+
+**문제 상황**:
+- 8월 19-20일 WhatsApp으로 뉴스 전송 실패
+- GitHub Actions는 매일 실행되었지만 전송 안 됨
+
+**원인 분석**:
+1. **8월 2-17일**: 스크래핑 성공, WhatsApp 전송 실패 (Green API URL 문제)
+2. **8월 16일**: Green API URL 수정 (`322aff6` 커밋)
+3. **8월 19-21일**: latest.json 미업데이트로 인한 전송 실패
+   - 스크래핑은 성공했지만 latest.json이 8월 16일에서 멈춤
+   - WhatsApp 전송 스크립트가 옛날 파일 참조
+
+**해결 내용**:
+1. **latest.json 수동 업데이트**: 최신 스크래핑 파일로 변경
+2. **Hybrid 모드 유지**: 한국어 AI 요약 계속 제공
+3. **디버깅 도구 추가**:
+   - `check_workflow_status.py`: 워크플로우 상태 확인
+   - `test_whatsapp_send.py`: WhatsApp 전송 조건 테스트
+   - `debug_scraping.py`: 스크래핑 사이트 접근성 테스트
+   - `analyze_scraping_pattern.py`: 스크래핑 패턴 분석
+
+**기술적 성과**:
+- 근본 원인 파악: latest.json 업데이트 로직 문제
+- 시스템 복구: 정상 작동 확인
+- 모니터링 강화: 디버깅 도구로 향후 문제 예방
+
+**체크포인트**: 
+- `★ 2025-08-21 오후 11시 50분 WhatsApp 전송 문제 해결 및 시스템 복구 완료`
