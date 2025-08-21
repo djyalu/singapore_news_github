@@ -19,7 +19,7 @@
     "date": "1"
   },
   "blockedKeywords": "violence, kill, murder, suicide, rape, torture, drugs, cocaine, heroin, meth, marijuana, porn, pornography, nude, vape, e-cigarette, juul, gambling, gore, homicide, trafficking, kidnap, kidnapping, terrorism, bomb, explosion, molestation, pedophile, pedophilia, prostitution, human trafficking, self-harm, cutting, abuse, assault, brutality, alcohol, drunk, weapon, gun, shooting, stabbing, bully, bullying, domestic violence, child abuse, addiction, overdose, war, warfare, military, conflict, clashes, fighting, battle, combat, invasion, attack, missile, tank, submarine, fighter jet, warship, AUKUS, defense pact, arms deal, Ukraine, Russia, Cambodia, Thailand, border dispute, territorial dispute",
-  "scrapingMethod": "traditional",
+  "scrapingMethod": "hybrid",
   "scrapingMethodOptions": {
     "ai": {
       "provider": "gemini",
