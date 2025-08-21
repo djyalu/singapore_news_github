@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Macron hits out at Trump over Right-wing influencer who called Brigitte a man",
+        "url": "https://sg.news.yahoo.com/macron-hits-trump-over-ex-192438105.html",
+        "summary": "📰 제목: 마크롱, 트럼프에 분노…우파 인플루언서의 부인 모욕\n\n내용: 우파 인플루언서 미스 오웬스는 포드캐스트 시리즈 '비커밍 브리짓'에서 브리짓 마크롱을 향한 모욕을 이어가고 있다. 이에 에마뉘엘 마크롱 대통령이 분노하여 법적 대응에 나섰다. 미스 오웬스는 더욱 노골적으로 주장을 펼치며 libel action(명예훼손 소송)에 맞서고 있다.",
+        "content": "Ms Owens serialised the subject in an eight-part podcast she released this year, called Becoming Brigitte. Since then, Ms Owens has intensified her claims, slamming the libel action...",
+        "publish_date": "2025-08-21T04:24:38+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Free breakfast for P6 pupils at Cheers, FairPrice Xpress outlets in September",
+        "url": "https://sg.news.yahoo.com/free-breakfast-p6-pupils-cheers-045500083.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Free breakfast for P6 pupils at Cheers, FairPrice Xpress outlets in September",
+        "content": "Each bundle, which is worth more than $20, will include fresh fruits, wholemeal bread, chicken essence, Milo and cereal. Each pupil is entitled to one breakfast bundle, which will be distributed on a first come, first served basis.",
+        "publish_date": "2025-08-21T13:55:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman seeking man who helped to save 4-year-old son from drowning in hotel pool",
+        "url": "https://www.asiaone.com/singapore/woman-seeking-man-who-helped-save-4-year-old-son-drowning-hotel-pool",
+        "summary": "📰 기술, 관광 관련 뉴스\n📢 Woman seeking man who helped to save 4-year-old son from drowning in hotel pool",
+        "content": "SCDF said they sent one person to KK Women's and Children's Hospital. \"Without (the bystander), I wouldn't dare to imagine where we would be today. Because of them, Jasper has a second life,\" Wang said.",
+        "publish_date": "2025-08-21T12:23:24+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-22T06:15:15.008276+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "manual"
+  }
+]
