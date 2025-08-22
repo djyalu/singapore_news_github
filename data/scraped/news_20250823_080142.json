@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Two die and dozens ill after eating contaminated cheese",
+        "url": "https://sg.news.yahoo.com/two-die-dozens-ill-eating-113206631.html",
+        "summary": "📰 제목: 치즈 섭취 후 두 명 사망, 수십 명 식중독\n\n내용: 오염된 치즈를 먹고 전 세계적으로 발생한 식중독 사건으로 두 명이 사망하고 수십 명이 아팠다. 이번 사건은 지난 12월에서 8월 13일까지 오염된 연질 치즈를 섭취한 사람들이 영향을 받았으며, 리스테리아균에 의해 발생했다. 증상은 고열, 통증, 오한, 구토, 복통, 설사 등이 있다. 유럽질병예방통제센터는 이번 사태를 예의주시하고 있다.",
+        "content": "Two people have died from eating infected soft cheese after a worldwide outbreak. The affected people fell poorly after consuming the cheese between December 2024 and August 13 this year, which is contaminated with Listeria. Symptoms include a high temperature, aches, pains, chills, vomiting, feeling sick, and diarrhoea. The European Centre for Disease Prevention and Control (ECDC)...",
+        "publish_date": "2025-08-21T20:32:06+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump names close political aide as ambassador to India",
+        "url": "https://sg.news.yahoo.com/trump-names-close-political-aide-215755975.html",
+        "summary": "📰 정책, 기술, 관광 관련 뉴스\n📢 Trump names close political aide as ambassador to India",
+        "content": "Gor's influence does not include extensive experience in foreign policy, beyond joining travel overseas and leading a purge of National Security Council staffers whose views were called into suspicion",
+        "publish_date": "2025-08-23T07:29:16+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-23T08:01:42.860231+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
