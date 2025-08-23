@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Barcelona stuns Levante with thrilling comeback in LaLiga",
+        "url": "https://www.straitstimes.com/sport/barcelona-stuns-levante-with-thrilling-comeback-in-laliga",
+        "summary": "📰 제목: 라리가에서 바르셀로나, 레반테에 짜릿한 역전승\n\n내용: 레반테가 전반전에 2골을 앞서갔으나, 바르셀로나가 후반전에 대역전극을 펼쳤다. 마커스 래시포드, 페드리 등의 선수들이 활약하며 4-2로 승리했다. 바르셀로나 선수단도 이번 승리에 만족감을 표했다.",
+        "content": "Levante doubled their lead before the break. Marcus Rashford, making his full debut for the Catalan club after joining on loan from Manchester United, was substituted at halftime. \"We know this isn't an easy field. In the first half, we didn't give the ball the pace it needed. I'll take away the team's reaction,\" Pedri said after the match. Ferran Torres, who had earlier been denied by the...",
+        "publish_date": "2025-08-24T07:58:08.556333+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Doctor accused of recording 4,500 videos in Australian hospital toilets released on bail",
+        "url": "https://sg.news.yahoo.com/doctor-accused-recording-4-500-090014683.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Doctor accused of recording 4,500 videos in Australian hospital toilets released...",
+        "content": "Cho was initially charged with six offences but another 127 charges were added on Thursday, including intentionally recording intimate images without permission.",
+        "publish_date": "2025-08-22T18:00:14+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "3 taken to hospitals, 50 evacuated following Toa Payoh fire",
+        "url": "https://www.asiaone.com/singapore/3-taken-hospitals-50-evacuated-following-toa-payoh-fire",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 3 taken to hospitals, 50 evacuated following Toa Payoh fire",
+        "content": "A flat occupant was rescued from the flat's kitchen and assessed for smoke inhalation and minor burn injuries. The occupant was conscious when taken to the Singapore General Hospital (SGH). Another two people from the neighbouring units were also taken to hospitals. SCDF said its preliminary findings indicate that the fire involved...",
+        "publish_date": "2025-08-22T12:07:33+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-24T08:02:04.228691+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

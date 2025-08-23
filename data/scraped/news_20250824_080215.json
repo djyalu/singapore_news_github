@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Barcelona stuns Levante with thrilling comeback in LaLiga",
+        "url": "https://www.straitstimes.com/sport/barcelona-stuns-levante-with-thrilling-comeback-in-laliga",
+        "content": "Levante doubled their lead before the break. Marcus Rashford, making his full debut for the Catalan club after joining on loan from Manchester United, was substituted at halftime. \"We know this isn't an easy field. In the first half, we didn't give the ball the pace it needed. I'll take away the team's reaction,\" Pedri said after the match. Ferran Torres, who had earlier been denied by the...",
+        "publish_date": "2025-08-24T07:58:08.556333+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 라리가에서 바르셀로나, 레반테에 역전승\n내용: 레반테가 전반전에 2골 리드를 잡았으나 바르셀로나가 후반전에 대역전극을 펼쳤다. 마커스 래시포드, 페드리 등 선수들이 인상적인 활약을 보이며 승리의 주역이 되었다. 바르셀로나 선수단은 경기 후 인터뷰에서 \"어려운 경기였지만 팀의 반응과 집념이 인상적이었다.\"라고 소감을 밝혔다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Doctor accused of recording 4,500 videos in Australian hospital toilets released on bail",
+        "url": "https://sg.news.yahoo.com/doctor-accused-recording-4-500-090014683.html",
+        "content": "Cho was initially charged with six offences but another 127 charges were added on Thursday, including intentionally recording intimate images without permission.",
+        "publish_date": "2025-08-22T18:00:14+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 호주 병원 화장실서 4500개 동영상 촬영한 의사 보석으로 풀려나\n\n내용: 초모씨가 처음에 6개 혐의로 기소됐으나, 목요일 추가된 127개의 혐의로 총 133개의 죄목을 있게 되었다. 그는 동의 없이 사적인 부위 영상을 촬영했다는 혐의를 받고 있으며, 피해자는 대부분 여성이다. 법원은 증거 인멸과 도주 우려가 없다며 보석으로 풀어주었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "3 taken to hospitals, 50 evacuated following Toa Payoh fire",
+        "url": "https://www.asiaone.com/singapore/3-taken-hospitals-50-evacuated-following-toa-payoh-fire",
+        "content": "A flat occupant was rescued from the flat's kitchen and assessed for smoke inhalation and minor burn injuries. The occupant was conscious when taken to the Singapore General Hospital (SGH). Another two people from the neighbouring units were also taken to hospitals. SCDF said its preliminary findings indicate that the fire involved...",
+        "publish_date": "2025-08-22T12:07:33+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 토아 파요 화재로 3명 병원 후송, 50명 대피\n내용: 한 아파트의 주방에 있던 거주자가 구조되어 연기를 흡입하고 경미한 화상을 입어 병원으로 이송되었다. 의식을 유지한 채 후송되었으며, 주변 아파트에 거주던 다른 2명도 병원으로 이동했다. 소방당국은 화재 원인에 대한初步 조사 결과 발표에서 불이 아파트 내부에서 발생한 것으로 추정했다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-08-24T08:02:15.638126+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
