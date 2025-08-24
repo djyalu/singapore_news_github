@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Magnitude 4.1 earthquake strikes Johor; tremors felt in several Malaysian states",
+        "url": "https://www.channelnewsasia.com/asia/malaysia-earthquake-johor-tremors-segamat-5311086",
+        "summary": "📰 제목: 조호르 주에서 규모 4.1 지진 발생, 말레이 여러 주에 진동 느껴져\n내용: 8월 24일 새벽, 말레이의 조호르 주에서 규모 4.1의 지진이 발생하였다. 조호르 주를 비롯해 네게리 세빌란, 멜라카, 파항 주 남부에서 진동이 느껴졌고, 세가맛에서는 주민들이 공포에 빠지기도 했다. 일부 지역에서는 큰 진동과 함께 자동차 경보음이 울리기도 했다.",
+        "content": "JOHOR BAHRU: A weak earthquake struck the Malaysian state of Johor early on Sunday (Aug 24), with tremors felt across several states. The authorities said tremors were felt in most areas in Johor, Negeri Sembilan, Melaka and southern Pahang. It sparked panic among some Segamat residents, who also described hearing a loud sound. Footage of the moment captured on closed-circuit television cameras showed vehicles shaking briefly and car alarms going off. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading A second, milder quake occurred at 9am",
+        "publish_date": "2025-08-25T07:58:32.925483+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Prayer altar catches fire in Boon Keng, 2 sent to hospital after residents put out blaze",
+        "url": "https://www.asiaone.com/singapore/prayer-altar-catches-fire-boon-keng-2-sent-hospital-after-residents-put-out-blaze",
+        "summary": "📰 취업, 기술, 국제 관련 뉴스\n📢 Prayer altar catches fire in Boon Keng, 2 sent to hospital after residents put o...",
+        "content": "Responding to queries from AsiaOne, SCDF stated that they were alerted to the incident at around 4am. Loh also said that Town Council and Residents Network members were at the scene to...",
+        "publish_date": "2025-08-24T12:27:58+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-08-25T08:02:19.749146+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
