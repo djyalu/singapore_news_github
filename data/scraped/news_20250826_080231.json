@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "As SingPost retires SAM kiosks, customers divided on loss of familiar service",
+        "url": "https://www.channelnewsasia.com/singapore/singpost-sam-machine-popdrop-buy-stamps-5304001",
+        "content": "But now, these familiar blue machines are disappearing from post offices, MRT stations and shopping centres. CNA visited six former SAM locations last week and found none in operation",
+        "publish_date": "2025-08-26T07:58:57.470014+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 친숙한 SAM 키오스크 서비스 중단에 고객들 의견 갈려\n\n내용: 싱가포우 우편서비스인 SingPost가 설치했던 파란색 키오스크인 SAM이 사라진다. 지난 주 CNA 취재 결과, 과거 SAM이 설치됐던 우체국, MRT 역, 쇼핑센터 등에서는 더이상 운영되는 곳이 없었다. 고객들은 편리한 서비스 사라짐에 아쉬움을 표하는 반면, 일부에서는 온라인 쇼핑 증가로 인한 변화가 불가피하다고 본다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/chinese-property-giant-evergrande-delisted-232054428.html",
+        "content": "It marks a grim milestone for what was once China's biggest real estate firm, with a stock market valuation of more than $50bn (£37.1bn). Experts say the delisting was both inevitable and final. \"Once delisted, there is no coming back,\" says Dan Wang, China director at political risk consultancy Eurasia Group. Just a few years ago Evergrande Group was a shining example of China's economic miracle. His fortune has since plummeted from an estimated $45bn in 2017 to less than a...",
+        "publish_date": "2025-08-25T15:40:16+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 파이낸스의 싱가포르 뉴스\n내용: 중국 최고 부동산 기업이었던 에버그란데 그룹의 주가가 싱가포르 증시에서 퇴출되었다. 전문가들은 시가총액 50억 달러 이상이었던 에버그란데의 몰락이 피할 수 없었던 일이며, 이번 퇴출로 완전히 사라질 것이라고 평했다. Dan Wang은 \"퇴출 후 복귀는 불가능하다.\"라고 전했다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-26T08:02:31.165118+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

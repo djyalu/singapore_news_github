@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "As SingPost retires SAM kiosks, customers divided on loss of familiar service",
+        "url": "https://www.channelnewsasia.com/singapore/singpost-sam-machine-popdrop-buy-stamps-5304001",
+        "summary": "📰 제목: 싱가포우우편서비스, 친숙한 자판기 서비스 중단에 고객들 엇갈려\n내용: 블루색으로 친숙한 자판기 'SAM 키오스크'가 우체국, MRT 역, 쇼핑센터에서 사라진다. CNA 취재 결과, 과거 설치됐던 6곳의 SAM은 모두 운영을 중단한 상태다. 고객들은 편리함이 사라진다며 아쉬워하는 반면, 일부에서는 기술의 진화로 어쩔 수 없는 변화라 이해한다.",
+        "content": "But now, these familiar blue machines are disappearing from post offices, MRT stations and shopping centres. CNA visited six former SAM locations last week and found none in operation",
+        "publish_date": "2025-08-26T07:58:57.470014+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/chinese-property-giant-evergrande-delisted-232054428.html",
+        "summary": "📰 경제, 금융, 국제 관련 뉴스\n📢 Yahoo Finance",
+        "content": "It marks a grim milestone for what was once China's biggest real estate firm, with a stock market valuation of more than $50bn (£37.1bn). Experts say the delisting was both inevitable and final. \"Once delisted, there is no coming back,\" says Dan Wang, China director at political risk consultancy Eurasia Group. Just a few years ago Evergrande Group was a shining example of China's economic miracle. His fortune has since plummeted from an estimated $45bn in 2017 to less than a...",
+        "publish_date": "2025-08-25T15:40:16+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-26T08:02:24.889332+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
