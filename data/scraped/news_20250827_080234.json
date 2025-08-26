@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Timbre responds to criticism of its management of Yishun Park Hawker Centre",
+        "url": "https://www.channelnewsasia.com/singapore/yishun-park-hawker-centre-timbre-kf-seetoh-rentals-cctv-5315101",
+        "summary": "📰 제목: 티ンブ레, 이쉬운 파크 노점센터 운영 관리 비판에 응답\n내용: 싱가포르의 이쉬운 파크 노점센터는 사회공헌형 노점센터로, 티ンブ레가 운영을 맡았으나 수익 배분률과 관련해 비판을 받음. 티ンブ레는 \"정부가 노점센터를 세우고 티브레에 운영을 위임했으며, 임대료 수익의 15%만 가져간다\"고 반박하며 사실관계를 바로잡음.",
+        "content": "Yishun Park Hawker Centre is one of several Socially-conscious Enterprise Hawker Centres (SEHCs) in Singapore. \"We fully agree that without proper support, the hawker culture that is core to Singapore and Singaporeans may fade away. However, Timbre would like to clarify the facts raised.\". \"The (government) built it, paid Timbre to manage it, they collect rent and conveniently take 15 per cent...",
+        "publish_date": "2025-08-27T07:59:02.449953+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Platform workers air frustrations on unclear fares, illegal 'hitch' rides and other issues in dialogue with Ng Chee Meng",
+        "url": "https://www.channelnewsasia.com/singapore/platform-workers-ntuc-drivers-delivery-riders-illegal-workers-hitch-5315191",
+        "summary": "📰 제목: 플랫폼 노동자들이 응급망, 불투명한 요금체계, 불법 '히치' 승차 문제에 대해 토로하다\n내용: 싱가포르의 플랫폼 노동자들이 응급망 미비와 불투명한 운임체계 등으로 인해 불만을 표출했다. 그들은 텔레그램 채팅그룹 'SG Hitch'를 통해 대화 형식으로 부당함을 알리고 있는데, 이 그룹의 회원수는 무려 14만 명에 이른다. 최근 두 달 사이 두 번째 열린 대화 자리에서, 노동자대표들은 고위 관리자인 응 치 민과 만나 문제점들을 제기했다.",
+        "content": "He pointed out one Telegram chat group, SG Hitch, which has close to 140,000 members. This is the second such dialogue in as many months, after an earlier one in...",
+        "publish_date": "2025-08-27T07:59:09.104016+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Heir to Malaysian fortune Rachel Lau seeks US$200 million for private markets",
+        "url": "https://sg.news.yahoo.com/heir-to-malaysian-rachel-lau-fortune-seeks-us200-million-for-private-markets-040159421.html",
+        "summary": "📰 경제, 국제 관련 뉴스\n📢 Heir to Malaysian fortune Rachel Lau seeks US$200 million for private markets",
+        "content": "“You need more permanent capital from insurance, pensions, and sovereign funds.”. Founded in 2020, Iris is seeking to launch the private markets fund early next year. Today, family capital anchors about 25 per cent of the firm’s assets, while the rest comes from third-party institutions. Anchor investors of Iris include Kim Dong-won, a scion of the...",
+        "publish_date": "2025-08-26T13:30:49+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-27T08:02:34.635287+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
