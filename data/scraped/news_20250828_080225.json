@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "‘I smell and taste spoilt milk’: The man behind your everyday drinks",
+        "url": "https://www.straitstimes.com/business/i-smell-and-taste-spoilt-milk-the-man-behind-your-everyday-drinks",
+        "summary": "📰 제목: 내가 매일의 음료를 책임진다\n\n내용: 다양한 우유 종류가 커피의 맛을 바꿔준다. 음료와 식품을 담당하는 직원은 일상적인 업무의 일부로, 우유 향과 맛의 미세한 차이를 감별한다. 그들은 일에 열정적이다.",
+        "content": "I deal with food products as well, although they make up only a small portion of my work. My colleagues and I are passionate about our jobs. Different milk specifications can alter the flavour of a cup of coffee",
+        "publish_date": "2025-08-28T07:58:30.820919+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says Democratic donor Soros and son should be charged with corruption, offers no evidence",
+        "url": "https://www.channelnewsasia.com/world/trump-says-democratic-donor-soros-and-son-should-be-charged-corruption-offers-no-evidence-5317966",
+        "summary": "📰 제목: 트럼프, 민주당 기부자 소로스와 아들에 부패 혐의 제기하며 증거는 제시 못 해\n내용: 트럼프가 95세 홀로코스트 생존자인 조지 소로스와 그의 아들에게 부패 혐의를 가했다. 소로스의 '오픈 소사이어티 파운데이션'은 인권, 교육, 의료, 통치에 관련한 세계적 프로젝트에 자금을 지원한다. 그는 소로스와 그의 서해안 친구들이 주의 깊게 감시받고 있다며 경고했다.",
+        "content": "Soros, a 95-year-old Holocaust survivor, has long been a target of Trump and his conservative supporters. His philanthropic organisation, Open Society Foundations, funds human rights, education, health and governance projects around the world. “That includes his Crazy, West Coast friends. Be careful, we’re watching you!”",
+        "publish_date": "2025-08-28T07:58:59.276870+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman says Kpod-addicted son 'threatened to jump' with grandson after quarrelling over money",
+        "url": "https://www.asiaone.com/singapore/woman-says-kpod-addicted-son-threatened-jump-grandson-after-quarrelling-over-money",
+        "summary": "📰 주택, 기술 관련 뉴스\n📢 Woman says Kpod-addicted son 'threatened to jump' with grandson after quarrellin...",
+        "content": "He'd also twice threatened to jump from their HDB block with his five-year-old son, said his mum. She added that after using (Kpods), he would walk unsteadily and easily lose control of his emotions. He had even hit his head against the wall several...",
+        "publish_date": "2025-08-27T13:08:26+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-08-28T08:02:25.431062+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

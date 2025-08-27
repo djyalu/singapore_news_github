@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "‘I smell and taste spoilt milk’: The man behind your everyday drinks",
+        "url": "https://www.straitstimes.com/business/i-smell-and-taste-spoilt-milk-the-man-behind-your-everyday-drinks",
+        "content": "I deal with food products as well, although they make up only a small portion of my work. My colleagues and I are passionate about our jobs. Different milk specifications can alter the flavour of a cup of coffee",
+        "publish_date": "2025-08-28T07:58:30.820919+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 내가 매일의 음료에 코를 고운 이유\n\n내용: 다양한 우유 종류가 커피의 맛을 바꾼다. 음료와 식품을 다루는 직种의 하루. 그들은 일상적인 음료에 대한 열정적인 접근으로 다양한 우유 사양으로 커피의 풍미를 바꿔준다. 한 예로, 다른 우유 종류는 커피 한 잔의 맛을 완전히 바꿔 놓을 수 있다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says Democratic donor Soros and son should be charged with corruption, offers no evidence",
+        "url": "https://www.channelnewsasia.com/world/trump-says-democratic-donor-soros-and-son-should-be-charged-corruption-offers-no-evidence-5317966",
+        "content": "Soros, a 95-year-old Holocaust survivor, has long been a target of Trump and his conservative supporters. His philanthropic organisation, Open Society Foundations, funds human rights, education, health and governance projects around the world. “That includes his Crazy, West Coast friends. Be careful, we’re watching you!”",
+        "publish_date": "2025-08-28T07:58:59.276870+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 트럼프, 민주당 기부자 소로스와 아들 부패 혐의로 고발해야 한다고 주장\n내용: 도널드 트럼프가 95세 홀로코스트 생존자인 조지 소로스와 그의 아들에게 부패 혐의로 고발해야 한다고 주장함. 증거는 제시하지 않음. 소로스의 '오픈 소사이어티 파운데이션'은 인권, 교육, 보건, 통치에 관련한 자선 활동을 지원함."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman says Kpod-addicted son 'threatened to jump' with grandson after quarrelling over money",
+        "url": "https://www.asiaone.com/singapore/woman-says-kpod-addicted-son-threatened-jump-grandson-after-quarrelling-over-money",
+        "content": "He'd also twice threatened to jump from their HDB block with his five-year-old son, said his mum. She added that after using (Kpods), he would walk unsteadily and easily lose control of his emotions. He had even hit his head against the wall several...",
+        "publish_date": "2025-08-27T13:08:26+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 아들과 손자가 돈 문제로 다투다 건물에서 투신 위협\n내용: 한 여성은 자신의 아들이 각성제 'Kpod'에 중독되어 있다고 주장하며, 아들과 손자가 돈 문제로 다툰 후 아파트에서 뛰어내리겠다고 위협했다고 보고했다. 어머니에 따르면, Kpod를 복용한 후 아들의 보행이 불steady해지고 감정 통제가 어려워지며, 벽에 머리를 부딪치는 등 자해 행동도 보이고 있다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-08-28T08:02:34.728258+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
