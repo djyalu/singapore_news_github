@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "‘I smell and taste spoilt milk’: The man behind your everyday drinks",
+        "url": "https://www.straitstimes.com/business/i-smell-and-taste-spoilt-milk-the-man-behind-your-everyday-drinks",
+        "summary": "📰 제목: 일상 음료의 숨은 조력자, '나는 고장난 우유를 냄새 맡고 맛볼 수 있다'\n\n내용: 다양한 우유 종류가 커피의 맛을 바꾼다. 식음료가 주업무는 아니지만, 열정적인 그는 밀크 커피의 미묘한 맛 차이를 알아채는 데에 도가 튼 전문가다. \n\n그는 다양한 우유의 향과 맛으로 커피의 풍미를 변화시키는 데에 열광적이다.",
+        "content": "I deal with food products as well, although they make up only a small portion of my work. My colleagues and I are passionate about our jobs. Different milk specifications can alter the flavour of a cup of coffee",
+        "publish_date": "2025-08-29T07:58:34.624662+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Modest food aid increase not enough to stop Gaza starvation, says WFP chief",
+        "url": "https://www.channelnewsasia.com/world/modest-food-aid-increase-not-enough-stop-gaza-starvation-says-wfp-chief-5321056",
+        "summary": "📰 제목: 가자지구 기아 막기 위해 식량 지원 증가 필요\n내용: 세계식량계획(WFP) 책임자가 식량 지원 규모가 조금 늘기는 했으나 가자지구 주민들의 기아를 막기에는 충분하지 않다고 전했다. 그는 이스라엘의 네타냐후 총리와 만난 후, 식량 유입을 서두르기로 합의했다. 하지만 현재 상황으로는 가자지구 주민들의 굶주림을 막을 수 없다고 우려를 표했다.",
+        "content": "“We're getting a little bit more food in. We're moving in the right direction . McCain met Israeli Prime Minister Benjamin Netanyahu in Jerusalem, where their offices said they agreed to redouble efforts to expedite and sustain the entry...",
+        "publish_date": "2025-08-29T07:58:52.436245+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Schools get nicotine test kits as student vaping cases surge to 3,100 yearly",
+        "url": "https://www.channelnewsasia.com/singapore/vaping-schools-students-nicotine-tests-kpod-5317436",
+        "summary": "📰 제목: 학생 흡연 적발을 위해 싱가포르 학교에 니코틴 테스트 키트 배포\n\n내용: 싱가포르의 초·중·고교와 대학에 니코틴 테스트 키트가 배포되었다. 최근 학생들 사이에서 급증하는 전자담배 흡연 문제에 대처하기 위함이다. 특히 대학생들의 흡연 적발 건수는 yearly 800건에 달하며, 2020년 이전에는 50건 미만이었다. 교육기관에서 발생한 흡연 적발 건수는 즉시 보고된다.",
+        "content": "SINGAPORE: Schools across Singapore, from primary to junior colleges, have been issued nicotine test kits amid a sharp rise in vaping among students. In the institutes of higher learning, about 800 students were caught a year during the same period. In contrast, fewer than 50 cases from schools and institutes of higher learning were referred to the Health Sciences Authority (HSA) before 2020. The nicotine test kits have been issued to around 260 schools since March, following requests from schools, MOE said on Thursday (Aug 28). All vaping incidents in educational institutions will be reported to the authorities. From Sep 1, students may face school-based penalties such as detention, suspension, caning (for boys), conduct grade adjustments and rehabilitative counselling. In institutes of higher learning, disciplinary...",
+        "publish_date": "2025-08-29T07:58:59.872505+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/sales-numbers-pre-owned-tesla-003000083.html",
+        "summary": "📰 정부, 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "This is especially true for pre-owned models, whose values continue to plummet. As of August, CarGurus lists the average price of a used Cybertruck at just over $84,000. That's nearly a 30% difference from this time last year. The average price for any used Tesla vehicle is just under $28,000. That marks about a 14% drop year over year. Some experts have pointed to CEO Elon Musk for the prolonged downturn. According to Gizmodo, Tesla's second-quarter revenue declined over 16% compared to 2024. Though Musk stepped down from his role at the Department of Government Efficiency and...",
+        "publish_date": "2025-08-28T09:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "CDC gets new acting director as leadership turmoil leaves agency reeling",
+        "url": "https://sg.news.yahoo.com/news/articles/departing-cdc-officials-monarezs-firing-161134622.html",
+        "summary": "📰 정부, 보건, 교통 관련 뉴스\n📢 CDC gets new acting director as leadership turmoil leaves agency reeling",
+        "content": "The turmoil triggered rare bipartisan alarm as Kennedy tries to advance anti-vaccine policies that are contradicted by decades of scientific research. Two administration officials said Jim O'Neill, a former investment executive, would supplant Susan Monarez, a longtime government scientist. O'Neill worked at the Department of Health and Human Services under President George W. Bush, but he does not have a medical background. The officials requested anonymity to discuss personnel decisions before a public announcement. The panel is scheduled to review standard childhood...",
+        "publish_date": "2025-08-29T01:11:34+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2025-08-29T08:02:29.215567+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
