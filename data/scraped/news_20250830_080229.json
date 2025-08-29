@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Faishal Ibrahim says he will keep voicing Muslim community's concerns about Gaza to government",
+        "url": "https://www.channelnewsasia.com/singapore/israel-gaza-singapore-faishal-ibrahim-muslim-affairs-5320461",
+        "content": "He added that Prime Minister Lawrence Wong had encouraged him to continue engaging the community. Associate Professor Faishal said he also wanted to ensure that Singaporeans understood the position the country had maintained over the decades",
+        "publish_date": "2025-08-30T07:58:29.900864+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 파이스 이브라힘, 가자 문제에 대한 무슬림 사회의 우려 정부에 지속 전달\n\n내용: 싱가포르 야당 정치인 파이스 이브라힘은 무슬림 사회가 가지고 있는 가자 문제에 대한 우려를 계속해서 정부에 전달하겠다고 밝혔다. 로렌스 웽 총리 역시 lui에게 지역사회와의 소통을 장려했으며, 파이스 이브라힘은 싱가포르의 수십 년간 유지해온 입장을 국민들이 이해할 수 있게 하고 싶다고 전했다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asia-stocks-mixed-wall-st-032716239.html",
+        "content": "Investors widely expect a cut next month to bolster the world's largest economy after Federal Reserve chief Jerome Powell signaled last week the risks of labor market weakness",
+        "publish_date": "2025-08-30T06:09:50+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 파이낸스\\n내용: 연방 준비제도 의장인 제롬 파월이 지난주 노동 시장의 약세를 시사한 후 투자자들이 널리 기대하고 있듯이, 다음 달에 금리 인하가 단행될 것으로 전망된다. 세계 최대의 경제체인 미국의 경기 부양을 위해 필수적인 조치로 여겨진다. 특히 9월이 될 것으로 예상되는 다음 회의에서 0.25%의 금리 인하가 예상된다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-30T08:02:29.257540+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

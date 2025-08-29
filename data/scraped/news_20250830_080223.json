@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Faishal Ibrahim says he will keep voicing Muslim community's concerns about Gaza to government",
+        "url": "https://www.channelnewsasia.com/singapore/israel-gaza-singapore-faishal-ibrahim-muslim-affairs-5320461",
+        "summary": "📰 제목: 파이스 이브라힘, 가자 문제에 대한 무슬림 사회의 우려 정부에 지속 전달할 것\n\n내용: 싱가포르 야당 의원 파이스 이브라힘은 무슬림 사회가 우려하는 가자 문제를 정부에 계속 제기할 것이라고 밝혔다. Lawrence Wong 총리도 이를 권격하며 사회와의 소통을 독려 said. 그는 또한 싱가포르 국민들이 수십 년간 유지해온 국가의 입장을 이해할 수 있게 하고 싶다고 전함.",
+        "content": "He added that Prime Minister Lawrence Wong had encouraged him to continue engaging the community. Associate Professor Faishal said he also wanted to ensure that Singaporeans understood the position the country had maintained over the decades",
+        "publish_date": "2025-08-30T07:58:29.900864+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asia-stocks-mixed-wall-st-032716239.html",
+        "summary": "📰 경제, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Investors widely expect a cut next month to bolster the world's largest economy after Federal Reserve chief Jerome Powell signaled last week the risks of labor market weakness",
+        "publish_date": "2025-08-30T06:09:50+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-30T08:02:23.749858+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
