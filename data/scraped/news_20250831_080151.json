@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chicago Mayor Signs Order Over 'Escalating Threats From The Federal Government'",
+        "url": "https://sg.news.yahoo.com/chicago-mayor-signs-order-over-222126976.html",
+        "summary": "📰 제목: 시카고로 이어지는 트럼프 정부의 위협에 대한 시카고 시장의 대응 조치\n\n내용: 시카고 시장 브랜던 존슨은 도널드 트럼프 대통령의 이민 단속 강화 계획에 맞서고자 토요일에 행정명령을 발동했다. 이 조치는 트럼프 대통령의 '범죄 긴급사태' 선포 후 워싱턴 D.C.에 이어 시카고로 국립경비대를 파견하겠다는 위협에 대응하는 것이다. 이 행정명령은 이민자 커뮤니티의 권리를 보호하고, 단속 작전에 대한 정보를 시 당국에 제공하도록 요구하며, 단속으로 인한 권리 침해에 대한 고소 절차를 간소화한다.",
+        "content": "Chicago Mayor Brandon Johnson signed an executive order Saturday aimed at pushing back against President Donald Trump’s threats of a planned immigration crackdown in the city. “You’re going to see a ramp-up of operations in Chicago, absolutely,” Homan said during a press briefing. “You’re going to see a ramp-up of operations in New York. Trump may also send in the National Guard after he deployed them in D.C. earlier this month over what he called a “crime emergency.” But National Guard members ― including some...",
+        "publish_date": "2025-08-31T07:21:26+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pasir Panjang Wholesale Centre must address fire safety issues before getting lease extension: SFA",
+        "url": "https://www.asiaone.com/singapore/pasir-panjang-wholesale-centre-must-address-fire-safety-issues-getting-lease-extension",
+        "summary": "📰 싱가포르, 취업, 기술 관련 뉴스\n📢 Pasir Panjang Wholesale Centre must address fire safety issues before getting le...",
+        "content": "PPWC's lease expires in 2026. It is Singapore's largest wholesale centre for fruits, vegetables and dried goods. The lease for JFP, Singapore's only fishery port, expires in 2030. The Authority said that approximately 200 shops in the centre must undertake fire safety compliance works, including installing in-unit sprinkler systems",
+        "publish_date": "2025-08-29T17:35:58+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-31T08:01:51.529968+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

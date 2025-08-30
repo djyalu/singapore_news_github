@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chicago Mayor Signs Order Over 'Escalating Threats From The Federal Government'",
+        "url": "https://sg.news.yahoo.com/chicago-mayor-signs-order-over-222126976.html",
+        "content": "Chicago Mayor Brandon Johnson signed an executive order Saturday aimed at pushing back against President Donald Trump’s threats of a planned immigration crackdown in the city. “You’re going to see a ramp-up of operations in Chicago, absolutely,” Homan said during a press briefing. “You’re going to see a ramp-up of operations in New York. Trump may also send in the National Guard after he deployed them in D.C. earlier this month over what he called a “crime emergency.” But National Guard members ― including some...",
+        "publish_date": "2025-08-31T07:21:26+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 시카코 시장, 연방정부의 상승하는 위협에 맞서 행정명령에 서명\n\n내용: 시카코 시장 Brandon Johnson은 도널드 트럼프 대통령의 계획된 이민 단속 강화에 대응하여 주말에 행정명령을 발동했다. 이 단속으로 인해 시카코와 뉴욕에서 이민 단속 작전이 증가할 것으로 예상되며, 트럼프는 이전에 워싱턴 D.C.에 국가비상사태를 선포하고 국립경비대를 파견한 바 있다. Brandon Johnson 시장은 트럼프 정부에 맞서 싸우기 위해 시카고에 '이민자 보호 도시'를 설립하는 계획을 세우고 있다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pasir Panjang Wholesale Centre must address fire safety issues before getting lease extension: SFA",
+        "url": "https://www.asiaone.com/singapore/pasir-panjang-wholesale-centre-must-address-fire-safety-issues-getting-lease-extension",
+        "content": "PPWC's lease expires in 2026. It is Singapore's largest wholesale centre for fruits, vegetables and dried goods. The lease for JFP, Singapore's only fishery port, expires in 2030. The Authority said that approximately 200 shops in the centre must undertake fire safety compliance works, including installing in-unit sprinkler systems",
+        "publish_date": "2025-08-29T17:35:58+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 파시르 판장 도매센터, 화재 안전 문제 해결해야 임대 연장 가능\n내용: 싱가포르 식품청은 파시르 판장 도매센터(PPWC)가 2026년 만료되는 임대 연장을 위해서는 화재 안전 문제들을 해결해야 한다고 통보했다. PPWC는 과일, 채소, 건어물 등新加坡 최대 도매센터이며, 수산물 단지인 제프리스 피싱 포트(JFP) 역시 2030년 임대 만료를 앞두고 있다. 식품청은 센터 내 200여 개 상점이 스프레이 시스템과 같은 화재 안전 기준을 준수할 것을 요구했다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-08-31T08:01:59.748603+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
