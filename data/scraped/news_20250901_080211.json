@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "'I lied to protect my family': Woman scammed $250k by fraudsters posing as Chinese police",
+        "url": "https://www.asiaone.com/singapore/i-lied-protect-my-family-woman-scammed-250k-fraudsters-posing-chinese-police",
+        "summary": "📰 제목: 중국 경찰 사칭 사기에 싱가포르 여성, 3억 원 넘게 속아\n내용: 싱가포르의 한 여성이 중국 경찰을 사칭한 사기범들에게 약 250,000싱가포르 달러(한화 약 2억 3천만 원)를 속아 넘겼다. 피해자 탄 씨는 통상 중국에서 오는 전화에 주의하지만, 이번에는 먼저 돈을 요구하지 않고 신분 확인만 해 이례적이어서 속았다고. 사기범들은彼女の 이름으로 비행 취소 및 보험 청구가 이루어졌다며 탄 씨를 속였다.",
+        "content": "\"I am usually cautious about calls from China. \"But this one didn't ask for money upfront. They were just verifying my identity at first.\". Tan, a Singaporean, shared that the caller claimed there were irregularities involving flight cancellations and insurance claims under her name",
+        "publish_date": "2025-08-30T16:00:00+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Coastal barriers, raised structures to protect Greater Southern Waterfront, Changi from rising seas",
+        "url": "https://www.asiaone.com/singapore/coastal-barriers-raised-structures-protect-greater-southern-waterfront-changi-rising-seas",
+        "summary": "📰 창이, 경제, 기술 관련 뉴스\n📢 Coastal barriers, raised structures to protect Greater Southern Waterfront, Chan...",
+        "content": "The proposals are part of PUB's first site-specific coastal protection study for the City-East Coast, which also covers the upcoming Long Island project. The Long Island project, announced in 2023, is an integrated solution that will protect the entire East Coast area. Together with GSW and Changi, the measures will form a continuous line of defence against coastal flooding. \"Coastal protection requires long term and careful planning. And trade offs are inevitable. There are still coastlines with unique characteristics that we will proceed with site specific studies progressively.",
+        "publish_date": "2025-08-30T13:25:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-09-01T08:02:11.930392+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

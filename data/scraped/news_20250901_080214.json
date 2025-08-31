@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "'I lied to protect my family': Woman scammed $250k by fraudsters posing as Chinese police",
+        "url": "https://www.asiaone.com/singapore/i-lied-protect-my-family-woman-scammed-250k-fraudsters-posing-chinese-police",
+        "content": "\"I am usually cautious about calls from China. \"But this one didn't ask for money upfront. They were just verifying my identity at first.\". Tan, a Singaporean, shared that the caller claimed there were irregularities involving flight cancellations and insurance claims under her name",
+        "publish_date": "2025-08-30T16:00:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 중국 경찰 사칭 사기에 싱가포르 여성, 25만불 피해\n내용: 싱가포르의 한 여성이 중국 공안으로 사칭한 사기꾼들에게 25만 불을 사기당했다. 피해자 탄 씨는 처음에는 신원 확인만 한다고 해서 경각심을 늦추었다가, 비행 취소 및 보험 사기 연루를 주장하는 사기꾼의 말에 속았다. 사기꾼들은 탄 씨의 가족을 보호하기 위해 돈을 보내야 한다고 주장했고, 탄 씨는 결국 속아 넘겨주었다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Coastal barriers, raised structures to protect Greater Southern Waterfront, Changi from rising seas",
+        "url": "https://www.asiaone.com/singapore/coastal-barriers-raised-structures-protect-greater-southern-waterfront-changi-rising-seas",
+        "content": "The proposals are part of PUB's first site-specific coastal protection study for the City-East Coast, which also covers the upcoming Long Island project. The Long Island project, announced in 2023, is an integrated solution that will protect the entire East Coast area. Together with GSW and Changi, the measures will form a continuous line of defence against coastal flooding. \"Coastal protection requires long term and careful planning. And trade offs are inevitable. There are still coastlines with unique characteristics that we will proceed with site specific studies progressively.",
+        "publish_date": "2025-08-30T13:25:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 연안 방벽과 고가 구조물로 광역 남부 수변과 창이를 침수로부터 보호한다\n\n내용: PUB의 첫 번째 지역별 연안 보호 연구에 따른 제안으로, 2023년에 발표된 롱아일랜드 프로젝트도 포함된다. 롱아일랜드 프로젝트와 광역 남부 수변, 창이에 적용되는 이 조치는 연안 홍수에 대한 연속된 방어선이 될 것이다. 연안 보호를 위해 장기적이고 신중한 계획이 필요하며, 고유의 특성을 가진 연안지역은 개별 연구 대상이 된다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-09-01T08:02:14.767157+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

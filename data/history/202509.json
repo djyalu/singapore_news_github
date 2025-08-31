@@ -1,0 +1,13 @@
+[
+  {
+    "id": "20250901080217",
+    "timestamp": "2025-09-01T08:02:17.346146+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 2개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 09월 01일 08:02\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 2개 기사\n\n【 News 】\n📍 출처: AsiaOne\n\n\n1. 📰 제목: 중국 경찰 사칭 사기에 싱가포르 여성, 25만불 피해\n내용: 싱가포르의 한 여성이 중국 공안으로 사칭한 사기꾼들에게 25만 불을 사기당했다. 피해자 탄 씨는 처음...",
+    "message_length": 867,
+    "article_count": 2,
+    "api": "green-api"
+  }
+]
