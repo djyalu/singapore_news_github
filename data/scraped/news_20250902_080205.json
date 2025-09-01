@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Guyana votes amid oil boom, Venezuela tensions",
+        "url": "https://sg.news.yahoo.com/guyana-votes-amid-oil-boom-170309930.html",
+        "content": "Venezuelan Defense Minister Vladimir Padrino Lopez on Monday rejected the claims and said they were intentionally provocative. Guyanese voters, meanwhile, had other issues on their minds in one of Latin America's poorest countries. According to a 2024 report by the Inter-American...",
+        "publish_date": "2025-09-02T05:54:39+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 기아나, 석유 붐과 베네수엘라 긴장 속 투표\n\n내용: 베네수엘라 국방장관 블라디미르 파드린 로페즈가 최근의 주장들을 거부했다. 그는 그 주장들이 고의로 도발적인 것이라고 말했다. meanwhile, 투표에 참여한 기아나 시민들은 라틴 아메리카에서 가장 가난한 국가의 하나에 속해있는 다른 문제들에 집중했다. 2024년 Inter-American의 보고서에 따르면..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "End of a cinema icon: Cathay Cineplexes to undergo voluntary liquidation",
+        "url": "https://www.asiaone.com/singapore/end-cinema-icon-cathay-cineplexes-undergo-voluntary-liquidation",
+        "content": "The cinema chain faced multiple payment demands from landlords of its outlets over arrears and other monies owed over recent months, according to The Business Times",
+        "publish_date": "2025-09-01T11:20:51+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 영화관 아이콘의 종말: 캐세이 시네플렉스, 자발적 청산 절차에 돌입\n내용: 임대료 등 지불 요구에 직면한 캐세이 시네플렉스가 청산 절차에 돌입한다. 부동산 임대업체들은 최근 몇 달간 임차료 연체로 고통받아왔다. 캐세이 시네플렉스는 1992년부터 싱가포르에서 영화관 체인을 운영해왔다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Further steps' against comedian Sammy Obeid's censorship claim may be necessary, Edwin Tong says",
+        "url": "https://www.asiaone.com/singapore/further-steps-against-comedian-sammy-obeids-censorship-claim-may-be-necessary-edwin-tong",
+        "content": "Tong told the media that Obeid \"implied that IMDA (Info-communications Media Development Authority) wanted to edit his script\" and that several rounds of proposed edits took place. He had earlier made posts on social media last Wednesday (Aug 27) claiming that he...",
+        "publish_date": "2025-09-01T15:49:12+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: Sammy Obeid의 검열 주장에 대한 추가 조치가 필요할 수도 있어\n내용: 에드윈 통(Edwin Tong)은 Sammy Obeid가 IMDA(Info-communications Media Development Authority)가 그의 각본을 편집하려고 한다고 암시했다며, 여러 차례의 편집 제안이 오간 후 추가 조치가 필요할 수 있다고 언급했다. Obeid는 지난 수요일(8월 27일) 소셜 미디어에 해당 사안을 올린 바 있다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-02T08:02:05.365350+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
