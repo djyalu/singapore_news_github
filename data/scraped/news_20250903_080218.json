@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "FairPrice doubles discounts for blue, orange Chas card holders with large families till Dec 31",
+        "url": "https://sg.news.yahoo.com/fairprice-doubles-discounts-blue-orange-022500135.html",
+        "summary": "📰 제목: 대가족을 위한 페어프라이스 할인율 두 배로 증가\n내용: 12월 31일까지 blue, orange Chas 카드를 소지한 대가족들에게 할인율을 두 배로 증가시킨다. 3명 이상의 미성년 자녀를 둔 가정이 대상이며, FPG 최고경영자 Vipul Chawla는 일상적으로 필요한 물품에 대한 가계 부담을 줄여주고자 이 같은 결정을 내렸다고 전했다.",
+        "content": "The discount is applicable to these card holders with three or more children under 18 years old. FPG chief executive Vipul Chawla said: “As a household brand with the mission to keep daily...",
+        "publish_date": "2025-09-02T11:25:00+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-03T08:02:18.452905+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
