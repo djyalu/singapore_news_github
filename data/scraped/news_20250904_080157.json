@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesian islanders take on Swiss cement giant Holcim in landmark climate case",
+        "url": "https://www.channelnewsasia.com/world/indonesian-islanders-take-swiss-cement-giant-holcim-landmark-climate-case-5331556",
+        "summary": "📰 제목: 인도네시아 섬 주민들, 스위스의 시멘트 대기업을 상대로 한 기후소송에서 승소 기대\n\n내용: 주로 석유회사가 대상이 되었던 기후소송에서 이번에는 시멘트 산업을 상대로 한 소송이 이목을 끈다. 인도네시아 섬 주민들이 시멘트 생산으로 인한 기후 변화 피해를 주장하며 스위스의 대기업 홀시름을 상대로 한 소송에서 승소할 것으로 기대하고 있다. 시멘트 산업은 온실가스 배출량에서 상당한 비중을 차지한다.",
+        "content": "\"I believe the judges will stand for us, so we will win.\". While oil companies have traditionally been targeted, campaigners say the Holcim case shines a spotlight on the cement industry, which accounts for...",
+        "publish_date": "2025-09-04T07:58:40.722617+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Dog confined to service balcony in Toa Payoh flat removed by NParks, investigations ongoing",
+        "url": "https://sg.news.yahoo.com/dog-confined-balcony-toa-payoh-074339891.html",
+        "summary": "📰 주택, 기술 관련 뉴스\n📢 Dog confined to service balcony in Toa Payoh flat removed by NParks, investigati...",
+        "content": "“Given the unsafe housing conditions and concerns over the dog’s welfare, NParks seized the dog. The dog is well and currently under our care,” she said",
+        "publish_date": "2025-09-03T16:43:39+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ecuador charges trio in presidential hopeful's assassination",
+        "url": "https://sg.news.yahoo.com/ecuador-charges-trio-presidential-hopefuls-223702973.html",
+        "summary": "📰 비즈니스, 장관, 교통 관련 뉴스\n📢 Ecuador charges trio in presidential hopeful's assassination",
+        "content": "Correa fled the country to avoid jail time and has been exiled in Belgium. Villavicencio reported receiving threats from organized crime groups prior to his death. On Wednesday, the prosecutor's office officially charged Correa-era minister Jose Serrano, Correa-aligned former lawmaker Ronny Aleaga and businessman Xavier Jordan as \"intellectual authors\" of the crime",
+        "publish_date": "2025-09-04T07:37:02+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Lamborghini slams into car in Yishun accident, 2 escape with minor injuries",
+        "url": "https://www.asiaone.com/singapore/lamborghini-slams-car-yishun-accident-2-escape-minor-injuries",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 Lamborghini slams into car in Yishun accident, 2 escape with minor injuries",
+        "content": "The Singapore Civil Defence Force (SCDF) said they were alerted to the accident at around 7.45pm along Yishun Street 51. Two people were assessed for minor injuries, but declined to be taken to hospital, SCDF added. The clip on Facebook has since garnered over 400 comments, 900 reactions and 220,000 views. “Even when we are walking on the pavement, we need...",
+        "publish_date": "2025-09-03T11:48:51+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-04T08:01:57.783879+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

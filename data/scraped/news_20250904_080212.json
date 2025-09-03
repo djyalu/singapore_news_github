@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesian islanders take on Swiss cement giant Holcim in landmark climate case",
+        "url": "https://www.channelnewsasia.com/world/indonesian-islanders-take-swiss-cement-giant-holcim-landmark-climate-case-5331556",
+        "content": "\"I believe the judges will stand for us, so we will win.\". While oil companies have traditionally been targeted, campaigners say the Holcim case shines a spotlight on the cement industry, which accounts for...",
+        "publish_date": "2025-09-04T07:58:40.722617+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 인도네시아 섬 주민들, 스위스의 시멘트 대기업을 상대로 한 기후소송에서 승소 기대\n\n내용: usually oil companies가 기후변화로 인한 소송의 표적이 되어왔지만, 이번에는 시멘트 생산업체인 Holcim을 상대로 한 소송이 기후변화 문제에서 시멘트 산업의 책임을 부각시키고 있다. 인도네시아의 섬 주민들은 Holcim의 사업으로 인해 기후변화로 인한 해수면 상승의 피해를 입었다며, 법원에 고소했다. 이번 소송은 시멘트 산업의 배출량이 상당한 가운데 이례적인 것으로, 주민들은 승소에 대한 confidence를 보이고 있다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Dog confined to service balcony in Toa Payoh flat removed by NParks, investigations ongoing",
+        "url": "https://sg.news.yahoo.com/dog-confined-balcony-toa-payoh-074339891.html",
+        "content": "“Given the unsafe housing conditions and concerns over the dog’s welfare, NParks seized the dog. The dog is well and currently under our care,” she said",
+        "publish_date": "2025-09-03T16:43:39+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 토아 페이오 아파트 발코니에 유폐된 개, 국립공원이 제거해… 조사 중\n내용: 국립공원청이 개를 안전하지 못한 환경에서 발견해 소유자로부터 압수했다. 개는 현재 국립공원청의 보살핌 아래 있으며 건강한 상태다. 조사 후 적절한 조치가 취해질 예정이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ecuador charges trio in presidential hopeful's assassination",
+        "url": "https://sg.news.yahoo.com/ecuador-charges-trio-presidential-hopefuls-223702973.html",
+        "content": "Correa fled the country to avoid jail time and has been exiled in Belgium. Villavicencio reported receiving threats from organized crime groups prior to his death. On Wednesday, the prosecutor's office officially charged Correa-era minister Jose Serrano, Correa-aligned former lawmaker Ronny Aleaga and businessman Xavier Jordan as \"intellectual authors\" of the crime",
+        "publish_date": "2025-09-04T07:37:02+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 에콰도르, 대통령 후보 암살사건의 배후 3명 기소\n\n내용: 에콰도르의 대통령 후보인 빌라비센시오가 암살당한事件과 관련하여, 법무부는 코레아 시대 장관이었던 호세 세라노와 전 의원 로니 알레아가, 그리고 사업가 하비에르 조르단을 '지적 저자'로 기소했다. 피고인들은 코레아 정권과 연루되어 있으며, 암살의 배후로 지목된 인물들이다. 빌라비센시오의 사망 전 조직 범죄집단으로부터 협박을 받은 것으로 알려진 가운데, 범행 배후에 대한 수사가 진행 중이다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Lamborghini slams into car in Yishun accident, 2 escape with minor injuries",
+        "url": "https://www.asiaone.com/singapore/lamborghini-slams-car-yishun-accident-2-escape-minor-injuries",
+        "content": "The Singapore Civil Defence Force (SCDF) said they were alerted to the accident at around 7.45pm along Yishun Street 51. Two people were assessed for minor injuries, but declined to be taken to hospital, SCDF added. The clip on Facebook has since garnered over 400 comments, 900 reactions and 220,000 views. “Even when we are walking on the pavement, we need...",
+        "publish_date": "2025-09-03T11:48:51+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 람보르기니, 이슌에서 사고로 다른 차와 충돌, 2명 경미한 부상\n내용: 싱가포르에서 9월 3일 저녁 7시 45분경, 이슌 스트리트 51에서 사고가 발생했다. 람보르기니 차량이 다른 차와 충돌했으며, 차에 타고 있던 2명은 경미한 부상을 입었으나 병원으로 이송되지는 않았다. 해당 사고 영상은 페이스북에서 큰 화제가 되어 많은 댓글과 조회 수를 기록했다."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-04T08:02:12.195578+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
