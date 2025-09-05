@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "'One small brave step': These female survivors are walking the runway at Fashion For Cancer 2025",
+        "url": "https://www.channelnewsasia.com/women/cancer-survivors-fashion-cancer-2025-runway-5304101",
+        "summary": "📰 제목: 암 극복 여성들, 2025 패션쇼 무대에 서다\n\n내용: 암을 이겨낸 여성들이 'Fashion For Cancer 2025' 무대에 오른다. 화려한 메이크업 없이 인터뷰에 참여한 세 여성은 모두 일반인으로, 각각 rare bone cancer와 백혈병을 겪었다. 이번 행사는 암 연구와 환자 지원에 기부하기 위해 티켓 판매 수익금을 모금한다.",
+        "content": "All three women came to the CNA Women interview without a trace of makeup. None of them were models or ever wanted to be one. She had a rare bone cancer, osteosarcoma. And there was 49-year-old mother-of-three Chua Gek San, who had leukaemia. Doctors had to remove her nose bone entirely. Proceeds for tickets will fund cancer research and patient support.",
+        "publish_date": "2025-09-06T07:58:29.691845+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-09-06T08:01:41.559574+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
