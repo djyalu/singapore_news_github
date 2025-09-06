@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Hurricane Kiko’s path shifts, sparing Hawaii from strong winds and heavy rain",
+        "url": "https://sg.news.yahoo.com/hurricane-kiko-path-shifts-sparing-213525032.html",
+        "summary": "📰 제목: 허리케인 키코, 하와이 강타 피하고 북상하며 세력 약화\n\n내용: 최대 풍속 215km/h의 강도 높은 허리케인 키코가 하와이를 비켜 북상하며 긴장감이 풀어졌다. 조셉 클라크 기상청 기상학자에 따르면, 키코는 향후 몇 일간 세력이 약화되며, 하와이의 풍속이 오히려 평소보다 가벼워질 것이라고 전망했다. 하와이 주지사가 긴급사태를 선포했던 지난 금요일과는 대조적이다.",
+        "content": "Maximum sustained winds were 130 mph (215 kph), the weather service said. At a Category 4 hurricane Saturday, Kiko was expected to gradually weaken over the next several days. On Friday, acting Hawaii Gov. Sylvia Luke issued an emergency proclamation declaring a state of emergency to prepare for possible inclement weather from Kiko. “The threat for any wind is diminishing,” Joseph Clark, a meteorologist with the weather service in Honolulu, said Saturday. “With the storm going north, it tends to actually make the winds lighter than normal over the islands",
+        "publish_date": "2025-09-07T06:35:25+09:00",
+        "extracted_by": "traditional_cohere"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-07T08:01:53.876097+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
