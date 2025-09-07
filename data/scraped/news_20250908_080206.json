@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Fire at Chai Chee Ave, over 50 residents evacuated, 4 sent to hospital, 1 arrested",
+        "url": "https://www.asiaone.com/singapore/fire-chai-chee-avenue-over-50-residents-evacuated-4-sent-hospital-1-arrested",
+        "content": "Four of them were taken to the hospital. \"Upon arrival, the living room of an eighth-floor unit was on fire. The fire was extinguished by firefighters with a water jet. There was no one inside the unit when SCDF arrived,\" the spokesperson said. SCDF added that four persons, including a firefighter, were assessed for smoke inhalation and sent to the hospital. Investigations into the cause of the fire are ongoing",
+        "publish_date": "2025-09-07T12:16:00+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 차이 치 에브 화재로 50여 명 대피, 4명 병원 이송, 1명 체포\n\n내용: 싱가포르 차이 치 에브에서 발생한 화재로 50명이 넘는 주민들이 대피했고, 4명은 병원으로 이송됐다. 화재가 발생한 아파트의 8층 거실에서 불이 시작됐으며, 소방당국에 의해 진압됐다. 화재 원인에 대한 조사가 진행중이며, 대피 과정에서 한 명이 체포됐다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-09-08T08:02:06.396202+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
