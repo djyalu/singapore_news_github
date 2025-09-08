@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Fake it till you make it? Inside China’s ‘pretend to work’ trend as youth face surging unemployment",
+        "url": "https://www.channelnewsasia.com/east-asia/china-youth-pretend-work-unemployment-5338356",
+        "summary": "📰 제목: 위장 취업? 중국에서 확산되는 '가짜로 일하는' 트렌드, 청년 실업 급증\n내용: 30세 베이징 거주자 샤오 딩은 가족에게 직장생활을 하고 있다고 말하지만, 실제로는 직장을 그만둔 상태다. 최근 중국에서 실업률이 급증하며 청년들이 '가짜로 일하는' 트렌드가 생겼는데, 이는 스스로를 속이는 것이 아니라 자기규율을 세우기 위함이라고 한다. 직장을 그만둔 젊은이들이 출근처럼 매일 일정한 루틴을 따르는 것이다.",
+        "content": "SHANGHAI/HANGZHOU: Every weekday morning, Xiao Ding, 30, begins her day like most other young working professionals in Beijing. “I haven’t told my family that I quit my job,” she said. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading The routine, according to her, is not about deception but discipline",
+        "publish_date": "2025-09-09T07:58:51.589137+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Jeffries says Republicans will ‘regret’ GOP-led Jan. 6 investigation as Democrats agree to participate",
+        "url": "https://sg.news.yahoo.com/jeffries-says-republicans-regret-gop-213110106.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Jeffries says Republicans will ‘regret’ GOP-led Jan. 6 investigation as Democrat...",
+        "content": "Jasmine Crockett of Texas and Jared Moskowitz of Florida. “Donald Trump and House Republicans are now determined to whitewash that day that will always live in infamy",
+        "publish_date": "2025-09-09T06:31:10+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Body against liver: Teenager overcomes rare autoimmune condition after transplant",
+        "url": "https://www.asiaone.com/singapore/body-against-liver-teenager-overcomes-rare-autoimmune-condition-after-transplant",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 Body against liver: Teenager overcomes rare autoimmune condition after transplan...",
+        "content": "SINGAPORE - Teenager Ryan Lim slipped into depression after a series of post-transplant infections in 2023. There are about two to five cases of AIH per 100,000 children worldwide",
+        "publish_date": "2025-09-07T13:24:17+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pofma correction notice issued to TikTok user over comments on Chinese community leadership course",
+        "url": "https://www.asiaone.com/singapore/pofma-correction-notice-issued-tiktok-user-over-comments-chinese-community-leadership",
+        "summary": "📰 정부, 기술 관련 뉴스\n📢 Pofma correction notice issued to TikTok user over comments on Chinese community...",
+        "content": "This time, it was over false claims about a government-funded initiative to groom future leaders of the Chinese community. These claims cause “serious misunderstandings and erode public confidence in the Government’s commitment to...",
+        "publish_date": "2025-09-08T00:11:42+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-09T08:02:12.618794+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
