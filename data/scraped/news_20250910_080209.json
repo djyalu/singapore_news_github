@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "How to prepare your body and mind for pregnancy after a miscarriage",
+        "url": "https://www.channelnewsasia.com/women/pregnancy-after-miscarriage-recovery-5319651",
+        "content": "You were elated when the pregnancy test showed two pink lines. A miscarriage is the spontaneous loss of pregnancy before the 20th week. Occurring in about one in five pregnancies, the risk increases with age",
+        "publish_date": "2025-09-10T07:58:42.718083+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 임신 준비를 위한 신체와 마음가짐\n\n내용: 임신 소식에 기뻐하던 중, 임신 20주 전에 일어나는 자연 유산은 임신의 약 1/5에서 발생하며, 나이가 들수록 위험이 커진다. 유산 후 신체와 마음의 준비가 필요하며, 임신에 대한 준비와 주의사항을 알려준다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Supreme Court takes up fast-moving appeal over Trump’s tariffs",
+        "url": "https://sg.news.yahoo.com/supreme-court-hear-arguments-over-210237310.html",
+        "content": "In the meantime, the tariffs will remain in place while the court hears the case. The case puts a major component of the American economy on the conservative court’s docket. The Supreme Court said it would hear arguments in the case during the first week of November.",
+        "publish_date": "2025-09-10T07:14:30+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 대법원, 트럼프 관세 관련 속전속결 항소 사건 접수\n내용: 미국 대법원이 트럼프 행정부의 관세 정책에 대한 항소 사건을 11월의 첫 주에 심리한다고 밝혔다. 관세는 유지된 채로 심리가 진행되며, 이번 사건은 미국 경제의 중요한 부분을 대법원의 일정으로 올린 것이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/prabowo-removes-finance-chief-risking-013824963.html",
+        "content": "Finance Minister Sri Mulyani Indrawati, a former World Bank executive, was first appointed by former President Susilo Bambang Yudhoyono in 2005. Indonesian President Prabowo Subianto abruptly replaced Sri Mulyani Indrawati as finance minister, risking renewed financial turmoil for Southeast Asia’s biggest economy following violent protests in recent weeks against his administration. He said he is “a market person” who will keep Indonesia fiscally healthy",
+        "publish_date": "2025-09-08T10:38:24+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 파이낸스\\n내용: 인도네시아의 대통령 프라보沃 수비안토는 최근 행정부에 대한 폭력 시위로 인해 재무 장관 스리 무리아니 인드라워티를 전격 경질했다. 후임으로 시장의 사람이 임명되어 인도네시아의 재정 건전성을 유지할 것이라고 밝혔다. 전임자는 수실로 밤방 유도요노 대통령에 의해 임명된 것으로 2005년 임기를 시작했다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "YAHOO POLL: Is road safety of greater concern now?",
+        "url": "https://sg.news.yahoo.com/yahoo-poll-is-road-safety-of-greater-concern-now-094947426.html",
+        "content": "A driver was involved in a hit-and-run at Bukit Batok. A chain collision in Tampines sent five, including two children, to the hospital. Traffic accidents are seemingly quite frequent in Singapore, and according to the latest stats from the Traffic Police, they're becoming more deadly. YAHOO POLL: Do you like the new Singapore Airlines in-flight safety video?. Road deaths also increased from 72 to 79 over the same period. Injury-related accidents also saw an uptick, climbing...",
+        "publish_date": "2025-09-09T18:49:47+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 설문조사: 도로 교통 안전 더 걱정되나요?\n\n내용: 싱가포르에서 교통사고가頻發하고, 사망자 수도 증가하고 있다. 최근 통계에 따르면, 사고 건수는 늘지 않았지만, 사망자와 부상자는 증가세이다. 특히 부킷 바토크에서는 Hit-and-run 사고가, 탐피네스에서는 연쇄 추돌 사고가 발생해 5명이 부상했다. 국민들에게 도로 안전에 대한 경각심을 높이기 위해 야후에서 설문조사를 실시했다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Large families to receive $1,000 LifeSG Credits in Sept",
+        "url": "https://www.asiaone.com/singapore/large-families-receive-1000-lifesg-credits-sept",
+        "content": "They will also receive $5,000 Large Family MediSave Grant (LFMG) and $1,000 each year in Large Family LifeSG Credits per third and subsequent child",
+        "publish_date": "2025-09-10T06:00:39+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 9월, 대가족에 1000싱가포르 달러 LifeSG 크레딧 지원\n내용: 세 명 이상의 자녀를 둔 대가족을 대상으로 한 지원책이다. 이들에게는 5천 달러의 Large Family MediSave Grant와 함께 세 번째 자녀부터 1천 달러의 LifeSG 크레딧이 매년 지급된다. 이 정책은 대가족의 부양 부담을 완화하기 위해 기획되었다."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-10T08:02:09.408987+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
