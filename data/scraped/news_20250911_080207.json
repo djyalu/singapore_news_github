@@ -1,0 +1,62 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "‘I smell and taste spoilt milk’: The man behind your everyday drinks",
+        "url": "https://www.straitstimes.com/business/i-smell-and-taste-spoilt-milk-the-man-behind-your-everyday-drinks",
+        "summary": "📰 제목: '나는 부패한 우유 냄새가 난다': 당신의 일상 음료를 책임지는 남자\n\n내용: 그는 주로 음료에 관련한 일을 하며, 때때로 식료품도 다룬다. 그의 일은 커피 한 잔의 맛을 좌우하는 다양한 우유 종류를 고르는 것이다. 그는 일에 열정적이다.",
+        "content": "I deal with food products as well, although they make up only a small portion of my work. My colleagues and I are passionate about our jobs. Different milk specifications can alter the flavour of a cup of coffee",
+        "publish_date": "2025-09-11T07:58:07.542211+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Rubio spoke Wednesday with China’s Wang Yi, State Department says",
+        "url": "https://www.channelnewsasia.com/asia/rubio-spoke-wednesday-chinas-wang-yi-state-department-says-5342721",
+        "summary": "📰 제목: 루비오, 왕이 중국 외무부장과의 회담에서 트럼프-시진핑 회담 가능성 높다 언급\n\n내용: 미국 루비오 의원이 중국 외무부장 왕이와의 수요일 회담에서 도널드 트럼프 미국 대통령과 시진핑 중국 국가주석 간 회담의 높은 가능성을 언급했다. 두 사람은 글로벌 및 지역 현안에 대해 논의했으며, 이는 앞서 쿠알라룸푸르 회담의 지속이다.",
+        "content": "\"They also discussed other global and regional issues as a continuation of the discussions in Kuala Lumpur.\". Rubio said at the time that the odds of US President Donald Trump meeting Chinese President Xi Jinping were high. This service is not intended for persons residing in the E.U",
+        "publish_date": "2025-09-11T07:58:46.584348+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Japanese racehorse that lost all 113 of her races dies aged 29",
+        "url": "https://sg.news.yahoo.com/japanese-racehorse-lost-113-her-043813521.html",
+        "summary": "📰 부동산, 문화, 국제 관련 뉴스\n📢 Japanese racehorse that lost all 113 of her races dies aged 29",
+        "content": "She died from colic on Tuesday. The creators of Umamusume: Pretty Derby took to X to share the news. “It is with heavy hearts that we share that Haru Urara passed away on September 9. “We share our condolences to all the staff involved in Haru Urara’s care.”. She told a local outlet that was when she knew...",
+        "publish_date": "2025-09-10T14:29:56+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "October BTO: 9,060 flats across 10 projects in 8 HDB towns",
+        "url": "https://sg.news.yahoo.com/october-bto-9-060-flats-062738630.html",
+        "summary": "📰 싱가포르, 개발, 주택 관련 뉴스\n📢 October BTO: 9,060 flats across 10 projects in 8 HDB towns",
+        "content": "One of the Bukit Merah projects will kickstart residential developments in the Greater Southern Waterfront. (Photo: Samuel Isaac Chua/EdgeProp Singapore). Notably, none of the four projects will feature five-room or larger flats, so bigger households keen to live in these towns...",
+        "publish_date": "2025-09-08T15:27:38+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man arrested over 1,400 cartons of duty-unpaid cigarettes at Woodlands",
+        "url": "https://www.asiaone.com/singapore/man-arrested-over-1400-cartons-duty-unpaid-cigarettes-woodlands",
+        "summary": "📰 기술 관련 뉴스\n📢 Man arrested over 1,400 cartons of duty-unpaid cigarettes at Woodlands",
+        "content": "A 29-year-old man was arrested at Woodlands after being caught with over 1,400 cartons of duty-unpaid cigarettes. The officers then conducted checks and found 122 cartons of duty-unpaid cigarettes in the first truck. Some 1,323 cartons and 16 packets of duty-unpaid cigarettes were also found in the second truck. The total duty and Goods and Services Tax (GST) evaded amounted to around $156,693. Investigations revealed that the man had been allegedly instructed to transfer part of the duty-unpaid cigarettes from the...",
+        "publish_date": "2025-09-09T18:08:58+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "The Straits Times",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-09-11T08:02:07.768061+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
