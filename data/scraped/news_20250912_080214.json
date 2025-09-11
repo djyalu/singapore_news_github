@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/winklevosses-crypto-exchange-gemini-raises-225221534.html",
+        "summary": "📰 제목: 야후 파이낸스의 싱가포르 뉴스\n내용: 타리프 때문에 상장 계획이 지연되었다는 보도에 대해 제미니 측은 즉각적인 응답을 하지 않았다. 리uters는 해당 보도를 곧바로 확인할 수 없었다.",
+        "content": "Gemini did not immediately respond to a Reuters request for comment. Reuters could not immediately verify the report. tariffs delayed listing plans in April.",
+        "publish_date": "2025-09-12T07:52:21+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "10 ex-staff of interior design firm make reports over unpaid commissions; director disputes amounts",
+        "url": "https://www.asiaone.com/singapore/10-ex-staff-interior-design-firm-make-reports-over-unpaid-commissions-director-disputes",
+        "summary": "📰 기술 관련 뉴스\n📢 10 ex-staff of interior design firm make reports over unpaid commissions; direct...",
+        "content": "They claimed they were each owed between $2,600 and $30,700 for at least 10 projects. The firm's director, Jason Wang, disputed the commission amounts and said he has been attending mediation sessions with TADM. One former employee has received payment following mediation, while the remaining nine cases are awaiting mediation, the...",
+        "publish_date": "2025-09-11T10:16:44+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-12T08:02:14.699187+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

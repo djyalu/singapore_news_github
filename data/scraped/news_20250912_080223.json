@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/winklevosses-crypto-exchange-gemini-raises-225221534.html",
+        "content": "Gemini did not immediately respond to a Reuters request for comment. Reuters could not immediately verify the report. tariffs delayed listing plans in April.",
+        "publish_date": "2025-09-12T07:52:21+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 파이낸스의 싱가포르 뉴스\n내용: 지메인(Gemini)은 관세 지연으로 상장 계획이 차질을 빚었다. 야후 파이낸스는 지메인에 코멘트 요청을 보냈으나 즉각적인 답변을 얻지 못했으며, 로이터 역시 보도를 즉각 확인하지 못했다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "10 ex-staff of interior design firm make reports over unpaid commissions; director disputes amounts",
+        "url": "https://www.asiaone.com/singapore/10-ex-staff-interior-design-firm-make-reports-over-unpaid-commissions-director-disputes",
+        "content": "They claimed they were each owed between $2,600 and $30,700 for at least 10 projects. The firm's director, Jason Wang, disputed the commission amounts and said he has been attending mediation sessions with TADM. One former employee has received payment following mediation, while the remaining nine cases are awaiting mediation, the...",
+        "publish_date": "2025-09-11T10:16:44+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 실내 디자인 회사, 전 직원들께 미지급 수수료 논란\n내용: 10명의 전 직원이 미지급된 수수료로 각각 2,600달러에서 30,700달러를 청구했으나, 회사 측은 수수료액을 두고争쟁中. 전 직원 중 한 명은 중재 후 지급받았으나, 나머지 9건은 아직 중재 대기 중. 회사 감독자는 중재에 성실히 임할 예정이라 밝힘."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-12T08:02:23.023186+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
