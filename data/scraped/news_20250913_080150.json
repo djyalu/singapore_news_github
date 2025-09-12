@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Losing my eyesight was hard, but I’ve found new strength and confidence through dragon boating",
+        "url": "https://www.channelnewsasia.com/today/voices/losing-eyesight-blind-sports-dragon-boating-disability-water-race-5345176",
+        "summary": "📰 제목: 시력을 잃었지만 용선 Rennen으로 새로운 강인함 얻다\n\n내용: 스포츠를 사랑했던 그는 2012년 시력 저하로 삶의 전환점을 맞았다. 점차 시력을 잃어가던 그는 결국 그림자와 빛만 보게 되었지만, 용선 레이스에 도전하며 삶의 새로운 강인함과 자신감을 얻게 되었다. 스포츠에 대한 열정 덕에 힘든 시간을 이겨낼 수 있었다고 전했다.",
+        "content": "Basketball, shot put, ping pong, even swimming lessons in Primary 3 – these early experiences helped build my love for sports. But life took an unexpected turn in 2012, when I was 42. My vision began to blur gradually, until all I could see were shadows and light",
+        "publish_date": "2025-09-13T07:58:21.382441+09:00",
+        "extracted_by": "traditional_cohere"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Beloved Chinatown Complex Tai Hwa Coffee Stall owner passes away",
+        "url": "https://sg.news.yahoo.com/style/beloved-chinatown-complex-tai-hwa-073313939.html",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Beloved Chinatown Complex Tai Hwa Coffee Stall owner passes away",
+        "content": "Chinatown Complex has just lost one of its glimmering stars. Even in his twilight years, he never once contemplated putting down the kettle and coffee sock",
+        "publish_date": "2025-09-12T16:57:13+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "YAHOO POLL: Will you queue for Chipotle or Chick-fil-A?",
+        "url": "https://sg.news.yahoo.com/yahoo-poll-will-you-queue-for-chipotle-or-chick-fil-a-085949120.html",
+        "summary": "📰 싱가포르, 음식, 기술 관련 뉴스\n📢 YAHOO POLL: Will you queue for Chipotle or Chick-fil-A?",
+        "content": "The move reflects growing interest from U.S. brands in tapping into the region’s dynamic and diverse food scene. Chipotle will enter Singapore through a joint venture with South Korean food company SPC Group. Known for its burritos and rice bowls, Chipotle aims to attract local diners with its customisable, fast-casual menu. The launch is expected to take place in 2026. YAHOO POLL: Do you like the new Singapore Airlines in-flight safety video?. Shake Shack makes its highly-anticipated debut in Singapore",
+        "publish_date": "2025-09-11T18:00:09+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-09-13T08:01:50.183487+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

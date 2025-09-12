@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Losing my eyesight was hard, but I’ve found new strength and confidence through dragon boating",
+        "url": "https://www.channelnewsasia.com/today/voices/losing-eyesight-blind-sports-dragon-boating-disability-water-race-5345176",
+        "content": "Basketball, shot put, ping pong, even swimming lessons in Primary 3 – these early experiences helped build my love for sports. But life took an unexpected turn in 2012, when I was 42. My vision began to blur gradually, until all I could see were shadows and light",
+        "publish_date": "2025-09-13T07:58:21.382441+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 드래곤보트 스포츠, 실명으로 잃어버린 삶의 자신감을 찾다\n\n내용: 스포츠를 사랑했던 한 남자는 2012년 실명 진단을 받으며 삶의 전환점을 맞았다. 그는 농구, 포환던지기, 탁구, 수영 등 다양한 스포츠에 도전했지만, 서서히 시력을 잃어가며 삶의 자신감을 잃었다. 하지만 드래곤보트 스포츠를 만나 새로운 강인함으로 무장하고, 삶의 희망을 찾았다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Beloved Chinatown Complex Tai Hwa Coffee Stall owner passes away",
+        "url": "https://sg.news.yahoo.com/style/beloved-chinatown-complex-tai-hwa-073313939.html",
+        "content": "Chinatown Complex has just lost one of its glimmering stars. Even in his twilight years, he never once contemplated putting down the kettle and coffee sock",
+        "publish_date": "2025-09-12T16:57:13+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 사랑하는 차이나타운의 스타, 타이화 커피점 주인 별세\n\n내용: 차이나타운 컴플렉스의 유명인인 타이화 커피점 주인이 별세했다. 그는 노년에도 커피를 끓이는 일을 그만두지 않았다. 그는 차이나타운 컴플렉스의 빛나는 별이었는데, 후세에 그의 빈자리가 크게 느껴질 것이다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "YAHOO POLL: Will you queue for Chipotle or Chick-fil-A?",
+        "url": "https://sg.news.yahoo.com/yahoo-poll-will-you-queue-for-chipotle-or-chick-fil-a-085949120.html",
+        "content": "The move reflects growing interest from U.S. brands in tapping into the region’s dynamic and diverse food scene. Chipotle will enter Singapore through a joint venture with South Korean food company SPC Group. Known for its burritos and rice bowls, Chipotle aims to attract local diners with its customisable, fast-casual menu. The launch is expected to take place in 2026. YAHOO POLL: Do you like the new Singapore Airlines in-flight safety video?. Shake Shack makes its highly-anticipated debut in Singapore",
+        "publish_date": "2025-09-11T18:00:09+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 야후 설문조사: 칙필레와 칩토레의 싱가포르 진출, 당신의 선택은?\n내용: 미국 브랜드들의 싱가포르 식문화에 대한 관심이 커지고 있다. 버거, 라이스볼 전문점인 칩토레는 2026년 싱가포르 진출을 목표로 남한 SPC 그룹과 합작한다. meanwhile, 쉐이크 쉑이 싱가포르에 첫 선을 보인다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-09-13T08:02:00.285898+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
