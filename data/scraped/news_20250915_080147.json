@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Hot demand, shrinking harvests: Thai coffee faces boom and doom paradox",
+        "url": "https://www.channelnewsasia.com/asia/thailand-coffee-specialty-cafes-climate-change-5344511",
+        "content": "Chatree, 39, is a third-generation farmer and a tinkerer. Littered behind the cafe counter is an assemblage of coffee paraphernalia for his caffeinated creations. He knows which trees produced which fruit and how that will translate to the cup. His specialty coffee is celebrated, part of a national movement increasingly prizing organic, artisanal processes. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2025-09-15T07:58:52.173876+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 태국 커피, 수요 급증과 수확량 감소로 인해 번영과 위기의 갈림길에 서다\n\n내용: 채트리(39세)는 3대째 커피 농부를 이어받은 농부이자 커피 장인이다. 그의 특산 커피는 정성들여 재배되며, 유기농과 수공예 방식에 대한 전국적인 열풍의 중심에 있다. 그는 커피나무마다 열매의 품종을 식별하고, 그 맛을 정확히 알고 있다. 수요가 급증하지만 수확량이 줄어들어 커피 농부들은 번영과 위기의 갈림길에 서 있다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-09-15T08:01:47.810839+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
