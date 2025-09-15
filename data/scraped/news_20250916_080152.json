@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Here’s Where You Can Spend Your Culture Pass Credits",
+        "url": "https://sg.news.yahoo.com/where-spend-culture-pass-credits-030036504.html",
+        "content": "Honestly, I get it because I’ve been in your shoes. It’s called the SG60 Culture Pass. Singapore Writers Festival. Honestly, I think it’s a brilliant idea",
+        "publish_date": "2025-09-15T12:00:36+09:00",
+        "extracted_by": "hybrid_cohere",
+        "summary": "📰 제목: 문화활동으로 가득 채워보세요! SG60 문화패스 \n\n내용: 싱가포르의 SG60 문화패스는 싱가포르 작가 페스티벌과 같은 다양한 문화 이벤트에서 사용 가능한 쿠폰으로, 시민들에게 문화생활을 장려한다. 사용자는 창의적이고 풍성한 경험을 제공받게 된다."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-16T08:01:52.989781+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
