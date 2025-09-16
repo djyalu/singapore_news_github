@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Riding the rails: Malaysia rediscovers allure of train travel",
+        "url": "https://www.straitstimes.com/asia/se-asia/riding-the-rails-malaysia-rediscovers-allure-of-train-travel",
+        "content": "And workers like technician Nuhairi Ismail are southbound, heading to Penang’s industrial parks some 100km away on this intercity line. Previously, he would take a three-hour-long bus ride, which was often delayed due to traffic jams. The shorter, more reliable rail journey allows him to return home to Kuala...",
+        "publish_date": "2025-09-17T07:58:06.532436+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 철길을 달리다: 말레이시아, 기차 여행의 매력 재발견\n\n내용: 말레이시아에서 기술자 누하이리 이스마일(Nuhairi Ismail)씨를 포함한 많은 근로자들이 페낭의 산업단지로 통근하기 위해 시외 열차를 이용하고 있다.  기존 3시간이 걸리던 버스는 교통 체증으로 지연이 잦았지만, 열차는 더 빠르고 안정적인 이동 수단을 제공하여 쿠알라룸푸르 등의 거주지로의 귀가를 용이하게 한다.  약 100km 거리의 페낭 산업단지와의 통근 시간 단축 및 안정성 확보로 열차 이용이 증가하고 있다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Nuclear rocket could slash mission times to Mars",
+        "url": "https://sg.news.yahoo.com/nuclear-rocket-could-slash-mission-150922448.html",
+        "content": "A team from Ohio State University made the breakthrough using liquid uranium to directly heat rocket propellent in order to travel faster with less fuel. The centrifugal nuclear thermal rocket (CNTR) system is more efficient than current rocket technologies, as well as other nuclear propulsion engines, according to the researrchers. The research, which was partly funded by Nasa, suggests that different types of propellant could be used for the...",
+        "publish_date": "2025-09-16T00:09:22+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 핵 추진 로켓, 화성 탐사 시간 대폭 단축 가능성\n\n내용: 오하이오 주립대 연구팀이 액체 우라늄을 이용해 추진제를 직접 가열하는 원심 핵 열 추진 로켓(CNTR) 시스템을 개발했습니다.  이 시스템은 기존 로켓 기술이나 다른 핵 추진 엔진보다 효율적이며, NASA의 일부 지원을 받은 이 연구는 화성 탐사 시간을 크게 줄일 수 있음을 시사합니다.  다양한 추진제 사용 가능성도 제시되었습니다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-17T08:03:27.345023+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

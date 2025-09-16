@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Riding the rails: Malaysia rediscovers allure of train travel",
+        "url": "https://www.straitstimes.com/asia/se-asia/riding-the-rails-malaysia-rediscovers-allure-of-train-travel",
+        "summary": "📰 제목: 철길을 달리다: 말레이시아, 기차 여행의 매력 재발견\n\n내용: 말레이시아에서 기술자인 누하이리 이스마일(Nuhairi Ismail)씨를 포함한 많은 근로자들이 페낭의 산업단지로 통근하기 위해 시외 철도를 이용하고 있다.  페낭까지의 거리는 약 100km이며, 이전에는 3시간이나 걸리는 버스를 이용했지만, 교통 체증으로 지연이 잦았다.  더 빠르고 안정적인 기차 여행 덕분에 누하이리씨는 쿠알라룸푸르에 있는 집으로 더 쉽게 귀가할 수 있게 되었다.",
+        "content": "And workers like technician Nuhairi Ismail are southbound, heading to Penang’s industrial parks some 100km away on this intercity line. Previously, he would take a three-hour-long bus ride, which was often delayed due to traffic jams. The shorter, more reliable rail journey allows him to return home to Kuala...",
+        "publish_date": "2025-09-17T07:58:06.532436+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Nuclear rocket could slash mission times to Mars",
+        "url": "https://sg.news.yahoo.com/nuclear-rocket-could-slash-mission-150922448.html",
+        "summary": "📰 교육, 관광 관련 뉴스\n📢 Nuclear rocket could slash mission times to Mars",
+        "content": "A team from Ohio State University made the breakthrough using liquid uranium to directly heat rocket propellent in order to travel faster with less fuel. The centrifugal nuclear thermal rocket (CNTR) system is more efficient than current rocket technologies, as well as other nuclear propulsion engines, according to the researrchers. The research, which was partly funded by Nasa, suggests that different types of propellant could be used for the...",
+        "publish_date": "2025-09-16T00:09:22+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-17T08:03:04.494564+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
