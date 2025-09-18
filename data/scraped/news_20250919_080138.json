@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/nvidia-ceo-disappointed-over-china-135242372.html",
+        "summary": "📰 제목: 야후 파이낸스: 엔비디아, 중국 시장과 미중 갈등의 중심에 서다\n\n내용: 미국 캘리포니아 기반의 엔비디아는 특수 설계 칩으로 시가총액 세계 1위 기업이 되었으나, 중국 시장이 중요한 가운데 미중 지정학적 긴장에 휘말렸습니다. 중국은 엔비디아 칩에 대한 국가 안보 우려를 표명하며 중국 기업들에게 현지 반도체 공급업체 의존을 촉구했습니다.  파이낸셜 타임스는 10월 25일(수) 중국의 추가 조치 가능성을 보도하며 엔비디아의 중국 사업 전망에 대한 불확실성을 더했습니다.",
+        "content": "California-based Nvidia's specially designed chips have catapulted the company to become the world's biggest by market capitalisation, with China seen as a crucial market. But geopolitical tensions between the United States and China have seen Nvidia caught up in relations between the superpowers. Beijing has responded by expressing national security concerns about Nvidia chips and urging Chinese businesses to rely on local semiconductor suppliers instead. In the latest development, the Financial Times reported on Wednesday that China's...",
+        "publish_date": "2025-09-17T22:52:42+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Residents aged 40 and above can now redeem MediShield Life premium discounts using Healthpoints: MOH",
+        "url": "https://www.asiaone.com/singapore/residents-aged-40-and-above-can-now-redeem-medishield-life-premium-discounts-using",
+        "summary": "📰 보건 관련 뉴스\n📢 Residents aged 40 and above can now redeem MediShield Life premium discounts usi...",
+        "content": "This is double the standard conversion rate of 150 Healthpoints for $1. \"To earn Healthpoints, individuals can participate in healthy lifestyle programmes and challenges...",
+        "publish_date": "2025-09-18T17:30:55+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-19T08:01:38.379477+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

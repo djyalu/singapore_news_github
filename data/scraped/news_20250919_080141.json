@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/nvidia-ceo-disappointed-over-china-135242372.html",
+        "content": "California-based Nvidia's specially designed chips have catapulted the company to become the world's biggest by market capitalisation, with China seen as a crucial market. But geopolitical tensions between the United States and China have seen Nvidia caught up in relations between the superpowers. Beijing has responded by expressing national security concerns about Nvidia chips and urging Chinese businesses to rely on local semiconductor suppliers instead. In the latest development, the Financial Times reported on Wednesday that China's...",
+        "publish_date": "2025-09-17T22:52:42+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 야후 파이낸스: 엔비디아, 중국 시장과 미중 갈등의 딜레마\n\n내용: 미국 엔비디아는 고성능 칩으로 세계 시가총액 1위 기업이 되었으나, 중국 시장의 중요성에도 불구하고 미중 갈등에 휘말렸습니다. 중국은 엔비디아 칩에 대한 국가 안보 우려를 표명하며 자국 반도체 업체 이용을 촉구하고 있으며,  Financial Times는 9월 6일(수) 중국의 추가 조치 가능성을 보도했습니다.  이는 엔비디아의 중국 사업에 큰 영향을 미칠 것으로 예상됩니다."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Residents aged 40 and above can now redeem MediShield Life premium discounts using Healthpoints: MOH",
+        "url": "https://www.asiaone.com/singapore/residents-aged-40-and-above-can-now-redeem-medishield-life-premium-discounts-using",
+        "content": "This is double the standard conversion rate of 150 Healthpoints for $1. \"To earn Healthpoints, individuals can participate in healthy lifestyle programmes and challenges...",
+        "publish_date": "2025-09-18T17:30:55+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 싱가포르, 40세 이상 주민 대상 MediShield Life 보험료 할인에 Healthpoints 사용 가능\n\n내용: 싱가포르 보건부(MOH)는 40세 이상 주민들이 Healthpoints를 사용하여 MediShield Life 보험료 할인을 받을 수 있도록 했다고 발표했습니다.  기존 150 Healthpoints당 1달러 환산율의 두 배인 환산율을 적용하며, 건강한 생활 방식 프로그램 및 챌린지 참여를 통해 Healthpoints를 획득할 수 있습니다.  이는 국민 건강 증진을 위한 정부의 노력의 일환입니다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-19T08:01:41.997648+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
