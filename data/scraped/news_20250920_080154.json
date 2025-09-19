@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Agoda apologises for 'inappropriate' severance clauses, will work with labour movement to support retrenched employees",
+        "url": "https://www.channelnewsasia.com/singapore/ntuc-agoda-staff-retrenchment-severance-package-discussion-5358296",
+        "summary": "📰 제목: 아고다, 부적절한 해고 조항 사과 및 노동계와 협력 약속\n\n내용: 9월 19일, 아고다가 해고 직원들이 노동조합, 정부기관 및 법정기관에 접촉하는 것을 막는 \"부적절한\" 조항을 해고 합의서에 포함한 것에 대해 사과했습니다.  아고다는 해고된 직원들을 지원하기 위해 노동계와 협력할 것이라고 밝혔습니다.",
+        "content": "SINGAPORE: Agoda on Friday (Sep 19) apologised for including \"inappropriate\" clauses in its severance agreements that discouraged retrenched employees from approaching trade unions, government agencies and statutory bodies",
+        "publish_date": "2025-09-20T07:58:50.220472+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/singapore-sandwich-generation-most-risk-212955586.html",
+        "summary": "📰 싱가포르, 취업, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "The Cyber Security Agency of Singapore's \"Stop and Check\" campaign drives public vigilance, while Trend Micro's new AI-powered feature provides 24/7 real-time detection and alerts. Nearly one in two Singaporeans (47%) cited this as their top concern, according to Trend Micro’s latest consumer behaviour survey. Fast-money schemes and enticing investment offers proved especially effective, deceiving one in four individuals. Juggling work and caregiving responsibilities leaves them more vulnerable to emotional pressure and time-sensitive ploys. Many rely on instinct to stay safe. More than half (56%) of non-victims said they trusted their gut to avoid scams, even though this constant vigilance is mentally draining",
+        "publish_date": "2025-09-18T06:29:55+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Company director charged with misappropriating over $400k intended for foreign exchange investment",
+        "url": "https://www.asiaone.com/singapore/company-director-charged-misappropriating-over-400k-intended-foreign-exchange-investment",
+        "summary": "📰 비즈니스, 교통, 법률 관련 뉴스\n📢 Company director charged with misappropriating over $400k intended for foreign e...",
+        "content": "A company director has been charged with misappropriating over $400,000 intended for foreign exchange (forex) investments, on Friday (Sept 19). According to the police, Yeo allegedly operated a fund management business both personally and through Lloyd Capital between June 2017 and November 2019. This included handling forex trading, leveraged forex trading, and managing portfolios of capital market products on behalf of investors. Yeo allegedly misappropriated $441,082.48 of those funds for personal expenses and to repay other...",
+        "publish_date": "2025-09-19T18:45:29+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-09-20T08:01:54.553446+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
