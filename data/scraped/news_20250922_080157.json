@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesia’s 130-decibel ‘sound horeg’ trucks: Cultural spectacle or earsplitting nuisance?",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-east-java-sound-horeg-loud-regulations-5357396",
+        "content": "The trucks, with sound systems stacked higher than rooftops and festooned with strobe lights, lasers and LED panels, were so wide they could barely squeeze through Jeru’s winding roads. They were so tall they came perilously close to clipping overhead power lines. Jeru’s residents had spent more than a year raising nearly 1 billion rupiah (US$60,000) to hire the mobile entertainment vehicles, known locally as sound horeg (pronounced “hor-uh-g”)",
+        "publish_date": "2025-09-22T07:58:38.882239+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 인도네시아의 130데시벨 ‘사운드 호레그’ 트럭: 문화적 볼거리인가, 귀청 찢는 소음인가?\n\n내용: 인도네시아의 제루 지역 주민들이 10억 루피아(약 6만 달러)를 모아 고용한 ‘사운드 호레그’라 불리는 이동식 엔터테인먼트 트럭이 논란이 되고 있다.  지붕보다 높이 쌓인 사운드 시스템과 스트로브 조명, 레이저, LED 패널 등으로 장식된 이 트럭들은 엄청난 소음(130데시벨)을 발생시켜 주민들의 민원이 잇따르고 있다.  좁은 도로와 전선에 위험을 초래할 정도로 크기 또한 문제가 되고 있다."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Four major Western nations recognise Palestinian state, to fury of Israel",
+        "url": "https://www.channelnewsasia.com/world/britain-uk-recognises-palestinian-state-ignore-israel-ultimatum-5360381",
+        "content": "\"The man-made humanitarian crisis in Gaza reaches new depths. Other nations, including France, are expected to follow suit this week at the United Nations General Assembly in New York. Israeli Prime Minister Benjamin Netanyahu condemned the move.",
+        "publish_date": "2025-09-22T07:58:53.737467+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 서방 4개국, 팔레스타인 국가 승인…이스라엘 분노\n\n내용: 프랑스를 포함한 서방 4개국이 팔레스타인 국가를 승인하여 이스라엘의 격렬한 반발을 불러일으켰습니다.  가자지구의 인도적 위기가 심각해지는 가운데, 유엔총회에서 추가적인 국가들의 승인이 예상됩니다.  이스라엘 총리 베냐민 네타냐후는 이러한 조치를 강력히 비난했습니다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chinese COVID whistleblower sentenced to 4 more years in jail, group says",
+        "url": "https://sg.news.yahoo.com/chinese-covid-whistleblower-sentenced-4-053653041.html",
+        "content": "China's Foreign Ministry could not be immediately reached on Sunday for comment. Reuters could not determine whether the citizen-journalist had legal representation. \"Her ordeal and persecution must end",
+        "publish_date": "2025-09-21T14:36:53+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 중국 코로나19 초기 정보 공개자, 징역 4년 추가 선고\n\n내용: 중국 당국은 코로나19 초기 정보를 공개한 시민기자에게 4년의 추가 징역형을 선고했다.  로이터 통신은 해당 시민기자의 변호인 여부를 확인하지 못했으며, 중국 외교부는 즉각적인 논평을 하지 않았다.  인권단체는 그의 탄압이 중단되어야 한다고 촉구하고 있다."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-09-22T08:01:57.369046+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
