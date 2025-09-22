@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Disney says Kimmel will return to the air Tuesday, six days after suspension",
+        "url": "https://www.channelnewsasia.com/world/disney-says-kimmel-will-return-air-tuesday-six-days-after-suspension-5362896",
+        "summary": "📰 제목: 디즈니, 킴멜 쇼 6일 만에 화요일 복귀 결정\n\n내용: 디즈니는 지미 킴멜과의 추가 논의 끝에 그의 쇼를 6일 만인 화요일에 재개하기로 결정했다고 밝혔습니다.  디즈니 CEO 밥 아이거, 디즈니 엔터테인먼트 공동 회장 다나 월든, 그리고 킴멜 본인이 이 결정에 참여했습니다.  정확한 중단 사유는 공개되지 않았으나,  디즈니는 킴멜의 복귀를 결정한 것입니다.",
+        "content": "After further discussions with Kimmel, \"we reached the decision to return the show on Tuesday,\" Disney said. Disney CEO Bob Iger, Disney Entertainment Co-Chair Dana Walden and Kimmel...",
+        "publish_date": "2025-09-23T07:58:51.526666+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Macron recognizes Palestinian state at landmark UN summit",
+        "url": "https://sg.news.yahoo.com/france-others-recognize-palestinian-state-054326500.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Macron recognizes Palestinian state at landmark UN summit",
+        "content": "\"The time has come to free the 48 hostages held by Hamas. The Palestinian Authority hailed France's \"historic and courageous\" decision and its delegation gave him a standing ovation. Australia, Britain, Canada and Portugal recognized a Palestinian state, piling pressure on Israel as it...",
+        "publish_date": "2025-09-23T06:24:07+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-09-23T08:01:51.171117+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
