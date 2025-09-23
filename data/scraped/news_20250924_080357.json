@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Schools shut, flights axed as Typhoon Ragasa nears Hong Kong, southern China",
+        "url": "https://www.channelnewsasia.com/east-asia/typhoon-ragasa-hong-kong-southern-china-schools-shut-flight-cancelled-5364661",
+        "summary": "📰 제목: 태풍 라가사 접근에 홍콩·중국 남부 학교 휴교, 항공편 결항\n\n내용: 홍콩 기상청에 따르면 초강력 태풍 라가사가 남중국해를 서쪽으로 이동하며 중심 부근 최대 풍속 시속 205km의 강풍을 동반하고 있습니다.  이에 따라 홍콩과 중국 남부 지역에서 학교가 휴교되고 항공편이 결항되는 등 피해가 발생하고 있습니다.  EU 거주자는 해당 정보를 이용할 수 없습니다.",
+        "content": "The super typhoon was generating maximum sustained winds of 205kmh near its centre while moving west across the South China Sea, according to Hong Kong's weather service. This service is not intended for persons residing in the E.U",
+        "publish_date": "2025-09-24T07:58:59.645534+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "About 1,000 HDB units added to upcoming Berlayar estate, with first BTO launch in October",
+        "url": "https://www.channelnewsasia.com/singapore/berlayar-estate-hdb-bto-october-greater-southern-waterfront-5361256",
+        "summary": "📰 제목: 벨라야르 주택단지, BTO 10월 분양 시작, 공공주택 1,000세대 증가\n\n내용: 싱가포르 주택개발청(HDB)은 9월 23일, 케펠 클럽 골프장 부지에 조성되는 벨라야르 주택단지의 공공임대주택(HDB)이 기존 계획보다 1,000세대 증가한 약 7,000세대로 건설될 것이라고 발표했습니다.  10월에는 '벨라야르 레지던스'라는 이름의 첫 BTO(Build-to-Order) 프로젝트가 분양될 예정이며, 2룸 플렉시, 3룸, 4룸 등 총 870세대의 주택이 공급됩니다.  총 48헥타르 부지에는 공공주택과 함께 3,000세대의 민영주택도 건설될 계획입니다.",
+        "content": "SINGAPORE: The new Berlayar housing estate being built on the former Keppel Club golf course site will have about 7,000 public flats, up from the 6,000 previously announced. This came after detailed planning studies of the 48-hectare site in Bukit Merah, which will also include 3,000 private units, said Singapore's Housing and Development Board (HDB) on Tuesday (Sep 23). Berlayar estate’s first Build-to-Order (BTO) project, named Berlayar Residences, is scheduled for sale in October. It will offer 870 two-room flexi, three-room and four-room flats across four blocks from 19 to 46 storeys high. The project, located between the Telok Blangah and...",
+        "publish_date": "2025-09-24T07:59:07.770915+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Keep populism at bay, or there will be dire, lasting implications: Ong Ye Kung",
+        "url": "https://sg.news.yahoo.com/keep-populism-bay-dire-lasting-111950913.html",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Keep populism at bay, or there will be dire, lasting implications: Ong Ye Kung",
+        "content": "This happened after several foreigners had urged Singaporeans to vote along religious lines. “Let’s not think Singapore is immune to populism,” he added, pointing out...",
+        "publish_date": "2025-09-23T20:19:50+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-24T08:03:57.898026+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
