@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Temptation to play race, religion card will grow as elections become more tightly contested: PM Wong",
+        "url": "https://www.channelnewsasia.com/singapore/singapore-must-guard-against-temptation-play-race-religion-card-lawrence-wong-5366111",
+        "content": "Mr Wong said there was “no doubt” that the shared Singaporean identity has grown stronger since the country’s independence. While he agreed with Leader of the Opposition Pritam Singh that Singaporeans have multiple identities extending beyond nationality - to include race and...",
+        "publish_date": "2025-09-25T07:58:41.255621+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 선거 경쟁 심화되면 인종·종교 이용 유혹 커질 것: 옹 싱가포르 총리\n\n내용: 옹 싱가포르 총리는 싱가포르 독립 이후 공유된 싱가포르 정체성이 강해졌다는 데는 의심의 여지가 없다고 말했습니다.  그는 야당 대표인 프리탐 싱의 싱가포르인들이 국적 외에도 인종과 종교를 포함한 다중 정체성을 가지고 있다는 의견에 동의하면서도, 선거 경쟁이 치열해질수록 인종과 종교를 이용하려는 유혹이 커질 것이라고 우려했습니다.  따라서 이러한 유혹에 굴하지 않고 공동체적 정체성을 유지하는 것이 중요하다고 강조했습니다."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "HDB to selectively acquire privately held shops if needed to boost retail supply: Sun Xueling",
+        "url": "https://sg.news.yahoo.com/hdb-selectively-acquire-privately-held-131841420.html",
+        "content": "Of the privately owned shops, around 7,700 were sold on 99-year leases and still have more than 30 years left on their leases",
+        "publish_date": "2025-09-24T22:18:41+09:00",
+        "extracted_by": "hybrid_gemini",
+        "summary": "📰 제목: 필요시 소매 공급 확대 위해 민간 소유 상가 선택적 매입: 쑨쉐링 장관\n\n내용: 쑨쉐링 장관은 싱가포르 공공주택(HDB)이 소매 공급을 늘리기 위해 필요하다면 민간 소유 상가를 선택적으로 매입할 것이라고 밝혔습니다.  99년 임대차 계약으로 매각된 민간 소유 상가 약 7,700곳 중 30년 이상의 임대 기간이 남아 있습니다.  HDB는 이러한 상가들을 매입하여 소매업 확장을 지원할 계획입니다."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-25T08:01:45.074132+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

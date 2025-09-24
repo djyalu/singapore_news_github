@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Temptation to play race, religion card will grow as elections become more tightly contested: PM Wong",
+        "url": "https://www.channelnewsasia.com/singapore/singapore-must-guard-against-temptation-play-race-religion-card-lawrence-wong-5366111",
+        "summary": "📰 제목: 선거 경쟁 심화될수록 인종·종교 갈등 조장 유혹 커질 것: 옹 싱가포르 총리\n\n내용: 옹 싱가포르 총리는 싱가포르의 독립 이후 공유된 싱가포르 정체성이 강해졌다는 데는 의심의 여지가 없다고 말했습니다.  하지만 야당 대표인 프리탐 싱이 지적한 바와 같이 싱가포르인들이 국적 외에도 인종과 종교 등 다양한 정체성을 가지고 있다는 점을 인정하며, 선거 경쟁이 치열해질수록 인종과 종교를 이용하려는 유혹이 커질 것이라고 우려했습니다.  옹 총리는 이러한 유혹에 굴하지 않고 싱가포르의 통합을 유지하는 것이 중요하다고 강조했습니다.",
+        "content": "Mr Wong said there was “no doubt” that the shared Singaporean identity has grown stronger since the country’s independence. While he agreed with Leader of the Opposition Pritam Singh that Singaporeans have multiple identities extending beyond nationality - to include race and...",
+        "publish_date": "2025-09-25T07:58:41.255621+09:00",
+        "extracted_by": "traditional_gemini"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "HDB to selectively acquire privately held shops if needed to boost retail supply: Sun Xueling",
+        "url": "https://sg.news.yahoo.com/hdb-selectively-acquire-privately-held-131841420.html",
+        "summary": "📰 주택, 기술 관련 뉴스\n📢 HDB to selectively acquire privately held shops if needed to boost retail supply...",
+        "content": "Of the privately owned shops, around 7,700 were sold on 99-year leases and still have more than 30 years left on their leases",
+        "publish_date": "2025-09-24T22:18:41+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-25T08:01:41.627877+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
