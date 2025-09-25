@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "'Time to stop': Trump vows Israel will not annex West Bank",
+        "url": "https://www.channelnewsasia.com/world/trump-not-allow-israel-annex-west-bank-5370241",
+        "content": "\"I will not allow Israel to annex the West Bank. Nope, I will not allow it. It's not going to happen,\" Trump told reporters in the Oval Office. \"There's been enough. It's time to stop now,\" he said. Netanyahu's office did not immediately respond to a request for comment on Trump's remarks.",
+        "publish_date": "2025-09-26T07:58:38.822462+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Time to stop': Trump vows Israel will not annex W..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/trump-signs-executive-order-transfer-203201175.html",
+        "content": "“This is going to be American-operated all the way.”. The new version of TikTok will be controlled by a seven-member board of...",
+        "publish_date": "2025-09-26T06:56:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump allies to control TikTok under new US deal",
+        "url": "https://sg.news.yahoo.com/trump-allies-control-tiktok-under-223607558.html",
+        "content": "Investment firm Silver Lake Management and Silicon Valley powerhouse Andreessen Horowitz are also thought to be part of the deal",
+        "publish_date": "2025-09-26T07:36:07+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump allies to control TikTok under new US deal"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Wayne Rooney says he'd be dead if it wasn't for wife Coleen",
+        "url": "https://sg.news.yahoo.com/wayne-rooney-says-hed-dead-081700755.html",
+        "content": "\"I honestly believe, if she weren't there, I'd be dead,\" he said. \"I loved my football, obsessed with football, but also I loved a night out...",
+        "publish_date": "2025-09-25T17:17:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Wayne Rooney says he'd be dead if it wasn't for wi..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Serangoon North mosque evacuated after suspicious parcel found on premises",
+        "url": "https://www.asiaone.com/singapore/serangoon-north-mosque-evacuated-after-suspicious-parcel-found-premises-al-istiqamah-avenue-2",
+        "content": "The Al-Istiqamah Mosque in Serangoon North was evacuated after a suspicious parcel was delivered there. Police officers and SCDF are at scene to assess and manage the situation. The area had also been cordoned off, with curious residents looking on at some areas. The hazmat vehicles left at about 9.25pm and about 9.35pm respectively.",
+        "publish_date": "2025-09-24T21:55:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Serangoon North mosque evacuated after suspicious ..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-26T08:03:45.010156+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
