@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "US Supreme Court allows Trump to withhold US$4 billion in foreign aid",
+        "url": "https://www.channelnewsasia.com/world/us-supreme-court-allows-trump-withhold-4-billion-in-foreign-aid-5372716",
+        "content": "Ali's decision came in a lawsuit by aid groups challenging the administration's action. The Supreme Court has a 6-3 conservative majority, and the court's three liberal justices dissented. It also expressed concerns that ruling against Trump threatened to impair his power to conduct foreign affairs",
+        "publish_date": "2025-09-27T07:58:45.770293+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US Supreme Court allows Trump to withhold US$4 bil..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "27 Of The Funniest Posts About Cats And Dogs This Week (Sept. 20-26)",
+        "url": "https://sg.news.yahoo.com/style/27-funniest-posts-cats-dogs-223931075.html",
+        "content": "Woof — it’s been a long week. Comedy: 21 Of The Funniest Posts About Cats And Dogs This Week (Aug. They’re sure to make you howl. 20 Of The Funniest Posts About Cats And Dogs This Week. 24 Of The Funniest Posts About Cats And Dogs This Week",
+        "publish_date": "2025-09-27T07:39:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 27 Of The Funniest Posts About Cats And Dogs This ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-09-27T08:01:44.638280+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
