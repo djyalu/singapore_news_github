@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Riding the rails: Malaysia rediscovers allure of train travel",
+        "url": "https://www.straitstimes.com/asia/se-asia/riding-the-rails-malaysia-rediscovers-allure-of-train-travel",
+        "content": "And workers like technician Nuhairi Ismail are southbound, heading to Penang’s industrial parks some 100km away on this intercity line. Previously, he would take a three-hour-long bus ride, which was often delayed due to traffic jams. The shorter, more reliable rail journey allows him to return home to Kuala...",
+        "publish_date": "2025-10-08T07:58:18.899875+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Riding the rails: Malaysia rediscovers allure of t..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "15 hit by gastroenteritis symptoms at Raffles Girls’ Primary School; authorities investigating",
+        "url": "https://sg.news.yahoo.com/15-hit-gastroenteritis-symptoms-raffles-044027671.html",
+        "content": "Gastroenteritis is a medical condition where the stomach and intestines are inflamed. It is commonly known as stomach flu or food poisoning. It can spread through contact with other people, or contaminated food or water. The three parties added that the sale of the canteen food item potentially linked to the cases was...",
+        "publish_date": "2025-10-07T13:40:27+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 15 hit by gastroenteritis symptoms at Raffles Girl..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-08T08:01:51.586010+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
