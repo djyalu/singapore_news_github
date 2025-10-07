@@ -1,0 +1,13 @@
+[
+  {
+    "id": "20251007131214",
+    "timestamp": "2025-10-07T13:12:14.730878+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 4개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 10월 07일 13:12\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 4개 기사\n\n【 News 】\n📍 출처: Yahoo Singapore News, Channel NewsAsia\n\n\n1. 📰 싱가포르 최신 뉴스\n📢 Hamas and Israel open talks in Egypt under Trump's...",
+    "message_length": 902,
+    "article_count": 4,
+    "api": "green-api"
+  }
+]

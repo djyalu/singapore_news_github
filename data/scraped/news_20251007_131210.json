@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Hamas and Israel open talks in Egypt under Trump's Gaza peace plan",
+        "url": "https://www.channelnewsasia.com/world/gaza-peace-talks-israel-hamas-trump-egypt-5387251",
+        "content": "Al-Qahera News earlier said delegations were \"discussing preparing ground conditions for the release of detainees and prisoners\". Trump told reporters at the White House he was \"pretty...",
+        "publish_date": "2025-10-07T13:09:00.643530+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hamas and Israel open talks in Egypt under Trump's..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Remaining trekkers stranded near Mount Everest in Tibet being evacuated, source says",
+        "url": "https://www.channelnewsasia.com/east-asia/remainng-trekkers-stranded-mount-everest-tibet-evacuated-5387566",
+        "content": "The Tibetan regional government did not have immediate comment on the evacuation. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading Trekkers to the Karma valley that leads to the eastern Kangshung face...",
+        "publish_date": "2025-10-07T13:09:13.794722+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Remaining trekkers stranded near Mount Everest in ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "YAHOO POLL: Should companies return to a five-day work-from-office policy?",
+        "url": "https://sg.news.yahoo.com/yahoo-poll-should-companies-return-to-a-five-day-work-from-office-policy-094810786.html",
+        "content": "An NUS spokeswoman explained that since 1 September staff from central administration units had resumed working on campus five days a week. And this arrangement was extended to the rest of the university from October. \"NUS, too, recognises the value of in-person interactions in the workplace,\" she said. YAHOO POLL: Will Max Verstappen finally win the Formula 1 Singapore Grand Prix?. YAHOO POLL: Do you believe fairness is the answer to rising inequality in Singapore?",
+        "publish_date": "2025-10-05T18:48:10+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 YAHOO POLL: Should companies return to a five-day ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Photos of October's supermoon: A stunning start to a trio of celestial events",
+        "url": "https://sg.news.yahoo.com/photos-octobers-supermoon-stunning-start-210650300.html",
+        "content": "The subtle difference can be observed without special equipment if skies are clear. This is a photo gallery curated by AP photo editors.",
+        "publish_date": "2025-10-07T06:06:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Photos of October's supermoon: A stunning start to..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-10-07T13:12:10.187378+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
