@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "MAGA Debate About Charlie Kirk Conspiracy Theory Devolves Into Animal Sex Discourse",
+        "url": "https://sg.news.yahoo.com/maga-debate-charlie-kirk-conspiracy-224641696.html",
+        "content": "It started when conservative conspiracy theorist Dinesh D’Souza decided to comment on a conspiracy theory being floated by fellow conservative conspiracy theorist Candace Owens over Kirk’s assassination last month. Although Charlie Kirk Show producer Andrew Kolvet said the group chat was authentic, RawStory noted that Owens interpreted the conversation as a sign that Kirk planned to...",
+        "publish_date": "2025-10-09T07:46:41+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 MAGA Debate About Charlie Kirk Conspiracy Theory D..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man and daughter found dead in Sengkang flat after unit below reported bodily fluids dripping from ceiling",
+        "url": "https://www.asiaone.com/singapore/man-and-daughter-found-dead-sengkang-flat-after-unit-below-reported-bodily-fluids",
+        "content": "The deceased were father and daughter, according to a Shin Min Daily News report. The deaths were discovered after an elderly neighbour living in the unit below noticed liquid dripping from her ceiling on Monday morning, reported Shin Min.",
+        "publish_date": "2025-10-07T20:10:26+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man and daughter found dead in Sengkang flat after..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-10-09T08:01:57.304966+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
