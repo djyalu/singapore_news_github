@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Motorcyclist dies in accident on Eng Neo Avenue in Bukit Timah",
+        "url": "https://sg.news.yahoo.com/motorcyclist-dies-accident-eng-neo-062600976.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Motorcyclist dies in accident on Eng Neo Avenue in Bukit Tim...",
+        "content": "A 49-year-old lorry driver is assisting with investigations, which are ongoing. A motorcycle is seen on the left side of the road. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2025-10-09T15:26:00+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "GOP Oklahoma Governor Criticizes National Guard Deployment To Chicago",
+        "url": "https://sg.news.yahoo.com/gop-oklahoma-governor-criticizes-national-224801962.html",
+        "summary": "📰 기술 관련 뉴스\n📢 GOP Oklahoma Governor Criticizes National Guard Deployment To Chicago",
+        "content": "Stitt’s comments come as Democratic governors, led by Illinois Gov. Pritzker and California Gov. Gavin Newsom, have condemned the decision by Texas Gov. Stitt is the chair of the NGA. “Oklahomans would lose their mind if Pritzker in Illinois sent troops down to Oklahoma...",
+        "publish_date": "2025-10-10T07:48:01+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-10T08:00:59.665749+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
