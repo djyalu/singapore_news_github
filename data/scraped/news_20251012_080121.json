@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Magnitude 6.0 quake hits off southern Philippines: USGS",
+        "url": "https://www.channelnewsasia.com/asia/magnitude-60-quake-hits-southern-philippines-usgs-5396366",
+        "content": "A magnitude-6.0 earthquake jolted just off the coast of southern Philippines late Saturday, the United States Geological Survey said. There were no immediate reports of casualties from the quake, Cagwait Fire Officer Arnel Besinga told AFP. Our pots here in the fire station fell in our kitchen,\" Besinga said. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading Rescue and fire authorities were conducting a joint assessment of the damage",
+        "publish_date": "2025-10-12T07:58:30.915482+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Magnitude 6.0 quake hits off southern Philippines:..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "S’pore not immune to global religious tensions, don’t take racial harmony for granted: Shanmugam",
+        "url": "https://sg.news.yahoo.com/pore-not-immune-global-religious-052000700.html",
+        "content": "Through social media and the internet, Singaporeans are more exposed to happenings around the world, he noted, including religious tensions. He outlined three principles that have helped Singapore build religious harmony.",
+        "publish_date": "2025-10-11T17:03:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 S’pore not immune to global religious tensions, do..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-12T08:01:21.520256+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
