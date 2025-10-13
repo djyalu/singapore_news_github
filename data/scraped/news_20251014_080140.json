@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesian president caught asking Trump for meeting with son Eric in ‘hot mic’ moment",
+        "url": "https://www.channelnewsasia.com/world/indonesian-president-caught-asking-trump-meeting-son-eric-in-hot-mic-moment-5399596",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Indonesian president caught asking Trump for meeting with so...",
+        "content": "Speaking to Trump behind a podium, Prabowo mentioned a region that was \"not safe, security-wise\", before asking: \"Can I meet Eric?\". Trump replied: \"I’ll have Eric call. He’s such a good boy. I’ll have Eric call.\". Prabowo responded: \"We’ll look for a better place,\" to which Trump again said, \"I’ll have Eric call you.\" The Indonesian leader then added: \"Eric or Don Jr.\"",
+        "publish_date": "2025-10-14T07:58:46.402776+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Mali retaliates against US, requiring visa applicants to post $10,000 bond",
+        "url": "https://sg.news.yahoo.com/mali-retaliates-against-us-requiring-215328250.html",
+        "summary": "📰 정책, 기술 관련 뉴스\n📢 Mali retaliates against US, requiring visa applicants to post $10,000 bond",
+        "content": "The ministry statement Sunday followed a statement Friday posted by the US Embassy in Mali’s capital Bamako. It cited high overstay rates, screening and vetting deficiencies, and foreign policy considerations as potential reasons behind the US decision. But the security situation remains precarious, and...",
+        "publish_date": "2025-10-14T06:53:28+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Dozens rescued, several still missing after monster storm brings violent wind gusts and record storm surge to western Alaska",
+        "url": "https://sg.news.yahoo.com/dozens-rescued-several-still-missing-152907233.html",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Dozens rescued, several still missing after monster storm brings violent wind gu...",
+        "content": "Three people are still unaccounted for in Kwigillingok as of Monday, according to Alaska State Troopers. Authorities said they were working to confirm reports of additional missing individuals in Kipnuk. The sparsely populated villages are more than 400 miles southwest of Anchorage. “Both communities experienced strong winds and heavy flooding overnight, which caused significant damage, including at least eight homes being pushed from their foundations,” Alaska State Troopers said. Search efforts continued overnight with help from the Alaska Air National Guard, Alaska...",
+        "publish_date": "2025-10-14T06:59:45+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "420 employers hauled up annually from 2021 to 2024 for hiring foreign workers without work pass: MOM",
+        "url": "https://sg.news.yahoo.com/420-employers-hauled-annually-2021-044207215.html",
+        "summary": "📰 싱가포르, 비즈니스, 교통 관련 뉴스\n📢 420 employers hauled up annually from 2021 to 2024 for hiring foreign workers wi...",
+        "content": "An MOM spokesman said: “In general, foreigners must possess valid work passes to work in Singapore. “Businesses and individuals engaging foreigners to work in Singapore must ensure that they hold valid passes before starting work in the specified job. This is not a new requirement.”",
+        "publish_date": "2025-10-13T13:42:07+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-14T08:01:40.684579+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
