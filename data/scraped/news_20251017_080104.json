@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "What’s on the agenda as China’s ruling elite hold key political gathering?",
+        "url": "https://www.channelnewsasia.com/east-asia/china-fourth-plenum-agenda-five-year-plan-personnel-intrigue-5391666",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 What’s on the agenda as China’s ruling elite hold key politi...",
+        "content": "Analysts expect a strong emphasis on bolstering technological self-reliance and driving breakthroughs in innovation, alongside policies to tackle social inequality, unemployment and weak household spending. Subscribe to our Chief Editor’s Week in Review Our chief editor shares...",
+        "publish_date": "2025-10-17T07:58:40.802298+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Hackers use some Canada and US airport PA systems to praise Hamas, criticize Trump",
+        "url": "https://sg.news.yahoo.com/hackers-canada-us-airport-pa-223441742.html",
+        "summary": "📰 공항, 기술 관련 뉴스\n📢 Hackers use some Canada and US airport PA systems to praise Hamas, criticize Tru...",
+        "content": "The RCMP said it is investigating the hack with other agencies and declined to provide further details. The Canadian Centre for Cyber Security is assisting the airport and the RCMP with the...",
+        "publish_date": "2025-10-17T07:34:41+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/jeff-bezos-reid-hoffman-tech-153031082.html",
+        "summary": "📰 취업, 금융, 경제 관련 뉴스\n📢 Yahoo Finance",
+        "content": "“I don’t love the word ‘balance’ because it implies a tradeoff,” Bezos said recently at Italian Tech Week. If you’re better at work, you’ll be better at home.’ These things go together. It’s not a strict tradeoff.”. It’s not the first time the entrepreneur worth $240 billion has struck back against the idea",
+        "publish_date": "2025-10-16T00:30:31+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-10-17T08:01:04.348159+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
