@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Airline Issues Apology After Asking Flight Attendant for Sick Leave Paperwork Days After Her Death",
+        "url": "https://sg.news.yahoo.com/airline-issues-apology-asking-flight-180454921.html",
+        "content": "Members of the Taoyuan Flight Attendants Union say the company isn't doing enought to address its \"flawed culture\". A Taiwanese airline is apologizing after requesting sick leave paperwork from an employee who died earlier this month, local outlets have reported. The leader reportedly did not contact ground-based medical services and insisted that the employee, identified with the last name Sun, continue working. Taoyuan City Office of Labor Inspection told the outlet the incident occurred on...",
+        "publish_date": "2025-10-18T03:04:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Airline Issues Apology After Asking Flight Attenda..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "At least $160k lost to lucky draw, e-commerce scams via live streaming since August: Police",
+        "url": "https://sg.news.yahoo.com/least-160k-lost-lucky-draw-132000426.html",
+        "content": "In the lucky draw scams, victims bought scratch cards that offered a chance to win cash prizes, after they came across Facebook Live streams promoting these cards. They were then asked to transfer more money to improve their chances of winning or increase the cash prize amount, or told they could make deferred payments. In the e-commerce scams, victims encountered Facebook Live streams promoting “gold mine bags” – bags that, according to the scammers, could potentially contain gold. If the victims did not win, the scammers would urge them...",
+        "publish_date": "2025-10-18T22:20:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 At least $160k lost to lucky draw, e-commerce scam..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-19T08:01:26.483952+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
