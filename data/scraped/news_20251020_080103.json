@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "As Prabowo marks one year in power, intrigue and despair grow over rival party PDI-P's role",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-pdip-megawati-soekarnoputri-prabowo-subianto-opposition-counter-balance-5408626",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 As Prabowo marks one year in power, intrigue and despair gro...",
+        "content": "The other party is the National Democratic Party, which has 69 seats in parliament. Some observers have expressed disappointment in the PDI-P’s muted response to some controversial policies, lamenting a weakened system of checks and balances. The PDI-P was known as a fierce opposition during Susilo Bambang Yudhoyono’s presidency from 2004 to...",
+        "publish_date": "2025-10-20T07:58:46.144843+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/m-financial-advisor-3-bills-141306417.html",
+        "summary": "📰 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Autopay feels like one of life’s little luxuries. For most recurring expenses, it’s a no-brainer — why not make life easier?. Find Out: 4 Secrets of the Truly Wealthy, According To Dave Ramsey. Here’s the twist, though: Not every bill should be set up for autopay. Some expenses are better managed manually, especially when the amounts fluctuate, errors are common or oversight is essential. “Autopay is convenient, but my millionaire clients are very selective about which bills they put on autopilot. Even with plenty of resources, they avoid three categories,” Foguth said. According to him, high net worth clients often have multiple cards for points or...",
+        "publish_date": "2025-10-18T01:53:06+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-10-20T08:01:03.582836+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
