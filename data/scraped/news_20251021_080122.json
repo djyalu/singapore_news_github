@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Nature park at planned Bukit Timah Turf City will preserve globally threatened wildlife, rare flora",
+        "url": "https://sg.news.yahoo.com/nature-park-planned-bukit-timah-082604150.html",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Nature park at planned Bukit Timah Turf City will preserve g...",
+        "content": "This merging will form the ninth nature park bordering the green lungs of Singapore – the Central Catchment and Bukit Timah nature reserves. Other parks abutting them include Thomson and Windsor nature parks",
+        "publish_date": "2025-10-19T17:26:04+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Cyber defenders sound the alarm as F5 hack exposes broad risks",
+        "url": "https://sg.news.yahoo.com/cyber-defenders-sound-alarm-f5-103123385.html",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Cyber defenders sound the alarm as F5 hack exposes broad risks",
+        "content": "Several worry that more disclosures are coming. officials have said that federal networks were among those targeted in the hack's aftermath and have urged immediate action. That extensive presence alone has triggered widespread unease",
+        "publish_date": "2025-10-20T19:31:23+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-21T08:01:22.912295+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
