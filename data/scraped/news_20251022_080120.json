@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Interim U.S. Attorney's Angry Texts To Reporter Revealed",
+        "url": "https://sg.news.yahoo.com/interim-u-attorneys-angry-texts-221820141.html",
+        "content": "Donald Trump-appointed interim U.S. attorney Lindsey Halligan is facing scrutiny after her private messages with a reporter have surfaced. Your reporting isn’t accurate. Waste to even give you a heads up.”. Bower said that at first, she wondered whether someone posing as Halligan had sent her the messages. Later, she confirmed that it was indeed the interim U.S. attorney who was communicating with her",
+        "publish_date": "2025-10-22T07:18:20+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Interim U.S. Attorney's Angry Texts To Reporter Re..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-22T08:01:20.970344+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
