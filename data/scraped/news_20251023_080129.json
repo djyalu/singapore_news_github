@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Police looking into Porsche that drove with two children sitting atop rear near Bukit Panjang",
+        "url": "https://sg.news.yahoo.com/police-looking-porsche-drove-two-152700991.html",
+        "content": "It is unclear when it was taken down. In response to queries, the police said that a police report has been lodged.",
+        "publish_date": "2025-10-23T00:27:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police looking into Porsche that drove with two ch..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "October BTO sales exercise applications 3 times the number of flats launched: Chee Hong Tat",
+        "url": "https://www.asiaone.com/singapore/october-bto-sales-exercise-applications-3-times-number-flats-launched-chee-hong-tat",
+        "content": "Applications for the October Build-To-Order (BTO) sales exercise have exceeded three times the number of flats launched, said Minister for National Development Chee Hong Tat. Despite being oversubscribed, the minister assured that many first-time applicants have a good chance of securing a flat. Chee stated that in order to meet the housing needs of seniors and singles, almost 3,000 2-room Flexi flats were offered during this exercise.",
+        "publish_date": "2025-10-22T22:40:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 October BTO sales exercise applications 3 times th..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-23T08:01:29.849055+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
