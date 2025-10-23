@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump to meet Xi in South Korea on Oct 30",
+        "url": "https://www.channelnewsasia.com/world/trump-meet-xi-in-south-korea-during-asia-trip-5421631",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump to meet Xi in South Korea on Oct 30...",
+        "content": "White House Press Secretary Karoline Leavitt said Trump will depart for Malaysia late Friday night, followed by stops in Japan and South Korea. He will meet Xi next Thursday after addressing the Asia-Pacific Economic Cooperation (APEC) CEO Summit in Busan. The meeting comes after weeks of uncertainty over whether it would take place. A trade dispute between Washington and Beijing flared earlier this month after China expanded export curbs on rare earth minerals, prompting Trump to threaten new tariffs.",
+        "publish_date": "2025-10-24T07:58:40.112029+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump pardons convicted Binance founder Zhao Changpeng",
+        "url": "https://www.channelnewsasia.com/world/trump-pardon-zhao-changpeng-binance-founder-us-5421126",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump pardons convicted Binance founder Zhao Changpeng...",
+        "content": "Zhao, who served four months in prison last year after pleading guilty to violating anti-money laundering laws, expressed gratitude on social media. “We’ll do everything we can to help make America the capital of crypto.”. Binance, the world’s largest cryptocurrency exchange by trading volume, declined to comment.",
+        "publish_date": "2025-10-24T07:58:53.993344+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "White House's East Wing demolished for Trump ballroom: satellite images",
+        "url": "https://sg.news.yahoo.com/white-houses-east-wing-demolished-222507536.html",
+        "summary": "📰 취업, 정치, 기술 관련 뉴스\n📢 White House's East Wing demolished for Trump ballroom: satellite images",
+        "content": "Demolition workers have finished tearing down the White House's entire East Wing to make way for US President Donald Trump's giant new $300 million ballroom, satellite pictures showed Thursday. Satellite photos taken just under a month earlier show the wing that housed the offices of the US first lady intact. But after work started this week, Trump said Wednesday that he had decided after consulting architects that \"really knocking it...",
+        "publish_date": "2025-10-24T07:25:07+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-24T08:01:55.905177+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
