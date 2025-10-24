@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "MBS tree surgeon: He works at height, prunes 800kg bonsai",
+        "url": "https://www.straitstimes.com/singapore/jobs/mbs-tree-surgeon-he-works-at-height-prunes-800kg-bonsai?ref=headstart",
+        "content": "The work can be laborious but satisfying. For instance, I am involved in managing the newly revamped landscaped areas that feature the property’s bonsai collection. Because of their massive weight, some were crane-hoisted at night...",
+        "publish_date": "2025-10-25T07:58:27.689167+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 MBS tree surgeon: He works at height, prunes 800kg..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2025-10-25T08:01:20.101216+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
