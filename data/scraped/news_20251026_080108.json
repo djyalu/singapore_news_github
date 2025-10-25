@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "58 arrested for employment offences in raids at public entertainment outlets",
+        "url": "https://sg.news.yahoo.com/58-arrested-employment-offences-raids-111500561.html",
+        "content": "They include 32 foreigners found to be working illegally as performing artistes. The remaining 22 foreigners and four Singapore permanent residents were arrested for employment-related offences, the agencies said. In addition, two more people were caught in possession of e-vaporisers, and six e-vaporisers were...",
+        "publish_date": "2025-10-24T20:15:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 58 arrested for employment offences in raids at pu..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-26T08:01:08.977417+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
