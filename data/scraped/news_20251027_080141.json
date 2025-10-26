@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Private hospital fee benchmarks: Will more transparency lower healthcare bills?",
+        "url": "https://www.channelnewsasia.com/singapore/private-hospital-charges-benchmarks-healthcare-costs-ong-ye-kung-doctors-5419606",
+        "content": "Health Minister Ong Ye Kung earlier this month announced plans to benchmark additional private hospital charges beyond the professional fees already covered, including surgeon, anaesthetist and inpatient attendance fees. Speaking on CNA's Deep Dive podcast, Mr Ong said benchmarking surgeon fees has proven \"quite effective\", with most charges now falling within the recommended range. Besides professional fees, existing Ministry of Health (MOH) benchmarks also cover hospital fees such as room charges, surgical facilities and equipment, and medication.",
+        "publish_date": "2025-10-27T07:59:01.302695+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Private hospital fee benchmarks: Will more transpa..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "US and China agree on trade framework ahead of leaders' meeting",
+        "url": "https://www.channelnewsasia.com/world/us-and-china-agree-trade-framework-ahead-leaders-meeting-5425546",
+        "content": "He said Trump and Xi would discuss soybean and agricultural purchases from American farmers, more balanced trade and resolving the US...",
+        "publish_date": "2025-10-27T07:59:05.257486+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US and China agree on trade framework ahead of lea..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Wants DOJ To Look Into His Go-To Gripe With 'Gusto'",
+        "url": "https://sg.news.yahoo.com/news/articles/trump-wants-doj-look-gripe-215312340.html",
+        "content": "Look what happened to our Country when a Crooked Moron became our ‘President!’ We now know everything.”. Trump’s “big lie” about widespread, systemic voter fraud has been repeatedly debunked by government agencies, news outlets and even experts that the president’s people hired to specifically suss out irregularities. Nevertheless, the president pushed for another investigation, writing, “I hope the DOJ pursues...",
+        "publish_date": "2025-10-27T06:53:12+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump Wants DOJ To Look Into His Go-To Gripe With ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chomp Chomp Food Centre to close from Oct 27 for upgrading, will reopen in January 2026",
+        "url": "https://sg.news.yahoo.com/chomp-chomp-food-centre-close-044600886.html",
+        "content": "Besides Chomp Chomp Food Centre, three other places have also temporarily shuttered in October. Meanwhile, in December, Pasir Panjang Food Centre will also be closed for similar works",
+        "publish_date": "2025-10-26T13:46:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chomp Chomp Food Centre to close from Oct 27 for u..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-10-27T08:01:41.693916+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
