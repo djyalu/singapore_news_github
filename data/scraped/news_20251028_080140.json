@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shaping Tomorrow",
+        "url": "https://www.channelnewsasia.com/watch/shaping-tomorrow/building-skills-tomorrows-workforce-5414776",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Shaping Tomorrow",
+        "content": "SG60: Shaping Tomorrow is a compelling video series that brings to life the Singapore stories of our most cherished brands",
+        "publish_date": "2025-10-28T07:58:48.860476+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/singapore-bank-stocks-rise-further-233000929.html",
+        "summary": "📰 싱가포르, 성장, 금융 관련 뉴스\\n📢 Yahoo Finance...",
+        "content": "DBS, UOB, and OCBC have seen strong share performances over the last few years. High interest rates increase the spread banks earn between the interest charged on loans and the interest paid on deposits. Record profits for the banks and the payment of generous dividends ensued. From 2022 to 2024, all three banks have grown their net income at an average compound annual growth rate (CAGR) of 16.5%. The banks also took this opportunity to bolster their capital positions. These factors likely played a role in their strong share price growth up to 2024. OCBC’s stock price is up just 1.0% while UOB’s has declined by 5%. Singapore’s largest bank, DBS Group Holding Limited (SGX:...",
+        "publish_date": "2025-10-27T08:30:00+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-10-28T08:01:40.979127+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
