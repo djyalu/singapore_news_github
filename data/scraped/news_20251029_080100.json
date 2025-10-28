@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Kelsey Grammer becomes a dad again at 70",
+        "url": "https://sg.news.yahoo.com/kelsey-grammer-becomes-dad-again-003455617.html",
+        "content": "Kelsey Grammer has welcomed his eighth child and fourth baby with wife Kayte Walsh. The new addition is a son named Christopher. \"It was like three days ago,\" he said. \"Christopher, that's just joined the family.\". Grammer and Walsh already share three children together, a 12-year-old daughter, and two sons aged 10 and eight. In June, news broke that Grammer and Walsh were expecting. The actor was photographed in London, England, with his pregnant wife as they strolled through a park together. In May, the Cheers alum opened up about being a father to seven in...",
+        "publish_date": "2025-10-28T09:34:55+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Kelsey Grammer becomes a dad again at 70"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Fire breaks out at Marina Bay Sands; no injuries reported",
+        "url": "https://sg.news.yahoo.com/fire-breaks-marina-bay-sands-092357916.html",
+        "content": "There were no reported injuries. “We are working closely with the authorities to investigate this incident,” the spokesperson added. Business operations were not impacted, MBS said. Preliminary findings indicate that the fire had likely originated from welding works conducted in the vicinity, said SCDF. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2025-10-28T18:23:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Fire breaks out at Marina Bay Sands; no injuries r..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-29T08:01:00.320346+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
