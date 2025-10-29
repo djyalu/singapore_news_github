@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "3 taken to hospital after van crashes into traffic light, turns turtle in Woodlands accident",
+        "url": "https://sg.news.yahoo.com/3-taken-hospital-van-crashes-104500216.html",
+        "content": "SCDF said two people were taken to Khoo Teck Puat Hospital and one to Woodlands Health Campus. The van driver is assisting with police investigations. The traffic light crashes onto the road, and the van flips and turns turtle, landing several metres away. In photos of the aftermath, at least three SCDF vehicles and...",
+        "publish_date": "2025-10-29T19:45:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 3 taken to hospital after van crashes into traffic..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/4-singapore-stocks-perfect-cpf-233000831.html",
+        "content": "The Central Provident Fund (CPF) offers safe, risk-free returns. Here are four quality names that combine stability, dividend strength, and long-term growth potential – perfect for CPF portfolios. NetLink NBU Trust (SGX: CJLU), or NetLink, builds, maintains, and operates Singapore’s fibre network infrastructure that delivers high-speed internet to homes and businesses. NetLink’s monopoly on the Singapore fibre network underscores the resiliency and predictability of the business. It can charge a monthly fee of S$13.50 per residential connection, S$55.00 per...",
+        "publish_date": "2025-10-29T08:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Top Border Patrol official no longer has to appear today before Chicago federal judge after appeals court ruling",
+        "url": "https://sg.news.yahoo.com/news/articles/top-border-patrol-official-no-215626893.html",
+        "content": "The Trump administration quickly pressed a federal appeals court to put her order on hold. In a Wednesday afternoon ruling, the Seventh Circuit Court of Appeals granted their request, meaning Bovino will not make a Wednesday court appearance. It is unclear whether Bovino will need to appear in court Thursday. Ellis’ requirement, Department of Justice attorneys told the appeals court, “significantly...",
+        "publish_date": "2025-10-30T06:56:26+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Top Border Patrol official no longer has to appear..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-30T08:01:12.450198+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
