@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Two taken to hospital after trailer topples over near Mount Faber",
+        "url": "https://sg.news.yahoo.com/two-taken-hospital-trailer-topples-154200087.html",
+        "content": "The 32-year-old trailer driver and his passenger, a 29-year-old man, were taken conscious to hospital. The police said the driver is assisting with investigations. A lamp post is also knocked down. The Straits Times has contacted the Singapore Civil Defence Force and the Land Transport Authority for more details. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2025-10-31T00:42:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Two taken to hospital after trailer topples over n..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-10-31T08:01:29.095330+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
