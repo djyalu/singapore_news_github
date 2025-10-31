@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "MOM investigating Twelve Cupcakes for potential breaches of Employment Act",
+        "url": "https://www.channelnewsasia.com/singapore/twelve-cupcakes-closure-worker-salaries-mom-cpf-investigating-5438191",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 MOM investigating Twelve Cupcakes for potential breaches of ...",
+        "content": "Staff were owed salaries, and despite being a unionised company, Twelve Cupcakes did not engage the union early, before affected employees were notified. Such behaviour is “irresponsible”, said MOM and the CPF Board. “While retrenchments may be unavoidable, employees should be treated in a responsible and sensitive manner,” they added",
+        "publish_date": "2025-11-01T07:58:30.735223+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "10 must-try places with chicken feet that’ll knock your socks off",
+        "url": "https://sg.news.yahoo.com/style/10-must-try-places-chicken-080041081.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 10 must-try places with chicken feet that’ll knock your socks off",
+        "content": "The name alone invokes either a pleasant hum or a disgusted groan. It’s often served as a side dish to accompany meals like wanton mee or chicken rice. However, I think there are still several stalls that have chicken feet so good that it’s worth shouting out. With that, here are 10 must-try places with chicken feet that’ll knock your socks off!",
+        "publish_date": "2025-10-30T17:00:41+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-01T08:01:05.942036+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
