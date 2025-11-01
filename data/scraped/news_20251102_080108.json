@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "In a cashless society, parents must do more to help kids understand money's value",
+        "url": "https://www.channelnewsasia.com/today/voices/cashless-digital-money-kids-parents-virtual-cash-financial-literacy-5431731",
+        "content": "Watching her, I developed the habit of conscious and deliberate spending, which later shaped me into a financially literate adult. Those early lessons, in the form of day-to-day habits, stay with us. Researchers call this financial socialisation: the process by which...",
+        "publish_date": "2025-11-02T07:58:34.139492+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 In a cashless society, parents must do more to hel..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Landslide in western Kenya leaves 21 dead, 30 others missing",
+        "url": "https://sg.news.yahoo.com/news/articles/landslide-western-kenya-leaves-21-210947928.html",
+        "content": "Rescue efforts continued through Saturday despite the heavy rains as disaster agencies searched through the debris for missing people. A shopping center was washed away in 2020 by raging floods.",
+        "publish_date": "2025-11-02T06:09:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Landslide in western Kenya leaves 21 dead, 30 othe..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-02T08:01:08.806336+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
