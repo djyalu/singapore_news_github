@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Rapidly melting glaciers, election monitors, peanut allergies: Catch up on the day’s stories",
+        "url": "https://sg.news.yahoo.com/news/articles/rapidly-melting-glaciers-election-monitors-220154371.html",
+        "content": "👋 Welcome to 5 Things PM. Increasing the number of steps you take each day could slow cognitive decline in older adults, a study found. Physical activity helps prevent the buildup of proteins linked to Alzheimer’s disease. Here’s what else you might have missed during your busy day. Some worry they could be used to undermine the process or sow doubts about the results. They’re one of the most common food allergies. Runners already face immense physical and mental...",
+        "publish_date": "2025-11-04T07:01:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Rapidly melting glaciers, election monitors, peanu..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-04T08:01:43.582403+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
