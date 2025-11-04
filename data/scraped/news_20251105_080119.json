@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Dick Cheney, Architect Of Autocracy, Is Dead, But His Spirit Lives On",
+        "url": "https://sg.news.yahoo.com/news/articles/dick-cheney-architect-autocracy-dead-222508711.html",
+        "content": "foreign policy unconstrained by alliances and humanitarian laws coming to fruition in the form of President Donald Trump’s second administration. In the end, Cheney came to oppose the monster he created. After endorsing Trump in 2016, Cheney turned away from him after the Jan",
+        "publish_date": "2025-11-05T07:25:08+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dick Cheney, Architect Of Autocracy, Is Dead, But ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/4-singapore-companies-report-earnings-022327714.html",
+        "content": "As earnings season continues to unfold, investors can evaluate and, if necessary, make strategic adjustments to their portfolio. Today, we look at four Singapore companies, with different industry exposures, that just reported earnings. CapitaLand China Trust (SGX: AU8U), or CLCT, offers a glimpse into the state of China’s property scene. Meanwhile, Logistics’ occupancy remains stable at 96.6%.",
+        "publish_date": "2025-11-03T11:23:27+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pritam Singh appeal adjourned: Questions over WP chief 'doing nothing' for 8 weeks, what 'I won't judge you' meant",
+        "url": "https://www.asiaone.com/singapore/pritam-singh-appeal-adjourned-questions-over-wp-chief-nothing-8-weeks-i-wont-judge-you",
+        "content": "The court's decision was eventually adjourned to a later date. Jumabhoy said Singh had wanted to give Khan time to settle...",
+        "publish_date": "2025-11-04T21:19:20+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pritam Singh appeal adjourned: Questions over WP c..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-05T08:01:19.575325+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
