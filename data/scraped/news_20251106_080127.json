@@ -1,0 +1,64 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Pritam Singh talks politics on The Assembly, in his first national TV interview",
+        "url": "https://www.channelnewsasia.com/cna-insider/pritam-singh-talks-politics-assembly-first-national-tv-interview-5447461",
+        "content": "“I’m in the business of politics. “If your conscience is clear, then people can throw whatever they want at you, and you’ll still be standing",
+        "publish_date": "2025-11-06T07:58:56.826113+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pritam Singh talks politics on The Assembly, in hi..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Brendan Fraser and Rachel Weisz in talks to star in fourth Mummy movie",
+        "url": "https://sg.news.yahoo.com/brendan-fraser-rachel-weisz-talks-100734326.html",
+        "content": "In the original film series, Fraser played American adventurer and treasure hunter Rick O'Connell, while Weisz played Cairo-based English librarian and aspiring Egyptologist Evelyn Carnahan. Together with Evelyn's brother Jonathan, played by John Hannah, they visit an ancient Egyptian city and accidentally awaken a mummy named Imhotep. The success of the first two films prompted a 2002 spin-off, The Scorpion King, starring...",
+        "publish_date": "2025-11-05T21:00:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Brendan Fraser and Rachel Weisz in talks to star i..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "MBS says systems restored after 'network issue' caused check-in delays of up to 8 hours",
+        "url": "https://www.asiaone.com/singapore/mbs-says-systems-restored-after-network-issue-caused-check-delays-8-hours",
+        "content": "Several hotel staff members were seen assisting frustrated guests while addressing their queries. Staff had resumed using the computer system to process check-ins and the hotel also provided water to guests, reported 8world",
+        "publish_date": "2025-11-05T19:13:14+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 MBS says systems restored after 'network issue' ca..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-06T08:01:27.438140+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "DBS Q3 profit down 2% to S$2.95 billion; beats expectations",
+        "url": "https://www.businesstimes.com.sg/companies-markets/dbs-q3-profit-down-2-s2-95-billion-beats-expectations",
+        "content": "The earnings beat the S$2.79 billion consensus forecast in a Bloomberg survey of six analysts. This brings the quarter’s total dividend payout to S$0.75 per share, compared with the S$0.54 in the year-ago period",
+        "publish_date": "2025-11-06T07:59:09.340319+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 DBS Q3 profit down 2% to S$2.95 billion; beats exp..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-11-06T08:01:27.438172+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
