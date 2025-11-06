@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Independent candidates in GE2025 among those who have applied to be NMPs",
+        "url": "https://sg.news.yahoo.com/independent-candidates-ge2025-among-those-105737687.html",
+        "content": "An eight-member Special Select Committee (SSC) chaired by Speaker of Parliament Seah Kian Peng will then interview and consider the eligible candidates",
+        "publish_date": "2025-11-06T19:57:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Independent candidates in GE2025 among those who h..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "ECDA will use AI to review CCTV footage in pre-school investigations, detect potential misconduct",
+        "url": "https://sg.news.yahoo.com/ecda-ai-review-cctv-footage-102000541.html",
+        "content": "CCTV cameras were made mandatory in all pre-schools and government-funded early intervention centres from July 2024. These could potentially be adopted under the agency’s Early Childhood Industry Digital Plan, which provides funding to help pre-schools...",
+        "publish_date": "2025-11-06T19:20:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ECDA will use AI to review CCTV footage in pre-sch..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-07T08:01:32.356154+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
