@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/jamie-dimon-predicts-ai-shorten-204632005.html",
+        "content": "When Jamie Dimon makes predictions, the C-suite pays attention. “It’s going to affect every application, every job, every customer interface,” Dimon said. He isn’t speaking in hypotheticals. Dimon has turned JPMorgan into a live-fire AI lab. Dimon’s three-and-a-half-day forecast hinges on that cumulative productivity. As AI absorbs routine work, the same output may require fewer hours. But he’s adamant the transition won’t be painless.",
+        "publish_date": "2025-11-07T05:46:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "[SHIFTED] Dickson Nasi Lemak: Enjoy Malaysia’s highest-rated nasi lemak with incredible homemade 18-ingredient sambal",
+        "url": "https://sg.news.yahoo.com/style/shifted-dickson-nasi-lemak-enjoy-100058587.html",
+        "content": "On our side of the Causeway, it’s not easy to find authentic Malaysian cuisine. That was the case until I caught wind of Dickson Nasi Lemak on social media. [The stall has relocated to: 12 Gopeng St, #01-89 Icon Village, Singapore 078877]. Located opposite the popular bakery Petit Pain, the takeaway outlet offers a simple and concise menu. When I entered the store, I was greeted by a simple, minimalist interior",
+        "publish_date": "2025-11-06T19:10:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 [SHIFTED] Dickson Nasi Lemak: Enjoy Malaysia’s hig..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-08T08:01:30.475983+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
