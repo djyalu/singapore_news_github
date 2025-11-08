@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "EU says China confirms Nexperia chip export resumptions",
+        "url": "https://www.channelnewsasia.com/world/eu-says-china-confirms-nexperia-chip-export-resumptions-5455681",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 EU says China confirms Nexperia chip export resumptions...",
+        "content": "EU trade commissioner Maros Sefcovic posted on X that he welcomed \"the confirmation provided today. regarding the further simplification of export procedures for Nexperia chips destined for EU and global clients\". The exports will be allowed as long as the chips are only for...",
+        "publish_date": "2025-11-09T07:58:40.285520+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pritam Singh’s comments on court of public opinion are outrageous, wrong, unacceptable: Edwin Tong",
+        "url": "https://sg.news.yahoo.com/pritam-singh-comments-court-public-033000783.html",
+        "summary": "📰 장관, 법률, 기술 관련 뉴스\n📢 Pritam Singh’s comments on court of public opinion are outrageous, wrong, unacce...",
+        "content": "Minister for Law Edwin Tong said this on Nov 8. “The judge gave detailed grounds setting out the basis for...",
+        "publish_date": "2025-11-08T12:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-11-09T08:01:08.859585+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
