@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ono Ramen: Owner of Kulon achieves lifelong goal of opening ramen shop",
+        "url": "https://sg.news.yahoo.com/style/ono-ramen-owner-kulon-achieves-080054962.html",
+        "content": "The rise of fusion restaurants is nothing short of remarkable. Founder and owner Haris always loved food, which he credits to his vibrant home of Indonesia. In 2018, Haris decided to open a food stall called IndoJava in the canteen of Singapore Polytechnic. Serving authentic Indonesian food, Haris quickly received positive responses. Given his love for cats, Haris has livened up his...",
+        "publish_date": "2025-11-08T17:00:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Ono Ramen: Owner of Kulon achieves lifelong goal o..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$52k lost to scammers impersonating MHA officers since September",
+        "url": "https://www.asiaone.com/singapore/52k-lost-scammers-impersonating-mha-officers-september",
+        "content": "Victims have lost about $52,000 to scammers impersonating Ministry of Home Affairs (MHA) officers since September this year. In this scam variant, victims would first receive unsolicited calls from scammers posing as representatives from a bank. The scammers would subsequently instruct the victims to make...",
+        "publish_date": "2025-11-07T18:46:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $52k lost to scammers impersonating MHA officers s..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-10T08:01:54.615857+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
