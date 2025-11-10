@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump threatens $1 billion action as BBC apologises for edit error",
+        "url": "https://sg.news.yahoo.com/trump-threatens-1-billion-action-165004365.html",
+        "content": "including by filing legal action for no less than $1,000,000,000 (One Billion Dollars) in damages,\" it said. \"The BBC is on notice. PLEASE GOVERN YOURSELF ACCORDINGLY.\"",
+        "publish_date": "2025-11-11T07:14:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump threatens $1 billion action as BBC apologise..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Ex-SAF officer charged over $145k alleged scam involving 16 victims",
+        "url": "https://www.asiaone.com/singapore/former-saf-captain-cheating-benjamin-song-yong-pang",
+        "content": "The alleged offences took place over almost three years between May 2021 and March 2024. Amalgamated charges are when multiple alleged incidents are taken together and charged as a single offence.",
+        "publish_date": "2025-11-10T13:33:19+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Ex-SAF officer charged over $145k alleged scam inv..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-11T08:02:25.926143+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
