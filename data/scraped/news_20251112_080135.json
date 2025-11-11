@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/3-dangerous-myths-singapore-reits-093000080.html",
+        "content": "Real Estate Investment Trusts (REITs) have long been a favourite among Singapore investors. They are prized for their steady dividends and relatively low volatility compared to individual stocks. But not everything you hear about REITs is true. Not understanding how REITs work or believing common myths can lead to poor investment decisions and disappointing returns. Follow as we bust three common REIT myths and show why careful selection and a long-term mindset matter more than chasing short-term yields. It is only human to chase after the highest yields, believing that more income is always better. Understanding how yields work is crucial. A REIT’s yield is calculated by dividing annual distribution per unit by the unit price. Unfortunately, it’s usually the latter.",
+        "publish_date": "2025-11-10T18:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Hundreds feared dead after migrant boat capsizes off Malaysia",
+        "url": "https://sg.news.yahoo.com/hundreds-feared-dead-migrant-boat-193418477.html",
+        "content": "Hundreds of people are feared dead after a migrant boat from Myanmar capsized near Malaysia. At least seven bodies have been found and 13 people rescued after 300 people failed to arrive in Malaysia having left Myanmar’s Rakhine state. Officials believe the passengers boarded a large ship and were then placed into three smaller boats, to evade detection as they approached the Malaysian coast. The remaining six bodies were discovered on Sunday before the operation was suspended. It was scheduled to resume on Monday.",
+        "publish_date": "2025-11-10T05:04:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hundreds feared dead after migrant boat capsizes o..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "‘Slop bowl’ struggles, massive jackpot, hotel nightmare: Catch up on the day’s stories",
+        "url": "https://sg.news.yahoo.com/news/articles/slop-bowl-struggles-massive-jackpot-220001859.html",
+        "content": "👋 Welcome to 5 Things PM. Consider getting a Mega Millions ticket. The jackpot for tonight’s drawing just climbed to $900 million, the eighth-largest in the game’s history. Here’s what else you might have missed during your busy day. Three fast-casual giants — Cava, Chipotle and Sweetgreen — are feeling the heat as younger diners rethink their lunch budgets. Many are brown-bagging it or chasing deep discounts at traditional fast food chains. It began with a bloody crime scene straight from a made-for-TV movie. Here’s how they found him. Sonder, a short-term rentals company, suddenly collapsed over the weekend when its partnership with Marriott ended. Guests around the world were abruptly kicked out of their rooms and found themselves stranded. Autism can feel very isolating, but it’s an increasingly common diagnosis. A researcher with Asperger’s syndrome sees that as an...",
+        "publish_date": "2025-11-12T07:00:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ‘Slop bowl’ struggles, massive jackpot, hotel nigh..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-12T08:01:35.795041+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
