@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump 'knew about the girls', new Epstein emails claim",
+        "url": "https://www.channelnewsasia.com/world/new-epstein-emails-claim-trump-knew-us-democrats-5463151",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump 'knew about the girls', new Epstein emails claim...",
+        "content": "In an April 2011 message to longtime associate Ghislaine Maxwell, Epstein asserts Trump spent significant time with a woman whom the White House later identified as Epstein's main accuser, Virgina Giuffre. \"I want you to realise that that dog that hasn't...",
+        "publish_date": "2025-11-13T07:58:38.022746+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Charlie Kirk’s Death Is Just The Beginning",
+        "url": "https://sg.news.yahoo.com/news/articles/charlie-kirk-death-just-beginning-221457617.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Charlie Kirk’s Death Is Just The Beginning",
+        "content": "10, it was no minor loss for the Republican Party. He and TPUSA were, quite literally, the future of conservatism",
+        "publish_date": "2025-11-13T07:14:57+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Adelita Grijalva Adds Name To Epstein Files Discharge Petition",
+        "url": "https://sg.news.yahoo.com/news/articles/adelita-grijalva-adds-name-epstein-220014600.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Adelita Grijalva Adds Name To Epstein Files Discharge Petition",
+        "content": "WASHINGTON – After finally being sworn in by House Speaker Mike Johnson (R-La.), Rep. Adelita Grijalva (D-Ariz.) immediately added her signature to the “discharge petition” that could force a House vote on releasing the notorious “Epstein files.”. Justice cannot wait another day.”. The discharge petition process allows regular House members to bring bills to the floor over the opposition of House leadership",
+        "publish_date": "2025-11-13T07:00:14+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-13T08:01:24.595182+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
