@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Rep. Chuy Garcia's Chief Of Staff Is Running To Succeed Him After Retirement",
+        "url": "https://sg.news.yahoo.com/news/articles/rep-chuy-garcias-chief-staff-222428570.html",
+        "content": "The district in Chicago’s southwest side is heavily Hispanic and reliably blue. “My mother crossed the border, undocumented and pregnant with me. “That’s why I’m running for Congress.”. The candidate began serving as Chuy Garcia’s district director in...",
+        "publish_date": "2025-11-14T07:24:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Rep. Chuy Garcia's Chief Of Staff Is Running To Su..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-14T08:02:15.514984+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
