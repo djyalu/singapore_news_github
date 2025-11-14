@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/factbox-openai-google-firms-channel-222922643.html",
+        "summary": "📰 금융 관련 뉴스\\n📢 Yahoo Finance...",
+        "content": "Here is a list of multi-billion dollar AI, cloud and chip deals signed recently:. Google will invest $40 ‌billion in three new data centers in Texas through 2027. The company is also continuing to invest in its existing...",
+        "publish_date": "2025-11-15T07:29:22+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 69, found dead in waters near Esplanade",
+        "url": "https://www.asiaone.com/singapore/man-69-found-dead-waters-near-esplanade",
+        "summary": "📰 법률 관련 뉴스\n📢 Man, 69, found dead in waters near Esplanade",
+        "content": "Based on preliminary investigations, the police do not suspect foul play. Queen Elizabeth Walk is a promenade located at the Esplanade Park.",
+        "publish_date": "2025-11-14T15:15:08+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Train punctuality, disruption impact on passengers to be included in rail reliability report",
+        "url": "https://www.asiaone.com/singapore/mrt-train-punctuality-disruption-impact-passengers-rail-reliability-report-lta",
+        "summary": "📰 싱가포르, 교통, 기술 관련 뉴스\n📢 Train punctuality, disruption impact on passengers to be included in rail reliab...",
+        "content": "To better reflect rail reliability and passenger experience, the Land Transport Authority (LTA) will be including three additional indicators in its monthly rail reliability reports. The agency released its monthly rail reliability report, which for the first time includes more detailed data on train trips and disruptions. Singapore's rail reliability is mainly tracked using the mean kilometres between failure (MKBF) metric, which counts the average distance a train travels before it meets a delay lasting over five minutes. Alongside this, the number of train delays that last over 30 minutes is also included in rail performance reports. Beginning Friday, the monthly report will see the addition of the three performance indexes, which the...",
+        "publish_date": "2025-11-14T13:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-15T08:02:04.524410+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
