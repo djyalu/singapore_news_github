@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Worker dies after falling at Jurong Region Line construction site; stop-work order issued",
+        "url": "https://sg.news.yahoo.com/worker-dies-falling-jurong-region-110021977.html",
+        "content": "He was taken to Ng Teng Fong General Hospital, where he was pronounced dead. A stop-work order has been issued for the worksite, said LTA. It added that a safety timeout has been called for at-height work activities across LTA projects to review compliance with safety procedures. We are working with the contractors to provide them...",
+        "publish_date": "2025-11-15T20:00:21+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Worker dies after falling at Jurong Region Line co..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "A four-room flat was just sold for $1.25 million",
+        "url": "https://sg.news.yahoo.com/four-room-flat-just-sold-054845732.html",
+        "content": "A four-room flat in Bishan was just sold for a record-high of $1.25 million. (Photo: Albert Chua/EdgeProp Singapore). The recent sale surpasses the previous high for four-room flats in Bishan. This flat has a shorter remaining lease of around 63 years. So far this year, 162 four-room flats in Bishan have been sold. Of which, only three have fetched above $1.1 million. Apart from the above-mentioned flats, the third flat that crossed the...",
+        "publish_date": "2025-11-14T14:48:45+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 A four-room flat was just sold for $1.25 million"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 69, found dead in waters near Esplanade",
+        "url": "https://www.asiaone.com/singapore/man-69-found-dead-waters-near-esplanade",
+        "content": "Based on preliminary investigations, the police do not suspect foul play. Queen Elizabeth Walk is a promenade located at the Esplanade Park.",
+        "publish_date": "2025-11-14T15:15:08+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 69, found dead in waters near Esplanade"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-16T08:02:01.857764+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
