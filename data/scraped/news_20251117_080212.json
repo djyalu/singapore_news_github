@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Jakarta governor outlines plans to ease congestion in city",
+        "url": "https://www.channelnewsasia.com/watch/jakarta-governor-outlines-plans-ease-congestion-in-city-5467666",
+        "content": "In an exclusive interview with CNA, Jakarta governor Pramono Anung outlines how he plans to tackle the city's crippling traffic gridlock. But will austerity measures introduced by the national government stand in his way?",
+        "publish_date": "2025-11-17T07:58:41.500741+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Jakarta governor outlines plans to ease congestion..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "China sends coast guard to Senkaku islands amid row with Japan",
+        "url": "https://sg.news.yahoo.com/china-sends-coast-guard-senkaku-070246224.html",
+        "content": "“China coast guard vessel 1307 formation conducted patrols within the territorial waters of the Diaoyu islands. That sparked an angry response from Beijing, which has...",
+        "publish_date": "2025-11-16T16:02:46+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China sends coast guard to Senkaku islands amid ro..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-17T08:02:12.711897+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
