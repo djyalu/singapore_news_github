@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "UN climate chief urges COP30 negotiators to not 'waste time on stonewalling'",
+        "url": "https://www.channelnewsasia.com/asia/un-climate-chief-urges-cop30-negotiators-not-waste-time-stonewalling-5472671",
+        "summary": "📰 장관 관련 뉴스\\n📢 UN climate chief urges COP30 negotiators to not 'waste time ...",
+        "content": "\"There is a huge amount of work ahead for ministers and negotiators. \"We absolutely cannot afford to waste time on tactical delays or stonewalling,\" he said. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading Three issues were blocking progress after a week of talks in the Amazonian city:China, India and other...",
+        "publish_date": "2025-11-18T07:59:06.525552+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Acting FEMA Chief Steps Down Amid Existing DHS Plans To Oust Him",
+        "url": "https://sg.news.yahoo.com/news/articles/acting-fema-chief-steps-down-212645658.html",
+        "summary": "📰 정치, 기술 관련 뉴스\n📢 Acting FEMA Chief Steps Down Amid Existing DHS Plans To Oust Him",
+        "content": "Karen Evans, FEMA’s chief of staff and an ally of President Donald Trump, will take over as acting administrator Dec. 1, according to the spokesperson. DHS praised Richardson in its statement for his leadership through...",
+        "publish_date": "2025-11-18T06:26:45+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asian-markets-struggle-fears-build-025145141.html",
+        "summary": "📰 정부, 경제, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Global stock markets pulled back Monday as traders awaited key earnings reports, notably from chip giant Nvidia, amid concerns that the US Federal Reserve could hold off on further rate cuts this year. On Wall Street, the Dow retreated 1.2 percent while the tech-heavy Nasdaq lost 0.8 percent. The broader-based S&P 500 slid 0.9 percent. Europe lacked inspiration too with the DAX closing off 1.2 percent while London and Paris lost marginal ground. Major Asian indices had earlier finished lower as well amid simmering tensions between China and Japan which hit tourism and retail firms on Tokyo's exchange. Besides Nvidia, which dropped 1.9 percent, US retailers Home Depot, Target and Walmart are also set to release their earnings reports. Those will be monitored for signs of how consumers are faring as President Donald Trump's tariffs bite. Traders are also awaiting US government data on how the labor market fared in September. The numbers are due for publication Thursday, after the end...",
+        "publish_date": "2025-11-18T06:55:22+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Attitude problem': Woman who found bugs in noodles from Jurong Point eatery slams staff's reaction",
+        "url": "https://www.asiaone.com/singapore/attitude-problem-woman-who-found-bugs-noodles-jurong-point-eatery-slams-staffs-reaction",
+        "summary": "📰 기술 관련 뉴스\n📢 'Attitude problem': Woman who found bugs in noodles from Jurong Point eatery sla...",
+        "content": "\"This is not a question about money,\" she said. \"There is a problem with (her) attitude.\". The woman’s Facebook post has since garnered over 40 comments, 90 shares and 290 reactions. In the comments, several netizens lamented what they saw as declining service standards. \"I would rather spend a bit more for consistent quality and...",
+        "publish_date": "2025-11-17T13:48:30+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-11-18T08:02:33.774779+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
