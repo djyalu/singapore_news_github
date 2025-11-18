@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Here’s the Epstein bill’s possible path in the Senate",
+        "url": "https://sg.news.yahoo.com/news/articles/epstein-bill-possible-path-senate-205825311.html",
+        "content": "Here’s what could be next for the Epstein Files Transparency Act. The legislation now moves to the Republican-led Senate, where its once-uncertain path now seems clearer. Senate Republican leader John Thune said he expects his chamber to take the measure up “fairly quickly” – perhaps even later Tuesday. Senate Minority Leader Chuck Schumer said that he would move to pass the bill by unanimous consent later Tuesday, and Thune acknowledged that could be successful. “It’s the kind of thing, probably, that could perhaps move by unanimous consent,” Thune said. And it’s not likely the Senate will make any changes, despite House Speaker Mike Johnson’s public request that the...",
+        "publish_date": "2025-11-19T06:45:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Here’s the Epstein bill’s possible path in the Sen..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/singapore-home-sales-near-one-215550145.html",
+        "content": "Developers sold 2,424 private units in October, according to figures released by the city’s Urban Redevelopment Authority on Monday (Nov 17). That’s the most since November last year, when a similar frenzy led to 2,560 homes being sold",
+        "publish_date": "2025-11-17T06:55:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "2 men, aged 19 and 22, arrested after separately breaking into 2 Jurong West schools",
+        "url": "https://www.asiaone.com/singapore/2-men-aged-19-and-22-arrested-after-separately-breaking-2-jurong-west-schools",
+        "content": "The culprit allegedly made off with cash amounting to $70 and a mobile phone. A second similar case was reported at a school canteen along Jurong West Street 41 at about 8.25am. No valuables were reported missing in this instance. The police did not state which schools were targeted",
+        "publish_date": "2025-11-18T21:52:56+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 2 men, aged 19 and 22, arrested after separately b..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-19T08:02:09.051333+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
