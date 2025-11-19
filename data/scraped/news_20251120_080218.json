@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Elderly man clutters whole flat with newspapers, volunteers carefully pick out cash hidden in the pile",
+        "url": "https://www.asiaone.com/singapore/elderly-man-clutters-whole-flat-newspapers-volunteers-carefully-pick-out-cash-hidden-pile",
+        "content": "\"Uncle had been sleeping on newspapers for over a decade. When they got dirty, he simply laid fresh ones on top. Layer after layer, year after year,\" it wrote. Photos shared in the post show piles of newspapers and sundries in the flat. Keeping Hope Alive said its volunteers worked through the clutter with their heads \"nearly touched the...",
+        "publish_date": "2025-11-19T22:00:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Elderly man clutters whole flat with newspapers, v..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-20T08:02:18.865531+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
