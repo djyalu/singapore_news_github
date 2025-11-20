@@ -1,0 +1,72 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Walmart jumps to Nasdaq in biggest exchange transfer on record",
+        "url": "https://www.businesstimes.com.sg/international/global/walmart-jumps-nasdaq-biggest-exchange-transfer-record",
+        "content": "Its stock will trade under its current ticker symbol, “WMT.”. Large companies have made the move before, with PepsiCo abandoning its nearly century-long listing on the NYSE in 2017",
+        "publish_date": "2025-11-21T07:59:00.731994+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Walmart jumps to Nasdaq in biggest exchange transf..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-11-21T08:02:33.031654+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Federal Workers Ask Judge To Block Trump’s ‘Loyalty’ Question On Job Applications",
+        "url": "https://sg.news.yahoo.com/news/articles/federal-workers-ask-judge-block-215616101.html",
+        "content": "In a lawsuit filed earlier this month, a group of federal labor unions argues that the White House’s “merit hiring plan” violates applicants’ First Amendment rights. The plan, put forth by the Office of Personnel Management, includes the following short essay question:. Politics: Karoline Leavitt’s Parents Weren’t Chill About Her 32-Year Age Gap With Her Husband At First. “How would you help advance the President’s Executive Orders and policy priorities in this role. But following an outcry, the White House said answering the questions was optional and claimed applicants wouldn’t...",
+        "publish_date": "2025-11-21T06:56:16+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Federal Workers Ask Judge To Block Trump’s ‘Loyalt..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "State Department to focus on freedom of speech in next human rights report, likely targeting European governments",
+        "url": "https://sg.news.yahoo.com/news/articles/state-department-focus-freedom-speech-220002482.html",
+        "content": "The move further institutionalizes changes seen in the latest report released in August, which covered the 2024 calendar year. That report alleged “significant human rights issues” in allied countries including the United Kingdom, France and Germany over “serious restrictions on freedom of expression.”. The future report is “really going to reflect what’s going on in the country,” they said.",
+        "publish_date": "2025-11-21T07:00:02+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 State Department to focus on freedom of speech in ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pre-school teacher allegedly force-fed a baby till she vomited, stuffed a bib into another's mouth",
+        "url": "https://www.asiaone.com/singapore/pre-school-teacher-allegedly-force-fed-baby-till-she-vomited-stuffed-bib-anothers-mouth",
+        "content": "Charge sheets state that the incidents took place in September 2024. The location where the incidents occurred was redacted from court documents",
+        "publish_date": "2025-11-20T18:46:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pre-school teacher allegedly force-fed a baby till..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Chalky water' seen at Waterway Point taps possibly due to air bubbles from maintenance works",
+        "url": "https://www.asiaone.com/singapore/tap-water-waterway-point-pub",
+        "content": "Preliminary assessment indicated that fine air bubbles may have affected the clarity of the water. It also had a slightly powdery touch,\" said the 40-year-old. She added that the staff member candidly shared that the cafe's tap had shown a similar chalky appearance since...",
+        "publish_date": "2025-11-20T21:15:53+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Chalky water' seen at Waterway Point taps possibl..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-21T08:02:33.031701+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
