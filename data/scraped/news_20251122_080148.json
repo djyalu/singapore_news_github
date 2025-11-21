@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Anti-drink driving campaign returns amid rise in number of arrests",
+        "url": "https://www.asiaone.com/singapore/anti-drink-driving-campaign-returns-amid-rise-number-arrests",
+        "content": "But arrests have increased by four per cent to 1,173 from 1,130. The senior minister of state also cited recent cases this year, including a 56-year-old veteran criminal lawyer who was sentenced to eight...",
+        "publish_date": "2025-11-21T21:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Anti-drink driving campaign returns amid rise in n..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-22T08:01:48.185089+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
