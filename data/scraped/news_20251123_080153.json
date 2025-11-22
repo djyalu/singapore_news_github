@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "LTA-led rail reliability task force 'moving in right direction': Advisory panel",
+        "url": "https://www.asiaone.com/singapore/lta-led-rail-reliability-task-force-moving-right-direction-advisory-panel",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 LTA-led rail reliability task force 'moving in right directi...",
+        "content": "\"The task force is moving in right direction in prioritising asset renewal, strengthening system resilience, leveraging advanced technologies for predictive...",
+        "publish_date": "2025-11-21T21:25:48+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Residents in Kovan estate upset after private owner seals off back-lane shortcut",
+        "url": "https://www.asiaone.com/singapore/residents-kovan-estate-upset-after-private-owner-seals-back-lane-shortcut",
+        "summary": "📰 부동산, 기술 관련 뉴스\n📢 Residents in Kovan estate upset after private owner seals off back-lane shortcut",
+        "content": "Residents first noticed the gate with a notice that said “private property” on Oct 28. A land-title search showed that the strip belongs to Island Chartered, a real estate developer",
+        "publish_date": "2025-11-22T11:15:09+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-23T08:01:53.959680+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
