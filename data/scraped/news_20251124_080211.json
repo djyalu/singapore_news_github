@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Ranked among China’s 'happiest cities' for the past 16 years, can Chengdu's formula be copied?",
+        "url": "https://www.channelnewsasia.com/east-asia/china-happiest-cities-chengdu-5476806",
+        "content": "Elsewhere in the park, teenagers in elaborate cosplay pose among fields of chrysanthemum flowers while elders practise slow ballroom steps to nostalgic Mandarin songs. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional...",
+        "publish_date": "2025-11-24T07:58:47.109520+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Ranked among China’s 'happiest cities' for the pas..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "JD Vance Spotted With Suspicious Stain in Crown Prince Meeting",
+        "url": "https://sg.news.yahoo.com/jd-vance-spotted-suspicious-stain-020821489.html",
+        "content": "Due to the stain’s location, multiple users said it appeared the vice president was lactating. Reps for Vance did not immediately respond to a request for comment",
+        "publish_date": "2025-11-22T11:08:21+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 JD Vance Spotted With Suspicious Stain in Crown Pr..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Residents in Kovan estate upset after private owner seals off back-lane shortcut",
+        "url": "https://www.asiaone.com/singapore/residents-kovan-estate-upset-after-private-owner-seals-back-lane-shortcut",
+        "content": "Residents first noticed the gate with a notice that said “private property” on Oct 28. A land-title search showed that the strip belongs to Island Chartered, a real estate developer",
+        "publish_date": "2025-11-22T11:15:09+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Residents in Kovan estate upset after private owne..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'I will miss serving the children': As S'pore school canteens evolve, stallholders find ways to cope",
+        "url": "https://www.asiaone.com/singapore/i-will-miss-serving-children-spore-school-canteens-evolve-stallholders-find-ways-cope",
+        "content": "“Old students of the school still remember me. I have also catered for some of their weddings because they like my food so much,” she said. Soon, the aroma of her fried chicken will no longer waft through the canteen during recess. Instead of queueing up in front of different canteen stalls, pupils will pick up pre-ordered meals from automated meal dispensers. When the school still operated with two sessions, there were...",
+        "publish_date": "2025-11-23T16:09:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'I will miss serving the children': As S'pore scho..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-24T08:02:11.654565+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
