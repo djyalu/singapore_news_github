@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Man, 67, loses $100k to impersonation scam over 3 days",
+        "url": "https://www.asiaone.com/singapore/man-loses-100k-mas-government-official-impersonation-scam",
+        "content": "When asked if he was keen to renew it, Zhang declined. But he was then told that someone from MAS would soon contact him. \"They showed me their work ID. The \"MAS staff\" then instructed Zhang to download a cryptocurrency application",
+        "publish_date": "2025-11-24T18:49:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 67, loses $100k to impersonation scam over 3 ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-25T08:02:09.229263+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
