@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Global trade rules must evolve for new realities of resilience and security: PM Wong",
+        "url": "https://www.channelnewsasia.com/singapore/pm-lawrence-wong-global-trade-wto-g20-africa-ethiopia-5489321",
+        "summary": "📰 투자 관련 뉴스\\n📢 Global trade rules must evolve for new realities of resilien...",
+        "content": "\"In today's world, countries are putting more emphasis around resilience and security. So you need a different balance,\" he said.\"You need to address today's strategic realities while still facilitating interdependency between countries, trade and investments between countries.\"",
+        "publish_date": "2025-11-26T07:58:32.302452+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asia-markets-advance-odds-another-032819195.html",
+        "summary": "📰 경제, 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Wall Street stocks shrugged off early weakness Tuesday and joined European bourses in rising on continued hopes the Federal Reserve will cut interest rates next month. Earlier, London, Paris and Frankfurt all pushed higher. US data releases pointed to slower than expected growth of retail sales in September, while producer prices increased in line with expectations.",
+        "publish_date": "2025-11-26T07:00:58+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "For Wounded Knee descendants, the government’s decision on soldiers’ Medals of Honor leaves the painful legacy unsettled",
+        "url": "https://sg.news.yahoo.com/news/articles/wounded-knee-descendants-government-decision-120058702.html",
+        "summary": "📰 정부, 기술 관련 뉴스\n📢 For Wounded Knee descendants, the government’s decision on soldiers’ Medals of H...",
+        "content": "They described horrific scenes: mothers still clutching their babies, others shot down as they fled. Nineteen soldiers received Medals of Honor for their actions",
+        "publish_date": "2025-11-26T06:48:01+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Over $10.6m lost to online task and survey job scams since October",
+        "url": "https://www.asiaone.com/singapore/over-106m-lost-online-task-and-survey-job-scams-october-police",
+        "summary": "📰 비즈니스, 교통, 취업 관련 뉴스\n📢 Over $10.6m lost to online task and survey job scams since October",
+        "content": "The police added that scammers typically offer three types of tasks, all of which eventually require escalating payments. Victims are often required to deposit money to complete these tasks. The second variation targets victims through fake online businesses. \"Victims would be asked to register accounts for fake websites of online business...",
+        "publish_date": "2025-11-25T12:11:06+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-26T08:02:13.308997+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
