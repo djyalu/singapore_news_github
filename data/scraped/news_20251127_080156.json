@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Malaysian rapper Namewee's bail extended for 2 weeks as police probe Taiwanese influencer Iris Hsieh’s death",
+        "url": "https://www.channelnewsasia.com/asia/malaysian-rapper-namewee-police-bail-extended-two-weeks-iris-hsieh-death-5490791",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Malaysian rapper Namewee's bail extended for 2 weeks as poli...",
+        "content": "This follows his release on police bail two weeks earlier. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading Wee, who was previously held there for nine days during the investigation, was seen leaving about an hour later",
+        "publish_date": "2025-11-27T07:58:26.392339+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Cordlife ordered to stop collecting new cord blood after failing to meet MOH requirements",
+        "url": "https://www.channelnewsasia.com/singapore/cordlife-stop-collecting-new-cord-blood-units-moh-5491266",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Cordlife ordered to stop collecting new cord blood after fai...",
+        "content": "SINGAPORE: Cordlife Group has been suspended from collecting, testing, processing or storing new cord blood from Wednesday (Nov 26). \"These limited actions include facilitating the transfer of these existing CBUs to other cord blood banks, and disposal of such existing CBUs in accordance with Cordlife’s clients’ instructions.\"",
+        "publish_date": "2025-11-27T07:58:45.177207+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "At least 36 dead, hundreds missing and three arrested as fire engulfs Hong Kong housing complex. Here’s what we know",
+        "url": "https://sg.news.yahoo.com/news/articles/least-36-dead-nearly-300-190433742.html",
+        "summary": "📰 주택 관련 뉴스\n📢 At least 36 dead, hundreds missing and three arrested as fire engulfs Hong Kong ...",
+        "content": "A huge fire burns through a high rise building in Hong Kong. Firefighters first received a call about the fire shortly before 3 p.m. ET), an official from the Hong Kong Fire Department told journalists earlier Wednesday",
+        "publish_date": "2025-11-27T06:08:18+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Five boys apologise to Yishun eatery for burning chopsticks, throwing food",
+        "url": "https://www.asiaone.com/singapore/five-boys-apologise-yishun-eatery-burning-chopsticks-throwing-food",
+        "summary": "📰 음식, 기술 관련 뉴스\n📢 Five boys apologise to Yishun eatery for burning chopsticks, throwing food",
+        "content": "\"Your behaviour was completely unacceptable. We expect you to come speak with us by tomorrow.\". \"The choice is yours.\". In another Facebook post the next day, the eatery said the incident has come to a...",
+        "publish_date": "2025-11-26T22:38:02+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-11-27T08:01:56.743144+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
