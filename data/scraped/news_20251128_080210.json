@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/nvidia-ceo-says-insane-don-141617214.html",
+        "summary": "📰 금융 관련 뉴스\\n📢 Yahoo Finance...",
+        "content": "Don’t use AI to do literally everything. You might want to get your head checked, according to Nvidia CEO Jensen Huang. “I promise you, you will have work to do.”",
+        "publish_date": "2025-11-26T23:16:17+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Lethal virus hits last rare blue macaws in Brazil wild",
+        "url": "https://sg.news.yahoo.com/lethal-virus-hits-last-rare-212018665.html",
+        "summary": "📰 정부 관련 뉴스\n📢 Lethal virus hits last rare blue macaws in Brazil wild",
+        "content": "The only wild specimens of a rare blue parrot, which were recently returned to their natural habitat, have been diagnosed with an incurable, likely lethal virus, Brazil's government told AFP Thursday",
+        "publish_date": "2025-11-28T06:20:18+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "2 men arrested after brawl at Telok Blangah Crescent Market & Food Centre",
+        "url": "https://www.asiaone.com/singapore/2-men-arrested-brawl-fight-telok-blangah-crescent-market-food-centre",
+        "summary": "📰 경제, 음식 관련 뉴스\n📢 2 men arrested after brawl at Telok Blangah Crescent Market & Food Centre",
+        "content": "It is unclear what sparked the fight. Two men, aged 63 and 68, were subsequently arrested for affray. The 68-year-old man was taken to the hospital,...",
+        "publish_date": "2025-11-27T11:45:16+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-11-28T08:02:10.619217+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
