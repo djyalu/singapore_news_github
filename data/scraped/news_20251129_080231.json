@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "As X platform rolls out new location feature, global and local ripples follow",
+        "url": "https://sg.news.yahoo.com/x-platform-rolls-location-feature-060247958.html",
+        "content": "Among other things, the new “About This Account” feature showed that many accounts which were supposedly American were operating from countries like India or Nigeria. Some of these accounts have hundreds of thousands of followers, with many posting about domestic policies",
+        "publish_date": "2025-11-28T15:02:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 As X platform rolls out new location feature, glob..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Over 4,400 packets of duty-unpaid cigarettes found hidden in car at Woodlands Checkpoint",
+        "url": "https://www.asiaone.com/singapore/woodlands-checkpoint-duty-unpaid-cigarettes-malaysian-man-4400-packets",
+        "content": "The 33-year-old Malaysian male driver was arrested and referred to Singapore Customs for further investigations. Vehicles used in these offences and proceeds of sales of duty-unpaid goods are also liable to be...",
+        "publish_date": "2025-11-28T17:15:14+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Over 4,400 packets of duty-unpaid cigarettes found..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-29T08:02:31.114023+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
