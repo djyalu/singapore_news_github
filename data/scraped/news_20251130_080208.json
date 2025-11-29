@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Model, doctor and stroke survivor: The 34-year-old who's been through it all",
+        "url": "https://www.channelnewsasia.com/today/up-close/doctor-model-stroke-survivor-dermatologist-5490681",
+        "content": "Today, at 34, the runway she walks is very different. Despite what most would consider a simple feat, each step requires a tremendous amount of effort on her part,...",
+        "publish_date": "2025-11-30T07:58:47.941679+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Model, doctor and stroke survivor: The 34-year-old..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/got-500-month-start-dividend-093000071.html",
+        "content": "You don’t need a huge sum of money to start investing, you just need consistency. With as little as S$500 a month, any Singaporean investor can start building a dividend portfolio that grows into substantial passive income over time. Now, you may be wondering whether S$500 is enough to start with. While your monthly contributions may seem modest initially, your savings can grow meaningfully by re-investing dividend income from your portfolio. Regular investing builds discipline and takes advantage of dollar-cost averaging, a technique wherein you invest a fixed amount in regular intervals. Portfolio Growth vs Time. Over a period of 15 years, your portfolio would be valued at around S$129,000",
+        "publish_date": "2025-11-28T18:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-11-30T08:02:08.135121+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
