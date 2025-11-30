@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump threats dominate as Hondurans vote for president",
+        "url": "https://sg.news.yahoo.com/trump-threats-dominate-hondurans-vote-142518672.html",
+        "content": "Honduras could be the next country in Latin America, after Argentina and Bolivia, to swing right after years of leftist rule. Polls opened at 7:00 am (1300 GMT) for 10 hours of voting, with the first results expected late Sunday",
+        "publish_date": "2025-12-01T06:54:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump threats dominate as Hondurans vote for presi..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "PMD rider sustains severe head injuries after accident in Punggol, family calls for witnesses",
+        "url": "https://www.asiaone.com/singapore/pmd-rider-sustains-severe-head-injuries-after-accident-punggol-family-calls-witnesses",
+        "content": "His brother had reportedly gone to meet some friends at a club before returning home, Lee told 8world. \"The doctor told us to prepare for the worst,\" Lee told 8world. With his brother in critical condition, Lee and his family are still unable...",
+        "publish_date": "2025-11-29T13:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PMD rider sustains severe head injuries after acci..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-01T08:01:53.136206+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]

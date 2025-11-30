@@ -1,0 +1,13 @@
+[
+  {
+    "id": "20251201080157",
+    "timestamp": "2025-12-01T08:01:57.894646+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 2개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2025년 12월 01일 08:01\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 2개 기사\n\n【 News 】\n📍 출처: Yahoo Singapore News, AsiaOne\n\n\n1. 📰 싱가포르 최신 뉴스\n📢 Trump threats dominate as Hondurans vote for presi...\n   🔗 ...",
+    "message_length": 535,
+    "article_count": 2,
+    "api": "green-api"
+  }
+]
