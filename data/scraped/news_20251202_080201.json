@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Shein probed by Texas attorney general over labour practices, product safety",
+        "url": "https://www.channelnewsasia.com/business/shein-texas-investigation-france-sue-5520901",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Shein probed by Texas attorney general over labour practices...",
+        "content": "Shein did not immediately respond to requests for comment. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from...",
+        "publish_date": "2025-12-02T07:58:22.611141+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Justice Department could present a new indictment against James Comey to a grand jury this week",
+        "url": "https://sg.news.yahoo.com/news/articles/justice-department-could-present-indictment-215244063.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Justice Department could present a new indictment against James Comey to a grand...",
+        "content": "Comey had previously pleaded not guilty to charges that he lied to Congress five years ago. James pleaded not guilty to mortgage fraud-related charges",
+        "publish_date": "2025-12-02T06:52:44+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-02T08:02:01.865432+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
