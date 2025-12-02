@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Steve Witkoff, neophyte diplomat turned Trump's global fixer",
+        "url": "https://sg.news.yahoo.com/steve-witkoff-neophyte-diplomat-turned-215200880.html",
+        "content": "For Trump, the 68-year-old Witkoff brings the quality the president most cherishes: personal loyalty. \"I don't regard Putin as a bad guy",
+        "publish_date": "2025-12-03T06:52:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Steve Witkoff, neophyte diplomat turned Trump's gl..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Large tree branch falls on car in Lavender during Sumatra squall",
+        "url": "https://www.asiaone.com/singapore/tree-branch-car-lavender-rain-sumatra-squall-nparks",
+        "content": "Smaller branches are also seen littering the road around the car. NParks said that no injuries were reported and that the road obstruction was cleared...",
+        "publish_date": "2025-12-02T22:56:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Large tree branch falls on car in Lavender during ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Government to release land for 4,575 private homes in first half of 2026",
+        "url": "https://www.asiaone.com/singapore/government-release-land-4575-private-homes-first-half-2026-mnd",
+        "content": "The nine sites in the confirmed list earmarked for residential use are:. An additional 4,610 homes will be made available on reserve list sites through the government land sales programme (GLS), according to MND. Reserve list sites are launched for sale when a development offers a minimum price...",
+        "publish_date": "2025-12-02T14:05:44+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Government to release land for 4,575 private homes..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-03T08:02:10.133328+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
