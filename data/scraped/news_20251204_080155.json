@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says he’d support release of video of second strike on alleged drug vessel",
+        "url": "https://sg.news.yahoo.com/news/articles/trump-says-d-support-release-221002573.html",
+        "content": "“I don’t know what they have, but whatever they have, we’d certainly release, no problem,” Trump told reporters in the Oval Office. “You know, we stopped — every boat we knock out, we save 25,000 American lives.”. Trump posted video of the initial strike shortly after the September 2 operation to his Truth Social platform. And Trump dismissed questions about whether Defense Secretary Pete Hegseth or Adm",
+        "publish_date": "2025-12-04T07:10:02+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says he’d support release of video of second..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Trailer in Clementi catches fire, 1 person taken to hospital",
+        "url": "https://www.asiaone.com/singapore/trailer-clementi-catches-fire-1-person-taken-hospital-scdf",
+        "content": "One person was taken to hospital after a trailer caught fire along Clementi Road on Tuesday (Dec 2). The incident occurred at around 2.55pm, according to the Singapore Civil Defence Force (SCDF). Photos circulating online show large plumes of smoke billowing from the white trailer. SCDF said the fire was extinguished with a hosereel. One person was conveyed to Singapore General Hospital for smoke inhalation. The cause of the fire is under investigation.",
+        "publish_date": "2025-12-03T13:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trailer in Clementi catches fire, 1 person taken t..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-04T08:01:55.205219+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
