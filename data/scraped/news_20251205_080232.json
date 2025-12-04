@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asian-markets-stumble-traders-struggle-025041413.html",
+        "content": "Strong gains by Facebook parent Meta and tech giant Salesforce helped lift the Nasdaq into positive territory, while the Dow finished slightly lower. Earlier, bourses in London, Paris and Frankfurt all pushed higher. A weekly report of initial US jobless claims showed a drop of 27,000. \"There's some confusion.\". Cahill said widespread expectations that the Fed will cut...",
+        "publish_date": "2025-12-05T06:22:35+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Spain, Ireland, Slovenia and Netherlands boycott Eurovision over Israel’s participation",
+        "url": "https://sg.news.yahoo.com/news/articles/eurovision-organizers-decide-israel-participation-153129488.html",
+        "content": "Spain, Ireland, Slovenia and the Netherlands announced their withdrawals Thursday from next year’s Eurovision Song Contest after organizers decided that Israel will be allowed to compete. The Eurovision meeting was held at the Geneva headquarters of the...",
+        "publish_date": "2025-12-05T06:54:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Spain, Ireland, Slovenia and Netherlands boycott E..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "15-year-old among 268 under probe for scams totalling over $4.66 million",
+        "url": "https://www.asiaone.com/singapore/scammers-money-mules-police-investigation-268-people",
+        "content": "They are being investigated for the alleged offences of cheating, money laundering and providing payment services without a licence. The latest enforcement operation comes right after another two-week operation conducted between Nov 7 and 20. During that operation, 250 people were asked to assist in police investigations.",
+        "publish_date": "2025-12-04T22:21:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 15-year-old among 268 under probe for scams totall..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "WP chief Pritam Singh's appeal for lying to Parliament dismissed",
+        "url": "https://www.asiaone.com/singapore/pritam-singh-appeal-verdict-workers-party-lying-parliament-court",
+        "content": "the appellant was hoping that he would not have to deal with it,\" said the judge. Singh paid the $14,000 fine right after the court session on Thursday morning",
+        "publish_date": "2025-12-04T10:45:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 WP chief Pritam Singh's appeal for lying to Parlia..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-05T08:02:32.961627+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
