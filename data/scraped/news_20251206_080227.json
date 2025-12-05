@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Vaccine makers raise concerns over US panel's shift away from hepatitis B shots for newborns",
+        "url": "https://www.channelnewsasia.com/world/trump-vaccine-birth-health-us-shots-5564656",
+        "summary": "📰 보건 관련 뉴스\\n📢 Vaccine makers raise concerns over US panel's shift away fro...",
+        "content": "Infectious disease experts, as well as organisations representing paediatricians, pharmacists and public health professionals decried the move. Hepatitis B, which can spread from mother to child...",
+        "publish_date": "2025-12-06T07:59:03.666318+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "LTA deploys new gadget to target illegally modified active mobility devices",
+        "url": "https://www.asiaone.com/singapore/lta-speed-measurement-device-illegally-modified-active-mobility-PMD-PAB",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 LTA deploys new gadget to target illegally modified active mobility devices",
+        "content": "Last month, the authority detected 246 active mobility offences, such as riding or keeping non-compliant devices. According to the Active Mobility Act, those who modify their own or others' active mobility devices face a...",
+        "publish_date": "2025-12-05T12:29:38+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Improving employment outcomes for persons with disabilities a priority: PM Wong",
+        "url": "https://www.asiaone.com/singapore/taskforce-assurance-persons-disabilities-families-vista-enabling-village-lawrence-wong-goh-pei-ming",
+        "summary": "📰 취업 관련 뉴스\n📢 Improving employment outcomes for persons with disabilities a priority: PM Wong",
+        "content": "It will also host initiatives that strengthen support for caregivers. Acknowledging that parents may wonder if their children are work-ready...",
+        "publish_date": "2025-12-05T18:33:50+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-06T08:02:27.736090+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
