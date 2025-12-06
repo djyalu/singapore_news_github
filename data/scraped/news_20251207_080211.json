@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Young Lions head coach Firdaus apologises to fans, praises team's effort after Timor-Leste SEA Games loss",
+        "url": "https://www.channelnewsasia.com/sport/sea-games-bangkok-team-singapore-football-firdaus-kassim-timor-leste-elimination-5565586",
+        "content": "He praised his team's effort at the same time, saying they will look ahead to the next game. Of course, it’s not what the fans expect . Subscribe to CNA's Recommended Read A single handpicked story that we think you shouldn't miss. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp...",
+        "publish_date": "2025-12-07T07:58:49.418812+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Young Lions head coach Firdaus apologises to fans,..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ex-CNN Host Decries 'Racist Piece Of ****' Trump’s Rant Against Somali Immigrants",
+        "url": "https://sg.news.yahoo.com/news/articles/ex-cnn-host-decries-racist-221104805.html",
+        "content": "“And quite frankly, it’s just gross and Donald Trump seems like a gross, bigoted, racist piece of ****.”. “I think the journalists are in a really tough position right now,” Lemon said. Lemon added that journalists’ fear of jeopardizing their...",
+        "publish_date": "2025-12-07T07:11:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Ex-CNN Host Decries 'Racist Piece Of ****' Trump’s..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Improving employment outcomes for persons with disabilities a priority: PM Wong",
+        "url": "https://www.asiaone.com/singapore/taskforce-assurance-persons-disabilities-families-vista-enabling-village-lawrence-wong-goh-pei-ming",
+        "content": "It will also host initiatives that strengthen support for caregivers. Acknowledging that parents may wonder if their children are work-ready...",
+        "publish_date": "2025-12-05T18:33:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Improving employment outcomes for persons with dis..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-12-07T08:02:11.930842+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
