@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Why has Cyclone Senyar caused a higher death toll in Indonesia than elsewhere?",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-sumatra-floods-cyclone-senyar-climate-change-5563616",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Why has Cyclone Senyar caused a higher death toll in Indones...",
+        "content": "JAKARTA: As parts of Southeast Asia reel from the effects of deadly flooding over recent days, Indonesia faces a significantly higher death toll than its regional neighbours. Instead, a mix of extensive deforestation, poor spatial planning, weak disaster preparedness and...",
+        "publish_date": "2025-12-08T07:59:02.375428+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Five ways microplastics can harm your brain and fuel diseases",
+        "url": "https://sg.news.yahoo.com/five-ways-microplastics-harm-brain-180339557.html",
+        "summary": "📰 기술, 교육 관련 뉴스\n📢 Five ways microplastics can harm your brain and fuel diseases",
+        "content": "University of Technology Sydney associate professor and study co-author, Kamal Dua, said: “Microplastics actually weaken the blood–brain barrier, making it leaky. “Once that happens, immune cells and inflammatory molecules are activated, which then causes even more damage to the barrier’s cells.”. Once the barrier is disrupted, the body’s immune system is...",
+        "publish_date": "2025-12-07T05:39:29+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-08T08:01:57.678120+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
