@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says US will allow sale of Nvidia H200 AI chips to China",
+        "url": "https://www.channelnewsasia.com/world/us-trump-nvidia-h200-ai-chips-china-sale-5568951",
+        "content": "\"President Xi responded positively. Trump criticised his predecessor's approach, saying it \"forced our Great Companies to spend BILLIONS OF DOLLARS building 'degraded'...",
+        "publish_date": "2025-12-09T07:59:06.474113+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says US will allow sale of Nvidia H200 AI ch..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Mace voices frustration with House GOP leaders in NYT op-ed, arguing they’re marginalizing rank-and-file members and women",
+        "url": "https://sg.news.yahoo.com/news/articles/mace-voices-frustration-house-gop-214104953.html",
+        "content": "Nancy Mace criticized House GOP leaders, arguing they have marginalized rank-and file members, including women, in a New York Times op-ed published Monday. “Speaker Mike Johnson is better than his predecessor. Since 2013, the Republican conference chair position has gone to a woman",
+        "publish_date": "2025-12-09T06:41:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mace voices frustration with House GOP leaders in ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump calls EU fine on X 'nasty one', says Europe going in 'bad directions'",
+        "url": "https://sg.news.yahoo.com/trump-calls-eu-fine-x-204449550.html",
+        "content": "WASHINGTON, Dec 8 (Reuters) - U.S. X was fined 120 million euros ($140 million) by EU tech ‌regulators last week for breaching online content rules. \"I don't see ⁠how they can do that,\" ‌Trump said. \"Europe has to be very ‍careful,\" he added. \"Freedom of speech is ​the bedrock of democracy. The only way to know what you are ‌voting for,\" he wrote.",
+        "publish_date": "2025-12-09T06:19:08+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump calls EU fine on X 'nasty one', says Europe ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Courts, Prism+ rapped over unsolicited items in online carts, fake stock indicators",
+        "url": "https://www.asiaone.com/singapore/courts-prism-competition-commission-singapore-unfair-practices-website-design-features",
+        "content": "The Competition Commission of Singapore (CCS) has taken Courts and Prism+ to task over unfair practices. \"Courts automatically added unsolicited items into consumers' shopping carts, while Prism+ used fake countdown timers and misleading stock indicators to pressure consumers into purchases,\" CCS added. Courts was found to have charged consumers for products they never selected",
+        "publish_date": "2025-12-08T14:25:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Courts, Prism+ rapped over unsolicited items in on..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-09T08:01:57.660097+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
