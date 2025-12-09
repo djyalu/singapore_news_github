@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Global trade set to top US$35 trillion in 2025: UN",
+        "url": "https://www.businesstimes.com.sg/international/global/global-trade-set-top-us35-trillion-2025-un",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Global trade set to top US$35 trillion in 2025: UN...",
+        "content": "“Trade continued expanding through the second half of 2025, even as geopolitical tensions, higher costs and uneven global demand slowed momentum,” the agency said",
+        "publish_date": "2025-12-10T07:59:03.405501+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2025-12-10T08:01:29.868314+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Jail for National Dental Centre ex-photographer who took voyeuristic shots of patients",
+        "url": "https://www.asiaone.com/singapore/jail-national-dental-centre-ex-photographer-who-took-voyeuristic-shots-patients",
+        "summary": "📰 범죄, 기술 관련 뉴스\n📢 Jail for National Dental Centre ex-photographer who took voyeuristic shots of pa...",
+        "content": "Twenty-one other charges were considered during his sentencing. He would then take pictures of patients' faces, primarily of their teeth and jaw",
+        "publish_date": "2025-12-09T12:15:46+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-10T08:01:29.868349+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
