@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Former Cathay cinema operator mm2 given nod by High Court to apply for four-month reprieve from creditors",
+        "url": "https://www.channelnewsasia.com/singapore/mm2-cathay-cinema-operator-high-court-moratorium-reprieve-creditors-5573866",
+        "content": "The Singapore company has faced repayment demands from landlords over the now-closed cinema chain Cathay Cineplexes. With its financial woes, the chain ceased operations following a Sep 1 announcement that it would enter creditors’ voluntary liquidation",
+        "publish_date": "2025-12-11T07:58:34.662660+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Former Cathay cinema operator mm2 given nod by Hig..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Why Tangs and Takashimaya remain profitable as rivals close stores",
+        "url": "https://www.channelnewsasia.com/singapore/takashimaya-tangs-department-stores-isetan-landlords-5563441",
+        "content": "SINGAPORE: Retiree Laura Chan pauses between stalls at Takashimaya's food basement, savouring a kueh as she absorbs the Christmas bustle around her. The experiential element still draws customers, but e-commerce has blunted that edge. Faced with rising operating costs, declining sales and what some describe as an outdated retail format, some department stores are finding it hard to stay afloat. \"Isetan Scotts remains the core of our retail operations in Singapore",
+        "publish_date": "2025-12-11T07:58:48.797448+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Why Tangs and Takashimaya remain profitable as riv..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-12-11T08:01:43.632176+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
