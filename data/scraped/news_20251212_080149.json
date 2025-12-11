@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Bipartisan House Vote Would Repeal Trump's Union-Busting Executive Order",
+        "url": "https://sg.news.yahoo.com/news/articles/bipartisan-house-vote-repeal-trumps-214748313.html",
+        "summary": "📰 경제 관련 뉴스\\n📢 Bipartisan House Vote Would Repeal Trump's Union-Busting Exe...",
+        "content": "The measure, put forth by Reps. Jared Golden (D-Maine) and Brian Fitzpatrick (R-Pa.), would undo an executive order Trump signed earlier this year nullifying collective bargaining agreements covering up to 1 million workers. It passed, 231 to 195, with 20 Republicans in support. Politics: Layoffs Just Hit A 2-Year High, But Trump’s Top Economic Adviser Claims Economy Is Booming. One of those lawmakers, Rep. Jeff Van Drew (R-N.J.), told reporters ahead of the vote that Republicans should lean into being more populist",
+        "publish_date": "2025-12-12T06:47:48+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Indiana Republicans Buck Trump, Vote Down His Redistricting Push",
+        "url": "https://sg.news.yahoo.com/news/articles/indiana-republicans-buck-trump-vote-214454293.html",
+        "summary": "📰 경제, 법률, 기술 관련 뉴스\n📢 Indiana Republicans Buck Trump, Vote Down His Redistricting Push",
+        "content": "The final vote was 19-31. Politics: Layoffs Just Hit A 2-Year High, But Trump’s Top Economic Adviser Claims Economy Is Booming. Trump pressured lawmakers with promises of backing primary...",
+        "publish_date": "2025-12-12T06:44:54+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pickup truck up in flames on Tanjong Katong Road, passersby help contain fire",
+        "url": "https://www.asiaone.com/singapore/pickup-truck-fire-tanjong-katong-road-passersby-help",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Pickup truck up in flames on Tanjong Katong Road, passersby help contain fire",
+        "content": "Several people helped fight a fire that engulfed a Malaysia-registered pickup truck along Tanjong Katong Road on Wednesday (Dec 10) afternoon. While he waits for help, two passersby approach him with fire extinguishers. They are soon joined by an elderly petrol station attendant and a fourth man",
+        "publish_date": "2025-12-11T23:51:21+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-12T08:01:49.640178+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
