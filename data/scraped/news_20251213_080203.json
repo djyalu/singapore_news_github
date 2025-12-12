@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Department of Labor hosts first-ever prayer service, including a message from a right-wing rabbi",
+        "url": "https://sg.news.yahoo.com/news/articles/department-labor-hosts-first-ever-210943617.html",
+        "content": "An employee watching the event said the remarks caught them by surprise. “I was not prepared for the unnecessary cruelty.”. Another employee said they were “appalled.”",
+        "publish_date": "2025-12-13T06:09:43+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Department of Labor hosts first-ever prayer servic..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Sen. Ruben Gallego Joins Starbucks Picket Line In Arizona",
+        "url": "https://sg.news.yahoo.com/news/articles/sen-ruben-gallego-joins-starbucks-221640720.html",
+        "content": "Ruben Gallego (D-Ariz.) joined Starbucks baristas at a picket line in Arizona in solidarity with their ongoing strike against the multibillion-dollar coffee company after going years without a union contract. “This is the stuff that happens when corporate power does not want to give way to worker power.”. Bernie Sanders (I-Vt.) marched with striking baristas alongside New York City Mayor-elect Zohran Mamdani in Brooklyn, New York. The Arizona Democrat, a U.S",
+        "publish_date": "2025-12-13T07:16:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Sen. Ruben Gallego Joins Starbucks Picket Line In ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-13T08:02:03.715984+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
