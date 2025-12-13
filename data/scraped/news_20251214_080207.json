@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Do morning routines actually work, or are they just the latest obsession?",
+        "url": "https://www.channelnewsasia.com/today/mental-health-matters/morning-routine-daily-ritual-healthy-habit-5571066",
+        "content": "There she washes her face before showering with a specific gel for mornings only. Then it's body lotion, skin care and a gulp of room temperature water – in that specific order. Only then does Ms Zheng's day start for real",
+        "publish_date": "2025-12-14T07:59:09.340389+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Do morning routines actually work, or are they jus..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-12-14T08:02:07.508827+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
