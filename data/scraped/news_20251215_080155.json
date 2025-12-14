@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "44 taken to hospital after bus accident in Jurong West; LTA probing",
+        "url": "https://sg.news.yahoo.com/passengers-injured-accident-involving-two-051115953.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 44 taken to hospital after bus accident in Jurong West; LTA ...",
+        "content": "The person was rescued using hydraulic rescue equipment, it added. Forty-two passengers and two bus drivers were taken to hospital, the authorities said. Police said a 49-year-old bus driver is assisting with investigations",
+        "publish_date": "2025-12-14T14:11:15+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "2 taken to hospital after 5-vehicle crash in Bedok",
+        "url": "https://www.asiaone.com/singapore/2-taken-hospital-after-5-vehicle-crash-bedok",
+        "summary": "📰 정치, 기술 관련 뉴스\n📢 2 taken to hospital after 5-vehicle crash in Bedok",
+        "content": "TikTok user Gracie Daisy shared the incident in a video on the same day. There was also some white debris nearby. The accident involved four cars and one prime mover",
+        "publish_date": "2025-12-14T11:55:37+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-15T08:01:55.470775+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
