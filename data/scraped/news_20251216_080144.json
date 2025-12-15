@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Disappearing glaciers, Brian Walshe convicted, reviving ‘Tar-zhay’: Catch up on the day’s stories",
+        "url": "https://sg.news.yahoo.com/news/articles/disappearing-glaciers-brian-walshe-convicted-220452165.html",
+        "content": "👋 Welcome to 5 Things PM. An expert offers advice on how to avoid fraud. Here’s what else you might have missed during your busy day. New research gives a glimpse of how quickly that might happen. Now some have fizzled out. Target has been struggling, and the retail giant...",
+        "publish_date": "2025-12-16T07:04:52+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Disappearing glaciers, Brian Walshe convicted, rev..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Hong Kong media mogul Jimmy Lai convicted of national security charges",
+        "url": "https://sg.news.yahoo.com/hong-kong-court-deliver-verdicts-214447290.html",
+        "content": "He can appeal against the convictions. In Washington, President Donald Trump said he felt \"badly\" about Lai’s conviction and added that he had asked...",
+        "publish_date": "2025-12-16T07:33:48+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hong Kong media mogul Jimmy Lai convicted of natio..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 77, to be charged with letting crows escape from NParks trap in Toa Payoh",
+        "url": "https://www.asiaone.com/singapore/man-cut-crow-trap-toa-payoh-nparks",
+        "content": "This led to the escape of the captured birds. The 77-year-old culprit was identified on Oct 22 through investigations and CCTV footage",
+        "publish_date": "2025-12-15T13:43:41+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 77, to be charged with letting crows escape f..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-16T08:01:44.899262+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
