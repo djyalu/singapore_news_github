@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Sumatra floods: Aceh residents raise white flags in desperation as hunger, shortages bite",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-aceh-flood-white-flag-national-disaster-prabowo-subianto-5610441",
+        "content": "More than 1,000 people on Sumatra island have died in the disaster, which struck around Nov 25. Local government offices have also raised white flags to protest what residents described as the central government’s slow response to the disaster, local media reported. The Indonesian government has turned down international offers of aid, saying it is able to support emergency operations. “Many residents and volunteers are putting up white flags because they can no...",
+        "publish_date": "2025-12-17T07:58:45.174139+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Sumatra floods: Aceh residents raise white flags i..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Federal judge indicates he won’t halt the White House ballroom project",
+        "url": "https://sg.news.yahoo.com/news/articles/federal-judge-indicates-won-t-215253910.html",
+        "content": "A federal judge indicated Tuesday that he won’t order President Donald Trump to immediately stop work on the massive new White House ballroom. But Leon, an appointee of former President George W. If it does, he said, it would have to be taken down. “I’m not an engineer,” Gustafson said, adding that nothing suggested it...",
+        "publish_date": "2025-12-17T06:52:53+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Federal judge indicates he won’t halt the White Ho..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-17T08:01:44.122275+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
