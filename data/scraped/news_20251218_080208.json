@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "PM Takaichi says Japan 'always open' to dialogue with China",
+        "url": "https://www.channelnewsasia.com/east-asia/japan-pm-takaichi-china-dialogue-5623496",
+        "content": "\"Japan is always open to dialogue with China. We're not shutting our door.\". This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2025-12-18T07:58:55.508028+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PM Takaichi says Japan 'always open' to dialogue w..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "South Africa briefly held US government personnel on refugee assignment amid fraught relationship",
+        "url": "https://sg.news.yahoo.com/news/articles/south-africa-briefly-held-us-221500506.html",
+        "content": "It isn’t clear why the US employees were questioned. US personnel were working alongside Kenyan staff with Church World Service, a refugee resettlement partner",
+        "publish_date": "2025-12-18T06:41:41+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 South Africa briefly held US government personnel ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-18T08:02:08.768775+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
