@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "$5m lost in scams; 239 people under police probe",
+        "url": "https://www.asiaone.com/singapore/5m-lost-scams-239-people-under-police-probe",
+        "content": "A total of 239 people are assisting with police investigations over their suspected involvement in scams where victims reportedly lost around $5 million. The cases involve: e-commence scams; friend impersonation scams; job scams; government official impersonation scams; investment scams; and rental scams",
+        "publish_date": "2025-12-19T12:50:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $5m lost in scams; 239 people under police probe"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'That's being human': Man captures wholesome moment of boy relaxing with migrant worker at HDB void deck",
+        "url": "https://www.asiaone.com/singapore/migrant-worker-boy-wholesome-human-moment-choa-chu-kang-hdb-void-deck",
+        "content": "\"Who said you're allowed to sleep here?\" the man is heard asking repeatedly in that video. \"Singaporeans don't behave like you, show some respect,\" one netizen remarked. That belief was proven right by a boy. Meanwhile, the boy adjusts himself to get into frame",
+        "publish_date": "2025-12-18T23:23:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'That's being human': Man captures wholesome momen..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man found injured near Tampines MRT Station, police investigating",
+        "url": "https://www.asiaone.com/singapore/tampines-mrt-man-injured-blood-police-investigating",
+        "content": "\"Upon police's arrival, officers found an injured man and attended to his injuries together with Singapore Civil Defence Force paramedics,\" added the police. The man was later conveyed conscious to hospital",
+        "publish_date": "2025-12-19T23:18:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man found injured near Tampines MRT Station, polic..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-20T08:01:37.444622+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
