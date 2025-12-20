@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "AI influencers allow brands to create the perfect persona, but is this what consumers want?",
+        "url": "https://www.channelnewsasia.com/today/big-read/ai-influencers-advertising-marketing-social-media-5624766",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 AI influencers allow brands to create the perfect persona, b...",
+        "content": "Tens of thousands of likes, heart-eyed emojis and adoring comments pile up beneath each image. It all looks effortless: a fit, stylish 25-year-old documenting her daily life. Yet, Aitana cannot do any of these things, because she is not real. She is a hyper-realistic digital influencer generated using artificial intelligence (AI). Its representative Paula Garcia said: \"Hyper-realistic AI influencers bring great versatility, as they can...",
+        "publish_date": "2025-12-21T07:58:47.619486+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Hundreds of Bangladeshis who gathered at Serangoon mosque for youth leader's funeral prayers turned away",
+        "url": "https://www.asiaone.com/singapore/osman-hadi-death-bangladeshis-gathered-angullia-mosque-dispersed-police",
+        "summary": "📰 법률, 기술, 국제 관련 뉴스\n📢 Hundreds of Bangladeshis who gathered at Serangoon mosque for youth leader's fun...",
+        "content": "At least two police cars are seen along the road. He requested for them to disperse and leave the area. Checks online by AsiaOne show at least three Bangladeshi news sites claiming that funeral prayers will be held at the mosque,...",
+        "publish_date": "2025-12-20T19:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "17-year-old teen arrested for armed robbery in Jurong",
+        "url": "https://www.asiaone.com/singapore/17-year-old-teen-armed-robbery-jurong-west",
+        "summary": "📰 법률, 범죄, 기술 관련 뉴스\n📢 17-year-old teen arrested for armed robbery in Jurong",
+        "content": "A karambit knife has a short curved blade with a finger grip. He was identified through follow-up investigations and with the aid of police cameras. A mobile phone, gold ring, and a karambit were also recovered and seized as case exhibits. The teenager will be charged in court on Saturday. \"The police will not tolerate such brazen acts of crime and will spare no effort to apprehend such...",
+        "publish_date": "2025-12-20T14:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-21T08:01:58.644772+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
