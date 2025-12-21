@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Power restored to most in San Francisco after massive outage",
+        "url": "https://sg.news.yahoo.com/news/articles/power-restored-most-san-francisco-162236234.html",
+        "content": "PG&E said earlier its crews were working Sunday to restore electricity in several neighborhoods and small areas of downtown San Francisco following Saturday’s outage. PG&E said it could not provide a precise timeframe for when the power would be fully restored. That fire has been blamed for some of the blackouts. The outage remains under investigation. PG&E said it has mobilized additional engineers and electricians to help with restoration efforts.",
+        "publish_date": "2025-12-22T07:10:56+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Power restored to most in San Francisco after mass..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-22T08:01:49.831729+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
