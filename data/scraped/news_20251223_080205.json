@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asian-markets-rally-wall-st-033519474.html",
+        "content": "Wall Street stocks pushed higher Monday to begin a holiday-shortened trading week, while oil prices rallied amid worsening tensions between the United States and Venezuela. Gold and silver also struck fresh record highs, as the United States pushed on with its Venezuela oil blockade. All three major US indices finished solidly higher after spending the entire day in positive territory. The broad-based S&P 500 closed up 0.6 percent. Interactive Brokers' Steve Sosnick predicted stocks would drift higher in the absence of major trading catalysts. \"Barring any outside shocks, this kind of pattern is likely to prevail until the end...",
+        "publish_date": "2025-12-23T06:20:15+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing man, 74, with dementia and Parkinson's",
+        "url": "https://www.asiaone.com/singapore/missing-chan-tuck-chew-dementia-parkinsons-police-appeal",
+        "content": "Chan suffers from dementia and Parkinson's, and was last seen wearing a grey-and-white checkered polo shirt, his family told Mothership. \"It's already been over 30 hours. The police urged anyone with information to contact their hotline at 1800-255- 0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential.",
+        "publish_date": "2025-12-22T23:03:30+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police appeal for information on missing man, 74, ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Videos show elderly man using PMA on PIE, modified e-bike speeding along Woodlands Road",
+        "url": "https://www.asiaone.com/singapore/pma-on-pie-ebike-woodlands-road",
+        "content": "Two infractions related to active mobility devices were caught on separate dashcam footages on Sunday (Dec 21). The incident allegedly occurred at about 10.30am. Thankfully for the elderly PMA user, the driver is seen slowing down. In response to AsiaOne's queries, a police spokesperson said they received a call for assistance",
+        "publish_date": "2025-12-22T20:47:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Videos show elderly man using PMA on PIE, modified..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-23T08:02:05.903487+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
