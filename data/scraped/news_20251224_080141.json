@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "S$40 vs S$4,000: What’s the difference between regular and designer women’s white shirts?",
+        "url": "https://www.channelnewsasia.com/style-beauty/price-designer-white-shirt-5478991",
+        "content": "The white shirt, on the other hand, has only grown more essential. Crisp yet easy, polished yet effortless, it is fashion’s ultimate blank canvas. While our male counterparts might head to their tailors to perfect a dress shirt, women arguably have more fun. Off the rack, we’re spoilt for choice: Classic cotton poplins, oversized boyfriend cuts, cropped or tuxedo styles, silk or satin variations. Naturally, prices vary",
+        "publish_date": "2025-12-24T07:58:36.136612+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 S$40 vs S$4,000: What’s the difference between reg..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump administration to start garnishing wages of defaulted student loan borrowers in January",
+        "url": "https://sg.news.yahoo.com/news/articles/trump-administration-start-garnishing-wages-214711543.html",
+        "content": "The move comes months after the administration restarted collecting federal student loans in default, which happens after 270 days without payment. If the department scales up its wage garnishment efforts, millions could be affected",
+        "publish_date": "2025-12-24T06:47:11+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump administration to start garnishing wages of ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Experienced HR practitioner Sarojini Padmanathan to helm Hindu Endowments Board",
+        "url": "https://www.asiaone.com/singapore/heb-hindu-endowments-board-new-ceo-sarojini-padmanathan",
+        "content": "The Hindu Endowments Board (HEB) will be getting a new leader at its helm. According to HEB, she was also involved in organisational resilience and people transformation efforts during the Covid-19 pandemic",
+        "publish_date": "2025-12-23T20:56:16+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Experienced HR practitioner Sarojini Padmanathan t..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Beggar': Cabby claims passengers vomited in taxi, offered $10 and insulted him",
+        "url": "https://www.asiaone.com/singapore/cabby-claims-two-passengers-vomited-car-insulted-him-refused-compensation",
+        "content": "He said he did not accept the compensation. According to Loo, the incident meant that he could not continue fetching customers,...",
+        "publish_date": "2025-12-23T13:33:18+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Beggar': Cabby claims passengers vomited in taxi,..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-24T08:01:41.525259+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
