@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Dreams unravel as young Indians’ odyssey on illegal ‘donkey route’ ends in fear, limbo in US",
+        "url": "https://www.channelnewsasia.com/cna-insider/inside-illegal-dunki-donkey-route-indian-migrants-united-states-5652716",
+        "content": "SAN DIEGO and CHANDIGARH, India: Mohit Kaatiya was pacing around his rented flat, with the curtains drawn. “I don’t know how many years I’ll have to live here alone,” said the 22-year-old. “What will I have to do. What will happen next?”. He had left India believing the US would change his life. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2025-12-25T07:58:29.427986+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dreams unravel as young Indians’ odyssey on illega..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Woman, 35, found after being reported missing in Siglap",
+        "url": "https://sg.news.yahoo.com/woman-35-found-being-reported-074546341.html",
+        "content": "Anyone with information was asked to call the police hotline on 1800-255-0000, or submit information online at www.police.gov.sg/i-witness. All information would be kept strictly confidential, the police added. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2025-12-22T16:45:46+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Woman, 35, found after being reported missing in S..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump-backed Nasry Asfura declared winner of Honduras presidency",
+        "url": "https://sg.news.yahoo.com/trump-backed-nasry-asfura-declared-215640217.html",
+        "content": "Rixi Moncada, a lawyer from the leftist Libre Party, which currently runs the government, was trailing far behind in third",
+        "publish_date": "2025-12-25T06:56:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump-backed Nasry Asfura declared winner of Hondu..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man arrested for alleged loanshark harassment in Choa Chu Kang",
+        "url": "https://www.asiaone.com/singapore/loanshark-choa-chu-kang-st62-arrested-police",
+        "content": "\"Loanshark-related graffiti was scribbled on the wall beside the unit,\" the police said. He will be charged in court on Dec 24. The police advised members of the public to stay away from...",
+        "publish_date": "2025-12-24T10:03:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man arrested for alleged loanshark harassment in C..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Fire breaks out at Desker Road restaurant; no injuries reported",
+        "url": "https://www.asiaone.com/singapore/fire-breaks-out-desker-road-restaurant-no-injuries-reported",
+        "content": "The fire involved the kitchen exhaust ducting in a unit on the first floor, said SCDF. Firefighters extinguished the flames using a water jet. Three persons self-evacuated before rescuers arrived and there were no reported injuries. @asiaone A fire broke out at a shophouse restaurant along Desker Road on Wednesday (Dec 24) afternoon. AsiaOne understands that the fire was caused by unattended cooking. SCDF said that the fire involved contents of a kitchen exhaust ducting. No injuries were reported in the incident",
+        "publish_date": "2025-12-24T19:04:17+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Fire breaks out at Desker Road restaurant; no inju..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2025-12-25T08:01:32.689039+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
