@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Malaysia's Najib to face verdict in mega 1MDB graft trial",
+        "url": "https://sg.news.yahoo.com/malaysias-najib-face-verdict-mega-211209235.html",
+        "content": "The verdict proceeding, expected to start at 9:00 am (0100 GMT) before the Kuala Lumpur High Court, will take place in Malaysia's administrative capital Putrajaya.",
+        "publish_date": "2025-12-26T06:12:09+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Malaysia's Najib to face verdict in mega 1MDB graf..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Airplane Automatically Lands Itself After In-Flight Emergency",
+        "url": "https://sg.news.yahoo.com/news/articles/airplane-automatically-lands-itself-flight-165512828.html",
+        "content": "An airplane in Colorado safely landed itself during an in-flight emergency on Saturday using an automated system. News: Powerball Player In Arkansas Wins $1.817 Billion Lottery Jackpot. Video released by North Metro Fire Rescue shows the...",
+        "publish_date": "2025-12-26T01:55:12+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Airplane Automatically Lands Itself After In-Fligh..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'This was a stupid post': Influencer apologises after obituary-style announcement draws backlash",
+        "url": "https://www.asiaone.com/singapore/stupid-post-influencer-apologises-obituary-travel-announcement",
+        "content": "Yes, you laughed about it but after reflecting a little more, I think it’s not funny,\" said Fauzi. \"It scares me because this person has been following me for quite a bit, (which suggests) they have certain feelings...",
+        "publish_date": "2025-12-24T19:33:02+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'This was a stupid post': Influencer apologises af..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-26T08:01:48.956990+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
