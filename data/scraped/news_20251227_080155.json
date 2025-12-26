@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Foreigner to be charged with vandalism after 'offensive words' spray-painted on Salvation Army premises",
+        "url": "https://www.channelnewsasia.com/singapore/praisehaven-salvation-army-premises-graffiti-women-charged-court-5723806",
+        "content": "The Chinese Australian woman will be charged with the offence of vandalism, police said on Friday. \"The police take a very serious view of such acts, and offenders will be dealt with...",
+        "publish_date": "2025-12-27T07:58:45.235025+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Foreigner to be charged with vandalism after 'offe..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2025-12-27T08:01:55.854503+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
