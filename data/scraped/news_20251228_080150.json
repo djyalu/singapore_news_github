@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Over 13,400 HDB flats to reach MOP in 2026; analysts say supply could moderate resale price growth",
+        "url": "https://sg.news.yahoo.com/over-13-400-hdb-flats-210000607.html",
+        "content": "These flats are spread across 22 projects in 14 towns, they added. This is followed by Queenstown with 2,405 units in Dawson. Resale flats in Dawson and Bidadari are frequently among million-dollar flat transactions. Those in the Dawson area have set some of the highest prices to date.",
+        "publish_date": "2025-12-28T06:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Over 13,400 HDB flats to reach MOP in 2026; analys..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-28T08:01:50.481998+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
