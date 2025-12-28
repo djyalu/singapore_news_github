@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "After overwhelming $7 lunch buffet response, restaurant forced to change terms",
+        "url": "https://sg.news.yahoo.com/style/overwhelming-7-lunch-buffet-response-040043812.html",
+        "content": "That’s exactly what happened to Dragon’s Bite by Our Dining Place at 20 Cavan Road. After they dropped their S$7 daily lunch buffet on 9 Dec 2025, things went from zero to a hundred real quick. Consequently, the restaurant was overwhelmed by a sudden, massive influx of patrons. From a business standpoint, that’s great news. More customers bring higher revenue, more word-of-mouth buzz, and eventually, a buffet that’s well-regarded. Of course, there’s always the other side to consider. An Instagram update from the restaurant later revealed that the sheer volume of visitors meant many customers with existing reservations were unfortunately unable to be seated. There were complaints on Google Reviews stating that the food quality wasn’t up to standard, and customers who had...",
+        "publish_date": "2025-12-27T13:00:43+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 After overwhelming $7 lunch buffet response, resta..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Mamdani Hits Back At Musk Over Criticism Of FDNY Chief Pick",
+        "url": "https://sg.news.yahoo.com/news/articles/mamdani-hits-back-musk-over-211553744.html",
+        "content": "Mamdani’s remarks came after the tech billionaire condemned the self-proclaimed democratic socialist’s decision to appoint Lillian Bonsignore in a Friday X post. “People will die because of this. Proven experience matters when lives are at stake,” Musk wrote alongside a clip of Mamdani announcing Bonsignore’s new role. Last week, Mamdani appointed Bonsignore, a FDNY veteran who helmed Emergency Medical Services Operations before retiring from the department in 2022, as FDNY commissioner",
+        "publish_date": "2025-12-29T06:15:53+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mamdani Hits Back At Musk Over Criticism Of FDNY C..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Over 13,400 HDB flats to reach MOP in 2026; analysts say supply could moderate resale price growth",
+        "url": "https://www.asiaone.com/singapore/over-13400-hdb-flats-reach-mop-2026-analysts-say-supply-could-moderate-resale-price",
+        "content": "These flats are spread across 22 projects in 14 towns, they added. This is followed by Queenstown with 2,405 units in Dawson. Resale flats in Dawson and Bidadari are frequently among million-dollar flat transactions. Those in the Dawson area have set some of the highest prices to date.",
+        "publish_date": "2025-12-28T10:15:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Over 13,400 HDB flats to reach MOP in 2026; analys..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "1,771 persons investigated for various offences in year-end enforcement blitz",
+        "url": "https://www.asiaone.com/singapore/police-enforcement-blitz-year-end-festive",
+        "content": "A total of 1,771 persons are being investigated for various offences following a nearly month-long series of multi-agency enforcement operations. It also involved officers from the Central Narcotics Bureau (CNB), Immigration and Checkpoints Authority (ICA), Singapore Civil Defence Force (SCDF), Health Sciences Authority (HSA), Ministry of Manpower (MOM) and Singapore Customs. The range of offences uncovered includes traffic violations, e-vaporisers-related offences, duty-unpaid cigarettes, immigration violations and illegal employment, as well as drug-related offences.",
+        "publish_date": "2025-12-27T16:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 1,771 persons investigated for various offences in..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-29T08:01:45.584701+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
