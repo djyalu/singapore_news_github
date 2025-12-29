@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says US knocked out ‘big facility’ as part of Venezuela campaign",
+        "url": "https://sg.news.yahoo.com/news/articles/trump-says-us-knocked-big-142213258.html",
+        "content": "Two nights ago, we knocked that out. So we hit them very hard,” Trump told John Catsimatidis, the major Republican donor whose radio show airs on WABC. The interview occurred on Friday. “I don’t want to say that,” Trump told CNN. But you know, it was along the shore.”",
+        "publish_date": "2025-12-30T04:33:11+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says US knocked out ‘big facility’ as part o..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man locks himself in room for 2 hours, SCDF personnel seen rappelling down Circuit Road block",
+        "url": "https://www.asiaone.com/singapore/man-locks-scdf-rappel-down-50-circuit-road-block",
+        "content": "Officers from the Special Operations Command and Crisis Negotiation Unit were then activated. A video taken from the opposite block and seen by AsiaOne showed two Dart rescuers rappelling down from the unit above. No injuries were reported. Chinese publication Shin Min Daily News reported that the front gate of the flat appeared to have been...",
+        "publish_date": "2025-12-29T13:15:10+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man locks himself in room for 2 hours, SCDF person..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "PM Lawrence Wong to deliver Budget 2026 statement on Feb 12",
+        "url": "https://www.asiaone.com/singapore/pm-lawrence-wong-deliver-budget-2026-feb-12",
+        "content": "Prime Minister Lawrence Wong will deliver the Budget 2026 statement in Parliament on Feb 12. They can give feedback on these three Budget 2026 themes — advancing our economy, securing good jobs and uplifting Singaporeans to progress together",
+        "publish_date": "2025-12-29T11:35:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PM Lawrence Wong to deliver Budget 2026 statement ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-30T08:02:05.581185+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
