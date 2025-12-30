@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Protests calling for ‘death to the dictator’ erupt across Iran",
+        "url": "https://sg.news.yahoo.com/protests-calling-death-dictator-erupt-234448700.html",
+        "content": "Mass protests have erupted across Iran calling for “death to the dictator” over the regime’s economic crisis. Tear gas was used to disperse protesters as shops shuttered in Tehran’s Grand Bazaar and main markets. Residents in one city near Tehran told The Telegraph that a heavy presence of armed motorcycle-mounted security forces was visible around midnight. The protests have been cheered on by Israel, whose foreign ministry hoping for...",
+        "publish_date": "2025-12-30T08:44:48+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Protests calling for ‘death to the dictator’ erupt..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2025-12-31T08:01:55.597881+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
