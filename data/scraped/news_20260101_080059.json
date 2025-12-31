@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Stocks pull lower at end of record year for markets",
+        "url": "https://sg.news.yahoo.com/stocks-pull-lower-end-record-212857892.html",
+        "summary": "📰 시장 관련 뉴스\\n📢 Stocks pull lower at end of record year for markets...",
+        "content": "Still, all three indices logged solid gains for the full year. \"Generally speaking, 2025 was a spectacular year for equities,\" said Briefing.com analyst Patrick O'Hare. London's benchmark FTSE 100 index jumped more than 21 percent...",
+        "publish_date": "2026-01-01T06:28:57+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-01T08:00:59.497477+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]

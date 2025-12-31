@@ -1,0 +1,13 @@
+[
+  {
+    "id": "20260101080107",
+    "timestamp": "2026-01-01T08:01:07.495772+09:00",
+    "channel": "120363421252284444@g.us",
+    "status": "success",
+    "header": "뉴스 1개 발송",
+    "message_preview": "📰 *Singapore News Update*\n2026년 01월 01일 08:01\n\n📊 오늘의 주요 뉴스: 1개 그룹, 총 1개 기사\n\n【 News 】\n📍 출처: Yahoo Singapore News\n\n\n1. 📰 싱가포르 최신 뉴스\n📢 Stocks pull lower at end of record year for market...\n   🔗 원문: https...",
+    "message_length": 314,
+    "article_count": 1,
+    "api": "green-api"
+  }
+]
