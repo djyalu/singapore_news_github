@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Thieves drill into bank vault and steal €30m in Christmas raid",
+        "url": "https://sg.news.yahoo.com/thieves-drill-bank-vault-steal-161335164.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Thieves drill into bank vault and steal €30m in Christmas ra...",
+        "content": "Investigators believe the gang spent much of the weekend inside the vault without detection, breaking into the boxes and ferrying away their contents. They broke open 3,000 safety deposit boxes, stealing money, gold and jewellery worth an estimated €30m (£26m) and fled without being detected, police said. Officers were alerted while the raid was still under way...",
+        "publish_date": "2025-12-31T01:13:35+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Zohran Mamdani’s inauguration celebrates the progressive movement as New York’s incoming mayor pledges an expansive agenda",
+        "url": "https://sg.news.yahoo.com/news/articles/zohran-mamdani-sworn-mayor-york-052836060.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Zohran Mamdani’s inauguration celebrates the progressive movement as New York’s ...",
+        "content": "Bernie Sanders, who swore in Mamdani. “My fellow New Yorkers, today begins a new era,” Mamdani said after his swearing-in",
+        "publish_date": "2026-01-02T06:35:47+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Bus captain and commuter lock horns at Woodlands interchange",
+        "url": "https://www.asiaone.com/singapore/bus-captain-commuter-dispute-woodlands-interchange",
+        "summary": "📰 교통, 취업, 기술 관련 뉴스\n📢 Bus captain and commuter lock horns at Woodlands interchange",
+        "content": "\"A few people tried to calm (the woman) down. But it did not work,\" she said. Responding to AsiaOne's queries, deputy managing director of SMRT Buses...",
+        "publish_date": "2025-12-31T12:40:31+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-02T08:01:09.638762+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
