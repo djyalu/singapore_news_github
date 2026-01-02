@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Can you build muscles without touching a dumbbell? Here’s what experts say",
+        "url": "https://www.channelnewsasia.com/wellness/strength-training-without-weights-after-40-sarcopenia-5599481",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Can you build muscles without touching a dumbbell? Here’s wh...",
+        "content": "(Scroll on if you’re already following a fitness programme or know what to do.). Here’s the thing: Yes, you want strength but no, you don’t want to look like Ronnie Coleman (Google him). Besides, you’re not sure about stepping into a testosterone-charged gym where everyone and everything look like they could knock you out. You have questions, too. Like, can you do yoga or Pilates instead. Does tugging on a resistance band count. What about sit-ups and push-ups. Must you sign up for Hyrox to build muscles worthy of Physical: Asia’s Amotti?",
+        "publish_date": "2026-01-03T07:58:31.819018+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asia-stocks-bright-start-2026-045402830.html",
+        "summary": "📰 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "After indices smashed records in 2025, ending with double-digit annual gains, London continued the trend in early new year deals",
+        "publish_date": "2026-01-03T06:22:28+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 13-year-old girl last seen in Eunos",
+        "url": "https://www.asiaone.com/singapore/missing-amber-lim-en-police",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Police appeal for information on missing 13-year-old girl last seen in Eunos",
+        "content": "The police urged anyone with information to contact their hotline at 1800-225-0000 or submit information online via www.police.gov.sg/i-witness. All information will be kept strictly confidential, said the police.",
+        "publish_date": "2026-01-02T16:30:42+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-03T08:01:03.012345+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
