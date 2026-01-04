@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "From four students to 10,000: Wang Laoshi's 18-year journey building a Chinese tuition chain",
+        "url": "https://www.channelnewsasia.com/singapore/wang-laoshi-learning-centre-chinese-tuition-5581911",
+        "summary": "📰 교육 관련 뉴스\\n📢 From four students to 10,000: Wang Laoshi's 18-year journey ...",
+        "content": "The saying, by ancient Chinese philosopher Guan Zhong, encapsulates founder Wang Jie's approach to education – that nurturing minds requires far more patience than growing a tree. “It’s very important. “It wasn't that I wanted to start a tuition centre,” said the 61-year-old. “Some people say, ‘You're smart, you're capable, you chose the right track.’ This track .",
+        "publish_date": "2026-01-05T07:58:40.957887+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Lucky Her Kiao opens with fish dumplings from 3rd-gen noodle hawker",
+        "url": "https://sg.news.yahoo.com/style/lucky-her-kiao-opens-fish-020047996.html",
+        "summary": "📰 싱가포르, 비즈니스, 교통 관련 뉴스\n📢 Lucky Her Kiao opens with fish dumplings from 3rd-gen noodle hawker",
+        "content": "Ever wanted to take home Song Kee Fishball Noodle‘s fish dumplings. They bring not just fish dumplings, but a variety of special fish noodle dishes rarely found elsewhere in Singapore!. Fun fact: this isn’t the owner’s first business venture. There, he sold artisanal steamboat ingredients, merging premium charm with affordability. Of course, James still sells his steamboat ingredients, which are available frozen in plastic containers",
+        "publish_date": "2026-01-04T11:00:47+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Venezuelans hunker down, apprehensive about what comes next",
+        "url": "https://sg.news.yahoo.com/news/articles/venezuelans-hunker-down-apprehensive-comes-165528824.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Venezuelans hunker down, apprehensive about what comes next",
+        "content": "Amid widespread apprehension about what comes next, the streets of the capital Caracas and other cities have been quiet. People are apprehensive about being out and about, with the security forces on edge. “You can’t hear anything on the streets except the birds singing,” reported journalist Mary Mena Sunday. Opposition supporters are celebrating in private, but there have...",
+        "publish_date": "2026-01-05T06:05:53+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "New Year luck: $8m Toto jackpot split among 3 winning tickets",
+        "url": "https://www.asiaone.com/singapore/new-year-luck-8m-toto-jackpot-split-among-3-winning-tickets",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New Year luck: $8m Toto jackpot split among 3 winning tickets",
+        "content": "Each of the three winning tickets will receive $2,653,368. After that, the amount will be shared among the winners in Group 2",
+        "publish_date": "2026-01-04T10:53:07+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-05T08:01:24.279817+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
