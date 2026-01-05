@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Former DPM Heng Swee Keat relinquishes post as member of MAS board of directors",
+        "url": "https://sg.news.yahoo.com/former-dpm-heng-swee-keat-043350015.html",
+        "content": "“His sharp insights and wisdom were tremendous assets for the MAS board. We wish him the best in his future endeavours.”. Mr Heng was deputy prime minister from 2019 to 2025",
+        "publish_date": "2026-01-05T13:33:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Former DPM Heng Swee Keat relinquishes post as mem..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chevron helps lift Dow to record as oil market weighs Venezuela shake-up",
+        "url": "https://sg.news.yahoo.com/tech-firms-lead-asian-markets-024154819.html",
+        "content": "The broad-based S&P 500 and Nasdaq also finished solidly higher. \"It's kind of a fresh look. Investors seem to be seeing more positives than negatives.\". Besides Chevron, oil services giant Halliburton jumped 7.8 percent, while producers ConocoPhillips and ExxonMobil also rose.",
+        "publish_date": "2026-01-06T06:41:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chevron helps lift Dow to record as oil market wei..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Body of woman found on ledge of Hougang block",
+        "url": "https://www.asiaone.com/singapore/body-woman-found-ledge-hougang-block",
+        "content": "The woman was found lying motionless and pronounced dead by a paramedic from the Singapore Civil Defence Force. According to Mothership, the woman was found on the ledge above the waste collection centre. Based on preliminary investigations, the police said foul play is not suspected.",
+        "publish_date": "2026-01-05T22:05:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Body of woman found on ledge of Hougang block"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Outgoing police commissioner Hoong Wee Teck pays tribute to public, partners and officers as How Kwang Hwee takes over",
+        "url": "https://www.asiaone.com/singapore/new-police-commissioner-how-kwang-hwee-hoong-wee-teck-pays-tribute",
+        "content": "\"A safe country is not built by police officers alone. \"To our partners, including our fellow Home Team and public service agencies, volunteers, community stakeholders and overseas counterparts, thank you...",
+        "publish_date": "2026-01-05T21:05:34+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Outgoing police commissioner Hoong Wee Teck pays t..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-06T08:01:23.719463+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
