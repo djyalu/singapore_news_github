@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Motorcyclist dies after accident with car on SLE",
+        "url": "https://sg.news.yahoo.com/motorcyclist-dies-accident-car-sle-055039558.html",
+        "content": "The motorcyclist was taken unconscious to Sengkang General Hospital, where he later died, the authorities said. A 48-year-old male car driver is assisting with investigations, the police added. A trail of blood can be seen on the road near them",
+        "publish_date": "2026-01-06T14:50:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcyclist dies after accident with car on SLE"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Several' fire safety issues uncovered at 2 commercial buildings during SCDF's enforcement checks",
+        "url": "https://www.asiaone.com/singapore/scdf-enforcement-checks-commercial-premises-non-compliances",
+        "content": "Those found in breach of the Fire Safety Act will face enforcement action, such as issuing a Fire Hazard Abatement Notice",
+        "publish_date": "2026-01-06T17:18:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Several' fire safety issues uncovered at 2 commer..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcyclist dies in hospital after accident with car on SLE",
+        "url": "https://www.asiaone.com/singapore/motorcyclist-dies-hospital-after-accident-car-sle",
+        "content": "An ambulance is also seen parked behind the car and motorcycle involved. Blood can be seen splattered on the road as authorities surround the scene. The 42-year-old male motorcyclist involved was taken unconscious to Sengkang General Hospital, where he subsequently died. A 48-year-old male car driver is assisting with investigations, the police said.",
+        "publish_date": "2026-01-06T18:35:35+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcyclist dies in hospital after accident with ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-07T08:01:20.709149+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
