@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US immigration officer fatally shoots woman in Minneapolis",
+        "url": "https://sg.news.yahoo.com/us-immigration-officer-fatally-shoots-210427564.html",
+        "content": "An immigration officer in Minneapolis shot dead a woman Wednesday, triggering outrage from local leaders even as President Donald Trump claimed the officer acted in self-defense. \"The woman driving the car was very disorderly, obstructing and resisting,\" he said on Truth Social, adding the...",
+        "publish_date": "2026-01-08T07:06:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US immigration officer fatally shoots woman in Min..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-08T08:01:38.576768+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
