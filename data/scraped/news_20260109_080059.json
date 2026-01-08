@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Swiss mining giant Glencore in merger talks with Rio Tinto",
+        "url": "https://sg.news.yahoo.com/swiss-mining-giant-glencore-merger-224245623.html",
+        "content": "Swiss mining and commodity trading giant Glencore said Friday it is in merger talks with British-Australian rival Rio Tinto. The deal could proceed as an all-share merger, it said in a statement. Together, they would have a value of more than US$260 billion, the paper said. Glencore chief executive Gary Nagle in December outlined plans to become one of the world's largest copper producers. \"Our portfolio, in particular in copper is world class,\" he told an investor presentation. \"The coal business supports the energy needs of today as we...",
+        "publish_date": "2026-01-09T07:42:45+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Swiss mining giant Glencore in merger talks with R..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "House Passes Extension Of Obamacare Health Insurance Subsidies",
+        "url": "https://sg.news.yahoo.com/news/articles/house-passes-extension-obamacare-health-221931116.html",
+        "content": "The bill passed 230 to 196, with 17 Republicans joining all Democrats in support. “I certainly understand where the president’s coming from, but I’m...",
+        "publish_date": "2026-01-09T07:19:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 House Passes Extension Of Obamacare Health Insuran..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-09T08:00:59.008744+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
