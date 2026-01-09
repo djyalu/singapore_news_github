@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "From photocards to idol meet-ups, how K-pop is fuelling hyperconsumption among hardcore fans",
+        "url": "https://www.channelnewsasia.com/today/ground-up/kpop-photocards-fansign-idols-collectors-consumption-5821186",
+        "content": "One of the most prized possessions of public relations executive Valerie Chan is a black spiral-bound album. She spent more than S$300 on this item. The cards are considered rare, since they were exclusive to the concert and limited in quantity. Although Miss Chan attended the concert, all photocards were out of stock when she reached the venue",
+        "publish_date": "2026-01-10T07:58:39.079783+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 From photocards to idol meet-ups, how K-pop is fue..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Body of man, 54, found along corridor of Chinatown HDB block",
+        "url": "https://www.asiaone.com/singapore/body-man-54-corridor-chinatown-hdb-block",
+        "content": "Employees of shops nearby told the Chinese daily they were not sure what happened. The police said that they received a call for assistance at around 5.50am. Officers found the deceased motionless. He was pronounced dead on the spot by a Singapore Civil Defence Force paramedic. Based on preliminary investigations, the police do not suspect foul play.",
+        "publish_date": "2026-01-09T12:12:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Body of man, 54, found along corridor of Chinatown..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-10T08:01:07.239853+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
