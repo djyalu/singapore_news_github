@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Argentina wildfire burns over 5,500 hectares: governor",
+        "url": "https://sg.news.yahoo.com/argentina-wildfire-burns-over-5-200954509.html",
+        "content": "\"There's no way to describe what we're living through. Every five minutes a new fire starts. It's hell,\" said local resident Flavia Broffoni on Instagram. About 3,000 tourists and 15 families have been evacuated and more than 10 homes destroyed. Nearly 500 personnel are deployed, with reinforcements expected from Cordoba and Chile. Firefighters in Argentina face growing challenges from climate change,...",
+        "publish_date": "2026-01-11T05:09:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Argentina wildfire burns over 5,500 hectares: gove..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Life on a teaspoon: S’pore teen with rare condition drinks cornstarch water to stay alive",
+        "url": "https://sg.news.yahoo.com/life-teaspoon-pore-teen-rare-040000735.html",
+        "content": "SINGAPORE – Thirteen-year-old Kayden Soh must follow a strict diet because his liver cannot process sugar. He can have only small amounts of fruit, milk and candy. He also drinks plenty of cornstarch water. Without it, he could have dangerously low blood sugar, which is life-threatening. It affects about one in 100,000 people worldwide. Uncooked cornstarch is a complex carbohydrate that the body digests slowly. When consumed, the cornstarch releases glucose slowly into the bloodstream over several hours",
+        "publish_date": "2026-01-10T13:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Life on a teaspoon: S’pore teen with rare conditio..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-11T08:01:15.644424+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
