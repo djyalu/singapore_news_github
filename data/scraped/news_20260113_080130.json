@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Salaries of political office holders to be reviewed: Chan Chun Sing",
+        "url": "https://www.channelnewsasia.com/singapore/political-office-appointment-holders-salary-be-reviewed-5852886",
+        "content": "“The salary structure and benchmark have not been updated since they were introduced in 2012,” said Mr Chan in a written reply. “It is therefore timely to undertake a review.”",
+        "publish_date": "2026-01-13T07:58:39.918354+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Salaries of political office holders to be reviewe..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Hyflux trial resumes: A reminder of what led to the court case",
+        "url": "https://www.channelnewsasia.com/singapore/hyflux-tuaspring-project-olivia-lum-trial-investors-lost-millions-5852696",
+        "content": "In total, seven individuals were charged over Hyflux’s intentional failure to disclose information relating to the Tuaspring Integrated Water and Power Project, among other things. Hyflux’s eventual collapse resulted in significant losses to investors. How did a company that was once Singapore’s leading example for homegrown businesses land itself in court. Here’s what you need to know.",
+        "publish_date": "2026-01-13T07:58:51.556464+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hyflux trial resumes: A reminder of what led to th..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "SBS bus slams into Punggol bus stop panel shattering glass on upper deck",
+        "url": "https://www.asiaone.com/singapore/sbs-bus-slams-punggol-bus-stop-panel-shattering-glass-upper-deck",
+        "content": "A video posted on Instagram shows the bus with visible damage to its upper deck. According to the video caption, the incident occurred at Punggol Oasis bus stop. Responding to queries from AsiaOne, SBS Transit spokesperson Grace Wu said the incident occurred on Saturday afternoon, with no injuries reported. Wu added that SBS is currently investigating the cause of the incident.",
+        "publish_date": "2026-01-12T12:58:59+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 SBS bus slams into Punggol bus stop panel shatteri..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-01-13T08:01:30.683564+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
