@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "South Korean prosecutors demand death penalty for ex-leader Yoon",
+        "url": "https://www.channelnewsasia.com/east-asia/south-korean-prosecutors-demand-death-penalty-ex-leader-yoon-5855971",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 South Korean prosecutors demand death penalty for ex-leader ...",
+        "content": "This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2026-01-14T07:58:59.064346+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "YAHOO POLL: Will you be showing up for Filmhouse?",
+        "url": "https://sg.news.yahoo.com/yahoo-poll-will-you-be-showing-up-for-filmhouse-090851269.html",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 YAHOO POLL: Will you be showing up for Filmhouse?",
+        "content": "Former Projector general manager Sharon Tan, 41, will take on the same role at Filmhouse. She said renovation works are currently under way at the site",
+        "publish_date": "2026-01-13T18:08:52+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "1,200 people, 50 companies have bank, telco and Singpass access restricted over scams: Shanmugam",
+        "url": "https://www.asiaone.com/singapore/1200-people-50-companies-have-bank-telco-and-singpass-access-restricted-over-scams",
+        "summary": "📰 장관, 법률, 금융 관련 뉴스\n📢 1,200 people, 50 companies have bank, telco and Singpass access restricted over ...",
+        "content": "Shanmugam, who is also Coordinating Minister for National Security, said that the authorities have seen positive early results, but will need more time to assess. Shanmugam said when a scam is reported, the police’s Anti-Scam Centre...",
+        "publish_date": "2026-01-13T18:20:35+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-14T08:01:17.354030+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
