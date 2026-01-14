@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "YAHOO POLL: Will you be showing up for Filmhouse?",
+        "url": "https://sg.news.yahoo.com/yahoo-poll-will-you-be-showing-up-for-filmhouse-090851269.html",
+        "content": "Former Projector general manager Sharon Tan, 41, will take on the same role at Filmhouse. She said renovation works are currently under way at the site",
+        "publish_date": "2026-01-13T18:08:52+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 YAHOO POLL: Will you be showing up for Filmhouse?"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pritam Singh's leadership 'failure' a contrast to Low Thia Khiang's: Indranee Rajah",
+        "url": "https://www.asiaone.com/singapore/pritam-singhs-leadership-failure-contrast-low-thia-khiangs-indranee-rajah",
+        "content": "Singh was convicted and fined $14,000 in February last year for lying to a parliamentary committee. His conviction was upheld in December after he appealed against it.",
+        "publish_date": "2026-01-14T17:01:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pritam Singh's leadership 'failure' a contrast to ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-01-15T08:01:22.401250+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
