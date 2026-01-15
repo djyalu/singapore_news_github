@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Venezuela's Machado says she 'presented' her Nobel medal to Trump",
+        "url": "https://www.channelnewsasia.com/world/venezuela-machado-presented-nobel-medal-trump-meeting-us-5862471",
+        "content": "Machado then met with more than a dozen senators, both Republican and Democratic, on Capitol ⁠Hill, where she has generally found more enthusiastic allies",
+        "publish_date": "2026-01-16T07:59:15.778827+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Venezuela's Machado says she 'presented' her Nobel..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Four astronauts return to Earth early in Nasa’s first-ever medical evacuation",
+        "url": "https://sg.news.yahoo.com/four-astronauts-return-earth-early-022218544.html",
+        "content": "An astronaut in need of medical care has departed the International Space Station (ISS) with three crewmates in Nasa’s first-ever medical evacuation. The decision from Nasa cuts short their mission by more than a month. Officials have not identified the astronaut with the health issue or provided more details about it, citing privacy. They are “stable, safe and well cared for”, outgoing space station commander Mike Fincke said earlier this week",
+        "publish_date": "2026-01-15T18:36:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Four astronauts return to Earth early in Nasa’s fi..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-16T08:01:44.111632+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
