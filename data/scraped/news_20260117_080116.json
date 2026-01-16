@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Power outage halts Tokyo commuter train lines, affecting 673,000 passengers",
+        "url": "https://sg.news.yahoo.com/power-outage-halts-tokyo-commuter-010032671.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Power outage halts Tokyo commuter train lines, affecting 673...",
+        "content": "JR East said a failure to ‍restore power after overnight maintenance work at Tokyo's Tamachi Station left both lines without electricity ​early Friday. A spokesperson said smoke ‌was seen coming from a track-side equipment box near the station. Passengers were seen disembarking from a Keihin-Tohoku train stranded between stations and walking along the tracks to ⁠evacuate, assisted by firefighters ​and railway staff. Images ​on social media showed commuters packing busy stations. The Yamanote Line passes ‍through stations ⁠including Shinjuku, which handles about 3.5 million passengers daily. The Keihin-Tohoku Line serves ⁠major hubs such as...",
+        "publish_date": "2026-01-16T16:38:41+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Tracy’s Sarawak Kitchen: Unique Eastern Malaysian dishes like money cai mee sua & tomato kway teow",
+        "url": "https://sg.news.yahoo.com/style/tracy-sarawak-kitchen-unique-eastern-080022247.html",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Tracy’s Sarawak Kitchen: Unique Eastern Malaysian dishes like money cai mee sua ...",
+        "content": "Recently, I checked out Tracy’s Sarawak Kitchen, which was recommended by a friend of mine. For those who despise veggies, the Money Cai Longevity Noodles (S$6.90) will undoubtedly be your arch-nemesis",
+        "publish_date": "2026-01-16T17:00:22+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-17T08:01:16.643681+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
