@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Should medical leave affect how we're evaluated at work?",
+        "url": "https://www.channelnewsasia.com/today/voices/sick-leave-mc-absent-office-workplace-disruption-impact-5858396",
+        "content": "I remember this conversation I had almost a decade ago with a dedicated employee. \"I didn't mean to fall sick,\" she protested. I agreed, but given her attendance record, I kept that score while highlighting other ways she had contributed positively. For me, showing up mattered. One could argue that medical leave is an entitlement, even when all days are used. Such was a sentiment that recently surfaced in a Singapore Reddit forum discussion on fully utilising sick leave.",
+        "publish_date": "2026-01-18T07:58:31.890472+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Should medical leave affect how we're evaluated at..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Uganda's Museveni wins seventh term as observers denounce intimidation",
+        "url": "https://sg.news.yahoo.com/uganda-army-denies-seizing-opposition-062204956.html",
+        "content": "His victory allows the former guerrilla fighter to extend his 40-year rule of the east African country. Wine, whose real name is Robert Kyagulanyi, won 24.72 percent. \"I know that these criminals are looking for me everywhere and...",
+        "publish_date": "2026-01-18T06:05:11+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Uganda's Museveni wins seventh term as observers d..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Nestle, Dumex infant formula products recalled over presence of toxin",
+        "url": "https://www.asiaone.com/singapore/nestle-dumex-infant-formula-products-recalled-toxin-sfa-cda",
+        "content": "The affected products are from Nestle and Dumex. \"SFA has detected cereulide toxin in two additional formula products. SFA also assured the public that Singapore continues to have a diversity of infant formula products.",
+        "publish_date": "2026-01-17T21:45:49+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nestle, Dumex infant formula products recalled ove..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-18T08:00:58.669878+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
