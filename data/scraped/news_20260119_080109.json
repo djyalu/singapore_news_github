@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "ComfortDelGro self-driving car hits road divider during testing in Punggol; no one hurt",
+        "url": "https://www.channelnewsasia.com/singapore/comfortdelgro-autonomous-self-driving-car-avs-punggol-testing-5866576",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 ComfortDelGro self-driving car hits road divider during test...",
+        "content": "SINGAPORE: A self-driving vehicle operated by ComfortDelGro (CDG) collided with a road divider while undergoing testing in Punggol on Saturday (Jan 17). “The safety operator on board proceeded to take over the steering of the vehicle manually. Unfortunately, the vehicle collided with the road divider during the manual takeover,” said CDG. The self-driving car’s front bumper appeared to have sustained damage in a photo circulating on social media.",
+        "publish_date": "2026-01-19T07:58:17.627466+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Premier League: Mbeumo and Dorgu give Carrick dream start with Manchester United derby delight",
+        "url": "https://sg.news.yahoo.com/premier-league-mbeumo-and-dorgu-give-carrick-dream-start-with-manchester-united-derby-delight-215429637.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Premier League: Mbeumo and Dorgu give Carrick dream start with Manchester United...",
+        "content": "The Italian could do nothing as Patrick Dorgu completed his all-action display by scoring United’s crucial second goal with 14 minutes remaining. Pep Guardiola’s side rarely threatened and the frustrated City boss even hooked leading scorer Erling Haaland off late in the...",
+        "publish_date": "2026-01-18T09:12:12+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Traffic police crack down on lorries without speed limiters on the road",
+        "url": "https://www.asiaone.com/singapore/traffic-police-enforcement-lorry-speed-limiter-deadline",
+        "summary": "📰 싱가포르, 교통, 창이 관련 뉴스\n📢 Traffic police crack down on lorries without speed limiters on the road",
+        "content": "A speed limiter is designed to limit the maximum speed that a vehicle can travel. Non-compliant lorries are prohibited from being driven, and their road tax cannot be renewed. We witnessed officers in action at several areas across Singapore, including Hougang, Sungei Kadut and Changi.",
+        "publish_date": "2026-01-18T13:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Drier weather for rest of January with brief thundery showers possible",
+        "url": "https://www.asiaone.com/singapore/weather-singapore-january-second-half",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 Drier weather for rest of January with brief thundery showers possible",
+        "content": "After several weeks of thundery showers forecast, the second fortnight of January should turn \"relatively drier\", the Meteorological Service Singapore said on Friday (Jan 16). However, brief localised thundery showers may still occur on several afternoons, after the weather turns drier",
+        "publish_date": "2026-01-17T09:20:46+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "1 taken to hospital following 3-vehicle accident near Woodlands Checkpoint",
+        "url": "https://www.asiaone.com/singapore/bke-woodlands-checkpoint-accident-1-taken-hospital",
+        "summary": "📰 싱가포르, 법률, 국제 관련 뉴스\n📢 1 taken to hospital following 3-vehicle accident near Woodlands Checkpoint",
+        "content": "AsiaOne understands that the car bore a Singapore licence plate, while the two motorcycles had Malaysia licence plates. A 31-year-old male motorcyclist is assisting with police investigations.",
+        "publish_date": "2026-01-18T11:32:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-19T08:01:09.192769+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
