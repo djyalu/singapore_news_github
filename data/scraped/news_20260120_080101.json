@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pedestrian dies in Ang Mo Kio accident, driver arrested",
+        "url": "https://sg.news.yahoo.com/pedestrian-dies-ang-mo-kio-160832651.html",
+        "content": "The man was taken to Tan Tock Seng Hospital, where he subsequently died. The male driver has been arrested for dangerous driving causing death. The photos also show a police car parked on the road. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2026-01-20T01:08:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pedestrian dies in Ang Mo Kio accident, driver arr..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "9 best car washes in JB worth driving there for",
+        "url": "https://sg.news.yahoo.com/style/10-best-car-washes-jb-100000254.html",
+        "content": "Titan’s Mace is an automotive detailing business focused on enhancing vehicles. Their goal is to provide high-quality detailing services that restore and preserve a vehicle’s look",
+        "publish_date": "2026-01-18T15:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 9 best car washes in JB worth driving there for"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Nearly 150 North View Primary School pupils hit by gastroenteritis symptoms",
+        "url": "https://www.asiaone.com/singapore/nearly-150-north-view-primary-school-pupils-gastroenteritis-food-poisoning",
+        "content": "Suspected cases of gastroenteritis are being investigated after 147 students at North View Primary School (NVPS) developed symptoms last week. In a joint statement on Monday (Jan 19), the Singapore Food Agency (SFA), the Communicable Diseases Agency (CDA) and NVPS said that students across levels were affected. Since the incident, NVPS has also taken precautionary measures including cleaning and sanitising all classrooms and common areas...",
+        "publish_date": "2026-01-19T19:35:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nearly 150 North View Primary School pupils hit by..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-20T08:01:01.253744+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
