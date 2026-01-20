@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Muted anniversary: Trump marks first year back with grievances",
+        "url": "https://www.channelnewsasia.com/world/trump-marks-first-year-us-presidency-5872151",
+        "content": "\"God is very proud of the work I have done,\" he declared. \"Maybe I have bad public relations people, but we’re not getting it,\" he...",
+        "publish_date": "2026-01-21T07:58:34.722039+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Muted anniversary: Trump marks first year back wit..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Vice President JD Vance Is Having Another Baby",
+        "url": "https://sg.news.yahoo.com/news/articles/vice-president-jd-vance-having-215128038.html",
+        "content": "Vice President JD Vance and his wife, Usha Vance, announced Tuesday they’re expecting another child this summer. “We’re very excited to share the news that Usha is pregnant with our fourth child, a boy. The Vances already have three children: Ewan, born in 2017; Vivek, born in 2020; and Mirabel, born in 2021. The 19th century Presidents John Tyler and Grover Cleveland both had children during their terms, and President John F",
+        "publish_date": "2026-01-21T06:51:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Vice President JD Vance Is Having Another Baby"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US tariffs are paid almost entirely by Americans, a German study finds",
+        "url": "https://sg.news.yahoo.com/us-tariffs-paid-almost-entirely-000018176.html",
+        "content": "A Kiel Institute study found US tariffs are mostly paid by American importers and consumers. The study found foreign exporters paid only around 4% of the tariff cost. The research contradicts Trump's messaging that Americans aren't paying for tariffs. A favorite tool of President Donald Trump has been costing Americans, according to new study. \"American importers and consumers bear nearly all the cost,\" the researchers said of the tariffs",
+        "publish_date": "2026-01-20T09:00:18+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US tariffs are paid almost entirely by Americans, ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-21T08:01:17.624684+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
