@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "House panel votes to hold Clintons in contempt in Jeffrey Epstein probe",
+        "url": "https://sg.news.yahoo.com/news/articles/house-panel-votes-hold-clintons-203505025.html",
+        "content": "Some Democrats joined with Republicans in voting to hold the former president in contempt. The vote to hold the former secretary of state in contempt was also bipartisan",
+        "publish_date": "2026-01-22T07:01:53+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 House panel votes to hold Clintons in contempt in ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Female motorcyclist, 33, dies after colliding with lorry on PIE",
+        "url": "https://www.asiaone.com/singapore/33-year-old-motorcyclist-dies-accident-collision-lorry-pie",
+        "content": "A 33-year-old female motorcyclist died after colliding with a lorry on the Pan-Island Expressway (PIE) on Wednesday (Jan 21). She was pronounced dead at the scene, SCDF added. The police said that the 40-year-old male lorry driver is assisting with investigations",
+        "publish_date": "2026-01-21T19:43:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Female motorcyclist, 33, dies after colliding with..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Go-Ahead driver, 70, assisting with investigations after bus strays into Loyang estate, damaging multiple vehicles",
+        "url": "https://www.asiaone.com/singapore/go-ahead-bus-driver-70-police-investigations-hit-and-run-loyang",
+        "content": "\"The bus captain involved made an incorrect turn and grazed several vehicles parked along the roadside,\" said Go-Ahead. According to a Facebook post from the bus’ operator Go-Ahead Singapore, the incident occurred after a temporary closure of Loyang Avenue. #Sgnews #PublicTransport #Bus #Accident",
+        "publish_date": "2026-01-21T16:32:14+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Go-Ahead driver, 70, assisting with investigations..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-22T08:05:55.416280+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
