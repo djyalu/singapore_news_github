@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "How this team made dragon boat racing possible for amputees, stroke survivors",
+        "url": "https://www.channelnewsasia.com/cna-insider/alita-initiative-dragon-boat-racing-team-amputees-stroke-survivors-5876221",
+        "content": "SINGAPORE: Every Saturday afternoon, quadruple amputee and para-athlete Tan Whee Boon manoeuvres carefully into a dragon boat as volunteers on either side steady the hull. A customised seat supports his body, while straps secure him in place. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from...",
+        "publish_date": "2026-01-23T07:59:52.493394+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 How this team made dragon boat racing possible for..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Rebecca Ferguson phoned Tom Cruise after getting sick in Maldives: ‘Can I get a helicopter?’",
+        "url": "https://sg.news.yahoo.com/rebecca-ferguson-phoned-tom-cruise-155104434.html",
+        "content": "For Rebecca Ferguson, it was Tom Cruise. “My husband [Rory St Clair Gainer] was like, ‘Tom can get a helicopter.’”. “I actually had gastroenteritis,” she continued, adding: “I’m giving you too much information.”. Swedish star Ferguson, 42, first appeared as MI6 agent Ilsa Faust in the...",
+        "publish_date": "2026-01-22T16:38:13+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Rebecca Ferguson phoned Tom Cruise after getting s..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Changi Airport passenger traffic hits record 69.98 million in 2025 amid steady travel demand",
+        "url": "https://www.asiaone.com/singapore/changi-airport-70-million-passengers-2025",
+        "content": "Amid the 374,000 landings and take-offs, 13 new routes were added last year. Two new passenger airlines - MIAT Mongolian Airlines and Pelitia Air - were also added last year.",
+        "publish_date": "2026-01-22T11:52:36+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Changi Airport passenger traffic hits record 69.98..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-23T08:02:31.630385+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
