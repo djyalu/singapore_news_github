@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/speculative-frenzy-catapults-silver-above-182732459.html",
+        "content": "\"As and when cracks start to appear they could easily become chasms. Spot prices for silver, used in jewellery, electronics, solar panels, as well as an investment, were last up 5.1%...",
+        "publish_date": "2026-01-24T05:42:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Heathrow scraps 100ml liquid container limit",
+        "url": "https://sg.news.yahoo.com/heathrow-scraps-100ml-liquid-container-090840210.html",
+        "content": "Bristol and Belfast airports have also raised their liquid limits to two litres. However, other airports that have the new scanners installed are...",
+        "publish_date": "2026-01-24T00:53:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Heathrow scraps 100ml liquid container limit"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-24T08:01:07.395482+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
