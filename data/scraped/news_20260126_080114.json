@@ -1,0 +1,53 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "American rock climber Alex Honnold free-climbs Taipei 101",
+        "url": "https://www.channelnewsasia.com/east-asia/taipei-101-climb-netflix-alex-honnold-china-5881371",
+        "content": "On Sunday, he climbed Taipei 101, which towers at 508m. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and...",
+        "publish_date": "2026-01-26T07:58:40.145545+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 American rock climber Alex Honnold free-climbs Tai..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Myanmar junta wraps election with ally set to seal victory",
+        "url": "https://www.channelnewsasia.com/asia/myanmar-election-wrap-junta-ally-set-seal-victory-5881661",
+        "content": "This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2026-01-26T07:58:44.626586+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Myanmar junta wraps election with ally set to seal..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-01-26T08:01:14.414682+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Trump threatens Canada with 100% tariff over pending trade deal with China",
+        "url": "https://www.businesstimes.com.sg/international/global/trump-threatens-canada-100-tariff-over-pending-trade-deal-china",
+        "content": "“With our economy under threat from abroad, Canadians have made a choice to focus on what we can control,” Carney said. The Canadian prime minister this month travelled to China to reset the countries’ strained relationship, and...",
+        "publish_date": "2026-01-26T07:59:12.741644+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump threatens Canada with 100% tariff over pendi..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-01-26T08:01:14.414716+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
