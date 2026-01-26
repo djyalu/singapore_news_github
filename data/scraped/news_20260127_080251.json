@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Zohran Mamdani Accuses White House Of Gaslighting Public Amid Deadly Deportation Crackdown",
+        "url": "https://sg.news.yahoo.com/news/articles/zohran-mamdani-accuses-white-house-220000531.html",
+        "content": "Border Patrol agents, Mamdani accused the White House of gaslighting Americans about why an immigration enforcement officer fatally shot another person earlier this month",
+        "publish_date": "2026-01-27T07:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Zohran Mamdani Accuses White House Of Gaslighting ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "94-year-old man living alone in MacPherson flat found dead; bodily fluids seep through door",
+        "url": "https://www.asiaone.com/singapore/94-year-old-man-living-alone-macpherson-flat-found-dead-bodily-fluids-seep-through-door",
+        "content": "When reporters arrived at the scene that afternoon, a police note was left on the padlocked gate. A reddish-brown fluid had reportedly seeped through the front door and pooled in the corridor. The funk only grew stronger, leading her to suspect that a stray cat may have died nearby. Learning that the smell had lingered for several days,...",
+        "publish_date": "2026-01-26T12:38:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 94-year-old man living alone in MacPherson flat fo..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-01-27T08:02:51.837419+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
