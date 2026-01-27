@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Weeks without power, Doomsday Clock, $1,000 car payments: Catch up on the day’s stories",
+        "url": "https://sg.news.yahoo.com/news/articles/weeks-without-power-doomsday-clock-220046270.html",
+        "content": "👋 Welcome to 5 Things PM. The timepiece just got reset, and it’s now the closest it’s ever been to midnight. Here’s what else you might have missed during your busy day. But that’s not good for your health and well-being. A new book reveals the key to a fulfilling life. Record-high car prices — coupled with high...",
+        "publish_date": "2026-01-28T07:00:46+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Weeks without power, Doomsday Clock, $1,000 car pa..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-28T08:01:45.798535+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
