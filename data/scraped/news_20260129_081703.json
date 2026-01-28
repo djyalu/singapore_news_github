@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Despite vision loss, she still declutters rental flats to restore dignity to hoarders’ homes",
+        "url": "https://www.channelnewsasia.com/cna-insider/fion-phua-keeping-hope-alive-declutters-rental-flats-hoarders-5890601",
+        "content": "His toilet had not been washed in decades either. “It’s because there’s a lot of money inside all these newspapers,” Fion Phua of volunteer platform Keeping Hope Alive said. “He was worried that people (might come in and) throw away (his money).”. But that finally changed when he accepted Phua’s offer of help. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading She leads a network of volunteers to improve living conditions for underprivileged Singaporeans",
+        "publish_date": "2026-01-29T08:14:32.525359+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Despite vision loss, she still declutters rental f..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "PropertyLimBrothers CEO Melvin Lim, vice-president Grayce Tan resign; Marc Chan appointed interim CEO",
+        "url": "https://sg.news.yahoo.com/propertylimbrothers-ceo-melvin-lim-vice-110532602.html",
+        "content": "SINGAPORE – Two senior executives at PropertyLimBrothers (PLB), a prominent real estate agency here, have resigned “with immediate effect”, with vice-president of operations Marc Chan appointed interim chief executive. This follows online rumours surrounding its CEO, Mr Melvin Lim, and vice-president of strategy, Ms Grayce Tan. When asked about them, the company said it “has completed an internal review following recent events”. “Following the review, leadership changes have been implemented. The individuals concerned have resigned from their respective roles with immediate effect,” a company spokesperson said. “We will not comment on rumours or speculation",
+        "publish_date": "2026-01-28T20:05:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PropertyLimBrothers CEO Melvin Lim, vice-president..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/dollar-struggles-recover-losses-trump-031711073.html",
+        "content": "Wall Street stocks finished little changed Wednesday after the Federal Reserve kept interest rates unchanged, while the dollar rebounded somewhat from the prior session's slide. The Fed, as expected, voted to maintain rates at a range between 3.50 percent and 3.75 percent. The S&P 500 finished nearly flat at 6,978.03 after earlier touching above 7,000 points for the first time. Riley Wealth Management. \"The statement and the press conference really delivered no news,\" Hogan said Wednesday afternoon shortly before earnings announcements from Microsoft and other large companies.",
+        "publish_date": "2026-01-29T06:59:11+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "PropertyLimBrothers CEO Melvin Lim, VP Grayce Tan resign amid allegations of extra-marital affair; Marc Chan appointed interim CEO",
+        "url": "https://www.asiaone.com/singapore/propertylimbrothers-melvin-lim-grayce-tan-resign-affair",
+        "content": "We will not comment on rumours or speculation,\" a company spokesperson told the broadsheet. Lim, 45, is the co-founder of the property agency, along with Adrian Lim, 48. Melvin's name was removed from the company's website on Wednesday, amid allegations of adultery which surfaced over the weekend. The next day, a Reddit user posted a screengrab of a text message purportedly sent by Melvin...",
+        "publish_date": "2026-01-28T23:09:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PropertyLimBrothers CEO Melvin Lim, VP Grayce Tan ..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-01-29T08:17:03.726726+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
