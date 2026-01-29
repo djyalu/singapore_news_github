@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Secondary school students interacting more after smartphone ban, but small minority flouts rules",
+        "url": "https://www.channelnewsasia.com/singapore/smartphone-ban-secondary-schools-students-teachers-moe-5893186",
+        "summary": "📰 교육 관련 뉴스\\n📢 Secondary school students interacting more after smartphone ...",
+        "content": "\"They used to sit around in the canteen and just huddle over one phone. There was no communication. Since the start of the new school year, secondary school students have been forbidden from using their smartphones outside of class time, including recess and co-curricular activity hours. This move was announced in November last year by the Ministry of Education (MOE)",
+        "publish_date": "2026-01-30T08:13:53.218200+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "More than a job: Why people enter social service and build their futures there",
+        "url": "https://www.channelnewsasia.com/cna-insider/ncss-social-service-sector-career-building-work-culture-futures-5890861",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 More than a job: Why people enter social service and build t...",
+        "content": "This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners. Loading “It’s definitely very different",
+        "publish_date": "2026-01-30T08:13:57.851234+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/japanese-automakers-rush-explore-partnership-230623716.html",
+        "summary": "📰 금융, 기술, 국제 관련 뉴스\n📢 Yahoo Finance",
+        "content": "\"Our customers are thinking about this more than we imagined,\" Itagaki said. Shriram is a major provider of commercial and passenger vehicle credit to SMEs ⁠and individuals, with more than 3,200 ‌branches, including in regions where Japanese firms have little presence. Since the deal was announced, MUFG has fielded calls from automakers seeking to grow sales, for ‍instance by offering preferential financing through Shriram.",
+        "publish_date": "2026-01-30T08:06:23+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Johor authorities say Kota Tinggi fire 'brought under control'; NEA detects hotspot in Johor",
+        "url": "https://www.asiaone.com/malaysia/haze-smell-singapore-kota-tinggi-fire-taman-bayu-damai-under-control",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Johor authorities say Kota Tinggi fire 'brought under control'; NEA detects hots...",
+        "content": "Johor fire and rescue department deputy director Muhammad Al Mustakim Abdul Hady said on Thursday that the fire has been successfully brought under control. \"Firefighters are working to ensure that any remaining small fires are fully extinguished to prevent them from spreading,\" he said. \"The peat fire along Jalan Sungai Kapal near Taman Bayu Damai has been fully controlled and extinguished, while Air Pollutant Index...",
+        "publish_date": "2026-01-29T23:22:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-30T08:16:41.295993+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
