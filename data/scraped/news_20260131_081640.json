@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "The Best Way to Spoil Your Best Friend for Valentine's Day",
+        "url": "https://sg.news.yahoo.com/lifestyle/articles/best-way-spoil-best-friend-230721910.html",
+        "content": "HuffPost and Yahoo may earn commission from links in this article. Pricing and availability are subject to change. NowthatJanuary has finally loosened its grip (girl, bye), there’s a quiet shift in the air. No more canceled plans and collective hibernation. We’re living in an era where platonic love is finally getting the reverence it deserves",
+        "publish_date": "2026-01-31T08:07:21+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The Best Way to Spoil Your Best Friend for Valenti..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-01-31T08:16:40.162862+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
