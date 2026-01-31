@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chicago mayor signs executive order calling on police to investigate federal immigration agents accused of misconduct",
+        "url": "https://sg.news.yahoo.com/news/articles/chicago-mayor-signs-executive-order-215325613.html",
+        "content": "“We are putting ICE on notice in our city. Kathy Hochul proposed legislation, which would prohibit cooperation agreements between local police departments and US Immigration and Customs Enforcement",
+        "publish_date": "2026-02-01T06:53:25+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chicago mayor signs executive order calling on pol..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-01T08:03:19.304367+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
