@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "MOM urges employers to advise travelling helpers to take precautions against Nipah virus",
+        "url": "https://sg.news.yahoo.com/mom-urges-employers-advise-travelling-073000152.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 MOM urges employers to advise travelling helpers to take pre...",
+        "content": "They should also avoid consuming food and drinks that could be contaminated by bats, such as raw date palm sap. Helpers who feel unwell during or after travel should see a doctor immediately, said MOM. It is the seventh Nipah virus outbreak in India since 2001, said CDA, which added that current cases remain localised to West Bengal.",
+        "publish_date": "2026-01-31T16:30:00+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Venezuelan activist ends '1,675 days' of suffering in prison",
+        "url": "https://sg.news.yahoo.com/prominent-venezuelan-activist-released-over-195659653.html",
+        "summary": "📰 정치, 기술 관련 뉴스\n📢 Venezuelan activist ends '1,675 days' of suffering in prison",
+        "content": "\"The message remains the same: four years and seven months in prison did not silence the truth. The dissident's release marked the latest step by Venezuela's interim president, Delcy Rodriguez, to free political prisoners. Tarazona spent \"1,675 days in a dark place,\" he said. \"It cannot be possible for this kind of case to keep happening.\". To cries of \"Freedom. Freedom!\" and applause from Catholic faithful, the...",
+        "publish_date": "2026-02-02T07:48:31+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Czechs rally to back president locking horns with government",
+        "url": "https://sg.news.yahoo.com/czechs-rally-back-president-locking-200324761.html",
+        "summary": "📰 정부, 취업, 정치 관련 뉴스\n📢 Czechs rally to back president locking horns with government",
+        "content": "Organisers from the independent Million Moments for Democracy movement claim up to 90,000 people attended the demonstration, where some participants waved Czech, European and Ukrainian flags",
+        "publish_date": "2026-02-02T05:03:24+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man dressed as Bruce Lee gets jail, fine, for nunchucks performance in Geylang",
+        "url": "https://www.asiaone.com/singapore/man-dressed-bruce-lee-gets-jail-fine-nunchucks-performance-geylang",
+        "summary": "📰 싱가포르, 범죄, 기술 관련 뉴스\n📢 Man dressed as Bruce Lee gets jail, fine, for nunchucks performance in Geylang",
+        "content": "The video was purportedly taken in Geylang. A voice could be heard in the background calling Li \"Singapore's Bruce Lee\". Applause could also be heard as the video ends",
+        "publish_date": "2026-02-01T12:55:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 31-year-old last seen near Joo Chiat",
+        "url": "https://www.asiaone.com/singapore/cavan-yeo-ying-yong-missing-police",
+        "summary": "📰 법률, 환경, 기술 관련 뉴스\n📢 Police appeal for information on missing 31-year-old last seen near Joo Chiat",
+        "content": "He was wearing a green top and dark blue shorts at that time. Checks by AsiaOne indicate that the area comprises landed residential units with peranakan shophouses nearby. Those with information are urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential, said the police.",
+        "publish_date": "2026-02-01T13:39:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-02T08:05:31.973199+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
