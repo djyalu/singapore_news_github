@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "US stocks climb as gold and silver prices keep falling",
+        "url": "https://www.channelnewsasia.com/world/us-stocks-climb-gold-and-silver-prices-keep-falling-5902221",
+        "content": "NEW YORK: US stocks rose on Monday (Feb 2) following sharp swings that shook financial markets overnight, including tumbles for Asian stocks. Gold and silver prices sank further following their latest wild moves. Stocks of companies that make computer storage helped lead the market, adding to gains from last week following several profit reports that topped analysts’ expectations. Airlines and cruise-ship operators were also strong, benefiting from a sharp easing of oil prices. Gold briefly dropped below US$4,500 per ounce in the overnight hours, down more than US$1,000 from its high point reached just last week",
+        "publish_date": "2026-02-03T08:15:17.158785+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US stocks climb as gold and silver prices keep fal..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "China executes four more Myanmar mafia members",
+        "url": "https://sg.news.yahoo.com/china-executes-four-more-myanmar-040329024.html",
+        "content": "For years, the Bais, Mings and several other families dominated Myanmar's border town of Laukkaing, where they ran casinos, red-light districts and cyberscam operations. Among the clans, the Bais were \"number one\", Bai Suocheng's son previously told state media after he was detained. The Bais, who controlled their own militia, established 41 compounds to...",
+        "publish_date": "2026-02-02T13:03:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China executes four more Myanmar mafia members"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-03T08:18:08.528777+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
