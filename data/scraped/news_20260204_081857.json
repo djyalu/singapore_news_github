@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/equities-metals-oil-rebound-asia-024307711.html",
+        "content": "Stock markets mostly struggled on Tuesday while gold and silver prices rebounded in fresh volatile trading. The price of gold climbed more than seven percent but later traded near $4,950 per ounce. Last week it reached a record-high close to $5,600 before tumbling. Gold and silver prices have been on a tear in recent months, benefitting from being seen as a safe haven investments...",
+        "publish_date": "2026-02-04T07:18:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-04T08:18:57.338890+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
