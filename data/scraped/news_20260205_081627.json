@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "14 men arrested over duty-unpaid cigarettes in raid at Jurong East dorm and industrial building",
+        "url": "https://www.asiaone.com/singapore/14-men-arrested-over-duty-unpaid-cigarettes-raid-jurong-east-dorm-and-industrial-building",
+        "content": "Customs officers seized over 170 packets of cigarettes with duties unpaid. Following investigations, 12 people were issued compounded fines, with the amount ranging from $500 to $800. For every packet of duty-unpaid cigarettes, an offender can be fined $500. The public can report illegal activities to Singapore Customs online.",
+        "publish_date": "2026-02-04T16:10:34+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 14 men arrested over duty-unpaid cigarettes in rai..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Introduce fixed quota for students entering secondary schools without affiliation or DSA: Gho Sze Kee",
+        "url": "https://www.asiaone.com/singapore/introduce-fixed-quota-students-entering-secondary-schools-without-affiliation-or-dsa-gho",
+        "content": "In response, Minister for Education Desmond Lee said that school’s balloting rate ultimately depends on school choices, students’ decisions and DSA numbers. \"The ministry will certainly study all of these suggestions,\" he added. According to the ministry's guidelines, secondary schools are allowed to admit up to 20...",
+        "publish_date": "2026-02-04T19:00:02+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Introduce fixed quota for students entering second..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-02-05T08:16:27.394839+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
