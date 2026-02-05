@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Nike investigated for discriminating against white workers",
+        "url": "https://sg.news.yahoo.com/nike-investigated-discriminating-against-white-205232791.html",
+        "content": "Andrea Lucas, the EEOC chairman, said the commission would “take all necessary steps. to fully and comprehensively investigate” allegations of “race discrimination or other forms of unlawful discrimination”",
+        "publish_date": "2026-02-05T05:52:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nike investigated for discriminating against white..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Fire involving a car breaks out at Orchard Towers",
+        "url": "https://sg.news.yahoo.com/fire-involving-car-breaks-orchard-222000749.html",
+        "content": "The fire involved a car, said SCDF. Firefighters used a water jet and a fire blanket to extinguish the fire. There were no reported injuries, and the cause of the fire is under investigation. In another video, a fire engine is seen arriving at the scene, which appears hazy with smoke. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2026-02-06T07:20:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Fire involving a car breaks out at Orchard Towers"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-06T08:15:23.061980+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
