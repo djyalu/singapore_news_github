@@ -1,0 +1,82 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "FAQ: What you need to know to protect yourself from measles",
+        "url": "https://www.channelnewsasia.com/singapore/measles-what-you-need-know-vaccination-travellers-5912886",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 FAQ: What you need to know to protect yourself from measles...",
+        "content": "Twenty-seven cases were logged for the whole of 2025, and 11 throughout 2024. Here's what you need to know about measles, and how you can protect yourself. Measles is an acute and highly contagious viral disease caused by the measles virus. It affects only humans and spreads from person to person. It can spread through coughing and sneezing. People can be infected by breathing contaminated air or by touching infected surfaces before...",
+        "publish_date": "2026-02-07T08:13:32.342887+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/bitcoin-falls-below-64000-as-losses-accelerate-hits-lowest-levels-since-october-2024-211019100.html",
+        "summary": "📰 경제, 금융, 정치 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Bitcoin (BTC-USD) crashed over 13% on Thursday, sinking below $64,000 to touch its lowest levels since October 2024 as a steep sell-off accelerated. The token is down nearly 50% from last year's all-time high, erasing all of the gains made during President Trump's second term. Investors had been optimistic that the administration's crypto-friendly policies would lift digital asset prices. \"Bitcoin remains in a larger bear-market structure,\" 10X Research wrote in a note on Thursday. \"In the absence of a strong catalyst and with positioning still stretched, downside risks remain elevated.\". A similar dynamic is playing out with ethereum (ETH) ETFs, as investors are down approximately 31% given their average cost basis,...",
+        "publish_date": "2026-02-06T06:19:29+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Video Shows U.S. Marshal Kicking Small Dog, Breaking One Of Its Ribs, Owner Says",
+        "url": "https://sg.news.yahoo.com/news/articles/video-shows-u-marshal-kicking-221024358.html",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Video Shows U.S. Marshal Kicking Small Dog, Breaking One Of Its Ribs, Owner Says",
+        "content": "A disturbing video posted online appears to show a U.S. “This is not law enforcement. This is animal cruelty,” Emma Hollingsworth, the dog’s owner, said in a video posted to Facebook on Thursday. “They literally kicked him for no reason.”. Keep independent journalism alive",
+        "publish_date": "2026-02-07T07:10:24+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "391 active mobility offences detected in January, 57 non-compliant devices impounded: LTA",
+        "url": "https://www.asiaone.com/singapore/active-mobility-offences-non-compliant-devices",
+        "summary": "📰 싱가포르, 교통, 법률 관련 뉴스\n📢 391 active mobility offences detected in January, 57 non-compliant devices impou...",
+        "content": "The Land Transport Authority (LTA) detected a total of 391 active mobility offences across Singapore just last month alone and also impounded 57 non-compliant devices. Photos included in the post showed the enforcement officers in plainclothes with body-worn cameras. \"We will continue to take firm action against errant active mobility users to ensure path safety,\" LTA said. \"Good cycling culture requires every cyclist to consider others' safety,\" said LTA. The authority also urged the public to report errant active mobility users online at go.gov.sg/report-am. Parliament passed a raft of changes to transport laws on...",
+        "publish_date": "2026-02-06T18:45:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Fire breaks out involving car at Orchard Towers car park",
+        "url": "https://www.asiaone.com/singapore/fire-breaks-out-involving-car-orchard-towers-car-park",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Fire breaks out involving car at Orchard Towers car park",
+        "content": "The second floor also glowed a visible orange hue as the fire raged on. No injuries were reported, and the cause of the fire is under investigation. The alleged owner, who declined to be named, shared that he had spent nearly $30,000 over several...",
+        "publish_date": "2026-02-06T12:08:23+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-02-07T08:16:03.542510+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Time to overhaul the education system",
+        "url": "https://www.businesstimes.com.sg/opinion-features/time-overhaul-education-system",
+        "summary": "📰 싱가포르, 경제, 정부 관련 뉴스\\n📢 Time to overhaul the education system...",
+        "content": "SINGAPORE faces many challenges. Artificial Intelligence (AI) threatens to make some university degrees obsolete and erase jobs. Graduate unemployment is already on the rise. The Singapore government has one formula to tackle all challenges: resilience. We need a resilient economy (starting with a resilience task force!), a resilient work force, and future cohorts of resilient children. Decoding Asia newsletter: your guide to navigating Asia in a new global order. Sign up here to get Decoding Asia newsletter. Delivered to your inbox",
+        "publish_date": "2026-02-07T08:13:53.256296+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-02-07T08:16:03.542546+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
