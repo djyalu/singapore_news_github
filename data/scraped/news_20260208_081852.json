@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "No further sightings of crocodile at Sentosa; suspension of water activities lifted",
+        "url": "https://www.channelnewsasia.com/singapore/crocodile-sentosa-beach-no-sightings-water-activities-resume-5905576",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 No further sightings of crocodile at Sentosa; suspension of ...",
+        "content": "This caused concern and disappointment among beachgoers. SDC has since been conducting daily surveillance and coordinated patrols with the National Parks Board (NParks), said an SDC spokesperson. \"Based on the current assessment, water activities, including swimming, kayaking and organised events, can resume with immediate effect,\" the spokesperson added",
+        "publish_date": "2026-02-08T08:15:53.053423+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Kushner, Witkoff visit USS Abraham Lincoln carrier amid tension with Iran",
+        "url": "https://sg.news.yahoo.com/news/articles/kushner-witkoff-visited-uss-abraham-165227574.html",
+        "summary": "📰 법률, 정치, 기술 관련 뉴스\n📢 Kushner, Witkoff visit USS Abraham Lincoln carrier amid tension with Iran",
+        "content": "President Donald Trump’s Middle East envoy, Steve Witkoff, and son-in-law Jared Kushner visited the USS Abraham Lincoln aircraft carrier Saturday morning after completing talks with Iran on Friday. Brad Cooper, a senior US official told CNN. Witkoff wrote on X after the visit that he, Kushner and...",
+        "publish_date": "2026-02-08T04:45:09+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "25-year-old man arrested for Pokemon trading cards scam with losses totalling $135k",
+        "url": "https://www.asiaone.com/singapore/pokemon-limited-edition-cards-scam-arrested-charged",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 25-year-old man arrested for Pokemon trading cards scam with losses totalling $1...",
+        "content": "In a media release on Friday (Feb 6) evening, the police said they received 35 reports from victims since October 2025, with losses amounting over $135,000. He will be charged in court for cheating on Saturday. The police urged the public to be careful when making online purchases",
+        "publish_date": "2026-02-07T14:42:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-08T08:18:52.457791+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
