@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Superficial swiping, dead-end texting: Why some young women are looking for love beyond dating apps",
+        "url": "https://www.channelnewsasia.com/women/young-women-moving-beyond-dating-apps-5888131",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Superficial swiping, dead-end texting: Why some young women ...",
+        "content": "For many Singapore women, their 20s mark the beginning of their dating journey and search for love. Dating apps are often a first stop, where swiping through an endless stream of profiles becomes a daily activity. Some find success, but others find the process tiring and frustrating – mismatched intentions, undefined relationships and dead-end texting abound. Love can start to feel elusive – they crave more intentional, genuine ways to connect. Enter these unexpected avenues to find love: blind-date platforms, dating coaches, singles mixers, and anonymous matchmaking apps. Financial advisor Jade Koh was ready to resume dating after breaking up with her boyfriend of four years",
+        "publish_date": "2026-02-09T08:17:48.991257+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Japan's PM Takaichi on course to win snap election by landslide",
+        "url": "https://sg.news.yahoo.com/japan-votes-snap-election-pm-230047500.html",
+        "summary": "📰 장관, 정치, 기술 관련 뉴스\n📢 Japan's PM Takaichi on course to win snap election by landslide",
+        "content": "The country's first female prime minister had sought a clear public mandate by calling the election just four months after becoming party leader. But Takaichi's personal popularity appears to have helped the party, with approval...",
+        "publish_date": "2026-02-09T07:00:03+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Girl scalds tongue after McDonald's staff mistakenly pours hot water into insulated bottle",
+        "url": "https://www.asiaone.com/singapore/girl-scalds-tongue-mcdonalds-hot-water-bottle",
+        "summary": "📰 기술, 국제 관련 뉴스\n📢 Girl scalds tongue after McDonald's staff mistakenly pours hot water into insula...",
+        "content": "He added that upon drinking from the insulated water bottle, his daughter cried in pain, frightened. Speaking to AsiaOne, Ridhuan said he had approached the...",
+        "publish_date": "2026-02-08T14:22:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-09T08:20:37.665163+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
