@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/asian-stocks-track-wall-st-024843304.html",
+        "content": "Japanese stocks surged to a record high Monday as investors cheered Prime Minister Sanae Takaichi's victory in a snap parliamentary election. Events in Japan helped boost sentiment across Asia, while markets in Europe and New York also finished higher despite experiencing periods of weakness",
+        "publish_date": "2026-02-10T06:40:59+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-10T08:27:24.916076+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
