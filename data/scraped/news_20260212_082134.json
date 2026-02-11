@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Bangladesh votes in landmark election after Gen Z revolution",
+        "url": "https://www.channelnewsasia.com/asia/bangladesh-votes-in-landmark-election-after-gen-z-revolution-5924676",
+        "content": "This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and...",
+        "publish_date": "2026-02-12T08:18:54.319231+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Bangladesh votes in landmark election after Gen Z ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Bangladesh votes in landmark polls after deadly uprising",
+        "url": "https://sg.news.yahoo.com/bangladesh-votes-landmark-polls-deadly-213451832.html",
+        "content": "Opinion polls vary widely, though most give the BNP the lead -- with some suggesting a knife‑edge race. \"It will determine the future direction of the country, the...",
+        "publish_date": "2026-02-12T06:34:51+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Bangladesh votes in landmark polls after deadly up..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Bondi Lies To Congress, Tells Them Maxwell Was Not Transferred To A ‘Lower-Level Facility’",
+        "url": "https://sg.news.yahoo.com/news/articles/bondi-lies-congress-tells-them-224424768.html",
+        "content": "Days after meeting with Bondi’s deputy and former Donald Trump defense lawyer Todd Blanche, Maxwell was transferred from Tallahassee, Florida, to the Federal Prison Camp in Bryan, Texas. Department of Justice officials did not respond to HuffPost queries about Bondi’s false...",
+        "publish_date": "2026-02-12T07:44:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Bondi Lies To Congress, Tells Them Maxwell Was Not..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Norwegian Olympic medal winner says he regrets going public with affair",
+        "url": "https://sg.news.yahoo.com/olympic-medal-winner-confesses-affair-204830535.html",
+        "content": "Laegreid made the revelation to Norwegian TV after taking bronze in the men’s 20km individual event. “Six months ago I met the love of my life. The world’s most beautiful, sweetest person. He said he told his partner a week ago about what had happened. I wish I could share this with her.”. It doesn’t seem as if the attempt has paid off",
+        "publish_date": "2026-02-12T02:15:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Norwegian Olympic medal winner says he regrets goi..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "More support for workers to be announced at Budget 2026: PM Wong",
+        "url": "https://sg.news.yahoo.com/more-support-workers-announced-budget-054500019.html",
+        "content": "Meanwhile, investment commitments made in 2025 are expected to create some 15,700 jobs over the next five years, the Economic Development Board announced earlier...",
+        "publish_date": "2026-02-11T14:45:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 More support for workers to be announced at Budget..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-02-12T08:21:34.258957+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
