@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Federal authorities announce an end to the immigration crackdown in Minnesota",
+        "url": "https://www.channelnewsasia.com/world/minneapolis-immigration-crackdown-end-ice-us-5926951",
+        "content": "“I have proposed and President (Donald) Trump has concurred, that this surge operation conclude,” he continued. While the Trump administration has called those arrested “dangerous criminal illegal aliens”, many people with no criminal records, including children and US citizens, have also been detained.",
+        "publish_date": "2026-02-13T08:16:02.988153+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Federal authorities announce an end to the immigra..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Dog food concerns, soaring heating bills, newly discovered portrait: Catch up on the day’s stories",
+        "url": "https://sg.news.yahoo.com/news/articles/dog-food-concerns-soaring-heating-223250630.html",
+        "content": "👋 Welcome to 5 Things PM. Want to train like a Winter Olympian. This tailored guide includes details on what to eat, when and how often. Here’s what else you might have missed during your busy day. Dry food carried the most heavy metals, followed by air- and freeze-dried products. This is how some households are trying to keep expenses in check. Nafiah Ikram was severely burned when someone threw acid in her face outside her home on New York’s Long Island. Her assailant remained unknown for years. Now, investigators say they have a breakthrough: this rapper’s lyric. Despite having the largest solar storm in history named after him, Richard Carrington is not well...",
+        "publish_date": "2026-02-13T07:32:50+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dog food concerns, soaring heating bills, newly di..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Budget 2026: Government to boost support for mid-career workers",
+        "url": "https://www.asiaone.com/singapore/budget-2026-government-boost-support-mid-career-workers",
+        "content": "\"Every Singaporean, regardless of where they start in life, should have a fair chance to pursue their aspirations and realise their full potential,\" he said. In this Budget, the Government will continue to strengthen support for lower-wage...",
+        "publish_date": "2026-02-12T17:14:42+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Budget 2026: Government to boost support for mid-c..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-02-13T08:18:39.313031+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
