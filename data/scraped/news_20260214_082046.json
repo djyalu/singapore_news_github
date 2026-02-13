@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Andre Agassi's 12-word response to wife Steffi Graf as she announces major career news revealed",
+        "url": "https://sg.news.yahoo.com/style/andre-agassis-12-word-response-011341698.html",
+        "content": "\"Joy moves with everyone – in every start, every step, every flow. Stefanie Graf shows you how simple that can be. Welcome to the team, Stefanie Graf. \"Joy drives every move – the spark in every start, every step, every finish. Stefanie Graf reminds us what it's all about,\" read the caption. Andre took to his Instagram stories to share the love, writing: \"You crushed this. So proud of you Stef",
+        "publish_date": "2026-02-13T10:13:41+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Andre Agassi's 12-word response to wife Steffi Gra..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Don Lemon Pleads Not Guilty In Minnesota Church Protest Case",
+        "url": "https://sg.news.yahoo.com/entertainment/celebrity/articles/don-lemon-pleads-not-guilty-220229832.html",
+        "content": "Keep independent journalism alive. Paul, where the protest interrupted a service, on Jan. citizens who were fatally shot by agents. Lemon was seen recording the interactions of anti-ICE demonstrators who were upset with the church’s pastor for working with immigration officials. The indictment also accuses Lemon of lightly...",
+        "publish_date": "2026-02-14T07:02:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Don Lemon Pleads Not Guilty In Minnesota Church Pr..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Van flips on side, car driver trapped in 2-vehicle TPE crash near Punggol",
+        "url": "https://www.asiaone.com/singapore/tpe-accident-punggol-tesla-van-flipped",
+        "content": "They were later taken to hospital. Meanwhile, the mangled Tesla had its curtain airbags deployed. \"SCDF rescued the person using hydraulic rescue equipment,\" it added. The 50-year-old car driver was taken to the hospital",
+        "publish_date": "2026-02-13T17:40:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Van flips on side, car driver trapped in 2-vehicle..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-14T08:20:46.973238+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
