@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Why our new year money resolutions don't last – and what works better instead",
+        "url": "https://www.channelnewsasia.com/today/voices/finance-goals-money-resolutions-fail-discipline-spending-habits-5919331",
+        "summary": "📰 금융 관련 뉴스\\n📢 Why our new year money resolutions don't last – and what wor...",
+        "content": "Every January, I see the same conversations surface. Friends tell me they want to \"save more this year\", \"cut down on spending\" or \"finally get serious about investing\". Some of them even ask for spreadsheets, apps or rules they can follow. And yet, a few months later, most of those resolutions fade. They set goals on paper, but they never felt like they were truly in control of their finances. Pay raises were matched by lifestyle \"upgrades\" or more frequent exotic holiday destinations. Good intentions can feel reassuring",
+        "publish_date": "2026-02-15T08:02:36.037848+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "They’re 100 and full of life: Super seniors defy expectations at S’pore’s active ageing centres",
+        "url": "https://sg.news.yahoo.com/100-full-life-super-seniors-210000565.html",
+        "summary": "📰 싱가포르, 보건 관련 뉴스\n📢 They’re 100 and full of life: Super seniors defy expectations at S’pore’s active...",
+        "content": "There were around 1,500 residents aged 100 and over in Singapore in 2025, up from 1,200 in 2015. Across NTUC Health’s 26 active ageing centres (AACs) islandwide, the number of seniors aged 90 and above more than doubled in just a...",
+        "publish_date": "2026-02-15T06:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "India reports first Nipah death of latest outbreak but says no new cases detected",
+        "url": "https://sg.news.yahoo.com/india-reports-first-nipah-death-074714340.html",
+        "summary": "📰 보건, 기술, 국제 관련 뉴스\n📢 India reports first Nipah death of latest outbreak but says no new cases detecte...",
+        "content": "India reported its first death of the latest Nipah virus outbreak after a 25-year-old nurse in West Bengal state died in hospital, authorities said. The second patient, a 27-year-old male nurse from the same hospital, has since recovered and been discharged. The cases prompted extensive contact tracing, with some 200 people placed under monitoring, according to the federal health ministry. State health officials said all identified contacts tested negative and no further infections were detected",
+        "publish_date": "2026-02-14T16:47:14+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$1 QuickPick ordinary ticket bags $6.2 million Toto Reunion Draw",
+        "url": "https://www.asiaone.com/singapore/toto-reunion-draw-62million-jackpot",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $1 QuickPick ordinary ticket bags $6.2 million Toto Reunion Draw",
+        "content": "A total of 15 winning shares split the Group 2 prize amount of $86,853. The next draw will be held on Monday (Feb 16), with the prize money reset to $1 million.",
+        "publish_date": "2026-02-14T08:41:36+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Large crowds expected at Geylang Serai bazaar: Police",
+        "url": "https://www.asiaone.com/singapore/geylang-serai-bazaar-2026-police-advisory",
+        "summary": "📰 교통, 창이, 법률 관련 뉴스\n📢 Large crowds expected at Geylang Serai bazaar: Police",
+        "content": "The police also reminded motorists that heavy traffic is expected along Changi Road and Sims Avenue. Such acts are potential fire hazards which can cause undue danger and...",
+        "publish_date": "2026-02-13T23:18:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-02-15T08:05:17.726271+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
