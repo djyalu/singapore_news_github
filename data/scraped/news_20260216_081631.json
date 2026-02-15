@@ -1,0 +1,54 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Beyond the dip: How VCs can bet on Indonesia’s resilience",
+        "url": "https://www.businesstimes.com.sg/wealth/wealth-investing/beyond-dip-how-vcs-can-bet-indonesias-resilience",
+        "content": "[SINGAPORE] South-east Asia’s venture market has gone through some challenging times in the past several years. But the opportunities are drastically fewer than before. The malaise is real, but not without good reason. Three main issues have contributed to this. Get the insights delivered to your inbox. First, news of serious breaches in governance and a lack of integrity among the country’s...",
+        "publish_date": "2026-02-16T08:14:10.844894+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Beyond the dip: How VCs can bet on Indonesia’s res..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-02-16T08:16:31.952014+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Glove With DNA Sample 'Appears' To Match Glove Of Man In Nancy Guthrie Doorbell Footage",
+        "url": "https://sg.news.yahoo.com/news/articles/glove-dna-sample-appears-match-223017311.html",
+        "content": "Keep independent journalism alive. On Tuesday, the FBI released images and videos of the suspect approaching Guthrie’s front door. The suspect was described as a man, approximately 5′9″ to 5′10″ tall with an “average build.”",
+        "publish_date": "2026-02-16T07:30:17+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Glove With DNA Sample 'Appears' To Match Glove Of ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Car overturns in River Valley, SCDF deploys hydraulic equipment to free trapped passenger",
+        "url": "https://www.asiaone.com/singapore/car-overturns-river-valley-martin-place-scdf",
+        "content": "Four persons were taken to hospital after an accident in River Valley on Saturday (Feb 14) afternoon. #sgnews #Singapore #Road #Accident #Car #Firefighter #Rescue #ElectricVehicle ♬ original sound - AsiaOne. In response to AsiaOne's queries, SCDF said that a person was found trapped in the front passenger seat of...",
+        "publish_date": "2026-02-14T17:43:23+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Car overturns in River Valley, SCDF deploys hydrau..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-16T08:16:31.952053+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
