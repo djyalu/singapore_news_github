@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Circle Line disruption: Meet the volunteers who keep the crowds moving",
+        "url": "https://www.channelnewsasia.com/singapore/circle-line-ccl-disruption-mrt-volunteers-staff-crowds-5906001",
+        "content": "“God bless you, you are so helpful,” the woman told her. The simple gesture triggered a flood of memories for the 58-year-old. \"I remembered my (late) mum, because in her late age, she was like this.”",
+        "publish_date": "2026-02-17T08:16:01.110540+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Circle Line disruption: Meet the volunteers who ke..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "The little-known health condition you may experience after taking a cruise",
+        "url": "https://sg.news.yahoo.com/little-known-health-condition-may-225026367.html",
+        "content": "Mal de Débarquement Syndrome, also known as Disembarkment Syndrome, affects the body’s balance system. While symptoms are often temporary and typically last about 24...",
+        "publish_date": "2026-02-16T14:59:13+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The little-known health condition you may experien..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Over 3,300 needy families to receive Chinese New Year care packs from FairPrice Foundation",
+        "url": "https://www.asiaone.com/singapore/fairprice-cny-care-pack-families-in-need-2026",
+        "content": "The care packs will contain fresh eggs, fruits and vegetables to \"meaningfully contribute\" to the families' daily nutritional needs. More than 50 volunteers from FairPrice Group will participate in the packing and distribution of these care packs",
+        "publish_date": "2026-02-16T11:30:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Over 3,300 needy families to receive Chinese New Y..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-17T08:18:43.845846+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
