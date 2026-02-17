@@ -1,0 +1,62 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Man dies after car skids at Bukit Batok HDB block",
+        "url": "https://www.straitstimes.com/singapore/man-dies-after-car-skids-at-bukit-batok-hdb-block?ref=most-popular",
+        "content": "The driver was unconscious when taken to hospital, where he later died. The Singapore Civil Defence Force said it took a person to Ng Teng Fong General Hospital. The police said the driver was unconscious when taken to hospital, where he later died. They added that investigations are ongoing",
+        "publish_date": "2026-02-18T08:15:36.549728+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man dies after car skids at Bukit Batok HDB block"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Tarique Rahman sworn in as Bangladesh's PM after landslide election victory",
+        "url": "https://www.channelnewsasia.com/asia/tarique-rahman-sworn-in-bangladeshs-pm-after-landslide-election-victory-5935661",
+        "content": "Rahman, 60, son of former Prime Minister Khaleda Zia and assassinated President Ziaur Rahman, takes office after his party's sweeping parliamentary election victory. This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional...",
+        "publish_date": "2026-02-18T08:16:07.866937+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Tarique Rahman sworn in as Bangladesh's PM after l..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Wall Street swings with worries about tech stocks and discouraged US shoppers",
+        "url": "https://www.channelnewsasia.com/world/wall-street-us-new-york-stock-tech-shoppers-5936791",
+        "content": "General Mills sank 8 per cent after the company behind the Cheerios, Nature Valley and Pillsbury brands said customers are feeling uneasy",
+        "publish_date": "2026-02-18T08:16:11.914212+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Wall Street swings with worries about tech stocks ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "4 dead in 30-vehicle pileup in Colorado as powerful winds slam Plains, fueling multiple wildfires",
+        "url": "https://sg.news.yahoo.com/news/articles/fires-breaking-plains-amid-particularly-192927819.html",
+        "content": "Colorado State Police Maj. Brian Lyons described the wind event as moving in very quickly. “Visibility was next to nothing,” he said. At least 29 people were taken to the hospital with injuries, according to the Colorado State Patrol. Their injuries were described as minor to moderate, with a “few” described as serious",
+        "publish_date": "2026-02-18T07:18:08+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 4 dead in 30-vehicle pileup in Colorado as powerfu..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Chinese tourist claims 2-day detention at Changi Airport; ICA says traveller 'evasive', unable to give clear itinerary",
+        "url": "https://www.asiaone.com/singapore/chinese-tourist-detention-changi-airport-ica",
+        "content": "She claimed an officer also looked through her mobile phone, social media applications and bank details. She claimed she was then, without explanation, brought to a waiting room. She said she was then issued an order of detention in English for...",
+        "publish_date": "2026-02-16T14:11:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chinese tourist claims 2-day detention at Changi A..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-02-18T08:18:38.699719+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
