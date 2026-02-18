@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Hermes buyers ask US appeals court to reinstate Birkin handbag class action",
+        "url": "https://www.businesstimes.com.sg/international/hermes-buyers-ask-us-appeals-court-reinstate-birkin-handbag-class-action",
+        "content": "The plaintiffs’ lawyer said that Hermes’ sales practices amount to “quintessential anticompetitive conduct”. They said the alleged “tying” arrangement, where the sale of a Birkin handbag is contingent on shoppers purchasing other Hermes items, violates federal antitrust law.",
+        "publish_date": "2026-02-19T08:16:51.243574+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hermes buyers ask US appeals court to reinstate Bi..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-02-19T08:18:57.195886+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Israel conducting 'gradual de facto annexation' of W.Bank: UN official",
+        "url": "https://sg.news.yahoo.com/israel-conducting-gradual-facto-annexation-203659144.html",
+        "content": "\"If implemented, these measures will constitute a dangerous expansion of Israeli civil authority in the occupied West Bank, including in sensitive areas like Hebron. \"The moves could lead to settlement expansion by removing bureaucratic barriers and easing land purchases and building permits.\". The recently approved steps are set to increase Israel's control in parts...",
+        "publish_date": "2026-02-19T06:27:35+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Israel conducting 'gradual de facto annexation' of..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-19T08:18:57.195918+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
