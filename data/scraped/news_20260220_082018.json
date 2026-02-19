@@ -1,0 +1,54 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "ECB fines JPMorgan’s European arm 12.2 million euros for misreporting capital requirements",
+        "url": "https://www.businesstimes.com.sg/companies-markets/banking-finance/ecb-fines-jpmorgans-european-arm-12-2-million-euros-misreporting-capital-requirements",
+        "content": "“Between 2019 and 2024, the bank reported lower risk-weighted assets than it should have done,” the ECB said. JPMorgan said it acknowledged the fine and has remedied the issue. “JPMSE has consistently maintained strong capital buffers, and our...",
+        "publish_date": "2026-02-20T08:18:00.577126+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ECB fines JPMorgan’s European arm 12.2 million eur..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-02-20T08:20:18.615937+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "VA backs off rule that would have cut benefits amid outrage",
+        "url": "https://sg.news.yahoo.com/news/articles/va-halts-enforcement-benefits-rule-203825344.html",
+        "content": "It was published Tuesday in the Federal Register and was effective immediately. But the VA said Thursday it will halt enforcement of the rule after veterans...",
+        "publish_date": "2026-02-20T07:01:18+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 VA backs off rule that would have cut benefits ami..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NTU's MBA programme climbs 10 spots, ranked 12th globally: FT",
+        "url": "https://www.asiaone.com/singapore/financial-times-mba-rankings-ntu-2026",
+        "content": "NTU Business School's MBA programme was ranked 22nd in the 2025 edition. MIT Sloan, Insead and University of Pennsylvania's The Wharton School...",
+        "publish_date": "2026-02-19T21:03:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 NTU's MBA programme climbs 10 spots, ranked 12th g..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-02-20T08:20:18.615974+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
