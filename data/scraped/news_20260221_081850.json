@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Wall Street stocks rise after court ruling against US tariffs",
+        "url": "https://www.channelnewsasia.com/business/wall-street-stocks-rise-after-court-ruling-against-us-tariffs-5943911",
+        "content": "Wall Street stocks, which had opened lower following disappointing US economic data, pushed into positive territory and also ended higher following a choppy session. The S&P 500 ended up 0.7 per cent. Many on Wall Street were likely expecting such a ruling from the Supreme Court, according to Brian Jacobsen, chief economic strategist at Annex Wealth Management. This service is not intended for persons residing in the E.U",
+        "publish_date": "2026-02-21T08:16:09.507944+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Wall Street stocks rise after court ruling against..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-02-21T08:18:50.414883+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
