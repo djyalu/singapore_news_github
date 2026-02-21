@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Audrey Fang death: Family seeks to keep suspect Mitchell Ong in jail longer",
+        "url": "https://www.channelnewsasia.com/singapore/mitchell-ong-audrey-fang-singaporean-woman-killed-in-spain-jail-5944086",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Audrey Fang death: Family seeks to keep suspect Mitchell Ong...",
+        "content": "In May last year, a Spanish court blocked a request for Ong's deportation. According to La Verdad, lawyer Manuel Martinez, who is acting as...",
+        "publish_date": "2026-02-22T08:02:47.570183+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Stephen A. Smith Compares Dems’ Plan To Boycott Trump State Of The Union To TPUSA Halftime Show",
+        "url": "https://sg.news.yahoo.com/entertainment/celebrity/articles/stephen-smith-compares-dems-plan-192829123.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Stephen A. Smith Compares Dems’ Plan To Boycott Trump State Of The Union To TPUS...",
+        "content": "Sports commentator and radio host Stephen A. Keep independent journalism alive. Yassamin Ansari (D-Ariz.) told Politico, “Americans deserve an honest account of the state of our union.”",
+        "publish_date": "2026-02-22T04:28:29+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-22T08:05:22.482272+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
