@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Iran-US talks expected on Thursday despite fears of strikes",
+        "url": "https://www.channelnewsasia.com/world/iran-us-talks-despite-fear-strikes-feb-26-5945831",
+        "summary": "📰 정부 관련 뉴스\\n📢 Iran-US talks expected on Thursday despite fears of strikes...",
+        "content": "On Sunday, Iranian students held competing pro- and anti-government protests, with critics of the clerical leadership risking arrest or worse if they are...",
+        "publish_date": "2026-02-23T08:12:35.555372+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police investigating after homeowner finds stranger in Upper Thomson house",
+        "url": "https://www.asiaone.com/singapore/person-enters-upper-thomson-marigold-drive-house-police",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Police investigating after homeowner finds stranger in Upper Thomson house",
+        "content": "A person allegedly entered a private residence in Upper Thomson without permission on Saturday (Feb 21) night. Efforts to trace the suspect are underway, and investigations are ongoing, the police said. According to The Straits Times, five Special Operations Command police vehicles were spotted along Upper Thomson Road at about 11pm",
+        "publish_date": "2026-02-22T14:24:42+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Queenstown 2-room resale flat sells for $695,000, a national record",
+        "url": "https://www.asiaone.com/singapore/queenstown-2-room-resale-flat-sells-695000-national-record",
+        "summary": "📰 싱가포르, 교통, 주택 관련 뉴스\n📢 Queenstown 2-room resale flat sells for $695,000, a national record",
+        "content": "It has a remaining lease of 94 years and nine months. This sale makes it the most expensive two-room HDB resale transaction in Singapore that has officially been recorded, according to 99.co. The last two-room resale flat from that same block was sold at $540,000 last December, based on HDB's data. That unit is located between the 7th and 9th storeys. SkyParc @ Dawson, which was completed in December 2020, is located near Queenstown and Commonwealth MRT stations.",
+        "publish_date": "2026-02-21T14:18:28+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-02-23T08:15:08.833586+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
