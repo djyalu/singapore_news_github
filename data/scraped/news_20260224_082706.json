@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "US says China 'massively expanded' nuclear arsenal",
+        "url": "https://www.channelnewsasia.com/world/us-says-china-massively-expanded-nuclear-arsenal-5947311",
+        "content": "China has publicly rejected calls to enter negotiations on a new three-way treaty. \"Despite its claims to the contrary, China has deliberately and without constraint, massively expanded its nuclear...",
+        "publish_date": "2026-02-24T08:23:56.072559+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US says China 'massively expanded' nuclear arsenal"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Winter storm blankets US northeast as travel bans imposed",
+        "url": "https://sg.news.yahoo.com/york-mayor-orders-citywide-travel-020517374.html",
+        "content": "The so-called \"Nor'easter\" pummeled the region overnight, disrupting flights and leaving hundreds of thousands of homes and businesses without power. New York Mayor Zohran Mamdani ordered nonessential drivers off the road until midday Monday and shut down schools. Authorities in neighboring New Jersey and Rhode Island issued similar travel restrictions. Some were frustrated by the region's second major winter storm in weeks. Meanwhile, at New York's Grand Central station, others were admiring the city blanketed in white. \"It's beautiful,\" Chris Crowell, 45, told AFP after a walk with a friend. \"So much snow, it's just gorgeous",
+        "publish_date": "2026-02-24T07:04:52+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Winter storm blankets US northeast as travel bans ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/shelving-china-actions-harms-us-225448203.html",
+        "content": "national security in ‌the interest of steadying relations with China, Democrats in the U.S. House of ‌Representatives said on Monday. operations as well as proposed bans on U.S. sales of routers by TP-Link and the U.S. internet businesses of China Unicom and China Mobile. The moves were reported by Reuters on Feb",
+        "publish_date": "2026-02-24T07:54:48+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Chinese national arrested after 14,550 cartons of duty-unpaid cigarettes worth more than $1.5m worth seized",
+        "url": "https://www.asiaone.com/singapore/15million-duty-unpaid-cigarettes-chinese-national",
+        "content": "A 40-year-old Chinese national has been arrested for his alleged offences relating to duty-unpaid cigarettes amounting to more than $1.5 million",
+        "publish_date": "2026-02-23T12:30:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chinese national arrested after 14,550 cartons of ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcyclist, 31, dies after AYE accident involving tipper truck",
+        "url": "https://www.asiaone.com/singapore/motorcyclist-dies-aye-accident-tipper-truck",
+        "content": "The police said they were alerted to the traffic accident before the Lower Delta Road exit at about 4.10am. Several officers are seen near an upright motorcycle, with the truck parked further ahead. The police said a 38-year-old male tipper truck driver is assisting with ongoing investigations.",
+        "publish_date": "2026-02-22T14:37:12+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcyclist, 31, dies after AYE accident involvin..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-02-24T08:27:06.734697+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
