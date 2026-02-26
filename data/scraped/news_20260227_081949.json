@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "McLaren will start new F1 season on the defence, says Stella",
+        "url": "https://www.straitstimes.com/sport/formula-one/mclaren-will-start-new-f1-season-on-the-defence-says-stella?ref=latest-headlines",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 McLaren will start new F1 season on the defence, says Stella...",
+        "content": "McLaren are defending both titles this year after Britain's Lando Norris ended the four-year reign of Red Bull's Max Verstappen. The Woking-based team will be chasing their third successive constructors' title",
+        "publish_date": "2026-02-27T08:16:56.657783+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "China removes five generals from national lawmaking body",
+        "url": "https://www.channelnewsasia.com/east-asia/china-removes-five-generals-military-5955826",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 China removes five generals from national lawmaking body...",
+        "content": "This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from...",
+        "publish_date": "2026-02-27T08:17:19.331750+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Body of missing 13-year-old boy found in Kallang River",
+        "url": "https://www.channelnewsasia.com/singapore/boy-drowning-kallang-river-scdf-search-family-5954456",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Body of missing 13-year-old boy found in Kallang River...",
+        "content": "The Singapore Civil Defence Force (SCDF) said that firefighters and rescuers from the Disaster Assistance and Rescue Team retrieved the body from the water. \"The active search operation was called off at about 7pm,\" SCDF had said. It added then that it would \"continue to monitor the situation and conduct...",
+        "publish_date": "2026-02-27T08:17:23.247512+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Repeat offenders, drink driving speedsters among 20 motorists to be charged",
+        "url": "https://www.asiaone.com/singapore/drink-driving-20-motorists-charged",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Repeat offenders, drink driving speedsters among 20 motorists to be charged",
+        "content": "In a media release on Wednesday night, the police said they were arrested between July 2025 and February this year after failing breathalyser tests. They will face an additional charge of speeding. A 21-year-old man left his car in a stationary position after falling asleep behind the...",
+        "publish_date": "2026-02-26T11:26:21+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on 2 teen girls last seen in Hougang",
+        "url": "https://www.asiaone.com/singapore/missing-nurul-ashwiny-chloe-lim-jiaxuan-police",
+        "summary": "📰 법률, 기술, 국제 관련 뉴스\n📢 Police appeal for information on 2 teen girls last seen in Hougang",
+        "content": "Checks by AsiaOne indicate that the road is flanked by flatted factories on both sides. Anyone with information is urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential, said the police.",
+        "publish_date": "2026-02-26T20:56:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-02-27T08:19:49.188423+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
