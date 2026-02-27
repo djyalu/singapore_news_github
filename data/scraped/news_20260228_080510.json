@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "NSmen working in cyber security to spend in-camp training protecting critical infrastructure",
+        "url": "https://www.asiaone.com/singapore/nsmen-working-cyber-security-spend-camp-training-protecting-critical-infrastructure",
+        "content": "Operationally ready national servicemen (NSmen) working in cybersecurity industry can soon spend their in-camp training protecting selected critical infrastructure in Singapore against cyber threats. The NSmen, along with regulars and full-time national servicemen (NSF), will join sectorial cyber defence teams under the Defence Cyber Command, which Zaqy said is a \"more coordinated, proactive approach against increasingly sophisticated cyber threats\". \"These teams will strengthen our capabilities, bring new ideas and approaches, and complement our existing forces,\" he said. \"We will deploy them to support the Cyber Security Agency of Singapore in defending Singapore's critical information infrastructure — covering vital sectors such as...",
+        "publish_date": "2026-02-27T16:55:45+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 NSmen working in cyber security to spend in-camp t..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-02-28T08:05:10.511215+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
