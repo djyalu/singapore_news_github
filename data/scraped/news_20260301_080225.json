@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Weathering life's storms: How to regulate your emotions at work amid tough times",
+        "url": "https://www.channelnewsasia.com/today/mental-health-matters/stress-work-emotion-regulating-5947446",
+        "content": "Weeks earlier, her father-in-law had suffered a stroke and her two children were just starting their year-end examinations. \"I felt that the demands were impossible for me to bear,\" said Ms Veenaa. \"My mind was in a constant loop of: 'Who needs me most right now?\". However, Ms Veenaa realised that venting was not always...",
+        "publish_date": "2026-03-01T07:59:48.705062+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Weathering life's storms: How to regulate your emo..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man breaks into Geylang HDB flat but gets nothing; arrested in 5 hours",
+        "url": "https://www.asiaone.com/singapore/housebreaking-pine-close-man-arrested-charged",
+        "content": "The incident happened at about 6.32pm at a residential unit along Pine Close in Geylang. Checks online by AsiaOne indicate that the area is a HDB precinct. No items were reported stolen. He will be taken to court on Saturday and charged with housebreaking",
+        "publish_date": "2026-02-27T20:01:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man breaks into Geylang HDB flat but gets nothing;..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-03-01T08:02:25.649572+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
