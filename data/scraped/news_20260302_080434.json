@@ -1,0 +1,63 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Wealth flows, Asean momentum to anchor DBS, OCBC and UOB as lower rates loom in 2026: analysts",
+        "url": "https://www.businesstimes.com.sg/companies-markets/wealth-flows-asean-momentum-anchor-dbs-ocbc-and-uob-lower-rates-loom-2026-analysts",
+        "content": "[SINGAPORE] Singapore’s three local banks exited FY2025 on a firm footing, as stronger fee and wealth income helped offset pressure from lower interest rates, while provisioning buffers kept asset quality broadly stable heading into 2026. This comes as intra-Asean trade and investment flows are expected to remain a medium-term pillar despite tariff-related volatility, said analysts. Decoding Asia newsletter: your guide to navigating Asia in a new global order. Sign up here to get Decoding Asia newsletter. Delivered to your inbox. All rights reserved.",
+        "publish_date": "2026-03-02T08:02:10.641228+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Wealth flows, Asean momentum to anchor DBS, OCBC a..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-03-02T08:04:34.590779+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump vows to avenge deaths of US troops: latest Iran developments",
+        "url": "https://sg.news.yahoo.com/latest-developments-us-israeli-strikes-081539411.html",
+        "content": "Israeli Prime Minister Benjamin Netanyahu vowed that air strikes against Iran would intensify in the coming days, while Trump said he would be talking to Iranian leaders, without specifying when. Here are the latest developments:",
+        "publish_date": "2026-03-02T07:37:25+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump vows to avenge deaths of US troops: latest I..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says Iran leadership agrees to talks after US and Israel strike Tehran",
+        "url": "https://sg.news.yahoo.com/trump-says-iran-leadership-agrees-183243512.html",
+        "content": "“They should have done it sooner. They should have given what was very practical and easy to do sooner. They waited too long.”",
+        "publish_date": "2026-03-02T03:32:43+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says Iran leadership agrees to talks after U..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Delivery rider, 19, taken to hospital after Bukit Timah car accident",
+        "url": "https://www.asiaone.com/singapore/upper-bukit-timah-road-car-motorcycle-accident",
+        "content": "The accident happened at about 2.10pm at the junction of Upper Bukit Timah Road and Jalan Asas. Checks by AsiaOne show that there are double white lines drawn between the two said lanes. This means that no motorist shall cross or straddle these lines. It is unclear whether the car driver had crossed the double white lines. The police added that the investigations are ongoing.",
+        "publish_date": "2026-03-02T07:30:26+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Delivery rider, 19, taken to hospital after Bukit ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-02T08:04:34.590813+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
