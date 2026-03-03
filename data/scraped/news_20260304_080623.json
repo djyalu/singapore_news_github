@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Myopia now, glaucoma later? The hidden link explained and how to reduce your risk",
+        "url": "https://www.channelnewsasia.com/wellness/glaucoma-risk-lasik-eye-implants-5948976",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Myopia now, glaucoma later? The hidden link explained and ho...",
+        "content": "Instead, you might pay more attention to myopia or short-sightedness. But hold that thought because there is a link between the two eye conditions. In other words, having myopia now, especially severe myopia, may increase your risk of developing glaucoma later in life. About 57,800 Singaporeans aged 60 years and above have glaucoma, according to NHG Eye Institute. This number is projected to rise by 43 per cent, reaching 85,800 by 2040. Age certainly plays a part",
+        "publish_date": "2026-03-04T08:03:40.615527+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Eric Dane's Official Cause of Death Confirmed",
+        "url": "https://sg.news.yahoo.com/eric-danes-official-cause-death-183542457.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Eric Dane's Official Cause of Death Confirmed",
+        "content": "Eric Dane's official cause of death has been confirmed. The Grey's Anatomy and Euphoria star died on Thursday, Feb. Dane announced in April 2025 that he had been diagnosed with amyotrophic lateral sclerosis (ALS). The Grey's Anatomy and Euphoria actor died of respiratory failure, according to his death certificate obtained by PEOPLE. Amyotrophic lateral sclerosis (ALS) is an underlying cause of death. His family confirmed that the star died on Thursday, Feb. 19, nearly one year after he announced he had been diagnosed with amyotrophic lateral sclerosis (ALS). There is no cure for ALS. However, there are medications and forms of...",
+        "publish_date": "2026-03-03T03:35:42+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Single admissions process to replace JC, poly and ITE postings from 2028",
+        "url": "https://sg.news.yahoo.com/single-admissions-process-replace-jc-032640116.html",
+        "summary": "📰 교육, 기술 관련 뉴스\n📢 Single admissions process to replace JC, poly and ITE postings from 2028",
+        "content": "This includes courses at junior colleges (JCs), Millennia Institute, polytechnics and the Institute of Technical Education (ITE). Currently, students navigate a timeline of examinations and admissions that stretches from September till January of the following year. With all pathways and courses available for...",
+        "publish_date": "2026-03-03T12:26:40+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Furious Hillary Clinton calls halt to deposition after unauthorised photo leak",
+        "url": "https://sg.news.yahoo.com/furious-hillary-clinton-calls-halt-081538553.html",
+        "summary": "📰 정치, 기술 관련 뉴스\n📢 Furious Hillary Clinton calls halt to deposition after unauthorised photo leak",
+        "content": "On Thursday (26 February) Clinton and her husband, former President Bill Clinton, testified separately about their ties to the disgraced billionaire. “I’m done with this if you guys are doing that, I am done",
+        "publish_date": "2026-03-03T17:15:38+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "No more horsing around: Runaways seen roaming around Pasir Ris have returned safely",
+        "url": "https://www.asiaone.com/singapore/brown-white-horses-pasir-ris-gallop-stable",
+        "summary": "📰 싱가포르, 교육, 국제 관련 뉴스\n📢 No more horsing around: Runaways seen roaming around Pasir Ris have returned saf...",
+        "content": "AsiaOne understands that the horses are likely to have escaped from Gallop Stable's horse riding school at Pasir Ris Park, some 400m away. A staff member told AsiaOne that the two horses have since returned safely. #sgnews #Singapore #Road #Horse",
+        "publish_date": "2026-03-03T16:05:48+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-04T08:06:23.759815+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
