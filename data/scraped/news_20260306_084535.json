@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Sumiko at 62: 4 simple exercises from a physiotherapist to ease shoulder pain",
+        "url": "https://www.straitstimes.com/opinion/sumiko-at-62-4-simple-exercises-to-ease-shoulder-pain-from-a-physiotherapist?ref=visual-stories",
+        "content": "In late 2023, I felt an unexpected twitch in my right shoulder while exercising. I later developed neck pain on my right side, adding to my frustration. She referred me to a physiotherapist at Singapore General Hospital (SGH). I began therapy in September 2024, not realising how long recovery would take.",
+        "publish_date": "2026-03-06T08:42:29.062474+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Sumiko at 62: 4 simple exercises from a physiother..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2026-03-06T08:45:35.808351+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
