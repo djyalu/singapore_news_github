@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "China unveils measures to become ‘best export destination’ amid global turmoil and surplus scrutiny",
+        "url": "https://www.channelnewsasia.com/east-asia/china-two-sessions-economy-export-presser-lianghui-5975801",
+        "content": "“We treat the market as an opportunity, as cooperation.”. This service is not intended for persons residing in the E.U",
+        "publish_date": "2026-03-07T08:15:22.209279+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China unveils measures to become ‘best export dest..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "50 multi-purpose courts for pickleball, badminton to be built over next 5 years",
+        "url": "https://sg.news.yahoo.com/50-multi-purpose-courts-pickleball-083027882.html",
+        "content": "MCCY added that this initiative will address the growing demand for courts to play these popular sports, while providing Singaporeans with convenient access to a sports facility near their homes",
+        "publish_date": "2026-03-05T17:30:27+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 50 multi-purpose courts for pickleball, badminton ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Japaneasy Eats: Kyoto chef at AMK kopitiam serves Scotch egg & meatball katsu, 3-day rolled chashu & ramen",
+        "url": "https://sg.news.yahoo.com/style/japaneasy-eats-kyoto-chef-amk-060021947.html",
+        "content": "For those unfamiliar, katsu is essentially a meat or seafood cutlet that’s coated in flaky panko breadcrumbs, then deep-fried till divinely crispy. Curiosity slid into my DMs the moment I spotted specials like Scotch egg and meatball katsu. Toss in some housemade chashu, ramen, and the fact it’s made by an actual Japanese chef. Consider me intrigued!. Japaneasy Eats, opened in June 2025, was founded by Kyoto-born chef Okada Hiroshi and his business partner, Kay",
+        "publish_date": "2026-03-06T15:00:21+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Japaneasy Eats: Kyoto chef at AMK kopitiam serves ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "PUB officers to have powers to conduct forced entry to address coastal flood risk under new Bill",
+        "url": "https://www.asiaone.com/singapore/pub-officers-powers-forced-entry-coastal-protection-flood-bill",
+        "content": "Officers with Singapore's national water agency PUB may soon have powers to forcibly enter a landowner's premises to address coastal flood risks. Immunities for authorised officers will also only apply if they have acted in good faith...",
+        "publish_date": "2026-03-06T17:47:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PUB officers to have powers to conduct forced entr..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police investigating after ambulance seen speeding along Stadium Road",
+        "url": "https://www.asiaone.com/singapore/police-investigating-goodwill-ambulance-speeding-stadium-road",
+        "content": "Investigations into a private ambulance are ongoing after footage showing it driving recklessly near Stadium Road went viral online. The ambulance can then be seen driving over the kerb and stopping, narrowly missing oncoming traffic. AsiaOne has reached out to Goodwill Ambulance Services Group for more information.",
+        "publish_date": "2026-03-06T16:20:20+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police investigating after ambulance seen speeding..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-07T08:17:58.541781+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
