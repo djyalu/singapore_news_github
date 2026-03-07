@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "January 6 commemorative plaque appears in Capitol after years of delay",
+        "url": "https://sg.news.yahoo.com/news/articles/january-6-commemorative-plaque-appears-173219442.html",
+        "content": "“Their heroism will never be forgotten.”. It lists the several local police departments and federal agencies that responded that day",
+        "publish_date": "2026-03-08T05:40:38+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 January 6 commemorative plaque appears in Capitol ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-08T08:03:39.860756+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
