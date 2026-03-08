@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Sumiko at 62: 4 simple exercises from a physiotherapist to ease shoulder pain",
+        "url": "https://www.straitstimes.com/opinion/sumiko-at-62-4-simple-exercises-to-ease-shoulder-pain-from-a-physiotherapist?ref=visual-stories",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Sumiko at 62: 4 simple exercises from a physiotherapist to e...",
+        "content": "In late 2023, I felt an unexpected twitch in my right shoulder while exercising. I later developed neck pain on my right side, adding to my frustration. She referred me to a physiotherapist at Singapore General Hospital (SGH). I began therapy in September 2024, not realising how long recovery would take.",
+        "publish_date": "2026-03-09T08:01:27.175905+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/worlds-richest-people-flocking-countries-113000725.html",
+        "summary": "📰 금융, 정치, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "The world’s ultra-wealthy are packing up and moving out. Among billionaires aged 54 and younger, 44% changed locations last year, with 15% considering a move. Turning 50 with $0 saved for retirement. Most people don’t realize they’re actually just entering their prime earning decade. Here are 6 ways to catch up fast. But can everyday Americans enjoy the same benefits?",
+        "publish_date": "2026-03-06T20:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man arrested for allegedly slapping 4-year-old boy outside Woodlands preschool",
+        "url": "https://www.asiaone.com/singapore/pcf-woodlands-875-4-year-old-slapped",
+        "summary": "📰 교육, 취업, 기술 관련 뉴스\n📢 Man arrested for allegedly slapping 4-year-old boy outside Woodlands preschool",
+        "content": "Checks by AsiaOne indicate that there is a PCF Sparkletots Preschool at the said address. This also corresponds with the uniform seen in a picture accompanying the Instagram post made by the boy's mother. Moments like this can stay in a child's mind and cause rear fear and emotional drama,\" she wrote, adding...",
+        "publish_date": "2026-03-08T16:00:23+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-09T08:04:18.979548+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
