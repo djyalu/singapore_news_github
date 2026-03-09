@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Five Iranian women's footballers given asylum in Australia after national anthem protest",
+        "url": "https://www.channelnewsasia.com/world/iran-football-team-australia-asylum-5982411",
+        "content": "Five players escaped the team hotel on Australia's Gold Coast overnight, holing up in a \"safe location\" while lodging their claims for asylum, Home Affairs Minister Tony Burke said. \"They were moved to a safe location by Australian police. I signed off last night on their applications for humanitarian visas,\" he told reporters. The government said it was also ready to help other team members if they need it. US President Donald Trump earlier said he had spoken with Australian Prime Minister Anthony...",
+        "publish_date": "2026-03-10T08:14:48.290214+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Five Iranian women's footballers given asylum in A..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Song Heng Fishball Minced Meat Noodle: 40-min queues for hawker’s hefty mee pok in AMK",
+        "url": "https://sg.news.yahoo.com/style/song-heng-fishball-minced-meat-040028527.html",
+        "content": "We are all for fantastic food spots that have been kept away from the public eye, especially on social media. Some folks have even proclaimed this hawker stall has the best (yes, really) fishball noodles in Singapore. Long queues for this stall are common but many have said that the wait is worth the while. Very intrigued, I headed down to find out whether the hype was worth it. And to my disbelief, the queue was truly no joke. Even on a weekday morning, there were already 13 eager people in line. The line grew longer behind me, possibly becoming the longest queue in this hawker centre",
+        "publish_date": "2026-03-08T13:00:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Song Heng Fishball Minced Meat Noodle: 40-min queu..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-10T08:17:36.715504+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
