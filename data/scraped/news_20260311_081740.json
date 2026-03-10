@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "The tiny island of Kharg that could let Trump beat Iran without sending a single soldier",
+        "url": "https://sg.news.yahoo.com/the-tiny-island-of-kharg-that-could-let-trump-beat-iran-without-sending-a-single-soldier-190553007.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 The tiny island of Kharg that could let Trump beat Iran with...",
+        "content": "“They’ve been beating us psychologically, making us look a bunch of fools,” Trump told The Guardian. I’d go in and take it.”. But nearly 40 years later, that throwaway line suggests he knew more about world affairs than he is often given credit for. The island concerned is a barren limestone outcrop 15 miles off Iran’s Persian Gulf coastline, less than half the...",
+        "publish_date": "2026-03-10T04:05:53+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Off-duty SCDF officer praised for helping to extinguish rubbish chute fire at Choa Chu Kang",
+        "url": "https://www.asiaone.com/singapore/duty-scdf-officer-praised-helping-extinguish-rubbish-chute-fire-choa-chu-kang",
+        "summary": "📰 기술 관련 뉴스\n📢 Off-duty SCDF officer praised for helping to extinguish rubbish chute fire at Ch...",
+        "content": "The off-duty officer can be seen putting out the fire with a hose reel. Other pictures also show SCDF personnel investigating the fire",
+        "publish_date": "2026-03-10T17:50:13+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-11T08:17:40.924974+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
