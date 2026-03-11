@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "China’s ‘lobster’ craze: OpenClaw drafts reports, books flights",
+        "url": "https://www.channelnewsasia.com/east-asia/china-openclaw-ai-agent-lobster-popular-security-risks-5985886",
+        "content": "BEIJING: Across Chinese social media, people are increasingly talking about “raising a lobster”- and sharing what it can do. The unusual assistant has been drafting reports, organising emails and even booking flights, according to screenshots posted online. The “lobster” in this case has nothing to do with seafood. But the enthusiasm has played out both online and...",
+        "publish_date": "2026-03-12T08:02:38.239005+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China’s ‘lobster’ craze: OpenClaw drafts reports, ..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "'Intelligent economy', 'investing in people': How Beijing is reshaping its 2026 economic agenda",
+        "url": "https://www.channelnewsasia.com/east-asia/china-two-sessions-key-terms-economy-tech-ai-involution-investing-in-people-5985911",
+        "content": "BEIJING: Chinese Premier Li Qiang’s annual government work report has long been viewed as the country's economic scorecard. “The most notable shift this year is arguably renewed emphasis on reform,” said Guo Shan, a research economist and partner at Hutong Research",
+        "publish_date": "2026-03-12T08:02:48.254762+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Intelligent economy', 'investing in people': How ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "South Korea finds faulty approvals at airport where Jeju Air plane crashed",
+        "url": "https://sg.news.yahoo.com/south-korea-auditor-finds-cost-034116810.html",
+        "content": "The only survivors were two flight attendants at the rear of the plane. Under international standards, ⁠localiser structures should be designed to break apart easily upon aircraft...",
+        "publish_date": "2026-03-11T13:53:48+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 South Korea finds faulty approvals at airport wher..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-03-12T08:05:23.901386+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
