@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says Ric Grenell is being replaced as Kennedy Center head",
+        "url": "https://sg.news.yahoo.com/news/articles/exclusive-trump-preparing-replace-ric-201411423.html",
+        "content": "President Donald Trump is replacing Richard Grenell as head of the Kennedy Center, he announced on Friday. Trump posted on Truth Social that Grenell would be replaced by Matt Floca, the arts center’s current vice president of facilities operations",
+        "publish_date": "2026-03-14T07:31:07+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says Ric Grenell is being replaced as Kenned..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Sungei Kadut fires: Man, 20, arrested for allegedly setting 3 properties on fire",
+        "url": "https://www.asiaone.com/singapore/sungei-kadut-fires-police-scdf-man-arrested",
+        "content": "The police also told AsiaOne that they commenced investigations into the fire cases. The fire involved discarded items at the corner of a staircase area within the affected premises. Following extensive investigations, officers from Woodlands Police Division identified the suspected arsonist and arrested him on Thursday.",
+        "publish_date": "2026-03-13T22:50:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Sungei Kadut fires: Man, 20, arrested for allegedl..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Cost of all driving tests increased from March 13",
+        "url": "https://www.asiaone.com/singapore/driving-tests-fee-increased-march-13",
+        "content": "Take note that the traffic police has increased fees for all driving tests beginning Friday (March 13). The Basic Driving Theory Test, Final Driving Theory Test and Motorcycle Riding Theory Test will now cost $7.20, up from $6.50. The measure was introduced in September 2025...",
+        "publish_date": "2026-03-13T16:40:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Cost of all driving tests increased from March 13"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-14T08:18:42.796863+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
