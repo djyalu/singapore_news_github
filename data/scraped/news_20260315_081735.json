@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Smoke seen rising from direction of UAE energy facility",
+        "url": "https://www.channelnewsasia.com/world/smoke-uae-energy-facility-fujairah-oil-5994056",
+        "content": "The port is also home to a key oil export terminal. Local authorities, in a statement, said debris that fell after a successful drone interception had caused a fire, without specifying the location. Later at night, authorities said they were still battling the fire, adding that a Jordanian national had been injured.",
+        "publish_date": "2026-03-15T08:14:58.013599+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Smoke seen rising from direction of UAE energy fac..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-03-15T08:17:35.963645+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
