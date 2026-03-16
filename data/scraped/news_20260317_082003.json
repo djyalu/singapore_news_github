@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Buses and trains decorated to bring Hari Raya festive cheer",
+        "url": "https://www.asiaone.com/singapore/hari-raya-mrt-stations-bus-trains-2026",
+        "content": "Buona Vista, Bugis, Bukit Panjang, Bedok, Tanjong Pagar, Serangoon, Woodlands, Outram Park, Tanjong Katong, and Marine Parade MRT stations will also be similarly decorated. The decorations feature vibrant designs celebrating beloved traditions such as visiting Ramadan bazaars, families dressed in colourful traditional attire and sharing festive dishes with neighbours and...",
+        "publish_date": "2026-03-16T17:15:16+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Buses and trains decorated to bring Hari Raya fest..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-17T08:20:03.891832+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
