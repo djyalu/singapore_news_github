@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says NATO's refusal to help on Iran is 'very foolish mistake'",
+        "url": "https://www.channelnewsasia.com/world/trump-us-israel-iran-war-nato-allies-military-5999551",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump says NATO's refusal to help on Iran is 'very foolish m...",
+        "content": "\"I think NATO is making a very foolish mistake,\" Trump said. \"Everyone agrees with us, but they don't want to help",
+        "publish_date": "2026-03-18T08:19:08.299844+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "MSF returns Han Hui Hui's children with conditions; activist gets POFMA order over claims made in livestream",
+        "url": "https://www.channelnewsasia.com/singapore/han-hui-hui-children-reunited-msf-removal-safety-pofma-order-5998356",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 MSF returns Han Hui Hui's children with conditions; activist...",
+        "content": "This video was later posted on Facebook and YouTube. These posts are no longer available, according to CNA's checks on Tuesday night. CNA understands this is the first time a POFMA correction direction has been issued in...",
+        "publish_date": "2026-03-18T08:19:12.667416+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Woman taken to hospital after power bank catches fire in train cabin at Admiralty MRT station",
+        "url": "https://sg.news.yahoo.com/woman-taken-hospital-power-bank-072200596.html",
+        "summary": "📰 교통, 금융, 기술 관련 뉴스\n📢 Woman taken to hospital after power bank catches fire in train cabin at Admiralt...",
+        "content": "She was given first aid. No other injuries were reported. The woman was taken to Woodlands Hospital. The staff established that a passenger’s power bank had caught fire. The photo shows charred pieces of what appears to be a broken power bank...",
+        "publish_date": "2026-03-17T16:22:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/nvidia-says-restarting-production-china-225451646.html",
+        "summary": "📰 금융, 기술, 국제 관련 뉴스\n📢 Yahoo Finance",
+        "content": "\"Our supply chain is getting fired up.\". The situation has changed from two weeks ago, according to Huang. The H200 chip had until recently been barred from sale in China by Washington over national security concerns",
+        "publish_date": "2026-03-18T07:54:51+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Children returned to Han Hui Hui's care but with conditions: Police, MSF",
+        "url": "https://www.asiaone.com/singapore/children-returned-han-hui-huis-care-conditions-police-msf",
+        "summary": "📰 법률 관련 뉴스\n📢 Children returned to Han Hui Hui's care but with conditions: Police, MSF",
+        "content": "These include appointing new safe adults from within the extended family to check-in on the children through physical visits and video calls. Han will also be required to publish a correction notice on her social media accounts,",
+        "publish_date": "2026-03-17T22:40:07+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-03-18T08:21:58.437445+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
