@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Republicans Add Slate Of Anti-Trans Proposals To Controversial Voting Rights Bill",
+        "url": "https://sg.news.yahoo.com/news/articles/republicans-add-slate-anti-trans-223647205.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Republicans Add Slate Of Anti-Trans Proposals To Controversi...",
+        "content": "Keep independent journalism alive. Republicans conceded late Tuesday evening, adding several amendments that target trans rights. The bill has little chance of actually becoming law. Democrats are unified in their opposition to it, and even many Republicans are skeptical",
+        "publish_date": "2026-03-19T07:36:47+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Why (and how) everyone is cold-calling the president",
+        "url": "https://sg.news.yahoo.com/why-everyone-cold-calling-president-010033132.html",
+        "summary": "📰 정치 관련 뉴스\n📢 Why (and how) everyone is cold-calling the president",
+        "content": "The calls come in late at night, when the president can’t sleep. This has produced a curious new form of journalism. One day earlier this month, ABC News’ Jonathan Karl and Rachel Scott got separate...",
+        "publish_date": "2026-03-16T11:25:45+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-19T08:21:04.340890+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
