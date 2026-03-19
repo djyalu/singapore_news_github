@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Keeps Press Away From Dignified Transfer But Posts Pics On Social Media",
+        "url": "https://sg.news.yahoo.com/news/articles/trump-keeps-press-away-dignified-221303813.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump Keeps Press Away From Dignified Transfer But Posts Pic...",
+        "content": "Keep independent journalism alive. DOVER AIR FORCE BASE, Del. White House press secretary Karoline Leavitt told HuffPost Thursday, “The families did not agree to press",
+        "publish_date": "2026-03-20T07:13:03+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 51, charged for failing to report change of residential address",
+        "url": "https://www.asiaone.com/singapore/man-51-charged-failing-report-change-residential-address",
+        "summary": "📰 정부, 기술 관련 뉴스\n📢 Man, 51, charged for failing to report change of residential address",
+        "content": "Between January and February 2025, he allegedly obtained loans from several licensed moneylenders using the address of the Toa Payoh unit. The update will also facilitate their transactions with Government agencies",
+        "publish_date": "2026-03-19T16:24:23+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "2 companies charged with failing to fit vehicles with approved speed limiters",
+        "url": "https://www.asiaone.com/singapore/or-kim-peow-contractors-linde-gas-charged-speed-limiter-heavy-vehicle",
+        "summary": "📰 법률, 기술, 관광 관련 뉴스\n📢 2 companies charged with failing to fit vehicles with approved speed limiters",
+        "content": "Two companies were charged in court on Wednesday (March 18) for failing to ensure that their vehicles were fitted with approved speed limiters. The case will be mentioned again in court on April 14. Court documents seen by AsiaOne show that one of the company's heavy vehicles was found travelling along Jurong Island Highway without the...",
+        "publish_date": "2026-03-19T17:48:35+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Sinopec, SPC hike diesel prices to mark 4th consecutive day of adjustments",
+        "url": "https://www.asiaone.com/money/petrol-diesel-pump-prices-19-march-middle-east-war-sinopec-spc-cynergy",
+        "summary": "📰 기술 관련 뉴스\n📢 Sinopec, SPC hike diesel prices to mark 4th consecutive day of adjustments",
+        "content": "This mirrored the moves of Shell, Esso and Caltex, which also raised diesel prices by 7 cents each on Wednesday. The posted price for diesel at Sinopec holds the middle ground at $3.62. Meanwhile, Smart Energy, which operates three stations — at Defu, Jalan Buroh and Mandai —...",
+        "publish_date": "2026-03-19T23:07:42+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-20T08:19:26.398672+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
