@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "21 Of The Funniest Posts About Cats And Dogs This Week (March 14-20)",
+        "url": "https://sg.news.yahoo.com/entertainment/articles/21-funniest-posts-cats-dogs-214957734.html",
+        "content": "Woof — it’s been a long week. They’re sure to make you howl. Keep independent journalism alive. 24 Of The Funniest Posts About Cats And Dogs This Week. 29 Of The Funniest Posts About Cats And Dogs This Week. 25 Of The Funniest Posts About Cats And Dogs This Week",
+        "publish_date": "2026-03-21T06:49:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 21 Of The Funniest Posts About Cats And Dogs This ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Dried pineapple slices recalled over undeclared sulphur dioxide allergen: SFA",
+        "url": "https://www.asiaone.com/singapore/sfa-food-recall-tai-sun-pineapple-slices",
+        "content": "The food additive was not declared in the packaging label. They may contact their point of purchase for enquiries. Persons who have consumed the product should seek...",
+        "publish_date": "2026-03-20T21:00:15+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dried pineapple slices recalled over undeclared su..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Hari Raya message: Faishal Ibrahim calls on Muslims to strengthen ties across society",
+        "url": "https://www.asiaone.com/singapore/hari-raya-aidilfitri-message-2026-faishal-ibrahim",
+        "content": "Muslims in Singapore should go beyond the community to strengthen ties across the nation's diverse society, said Acting Minister-in-charge of Muslim Affairs Assoc Prof Faishal Ibrahim. It was broadcast on television channel Suria. It was designated a national monument in 1974",
+        "publish_date": "2026-03-20T21:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hari Raya message: Faishal Ibrahim calls on Muslim..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-21T08:19:15.057785+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
