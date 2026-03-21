@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Democrats Unleash On Trump Over 'Insane' Robert Mueller Post: 'This Is Disgusting'",
+        "url": "https://sg.news.yahoo.com/news/articles/democrats-unleash-trump-over-insane-224234785.html",
+        "content": "Politics: Trump Threatens To Deploy ICE To Airports, Iran Attempts Strike On U.S.-U.K. Air Base: Live Updates. Hours after Mueller’s family asked in the statement that their “privacy be respected,” the president wrote on his Truth Social platform, “Robert Mueller just died. Good, I’m glad he’s dead. He can no longer hurt innocent people!”. The post drew fiery responses from legions of Democratic politicians and media personalities, who decried...",
+        "publish_date": "2026-03-22T07:42:34+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Democrats Unleash On Trump Over 'Insane' Robert Mu..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-22T08:15:17.017285+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
