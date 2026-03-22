@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "California sheriff running for governor seizes more than a half million ballots from 2025 election",
+        "url": "https://sg.news.yahoo.com/news/articles/california-sheriff-running-governor-seizes-195314985.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 California sheriff running for governor seizes more than a h...",
+        "content": "County elections officials have disputed the claims by Riverside County Sheriff Chad Bianco, a Republican. The measure passed in the county by a margin of more than 80,000 votes. Bianco seized ballots in Riverside County, the inland California county of 2.5 million people where he has...",
+        "publish_date": "2026-03-23T05:48:35+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-23T08:17:58.991292+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
