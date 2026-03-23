@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "EU chief to meet Australian PM as trade talks enter 'last mile'",
+        "url": "https://sg.news.yahoo.com/eu-chief-meet-australian-pm-223724828.html",
+        "content": "She arrived in Sydney Monday for a meeting with Australia's Governor-General Sam Mostyn. \"Clearly there is mutual interest, and a positive hunger from both economic communities for having this new framework,\" Sefcovic said. \"The goal is to tie down the final details,\" commission spokesman Olof Gill told a press conference...",
+        "publish_date": "2026-03-24T07:37:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 EU chief to meet Australian PM as trade talks ente..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 54, to be charged with alleged shop theft at Changi Airport",
+        "url": "https://www.asiaone.com/singapore/australian-man-charged-alleged-shop-theft-changi-airport",
+        "content": "The items were valued at a total of $842.20. The stolen items were recovered from his possession. If found guilty, he faces a maximum penalty of seven years' imprisonment, a fine, or both. The police said they take a serious view of shop theft cases. \"Offenders should not assume that they can evade detection by attempting to leave the country shortly after committing such offences,\" they added.",
+        "publish_date": "2026-03-23T16:39:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 54, to be charged with alleged shop theft at ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Singtel users report broadband and mobile internet disruptions",
+        "url": "https://www.asiaone.com/singapore/singtel-users-report-broadband-and-mobile-internet-disruptions",
+        "content": "Singtel users reported service disruptions on Monday (March 23) afternoon, affecting both broadband and mobile internet services. \"Every website and messenger apps stopped working, but data still got through,\" one user wrote. Another said: \"WiFi has been patchy for me since about 10 minutes ago. Downdetector also shows others having the same issue.\". According to outage tracking website Downdetector, there were more than 9,700 reports from Singapore at the peak of the latest disruption. About half of the reports were related to broadband internet issues, while 29 per cent involved mobile internet problems. \"Our teams worked diligently to optimise our mobile network performance and addressed all the...",
+        "publish_date": "2026-03-23T19:00:05+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Singtel users report broadband and mobile internet..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-03-24T08:21:20.353423+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
