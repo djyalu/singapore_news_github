@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/not-april-fool-invest-singapore-000001605.html",
+        "content": "Customers of MariBank may start investing in the fund from $1 from April 1, 2026. Launched in 1999, the fund invests primarily in equities listed on Singapore Exchange, including non-Straits Times Index (FTSE STI) component stocks, as well as selected overseas-listed equities with similar characteristics",
+        "publish_date": "2026-03-24T09:00:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Fire breaks out at Bukit Merah View Hawker Centre; no injuries reported",
+        "url": "https://www.asiaone.com/singapore/fire-bukit-merah-view-hawker-centre",
+        "content": "There were no reported injuries. The cause of the fire is under investigation. Stallholders are also advised to maintain the exhaust ducts at least once...",
+        "publish_date": "2026-03-26T19:15:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Fire breaks out at Bukit Merah View Hawker Centre;..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "2 motorcyclists taken to hospital after accident in Pasir Ris",
+        "url": "https://www.asiaone.com/singapore/2-motorcyclists-taken-hospital-accident-pasir-ris",
+        "content": "In a dashcam video shared on Facebook, both motorcyclists can be seen approaching the junction from opposite directions before crashing into each other. Two male motorcyclists, aged 30 and 36, were taken conscious to Changi General Hospital.",
+        "publish_date": "2026-03-26T21:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 2 motorcyclists taken to hospital after accident i..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-27T08:19:34.779568+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
