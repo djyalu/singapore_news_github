@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "The Pokemon tree of life",
+        "url": "https://www.straitstimes.com/life/gotta-classify-em-all-the-ultimate-field-guide-to-over-1000-pokemon?ref=visual-stories",
+        "content": "Beyond the original species, we delve into creatures from different dimensions and eras that were introduced in later versions of the game. Use the filters below to explore the similarities and differences. Those viewing this on mobile devices can click the arrow on each entry to learn more about each character. This was inspired by Japanese developer Satoshi Tajiri’s childhood hobby of catching bugs and tadpoles. Underpinning the franchise is a sense of adventure",
+        "publish_date": "2026-03-28T08:19:32.525587+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The Pokemon tree of life"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Tiger Woods arrested and charged with driving under influence after Florida car crash",
+        "url": "https://www.channelnewsasia.com/sport/tiger-woods-arrested-driving-under-influence-car-crash-6022271",
+        "content": "Woods was uninjured in this latest twist in a turbulent career. However, he was formally charged with driving under the influence after refusing to take a urine analysis test, Budensiek said",
+        "publish_date": "2026-03-28T08:19:51.841737+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Tiger Woods arrested and charged with driving unde..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "US envoy hopeful on Iran talks as strikes target nuclear facilities",
+        "url": "https://www.channelnewsasia.com/world/iran-nuclear-facilities-struck-talks-us-6022511",
+        "content": "\"We think there will be meetings this week, we're certainly hopeful for it,\" Witkoff told a business forum in Miami. Washington expected Tehran to respond to a 15-point US peace plan, he said. \"It could solve it all.\". Rubio said he had won G7 support to oppose Iran's...",
+        "publish_date": "2026-03-28T08:20:09.938090+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US envoy hopeful on Iran talks as strikes target n..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$484k lost to DBS and POSB impersonation scams since Jan 15",
+        "url": "https://www.asiaone.com/singapore/484k-lost-dbs-posb-impersonation-scams-jan-15",
+        "content": "These emails would contain embedded links directing recipients to phishing websites that resemble official DBS or POSB webpages. Victims are then misled into entering their banking credentials, credit or debit card details, and one-time passwords to activate or update their digital tokens. Victims would subsequently discover unauthorised transactions, including those in foreign currencies such as euros and Saudi riyals, made on their bank accounts or cards, said the police. The police reminded the public that banks in Singapore will never send clickable links via email or SMS, and that digital...",
+        "publish_date": "2026-03-27T23:04:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $484k lost to DBS and POSB impersonation scams sin..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "1 person missing, 2 rescued after pleasure craft collides with supply vessel off Southern Islands",
+        "url": "https://www.asiaone.com/singapore/1-missing-2-rescued-pleasure-craft-collide-supply-vessel-southern-islands",
+        "content": "MPA added that two other people on board the pleasure craft have been rescued and are safe. \"All persons on board the supply vessel are accounted for, and no injuries have been reported,\" said the authority. Patrol craft have also been deployed, along with assets from the Police Coast Guard and the SCDF Marine Division. Navigational broadcasts have also been issued for vessels in the vicinity to keep a lookout.",
+        "publish_date": "2026-03-27T20:26:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 1 person missing, 2 rescued after pleasure craft c..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "The Straits Times"
+    ],
+    "timestamp": "2026-03-28T08:22:44.983266+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
