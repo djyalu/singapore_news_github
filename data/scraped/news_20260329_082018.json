@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Will my old social media posts affect my job prospects? Here’s what recruiters really check",
+        "url": "https://www.channelnewsasia.com/today/adulting/social-media-history-jobseeker-employer-assessment-prospect-6016426",
+        "content": "What about the melodramatic rants I wrote on Facebook as a 13-year-old. Let's not forget the WordPress diary entries when I was nine",
+        "publish_date": "2026-03-29T08:17:26.380564+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Will my old social media posts affect my job prosp..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Chinese company unveils ceiling-crawling robots that could transform EV charging forever",
+        "url": "https://sg.news.yahoo.com/chinese-company-unveils-ceiling-crawling-220000080.html",
+        "content": "In China, electric vehicle chargers come to you. A video clip shared on the social platform X shows the boxy contraptions moving on roof rails. They drop a charge line when they reach the vehicle that needs a boost. \"China is living in the future when it comes to EV charging,\" Electrek's Fred Lambert wrote. An automated parking process transports EVs to charging stalls and then parks them after they are recharged",
+        "publish_date": "2026-03-28T07:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chinese company unveils ceiling-crawling robots th..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Republican Brutally Rips White House’s ‘****' Parody Site For Farmers",
+        "url": "https://sg.news.yahoo.com/news/articles/republican-brutally-rips-white-house-214158363.html",
+        "content": "“They should delete the tweet and the URL,” he added. The URL “OnlyFarms.gov” directs users to a page on the White House website about agricultural initiatives. “Can you arrest Epstein’s co-conspirators instead of riffing on a **** site?” Massie asked in...",
+        "publish_date": "2026-03-29T06:41:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Republican Brutally Rips White House’s ‘****' Paro..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-03-29T08:20:18.743933+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
