@@ -1,0 +1,53 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Mapletree leans into core strength in US logistics as it winds down student housing fund",
+        "url": "https://www.businesstimes.com.sg/property/mapletree-leans-core-strength-us-logistics-it-winds-down-student-housing-fund",
+        "content": "Prokup oversees the group’s non-real estate investment trust (Reit) businesses in the US. Decoding Asia newsletter: your guide to navigating Asia in a new global order. Sign up here to get Decoding Asia newsletter",
+        "publish_date": "2026-03-30T08:19:25.489567+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mapletree leans into core strength in US logistics..."
+      },
+      {
+        "site": "The Business Times",
+        "title": "Student housing still core to strategy, Mapletree says after fund wind-down",
+        "url": "https://www.businesstimes.com.sg/property/student-housing-still-core-strategy-mapletree-says-after-fund-wind-down",
+        "content": "The group will launch a new UK student housing fund this year. Decoding Asia newsletter: your guide to navigating Asia in a new global order. Sign up here to get Decoding Asia newsletter. Delivered to your inbox. All rights reserved.",
+        "publish_date": "2026-03-30T08:19:31.102468+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Student housing still core to strategy, Mapletree ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-03-30T08:21:46.348770+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Katy Perry and Justin Trudeau Poke Fun at Their ‘Age Gap’ After Taking Age Quiz on Date Night",
+        "url": "https://sg.news.yahoo.com/katy-perry-justin-trudeau-poke-045601675.html",
+        "content": "The couple made their relationship Instagram official in December 2025 after months of public sightings together. Their first official public appearance was in October 2025. Katy Perry and Justin Trudeau are keeping things playful in their relationship. Perry’s result came in at 33.1 years old, more than eight years younger than her actual age. Trudeau’s result read 43, which is about 11 years younger than his real age",
+        "publish_date": "2026-03-28T13:56:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Katy Perry and Justin Trudeau Poke Fun at Their ‘A..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-30T08:21:46.348803+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
