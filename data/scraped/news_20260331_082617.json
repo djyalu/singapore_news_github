@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "How to get a billion passengers to fly in India",
+        "url": "https://www.straitstimes.com/asia/how-to-get-a-billion-passengers-to-fly-in-india?ref=visual-stories",
+        "summary": "📰 정부 관련 뉴스\\n📢 How to get a billion passengers to fly in India...",
+        "content": "Mr Fareed Sheikh played it cool. “It’s my first job, and I won’t get many days off to take 22-hour train rides both ways. A flight saves time,” he told The Straits Times. From there, it would be an hour’s rail journey to Parbhani. “Now that I am taking my first flight, I believe there will be many more,” he said. That is what the government and airlines in India are banking on",
+        "publish_date": "2026-03-31T08:23:01.545423+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/australia-investigates-tech-giants-over-230306841.html",
+        "summary": "📰 정부, 취업, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Weak adherence by the biggest platforms could undermine the momentum of governments considering similar restrictions. eSafety Commissioner Julie Inman Grant said Meta's Facebook ‌and Instagram, Snapchat, TikTok ⁠and Google's YouTube had been flagged for potential non-compliance and the watchdog was gathering evidence for possible penalties",
+        "publish_date": "2026-03-31T08:03:06+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Thief strikes Woodlands stall, grabs $1,000 worth of necklaces during owner's 5-minute toilet break",
+        "url": "https://www.asiaone.com/singapore/thief-steals-1000-worth-necklaces-woodlands",
+        "summary": "📰 법률, 기술, 국제 관련 뉴스\n📢 Thief strikes Woodlands stall, grabs $1,000 worth of necklaces during owner's 5-...",
+        "content": "When the owner returned some five minutes later and checked the inventory, the owner found that five silver necklaces, amounting to about $1,000, were missing, reported the Chinese daily. The owner then called the police and asked Ding for CCTV footage. @asiaone A 5-minute toilet break for a Woodlands stall owner turned from relief to heartbreak as a man...",
+        "publish_date": "2026-03-30T13:06:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on 19-year-old male last seen in Tampines",
+        "url": "https://www.asiaone.com/singapore/police-missing-person-mohamed-fareed-gab-andrei",
+        "summary": "📰 주택, 법률, 기술 관련 뉴스\n📢 Police appeal for information on 19-year-old male last seen in Tampines",
+        "content": "The said address is part of a HDB precinct located across the road from Temasek Polytechnic. All information will be kept strictly confidential, the police said.",
+        "publish_date": "2026-03-30T19:49:25+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-03-31T08:26:17.470938+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
