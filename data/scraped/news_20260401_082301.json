@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Understanding the 6% Subsidy Recovery Mechanism for HDB Plus Flats",
+        "url": "https://sg.news.yahoo.com/understanding-6-subsidy-recovery-mechanism-031800129.html",
+        "content": "Securing a public housing flat in a central, highly connected location is a primary objective for many Singaporean families. Historically, flats in these premium zones commanded significant premiums on the open market, creating an affordability gap for newer generations. This upfront affordability, however, necessitates a structured financial trade-off when the property is eventually sold. As of February 2026, the ‘Plus’ housing category has established a 6% subsidy recovery standard. Owners must return 6% of the resale price to HDB, ensuring fairness for those receiving higher initial subsidies.",
+        "publish_date": "2026-03-30T12:18:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Understanding the 6% Subsidy Recovery Mechanism fo..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Blackpink star Lisa becomes first K-Pop artist to announce Las Vegas residency",
+        "url": "https://sg.news.yahoo.com/blackpink-star-lisa-becomes-first-121732282.html",
+        "content": "“Viva La Lisa” will mark the first time a K-Pop artist has staged a Las Vegas residency. Fans can sign up for the presale from April 1 through April 19. No code is needed for artist presales on Ticketmaster. Lisa will join the long line of iconic performers who have headlined stays at the Colosseum. Since the venue opened in 2003, stars who have had a residency there include Celine Dion, Elton John, Cher, Shania Twain, Reba McEntire, Mariah Carey, Usher, Adele and, most recently, Kelly Clarkson. Lisa’s residency follows the release of the rapper’s debut solo album Alter Ego last year and Blackpink’s...",
+        "publish_date": "2026-03-31T13:50:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Blackpink star Lisa becomes first K-Pop artist to ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Singtel offers 'token of appreciation', free data after recent network issues",
+        "url": "https://www.asiaone.com/singapore/singtel-mobile-goodwill-rebate-free-data-incidents",
+        "content": "Singtel mobile customers on Tuesday (March 31) reported receiving SMS notifications informing them of a \"goodwill rebate\" on their upcoming bill. Messages shared with AsiaOne read: \"We sincerely apologise for the recent network disruption. We know how important staying connected is. As a small gesture, you'll receive a $5/$10 goodwill rebate on your bill — no action needed.\"",
+        "publish_date": "2026-03-31T22:54:49+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Singtel offers 'token of appreciation', free data ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-01T08:23:01.797843+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
