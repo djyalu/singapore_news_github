@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Inside China’s matchmaking boom as men face rising expectations and fewer women",
+        "url": "https://www.channelnewsasia.com/cna-insider/china-matchmakers-boom-men-rising-expectations-fewer-women-love-6026311",
+        "summary": "📰 기술 관련 뉴스\\n📢 Inside China’s matchmaking boom as men face rising expectati...",
+        "content": "He works as an information technology product manager, earning 300,000 yuan (US$43,000) a year. He owns a flat in Chengdu, while his parents own another that currently stands empty. He drives a car, keeps active and comes from a stable family. Seeing that he was also “pretty good-looking”, she asked: “Why are you still single?”. But his situation is far from unusual",
+        "publish_date": "2026-04-02T08:24:53.250597+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-04-02T08:27:32.726569+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
