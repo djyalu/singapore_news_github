@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "A sip of heritage at Canning Bar & Lounge",
+        "url": "https://www.businesstimes.com.sg/lifestyle/sip-heritage-canning-bar-lounge",
+        "content": "The colonial-style lobby bar at Mett Singapore offers tipples with spices from its lush surroundings. The building was previously home to Hotel Fort Canning, before its acquisition by Dubai-based Sunset Hospitality Group in 2024. After a year-long revamp, it reopened last October as luxury hotel Mett Singapore. Though its interiors have been refurbished, the hotel’s historic facade has been carefully preserved. The property has changed hands several times in the past century",
+        "publish_date": "2026-04-03T08:20:49.997587+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 A sip of heritage at Canning Bar & Lounge"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-04-03T08:23:01.126031+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Hegseth tells US Army chief of staff to step down immediately",
+        "url": "https://sg.news.yahoo.com/news/articles/hegseth-tells-us-army-chief-221805106.html",
+        "content": "US Army Chief of Staff Gen. Randy George has been told to retire immediately by Defense Secretary Pete Hegseth, a Pentagon official told CNN. Chief Pentagon spokesman Sean Parnell confirmed George’s retirement Thursday, writing on X, “General Randy A. CBS News first reported George’s ousting. A Defense Department official confirmed the accuracy of CBS News’ report",
+        "publish_date": "2026-04-03T07:18:05+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Hegseth tells US Army chief of staff to step down ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-03T08:23:01.126065+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
