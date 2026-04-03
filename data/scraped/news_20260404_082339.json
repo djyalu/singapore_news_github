@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pope leads torch-lit Colosseum procession before Easter",
+        "url": "https://sg.news.yahoo.com/pope-leads-torch-lit-colosseum-220513911.html",
+        "content": "\"We need peace in the Holy Land,\" she told AFP. \"People like you and me listen, but the governments don't. They still do whatever they want. They promise and they don't deliver,\" the 61-year-old said. \"The pope is the only purely selfless political leader. There's no hidden agenda, there's no ambiguity in his message. And that's his strength,\" he said",
+        "publish_date": "2026-04-04T07:05:13+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pope leads torch-lit Colosseum procession before E..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Passengers Left in Middle of Busy Traffic After Over 100 Self-Driving Taxis Stop Running in 'System Malfunction'",
+        "url": "https://sg.news.yahoo.com/passengers-left-middle-busy-traffic-012029103.html",
+        "content": "No injuries were reported, though videos posted online showed widespread disruption and at least one crash involving a halted vehicle. The incident adds to growing concerns about autonomous vehicle safety, following recent issues in the U.S. involving driverless cars. Videos circulating on social media showed driverless cars sitting motionless in active roadways, some blocking lanes and intersections",
+        "publish_date": "2026-04-02T10:20:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Passengers Left in Middle of Busy Traffic After Ov..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-04T08:23:39.298563+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
