@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Nancy Mace Blasts Trump's Acting AG After Epstein Comment: 'Not Impressed'",
+        "url": "https://sg.news.yahoo.com/news/articles/nancy-mace-blasts-trumps-acting-221951432.html",
+        "content": "“That was very disappointing to hear. Keep independent journalism alive. Blanche, formerly Trump’s personal defense lawyer, took over as acting attorney general following Pam Bondi’s removal earlier this week",
+        "publish_date": "2026-04-05T07:19:51+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nancy Mace Blasts Trump's Acting AG After Epstein ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "New train for Cross Island Line gets first public reveal by Jeffrey Siow",
+        "url": "https://www.asiaone.com/singapore/mrt-cross-island-line-cr151-train-jeffrey-siow",
+        "content": "The acting minister also met up with Singaporean businesses based in Jinan to understand their current business priorities. He also took time to visit Qingdao rail depot on Thursday (April 2), to understand their latest rail technologies.",
+        "publish_date": "2026-04-03T19:04:46+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New train for Cross Island Line gets first public ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Orange marmalade recalled over potential presence of glass shards: SFA",
+        "url": "https://www.asiaone.com/singapore/sfa-recall-alain-milliat-orange-marmalade",
+        "content": "Those who have purchased the implicated product should not consume it. People who have consumed the product and have concerns about their health should seek medical attention. No part of this story can be reproduced without the permission of AsiaOne.",
+        "publish_date": "2026-04-04T11:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Orange marmalade recalled over potential presence ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-05T08:20:07.614108+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
