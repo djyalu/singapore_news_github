@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Managing million-dollar sinking funds, costly repairs: Do condo councils need mandatory training?",
+        "url": "https://www.channelnewsasia.com/singapore/condo-councils-sinking-funds-training-members-bca-6025621",
+        "summary": "📰 싱가포르, 개발 관련 뉴스\\n📢 Managing million-dollar sinking funds, costly repairs: Do co...",
+        "content": "SINGAPORE: Like most ageing developments, the bill to keep Pine Grove condominium running has grown steadily over the years. Such works are typically funded by the condominium’s sinking fund, which Management Corporation Strata Title (MCST) councils draw on for major repairs",
+        "publish_date": "2026-04-06T08:20:17.645312+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Keeping old condos liveable will take financial discipline, not just new rules and subsidies",
+        "url": "https://sg.news.yahoo.com/keeping-old-condos-liveable-financial-210000484.html",
+        "summary": "📰 싱가포르, 정부, 개발 관련 뉴스\n📢 Keeping old condos liveable will take financial discipline, not just new rules a...",
+        "content": "SINGAPORE – At Lakeview Estate in Upper Thomson Road, ageing lifts have become more than just an inconvenience. The 49-year-old development has three blocks, with each lift serving alternate floors. When one breaks down, residents on those floors – including the elderly and wheelchair users – effectively lose lift access. Lakeview Estate’s dilemma is not unique. More than 1,000 of Singapore’s 3,750 private residential developments are at least 30 years old. But many may not have collected adequate sinking funds for such urgent essential repairs, especially since maintenance costs have risen over the years. This is why the Government is reviewing the Building (Strata Management) Act, with...",
+        "publish_date": "2026-04-06T06:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "50 evacuated, 4 taken to hospital after Rivervale Link condo fire",
+        "url": "https://www.asiaone.com/singapore/50-evacuated-4-taken-hospital-after-rivervale-link-condo-fire",
+        "summary": "📰 싱가포르, 부동산, 기술 관련 뉴스\n📢 50 evacuated, 4 taken to hospital after Rivervale Link condo fire",
+        "content": "When SCDF arrived at the scene, black smoke was observed to be emitting from a third-floor unit. Firefighters extinguished the fire, which happened in the bedroom, using a water jet. About 50 people were evacuated from the block, while four people had evacuated from the unit before SCDF arrived. The latter were assessed for smoke inhalation and taken to Singapore General Hospital. SCDF said preliminary findings show the cause of fire was likely from an electrical origin in the bedroom.",
+        "publish_date": "2026-04-05T11:59:09+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-06T08:23:00.970516+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
