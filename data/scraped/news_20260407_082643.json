@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump lashes out at 'paper tiger' NATO while re-upping Greenland claim",
+        "url": "https://www.channelnewsasia.com/world/trump-lashes-out-paper-tiger-nato-re-upping-greenland-claim-6039801",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump lashes out at 'paper tiger' NATO while re-upping Green...",
+        "content": "Trump's remarks came ahead of a visit by the defence alliance's chief Mark Rutte scheduled for later this week. \"Look, we went to NATO,\" Trump recalled. \"I didn't ask very strongly, I just said, 'Hey, if you want to help, great.'\"",
+        "publish_date": "2026-04-07T08:24:01.859868+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-04-07T08:26:43.910242+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
