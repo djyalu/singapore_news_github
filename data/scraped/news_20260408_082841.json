@@ -1,0 +1,53 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Trump’s threat to Iran shocks global leaders, unnerves some Republicans",
+        "url": "https://www.businesstimes.com.sg/international/global/trumps-threat-iran-shocks-global-leaders-unnerves-some-republicans",
+        "content": "“A whole civilisation will die tonight, never to be brought back again. Trump’s threat drew harsh criticism from around the globe. Some of Trump’s fellow Republicans, including former US Representative and one-time staunch Trump ally Marjorie Taylor...",
+        "publish_date": "2026-04-08T08:26:19.312144+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump’s threat to Iran shocks global leaders, unne..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-04-08T08:28:41.846041+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "67,000 traffic violations detected by new TP cameras during 11-month trial: Shanmugam",
+        "url": "https://www.asiaone.com/singapore/traffic-violation-enforcement-cameras-67000-offences",
+        "content": "In his written reply, the minister revealed that 67,000 cases of traffic violations were detected between April 2025 and February this year. These violations include running red lights, illegal U-turns, and crossing double white lines",
+        "publish_date": "2026-04-07T21:53:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 67,000 traffic violations detected by new TP camer..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Neighbours get into vulgar argument over noisy child: 'We all need to sleep'",
+        "url": "https://www.asiaone.com/singapore/neighbours-get-vulgar-argument-over-noisy-child-we-all-need-sleep",
+        "content": "Two neighbours were caught on video getting into a heated argument over a noisy child, with the confrontation escalating into an expletive-filled exchange. The two-minute 31-second clip, taken from inside a flat, was shared on April 6 on Facebook page TheSGDaily. The location of the incident was not disclosed. He then adds that he was a former environment officer, saying: \"I can summon people\". The other man nods but appears unimpressed, replying: \"But we all need to sleep.\". The neighbour then responds: \"You must control your child. You must make a way (for him) to follow because we all...",
+        "publish_date": "2026-04-07T18:47:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Neighbours get into vulgar argument over noisy chi..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-08T08:28:41.846068+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
