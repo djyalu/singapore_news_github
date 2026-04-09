@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Worker found unconscious in pipe at Tuas shipyard dies",
+        "url": "https://www.asiaone.com/singapore/worker-found-unconscious-pipe-dies-tuas-shipyard",
+        "content": "The site is currently occupied by local engineering company Seatrium. According to the ministry, the deceased was employed by Hwa Leong Offshore Engineering",
+        "publish_date": "2026-04-09T12:50:36+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Worker found unconscious in pipe at Tuas shipyard ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-10T08:30:53.920023+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
