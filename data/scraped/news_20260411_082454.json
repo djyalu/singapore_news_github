@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "18 motorists caught for traffic offences at Woodlands Checkpoint in 3-day operation",
+        "url": "https://sg.news.yahoo.com/18-motorists-caught-traffic-offences-034500525.html",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 18 motorists caught for traffic offences at Woodlands Checkp...",
+        "content": "SINGAPORE – Motorists should follow traffic laws and maintain lane discipline while using Singapore’s land checkpoints, the Immigration and Checkpoints Authority (ICA) said. This comes as 18 motorists were caught at Woodlands Checkpoint for traffic offences in a recent enforcement operation",
+        "publish_date": "2026-04-10T12:45:00+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Malaysian motorcyclist taken to hospital after PIE accident involving MPV",
+        "url": "https://www.asiaone.com/singapore/malaysia-motorcycle-singapore-mpv-pie-accident",
+        "summary": "📰 싱가포르, 교통, 법률 관련 뉴스\n📢 Malaysian motorcyclist taken to hospital after PIE accident involving MPV",
+        "content": "The accident happened at about 4.55pm before the Jalan Bahar exit. One traffic police motorcycle and a Land Transport Authority traffic marshal are also seen near the fallen motorcycle. The 30-year-old Malaysian male motorcyclist is assisting with ongoing police investigations. #sgnews #Singapore #Malaysia #Road #Accident #Police. Responding to AsiaOne's queries, the police and Singapore Civil Defence Force said the motorcyclist was taken conscious to hospital. The police added that the motorcyclist is assisting with ongoing police investigations. No part of this story can be reproduced without the permission of AsiaOne.",
+        "publish_date": "2026-04-10T12:01:04+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Transit rights: An international principle that cannot be negotiated",
+        "url": "https://www.asiaone.com/singapore/transit-rights-international-principle-cannot-be-negotiated",
+        "summary": "📰 법률, 경제, 기술 관련 뉴스\n📢 Transit rights: An international principle that cannot be negotiated",
+        "content": "They are the lifeblood of global trade, energy security, and economic stability. Instability along one strategic route can have far-reaching effects throughout our region. In these straits, international law provides for the...",
+        "publish_date": "2026-04-10T18:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Schoolgirl does 'bringing Japanese culture' trend at zebra crossing, wins hearts",
+        "url": "https://www.asiaone.com/singapore/bartley-secondary-schoolgirl-japanese-bow",
+        "summary": "📰 싱가포르, 교육, 문화 관련 뉴스\n📢 Schoolgirl does 'bringing Japanese culture' trend at zebra crossing, wins hearts",
+        "content": "Though no longer a fresh trend, seeing an earnest schoolgirl do so while flashing a wide smile still drew praises from social media users. It happened at about 7.20am on Wednesday (April 8) along Mount Vernon Road. While some Reddit users pointed out that she was simply doing the \"Bringing Japanese culture to Singapore\" trend, others still welcomed the positivity",
+        "publish_date": "2026-04-10T18:20:06+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-11T08:24:54.531691+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
