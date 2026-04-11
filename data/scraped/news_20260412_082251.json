@@ -1,0 +1,23 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "No job posting, no playbook: Lessons in building a portfolio career",
+        "url": "https://www.businesstimes.com.sg/opinion-features/no-job-posting-no-playbook-lessons-building-portfolio-career",
+        "content": "DeeperDive is a beta AI feature. Refer to full articles for the facts. ALMOST five years ago, I made a decision that unsettled me more than I let on. After three decades in banking, payments and fintech, I stepped away from corporate life without a clear plan. The Covid-19 pandemic forced a pause. Those questions led me to a portfolio career, with board roles across listed companies, financial institutions and the non-profit sector. Decoding Asia newsletter: your guide to navigating Asia in a new global order. Sign up here to get Decoding Asia newsletter. Delivered to your inbox. Higher costs, lower returns: Why are Singaporeans still betting on real estate?",
+        "publish_date": "2026-04-12T08:20:42.492267+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 No job posting, no playbook: Lessons in building a..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-04-12T08:22:51.810559+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
