@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Orban concedes 'painful' defeat to conservative Magyar in Hungary polls",
+        "url": "https://sg.news.yahoo.com/hungarians-vote-closely-watched-election-034550482.html",
+        "content": "\"We have not been entrusted with the responsibility and opportunity to govern. I congratulated the winning party,\" he said. Magyar, 45, a political newcomer and former government insider, posed on social media that Orban \"just called to...",
+        "publish_date": "2026-04-13T05:08:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Orban concedes 'painful' defeat to conservative Ma..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Delays mar vote as crisis-hit Peru picks ninth president in decade",
+        "url": "https://sg.news.yahoo.com/crime-weary-peru-votes-ninth-024836507.html",
+        "content": "Conservative candidates have dominated pre-election polls, raising the prospect Peru could join the growing tide of hard-right leaders in Latin America. \"I want people to vote for an honest president,\" said shopkeeper Anita Medrano, 60. \"Not the old or traditional ones. They already had their chance.\"",
+        "publish_date": "2026-04-13T04:44:15+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Delays mar vote as crisis-hit Peru picks ninth pre..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Is it a Good Deal?: Leedon Residence unit sold for record $5.2 mil profit",
+        "url": "https://sg.news.yahoo.com/good-deal-leedon-residence-unit-091338450.html",
+        "content": "This is also the highest recorded profit for resale transactions at Leedon Residence to date. This translates to an annualised gross return of about 5.3%, based on price appreciation alone. Read also: Is it a Good Deal?: A five-room flat along Jalan Membina was just sold for $1.1 million. Leedon Residence is a freehold condominium located along Leedon Heights in District 10, within the Bukit Timah Planning Area.",
+        "publish_date": "2026-04-10T18:13:38+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Is it a Good Deal?: Leedon Residence unit sold for..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-13T08:24:33.439621+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
