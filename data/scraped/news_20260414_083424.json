@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Peak oil price likely to come 'in next few weeks', US Energy secretary says",
+        "url": "https://www.channelnewsasia.com/world/us-peak-oil-price-next-few-weeks-strait-hormuz-energy-6054576",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Peak oil price likely to come 'in next few weeks', US Energy...",
+        "content": "\"That'll probably hit the peak oil price at that time. That's probably sometime in the next few weeks.\". CNA Games Guess Word Crack the word, one row at a time Buzzword...",
+        "publish_date": "2026-04-14T08:31:31.619736+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/photos-deleted-apple-users-warned-060009576.html",
+        "summary": "📰 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "For a while you’ve been getting messages from Apple saying “your iCloud storage is full”. To keep them you need to upgrade immediately, it says. The emails include a button you can click on to upgrade your iCloud storage",
+        "publish_date": "2026-04-12T15:00:09+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man taken to hospital after accident in Bedok involving car and motorcycle",
+        "url": "https://www.asiaone.com/singapore/man-taken-hospital-after-accident-bedok-involving-car-and-motorcycle",
+        "summary": "📰 싱가포르, 교통, 창이 관련 뉴스\n📢 Man taken to hospital after accident in Bedok involving car and motorcycle",
+        "content": "@asiaone The Grab delivery rider was taken to Changi General Hospital following the accident on Sunday (April 12). Police investigations are ongoing. #sgnews #singapore #Traffic #Accident ♬ original sound - AsiaOne. The driver subsequently gets out of the car to render assistance. The 52-year-old male motorcyclist was taken conscious to Changi General...",
+        "publish_date": "2026-04-13T16:57:33+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-04-14T08:34:24.724649+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
