@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "US, Iran may resume talks this week despite port blockade",
+        "url": "https://www.channelnewsasia.com/world/us-iran-talks-may-resume-war-ceasefire-pakistan-blockade-6055631",
+        "content": "While the US blockade drew angry rhetoric from Tehran, signs that diplomatic engagement might continue helped calm oil markets, pushing benchmark prices below US$100 on Tuesday",
+        "publish_date": "2026-04-15T08:32:18.501036+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US, Iran may resume talks this week despite port b..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-04-15T08:35:05.962984+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
