@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Changi Airport Terminal 2 to have new private terminal and amenities cluster in 2027",
+        "url": "https://sg.news.yahoo.com/changi-airport-terminal-2-private-031400001.html",
+        "content": "The new terminal will feature a deluxe lounge, bar, private suites and bespoke dining. It will also include a versatile, high-end event space designed for larger entourages and private gatherings. Mr Ang Siew Min, CAG’s senior vice-president of airport operations development and airport operations services, said: “Some of today’s travellers seek more than just a comfortable place to...",
+        "publish_date": "2026-04-15T12:14:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Changi Airport Terminal 2 to have new private term..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "2 arrested at MBS for allegedly cheating man into making multiple bank transfers",
+        "url": "https://www.asiaone.com/singapore/police-arrest-two-mbs-cheating-multiple-bank-transfers",
+        "content": "Daniel said in his post that the incident happened at around 3.45am. They had allegedly cheated a male victim into making multiple bank transfers into a designated account. The duo were arrested following the man's report. No part of this story can be reproduced without the permission of AsiaOne.",
+        "publish_date": "2026-04-15T14:31:12+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 2 arrested at MBS for allegedly cheating man into ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Missing 17-year-old male teen last seen in Clementi found",
+        "url": "https://www.asiaone.com/singapore/police-appeal-information-17-year-old-missing-clementi",
+        "content": "[UPDATE: 9pm on April 15]. He was wearing a white t-shirt with a black hooded jacket, blue pants and a white backpack. All information will be kept strictly confidential.",
+        "publish_date": "2026-04-15T19:36:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Missing 17-year-old male teen last seen in Clement..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-16T08:33:46.818955+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
