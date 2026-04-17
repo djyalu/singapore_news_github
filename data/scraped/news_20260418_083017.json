@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Long waits for lessons, tests pushing some learner drivers closer to giving up",
+        "url": "https://www.channelnewsasia.com/today/ground-up/driving-lesson-licence-learner-driver-long-wait-test-centre-6052986",
+        "content": "The 19-year-old nursing student took her time to complete her Basic Driving Theory Test (BTT), a prerequisite before learners can begin practical lessons. She eventually sat the test in November. In her mind, five months seemed like more than enough time to complete her practical lessons before sitting the test. That means her enrolment in the driving course, which lasted a year, is no longer valid. \"Once it expires, you have to pay to renew it,\" she said. Learner drivers in Singapore can choose to book lessons through SSCD or two other large driving centres, which are technically private. The other option is to use self-employed...",
+        "publish_date": "2026-04-18T08:27:38.577092+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Long waits for lessons, tests pushing some learner..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "With a ceasefire in Lebanon, Trump has forced Netanyahu’s hand – again",
+        "url": "https://sg.news.yahoo.com/news/articles/ceasefire-lebanon-trump-forced-netanyahu-205329925.html",
+        "content": "The call that US President Donald Trump predicted didn’t happen, but he left little doubt about what would come next. On Thursday morning, Trump said Israeli Prime Minister Benjamin Netanyahu would speak to Lebanese President Joseph Aoun. Trump declared that it would provide for “a little breathing room.”. Trump wasn’t waiting for a conversation to happen. Just hours later, Trump announced that a ceasefire would begin at midnight. And Netanyahu had little choice but to go along",
+        "publish_date": "2026-04-18T05:53:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 With a ceasefire in Lebanon, Trump has forced Neta..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/labubu-propelled-pop-mart-top-041201850.html",
+        "content": "Labubu's virality propelled Pop Mart to fame last year, with dolls selling out moments after launch. Social media interest around Labubus has dropped, and Pop Mart's stock price has taken a hit. McCaffrey, who has more than 200,000 followers on TikTok, posts blind-box unboxings that rack up millions of views. The 26-year-old said that she is focusing on other characters — or...",
+        "publish_date": "2026-04-17T13:12:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Republicans buck Trump to reject 18-month FISA extension",
+        "url": "https://sg.news.yahoo.com/news/articles/house-approves-short-term-extension-094218669.html",
+        "content": "Ron Wyden, a longtime critic of FISA 702, might block the House-passed extension. But ultimately, he said his House colleagues had assured him “this short-term...",
+        "publish_date": "2026-04-18T05:46:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Republicans buck Trump to reject 18-month FISA ext..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Male Nanyang JC student who allegedly filmed girls in toilet suspended; police investigating",
+        "url": "https://www.asiaone.com/singapore/nyjc-student-film-voyeurism-girls-toilet-caught-suspended",
+        "content": "He claimed he was \"studying\" when he was caught. Disciplinary action has been taken against the student, Pang said, stressing that they view sexual misconduct seriously",
+        "publish_date": "2026-04-17T20:49:52+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Male Nanyang JC student who allegedly filmed girls..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-04-18T08:30:17.655965+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
