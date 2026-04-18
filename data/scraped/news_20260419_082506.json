@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Damaged fibre cables at North-South Corridor project caused display of inaccurate bus timings: LTA",
+        "url": "https://www.channelnewsasia.com/singapore/lta-investigating-inaccurate-bus-arrival-timing-eta-system-april-technical-issues-6065421",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Damaged fibre cables at North-South Corridor project caused ...",
+        "content": "\"The damage resulted in disruptions to the telco services. Preliminary investigations showed that this affected the bus Expected Time of Arrival (ETA) system which uses the affected fibre service cables.\"",
+        "publish_date": "2026-04-19T08:22:27.923409+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Nanyang JC student suspended, police report made after alleged case of sexual misconduct",
+        "url": "https://sg.news.yahoo.com/nanyang-jc-student-suspended-police-123330938.html",
+        "summary": "📰 교육, 법률 관련 뉴스\n📢 Nanyang JC student suspended, police report made after alleged case of sexual mi...",
+        "content": "It is not known when the alleged incident took place. “The student has been suspended from school and will have his conduct grade adversely impacted.”. Mr Pang added that the school’s counsellor has spoken to the student about his actions, and...",
+        "publish_date": "2026-04-17T21:33:30+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Never in my wildest dream': Woman shocked to find crocodile feet served at MBS buffet",
+        "url": "https://www.asiaone.com/lifestyle/woman-shocked-crocodile-feet-mbs-buffet",
+        "summary": "📰 기술 관련 뉴스\n📢 'Never in my wildest dream': Woman shocked to find crocodile feet served at MBS ...",
+        "content": "However, others were more horrified than intrigued. \"Tell me it's AI,\" a comment read. Another read: \"I see the nails and I cannot.\"",
+        "publish_date": "2026-04-18T13:50:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Remove straws but still using plastic cups?' Starbucks patrons riled up over coffee chain's move",
+        "url": "https://www.asiaone.com/singapore/starbucks-patrons-riled-straws",
+        "summary": "📰 싱가포르, 환경, 기술 관련 뉴스\n📢 'Remove straws but still using plastic cups?' Starbucks patrons riled up over co...",
+        "content": "Starbucks Singapore will be removing straws from their condiment bars, and customers are not happy about it. The coffee chain announced the news on their social media platforms on April 17. Enjoy your iced beverages in-store with for-here cups or sip through our sippy lids instead,\" they wrote. Customers who order a Frappuccino or frozen drink can request a straw too. \"Let's make a positive impact together with every sip!\" said Starbucks Singapore. But the environmental move hasn't been well received by the public. In the comments section, many netizens expressed dissatisfaction with the change. One user said this is \"not a welcomed move\", while several urged the coffee chain to...",
+        "publish_date": "2026-04-18T13:35:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-19T08:25:06.616865+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
