@@ -1,0 +1,62 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Oil jumps and stock futures slip as Iran tensions unsettle markets",
+        "url": "https://www.channelnewsasia.com/business/oil-jumps-and-stock-futures-slip-iran-tensions-unsettle-markets-6066891",
+        "content": "This service is not intended for persons residing in the E.U. By clicking subscribe, I agree to receive news updates and promotional material from Mediacorp and Mediacorp’s partners",
+        "publish_date": "2026-04-20T08:23:46.882251+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Oil jumps and stock futures slip as Iran tensions ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Michigan attorney general rejects Trump administration ballot request amid broader push to challenge elections",
+        "url": "https://sg.news.yahoo.com/news/articles/michigan-attorney-general-rejects-trump-220710029.html",
+        "content": "Federal prosecutors want to ensure that ballots from the last presidential election are legally valid because of Wayne County’s “history,” Dhillon...",
+        "publish_date": "2026-04-20T07:07:10+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Michigan attorney general rejects Trump administra..."
+      },
+      {
+        "site": "The New Paper",
+        "title": "Resident fumes over cooking setup with gas cylinder outside Bukit Panjang flat: ‘How is this allowed?’",
+        "url": "https://www.tnp.sg/singapore-seen/resident-fumes-over-cooking-setup-gas-cylinder-outside-bukit-panjang-flat-how-allowed?ref=home-editors-picks",
+        "content": "A Bukit Panjang household has been cooking outside their HDB unit, sparking safety concerns among a nearby resident. “They even installed a big permanent outdoor umbrella with a big table,” said Catwoman. What worries her most, however, is the presence of a gas cylinder. “The gas cylinder is placed under the big table with other big pots,” said Catwoman",
+        "publish_date": "2026-04-17T19:15:38+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Resident fumes over cooking setup with gas cylinde..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "5,000 broadband users facing outage; IMDA investigating alleged NetLink Trust fibre cable cut during construction works",
+        "url": "https://www.asiaone.com/singapore/broadband-internet-issues-singtel-starhub-m1-myrepublic-simba",
+        "content": "Customers of several internet services providers (ISPs) in Singapore, including Singtel, StarHub, M1, MyRepublic and Simba, have reported issues with broadband services on Saturday (April 18). Checks by AsiaOne on outage tracking platform Downdetector at 1.30pm show spikes in reports from around 10.50am. Based on reports from users, broadband internet services were the most commonly reported issue. \"Our engineers are investigating. We apologise for the inconvenience caused,\" a Singtel spokesperson said, adding that further updates will be provided. The ISP added that some connections may not be affected.",
+        "publish_date": "2026-04-18T14:58:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 5,000 broadband users facing outage; IMDA investig..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Never in my wildest dream': Woman shocked to find crocodile feet served at MBS buffet",
+        "url": "https://www.asiaone.com/lifestyle/woman-shocked-crocodile-feet-mbs-buffet",
+        "content": "However, others were more horrified than intrigued. \"Tell me it's AI,\" a comment read. Another read: \"I see the nails and I cannot.\"",
+        "publish_date": "2026-04-18T13:50:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Never in my wildest dream': Woman shocked to find..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "The New Paper"
+    ],
+    "timestamp": "2026-04-20T08:26:39.205517+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
