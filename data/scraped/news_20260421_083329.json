@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Lori Chavez-DeRemer out as Labor secretary",
+        "url": "https://sg.news.yahoo.com/news/articles/lori-chavez-deremer-labor-secretary-224121051.html",
+        "content": "Keith Sonderling will serve as acting secretary of the Department of Labor, Cheung added. CNN has asked the White House for more details, including when Chavez-DeRemer’s departure will take effect. “I am proud that we made significant progress in advancing President Trump’s...",
+        "publish_date": "2026-04-21T07:41:21+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Lori Chavez-DeRemer out as Labor secretary"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "President Tharman's mother dies aged 99",
+        "url": "https://www.asiaone.com/singapore/president-tharmans-mother-dies-aged-99",
+        "content": "\"We ask that the family's privacy be respected during this time,\" the statement said. She was married to Emeritus Professor K. Shanmugaratnam, a leading pathologist who founded the Singapore Cancer Registry",
+        "publish_date": "2026-04-20T18:05:10+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 President Tharman's mother dies aged 99"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "80 residents evacuated after fire breaks out at Choa Chu Kang condo; no injuries reported",
+        "url": "https://www.asiaone.com/singapore/80-residents-evacuated-after-fire-breaks-out-choa-chu-kang-condo-no-injuries-reported",
+        "content": "The user also reminded residents to be cautious when charging devices overnight. \"When we came downstairs, we saw very thick black smoke coming out of the windows. At around 8.30am, firefighters came down to check if anyone was injured,\" she said. \"By then, the smoke had subsided and residents from the other blocks were allowed to return.\"",
+        "publish_date": "2026-04-20T17:07:14+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 80 residents evacuated after fire breaks out at Ch..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-21T08:33:29.216071+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
