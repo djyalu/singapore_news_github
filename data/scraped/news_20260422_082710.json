@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "RFK Jr. Brazenly Says Measles Outbreaks Not His Fault: ‘I’ve Never Been Anti-Vaccine’",
+        "url": "https://sg.news.yahoo.com/news/articles/rfk-jr-brazenly-says-measles-224825288.html",
+        "content": "WASHINGTON – Health and Human Services Secretary Robert F. “I’ve never been anti-vaccine,” Kennedy repeatedly claimed during testimony to a House committee about President Donald Trump’s 2027 budget request. That’s not true, of course. This HHS secretary is easily the most famous critic of vaccines in the country. For hours, Democrats went after Kennedy for fueling distrust of vaccines as measles cases have exploded around the country",
+        "publish_date": "2026-04-22T07:48:25+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 RFK Jr. Brazenly Says Measles Outbreaks Not His Fa..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Dramas, variety shows: IMDA and South Korea's SBS formalise partnership to co-produce content for global audiences",
+        "url": "https://www.asiaone.com/singapore/dramas-variety-shows-imda-and-south-koreas-sbs-formalise-partnership-co-produce-content",
+        "content": "Projects may include long-form dramas, variety shows, micro-dramas, non-fiction content and other entertainment formats, the statement said. Under the MOU, media companies and professionals from both countries will collaborate across the entire media value chain — from development and production to post-production and...",
+        "publish_date": "2026-04-21T18:05:09+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dramas, variety shows: IMDA and South Korea's SBS ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Beloved Yio Chu Kang Secondary teacher dies; tributes pour in",
+        "url": "https://www.asiaone.com/singapore/yio-chu-kang-secondary-school-teacher-dies-tributes-pour-in",
+        "content": "A beloved maths teacher at Yio Chu Kang Secondary School recently died, spurring messages of love and grief from students. \"Her commitment, compassion and steadfast belief in her students left a lasting impact on many lives,\" wrote the post. \"She will be remembered with great respect and fondness.\". Many netizens, seemingly students, flooded the comments sending their condolences, adding they miss her and will never forget her. You were definitely the best physics teacher I’ve ever had, rest in peace Ms Chia.\"",
+        "publish_date": "2026-04-21T13:16:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Beloved Yio Chu Kang Secondary teacher dies; tribu..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-22T08:27:10.625098+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
