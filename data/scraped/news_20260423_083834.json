@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US Navy Secretary Phelan ousted as naval blockade of Iran continues",
+        "url": "https://sg.news.yahoo.com/news/articles/navy-secretary-abruptly-leaves-job-215332557.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 US Navy Secretary Phelan ousted as naval blockade of Iran co...",
+        "content": "It was not immediately clear which he chose. The White House directed CNN to a statement from Parnell. “We wish him well in his future endeavors. Undersecretary Hung Cao will become Acting Secretary of the Navy.”",
+        "publish_date": "2026-04-23T07:50:57+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Dengue cases from January to March fall nearly 30% from previous quarter",
+        "url": "https://www.asiaone.com/singapore/dengue-cases-january-march-fall-nearly-30-previous-quarter",
+        "summary": "📰 기술 관련 뉴스\n📢 Dengue cases from January to March fall nearly 30% from previous quarter",
+        "content": "Dengue cases fell by about 66 per cent from 1,222 in the same period last year. One death was reported in the last three months, the agency said. Among the 24 clusters, 22 were closed in the same period. The programme, which will see the release of male mosquitoes carrying the...",
+        "publish_date": "2026-04-22T17:18:22+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcyclist swerves between lanes on PIE, gets rear-ended by car and falls in viral video",
+        "url": "https://www.asiaone.com/singapore/motorcyclist-swerve-pie-rear-ended-toyota-accident",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcyclist swerves between lanes on PIE, gets rear-ended by car and falls in v...",
+        "content": "The rider then swerves from the third lane to the first lane. The clip has been viewed more than 130,000 times as of Wednesday afternoon, with many users chiding the rider's apparently reckless behaviour. \"This one really ride like his grandfather’s road,\" wrote one user.",
+        "publish_date": "2026-04-22T16:10:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-23T08:38:34.057234+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
