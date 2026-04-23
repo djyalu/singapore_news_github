@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Stocks mostly fall as US-Iran peace talks stall and oil prices rise",
+        "url": "https://www.channelnewsasia.com/business/oil-prices-global-stocks-middle-east-iran-us-peace-talks-6076641",
+        "content": "US investors were more preoccupied with high oil prices on Thursday than most recent days, said Art Hogan of B",
+        "publish_date": "2026-04-24T08:32:50.119303+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Stocks mostly fall as US-Iran peace talks stall an..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says Lebanon and Israel agree to extend Israel-Hezbollah ceasefire by 3 weeks",
+        "url": "https://www.channelnewsasia.com/world/lebanon-israel-us-three-week-ceasefire-extension-trump-6077421",
+        "content": "Trump said the meeting between the ambassadors of Israel and Lebanon to the United States went “very well”. The meeting was the second high-level talk between the two countries since last week. The initial 10-day ceasefire, which took effect last Friday, had been due to expire on Monday",
+        "publish_date": "2026-04-24T08:33:07.548927+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says Lebanon and Israel agree to extend Isra..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Child taken to hospital after foot trapped in Bugis Junction escalator",
+        "url": "https://sg.news.yahoo.com/child-taken-hospital-foot-trapped-132500496.html",
+        "content": "The child was then taken to KK Women’s and Children’s Hospital. Chinese-language daily Lianhe Zaobao reported that the victim was a girl. The incident took place on an escalator linking the ground floor and the...",
+        "publish_date": "2026-04-22T22:25:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Child taken to hospital after foot trapped in Bugi..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says Israel-Lebanon ceasefire to be extended by three weeks",
+        "url": "https://sg.news.yahoo.com/trump-hosts-israel-lebanon-talks-212017886.html",
+        "content": "In the Oval Office, Trump said both Lebanese President Joseph Aoun and Israeli Prime Minister Benjamin Netanyahu would visit the White House \"in the coming weeks\". \"They do have Hezbollah to think about,\" he said. Speaking in the Oval Office with Trump, Lebanese...",
+        "publish_date": "2026-04-24T07:50:56+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says Israel-Lebanon ceasefire to be extended..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US special forces soldier arrested after allegedly winning $400,000 on Maduro raid",
+        "url": "https://sg.news.yahoo.com/news/articles/us-special-forces-soldier-arrested-221424478.html",
+        "content": "The outsized trade involved with Operation Absolute Resolve caught the attention of law enforcement almost immediately. He wagered about $32,000 that Maduro would be “out” by January. The bet was a long-shot. Van Dyke is facing five criminal charges and will make his first court appearance in North Carolina. Van Dyke is an active duty solider stationed at Fort Bragg. No attorney has been listed for him on the court docket. He allegedly made 13 bets from December 27 to January 2, hours before the overnight capture. Prosecutors said Van Dyke sent his more than $400,000 in profits to a foreign cryptocurrency vault before he...",
+        "publish_date": "2026-04-24T07:14:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US special forces soldier arrested after allegedly..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-24T08:35:41.594899+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
