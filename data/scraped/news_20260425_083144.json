@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "China will send giant pandas to Atlanta again",
+        "url": "https://sg.news.yahoo.com/china-send-giant-pandas-atlanta-041301474.html",
+        "content": "BEIJING (AP) — Atlanta will have giant pandas again. in Beijing's latest efforts of panda diplomacy despite tensions with Washington, less than a month before a much-anticipated visit by U.S. President Donald Trump to Beijing. Chinese experts provided technical guidance on the upgrades, it said",
+        "publish_date": "2026-04-24T13:13:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China will send giant pandas to Atlanta again"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-25T08:31:44.233713+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
