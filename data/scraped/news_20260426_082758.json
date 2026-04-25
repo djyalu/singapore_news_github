@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "$1.90 chicken rice stall in AMK 'no plans to raise prices', says customers mostly elderly",
+        "url": "https://www.asiaone.com/singapore/1-90-chicken-rice-stall-amk",
+        "summary": "📰 교통 관련 뉴스\\n📢 $1.90 chicken rice stall in AMK 'no plans to raise prices', ...",
+        "content": "Fuel costs to transport ingredients have also gone up from $500 to up to $900 per month. However, they also have a central kitchen and direct chicken supply, which helps them control costs. \"The residents around our shop are mainly elderly, and they make up more than half of our customers",
+        "publish_date": "2026-04-25T15:02:00+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-26T08:27:58.794663+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
