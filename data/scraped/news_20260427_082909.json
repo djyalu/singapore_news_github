@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "‘Off to a good start’: Analysts expect OUE Reit to unlock further value from assets after strong Q1 showing",
+        "url": "https://www.businesstimes.com.sg/companies-markets/good-start-analysts-expect-oue-reit-unlock-further-value-assets-after-strong-q1-showing",
+        "content": "Revenue increased 6.7 per cent year on year (yoy) to S$70.5 million from S$66 million. CGSI raised the target price to S$0.44 from S$0.41 in a note on Thursday (Apr 23). DBS, however, maintained its target price at S$0.45 on Wednesday. The counter closed S$0.005 or 1.4 per cent lower at...",
+        "publish_date": "2026-04-27T08:26:51.399988+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ‘Off to a good start’: Analysts expect OUE Reit to..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-04-27T08:29:09.784806+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/tim-cook-built-apple-4-133000909.html",
+        "content": "Tim Cook just gave us the most visible example in corporate history. $350 billion to $4 trillion in market cap. Revenue from $108 billion to over $416 billion. By any financial measure, the most successful CEO succession ever. And yet he’s stepping down. The numbers are real. But they hide the real story. Cook succeeded Steve Jobs because he refused to become him. In 2011, with Jobs gone and the world watching, the gravitational pull was to imitate. To ask “what would Steve do?” in every room. To wear the predecessor’s identity as armour. He led as who he actually was. A supply chain thinker who believed values could be a competitive advantage. He took Apple into services and wearables. He turned privacy into a brand. Those weren’t Jobs moves. They were Cook moves. And they worked because the person and the position matched.",
+        "publish_date": "2026-04-25T22:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-27T08:29:09.784861+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
