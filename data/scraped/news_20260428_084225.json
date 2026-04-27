@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Why your body feels achy and uneven: 5 everyday habits that strain one side more than the other",
+        "url": "https://www.channelnewsasia.com/wellness/how-fix-muscle-imbalance-daily-habits-body-aches-6072471",
+        "content": "This difference, known as muscle imbalance, is very common – even in those who don’t play sports, according to physiotherapists. “Everyone has them,” said senior physiotherapist Deon Tan from Changi General Hospital. “Muscle imbalances can happen when some muscles get tight while others do not get used enough and become weaker.\". A common reason, Tan said, is hand dominance. You may feel like the oft-used side feels tighter or stiffer than the other, said Philip Bezgoubov, a physiotherapist with Core Concepts. “The resting position of the joint may also change slightly.”",
+        "publish_date": "2026-04-28T08:39:43.370400+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Why your body feels achy and uneven: 5 everyday ha..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'A chance we once only dreamed of': Baby with rare genetic disorder successfully receives $2.4m treatment",
+        "url": "https://www.asiaone.com/singapore/baby-faziq-successful-treatment-zolgensma-sma",
+        "content": "After successfully raising the $2.4 million needed to save their child from a rare genetic disorder, baby Faziq finally received treatment last Wednesday (April 22). \"As a family, we felt incredibly grateful and relieved",
+        "publish_date": "2026-04-27T22:50:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'A chance we once only dreamed of': Baby with rare..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-04-28T08:42:25.712510+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
