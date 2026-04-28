@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump, unhappy with latest peace proposal, says Iran 'figuring out its leadership'",
+        "url": "https://www.channelnewsasia.com/world/trump-unhappy-latest-peace-proposal-says-iran-figuring-out-its-leadership-6085201",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump, unhappy with latest peace proposal, says Iran 'figuri...",
+        "content": "But Trump wants nuclear issues dealt with from the outset, a US official briefed on Trump's Monday meeting with his advisers said",
+        "publish_date": "2026-04-29T08:41:23.456101+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "UAE leaves OPEC and OPEC+ in huge blow to global oil producers' group",
+        "url": "https://www.channelnewsasia.com/world/uae-leave-opec-oil-energy-producer-6086486",
+        "summary": "📰 장관 관련 뉴스\\n📢 UAE leaves OPEC and OPEC+ in huge blow to global oil produce...",
+        "content": "The country said it would leave the organisations effective May 1. UAE Energy Minister Suhail Mohamed al-Mazrouei told Reuters the decision was taken after a careful look at the regional power's energy strategies",
+        "publish_date": "2026-04-29T08:41:36.597179+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/sectors/technology/articles/musk-lawyer-says-openai-stole-164130414.html",
+        "summary": "📰 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "\"That’s my concern.”. Musk, who founded automaker Tesla and rocket company SpaceX, characterized OpenAI as his brainchild as well. \"It was specifically meant to be for a charity that...",
+        "publish_date": "2026-04-29T07:12:19+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-04-29T08:44:21.906924+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
