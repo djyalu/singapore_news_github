@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump administration fires independent board overseeing the National Science Foundation",
+        "url": "https://sg.news.yahoo.com/trump-administration-fires-independent-board-174839104.html",
+        "content": "Trump\" stating that their position was “terminated, effective immediately.”. “I wasn’t entirely surprised, to be honest,” said dismissed board member Keivan Stassun in an email. Stassun, who works at Vanderbilt University, added that the decision was “enormously disappointing.”. It's typically made up of 25 members appointed by the president who serve staggered, six-year terms. The fired scientists hail from academia and industry and specialize in areas including astronomy, math, chemistry and aerospace engineering.",
+        "publish_date": "2026-04-28T02:48:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump administration fires independent board overs..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Childcare centre teacher used pen to stab special needs boy's head multiple times",
+        "url": "https://www.asiaone.com/singapore/childcare-centre-teacher-used-pen-stab-special-needs-boys-head-multiple-times",
+        "content": "Upon the mother’s insistence, the principal reviewed CCTV footage, which revealed the offence. She will now be sentenced on June 22. Deputy Public Prosecutor Emily Koh said the woman had been an early childhood...",
+        "publish_date": "2026-04-29T17:27:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Childcare centre teacher used pen to stab special ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-04-30T08:43:32.055574+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
