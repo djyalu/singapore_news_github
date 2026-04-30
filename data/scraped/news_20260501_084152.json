@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "How this group of friends helped find 2 missing girls last seen in Pasir Ris",
+        "url": "https://www.asiaone.com/singapore/how-group-friends-helped-find-2-missing-girls-last-seen-pasir-ris",
+        "content": "A chance encounter helped a group of friends find two teenage girls missing since Monday (April 27). Before they started filming the encounter with the girls, the boys told AsiaOne that they were able to identify the pair who approached them twice while camping. That startled the pair and they walked away.",
+        "publish_date": "2026-04-30T18:05:03+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 How this group of friends helped find 2 missing gi..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-01T08:41:52.865615+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
