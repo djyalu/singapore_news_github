@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Bus services diverted, 4 taken to hospital after 2-car accident at Old Airport Road",
+        "url": "https://www.asiaone.com/singapore/old-airport-road-accident",
+        "content": "@asiaone The accident happened near Old Airport Road Food Centre at about 10.25pm on Thursday (April 30). #sgnews #Singapore #Police #Road #Accident ♬ original sound - AsiaOne",
+        "publish_date": "2026-05-01T18:54:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Bus services diverted, 4 taken to hospital after 2..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-02T08:42:21.563807+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
