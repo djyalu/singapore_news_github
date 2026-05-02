@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Sumiko at 62: Four simple exercises from a physiotherapist for stronger knees",
+        "url": "https://www.straitstimes.com/singapore/sumiko-at-62-four-simple-exercises-from-a-physiotherapist-for-stronger-knees?ref=visual-stories",
+        "content": "My husband has a ritual whenever he comes home. His knee swelled with blood. The pain was intense but eventually subsided. In his 30s, he underwent ACL reconstruction surgery. It gave him two more decades of a functional knee. He could play tennis but couldn’t run or walk for long. In recent years, osteoarthritis has set in",
+        "publish_date": "2026-05-03T08:30:00.324606+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Sumiko at 62: Four simple exercises from a physiot..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2026-05-03T08:33:52.394944+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
