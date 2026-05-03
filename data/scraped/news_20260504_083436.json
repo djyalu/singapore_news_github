@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "New eczema treatments spark hope, but remain out of reach for many",
+        "url": "https://www.channelnewsasia.com/singapore/eczema-treatment-biologics-dupixent-jak-inhibitors-cost-6078486",
+        "content": "For years, she cycled through treatments, including oral steroids and immunosuppressants. While they provided some relief, they also came with significant side effects. A turning point came in 2021, when she tried new treatments at the National Skin Centre. An oral Janus kinase (JAK) inhibitor – a drug that blocks specific immune responses – worked best. “I live a normal life after taking this new medicine. Otherwise, I can't sleep",
+        "publish_date": "2026-05-04T08:31:13.096382+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New eczema treatments spark hope, but remain out o..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Can Chinese tea pairing rival wine? Jin Ting Wan’s Jacky Zhao Gang thinks so",
+        "url": "https://www.channelnewsasia.com/people/jacky-zhao-gang-jin-ting-wan-chinese-tea-pairing-6085951",
+        "content": "It was late on a Monday afternoon when I met Jacky Zhao Gang. Staff, suppliers and contractors bustled about as the restaurant prepared for dinner service. But Zhao was a picture of calm. To make the experience even more authentic, Zhao penned a poem on a small placard with a calligraphy brush. “This is how the ancients used to enjoy their tea,” he proclaimed.",
+        "publish_date": "2026-05-04T08:31:37.479479+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Can Chinese tea pairing rival wine? Jin Ting Wan’s..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Imagines Himself Swimming Shirtless With Cabinet Cronies In Latest AI Catastrophe",
+        "url": "https://sg.news.yahoo.com/news/articles/trump-imagines-himself-swimming-shirtless-221923230.html",
+        "content": "President Donald Trump baffled nearly everyone with a Truth Social post showcasing an AI-generated image of himself swimming in one of Washington D.C.’s most iconic monuments. Keep independent journalism alive. This past week, the 2,030-foot-long water feature was drained so crews could paint...",
+        "publish_date": "2026-05-04T07:19:23+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump Imagines Himself Swimming Shirtless With Cab..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Premier League: Gyokeres double fires Arsenal past Fulham to put title heat on Manchester City",
+        "url": "https://sg.news.yahoo.com/premier-league-gyokeres-double-fires-arsenal-past-fulham-to-put-title-heat-on-manchester-city-090612034.html",
+        "content": "The points were wrapped up by half-time such was Arsenal’s dominance over their London rivals. You can read full match reports below. Casemiro’s Manchester United farewell tour continued in style as...",
+        "publish_date": "2026-05-03T08:47:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Premier League: Gyokeres double fires Arsenal past..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-05-04T08:34:36.937561+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
