@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "DeSantis Signs His Partisan Gerrymander Map Into Law, Immediately Gets Sued",
+        "url": "https://sg.news.yahoo.com/news/articles/desantis-signs-partisan-gerrymander-map-223720209.html",
+        "content": "Florida’s new gerrymandered congressional map, which Republican Gov. Not long after, he added from his personal account: “Promise made, promise kept.”",
+        "publish_date": "2026-05-05T07:37:20+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 DeSantis Signs His Partisan Gerrymander Map Into L..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Blake Lively and Justin Baldoni Settle Epic ‘It Ends With Us’ Lawsuit",
+        "url": "https://sg.news.yahoo.com/blake-lively-justin-baldoni-settle-202808185.html",
+        "content": "It ends with a settlement. In a carefully crafted joint statement released on Monday, the parties expressed their feelings about moving on",
+        "publish_date": "2026-05-05T05:28:08+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Blake Lively and Justin Baldoni Settle Epic ‘It En..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-05T08:42:43.894560+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
