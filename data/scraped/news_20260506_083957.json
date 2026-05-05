@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Analysts still positive on Mapletree Logistics Trust despite forex, rental headwinds",
+        "url": "https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/analysts-still-positive-mapletree-logistics-trust-despite-forex-rental-headwinds",
+        "content": "[SINGAPORE] Analysts were mixed on Mapletree Logistics Trust (MLT) , citing divergent forecasts after it posted a lower fourth-quarter distribution per unit (DPU) last week. “Persistent foreign exchange headwinds and absence of...",
+        "publish_date": "2026-05-06T08:37:11.873325+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Analysts still positive on Mapletree Logistics Tru..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-05-06T08:39:57.459123+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "About 1,300 missing persons reported annually since 2021: Shanmugam",
+        "url": "https://www.asiaone.com/singapore/1300-missing-persons-annually-2021-shanmugam-sg-alert",
+        "content": "He added that the police will accord priority to vulnerable missing persons, including young children, elderly persons and persons with intellectual...",
+        "publish_date": "2026-05-05T22:20:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 About 1,300 missing persons reported annually sinc..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-06T08:39:57.459157+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
