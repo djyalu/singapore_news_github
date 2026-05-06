@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says Iran deal 'very possible' but threatens strikes if talks fail",
+        "url": "https://sg.news.yahoo.com/us-pauses-guiding-ships-hormuz-094203575.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump says Iran deal 'very possible' but threatens strikes i...",
+        "content": "\"We've had very good talks over the last 24 hours, and it's very possible that we'll make a deal,\" Trump later told reporters. Iranian foreign ministry spokesman Esmaeil Baqaei told local media that the \"US plan and proposal are still under review,\" and that Tehran would communicate its...",
+        "publish_date": "2026-05-07T07:19:51+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Destroyed': Owner looking for vandal who allegedly cut aloe vera plant outside Woodlands shop",
+        "url": "https://www.asiaone.com/singapore/woman-aloe-vera-plant-destroyed",
+        "summary": "📰 비즈니스, 교통, 기술 관련 뉴스\n📢 'Destroyed': Owner looking for vandal who allegedly cut aloe vera plant outside ...",
+        "content": "The incident happened at Seemralicious Beauty Shop, Block 166 Woodlands Street, at around 8.30am. They were \"not just stolen. but destroyed\", the caption in the more than one-minute video read. \"Who walks into a small business and butchers our aloe vera plants like this?\". \"Please make this plant thief viral. Butchering my aloe vera plant (that) we spent so much time on,\" the video said",
+        "publish_date": "2026-05-06T18:10:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Vivian discusses energy security, reaffirms importance of free transit through Strait of Hormuz during Gulf visit",
+        "url": "https://www.asiaone.com/singapore/vivian-balakrishnan-middle-east-visit-hormuz-transit-energy-security",
+        "summary": "📰 싱가포르, 취업, 문화 관련 뉴스\n📢 Vivian discusses energy security, reaffirms importance of free transit through S...",
+        "content": "During his working visit, he met with his counterparts from the United Arab Emirates (UAE), Oman, Saudi Arabia and Qatar. He also discussed areas of cooperation between the Association of Southeast Asian Nations (Asean) and the Gulf Cooperation Council. Singapore will take over chairmanship of the 11-member regional bloc from the Philippines in 2027.",
+        "publish_date": "2026-05-06T21:20:14+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-07T08:40:24.286671+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
