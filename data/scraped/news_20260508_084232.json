@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "New shortcut found to Mars that could cut travel time by half",
+        "url": "https://sg.news.yahoo.com/shortcut-found-mars-could-cut-111118278.html",
+        "content": "It would take between seven and 10 months to travel this distance even with the fastest spacecraft available. When space agencies plan planetary missions, they estimate optimal routes and fuel needs by looking at the trajectory data of planets. But the latest corridor was discovered by looking at orbital data from asteroids. Astronomers probed whether an asteroid’s path could be used to find hidden shortcuts in...",
+        "publish_date": "2026-05-06T20:11:18+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New shortcut found to Mars that could cut travel t..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "225 people under investigation for alleged involvement in scams; victims lost more than $4.8m",
+        "url": "https://www.asiaone.com/singapore/police-scammers-money-mules-255-investigations",
+        "content": "The operation involved officers from the police's Commercial Affairs Department and the seven police land divisions. They are now being investigated for various alleged offences including cheating, money laundering, or providing payment services without a licence",
+        "publish_date": "2026-05-07T23:25:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 225 people under investigation for alleged involve..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-08T08:42:32.649309+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
