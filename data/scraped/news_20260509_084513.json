@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "New executive condo measures may increase near-term demand, but prices should moderate over time: Analysts",
+        "url": "https://www.channelnewsasia.com/singapore/executive-condominiums-ec-new-measures-impact-prices-demand-analysts-6109006",
+        "content": "SINGAPORE: Changes to executive condominiums (EC) from Friday (May 8) are likely to cool land bids for project sites, potentially improving affordability for first-time home buyers, analysts said. In the near-term, however, upcoming projects unaffected by the policy changes may see more demand, they added",
+        "publish_date": "2026-05-09T08:42:20.370820+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New executive condo measures may increase near-ter..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "China announces suspended death sentences for former defence ministers",
+        "url": "https://sg.news.yahoo.com/china-announces-suspended-death-sentences-104440469.html",
+        "content": "Two former Chinese defence ministers have been handed suspended death sentences on corruption charges, according to state media. This means their death sentences will be commuted to life imprisonment after two years, without the possibility of sentence reduction or parole, Xinhua reports. Both men were found guilty of bribery, and all of their personal assets were confiscated. Li's tenure as defence minister was much shorter. Reuters news agency quoted past reports in Xinhua which said that Li had been suspected of receiving \"huge sums of...",
+        "publish_date": "2026-05-07T21:24:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China announces suspended death sentences for form..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Peru presidential hopeful says electoral 'coup' underway",
+        "url": "https://sg.news.yahoo.com/peru-presidential-hopeful-says-electoral-222945668.html",
+        "content": "Peru's ultraconservative presidential hopeful Rafael Lopez Aliaga on Friday accused electoral authorities of a \"coup,\" claiming, without providing proof, that they were rigging the results of April 12 elections. But he has produced no evidence. \"A coup d'etat is taking place in Peru, a coup d'etat against democracy,\" he told reporters on Friday. Right-wing candidate Keiko Fujimori, daughter of polarizing ex-president Alberto Fujimori, led the first round with 17.1 percent. Lopez Aliaga is locked in a tight race for second with leftist...",
+        "publish_date": "2026-05-09T07:29:45+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Peru presidential hopeful says electoral 'coup' un..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-09T08:45:13.966372+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
