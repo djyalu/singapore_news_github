@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Rescuers find body of first confirmed fatality from Mount Dukono eruption; believed to be Indonesian national",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-mount-dukono-volcano-eruption-hiker-death-confirmed-6110986",
+        "content": "The body will be brought to a regional hospital for identification. Two Singaporean hikers remain missing despite their locations having been identified. \"This is because eruptions are still ongoing, there is heavy rain and there are still floods filled with debris",
+        "publish_date": "2026-05-10T08:34:16.389661+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Rescuers find body of first confirmed fatality fro..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcycle smashed after accident with car in Jurong, rider taken to hospital",
+        "url": "https://www.asiaone.com/singapore/jurong-canal-drive-accident-mazda-car-motorcycle-smashed",
+        "content": "Debris, including parts of the motorcycle's bodywork, are seen strewn across the junction. At least two Traffic Police officers were attending to the case at the scene. The police added that the 39-year-old female car driver is assisting with ongoing investigations.",
+        "publish_date": "2026-05-09T14:40:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcycle smashed after accident with car in Juro..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-05-10T08:37:21.872342+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
