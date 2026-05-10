@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Motorcycle smashed after accident with car in Jurong, rider taken to hospital",
+        "url": "https://www.asiaone.com/singapore/jurong-canal-drive-accident-mazda-car-motorcycle-smashed",
+        "content": "Debris, including parts of the motorcycle's bodywork, are seen strewn across the junction. At least two Traffic Police officers were attending to the case at the scene. The police added that the 39-year-old female car driver is assisting with ongoing investigations.",
+        "publish_date": "2026-05-09T14:40:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Motorcycle smashed after accident with car in Juro..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Simei fire sends 1 to hospital, likely caused by charging power bank",
+        "url": "https://www.asiaone.com/singapore/simei-fire-sends-1-hospital-likely-caused-charging-power-bank",
+        "content": "When firefighters arrived, they found the living room of a second-floor unit on fire, which they extinguished using a water jet. One person from a neighbouring unit was assessed for smoke inhalation and taken to Singapore General Hospital. SCDF added that preliminary investigations suggest the fire likely originated from a power bank charging in the living room. The post reminded the public not to leave batteries or devices...",
+        "publish_date": "2026-05-10T13:40:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Simei fire sends 1 to hospital, likely caused by c..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "More cleaners hired in Tampines after cleaning lapses; town council penalises contractor",
+        "url": "https://www.asiaone.com/singapore/more-cleaners-hired-tampines-after-cleaning-lapses-town-council-penalises-contractor",
+        "content": "Residents told The Straits Times that bins and bulky items subsequently took longer than usual to be cleared. One resident in Tampines Boulevard, Mr B",
+        "publish_date": "2026-05-10T14:15:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 More cleaners hired in Tampines after cleaning lap..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-11T08:40:43.861191+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
