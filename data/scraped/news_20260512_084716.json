@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Developer of education tool Canvas issues apology after hack",
+        "url": "https://sg.news.yahoo.com/news/articles/developer-education-tool-canvas-issues-232024867.html",
+        "content": "The data, linked to nearly 9,000 schools worldwide, included student names, email addresses and private messages ⁠between students, teachers, and other staff, the group added. Student newspapers across the United States reported last week the hack caused widespread disruption as students prepared for end-of-year ​tasks and ​assignments.",
+        "publish_date": "2026-05-12T08:21:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Developer of education tool Canvas issues apology ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Vivian Balakrishnan on 3-day working visit to Indonesia",
+        "url": "https://www.asiaone.com/singapore/mfa-vivian-balakrishnan-visit-indonesia",
+        "content": "Dr Balakrishnan will be hosted by Indonesia's Foreign Minister Sugiono, and is also expected to meet with senior Indonesian officials",
+        "publish_date": "2026-05-11T16:20:33+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Vivian Balakrishnan on 3-day working visit to Indo..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-12T08:47:16.882151+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
