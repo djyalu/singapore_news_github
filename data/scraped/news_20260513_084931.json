@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pain at the pump, dining solo, Arctic mystery: Catch up on the day’s stories",
+        "url": "https://sg.news.yahoo.com/news/articles/pain-pump-dining-solo-arctic-205848669.html",
+        "content": "👋 Welcome to 5 Things PM. Renowned chef Hillary Sterling has worked in kitchens with some culinary icons. Here’s what else you might have missed during your busy day. The summer driving season is right around the corner, and that could push demand even higher. Today’s primary ballot is crowded with contenders. Researchers identified the remains of four sailors from a doomed 19th-century Arctic...",
+        "publish_date": "2026-05-13T05:58:48+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pain at the pump, dining solo, Arctic mystery: Cat..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Passenger claims PHV driver 'constantly using his phone', netizens divided over online 'shaming'",
+        "url": "https://www.asiaone.com/singapore/phv-driver-constantly-using-phone",
+        "content": "A private-hire vehicle (PHV) passenger alleged online that his driver had been \"constantly using his phone while driving\". \"There were multiple times he swerved lane and had hard braking,\" the passenger claimed. #sgnews #Singapore #Grab #road #safety. Four other photos also show him looking at the device",
+        "publish_date": "2026-05-12T18:17:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Passenger claims PHV driver 'constantly using his ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-13T08:49:31.494123+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
