@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Only boys are caned in schools – but what does that teach our daughters?",
+        "url": "https://www.channelnewsasia.com/women/singapore-school-caning-boys-girls-equality-6103616",
+        "content": "Full disclosure: I’m Gen X. It was feared and sometimes, deserved. The cane’s effect was swift and painful. To me, the cane taught compliance. It stopped the “bad” behaviour immediately. It taught me that authority had the final word. “Sure, the caning stopped them that week,” she said",
+        "publish_date": "2026-05-14T08:44:47.844890+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Only boys are caned in schools – but what does tha..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Top Republicans Don't Want To Talk About The DOJ Paying Trump $10 Billion",
+        "url": "https://sg.news.yahoo.com/news/articles/top-republicans-dont-want-talk-223949617.html",
+        "content": "Politics: Democrats Launch Investigation Into Trump’s ‘Theft’ Of $230 Million In Taxpayer Money. On Wednesday, Republicans largely tried to dodge questions about the case, which...",
+        "publish_date": "2026-05-14T07:39:49+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Top Republicans Don't Want To Talk About The DOJ P..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-14T08:47:41.319057+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
