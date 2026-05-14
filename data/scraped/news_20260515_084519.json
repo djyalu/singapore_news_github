@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Former death row inmate Richard Glossip released on bond after nearly 30 years in prison",
+        "url": "https://sg.news.yahoo.com/news/articles/former-death-row-inmate-richard-174256516.html",
+        "content": "His release comes after an Oklahoma District Court judge issued a $500,000 bail earlier in the day. He was previously denied bail as he awaits a retrial",
+        "publish_date": "2026-05-15T07:42:19+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Former death row inmate Richard Glossip released o..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-15T08:45:19.889532+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
