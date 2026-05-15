@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "4 foreigners caught moving cash exceeding $20k into S’pore; 43 nabbed for tax, duties evasion at checkpoints",
+        "url": "https://sg.news.yahoo.com/4-foreigners-caught-moving-cash-025900227.html",
+        "content": "SINGAPORE – Four foreigners were caught moving cash exceeding $20,000 into Singapore during a week-long enforcement operation, the authorities said on May 15. More than 12,000 travellers and 420 vehicles were checked at Singapore’s land, air and sea checkpoints. Officers also scanned or searched more than 18,000 pieces of luggage and hand-carry bags during the operation",
+        "publish_date": "2026-05-15T11:59:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 4 foreigners caught moving cash exceeding $20k int..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "20 Of The Funniest Posts About Cats And Dogs This Week (May 9-15)",
+        "url": "https://sg.news.yahoo.com/entertainment/articles/20-funniest-posts-cats-dogs-223536556.html",
+        "content": "Woof — it’s been a long week. Comedy: 22 Of The Funniest Posts About Cats And Dogs This Week (May 17-23). They’re sure to make you howl. Keep independent journalism alive. 21 Of The Funniest Posts About Cats And Dogs This Week. 20 Of The Funniest Posts About Cats And Dogs This Week. 29 Of The Funniest Posts About Cats And Dogs This Week",
+        "publish_date": "2026-05-16T07:35:36+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 20 Of The Funniest Posts About Cats And Dogs This ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-16T08:44:30.776077+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
