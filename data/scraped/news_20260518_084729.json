@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Attorney General Claims There’s A ‘Ton Of Evidence’ 2020 Election Was Rigged – Then Provides No Evidence",
+        "url": "https://sg.news.yahoo.com/news/articles/attorney-general-claims-ton-evidence-222106988.html",
+        "content": "Keep independent journalism alive. Politics: 'Outright Lies': House Dem Posts Receipts After Eric Trump Denies Family Investments. And, so that’s why we’re very focused on finding out whether the right...",
+        "publish_date": "2026-05-18T07:21:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Attorney General Claims There’s A ‘Ton Of Evidence..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Site supervisor dies after bricks, canopy collapse on him at house near Upper Paya Lebar",
+        "url": "https://sg.news.yahoo.com/supervisor-dies-bricks-canopy-collapse-034000534.html",
+        "content": "The 30-year-old man was unconscious when taken to Tan Tock Seng Hospital, where he later died. Based on preliminary investigations, no foul play is suspected, the police said, adding that investigations are ongoing",
+        "publish_date": "2026-05-17T12:40:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Site supervisor dies after bricks, canopy collapse..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Four bystanders tackle knife-wielding driver after car plows into crowd in Italy",
+        "url": "https://sg.news.yahoo.com/news/articles/four-bystanders-tackle-knife-wielding-182458269.html",
+        "content": "“Four citizens, whom I thank, captured him and handed him over to law enforcement.”. Several pedestrians suffered serious injuries, he added, including one woman whose legs were amputated after being struck by the car head-on. The remaining people struck sustained various...",
+        "publish_date": "2026-05-18T06:43:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Four bystanders tackle knife-wielding driver after..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "18,000 flats in 12 neighbourhoods to be upgraded under Home Improvement Programme",
+        "url": "https://www.asiaone.com/singapore/18000-flats-home-improvement-programme",
+        "content": "SINGAPORE - Around 18,000 flats across Singapore have been selected for home upgrading works under the Housing Board’s Home Improvement Programme (HIP). The Government has allocated $253 million for the works, said the HDB. The Government has spent about $5 billion on these works, she added. Within Bukit Batok East, more than 1,600 households across 14 blocks have been selected for the upcoming...",
+        "publish_date": "2026-05-17T10:06:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 18,000 flats in 12 neighbourhoods to be upgraded u..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-18T08:47:29.263409+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
