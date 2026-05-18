@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "‘Feels like a dream’: Indonesia’s domestic workers cheer long-awaited protection law, but concerns linger",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-domestic-workers-protection-law-6127931",
+        "content": "Today I’m happy,” said the 55-year-old domestic worker from Bogor, sobbing. Along with other domestic workers who attended the Apr 21 parliamentary session, Suranti cheered and applauded. “It feels like a dream. “I’m happy because now there is protection for domestic workers",
+        "publish_date": "2026-05-19T08:51:41.961465+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ‘Feels like a dream’: Indonesia’s domestic workers..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "3 retailers caught using misleading website features such as fake visitor counts, countdown timers",
+        "url": "https://sg.news.yahoo.com/3-online-retailers-caught-using-044000720.html",
+        "content": "SINGAPORE – Three online retailers have been caught using misleading features to influence shoppers by Singapore’s consumer and competition regulator. Upon examination of the website’s source code, the regulator found that the numbers were randomly generated.",
+        "publish_date": "2026-05-18T13:40:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 3 retailers caught using misleading website featur..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 68, dies after falling onto track in front of oncoming train at Segar LRT station",
+        "url": "https://www.asiaone.com/singapore/bukit-panjang-lrt-suspension-man-falls-on-track-dies-segar-lrt",
+        "content": "#sgnews #Singapore #LRT #SMRT #Disruption ♬ original sound - AsiaOne. They do not suspect foul play based on preliminary investigations. Rail operator SMRT announced the disruption on social media at about 6am. \"Train services between Petir and Senja stations, in both...",
+        "publish_date": "2026-05-18T10:10:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 68, dies after falling onto track in front of..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pedestrian, 58, dies after accident at Lavender Street; man arrested for dangerous driving",
+        "url": "https://www.asiaone.com/singapore/lavender-street-fatal-accident-pedestrian-woman-dies-driver-arrested",
+        "content": "The male driver was arrested for dangerous driving causing death. #sgnews #Singapore #Police #Road #Accident ♬ original sound - AsiaOne. Meanwhile, a dark coloured Kia sports utility vehicle (SUV), which was making a right-turn to Lavender Street when the...",
+        "publish_date": "2026-05-18T10:40:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pedestrian, 58, dies after accident at Lavender St..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Suspension of M1-Simba merger assessment: What are radio frequency bands and why telcos are assigned them",
+        "url": "https://www.asiaone.com/singapore/simba-unauthorised-radio-frequency-bands-telcos",
+        "content": "The four mobile network operators here are M1, Singtel, StarHub Mobile and Simba Telecom. Radio frequencies are a part of the electromagnetic spectrum used for wireless communication and signal transmission. Its usage includes: radio, aircraft navigation, marine radio, television broadcasting, mobile networks and even satellite systems",
+        "publish_date": "2026-05-18T22:20:44+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Suspension of M1-Simba merger assessment: What are..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-19T08:54:48.505042+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
