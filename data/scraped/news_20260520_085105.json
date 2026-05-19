@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/economy/policy/articles/trump-tells-fed-consider-fintech-231144520.html",
+        "content": "May 19 (Reuters) - U.S. Fed ‌master accounts are often likened to bank accounts for banks, allowing holders to move funds directly through the Fed's payment system. Crypto exchange Kraken was granted a Fed master...",
+        "publish_date": "2026-05-20T08:11:44+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-20T08:51:05.393813+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
