@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Musk's SpaceX is about to go public. Here's how it works",
+        "url": "https://sg.news.yahoo.com/musks-spacex-public-heres-works-233550633.html",
+        "summary": "📰 시장 관련 뉴스\\n📢 Musk's SpaceX is about to go public. Here's how it works...",
+        "content": "And that's before additional potential stock market debuts by AI behemoths OpenAI and Anthropic. So what exactly does it take for a company to \"go public\". The first big decision is where to list. Together, they account for roughly half of the total value of all stocks traded worldwide. Companies also have to pick a \"ticker\" -- the short letter code that identifies...",
+        "publish_date": "2026-05-21T08:35:50+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/bolt-ceo-says-let-entire-211056311.html",
+        "summary": "📰 취업, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "“We got rid of our HR team.”. For most executives, that’s a sentence likely to provoke intense anxiety. But for Bolt CEO Ryan Breslow, it was unavoidable. “Those problems disappeared when I let them go.”. After soaring to an $11 billion valuation in 2022, employing thousands of workers, Bolt’s fortunes reversed sharply",
+        "publish_date": "2026-05-20T06:10:56+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Netizens rally behind Pulau Ubin tour guide after alleged complaint over azan recital",
+        "url": "https://www.asiaone.com/singapore/netizens-rally-pulau-ubin-tour-guide-complaint-azan",
+        "summary": "📰 기술 관련 뉴스\n📢 Netizens rally behind Pulau Ubin tour guide after alleged complaint over azan re...",
+        "content": "appears to have not been understood\". I wish to make clear that I will continue [reciting] the azan,\" wrote Syazwan",
+        "publish_date": "2026-05-20T18:38:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-21T09:01:26.170599+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
