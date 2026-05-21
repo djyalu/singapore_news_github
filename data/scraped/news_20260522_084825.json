@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/factbox-starship-test-flights-explosions-215331406.html",
+        "content": "TEST FLIGHT 1 - APRIL 20, 2023. The Starship spacecraft exploded minutes after liftoff from South Texas, falling short of reaching several mission objectives",
+        "publish_date": "2026-05-22T06:53:31+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "CDA monitoring rise in Covid-19 cases, says periodic waves expected throughout the year",
+        "url": "https://www.asiaone.com/singapore/covid-19-cases-singapore-vaccines-cda",
+        "content": "\"The public acute hospitals are able to manage the increase in cases,\" said the agency. Covid-19 is an endemic respiratory disease and periodic waves can be expected throughout the year. The rise in cases can be attributed to multiple factors including waning population immunity. At the same time, current vaccines available remain effective...",
+        "publish_date": "2026-05-21T19:40:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 CDA monitoring rise in Covid-19 cases, says period..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-22T08:48:25.227015+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
