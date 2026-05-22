@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Grab extends fuel surcharge, GrabCab unit fare adjustments until end July amid fuel price volatility",
+        "url": "https://www.channelnewsasia.com/singapore/grab-extends-fuel-surcharge-fare-adjustment-support-driver-6136491",
+        "content": "The measures, originally introduced in early April to help drivers cope with rising operating costs, will remain in place until Jul 31. Under the extension, a S$0.90 fuel surcharge will continue to apply to all transport bookings except standard and metered taxi rides. The surcharge will continue to be reflected as a separate line item on passenger receipts",
+        "publish_date": "2026-05-23T08:53:06.664757+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Grab extends fuel surcharge, GrabCab unit fare adj..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Man, 74, arrested for drink driving after accident in Ubi",
+        "url": "https://sg.news.yahoo.com/man-74-arrested-drink-driving-095000738.html",
+        "content": "A male cyclist, 39, was conscious when taken to Changi General Hospital, they said. The cyclists can be seen fleeing to avoid being hit. The car crashes into the bicycles and some barricades before knocking down a traffic light. Source: The Straits Times © SPH Media Limited. Permission required for reproduction",
+        "publish_date": "2026-05-21T18:50:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 74, arrested for drink driving after accident..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-23T08:56:11.141504+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
