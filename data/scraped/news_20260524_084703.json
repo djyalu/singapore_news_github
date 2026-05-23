@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Surprise resignation by Koh Poh Koon reflects toll of political life: Observers",
+        "url": "https://sg.news.yahoo.com/surprise-resignation-koh-poh-koon-152452518.html",
+        "summary": "📰 개발 관련 뉴스\\n📢 Surprise resignation by Koh Poh Koon reflects toll of politi...",
+        "content": "But they also noted that the surprise development reflects the toll that public office takes on political office-holders and their families",
+        "publish_date": "2026-05-23T00:24:52+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NUS student in critical condition after near-fatal drowning accident, family seeks funds",
+        "url": "https://www.asiaone.com/singapore/nus-student-family-seeks-funds-near-fatal-drowning",
+        "summary": "📰 싱가포르, 교육, 기술 관련 뉴스\n📢 NUS student in critical condition after near-fatal drowning accident, family see...",
+        "content": "The location where the incident took place was not disclosed. Wang has since been on advanced life support, including ventilator and oxygen support, while brain scans showed swelling and serious injury caused by oxygen deprivation. They are unfamiliar with Singapore and are already facing severe financial issues.",
+        "publish_date": "2026-05-22T23:19:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Bloomberg defamation case unprecedented for malice and aggravation: Ministers' lawyer",
+        "url": "https://www.asiaone.com/singapore/bloomberg-defamation-case-unprecedented-malice-and-aggravation-ministers-lawyer",
+        "summary": "📰 싱가포르, 장관, 취업 관련 뉴스\n📢 Bloomberg defamation case unprecedented for malice and aggravation: Ministers' l...",
+        "content": "Shanmugam and Manpower Minister Tan See Leng. He said an ordinary and reasonable reader in Singapore would have taken these mentions to falsely mean that the ministers took...",
+        "publish_date": "2026-05-23T10:15:26+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-24T08:47:03.944755+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
