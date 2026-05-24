@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "China launches rocket to send astronaut on year-long space mission as it eyes 2030 moon landing",
+        "url": "https://www.channelnewsasia.com/east-asia/china-astronaut-year-long-space-mission-2030-moon-landing-6138496",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 China launches rocket to send astronaut on year-long space m...",
+        "content": "The spacecraft separated from the rocket around 10 minutes later and entered orbit, the Chinese space agency (CMSA) said on social media",
+        "publish_date": "2026-05-25T08:46:14.263419+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says US will not 'rush into a deal' with Iran",
+        "url": "https://www.channelnewsasia.com/world/iran-war-us-trump-negotiators-deal-strait-hormuz-6139081",
+        "summary": "📰 정부 관련 뉴스\\n📢 Trump says US will not 'rush into a deal' with Iran...",
+        "content": "\"Both sides must take their time and get it right\", he added. There was no immediate response from Iran's government",
+        "publish_date": "2026-05-25T08:46:19.702585+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump tells US negotiators 'not to rush' into deal with Iran",
+        "url": "https://sg.news.yahoo.com/trump-tells-us-negotiators-not-174617722.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Trump tells US negotiators 'not to rush' into deal with Iran",
+        "content": "In a social media post, Trump said \"constructive\" talks were proceeding but \"both sides must take their time and get it right\". Trump said on Saturday an agreement had been \"largely negotiated\", prompting speculation an announcement could be imminent. The mooted deal has split Republicans, with some publicly arguing it is too lenient on Iran.",
+        "publish_date": "2026-05-25T06:10:14+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Senegal parliament speaker steps down in political crisis",
+        "url": "https://sg.news.yahoo.com/senegal-parliament-speaker-steps-down-200816948.html",
+        "summary": "📰 정치 관련 뉴스\n📢 Senegal parliament speaker steps down in political crisis",
+        "content": "That could further complicate reform efforts by Faye, who sacked his former ally Sonko on Friday after months of tensions. Their Pastef party comfortably won the 2024...",
+        "publish_date": "2026-05-25T05:08:16+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-25T08:49:13.899795+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
