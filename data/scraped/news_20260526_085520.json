@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "'Travelled without paying correct fare': SMRT takes action after rat sighting on EWL train",
+        "url": "https://www.asiaone.com/singapore/mrt-train-rat-sighting-smrt-lakeside-chinese-garden-station",
+        "content": "\"It appears to have entered Lakeside station after emerging from nearby bushes and running through the fare gates.\". SMRT went on to declare that \"Master Splinter\" had travelled without paying the correct fare. @asiaone Because Master Splinter belongs in the subway. #sgnews #Singapore #MRT #Trains #Rats ♬ original sound - AsiaOne",
+        "publish_date": "2026-05-26T07:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Travelled without paying correct fare': SMRT take..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-26T08:55:20.690692+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
