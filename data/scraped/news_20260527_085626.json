@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Integrity, gratitude and sincerity can strengthen community and society, says Faishal Ibrahim in Hari Raya Haji message",
+        "url": "https://www.asiaone.com/singapore/hari-raya-haji-message-faishal-ibrahim-haj-pilgrims-prayer-spaces-korban-community",
+        "content": "Muslims in Singapore should carry out their responsibilities with integrity, give with graciousness, and serve with sincerity, said Acting Minister-in-charge of Muslim Affairs Faishal Ibrahim. \"Here in Arafah, I see how much this moment means to our pilgrims",
+        "publish_date": "2026-05-26T20:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Integrity, gratitude and sincerity can strengthen ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-05-27T08:56:26.013718+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
