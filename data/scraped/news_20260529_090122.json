@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Steven Spielberg’s new Emily Blunt blockbuster is already being called his best film in decades",
+        "url": "https://sg.news.yahoo.com/steven-spielberg-emily-blunt-blockbuster-090646808.html",
+        "content": "Steven Spielberg’s latest sci-fi epic, Disclosure Day, is already being hailed by early critics as a return to peak Spielberg. The cast also includes Colin Firth, Colman Domingo, Eve Hewson and Wyatt Russell",
+        "publish_date": "2026-05-28T18:06:46+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Steven Spielberg’s new Emily Blunt blockbuster is ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump's Proposed $250 Bill Brutally Ridiculed As Authoritarian Excess",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/trumps-proposed-250-bill-brutally-230204987.html",
+        "content": "Treasury Secretary Scott Bessent said Thursday thatthe agency could create a $250 billfeaturingPresident Donald Trump― but that doesn’t mean social media users are buying it. Bessent told reportersthat while federal law prohibits featuring living people on U.S. currency since 1866,although there is a special provision for currency commemorating an event. Social media users didn’t seem as excited as Bessent about seeing Trump’s...",
+        "publish_date": "2026-05-29T08:02:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump's Proposed $250 Bill Brutally Ridiculed As A..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Critics slam 'terrible' catered food for migrant workers: 'My taste buds are ruined'",
+        "url": "https://www.asiaone.com/singapore/critics-slam-terrible-catered-food-migrant-workers",
+        "content": "Migrant Workers Singapore is a community platform for migrant workers in Singapore to share their experiences, talents and culture. \"This is terrible,\" commented one participant. Another added: \"Right now, my whole mouth is just salt. My taste buds are ruined after this, it’s like I can’t taste anything else anymore.\". MWS said the exercise highlighted what it described as a significant gap in...",
+        "publish_date": "2026-05-28T15:43:38+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Critics slam 'terrible' catered food for migrant w..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-05-29T09:01:22.834098+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
