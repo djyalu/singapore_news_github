@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Malaysia’s LGBTQ groups tread more carefully amid recent enforcement, ministers’ rhetoric",
+        "url": "https://www.channelnewsasia.com/asia/malaysia-lgbtq-enforcement-rhetoric-pushback-6051601",
+        "content": "These and other moves in recent months by Malaysian authorities have raised questions among the community about whether enforcement against LGBTQ-related activities is being stepped up. On May 25, 51 men were arrested in four separate...",
+        "publish_date": "2026-05-31T08:46:22.054528+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Malaysia’s LGBTQ groups tread more carefully amid ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-05-31T08:49:19.786798+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
