@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says he will 'transfer' Kennedy Center to Congress after US court setback",
+        "url": "https://www.channelnewsasia.com/world/donald-trump-transfer-kennedy-center-court-setback-6150876",
+        "content": "It was not immediately clear how Trump's directive could be carried out. CNA Games Guess Word Crack the word, one row at a time...",
+        "publish_date": "2026-05-30T08:58:21.491577+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says he will 'transfer' Kennedy Center to Co..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/ferrari-boss-defends-electric-car-151816789.html",
+        "content": "Luca Cordero di Montezemolo, the company’s former chairman, said the Luce “risks destroying the myth” of Ferrari. Some are existing clients and others are new. The final answer comes from clients.”. He defended the Ferrari Luce’s €550,000 price tag, saying: “Innovation has to be paid for",
+        "publish_date": "2026-05-29T00:18:16+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Not true that current Covid-19 situation is more dangerous: CDA, experts",
+        "url": "https://www.asiaone.com/singapore/covid-19-situation-not-more-dangerous-experts",
+        "content": "“Current evidence shows that symptoms associated with NB.1.8.1 are largely similar to those seen in previous waves or earlier strains, which range from mild upper respiratory illness to severe disease such as pneumonia. Commonly reported symptoms include fever, chills,...",
+        "publish_date": "2026-05-29T22:28:08+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Not true that current Covid-19 situation is more d..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-05-30T09:01:23.865519+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
