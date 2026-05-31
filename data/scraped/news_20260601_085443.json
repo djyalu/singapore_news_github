@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Three farms affected by Lim Chu Kang land-use changes seek lease extensions as expiry dates draw near",
+        "url": "https://www.channelnewsasia.com/singapore/lim-chu-kang-farms-seng-choon-bollywood-lease-expire-land-use-changes-6149161",
+        "content": "\"I know the authorities have given enough time, we understand all that,\" said Gallop Kranji Farm Resort founder Mani Shanker",
+        "publish_date": "2026-06-01T08:51:26.826553+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Three farms affected by Lim Chu Kang land-use chan..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Malta's Labour party wins historic fourth term amid Mideast crisis",
+        "url": "https://sg.news.yahoo.com/maltas-labour-party-wins-historic-100144829.html",
+        "content": "Abela campaigned on Labour's economic record since 2013, pledging stability in a period of uncertainty. \"I've voted Labour since I was a little girl, I'm thrilled,\" 73-year-old Margaret Camilleri...",
+        "publish_date": "2026-06-01T06:28:02+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Malta's Labour party wins historic fourth term ami..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-06-01T08:54:43.084051+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
