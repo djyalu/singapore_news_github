@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Colombian presidency goes to runoff election that could redefine relations with the US",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/colombian-presidency-goes-runoff-election-000842753.html",
+        "content": "Cepeda, representing the left-wing Historic Pact coalition, was in second place with 40.90%. The left Democratic Center candidate Paloma Valencia was trailing well behind with 6.92%, according to preliminary results released by the National Civil Registry",
+        "publish_date": "2026-06-02T07:45:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Colombian presidency goes to runoff election that ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-06-02T09:04:33.939118+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
