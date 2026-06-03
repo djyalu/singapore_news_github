@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Stalled Mideast peace process sends oil soaring, tech buoys stocks",
+        "url": "https://www.channelnewsasia.com/business/oil-soaring-tech-stocks-stalled-mideast-peace-6155341",
+        "summary": "📰 투자 관련 뉴스\\n📢 Stalled Mideast peace process sends oil soaring, tech buoys ...",
+        "content": "After wavering at the open, two of Wall Street's three main stock indices set fresh record highs, before paring those gains slightly before the close. \"There is no concrete progress in Middle East negotiations . but investors appear broadly optimistic that a longer-term resolution will be reached,\" said Susannah Streeter, chief investment strategist at Wealth Club",
+        "publish_date": "2026-06-03T09:20:58.635118+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Live Primary Election 2026 Results: California, Others Head To The Polls",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/live-primary-election-2026-results-230020100.html",
+        "summary": "📰 정치 관련 뉴스\n📢 Live Primary Election 2026 Results: California, Others Head To The Polls",
+        "content": "Voters in California, Iowa, Montana, New Jersey, New Mexico and South Dakota cast ballots in primary races today. Politics: Next Week’s Democratic Primaries Are A Major Test Of Progressive Power. Keep independent journalism alive. Los Angeles Mayoral Election. Trump Appoints Home Builder Nepo Baby With Zero Intel Background To Oversee U.S",
+        "publish_date": "2026-06-03T08:00:20+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Three arrested after locking woman and child on balcony of MBS hotel during robbery",
+        "url": "https://sg.news.yahoo.com/three-arrested-locking-woman-child-115500279.html",
+        "summary": "📰 기술, 관광 관련 뉴스\n📢 Three arrested after locking woman and child on balcony of MBS hotel during robb...",
+        "content": "The three men are aged between 29 and 34. Preliminary investigations showed that the woman had become acquainted with a person claiming to offer foreign currency exchange services through a messaging platform",
+        "publish_date": "2026-06-02T20:55:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "No helmet, riding above speed limit: E-bike user seen in MCE tunnel",
+        "url": "https://www.asiaone.com/singapore/ebike-mce-no-helmet-speed-limit",
+        "summary": "📰 싱가포르, 교통, 국제 관련 뉴스\n📢 No helmet, riding above speed limit: E-bike user seen in MCE tunnel",
+        "content": "#sgnews #Singapore #LTA #traffic #ebike #Safety ♬ original sound - AsiaOne. The maximum speed allowed for a registered power-assisted bicycle is 25kmh",
+        "publish_date": "2026-06-02T16:28:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'They finally approved my application': Woman marries inmate fiance at Tanah Merah Prison School 9 years after his arrest",
+        "url": "https://www.asiaone.com/singapore/they-finally-approved-my-application-woman-marries-inmate-fiance-tanah-merah-prison",
+        "summary": "📰 싱가포르, 교육, 기술 관련 뉴스\n📢 'They finally approved my application': Woman marries inmate fiance at Tanah Mer...",
+        "content": "Despite having six marriage applications rejected over four years, Nurashikin Husni Thamrin never gave up on marrying the man she loved, Berita Harian reported. Just two weeks before their big day in 2017, Nurashikin said her fiance was arrested. He was arrested again in 2017. For the second case, he reportedly received a reduced sentence of 14 years. Nurashikin had been applying to the Singapore Prison Service (SPS) for permission to marry Farez since 2020. However, her requests were repeatedly denied until 2024. “I tried everything, including writing to the...",
+        "publish_date": "2026-06-02T18:41:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-06-03T09:23:57.759409+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
