@@ -1,0 +1,64 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Meta lashes Australia bid to make tech giants pay for news",
+        "url": "https://www.channelnewsasia.com/world/meta-australia-tech-giants-pay-news-6160981",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Meta lashes Australia bid to make tech giants pay for news...",
+        "content": "Australia wants big tech companies to compensate local publishers for sharing articles that drive traffic on their platforms. \"It is discriminatory, economically incoherent, and will not...",
+        "publish_date": "2026-06-04T09:22:34.643303+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "NASA ends mission after loss of Mars probe",
+        "url": "https://sg.news.yahoo.com/nasa-ends-mission-loss-mars-000833717.html",
+        "summary": "📰 기술 관련 뉴스\n📢 NASA ends mission after loss of Mars probe",
+        "content": "Scientific spacecraft MAVEN -- short for Mars Atmosphere and Volatile Evolution -- went into Martian orbit in 2014. The US space agency said Wednesday it would investigate the cause of the loss",
+        "publish_date": "2026-06-04T09:08:33+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 16-year-old girl last seen in Woodlands over a month ago",
+        "url": "https://www.asiaone.com/singapore/police-siti-nurqirin-asyura-izhar-izuddin-missing-woodlands",
+        "summary": "📰 교육, 취업, 법률 관련 뉴스\n📢 Police appeal for information on missing 16-year-old girl last seen in Woodlands...",
+        "content": "The address is the location of Woodlands Ring Secondary School, which is currently undergoing upgrading works. Those with information are urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential, the police said.",
+        "publish_date": "2026-06-03T19:05:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-06-04T09:25:43.710054+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Broadcom slides after AI chip outlook disappoints investors",
+        "url": "https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/broadcom-slides-after-ai-chip-outlook-disappoints-investors",
+        "summary": "📰 시장 관련 뉴스\\n📢 Broadcom slides after AI chip outlook disappoints investors...",
+        "content": "Analysts predicted US$17.2 billion on average, according to data compiled by Bloomberg. That forecast fell short of the average estimate of US$57.6 billion. Though the company is making headway in pivoting to artificial intelligence customers, it’s up against outsized investor expectations. Broadcom added roughly US$270 billion in market value over the last five trading sessions before the earnings report, fuelled by AI optimism. Broadcom has signed and expanded long-term deals with companies...",
+        "publish_date": "2026-06-04T09:23:05.569525+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-06-04T09:25:43.710091+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
