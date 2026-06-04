@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "13 men arrested for being suspected members of secret societies in islandwide operation",
+        "url": "https://www.asiaone.com/singapore/13-arrested-secret-societies-suppression-police",
+        "content": "Police said investigations against all 13 suspects are ongoing. They added that there will be regular enforcement operations at public entertainment and nightlife establishments, and congregation hotspots...",
+        "publish_date": "2026-06-04T23:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 13 men arrested for being suspected members of sec..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-05T08:59:51.929744+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
