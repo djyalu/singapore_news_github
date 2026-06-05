@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "32 weeks' jail, $6,000 fine for driver linked to over 70 accidents, most were staged to cheat motorists",
+        "url": "https://www.asiaone.com/singapore/32-weeks-jail-6000-fine-driver-linked-over-70-accidents-most-were-staged-cheat-motorists",
+        "content": "Danial Ali Liaqat Ali, 28, was involved in at least 73 road traffic accidents over four years. Most of them were staged. Danial pleaded guilty to 12 charges, including cheating, dangerous driving and inconsiderate driving. Another 25 charges were taken into consideration during sentencing. While driving, Danial would look for opportunities to engineer a near-collision or a collision with another vehicle. He would drive dangerously close to them, deliberately failing to brake, or accelerating into them to cause a side-swipe collision. Following each incident, Danial would approach the drivers and demand a private cash settlement of...",
+        "publish_date": "2026-06-05T18:44:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 32 weeks' jail, $6,000 fine for driver linked to o..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-06T08:57:36.665577+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
