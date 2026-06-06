@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Marina Bay skyline could see bolder night light-ups as URA explores easing guidelines",
+        "url": "https://sg.news.yahoo.com/marina-bay-skyline-could-see-112958241.html",
+        "content": "Chee highlighted how local governments in Australia had loosened regulations to promote more arts and culture offerings and sports activities after sunset",
+        "publish_date": "2026-06-05T20:29:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Marina Bay skyline could see bolder night light-up..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Even Trump says he doesn’t know ‘where the hell’ his own false claim about Black unemployment came from",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/even-trump-says-doesn-t-224307036.html",
+        "content": "President Donald Trump uses a lot of fictional statistics. He usually deploys them with a breezy confidence. And I don’t know where that stat came from, but I’ll take it,” he said. “I don’t know where the hell that stat come — but we’ll take it.”. The mystery “stat” isn’t true. It’s actually higher than the rate Trump inherited when he...",
+        "publish_date": "2026-06-07T07:43:07+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Even Trump says he doesn’t know ‘where the hell’ h..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "New commander for Traffic Police from June 8",
+        "url": "https://www.asiaone.com/singapore/traffic-police-new-commander-serene-chiu",
+        "content": "The incoming TP commander joined the Singapore Police Force (SPF) in 1999. Former TP chief SAC Daniel Tan became the department's commander in May 2023. During his tenure, SAC Tan drove major legislative changes that...",
+        "publish_date": "2026-06-05T23:46:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 New commander for Traffic Police from June 8"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-06-07T08:55:01.572719+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
