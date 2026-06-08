@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Comedian Tricks MAGA Loyalists Into Revealing Blatant Hypocrisy",
+        "url": "https://sg.news.yahoo.com/entertainment/celebrity/articles/comedian-tricks-maga-loyalists-revealing-212604143.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Comedian Tricks MAGA Loyalists Into Revealing Blatant Hypocr...",
+        "content": "Masterson continued: “Don’t make these kids wear these flags and these hats and make it their entire personality,” he said. The woman’s response of “Absolutely!” suggests she didn’t realize what Masterson was...",
+        "publish_date": "2026-06-09T06:26:04+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/poisoned-ai-chatgpt-shopping-scams-060026493.html",
+        "summary": "📰 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "The artificial intelligence (AI) assistant gives you cross body, shoulder, casual and formal options with the prices listed beside them. The item will never arrive, however. Ask Silver, a scam-checking service, says cloned sites have been showing up in search results on ChatGPT. Anna Jones of Ask Silver says it is possible that the large language model (LLM) that powers ChatGPT has been “poisoned”",
+        "publish_date": "2026-06-07T15:00:26+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Speaker Seah Kian Peng leads delegation of MPs from PAP, WP to China",
+        "url": "https://www.asiaone.com/singapore/siah-kian-peng-paliament-speaker-visit-china",
+        "summary": "📰 정치, 기술, 국제 관련 뉴스\n📢 Speaker Seah Kian Peng leads delegation of MPs from PAP, WP to China",
+        "content": "Speaker of Parliament Seah Kian Peng is on a six-day official visit to China from Monday (June 8). This is Seah's first visit to China in his capacity as Speaker. In Xiamen, Seah is scheduled to meet with chairman of the standing committee of Xiamen Municipal People's Congress Yang Guohao. The delegation will also visit PSA BDP Xiamen and ST Engineering's aircraft engine maintenance, repair and overhaul facilities there.",
+        "publish_date": "2026-06-08T19:35:58+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-09T08:57:54.548067+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
