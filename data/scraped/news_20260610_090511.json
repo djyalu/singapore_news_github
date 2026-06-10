@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Driver, 84, allegedly drives after drinking, self-skids and crashes in Hougang",
+        "url": "https://www.asiaone.com/singapore/driver-84-allegedly-drives-after-drinking-self-skids-and-crashes-hougang",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Driver, 84, allegedly drives after drinking, self-skids and ...",
+        "content": "A female passerby had already stopped to assist him. \"He kept insisting he was okay and that he could still drive off,\" one witness said. During the incident, the female passerby also assisted in contacting the man's daughter.",
+        "publish_date": "2026-06-09T16:05:00+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-10T09:05:11.892490+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
