@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Critics Run Wild With Trump’s Off-The-Wall ‘I Love The Inflation’ Declaration",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/critics-run-wild-trump-off-221403369.html",
+        "content": "I love the inflation.”. has been secretly “taking out millions of barrels of oil” from Iran. Keep independent journalism alive. Inflation Hits 3-Year High As Affordability Challenge For...",
+        "publish_date": "2026-06-11T07:14:03+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Critics Run Wild With Trump’s Off-The-Wall ‘I Love..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Inside the ‘highly complex’ preparations for Trump’s UFC fight: $60M for staging, port-a-potties and other logistics",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/inside-highly-complex-preparations-trump-210549100.html",
+        "content": "Building a televised sporting event accommodating more than 100,000 people without any existing arena infrastructure is a massive production. Doing so at the White House adds significant logistical complications",
+        "publish_date": "2026-06-11T07:22:42+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Inside the ‘highly complex’ preparations for Trump..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "‘A Crock Of ****’: Grand Jury Transcripts Reveal Juror Skepticism Of Trump DOJ Case Against Protesters",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/crock-grand-jury-transcripts-reveal-232639547.html",
+        "content": "Keep independent journalism alive. Politics: Trump’s ‘Cringe’ UFC Guest List Is Reported, And Where The Heck Are Celebrities?. The case quickly fell apart: Earlier this year, prosecutors dismissed two of the...",
+        "publish_date": "2026-06-11T08:26:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ‘A Crock Of ****’: Grand Jury Transcripts Reveal J..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "1,000 jobs to be created as US chip gear giant Applied Materials expands footprint with $600m Tampines campus",
+        "url": "https://www.asiaone.com/singapore/applied-materials-expands-singapore-manufacturing-gan-kim-yong",
+        "content": "US semiconductor equipment maker Applied Materials officially opened its expanded manufacturing facility in Tampines on Wednesday (June 10). Built at a cost of $600 million, the new Tampines campus will double Applied Materials' advanced cleanroom capacity here and strengthen global manufacturing footprint",
+        "publish_date": "2026-06-10T18:40:22+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 1,000 jobs to be created as US chip gear giant App..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'NSFW' display names pop up following new PayNow masking update; ABS responds",
+        "url": "https://www.asiaone.com/singapore/nsfw-display-names-pop-following-new-paynow-masking-update-abs-responds",
+        "content": "Some netizens have taken to social media to report their seemingly explicit new PayNow display names following the latest updates to the platform. \"Nowadays [the] bank [masks] name till like that. My name [became] so erotic,\" wrote the user. Another user, Jeremy See, reported how his \"entire...",
+        "publish_date": "2026-06-10T13:51:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'NSFW' display names pop up following new PayNow m..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-11T09:08:23.794536+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
