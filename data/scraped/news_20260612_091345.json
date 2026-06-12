@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Iran says no final decision made on deal that Trump hopes could be signed soon",
+        "url": "https://www.channelnewsasia.com/world/trump-us-iran-strikes-cancelled-after-talks-6177596",
+        "content": "\"We have not reached a final conclusion on this matter,\" he said. \"This is a very important issue that is currently being reviewed by the relevant decision-making bodies.\". \"The strait will officially open as soon as we sign, which could be...",
+        "publish_date": "2026-06-12T09:10:48.483806+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Iran says no final decision made on deal that Trum..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump nominates Jay Clayton to top intelligence post amid uproar over prior, interim pick",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/trump-says-nominate-jay-clayton-182105478.html",
+        "content": "“I encourage the United States Senate to confirm Jay as soon as possible.”. Since Pulte’s selection, Republican lawmakers had urged Trump to quickly name a more qualified permanent nominee.",
+        "publish_date": "2026-06-12T07:01:51+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump nominates Jay Clayton to top intelligence po..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NParks employee among group being investigated over handling of snake during Mandai night walk",
+        "url": "https://www.asiaone.com/singapore/nparks-employee-among-group-being-investigated-over-alleged-handling-snake-during-mandai",
+        "content": "An online post has alleged that snakes were handled poorly during a photography-focused night walk in Mandai. The snake was also reportedly in the process of shedding during the incident. According to the poster, another smaller snake was also allegedly handled and passed among participants for taking photos. The poster added that they were concerned about the potential stress caused to the reptiles, citing prolonged handling and repeated interference during shedding. Responding to queries from AsiaOne, Jessica Kwok, NParks' group director of enforcement and...",
+        "publish_date": "2026-06-11T19:38:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 NParks employee among group being investigated ove..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-06-12T09:13:45.955175+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
