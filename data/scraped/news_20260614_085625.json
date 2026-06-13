@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Chinese women are paying for romance",
+        "url": "https://www.channelnewsasia.com/east-asia/china-love-companion-games-scripted-romance-young-women-lianpei-6175706",
+        "content": "SHANGHAI: “My shepherd,” said the man, striking a match in the dark. “Do you see me now?”. She is a paying customer. And she is crying too hard to answer. “I see you,” she finally says.",
+        "publish_date": "2026-06-14T08:53:25.031613+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chinese women are paying for romance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Crocodiles of 'staggering' size hauled from river in Malaysia",
+        "url": "https://sg.news.yahoo.com/crocodiles-staggering-size-hauled-river-160117629.html",
+        "content": "The crocodiles in the accompanying image, courtesy of the Sin Chew Daily, measure 15-plus feet. (The meat was sold to pay for the hunting effort.). While residents and fishermen might feel safer, Kung said that other massive crocodiles are still in the area.",
+        "publish_date": "2026-06-12T01:01:17+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Crocodiles of 'staggering' size hauled from river ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man charged with molesting, taking voyeuristic videos of 14 women at Holland V massage parlour",
+        "url": "https://www.asiaone.com/singapore/holland-village-massage-parlour-man-charged-molest-voyeuristic-video",
+        "content": "They include using criminal force to outrage the modesty of victims, and recording videos of their private parts without their consent. The 52-year-old allegedly committed the offences at Health Step Foot Reflexology Centre in Lorong Mambong. The court heard that Lee's offences involved 14 victims. His alleged offences took place over multiple occasions between Feb 19, 2021, and Dec 27, 2024. On another in April 2022, Lee allegedly recorded himself massaging a 58-year-old woman's chest. Lee did not indicate if he would plead guilty to the...",
+        "publish_date": "2026-06-12T20:37:14+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man charged with molesting, taking voyeuristic vid..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-14T08:56:25.002793+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
