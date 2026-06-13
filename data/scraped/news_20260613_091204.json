@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Less than peachy: Why Orange Yakult fans are mourning a classic",
+        "url": "https://www.channelnewsasia.com/singapore/yakult-orange-discontinue-replace-peach-flavour-why-fans-mourn-6179116",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Less than peachy: Why Orange Yakult fans are mourning a clas...",
+        "content": "SINGAPORE: “I’ll defend orange until the end,” wrote one netizen after Yakult announced this week that it would be replacing its orange-flavoured drink with a peach variant. The move, which marks Yakult's first major change to its flavour line-up in Singapore since 1980, sparked spirited debate online",
+        "publish_date": "2026-06-13T09:08:59.194640+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "20 Of The Funniest Posts About Cats And Dogs This Week (June 6-12)",
+        "url": "https://sg.news.yahoo.com/entertainment/articles/20-funniest-posts-cats-dogs-213650680.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 20 Of The Funniest Posts About Cats And Dogs This Week (June 6-12)",
+        "content": "Woof — it’s been a long week. They’re sure to make you howl. Keep independent journalism alive. 24 Of The Funniest Posts About Cats And Dogs This Week. 21 Of The Funniest Posts About Cats And Dogs This Week. 23 Of The Funniest Posts About Cats And Dogs This Week",
+        "publish_date": "2026-06-13T06:36:50+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/record-ipo-musks-spacex-faces-100248550.html",
+        "summary": "📰 경제, 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "company by value and turning Elon Musk into the world's first trillionaire. The gain pushed SpaceX's market ​value past Broadcom, with Amazon next in line at $2.6 trillion. The trade capped off a lead-up fraught with anxiety over the...",
+        "publish_date": "2026-06-13T07:11:20+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "3 arrested for allegedly using mobile app to load stolen card details, make fraudulent purchases",
+        "url": "https://www.asiaone.com/singapore/stolen-credit-card-details-nfc-fraudulent-purchases-charged",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 3 arrested for allegedly using mobile app to load stolen card details, make frau...",
+        "content": "Police said their preliminary investigations revealed that he had allegedly used a mobile application to load stolen credit card details onto his mobile phone",
+        "publish_date": "2026-06-13T08:38:38+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-06-13T09:12:04.564341+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
