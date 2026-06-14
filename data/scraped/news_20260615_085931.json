@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pope Leo’s plane was grounded. Then the King of Spain stepped in to help",
+        "url": "https://sg.news.yahoo.com/pope-leo-plane-grounded-then-024242670.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Pope Leo’s plane was grounded. Then the King of Spain steppe...",
+        "content": "A technical problem had been discovered, and the plane wasn’t able to take off. Moments later the pope and some of his entourage left the aircraft. The food is much better on papal flights with special menus printed with the pope’s coat of arms, which...",
+        "publish_date": "2026-06-14T04:52:56+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-06-15T08:59:31.730916+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
