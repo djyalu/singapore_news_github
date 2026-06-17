@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Purrs Over Dinner At Palace Of Versailles: 'The Real Deal'",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/trump-purrs-over-dinner-palace-234349763.html",
+        "content": "Keep independent journalism alive. “I’m a fan of beautiful places,” Trump said. And Versailles is not a gold leaf. Versailles is the real deal. And I said, I’d like to do it.”. Trump’s long been vocal about his affinity for gold and previously described modeling one...",
+        "publish_date": "2026-06-17T08:43:49+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump Purrs Over Dinner At Palace Of Versailles: '..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'They're a very difficult team to support': PM Wong says he roots for Tottenham Hotspur",
+        "url": "https://www.asiaone.com/singapore/lawrence-wong-tottenham-hotspur-epl",
+        "content": "Prime Minister Lawrence Wong has revealed that he is a lifelong Tottenham Hotspur supporter. He added: \"They try, try, try but very little success.\". Recalling some of Spurs' stars from his younger days, PM Wong named Garth Crooks, Glenn Hoddle and Osvaldo (Ossie) Ardiles",
+        "publish_date": "2026-06-16T22:10:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'They're a very difficult team to support': PM Won..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Thundery showers expected on most days for rest of June",
+        "url": "https://www.asiaone.com/singapore/singapore-weather-forecast-thundery-showers-rain-june-mss",
+        "content": "Localised short-duration thundery showers are expected over parts of the island during the late morning and afternoon on most days",
+        "publish_date": "2026-06-16T19:52:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Thundery showers expected on most days for rest of..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-17T09:09:41.822184+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
