@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Teenage girl apprehended after being caught sitting on aircon ledge at Punggol HDB unit",
+        "url": "https://www.asiaone.com/singapore/teenage-girl-apprehended-punggol-hdb-aircon-ledge",
+        "content": "Eyewitnesses said that the girl had been sitting on the aircon ledge when SCDF personnel arrived, reported Lianhe Zaobao. The rescue lasted around five minutes. The teen was apprehended under the Mental Health (Care and Treatment) Act, said the police. She was subsequently taken to KK Women's and Children's Hospital by SCDF.",
+        "publish_date": "2026-06-17T17:00:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Teenage girl apprehended after being caught sittin..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-18T09:08:07.580279+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
