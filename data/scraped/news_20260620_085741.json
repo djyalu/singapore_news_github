@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump unveils a new presidential airplane",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/trump-unveils-presidential-airplane-192341895.html",
+        "content": "The wood paneling on the new presidential aircraft is the highest quality, President Donald Trump says. The flag on the tail is waving just right. The colors, no longer robin’s egg-blue, are a “much better” and “more appropriate look.”. “Everything was designed good. “I like the color of the American flag, right. So begins a new era of presidential air travel",
+        "publish_date": "2026-06-20T06:35:27+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump unveils a new presidential airplane"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "100 people evacuated after stall at Whampoa hawker centre catches fire; no injuries reported",
+        "url": "https://www.asiaone.com/singapore/whampoa-makan-place-fire",
+        "content": "Some passers-by were seen trying to douse the fire using a hosereel. Minutes later, thick smoke billowed out of the premises. An eyewitness, surnamed Fong, posted a picture showing thick grey smoke shrouding the vicinity of the stall. Police officers were also present to cordon off the scene. @asiaone About 100 people were evacuated after a fire broke out at Whampoa Makan Place on Friday (June 19) afternoon. #sgnews #Singapore #Fire ♬ original sound - AsiaOne",
+        "publish_date": "2026-06-19T21:22:44+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 100 people evacuated after stall at Whampoa hawker..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-20T08:57:41.528688+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
