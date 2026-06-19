@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Man to be charged after driving erratically and crashing into taxi at Kallang Bahru",
+        "url": "https://www.channelnewsasia.com/singapore/police-man-charged-court-crash-taxi-kallang-bahru-6193011",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Man to be charged after driving erratically and crashing int...",
+        "content": "\"A 60-year-old male taxi driver and his 43-year-old female passenger were conveyed conscious to the hospital,\" the police said. The authorities found that the suspect had driven erratically and collided with a taxi from the opposite direction. The man was arrested within five hours of the report. Two knives believed to be his were also seized during his arrest.",
+        "publish_date": "2026-06-19T09:16:47.603039+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "‘Worst foreign policy blunder in decades’: Republicans turn on Trump over Iran deal",
+        "url": "https://sg.news.yahoo.com/worst-foreign-policy-blunder-decades-090501124.html",
+        "summary": "📰 정책, 정치, 기술 관련 뉴스\n📢 ‘Worst foreign policy blunder in decades’: Republicans turn on Trump over Iran d...",
+        "content": "released the 14-point interim agreement on Wednesday as Trump signed the documents in Versailles, France. “Reagan is rolling over in his grave,” said Louisiana senator Bill Cassidy on Wednesday, referring to the former president Trump admires",
+        "publish_date": "2026-06-18T20:57:34+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Kopi o kosong': Bedok resident raises concerns over discoloured tap water at home",
+        "url": "https://www.asiaone.com/singapore/bedok-resident-concerns-discoloured-tap-water-pub",
+        "summary": "📰 기술 관련 뉴스\n📢 'Kopi o kosong': Bedok resident raises concerns over discoloured tap water at ho...",
+        "content": "A resident has raised concerns over hygiene after discovering discoloured tap water in her home in Bedok. She noted that although the issue appeared to have been resolved, it continued to recur several times over the past week",
+        "publish_date": "2026-06-18T19:34:48+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-06-19T09:19:35.646876+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
