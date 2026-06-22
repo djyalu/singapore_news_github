@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Dear You gets 8 more Teochew screenings due to 'overwhelming demand'",
+        "url": "https://www.asiaone.com/entertainment/dear-you-teochew-movie-gv-extra-screenings",
+        "content": "Cinema chain Golden Village (GV) and film distributor Clover Films said on Saturday (June 20) that the screenings were added due to \"overwhelming demand\". Tickets to the latter sold out. It has grossed over 1.7 billion yuan (S$324 million) at the China box office and...",
+        "publish_date": "2026-06-20T14:50:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dear You gets 8 more Teochew screenings due to 'ov..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-22T09:03:39.387117+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
