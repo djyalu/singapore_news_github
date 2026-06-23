@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Sharp drops in Big Tech companies pull stocks lower on Wall Street",
+        "url": "https://www.channelnewsasia.com/world/stocks-wall-street-big-tech-ai-interest-rates-6204246",
+        "summary": "📰 기술, 시장 관련 뉴스\\n📢 Sharp drops in Big Tech companies pull stocks lower on Wall ...",
+        "content": "The S&P fell 1.4 per cent. The Nasdaq composite fell 2.2 per cent. Markets throughout Asia fell. Stocks in Europe also fell. The selling largely targeted companies that have seen their values surge amid the frenzy over artificial intelligence technology. Their pricey stock values give them more influence over the broader market’s direction",
+        "publish_date": "2026-06-24T08:44:13.651295+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Singtel sells nearly 3% stake in Gulf Development for about $1b",
+        "url": "https://www.asiaone.com/money/singtel-gulf-development-share-sale",
+        "summary": "📰 개발, 기술 관련 뉴스\n📢 Singtel sells nearly 3% stake in Gulf Development for about $1b",
+        "content": "Singtel said the transaction, executed via a private share placement, would result in a gain of about $140 million. Gulf Development declined to comment when contacted by Reuters.",
+        "publish_date": "2026-06-23T16:10:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-24T08:46:55.942593+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
