@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Romanian parliament rejects liberal PM-designate",
+        "url": "https://sg.news.yahoo.com/romanian-parliament-rejects-liberal-pm-221555890.html",
+        "summary": "📰 정부 관련 뉴스\\n📢 Romanian parliament rejects liberal PM-designate...",
+        "content": "Some deputies left the chamber before the vote started, after a day of debate on Vestea's proposed cabinet line-up. Vestea is a former mayor and regional government leader...",
+        "publish_date": "2026-06-23T07:15:55+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "7 drivers caught for illegal cross-border services, vehicles impounded",
+        "url": "https://www.asiaone.com/singapore/7-drivers-caught-illegal-cross-border-lta",
+        "summary": "📰 싱가포르, 교통, 공항 관련 뉴스\n📢 7 drivers caught for illegal cross-border services, vehicles impounded",
+        "content": "Seven drivers were nabbed for offering illegal rides across the Singapore-Malaysia border, the Land Transport Authority (LTA) said on Monday (June 22). The errant drivers were caught in enforcement operations conducted by the authority, which receives tip-offs from the National Private Hire Vehicles Association and National Taxi Association. All the seven vehicles have been impounded, said LTA in a Facebook post on Monday night. Based on the photographs shared by the authority, areas which the drivers were caught include Pioneer and Changi Airport. Since July 2025, over 5,000 vehicles have been checked as part of a clampdown on unlicensed cross-border rides",
+        "publish_date": "2026-06-23T08:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-23T09:00:04.800005+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
