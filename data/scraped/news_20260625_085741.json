@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Always on guard: He protects celebs, VIPs and million-dollar gems",
+        "url": "https://www.straitstimes.com/business/always-on-guard-he-protects-celebs-vips-and-million-dollar-gems?ref=headstart",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Always on guard: He protects celebs, VIPs and million-dollar...",
+        "content": "After about seven years, I joined the private security industry to get more experience and ventured into protecting chief executives and other corporate leaders. This typically involves a big team, including a main...",
+        "publish_date": "2026-06-25T08:53:19.121028+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "France detects first Ebola case outside Africa in current outbreak",
+        "url": "https://www.channelnewsasia.com/world/ebola-outbreak-france-drc-first-case-outside-africa-6207491",
+        "summary": "📰 보건 관련 뉴스\\n📢 France detects first Ebola case outside Africa in current ou...",
+        "content": "It is the first time France has detected Ebola. The health ministry said it had identified \"a first positive case of Ebola virus disease on national territory\"",
+        "publish_date": "2026-06-25T08:54:08.544110+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump’s Capitol visit devolves into shouting match with GOP senator he helped oust in primary fight",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/trump-capitol-visit-devolves-shouting-221510418.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump’s Capitol visit devolves into shouting match with GOP senator he helped ou...",
+        "content": "“It was supposed to last four weeks, it’s lasted four months. Our original objectives have not been achieved, and I want to know what’s going on.”. From there, according to multiple sources in the room, a...",
+        "publish_date": "2026-06-25T07:15:10+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "ICC judges sue Trump over 'draconian' sanctions",
+        "url": "https://sg.news.yahoo.com/icc-judges-sue-trump-over-231705946.html",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 ICC judges sue Trump over 'draconian' sanctions",
+        "content": "Wednesday's lawsuit said the sanctions imposed on Prost, Bossa and Alapini-Gansou were aimed at \"punishing them for prior judicial decisions and coercing them into prioritizing their private interests over deciding cases...",
+        "publish_date": "2026-06-25T08:17:05+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Woodlands flats, Prime projects in Bishan and Berlayar draw first-timer interest in June BTO launch",
+        "url": "https://sg.news.yahoo.com/woodlands-flats-prime-projects-bishan-095500114.html",
+        "summary": "📰 주택, 정치, 기술 관련 뉴스\n📢 Woodlands flats, Prime projects in Bishan and Berlayar draw first-timer interest...",
+        "content": "The flats here have a wait of 3½ years. Applications close at 11.59pm on June 24 on the HDB Flat Portal. Standard flats do not incur subsidy recovery when they are sold and come with a five-year minimum occupation period (MOP)",
+        "publish_date": "2026-06-24T18:55:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-06-25T08:57:41.429708+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
