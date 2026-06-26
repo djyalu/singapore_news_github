@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Windsor case: What families should know about nursing home red flags",
+        "url": "https://www.channelnewsasia.com/singapore/windsor-nursing-home-elderly-regulation-safety-6206406",
+        "content": "The move came after months of growing unease. His family had initially chosen the nursing home for its affordability and convenient location. He described the nursing home as run-down and cramped, with little space for residents to move around. The food preparation area was located next to residents' beds rather than in an enclosed space. “When they prepared food in the morning, it was very noisy and would disrupt their sleep,” Adrian said. The facility also lacked a lift",
+        "publish_date": "2026-06-26T09:01:13.686932+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Windsor case: What families should know about nurs..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Archaeologists unearth second Alamo cannonball in rare discovery",
+        "url": "https://sg.news.yahoo.com/news/science/articles/archaeologists-unearth-second-alamo-cannonball-230125197.html",
+        "content": "It’s only the second artifact of its kind ever found intact at the site. Texians, Anglo-American colonists who settled in Texas, and Tejanos, Mexican Americans born in Texas,...",
+        "publish_date": "2026-06-26T08:01:25+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Archaeologists unearth second Alamo cannonball in ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman arrested for theft in Woodlands after driving away motorcycle with key left on it",
+        "url": "https://www.asiaone.com/singapore/motorcycle-theft-woodlands-police-arrest-woman",
+        "content": "Police said they were alerted to the case along Woodlands Drive 52 at about 6pm on Tuesday. Officers from Woodlands Police Division established her identity through ground enquiries and with the aid of images from police cameras. The motorcycle was later recovered. She will be charged in court on Friday with the offence of motor vehicle theft",
+        "publish_date": "2026-06-25T16:02:38+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Woman arrested for theft in Woodlands after drivin..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Mum wins $10k in Sheng Siong-Foodpanda campaign, initially thought winning call was a scam",
+        "url": "https://www.asiaone.com/singapore/sheng-siong-foodpanda-grocery-purchase-campaign",
+        "content": "Nabeelah was named the campaign's first winner on Tuesday (June 23). The 31-year-old told AsiaOne that she had just woken up when the call came through on Tuesday",
+        "publish_date": "2026-06-25T19:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mum wins $10k in Sheng Siong-Foodpanda campaign, i..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-26T09:04:20.906977+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
