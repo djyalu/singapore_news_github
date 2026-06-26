@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Always on guard: He protects celebs, VIPs and million-dollar gems",
+        "url": "https://www.straitstimes.com/business/always-on-guard-he-protects-celebs-vips-and-million-dollar-gems?ref=visual-stories",
+        "content": "After about seven years, I joined the private security industry to get more experience and ventured into protecting chief executives and other corporate leaders. This typically involves a big team, including a main...",
+        "publish_date": "2026-06-27T08:49:32.533086+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Always on guard: He protects celebs, VIPs and mill..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police investigate van driver seen crashing into motorcycle in Bukit Batok",
+        "url": "https://www.asiaone.com/singapore/bukit-batok-accident-red-light-van-crashes-into-motorcycle",
+        "content": "Meanwhile, the van is seen travelling straight and no brake light was observed. @asiaone The motorcyclist was taken conscious to hospital. #sgnews #Singapore #Road #Accident #Police ♬ original sound - AsiaOne",
+        "publish_date": "2026-06-26T17:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police investigate van driver seen crashing into m..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman arrested in Yishun for alleged sale of counterfeit goods online worth over $34k",
+        "url": "https://www.asiaone.com/singapore/yishun-woman-arrested-counterfeit-goods",
+        "content": "Police said on Friday night that the items seized, with an estimated street value of over $34,000, included accessories, apparels, footwear, luxury bags, sunglasses, watches and wallets. They added members of the public that the distribution and sale of counterfeit goods, including through online platforms, are serious offences. Investigations into the woman are ongoing",
+        "publish_date": "2026-06-26T21:20:21+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Woman arrested in Yishun for alleged sale of count..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "The Straits Times",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-27T08:54:05.471115+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
