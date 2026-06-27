@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Always on guard: He protects celebs, VIPs and million-dollar gems",
+        "url": "https://www.straitstimes.com/business/always-on-guard-he-protects-celebs-vips-and-million-dollar-gems?ref=visual-stories",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Always on guard: He protects celebs, VIPs and million-dollar...",
+        "content": "After about seven years, I joined the private security industry to get more experience and ventured into protecting chief executives and other corporate leaders. This typically involves a big team, including a main...",
+        "publish_date": "2026-06-28T08:46:08.185815+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Courts' disrespect, humiliation and inflexibility cited by lawyers as reasons for leaving industry",
+        "url": "https://www.asiaone.com/singapore/law-society-report-why-singapore-lawyers-quit",
+        "summary": "📰 싱가포르, 법률, 기술 관련 뉴스\n📢 Courts' disrespect, humiliation and inflexibility cited by lawyers as reasons fo...",
+        "content": "And the senior lawyer wasn't the only one. Lawyers say screaming and name-calling in Singapore's courts have become normalised. \"Nowadays, it (the court) has become a place for dehumanising and humiliating lawyers, especially junior ones. It makes lawyers want to leave the profession altogether,\" another junior lawyer said",
+        "publish_date": "2026-06-28T08:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "The Straits Times",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-28T08:49:53.881754+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
