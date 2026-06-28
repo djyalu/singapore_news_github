@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Soccer Star's Wife Dies Protecting Their 1-Year-Old Daughter in Collapsing Home amid Earthquakes in Venezuela",
+        "url": "https://sg.news.yahoo.com/soccer-stars-wife-dies-protecting-103640078.html",
+        "content": "Andrea Bello died shielding her 1-year-old daughter during Venezuela's back-to-back earthquakes on Wednesday, June 24. The earthquakes have reportedly left at least 920 dead and 50,000 missing. A mother died while protecting her baby daughter during the devastating back-to-back earthquakes in Venezuela. \"You'll always be our favorite hero, Mommy",
+        "publish_date": "2026-06-27T19:36:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Soccer Star's Wife Dies Protecting Their 1-Year-Ol..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Courteney Cox ‘splits with’ Snow Patrol’s Johnny McDaid after 13 years together",
+        "url": "https://sg.news.yahoo.com/courteney-cox-splits-snow-patrol-083142296.html",
+        "content": "Courteney Cox has separated from her long-term partner, Snow Patrol guitarist Johnny McDaid, according to new reports. The Friends star began dating the Northern Irish musician back in late 2013, having met at a party. News of the separation was first reported by the Daily Mail, with People magazine later confirming the claims. The Independent has contacted representatives of Cox and McDaid for comment. They started dating and [are] crazy about each other.”. “I, actually, was the person who kissed first,” she said",
+        "publish_date": "2026-06-28T17:31:42+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Courteney Cox ‘splits with’ Snow Patrol’s Johnny M..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "LTA takes action against owners of vehicles with illegal modifications",
+        "url": "https://www.asiaone.com/singapore/land-transport-authority-illegal-vehicle-modifications-june-2026",
+        "content": "More than 380 offences involving illegal vehicle modifications were detected during Land Transport Authority's (LTA) recent islandwide enforcement operations. LTA reminded motorists that it will continue to take firm action against offenders to keep Singapore's roads safe. Meanwhile, those caught with improper number plates could be fined up to $1,000 and/or jailed for three months. Those who wish to modify their vehicles are advised to refer to LTA's OneMotoring website.",
+        "publish_date": "2026-06-28T08:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 LTA takes action against owners of vehicles with i..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-06-29T08:58:51.343312+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
