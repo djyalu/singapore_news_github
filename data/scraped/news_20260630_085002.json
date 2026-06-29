@@ -1,0 +1,60 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/ford-realized-ai-wasn-t-172058677.html",
+        "content": "economy: Human experience matters. It's because the company realized what AI is and isn't good for. By mid-2024, recalls were costing Ford $4.8 billion per year. Last July, the company notched the superlative as the automaker...",
+        "publish_date": "2026-06-30T02:20:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Crowd erupts as Biden slams Trump over ballroom, arch and reflecting pool: ‘Whoa, what a loser’",
+        "url": "https://sg.news.yahoo.com/whoa-loser-crowd-erupts-biden-145038327.html",
+        "content": "“Tearing down the East Wing of the White House, making room for ‘his’ ballroom. Putting his name on the Kennedy Center. Building an arch in his own honor. Even hiring his own pool guy to fix the reflecting pool,” Biden said",
+        "publish_date": "2026-06-29T00:05:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Crowd erupts as Biden slams Trump over ballroom, a..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "NASA races to save Swift telescope from falling back to Earth with daring rescue mission",
+        "url": "https://sg.news.yahoo.com/nasa-races-save-swift-telescope-122047308.html",
+        "content": "(AP) — NASA is racing to save an aging telescope from falling back to Earth with a daring rescue mission. Liftoff could occur as early as Tuesday. Scanning the cosmos since its launch in 2004, Swift has been sinking faster and faster because of recent intense solar activity. NASA's Hubble Space Telescope — also at risk — could be next. Like Swift, Hubble is losing altitude as the sun erupts with one flare after another",
+        "publish_date": "2026-06-28T21:20:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 NASA races to save Swift telescope from falling ba..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 14-year-old girl last seen in Serangoon on June 17",
+        "url": "https://www.asiaone.com/singapore/police-missing-girl-lorong-lew-lian-lee-jia-xuan",
+        "content": "The address is in the vicinity of shopping mall Nex. It is also where community-planted durian trees have recently bloomed. Anyone with information is urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential.",
+        "publish_date": "2026-06-29T17:59:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police appeal for information on missing 14-year-o..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Couple seen riding motorcycle-style e-bike in Whampoa sparks safety concerns",
+        "url": "https://www.asiaone.com/singapore/modified-ebike-motorcycle-whampoa",
+        "content": "The e-bike was modified to resemble a motorcycle, complete with a tail box. Apart from the modification, both the rider and his passenger are seen without helmets. Facebook user Patrick Lim, referring to the Keppel Road case, pointed out that the authorities were...",
+        "publish_date": "2026-06-30T08:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Couple seen riding motorcycle-style e-bike in Wham..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-06-30T08:50:02.858215+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
