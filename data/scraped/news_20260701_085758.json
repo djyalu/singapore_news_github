@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Senator Fanboys Over Clarence Thomas After Trump's Supreme Court Upsets",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/senator-fanboys-over-clarence-thomas-225625682.html",
+        "content": "After the high court delivered its final opinions of the term on Tuesday, Sen. Jim Banks (R-Indiana) exalted Thomas for his steadfast support of President Donald Trump’s agenda and dedication to conservative values. “I wish Clarence Thomas could live forever,” the senator raved to Real America’s Voice News. “He’s the greatest living human being, greatest living American that we have today in our country.”. Just hours earlier, Thomas issued a scathing 91-page dissent after the court rejected the Trump administration’s efforts to restrict birthright citizenship. Keep independent journalism alive",
+        "publish_date": "2026-07-01T07:56:25+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Senator Fanboys Over Clarence Thomas After Trump's..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Strata-titled cinema space at Golden Mile Tower for sale at $31 mil",
+        "url": "https://sg.news.yahoo.com/strata-titled-cinema-space-golden-030306561.html",
+        "content": "It also includes offices on Levels 3 and 4. CBRE is handling the sale. Subject to approval from the relevant authorities, the buyer could potentially reconfigure the premises into a single large auditorium. The space could also be partially converted for...",
+        "publish_date": "2026-06-29T12:03:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Strata-titled cinema space at Golden Mile Tower fo..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-01T08:57:58.164867+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
