@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Klopp poised to replace Nagelsmann as Germany coach: Reports",
+        "url": "https://www.channelnewsasia.com/sport/klopp-poised-replace-nagelsmann-germany-coach-reports-6228836",
+        "content": "Nagelsmann, 38, has been under fire since Germany's last-32 exit from the World Cup after a shock loss to Paraguay earlier this week. Figures on his annual salary have not been made public, although German media reports he earns roughly €7 million per year",
+        "publish_date": "2026-07-03T08:50:23.489334+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Klopp poised to replace Nagelsmann as Germany coac..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Clementi 448 Market & Food Centre reopens with upgrades after 3 months",
+        "url": "https://sg.news.yahoo.com/style/clementi-448-market-food-centre-040059113.html",
+        "content": "After 3 months of closure, Clementi 448 Market & Food Centre is finally back with a fresh look. Let’s find out what to expect here. The first thing you’ll notice at the refreshed hawker centre is the brightly lit environment. Previously, some areas of the hawker centre were too dark (image on left), especially on cloudy and rainy days. With new light fittings installed (image on right), the hawker centre looks much more vibrant!. In Singapore’s humid environment, ventilation is crucial for both diners and hawkers. To improve cleanliness, you’ll also see more netting around the tray return areas to deter birds and rodents from entering. Other upgrades include refreshed tiling, new tables and stools, improved roof opening design to minimise...",
+        "publish_date": "2026-07-02T13:00:59+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Clementi 448 Market & Food Centre reopens with upg..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Private home price growth eases while HDB resale prices extend decline in Q2 2026: Flash data",
+        "url": "https://www.asiaone.com/money/private-home-price-growth-eases-while-hdb-resale-prices-extend-decline-q2-2026-flash-data",
+        "content": "Singapore's housing market continued to cool at a measured pace in the second quarter of 2026. Private home prices still edged higher, although growth slowed to its weakest pace in seven quarters, while HDB resale prices declined for a second consecutive quarter. The moderation was largely driven by the non-landed segment, where prices slipped 0.1 per cent quarter-on-quarter...",
+        "publish_date": "2026-07-02T12:57:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Private home price growth eases while HDB resale p..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Public healthcare apps to be consolidated under enhanced HealthHub app by November",
+        "url": "https://www.asiaone.com/singapore/healthhub-app-nhg-nuhs-singhealth-health-buddy-moh-public-healthcare",
+        "content": "All four public healthcare apps will be consolidated under an enhanced HealthHub app by November this year. \"Today, many Singaporeans still navigate different healthcare applications, different logins, and different ways of accessing care. We can do better,\" Tan said. Tan was speaking at NHG Health's 10th Centre for Healthcare Innovation Innovate Conference 2026",
+        "publish_date": "2026-07-02T19:04:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Public healthcare apps to be consolidated under en..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-07-03T08:54:04.649986+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
