@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Victor Willis, who co-founded the Village People and co-wrote 'Y.M.C.A.,' dies at 74",
+        "url": "https://sg.news.yahoo.com/victor-willis-co-founded-village-143742083.html",
+        "content": "The cause was identified as “a short but aggressive illness.”. With producer Jacques Morali and Henri Belolo, Morali’s business partner, Willis founded the six-member Village People",
+        "publish_date": "2026-07-01T23:37:42+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Victor Willis, who co-founded the Village People a..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-02T09:03:20.972354+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
