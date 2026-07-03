@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/dbs-seen-benefit-chinas-tighter-190948831.html",
+        "summary": "📰 싱가포르, 금융 관련 뉴스\\n📢 Yahoo Finance...",
+        "content": "The measures may instead enhance the appeal of rival wealth hub Singapore, they said. A recent rally in artificial intelligence-related stocks in South...",
+        "publish_date": "2026-07-02T04:09:48+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "70-year-old man dies after falling into waters off Pulau Ubin; no foul play suspected",
+        "url": "https://sg.news.yahoo.com/70-old-man-dies-falling-140750508.html",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 70-year-old man dies after falling into waters off Pulau Ubin; no foul play susp...",
+        "content": "The police said they do not suspect foul play based on preliminary investigations, but added that investigations are ongoing. Source: The Straits Times © SPH Media Limited",
+        "publish_date": "2026-07-02T23:07:50+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Personal, property information of 70,000 people compromised in data breach involving SLA vendor IBM",
+        "url": "https://www.asiaone.com/singapore/singapore-land-authority-data-security-incident-sla",
+        "summary": "📰 개발, 부동산, 환경 관련 뉴스\n📢 Personal, property information of 70,000 people compromised in data breach invol...",
+        "content": "According to SLA, this information should have been anonymised, but was not, with investigations underway to determine how this occurred. IBM has since revoked access associated with the affected development and testing environment to prevent any other unauthorised access.",
+        "publish_date": "2026-07-03T19:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Esso and SPC catch up with 2nd round of adjustments this week, drop fuel prices",
+        "url": "https://www.asiaone.com/singapore/petrol-diesel-pump-prices-july-3-middle-east-war-esso-spc",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Esso and SPC catch up with 2nd round of adjustments this week, drop fuel prices",
+        "content": "Motorists in Singapore can heave a sigh of relief heading into the weekend, with most fuel companies here having reduced their prices twice this week",
+        "publish_date": "2026-07-03T17:32:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-04T08:54:02.684110+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
