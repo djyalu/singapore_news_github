@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Man, 24, dies following lightning strike near Pasir Ris Beach",
+        "url": "https://www.channelnewsasia.com/singapore/pasir-ris-beach-man-dies-lightning-6233381",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Man, 24, dies following lightning strike near Pasir Ris Beac...",
+        "content": "The 24-year-old man was already unconscious and subsequently died, said the police. Based on preliminary investigations, the police said they do not suspect foul play. Investigations are ongoing",
+        "publish_date": "2026-07-06T08:50:37.822690+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "VIP sales at condo launches under scrutiny after agents get first dibs",
+        "url": "https://sg.news.yahoo.com/vip-sales-condo-launches-under-210000793.html",
+        "summary": "📰 부동산 관련 뉴스\n📢 VIP sales at condo launches under scrutiny after agents get first dibs",
+        "content": "This follows concerns that such arrangements – despite being legal – could leave regular buyers with fewer choices, as property agents and other selected buyers snap up units before public booking begins. Two of the top four largest agencies confirmed that CEA had conducted engagements with them",
+        "publish_date": "2026-07-05T06:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Egypt uncovers lost Byzantine-era city in the western desert",
+        "url": "https://sg.news.yahoo.com/egypt-uncovers-lost-byzantine-era-140434297.html",
+        "summary": "📰 기술, 관광 관련 뉴스\n📢 Egypt uncovers lost Byzantine-era city in the western desert",
+        "content": "Along with the strategic Suez Canal, tourism is a major source of foreign currency in the cash-strapped country. The unearthed quarters included north-south thoroughfares intersected by east-west streets, forming open squares and public spaces, said Hisham el-Leithy, secretary general of the supreme council of antiquities.",
+        "publish_date": "2026-07-04T23:04:34+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "1,776 suspects hauled up for police investigations after checks on 17,000 people in June",
+        "url": "https://www.asiaone.com/singapore/police-raid-vice-ktv-massage-parlour-gambling-drink-driving-june",
+        "summary": "📰 싱가포르, 보건, 교통 관련 뉴스\n📢 1,776 suspects hauled up for police investigations after checks on 17,000 people...",
+        "content": "Singapore's law enforcement agencies conducted checks on more than 17,000 people in June, resulting in 1,776 suspects being hauled up for investigations. Of these, 519 were arrested. The police worked closely with the Central Narcotics Bureau (CNB), the Singapore Civil Defence Force (SCDF), the Land Transport Authority and the Health Sciences Authority (HSA). The offences targeted included vice activities, traffic violations, vaporiser-related crimes, immigration offences and illegal employment. The police conducted several raids against public...",
+        "publish_date": "2026-07-05T14:05:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-06T08:54:03.708924+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
