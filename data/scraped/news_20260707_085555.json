@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "How Indonesian fashion brand Saya built a cult following with a signature dress that went viral",
+        "url": "https://www.channelnewsasia.com/style-beauty/saya-indonesian-fashion-eila-dress-6192741",
+        "content": "When the photos started flooding in, Ines Aryaniputri wasn’t prepared for what she was seeing. Women were wearing Eila (Hebrew for bright, shining light) – the backless maxi slip dress from Saya’s very first collection – everywhere. On tropical holidays. At destination weddings. In maternity shoots and sunset dinners",
+        "publish_date": "2026-07-07T08:52:26.333632+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 How Indonesian fashion brand Saya built a cult fol..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Backlash after China bubble tea firm ordered to pay Louis Vuitton $1.5m",
+        "url": "https://sg.news.yahoo.com/backlash-china-bubble-tea-firm-021930850.html",
+        "content": "Chinese media reported last week that a court in the eastern Jiangsu province ruled that the Shenzhen-based tea company had copied Louis Vuitton's iconic four-petal flower design. The BBC has contacted Molly Tea and Louis Vuitton for comment",
+        "publish_date": "2026-07-06T15:41:34+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Backlash after China bubble tea firm ordered to pa..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-07-07T08:55:55.575197+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
