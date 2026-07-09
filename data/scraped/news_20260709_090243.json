@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Elaine Chao Addresses Mitch McConnell's Health, Her Decision To Travel Amid His Hospitalization",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/elaine-chao-addresses-mitch-mcconnells-232324483.html",
+        "content": "Keep independent journalism alive. Former Transportation Secretary Elaine Chao issued a statement through a spokesperson addressing growing concerns about the health of her husband, Sen. Mitch McConnell (R-Ky.), and her decision to stay in China during his hospitalization. \"The secretary was on a long-planned trip in China to support her family's philanthropic endeavors. Politics: Trump Says Interim U.S.-Iran Deal Is 'Over,' Platner Campaign Collapsing Amid New Allegation: Live Updates",
+        "publish_date": "2026-07-09T08:23:24+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Elaine Chao Addresses Mitch McConnell's Health, He..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-09T09:02:43.385552+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
