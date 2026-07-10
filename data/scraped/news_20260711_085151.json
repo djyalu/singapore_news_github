@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump agrees to more Iran talks but insists ceasefire is over",
+        "url": "https://www.channelnewsasia.com/world/iran-us-agree-continue-peace-talks-donald-trump-6246781",
+        "content": "\"The Islamic Republic of Iran has asked us to continue 'talks'. Earlier this week, at a NATO summit, Trump also declared the ceasefire over, saying of Tehran:...",
+        "publish_date": "2026-07-11T08:43:28.045033+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump agrees to more Iran talks but insists ceasef..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'We can do a threesome': Gojek driver allegedly pesters female passenger with sexually charged remarks",
+        "url": "https://www.asiaone.com/singapore/gojek-driver-allegedly-made-sexual-remarks-female-passenger-suggested-threesome",
+        "content": "\"We can do threesome,\" he suggests, just before dropping the passenger off. The second half of the video shows the passenger recounting the ride.",
+        "publish_date": "2026-07-10T13:52:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'We can do a threesome': Gojek driver allegedly pe..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-11T08:51:51.910106+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
