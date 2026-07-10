@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Johor state polls: Can smaller reformist parties like Bersama and MUDA break into PH’s urban seats?",
+        "url": "https://www.channelnewsasia.com/asia/johor-elections-bersama-muda-pakatan-harapan-vote-splitting-urban-youth-6237796",
+        "content": "The rising costs of living, increasingly frequent floods and housing affordability are among the concerns she hears most from voters. “They want to see more alternative political establishments that can represent their voices,” she told CNA. “I want to be the best representative for them.”",
+        "publish_date": "2026-07-10T08:54:31.736946+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Johor state polls: Can smaller reformist parties l..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Justin Baldoni Reflects on ‘Painful’ Blake Lively Legal Fight After Nearly 2 Years of Silence",
+        "url": "https://sg.news.yahoo.com/justin-baldoni-reflects-painful-blake-024230558.html",
+        "content": "Justin Baldoni reflected on his \"painful\" legal dispute with Blake Lively on Wednesday, saying \"gratitude\" helped him through the public controversy. \"It's not because we haven't had anything to say,\" he said",
+        "publish_date": "2026-07-09T11:42:30+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Justin Baldoni Reflects on ‘Painful’ Blake Lively ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Graham Platner Waiting Until Last Minute To Formally Withdraw From Senate Race: Reports",
+        "url": "https://sg.news.yahoo.com/news/politics/articles/graham-platner-waiting-until-last-233929385.html",
+        "content": "Democrat Graham Platner is waiting until the last minute to formally withdraw from the U.S. Senate race in Maine, sources told Axios and Bloomberg on Thursday. A campaign strategist for Platner confirmed he plans to file his resignation papers on Monday",
+        "publish_date": "2026-07-10T08:39:29+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Graham Platner Waiting Until Last Minute To Formal..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "That $500 flower garland? It's subject to GST, says IRAS to KTV operators",
+        "url": "https://www.asiaone.com/singapore/nightclub-ktv-flower-garlands-gst-tax-iras",
+        "content": "A $500 flower garland might look like a generous show of appreciation. To IRAS, it also looks like taxable revenue",
+        "publish_date": "2026-07-09T14:21:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 That $500 flower garland? It's subject to GST, say..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-10T09:01:58.259835+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
