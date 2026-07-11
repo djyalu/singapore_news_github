@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Typhoon makes landfall in China after forcing nearly two million to flee",
+        "url": "https://www.channelnewsasia.com/east-asia/china-typhoon-bavi-two-million-evacuate-6248586",
+        "content": "BEIJING: Typhoon Bavi made landfall late on Saturday (Jul 11) in eastern China, packing strong winds as it roared ashore after authorities evacuated nearly two million people, state media said. There was no immediate word on damage or casualties. Before reaching China, the storm lashed northern Taiwan and Japan's remote southwestern islands, toppling trees and leaving tens of thousands without power",
+        "publish_date": "2026-07-12T08:39:08.670656+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Typhoon makes landfall in China after forcing near..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Death toll in Venezuela earthquakes surpasses 4,300",
+        "url": "https://sg.news.yahoo.com/death-toll-venezuela-earthquakes-surpasses-175826214.html",
+        "content": "The death toll in Venezuela's devastating twin earthquakes last month has topped 4,300, a top lawmaker said Saturday. Camps for families left homeless have sprung up in stadiums, plazas and on sidewalks. More than 19,000 people are currently living in those camps, Rodriguez said",
+        "publish_date": "2026-07-12T04:52:32+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Death toll in Venezuela earthquakes surpasses 4,30..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-12T08:47:52.654630+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
