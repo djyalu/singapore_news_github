@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "14-year-old cyclist taken to hospital after accident with car in Jurong East",
+        "url": "https://sg.news.yahoo.com/14-old-cyclist-taken-hospital-140000962.html",
+        "content": "A video on social media appears to show the boy trapped under the vehicle. A 48-year-old male car driver is assisting with police investigations",
+        "publish_date": "2026-07-11T23:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 14-year-old cyclist taken to hospital after accide..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Why this former cop left a 23-year career to start a fried chicken eatery with $50,000",
+        "url": "https://sg.news.yahoo.com/why-former-cop-left-23-032000001.html",
+        "content": "On several days, the till closed with just $50. The single father of three had plonked $50,000 of his life savings into the venture. \"I really wanted to cry,\" he says. He resigned in February 2026 and opened Foxy's Chikn on April 26",
+        "publish_date": "2026-07-11T12:20:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Why this former cop left a 23-year career to start..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Passenger says Grab driver locked doors and charged her $2 for wet tissue",
+        "url": "https://www.asiaone.com/singapore/grab-driver-charges-passenger-wet-tissue-lock-doors",
+        "content": "\"He was really snappy and he said no,\" she said. \"I was like, 'Oh okay, never mind.'\". About five minutes later, the driver supposedly said he had wet tissue. Fussi, who thought that the gesture was \"nice\", accepted it. \"It's not about the $2, it's not expensive",
+        "publish_date": "2026-07-12T14:10:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Passenger says Grab driver locked doors and charge..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-13T08:46:26.875852+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
