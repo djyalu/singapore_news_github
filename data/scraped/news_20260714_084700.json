@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says deal with Iran still 'possible' as US launches third night of strikes",
+        "url": "https://www.channelnewsasia.com/world/trump-us-iran-war-strait-hormuz-6252101",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump says deal with Iran still 'possible' as US launches th...",
+        "content": "He added that the US strikes were aimed at knocking out Iran's offensive capability. \"Yeah, I think a deal is possible. Sure, I do,\" Trump told reporters in the Oval Office. We have to negotiate it further'.\". The reimposed blockade would begin at 8pm GMT on Tuesday (4am,...",
+        "publish_date": "2026-07-14T08:39:18.096546+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "SM Lee to make 4-day visit to Brunei to attend Brunei Sultan's 80th birthday celebrations",
+        "url": "https://www.asiaone.com/singapore/lee-hsien-loong-brunei-sultan-hassanal-bolkiah-80th-birthday",
+        "summary": "📰 싱가포르, 장관, 교통 관련 뉴스\n📢 SM Lee to make 4-day visit to Brunei to attend Brunei Sultan's 80th birthday cel...",
+        "content": "While in Brunei, SM Lee will have audiences with Sultan Hassanal Bolkiah and other members of the royal family. He will also meet with various Bruneian ministers and Singapore Armed Forces (SAF) personnel training in Brunei. The SAF has been using Temburong for training since 1977. President Tharman Shanmugaratnam, Prime Minister Lawrence Wong, SM Lee, and Emeritus Senior Minister Goh Chok Tong have written congratulatory letters to Sultan Hassanal Bolkiah.",
+        "publish_date": "2026-07-13T19:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 46, arrested for dangerous driving after collision with motorcycle in Jalan Besar",
+        "url": "https://www.asiaone.com/singapore/man-arrested-dangerous-driving-collision-motorcycle-jalan-besar",
+        "summary": "📰 법률, 기술, 관광 관련 뉴스\n📢 Man, 46, arrested for dangerous driving after collision with motorcycle in Jalan...",
+        "content": "A motorcycle was seen travelling straight through the junction before colliding with the car. A 28-year-old male motorcyclist was taken conscious to Tan Tock Seng Hospital, said the police. A 46-year-old male car driver was arrested for dangerous driving causing hurt",
+        "publish_date": "2026-07-13T19:06:34+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-07-14T08:47:00.127154+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
