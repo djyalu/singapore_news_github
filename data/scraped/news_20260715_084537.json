@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US launches new Iran strikes, reimposes naval blockade",
+        "url": "https://sg.news.yahoo.com/us-strikes-iran-vows-reimpose-092236510.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 US launches new Iran strikes, reimposes naval blockade...",
+        "content": "\"Next week it gets really bad for them because next week comes the power plants. Next week comes the bridges,\" Trump said in an interview on Fox News. \"We're going to knock out all their power plants",
+        "publish_date": "2026-07-15T08:25:17+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Best spots to catch fireworks this National Day",
+        "url": "https://www.asiaone.com/lifestyle/ndp-2026-fireworks-best-spots",
+        "summary": "📰 싱가포르, 취업 관련 뉴스\n📢 Best spots to catch fireworks this National Day",
+        "content": "If you didn't manage to snag tickets for NDP 2026, fret not. Here are several locations in Singapore where you can catch the fireworks this National Day. The Kallang Wave Mall is also nearby, for those who want to do some...",
+        "publish_date": "2026-07-14T17:16:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-15T08:45:37.828289+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
