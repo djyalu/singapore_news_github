@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Man arrested for alleged voyeurism at Compass One",
+        "url": "https://www.asiaone.com/singapore/police-compass-one-incident-voyeurism-man-arrested",
+        "content": "This comes three days after Sengkang Neighbourhood Police Centre said in a Facebook post that they were looking for the man to assist with investigations",
+        "publish_date": "2026-07-15T19:36:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man arrested for alleged voyeurism at Compass One"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'No time for movies'? WP launches #MakeTimeFor National Day campaign",
+        "url": "https://www.asiaone.com/singapore/no-time-watch-movies-wp-make-time-for-campaign-david-neo-jamus-lim",
+        "content": "Acting Minister of Culture, Community and Youth David Neo's quip that ministers have no time to watch movies in Parliament earlier this month quickly gained traction online, spawning memes, jokes and commentary across social media. \"No time, no time, no time. We've all heard that before,\" Lim told the camera in the video. Even no time for football",
+        "publish_date": "2026-07-15T18:47:53+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'No time for movies'? WP launches #MakeTimeFor Nat..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-16T08:52:17.428473+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
