@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/trump-media-sell-early-access-220124080.html",
+        "content": "Trump Media & Technology Group, which owns Truth Social, is launching a paid service to give Wall Street firms high-speed access to its most influential posts. Launching 1 August, instant updates will be delivered from key accounts, it said. President Donald Trump currently has the most followers on the platform. It is likely aimed at financial traders who want to see market-moving news fast. Trump's social media posts often cause sudden swings in global markets, especially when he writes about trade and tarriffs. For firms, a delay of even seconds can be costly. Until now, banks and traders had to monitor the app manually. The new system will send posts directly to paying clients. \"Markets already move on Truth Social posts\", said Kevin McGurn, the interim boss of Trump Media, adding that the service will create a steady profit.",
+        "publish_date": "2026-07-17T07:42:41+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Giraffes Can Do Basic Math, and They Beat Dogs at It",
+        "url": "https://sg.news.yahoo.com/giraffes-basic-math-beat-dogs-110200508.html",
+        "content": "Giraffes are incredibly cool creatures. In fact, one recent study found that they have the ability to do basic math!. About 68 percent of the time, the giraffes were able to select the...",
+        "publish_date": "2026-07-15T20:02:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Giraffes Can Do Basic Math, and They Beat Dogs at ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pony rides, farm visits, baby spas: What to spend your $500 Child LifeSG Credits on",
+        "url": "https://sg.news.yahoo.com/pony-rides-farm-visits-baby-093000574.html",
+        "content": "SINGAPORE – Thinking about what to spend your Child LifeSG Credits on?. Every parent knows the grocery bill is non-negotiable. Local supermarket chains such as FairPrice, Sheng Siong, Giant and Cold Storage accept the credits. For a small indulgence for the little one, head over to Udders –...",
+        "publish_date": "2026-07-14T18:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pony rides, farm visits, baby spas: What to spend ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "SUV catches fire in Tanjong Pagar",
+        "url": "https://www.asiaone.com/singapore/neil-road-tanjong-pagar-honda-suv-fire",
+        "content": "The engine compartment of a compact sports utility vehicle caught fire in Tanjong Pagar on Wednesday (July 15) night. Firefighters are seen pushing what appears to be a nozzle beneath the car's front bonnet. Responding to AsiaOne's queries, the Singapore Civil Defence Force (SCDF) stated that the incident happened at about 8.40pm. SCDF also said that its firefighters extinguished the fire, which involved the engine compartment of the car, with two hose reels. No injuries were reported in the incident, and investigations are ongoing.",
+        "publish_date": "2026-07-16T19:25:57+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 SUV catches fire in Tanjong Pagar"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-17T08:51:05.098993+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
