@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "'You feel like rubbish': Why the toxic culture in law firms persists",
+        "url": "https://www.channelnewsasia.com/today/ground-up/lawyer-toxic-work-culture-lawsoc-mental-health-6257316",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 'You feel like rubbish': Why the toxic culture in law firms ...",
+        "content": "Each time it happened, other employees outside his room would be left rattled, wondering who would be called up next. Do you even check your work?'\"",
+        "publish_date": "2026-07-18T08:38:26.899587+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Man to be charged with cheating victim of over $86k after posing as renovation firm employee",
+        "url": "https://sg.news.yahoo.com/man-charged-cheating-victim-over-145300997.html",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 Man to be charged with cheating victim of over $86k after posing as renovation f...",
+        "content": "Officers from Bedok Police Division were able to establish the identity of the man through ground inquiries. He is believed to be also involved in other cheating cases involving a similar modus operandi, police said. He will be charged in court on July 18",
+        "publish_date": "2026-07-17T23:53:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Federal employees can download TikTok on government devices, DOJ says",
+        "url": "https://sg.news.yahoo.com/federal-employees-download-tiktok-government-232430893.html",
+        "summary": "📰 정부, 교통, 정치 관련 뉴스\n📢 Federal employees can download TikTok on government devices, DOJ says",
+        "content": "WASHINGTON, July 17 (Reuters) - The U.S. Justice Department said on Friday that federal employees can now download the short-video app TikTok ‌on government devices. user data and operations to the joint venture TikTok USDS that was completed in January. In January, TikTok said the venture will retrain, test and update TikTok's ‌content recommendation algorithm on U.S. ⁠user data and the algorithm will be secured in Oracle's U.S. Oracle is one of the venture's three main investors. The memorandum ⁠opinion to President Donald Trump said the current version of TikTok does not pose risks. \"We understand you have since instructed that employees of Executive Branch agencies may download ​TikTok onto ​their official...",
+        "publish_date": "2026-07-18T08:30:52+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Sinar Harapan: Shiok dry lontong & nasi ambeng at Haig Road Food Centre",
+        "url": "https://sg.news.yahoo.com/style/sinar-harapan-shiok-dry-lontong-060047922.html",
+        "summary": "📰 음식, 기술 관련 뉴스\n📢 Sinar Harapan: Shiok dry lontong & nasi ambeng at Haig Road Food Centre",
+        "content": "Headed by 71-year-old Mdm. The three of them start preparations at 5am, taking turns cooking the food, serving, and organising vendor supplies",
+        "publish_date": "2026-07-15T13:00:47+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-07-18T08:46:16.845309+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
