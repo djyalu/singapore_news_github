@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Inside India’s cybercrime investigations: How scammers exploit Telegram",
+        "url": "https://www.channelnewsasia.com/asia/inside-indias-cybercrime-investigations-how-scammers-exploit-telegram-6260666",
+        "content": "A week later, allegations emerged that the NEET question paper had been leaked on Telegram. Authorities ordered a retest the following month. Even then, the Telegram channels she followed were flooded with rumours that the new test paper had also been leaked. About 2.2 million students took the NEET in 2026. “Suddenly, everyone felt they had to be on Telegram because you didn't know what information might appear there,” Narsale told CNA.",
+        "publish_date": "2026-07-20T08:42:30.156110+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Inside India’s cybercrime investigations: How scam..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-07-20T08:50:21.682956+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
