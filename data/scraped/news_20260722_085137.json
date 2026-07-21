@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "At least 53 dead in Guyana capsized ferry disaster",
+        "url": "https://sg.news.yahoo.com/least-41-dead-guyana-capsized-185830928.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 At least 53 dead in Guyana capsized ferry disaster...",
+        "content": "\"A total of 53 bodies have been recovered,\" Phillips told a press conference. \"We've recorded 76 persons that were rescued as of 6 pm (2200GMT) today,\" he said",
+        "publish_date": "2026-07-22T08:20:54+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Former MP Sitoh Yih Pin, media veteran Patrick Daniel appointed as non-resident high commissioner to Maldives, Sri Lanka",
+        "url": "https://www.asiaone.com/singapore/sitoh-yih-pin-maldives-high-commissioner-patrick-daniel-sri-lanka",
+        "summary": "📰 싱가포르, 기술, 국제 관련 뉴스\n📢 Former MP Sitoh Yih Pin, media veteran Patrick Daniel appointed as non-resident ...",
+        "content": "Sitoh is also an independent and non-executive director of China Taiping Insurance (Singapore). Sitoh is married to Wong Wei Leng. They have two children. Patrick Daniel, a former editor and senior executive of Singapore Press Holdings (SPH), retired as its deputy chief executive officer in 2017.",
+        "publish_date": "2026-07-21T21:02:20+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 13-year-old last seen in Tampines",
+        "url": "https://www.asiaone.com/singapore/police-missing-boy-tampines-sahil-rehmat-ali-anjum",
+        "summary": "📰 법률, 환경 관련 뉴스\n📢 Police appeal for information on missing 13-year-old last seen in Tampines",
+        "content": "He was purportedly wearing a green singlet and black shorts. Anyone with information is urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential.",
+        "publish_date": "2026-07-21T21:40:37+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-22T08:51:37.446114+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
