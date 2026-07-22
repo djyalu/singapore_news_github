@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "House passes bill to restrict lawmaker stock trading, but larger fight to fully ban it looms",
+        "url": "https://sg.news.yahoo.com/house-passes-bill-restrict-lawmaker-205415272.html",
+        "content": "Under the legislation, lawmakers can still buy private stocks, keep stocks they already owned prior to entering Congress and maintain certain investment funds. Selling stock would require a seven-to-14-day advance notice. In the days leading up to the vote, a separate...",
+        "publish_date": "2026-07-23T07:40:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 House passes bill to restrict lawmaker stock tradi..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'What happened?' Shanmugam sheds light on Faishal Ibrahim's resignation",
+        "url": "https://www.asiaone.com/singapore/shanmugam-on-faishal-ibrahim-resignation",
+        "content": "Home Affairs Minister K. \"Nevertheless, his responses were, objectively, inappropriate and questionable. They come across as engaging with her,\" said Shanmugam, who is also the Coordinating Minister for National Security. Shanmugam said the woman interpreted Assoc Prof...",
+        "publish_date": "2026-07-22T18:16:13+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'What happened?' Shanmugam sheds light on Faishal ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Shanmugam becomes first Senior Minister who wasn't PM or DPM",
+        "url": "https://www.asiaone.com/singapore/shanmugam-senior-minister-cabinet-reshuffle-singapore-lawrence-wong",
+        "content": "Shanmugam, who will take on the additional role of Senior Minister on July 27. After all, the senior minister role in Singapore has historically been occupied by former prime ministers or deputy prime ministers",
+        "publish_date": "2026-07-22T21:18:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Shanmugam becomes first Senior Minister who wasn't..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "PM Wong announces Cabinet reshuffle; David Neo, Jeffrey Siow to become full ministers",
+        "url": "https://www.asiaone.com/singapore/singapore-cabinet-reshuffle-lawrence-wong-jeffrey-siow-david-neo",
+        "content": "Acting ministers David Neo and Jeffrey Siow will become full ministers in the Cabinet, Prime Minister Lawrence Wong said on Wednesday (July 22). Zaqy Mohamad has since taken over as Acting Minister of Muslim Affairs from Assoc Prof Faishal",
+        "publish_date": "2026-07-22T19:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PM Wong announces Cabinet reshuffle; David Neo, Je..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-23T08:55:09.334728+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
