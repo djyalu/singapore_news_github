@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Girl appears to be vaping at HDB void deck; First Toa Payoh Primary School investigating",
+        "url": "https://www.asiaone.com/singapore/girl-appears-be-vaping-hdb-void-deck-first-toa-payoh-primary-school-investigating",
+        "content": "The video, posted on Monday (July 21), claimed that the incident took place at the void deck of Block 206D Woodleigh Link. The footage shows four youths gathered at the area. AsiaOne is unable to independently verify the circumstances depicted in the footage. The school added that as investigations are ongoing, it is unable to provide further...",
+        "publish_date": "2026-07-23T13:34:19+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Girl appears to be vaping at HDB void deck; First ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-24T08:52:02.257124+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
