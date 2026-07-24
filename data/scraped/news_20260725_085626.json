@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Salmonella outbreak tied to eggs has sickened 98 people since November",
+        "url": "https://sg.news.yahoo.com/salmonella-outbreak-tied-eggs-sickened-230040470.html",
+        "summary": "📰 보건 관련 뉴스\\n📢 Salmonella outbreak tied to eggs has sickened 98 people sinc...",
+        "content": "Nearly 100 people in 17 states have been sickened in a salmonella outbreak tied to recalled eggs, federal health officials said Friday. The 98 people had illnesses that started between Nov. 21 and June 30, according to the U.S. Food and Drug Administration. No deaths have been reported, but 26 people have been hospitalized. Midwest Poultry previously recalled eggs produced and distributed from farms in Texas between June 6 and July 3. The eggs were sold under several brand names and have sell-by or best-by dates between July 20 and Aug. Samples collected by Midwest Poultry at farms in Texas tested positive for...",
+        "publish_date": "2026-07-25T08:00:40+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Interact responsibly with marine wildlife, NParks urges after group seen foraging at Changi",
+        "url": "https://www.asiaone.com/singapore/nparks-changi-marine-wildlife-foraging-criticism",
+        "summary": "📰 싱가포르, 창이, 환경 관련 뉴스\n📢 Interact responsibly with marine wildlife, NParks urges after group seen foragin...",
+        "content": "A group of people has drawn criticism after videos of them foraging marine life at Changi's shores and cooking their haul surfaced online. These clips, originally posted on Douyin, were shared in a post on Facebook group Complaint Singapore on July 13. These appeared to have been cooked for consumption. According to the netizen who reposted the clips, the group frequently shares similar content. \"I am not against coastal foraging. Many netizens took issue with the behaviour, with several expressing concern over its impact on the environment. \"Surely will affect the ecosystem. .With their non-control attitude[sic],\" one wrote. Another asked: \"Seems like over farming, won't this harm the local marine life?\"",
+        "publish_date": "2026-07-24T20:48:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "ICA officers cut open rental car tyres, uncover over 1,200 packets of duty-unpaid cigarettes",
+        "url": "https://www.asiaone.com/singapore/woodlands-checkpoint-ica-officers-cut-open-rental-car-tyres-find-duty-unpaid-cigarettes",
+        "summary": "📰 싱가포르, 기술, 국제 관련 뉴스\n📢 ICA officers cut open rental car tyres, uncover over 1,200 packets of duty-unpai...",
+        "content": "Once the tyres were cut open, yellow packets were visible inside the tyre walls. The packets were later found with cigarettes concealed within. More than 1,200 packets of duty-unpaid cigarettes were found concealed within four punctured tyres and a spare tyre. #sgnews #Singapore #Immigration #Border #Smuggle ♬ original sound - AsiaOne. A 47-year-old Singaporean man was arrested",
+        "publish_date": "2026-07-24T17:19:08+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-25T08:56:26.782957+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
