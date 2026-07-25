@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "China evacuates 20,000 people as Typhoon Noul nears",
+        "url": "https://www.channelnewsasia.com/east-asia/china-typhoon-noul-20000-people-evacuate-hong-kong-guangdong-6277921",
+        "content": "BEIJING: Authorities have evacuated more than 20,000 people and suspended railway services in southern China as approaching Typhoon Noul threatens torrential rain and gale-force winds, according to state media. More than 20,000 people had been evacuated in Guangdong, state broadcaster CCTV said in a bulletin late on Friday",
+        "publish_date": "2026-07-26T08:46:07.341859+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China evacuates 20,000 people as Typhoon Noul near..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Cheaper rents at co-living spaces among more than 20 initiatives launched under SG Youth Plan",
+        "url": "https://www.asiaone.com/singapore/sg-youth-plan-initiatives-coliving-jobs-mentor",
+        "content": "But navigating this rite of passage can be difficult, with factors including finances and emotional aspects to consider. Monthly rental rates at Eco-Energy's 1925 Quarters in Little India will begin at $1,800",
+        "publish_date": "2026-07-25T14:37:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Cheaper rents at co-living spaces among more than ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NTU's AI 'ambassador Hailey' draws backlash after appearing at convocation ceremony",
+        "url": "https://www.asiaone.com/singapore/ntu-ai-generated-student-convocation-sparks-backlash",
+        "content": "Hailey's appearance at a recent convocation ceremony at Nanyang Technological University (NTU) has sparked backlash. She is NTU's hyper-realistic generative AI (GenAI) ambassador. The clip was uploaded by TikTok user dalgomi on Thursday (July 23). In the caption, he wrote: \"You could tell the audience was shocked\". \"Imagine what should be your proudest moment of university, [yet] they congratulate you with AI,\" lamented one commenter. Another commenter sarcastically quipped: \"Your lecturer can [use AI], but you can't.\". However, 58 per cent of employees worry AI could...",
+        "publish_date": "2026-07-25T10:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 NTU's AI 'ambassador Hailey' draws backlash after ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-26T08:53:43.655430+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
