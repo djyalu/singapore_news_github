@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "WW2 soldier's cigarette case returned to daughter he never met",
+        "url": "https://sg.news.yahoo.com/ww2-soldiers-cigarette-case-returned-204940491.html",
+        "content": "Moved to tears at the presentation at the Royal Welsh Regimental Museum in Brecon, Powys, Stan's daughter Diane Owen said: \"I'm shocked. \"I just wish I could have spoken to him. Thank you Filip, for bringing a little piece of his memory home.\". Filip told Diane: \"I've had many turbulent – I think you'd say in English - sleepless nights since...",
+        "publish_date": "2026-07-26T15:23:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 WW2 soldier's cigarette case returned to daughter ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-27T08:53:46.582526+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
