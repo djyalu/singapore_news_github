@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Bali bans Dutch expats whose run club allegedly excluded Indonesians",
+        "url": "https://sg.news.yahoo.com/bali-bans-dutch-expats-whose-105917175.html",
+        "content": "Indonesia's immigration authorities have banned two Dutch nationals for organising an illegal running event that had also allegedly discriminated against locals. They will not be allowed back to Indonesia, authorities said. Bali, Indonesia's famed tropical paradise, has become a hostspot for digital nomads in recent years, resulting in growing tensions between expats and locals. On Sunday, Bali Governor I Wayan Koster vowed to take \"strict action\" to ensure such incidents do not happen again.",
+        "publish_date": "2026-07-27T21:23:03+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Bali bans Dutch expats whose run club allegedly ex..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "King’s most senior aide to step down after 20 years with royal household",
+        "url": "https://sg.news.yahoo.com/king-most-senior-aide-step-152331561.html",
+        "content": "Sir Clive Alderton, the most senior aide to King Charles, has announced that he will step down next year. Sir Clive is Charles' and Queen Camilla's principal private secretary. \"That support will continue, in a less formal capacity, for all of my life.\". Sir Clive Alderton, right, leaves Buckingham Palace with newly appointed Prime Minister Andy Burnham and his wife Marie-France van Heel on 20 July (Reuters). Sir Clive was a diplomat prior to joining the royal household. He joined the Foreign Office in 1986 and served in Belgium, France, Poland and Singapore",
+        "publish_date": "2026-07-28T00:31:14+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 King’s most senior aide to step down after 20 year..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-28T08:57:46.747322+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
