@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Property agencies welcome new minimum transaction rule, seek safeguards for consumer ratings",
+        "url": "https://www.channelnewsasia.com/singapore/property-agencies-minimum-transactions-consumer-ratings-cea-6283516",
+        "content": "“The industry expects this to happen,” said Mr Lee Sze Teck, senior director of data analytics at Huttons Group. He noted that the Council for Estate Agencies (CEA) had been engaging industry stakeholders on ensuring agents are up-to-date",
+        "publish_date": "2026-07-29T08:45:41.406947+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Property agencies welcome new minimum transaction ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Yishun fight that left man unconscious: 6 men to be charged with rioting",
+        "url": "https://www.asiaone.com/singapore/yishun-fight-six-charged-rioting",
+        "content": "A total of seven men, aged between 18 and 33, were arrested for their alleged involvement. He was taken unconscious to Khoo Teck Puat Hospital. Police investigations into the remaining 33-year-old man...",
+        "publish_date": "2026-07-29T07:20:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yishun fight that left man unconscious: 6 men to b..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-07-29T08:53:34.939083+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
