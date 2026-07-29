@@ -1,0 +1,53 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Gold trims gain as Fed holds rates, signals hike support",
+        "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-trims-gain-fed-holds-rates-signals-hike-support",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Gold trims gain as Fed holds rates, signals hike support...",
+        "content": "Bullion rose as much as 2.2 per cent before paring gains. Three officials dissented in favour of raising rates by a quarter percentage point. Still, renewed hostilities between the US and Iran pushed Brent crude above US$90 a barrel, fuelling inflation concerns and damping...",
+        "publish_date": "2026-07-30T08:47:33.759385+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-07-30T08:54:57.485574+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "MRT disruption possibly affecting travel plans? Google Maps now provides real-time alerts",
+        "url": "https://sg.news.yahoo.com/mrt-disruption-possibly-affecting-travel-101700231.html",
+        "summary": "📰 교통, 기술, 관광 관련 뉴스\n📢 MRT disruption possibly affecting travel plans? Google Maps now provides real-ti...",
+        "content": "The feature, which offers real-time travel route information, aims to help commuters adjust their journeys during rail delays, said the Land Transport Authority (LTA). When train services are available but delayed, commuters will be shown a service delay alert, along with updated journey timings. In both scenarios, Google Maps will also show commuters recommended alternative travel routes. LTA announces train disruptions on its website and the MyTransport app, with information such as...",
+        "publish_date": "2026-07-29T19:17:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/crude-jumps-fresh-mideast-flare-030605498.html",
+        "summary": "📰 경제, 금융, 기술 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Major US indices ended down more than 1.5 percent after initially greeting the Fed's decision to keep interest rates level. \"The market is getting mixed messages from the Fed,\" said Adam Sarhan of 50 Park Investments",
+        "publish_date": "2026-07-30T06:26:10+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-07-30T08:54:57.485605+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
