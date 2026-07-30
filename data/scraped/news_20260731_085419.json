@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Instagram cracks down on growing ‘pervert glasses’ problem with Meta Ray-Bans",
+        "url": "https://sg.news.yahoo.com/instagram-cracks-down-growing-pervert-155620079.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Instagram cracks down on growing ‘pervert glasses’ problem w...",
+        "content": "Some people fear heights. Others fear the dark. These would be the same Ray-Ban Meta glasses that Mark Zuckerberg has spent years pitching as one of AI's first breakout consumer products. It turns out the glasses can answer questions, translate language, capture photos, livestream hands-free—and record videos surreptitiously. The trend has fueled privacy concerns around the glasses and earned them an unflattering nickname online: \"pervert glasses.\"",
+        "publish_date": "2026-07-29T00:56:20+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Anthropic says its AI models hacked systems of three companies during tests",
+        "url": "https://sg.news.yahoo.com/anthropic-says-ai-models-hacked-232055106.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Anthropic says its AI models hacked systems of three companies during tests",
+        "content": "The company said it identified the incidents after reviewing 141,006 cybersecurity evaluation runs, ‌a process it ​launched following OpenAI's ​disclosures. \"Claude ​compromised the impacted organizations' ‌infrastructure using basic ​techniques, such ​as exploiting weak passwords and unauthenticated endpoints,\" it said. (Reporting ​by ‌Mrinmay Dey in Mexico City. ​Editing by Alan Barona ​and Shilpi Majumdar)",
+        "publish_date": "2026-07-31T08:20:55+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Company, director to be charged for allegedly providing flag registration service to sanctioned vessel",
+        "url": "https://www.asiaone.com/singapore/flag-registration-petrel-8-united-nations-sanction-director-charged",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Company, director to be charged for allegedly providing flag registration servic...",
+        "content": "The company will be charged with one count under Regulation 8D(d)(ii) of the United Nations (Sanctions – DPRK) Regulations 2010. Under the United Nations Act 2001, a person who...",
+        "publish_date": "2026-07-30T23:29:24+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-07-31T08:54:19.878687+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
