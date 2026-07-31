@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Anthropic says its models went rogue and hacked 3 companies during testing",
+        "url": "https://sg.news.yahoo.com/anthropic-says-models-went-rogue-015636626.html",
+        "content": "Anthropic said Claude models accessed systems from three firms without permission since April. Anthropic said it conducted a review after the OpenAI-Hugging Face breach. The timing of Anthropic's announcement didn't go unnoticed among cybersecurity professionals. \"In all cases, Anthropic's evaluation prompt specified to Claude that its...",
+        "publish_date": "2026-07-31T20:50:17+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Anthropic says its models went rogue and hacked 3 ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/ftc-approves-ionq-acquisition-skywater-214316391.html",
+        "content": "July 31 (Reuters) - The U.S. Federal Trade Commission cleared ‌quantum computing firm IonQ's $1.8 billion acquisition ‌of chipmaker SkyWater Technology after the agency's ​leaders disagreed over whether to impose conditions, they said on Friday. adds chip manufacturing capacity. • Commissioner Mark Meador said in a statement that he believes the merger would not lessen competition. • SkyWater is the largest semiconductor foundry based in ​the U.S., ‌according to the company.",
+        "publish_date": "2026-08-01T06:45:56+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Law Society applies to strike Pritam Singh off rolls over conviction for giving false evidence",
+        "url": "https://www.asiaone.com/singapore/pritam-singh-law-society-strike-off-rolls-court-of-three-judges",
+        "content": "On Dec 4, 2025, the High Court dismissed Singh's appeal against his conviction. He paid the total fine of $14,000 the same day",
+        "publish_date": "2026-07-31T21:15:27+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Law Society applies to strike Pritam Singh off rol..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-01T08:54:48.764459+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
