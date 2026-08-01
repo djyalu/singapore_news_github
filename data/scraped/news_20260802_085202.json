@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "At least $983,000 lost since January to lucky draw scams that demand fees to release ‘winnings’",
+        "url": "https://sg.news.yahoo.com/least-983-000-lost-since-134951577.html",
+        "content": "SINGAPORE - Scam victims have lost at least $983,000 since January in lucky draw ruses that lure them into making payments to claim their \"winnings\", with at least 254 cases reported. Victims would then be asked to contact the \"influencer\" via WhatsApp or to provide their contact details",
+        "publish_date": "2026-07-31T22:49:51+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 At least $983,000 lost since January to lucky draw..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-02T08:52:02.996074+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
