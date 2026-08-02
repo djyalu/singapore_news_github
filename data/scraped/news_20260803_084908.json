@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump says US support for Japanese yen a 'signal of friendship'",
+        "url": "https://sg.news.yahoo.com/trump-says-us-support-japanese-223619044.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump says US support for Japanese yen a 'signal of friendsh...",
+        "content": "\"We're very strong -- very very strong financially. They are, you know, they have a weakening yen, and they wanted a little bit of help. And we're always there for Japan. Japan's been very good to us, with the exception, of course, of Pearl Harbor,\" the president said.",
+        "publish_date": "2026-08-03T07:36:19+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man arrested after allegedly using catapult to shoot birds, damaging Woodlands flat window",
+        "url": "https://www.asiaone.com/singapore/woodlands-rash-act-shoot-bird-catapult-police",
+        "summary": "📰 법률 관련 뉴스\n📢 Man arrested after allegedly using catapult to shoot birds, damaging Woodlands f...",
+        "content": "Officers from Woodlands Police Division identified and arrested the man through extensive ground enquiries. A catapult, an assortment of marbles and pebbles were seized as case exhibits following his arrest",
+        "publish_date": "2026-08-02T11:55:57+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-03T08:49:08.969587+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
