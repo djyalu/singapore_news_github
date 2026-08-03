@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "3-day enforcement operation nets 256 errant commercial vehicle drivers",
+        "url": "https://www.asiaone.com/singapore/police-errant-commercial-vehicle-enforcement-operation-2026-july",
+        "content": "TP officers also detected 99 violations, which included the offence of displaying improper licence plates. They have since been referred to the Land Transport Authority for follow-up. Thee people, aged between 34 and 47, were also caught driving without a valid licence and using a vehicle without insurance coverage. Heavy vehicles found exceeding their regulated speed limits will be required to undergo inspection to verify that their speed limiters are functioning properly.",
+        "publish_date": "2026-08-03T14:26:17+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 3-day enforcement operation nets 256 errant commer..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-04T08:59:14.181858+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
