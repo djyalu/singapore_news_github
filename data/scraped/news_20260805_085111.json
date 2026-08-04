@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "What roadside parking could look like under ERP 2",
+        "url": "https://www.channelnewsasia.com/singapore/erp-2-roadside-parking-sg-new-6297071",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 What roadside parking could look like under ERP 2...",
+        "content": "The feature has been rolled out at 644 designated car park locations, covering about 19,000 roadside parking lots islandwide. A roll-out date for REP has not been announced.",
+        "publish_date": "2026-08-05T08:47:27.027621+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Todd Blanche’s confirmation chances hit early hiccup after he advances out of committee",
+        "url": "https://sg.news.yahoo.com/todd-blanche-advances-toward-confirmation-150416647.html",
+        "summary": "📰 법률, 정치, 기술 관련 뉴스\n📢 Todd Blanche’s confirmation chances hit early hiccup after he advances out of co...",
+        "content": "That progress hit an early hiccup Tuesday night when Republican Sen. Susan Collins announced she will vote against Blanche's confirmation. Collins cited Blanche having \"taken several actions that have further eroded the Department's independence,\" as her reason for opposing the nomination. Blanche, President Donald Trump's former personal lawyer, has aggressively pursued the president's agenda since he took over on an interim basis in April. The acting attorney general knew that he had to quickly show the White House that he...",
+        "publish_date": "2026-08-05T07:27:36+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Changi Airport rolls out autonomous wheelchairs after successful trials",
+        "url": "https://www.asiaone.com/singapore/changi-airport-autonomous-wheelchairs-passengers-reduced-mobility",
+        "summary": "📰 공항, 창이, 법률 관련 뉴스\n📢 Changi Airport rolls out autonomous wheelchairs after successful trials",
+        "content": "Changi Airport will begin the first phase of deploying autonomous wheelchairs following successful trials involving more than 13,000 passengers at Terminals 2 and 3",
+        "publish_date": "2026-08-04T23:18:14+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-05T08:51:11.608100+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
