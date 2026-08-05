@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "5.5 million bottles, cans recycled under container return scheme since April launch",
+        "url": "https://www.asiaone.com/singapore/bottles-recycled-beverage-container-return-scheme-bcrs-janil-puthucheary",
+        "summary": "📰 싱가포르, 시장 관련 뉴스\\n📢 5.5 million bottles, cans recycled under container return sc...",
+        "content": "\"We expect this number to grow as more BCRS-labelled products enter the market,\" Dr Janil estimated, adding that over a million successful refunds have been made. Under the scheme, drinks with the BCRS mark have also increased by 10 cents. @asiaone More than a million successful returns have been made under the Beverage Container Return Scheme (BCRS) since its rollout in April. #sgnews #Singapore #Parliament #HowToRecycle #Drinks ♬ original sound -...",
+        "publish_date": "2026-08-05T19:02:07+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "SMRT to leverage AI, commuter data for crowd management, improving train deployment",
+        "url": "https://www.asiaone.com/singapore/smrt-ai-commuter-crowds-train",
+        "summary": "📰 교통, 기술, 국제 관련 뉴스\n📢 SMRT to leverage AI, commuter data for crowd management, improving train deploym...",
+        "content": "Commuter pattern analysis system isn't new — it is being used in Guangzhou Metro's operations in China. Service disruptions will be handled with AI-driven insights and route recommendations which help it to direct...",
+        "publish_date": "2026-08-05T18:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-06T08:46:52.680280+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
