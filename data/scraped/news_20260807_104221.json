@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Going under the knife? What to know about anaesthesia before surgery",
+        "url": "https://www.channelnewsasia.com/wellness/general-vs-regional-anaesthesia-explained-6290241",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Going under the knife? What to know about anaesthesia before...",
+        "content": "It can be numbingly confusing to the layperson. How are the various types of RA different. Will you be wide awake. That’s because you may not need GA in the first place",
+        "publish_date": "2026-08-07T10:38:47.646639+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Gold heads for strongest week since January, US payrolls data in focus",
+        "url": "https://sg.news.yahoo.com/gold-heads-strongest-week-since-011334597.html",
+        "summary": "📰 취업, 경제, 기술 관련 뉴스\n📢 Gold heads for strongest week since January, US payrolls data in focus",
+        "content": "nonfarm payrolls data for clues on the ‌interest rate outlook. gold futures fell 0.1% to $4,293.80. • ‌Crude oil prices were headed ⁠for a weekly loss. Lower energy prices help ease inflation concerns and reduce expectations of higher-for-longer interest rates. • Market participants braced for the U.S. Labor Department's employment report for ​July, scheduled ​for release at 1230 GMT. • Traders currently ​see a 55% chance of ‌a U.S",
+        "publish_date": "2026-08-07T10:13:34+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-07T10:42:21.859644+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
