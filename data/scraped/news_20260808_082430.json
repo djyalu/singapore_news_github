@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Justice Alito says he is staying on Supreme Court for another term",
+        "url": "https://sg.news.yahoo.com/justice-alito-says-staying-supreme-221523565.html",
+        "content": "Aug 7 (Reuters) - U.S. \"Obviously I'm here for another term,\" Alito, ‌76, said in an interview published in the newspaper's opinion section. The justices are currently on their summer recess",
+        "publish_date": "2026-08-08T07:15:23+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Justice Alito says he is staying on Supreme Court ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Very heavy departure traffic at Woodlands Checkpoint ahead of National Day weekend amid tailback from Malaysia: ICA",
+        "url": "https://www.asiaone.com/singapore/woodlands-checkpoint-very-heavy-traffic-7-august-national-day-weekend",
+        "content": "Travellers departing Singapore via Woodlands Checkpoint are advised that there is currently \"very heavy departure traffic\" due to tailback from Malaysia. It estimated that waiting time to Woodlands Checkpoint is more than three hours. Travellers are advised to check traffic conditions before embarking on their journeys. It added that security checks have been stepped up amid a heightened global security environment and recent developments in the Middle East. More than 18 million travellers crossed the Woodlands and Tuas checkpoints during the recent Hari Raya Haji, Vesak Day long weekend and June school...",
+        "publish_date": "2026-08-07T17:50:10+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Very heavy departure traffic at Woodlands Checkpoi..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-08T08:24:30.973727+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
