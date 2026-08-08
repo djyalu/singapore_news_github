@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Is retirement just Sundays on repeat? Here's what happens when work no longer defines you",
+        "url": "https://www.channelnewsasia.com/today/mental-health-matters/retirement-mental-health-work-senior-couple-grief-6264736",
+        "content": "For more than a decade, Madam Betty Tan's days followed a familiar rhythm. She did not expect it to feel emptier. \"I had nothing to do. I had no more routine,\" the 77-year-old recalled of the initial period after retirement. Boredom slowly crept in and she found herself feeling listless and stressed, the hours slipping away without purpose. Eventually, the retiree began planning a new routine for herself.",
+        "publish_date": "2026-08-09T08:12:56.452014+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Is retirement just Sundays on repeat? Here's what ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "British Columbia declares state of emergency as more than 20,000 flee wildfires",
+        "url": "https://sg.news.yahoo.com/british-columbia-district-declares-state-135456850.html",
+        "content": "The region produces most of B.C.'s wine and is Canada's second-largest wine-producing ​area. \"Homes have been lost, and properties have been destroyed. Some people became trapped as conditions changed very...",
+        "publish_date": "2026-08-09T07:25:37+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 British Columbia declares state of emergency as mo..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-09T08:16:28.204076+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
