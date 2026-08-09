@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Kurdish PKK criticises Turkey bill on fate of its fighters",
+        "url": "https://sg.news.yahoo.com/kurdish-pkk-criticises-turkey-bill-223105573.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Kurdish PKK criticises Turkey bill on fate of its fighters...",
+        "content": "But Sunday's PKK statement said: \"This law contains serious errors and shortcomings. The recommendations. regarding democratisation and the resolution of the Kurdish issue have not been taken into account.\". The statement, carried by ANF news agency, which is close to the group, also called for...",
+        "publish_date": "2026-08-10T07:31:05+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NDP 2026: 42,000 spectators throng National Stadium for a parade packed with firsts",
+        "url": "https://www.asiaone.com/singapore/ndp-2026-worlds-largest-indoor-drone-show-national-stadium",
+        "summary": "📰 싱가포르, 기술 관련 뉴스\n📢 NDP 2026: 42,000 spectators throng National Stadium for a parade packed with fir...",
+        "content": "The 50-year-old and her husband, Thomas Richoux, have been balloting for tickets every year since moving overseas 16 years ago. When they finally secured a pair for NDP 2026, they booked their flights back to Singapore \"without a second thought\". Really, really happy",
+        "publish_date": "2026-08-09T19:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-10T08:18:51.608664+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
