@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Biotech transcends geopolitics as family offices fuel next wave of innovation: Camelot BioCapital’s Peter Kash",
+        "url": "https://www.businesstimes.com.sg/startups-tech/startups/biotech-transcends-geopolitics-family-offices-fuel-next-wave-innovation-camelot-biocapitals-peter",
+        "content": "“It becomes a micro environment and they forget the macro problems.”. Singapore has caught Kash’s attention, with several biotech projects developed by the...",
+        "publish_date": "2026-08-11T08:21:53.283353+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Biotech transcends geopolitics as family offices f..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-08-11T08:25:05.799080+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "AOC's Egg Freezing Video Sparks Weird Backlash From Men. Experts Aren't Surprised.",
+        "url": "https://sg.news.yahoo.com/aocs-egg-freezing-video-sparks-224819229.html",
+        "content": "\"Don't be weird about this,\" she told her followers on Instagram. \"Even though I know all of you will be.\". Life: JD Vance Can't Stop Calling Usha His 'Indian Wife.' Experts Say That's Not An Accident",
+        "publish_date": "2026-08-11T07:48:19+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 AOC's Egg Freezing Video Sparks Weird Backlash Fro..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-11T08:25:05.799106+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
