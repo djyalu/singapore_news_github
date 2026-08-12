@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump 'low-key' bets on economic pressure against Iran",
+        "url": "https://sg.news.yahoo.com/trump-low-key-bets-economic-230813953.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump 'low-key' bets on economic pressure against Iran...",
+        "content": "Keeping a low profile doesn't come naturally to Donald Trump. \"We are low-keying it,\" Trump told news site Axios by phone Sunday. \"We're only semi-negotiating with them. We are just watching Iran with its huge inflation and the fact they have no money.\". \"Iran is broke, totally broke and they're not paying their soldiers,\" Trump said Monday in the Oval Office",
+        "publish_date": "2026-08-13T08:08:13+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Zambia votes in elections expected to favour incumbent Hichilema",
+        "url": "https://sg.news.yahoo.com/zambia-votes-elections-expected-favour-230147736.html",
+        "summary": "📰 정부, 정치 관련 뉴스\n📢 Zambia votes in elections expected to favour incumbent Hichilema",
+        "content": "The presidential, parliamentary and local government elections will be held simultaneously. \"I am tempted to think the ruling party will carry the day...",
+        "publish_date": "2026-08-13T08:01:47+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "MHA alerts public to fake websites impersonating 7 Home Team agencies, itself",
+        "url": "https://www.asiaone.com/singapore/fake-ministry-of-home-affairs-website-home-team-agencies",
+        "summary": "📰 싱가포르, 기술, 법률 관련 뉴스\n📢 MHA alerts public to fake websites impersonating 7 Home Team agencies, itself",
+        "content": "The seven Home Team agencies are: the Singapore Police Force (SPF), Central Narcotics Bureau (CNB), Singapore Civil Defence Force (SCDF), Immigration and Checkpoints Authority (ICA), Singapore Prison Service (SPS), Home Team Science and Technology Agency (HTX), and Home Team Academy (HTA). \"(This) could have potentially misled members of the public into believing that they were accessing official MHA or Home Team agency websites,\" it said.",
+        "publish_date": "2026-08-12T23:50:38+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-13T08:29:44.678479+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
