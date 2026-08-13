@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Unofficial NUS, NTU campus tours sold on booking platform, breaching universities' rules",
+        "url": "https://www.channelnewsasia.com/singapore/nus-ntu-campus-tours-getyourguide-unauthorised-6316521",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Unofficial NUS, NTU campus tours sold on booking platform, b...",
+        "content": "The tours were listed on third-party booking platform GetYourGuide, with prices ranging from S$63 to S$300 (US$50 to US$235) per head. Both universities said they had no involvement with the listings when contacted by CNA",
+        "publish_date": "2026-08-14T08:26:47.966737+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Cook Islands PM's party likely to retain parliament in preliminary results",
+        "url": "https://sg.news.yahoo.com/cook-islands-pms-party-likely-230659017.html",
+        "summary": "📰 교통, 정치, 선거 관련 뉴스\n📢 Cook Islands PM's party likely to retain parliament in preliminary results",
+        "content": "Voting on Nassau, a small northern atoll where adverse weather disrupted transport and polling arrangements, is expected ‌to happen Thursday local ⁠time, Radio New Zealand reported. Cook Islanders are New Zealand citizens, ​while Wellington has...",
+        "publish_date": "2026-08-14T08:06:59+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman arrested for allegedly hurting 13-year-old daughter at Havelock mall",
+        "url": "https://www.asiaone.com/singapore/havelock-mall-woman-arrested-hurt-13-year-old-daughter",
+        "summary": "📰 싱가포르, 법률, 국제 관련 뉴스\n📢 Woman arrested for allegedly hurting 13-year-old daughter at Havelock mall",
+        "content": "The Singapore Civil Defence Force (SCDF) told AsiaOne that they received a call for assistance at around 3:15pm. Both the police and SCDF confirmed that a 13-year-old girl was taken...",
+        "publish_date": "2026-08-13T16:33:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 14-year-old girl last seen in Serangoon 3 weeks ago",
+        "url": "https://www.asiaone.com/singapore//police-missing-girl-nex-shopping-sarah-fitriyana-binte-abdullah",
+        "summary": "📰 법률 관련 뉴스\n📢 Police appeal for information on missing 14-year-old girl last seen in Serangoon...",
+        "content": "She has been missing for about three weeks now. Anyone with information is urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential.",
+        "publish_date": "2026-08-13T22:14:15+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-14T08:30:44.075075+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
