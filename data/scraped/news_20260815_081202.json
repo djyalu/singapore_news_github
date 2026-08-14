@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Down the rabbit hole: Social media is exploiting youthful angst for profit or politics",
+        "url": "https://www.channelnewsasia.com/today/big-read/youth-online-social-media-influence-consumption-politics-extremist-views-6317066",
+        "content": "\"It was mostly insecurity,\" said Renee, now 15. \"It made me feel, 'Oh, maybe I need to look better'. Then it became, 'How do I look better?'\". Before long, that question had a ready-made algorithmic...",
+        "publish_date": "2026-08-15T08:08:19.233770+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Down the rabbit hole: Social media is exploiting y..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Former Defense Secretary Slams Hegseth Over Latest Fiasco: ‘Facts Speak For Themselves’",
+        "url": "https://sg.news.yahoo.com/former-defense-secretary-slams-hegseth-221703431.html",
+        "content": "Panetta appeared on MS NOW following reports that several U.S. \"Well, it shouldn't happen,\" Panetta told \"The Moment\" host Katy Tur during a virtual panel discussion",
+        "publish_date": "2026-08-15T07:17:03+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Former Defense Secretary Slams Hegseth Over Latest..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "ICA, China official impersonation scams: 72 cases since January, at least $6.1m in losses",
+        "url": "https://www.asiaone.com/singapore/police-advisory-ica-china-official-impersonation-scam",
+        "content": "In these cases, the victims would receive unsolicited calls from scammers claiming to be from ICA. They are then told that their details have been misused, or that their phone numbers are linked to criminal activities, such as spreading false rumours or transmitting scam messages",
+        "publish_date": "2026-08-14T23:20:23+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ICA, China official impersonation scams: 72 cases ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-15T08:12:02.318724+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
