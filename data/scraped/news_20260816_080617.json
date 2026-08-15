@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Openness overload: Why your employees don't need to know everything about you",
+        "url": "https://www.channelnewsasia.com/today/voices/oversharing-boss-workplace-boundary-leadership-trust-social-media-6318726",
+        "content": "Working in an industry that thrives on cultural knowledge and social media trends, I have grappled with this over the years. On one hand, staying connected to my team on platforms where we often operate professionally makes sense",
+        "publish_date": "2026-08-16T08:02:30.419586+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Openness overload: Why your employees don't need t..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Iran fires back at Trump's threat to declare Hormuz a US territory",
+        "url": "https://www.channelnewsasia.com/world/iran-fires-back-trumps-threat-declare-hormuz-us-territory-6321731",
+        "content": "\"The Strait of Hormuz has been Iranian, is Iranian, and will remain Iranian,\" Iranian Deputy Foreign Minister Kazem Gharibabadi said on X. \"This strait will only be closed and opened under Iran's command.\"",
+        "publish_date": "2026-08-16T08:02:52.952499+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Iran fires back at Trump's threat to declare Hormu..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Fire breaks out at grass patch off Whampoa HDB block",
+        "url": "https://www.asiaone.com/singapore/vegetation-fire-whampoa-hdb-hungry-ghost-festival",
+        "content": "The affected area, about the size of a boxing ring, is near a carpark. A thick smoke plume was seen from across the road at about 500 metres away. Singapore Civil Defence Force (SCDF) firefighters arrived shortly after. In response to AsiaOne's queries, SCDF said that the fire near Block 34 Whampoa West affected an area measuring about five by five metres. The cause of fire is under investigation",
+        "publish_date": "2026-08-15T11:28:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Fire breaks out at grass patch off Whampoa HDB blo..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "ICA, China official impersonation scams: 72 cases since January, at least $6.1m in losses",
+        "url": "https://www.asiaone.com/singapore/police-advisory-ica-china-official-impersonation-scam",
+        "content": "In these cases, the victims would receive unsolicited calls from scammers claiming to be from ICA. They are then told that their details have been misused, or that their phone numbers are linked to criminal activities, such as spreading false rumours or transmitting scam messages",
+        "publish_date": "2026-08-14T23:20:23+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ICA, China official impersonation scams: 72 cases ..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-16T08:06:17.724288+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
