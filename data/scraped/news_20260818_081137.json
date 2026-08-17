@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Family spots unsupervised toddler outside Punggol Coast Mall, helps reunite him with father",
+        "url": "https://www.asiaone.com/singapore/unsupervised-toddler-punggol-coast-mall-reunited-father",
+        "content": "The incident occurred at around 6pm, when Hamad Gaddafi Fauzi and his wife were exiting the mall's carpark. Hamad said the boy was eventually reunited with his father about 250m from the spot where he was...",
+        "publish_date": "2026-08-18T07:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Family spots unsupervised toddler outside Punggol ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "President Tharman to make 2-day working visit to Geneva on Aug 18",
+        "url": "https://www.asiaone.com/singapore/tharman-shanmugaratnam-working-visit-geneva-world-economic-forum",
+        "content": "President Tharman Shanmugaratnam will make a two-day working visit to Geneva, Switzerland from Aug 18 to 19. The President will be accompanied by officials from the Economic Development Board and the President's Office.",
+        "publish_date": "2026-08-17T19:20:36+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 President Tharman to make 2-day working visit to G..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police appeal for information on missing 17-year-old girl last seen at Hougang shelter nearly 3 weeks ago",
+        "url": "https://www.asiaone.com/singapore/police-missing-person-iffah-nur-syaurah-binte-abdullah-pertapis-hougang",
+        "content": "Anyone with information is urged to contact the police hotline at 1800-255-0000 or submit information online at www.police.gov.sg/i-witness. All information will be kept strictly confidential.",
+        "publish_date": "2026-08-17T18:29:15+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police appeal for information on missing 17-year-o..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-18T08:11:37.849908+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
