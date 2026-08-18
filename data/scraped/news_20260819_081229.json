@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Zaqy Mohamad calls for stronger safeguards at mosques after sexual offences against 2 boys: 'It hurts us deeply'",
+        "url": "https://www.asiaone.com/singapore/zaqy-mohamad-stronger-safeguards-mosques-sexual-offences-children",
+        "content": "\"What happened should never have happened. \"For us, as Muslims, the mosque is more than a building. \"He was not conducting a formal religious class organised or approved...",
+        "publish_date": "2026-08-18T21:05:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Zaqy Mohamad calls for stronger safeguards at mosq..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-19T08:12:29.112508+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
