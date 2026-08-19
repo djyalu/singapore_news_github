@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Initiative to help rough sleepers find co-tenants for rental flats among pilot projects given MSF funding",
+        "url": "https://www.channelnewsasia.com/singapore/homeless-rough-sleeper-msf-funding-jobs-housing-6328336",
+        "content": "Of these, 11 will test new initiatives aimed at providing more tailored support for rough sleepers. This is the first tranche of projects under the S$450,000 (US$352,600) Partnership to Tackle Homelessness (PATH) fund, which aims to support initiatives that help homeless people",
+        "publish_date": "2026-08-20T08:10:11.157025+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Initiative to help rough sleepers find co-tenants ..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Nuclear power revival sparks global race, from uranium mines in Texas to seas of Japan",
+        "url": "https://www.channelnewsasia.com/cna-insider/nuclear-power-revival-sparks-global-race-uranium-mines-fuel-6329336",
+        "content": "But falling demand and cheaper imports made local operations unviable by the late 1990s. The Fukushima accident in 2011 also renewed nuclear safety concerns, weakening the market further",
+        "publish_date": "2026-08-20T08:10:14.838159+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nuclear power revival sparks global race, from ura..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "4 primary schools scrap parent volunteer scheme for P1 entry",
+        "url": "https://www.asiaone.com/singapore/primary-schools-scrap-parent-volunteer-scheme-p1-entry",
+        "content": "SINGAPORE – At least four more primary schools have scrapped the parent volunteer scheme in the last two years. Children of active community leaders and those with church or clan associations also qualify under this phase",
+        "publish_date": "2026-08-19T22:48:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 4 primary schools scrap parent volunteer scheme fo..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-20T08:13:44.556042+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
