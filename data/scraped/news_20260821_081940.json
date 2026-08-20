@@ -1,0 +1,73 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "China jails Evergrande founder for life, fines firm more than US$2 billion",
+        "url": "https://www.channelnewsasia.com/east-asia/china-evergrande-founder-hui-ka-yan-sentenced-life-in-prison-6330256",
+        "summary": "📰 정부 관련 뉴스\\n📢 China jails Evergrande founder for life, fines firm more tha...",
+        "content": "Evergrande Group was once the face of Chinese real estate, surfing a decades-long property boom as it peddled home-ownership dreams. But its access to credit dramatically narrowed when the government introduced curbs on excessive borrowing and speculation. The company defaulted in 2021 after struggling to repay creditors",
+        "publish_date": "2026-08-21T08:11:55.640845+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Panama Canal to reduce shipping over El Nino-fueled drought",
+        "url": "https://sg.news.yahoo.com/panama-canal-reduce-shipping-over-223003900.html",
+        "summary": "📰 교통, 경제, 기술 관련 뉴스\n📢 Panama Canal to reduce shipping over El Nino-fueled drought",
+        "content": "The Panama Canal handles five percent of global maritime trade and around 40 percent of US container traffic. It is fed by rainwater that collects in two artificial lakes. The canal operator said that \"lower than forecast rainfall in the canal's watershed\" called for...",
+        "publish_date": "2026-08-21T07:30:03+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Panama Canal to cap daily transits, anticipating severe El Niño",
+        "url": "https://sg.news.yahoo.com/panama-canal-cap-daily-transits-213446059.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Panama Canal to cap daily transits, anticipating severe El Niño",
+        "content": "In May, canal authorities told Reuters that the waterway was not planning vessel passage restrictions this year, and had already been taking water conservation ‌measures since 2025",
+        "publish_date": "2026-08-21T07:11:31+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Water activities at Pandan Reservoir suspended following crocodile sighting",
+        "url": "https://www.asiaone.com/singapore/pandan-reservoir-crocodile-sighting",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Water activities at Pandan Reservoir suspended following crocodile sighting",
+        "content": "Meanwhile, the Singapore Rowing Association and Singapore Canoe Federation, which conduct water activities in the reservoir, have been informed to suspend all activities",
+        "publish_date": "2026-08-21T07:41:20+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-21T08:19:40.048326+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Nvidia denies report it is rolling out China AI chip by year-end",
+        "url": "https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/nvidia-denies-report-it-rolling-out-china-ai-chip-year-end",
+        "summary": "📰 비즈니스 관련 뉴스\\n📢 Nvidia denies report it is rolling out China AI chip by year...",
+        "content": "Nvidia‘s China business has been in flux in recent months. “The reporting in The Information on Nvidia‘s LPU is incorrect. According to the report, the chip was a version of Nvidia‘s LPU,...",
+        "publish_date": "2026-08-21T08:12:07.193148+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-08-21T08:19:40.048364+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
