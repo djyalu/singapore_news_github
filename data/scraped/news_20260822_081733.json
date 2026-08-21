@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Photo of reported crocodile sighting at Pandan Reservoir found to be fake; police report lodged: PUB",
+        "url": "https://www.channelnewsasia.com/singapore/pub-pandan-reservoir-crocodile-sighting-fake-photo-police-report-6333501",
+        "content": "A police report has been made, PUB said, adding that search operations for the reptile have ceased. PUB takes a serious view of false information that may cause public alarm and disrupt activities, it added. The police confirmed that a report had been lodged and said that investigations are ongoing",
+        "publish_date": "2026-08-22T08:09:45.497882+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Photo of reported crocodile sighting at Pandan Res..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Chee Hong Tat delights crowd with Hokkien song at Hungry Ghost Festival getai",
+        "url": "https://www.asiaone.com/singapore/chee-hong-tat-performs-hokkien-song-getai",
+        "content": "The hosts then asked the audience if they would like to hear Chee sing, which drew a round of applause. Chee then performed his rendition of the Hokkien song Four Seasons by Taiwanese singer Tsai Hsiao-hu. #sgnews #Singapore #Getai ♬ original sound - AsiaOne",
+        "publish_date": "2026-08-21T17:54:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Chee Hong Tat delights crowd with Hokkien song at ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman falls after allegedly riding escalator with shopping trolley at Yishun mall",
+        "url": "https://www.asiaone.com/singapore/woman-falls-escalator-yishun-mall",
+        "content": "A shopping trolley can also be seen near the escalator. The incident took place on the escalator connecting the first and second floors of Junction Nine, Lianhe Zaobao reported. The woman is believed to have fallen while riding the escalator with the shopping trolley. @asiaone The incident took place at Junction Nine in Yishun on Wednesday (Aug 19) at around 4.45pm. The Singapore Civil Defence Force (SCDF) said she was taken to Khoo Teck Puat Hospital for treatment. #sgnews #Singapore #Injury #Elderly #Accident ♬ original sound - AsiaOne",
+        "publish_date": "2026-08-21T21:45:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Woman falls after allegedly riding escalator with ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-22T08:17:33.226707+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
