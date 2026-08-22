@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Costs of public community care apartments reduced, basic services cut following lacklustre demand",
+        "url": "https://www.asiaone.com/singapore/costs-public-community-care-apartments-reduced-basic-services-cut-following-lacklustre-demand",
+        "content": "To date, the Housing Board has launched five projects in Bukit Batok, Queenstown, Bedok, Geylang and Sengkang, for these community care apartments which incorporate senior-friendly design features. All three subsequent projects were undersubscribed, with the latest Sengkang project having the lowest rate of 0.7. Community care apartments, a joint offering by the Ministry of Health (MOH), Ministry of National Development and HDB, give seniors another...",
+        "publish_date": "2026-08-22T10:21:56+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Costs of public community care apartments reduced,..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "RSAF activates Chinook helicopter to airlift unwell person from ship",
+        "url": "https://www.asiaone.com/singapore/rsaf-chinook-helicopter-ship-khoo-teck-puat-hospital",
+        "content": "He was then transported by ambulance to Khoo Teck Puat Hospital. #sgnews #Singapore #AirForce #Hospital ♬ original sound - AsiaOne. Both the RSAF's H225M and CH-47F helicopters are capable of medical evacuation missions, with the latter having a longer range capability. The helicopters achieved full operational capability in April...",
+        "publish_date": "2026-08-22T08:22:36+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 RSAF activates Chinook helicopter to airlift unwel..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-23T08:10:36.787345+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
