@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Syria, Israel hold US-mediated talks to ease tensions, Syria news agency says",
+        "url": "https://sg.news.yahoo.com/syria-israel-hold-us-mediated-224513118.html",
+        "summary": "📰 장관 관련 뉴스\\n📢 Syria, Israel hold US-mediated talks to ease tensions, Syria...",
+        "content": "The two sides also discussed efforts to ease tensions between Israel and Turkey and to prevent their rivalry from spilling onto Syrian territory. Syria's Foreign Minister Asaad al-Shaibani told Reuters on Saturday that Damascus expected security negotiations with Israel to resume soon, although he added that there was a lack of ‌trust between them",
+        "publish_date": "2026-08-24T07:45:13+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "NDR 2026: Self-driving vehicles could ease bus captain shortage, ageing taxi workforce",
+        "url": "https://www.asiaone.com/singapore/national-day-rally-2026-autonomous-vehicles-ageing-workforce-manpower-challenges",
+        "summary": "📰 교통, 취업, 기술 관련 뉴스\n📢 NDR 2026: Self-driving vehicles could ease bus captain shortage, ageing taxi wor...",
+        "content": "\"It's becoming harder to recruit bus captains. \"AVs can help ease these manpower constraints, meet growing transport needs, and keep services reliable.\". Self-driving shuttle services have been plying Punggol's roads since the fourth quarter of 2025 and officially opened for public rides this April. The Land Transport Authority said earlier in July that more than 11,500 people have tried the fixed-route services. There has been \"overwhelmingly positive\" feedback from riders, it added",
+        "publish_date": "2026-08-23T21:21:55+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pipe leak in Bukit Timah road disrupts residents' water supply for nearly nine hours",
+        "url": "https://www.asiaone.com/singapore/pipe-leak-bukit-timah-road-disrupts-residents-water-supply-nearly-nine-hours",
+        "summary": "📰 취업, 기술 관련 뉴스\n📢 Pipe leak in Bukit Timah road disrupts residents' water supply for nearly nine h...",
+        "content": "PUB deployed service crew to isolate the water mains for repairs. To facilitate repair works, a section of King's Road was temporarily closed. PUB is investigating the cause of the pipe leak. There have been a few other cases of pipe leaks and burst pipes in 2026",
+        "publish_date": "2026-08-23T21:04:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-24T08:10:33.432019+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
