@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump administration plans to revoke visas of foreigners seeking asylum",
+        "url": "https://sg.news.yahoo.com/us-plans-revoke-200-000-204552094.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Trump administration plans to revoke visas of foreigners see...",
+        "content": "The AP cited State ⁠Department documents and two U.S. The State Department will revoke so-called B1 and B2 visas issued...",
+        "publish_date": "2026-08-25T07:10:50+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Says Karoline Leavitt Picked Her Kids Over Him. It's The Second Time In 4 Days.",
+        "url": "https://sg.news.yahoo.com/trump-says-karoline-leavitt-picked-220256564.html",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump Says Karoline Leavitt Picked Her Kids Over Him. It's The Second Time In 4 ...",
+        "content": "\"She decided she loved her children more than she loved Donald Trump. \"She has to go home and spend time with her children. If the joke on Monday was a one-off, most people wouldn't...",
+        "publish_date": "2026-08-25T07:02:56+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 57, dies following water rescue at Rochor Canal",
+        "url": "https://www.asiaone.com/singapore/rochor-canal-death-unconscious-man",
+        "summary": "📰 싱가포르, 법률, 기술 관련 뉴스\n📢 Man, 57, dies following water rescue at Rochor Canal",
+        "content": "A 57-year-old man died after he was retrieved unconscious from Rochor Canal on Sunday evening (Aug 23). The Singapore Civil Defence Force (SCDF) was also alerted to a water rescue incident near Wayang Satu Flyover at about 7.45pm, an SCDF spokesperson said. Upon SCDF's arrival, rescuers found an unconscious person floating in the canal. The 57-year-old subsequently died at the hospital. Based on preliminary investigations, the police do not suspect foul play. Investigations are ongoing.",
+        "publish_date": "2026-08-24T17:28:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-08-25T08:18:35.318323+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
