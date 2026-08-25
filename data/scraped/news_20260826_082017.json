@@ -1,0 +1,54 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Behind the scenes of Mediacorp's realistic hospital set, where almost every TV drama ends up",
+        "url": "https://www.channelnewsasia.com/entertainment/mediacorp-hospital-set-behind-scenes-6335766",
+        "content": "Any drama worth its salt has to have at least one hospital scene. Heck, every couple of years, there’s an entire drama set in a hospital. Felicia Chin and Romeo Tan have lost track of the number of hospital scenes they’ve filmed throughout their careers. The two actors star in currently-airing drama Better Days, along with Jeffrey Xu, James Seah, Meixin and others. “I think, this is life",
+        "publish_date": "2026-08-26T08:12:32.706897+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Behind the scenes of Mediacorp's realistic hospita..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Customer receives refund from Telok Blangah hawker after mistakenly paying $650 for lor mee: 'So grateful for his honesty'",
+        "url": "https://www.asiaone.com/singapore/customer-receives-refund-telok-blangah-hawker-mistakenly-paying-650-meal",
+        "content": "\"Turns out, Vincent (the stall owner) had even gone to the bank to report the overpayment. He added that the customer had scanned the payment code before leaving. Later that day, while checking the stall's accounts,...",
+        "publish_date": "2026-08-25T12:52:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Customer receives refund from Telok Blangah hawker..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-26T08:20:17.057477+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Ensuring family and wealth longevity",
+        "url": "https://www.businesstimes.com.sg/wealth/wealth-investing/ensuring-family-and-wealth-longevity",
+        "content": "One frequently cited study isn’t optimistic. It found that by the third generation, more than 90 per cent of wealth would have been dissipated. Asia-Pacific sits at the epicentre of wealth. It points out, however, that wealth transfer and succession are more complex than families anticipate. For instance, equal division of estates may seem a simple solution",
+        "publish_date": "2026-08-26T08:12:45.604783+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Ensuring family and wealth longevity"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-08-26T08:20:17.057517+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
