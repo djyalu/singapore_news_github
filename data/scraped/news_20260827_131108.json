@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Hundreds missing as rescuers race to find survivors after deadly Nepal-Tibet floods",
+        "url": "https://www.channelnewsasia.com/asia/nepal-tibet-border-flash-floods-rescue-missing-6343966",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Hundreds missing as rescuers race to find survivors after de...",
+        "content": "Two Singaporeans from a tour group of 47 are reportedly missing, according to AFP, citing tour operator Himalayan Glacier. Nepalese authorities said more than 400 foreigners were among 579 tourists missing, and expect the death toll to rise",
+        "publish_date": "2026-08-27T13:06:08.725646+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "China deploys record number of ships around Taiwan as pressure grows",
+        "url": "https://sg.news.yahoo.com/china-deploys-record-number-ships-032606437.html",
+        "summary": "📰 정부, 기술, 국제 관련 뉴스\n📢 China deploys record number of ships around Taiwan as pressure grows",
+        "content": "China also asserts jurisdiction over Taiwan's surrounding waters. In the first 21 days of this month, 152 vessels were detected. About 60 percent are coast guard ships, with research vessels and other government boats making...",
+        "publish_date": "2026-08-27T12:26:06+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man arrested over using work permit holders' e-wallets for scams; $10k transacted",
+        "url": "https://www.asiaone.com/singapore/police-arrest-man-work-permit-holders-singpass-e-wallets-scams",
+        "summary": "📰 취업, 법률 관련 뉴스\n📢 Man arrested over using work permit holders' e-wallets for scams; $10k transacte...",
+        "content": "He allegedly bought work permit holders' Singpass accounts for $50 each and then used them to apply for e-wallets. Scam proceeds of at least $9,792 were found to have been transacted through these e-wallets, the police stated. The police also urged the public not to accept...",
+        "publish_date": "2026-08-27T10:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-27T13:11:08.290110+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
