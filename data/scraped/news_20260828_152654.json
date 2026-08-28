@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Malaysia’s former HR minister charged with receiving over US$270,000 in bribes",
+        "url": "https://www.channelnewsasia.com/asia/malaysia-human-resources-minister-m-saravanan-charged-bribes-corruption-6346946",
+        "summary": "📰 장관 관련 뉴스\\n📢 Malaysia’s former HR minister charged with receiving over US...",
+        "content": "KUALA LUMPUR: Malaysia’s former human resources minister M Saravanan was charged on Friday (Aug 28) with receiving bribes amounting to RM1.097 million (US$272,370) to approve foreign worker quotas. Saravanan, 58, pleaded not guilty at the Kuala Lumpur Sessions Court to three charges under the country’s anti-graft law, local news outlet Free Malaysia Today (FMT) reported. He is currently the Member of Parliament for Tapah in Perak state",
+        "publish_date": "2026-08-28T15:23:47.565358+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "S’pore’s neighbour dispute unit for severe noise and hoarding to be expanded nationwide from Sept 1",
+        "url": "https://sg.news.yahoo.com/pore-neighbour-dispute-unit-severe-060000288.html",
+        "summary": "📰 주택, 법률 관련 뉴스\n📢 S’pore’s neighbour dispute unit for severe noise and hoarding to be expanded nat...",
+        "content": "These changes will apply to neighbour disputes in both public and private housing estates. As part of the trial, officers from the Housing Board were also able to require disputing parties to attend mandatory mediation sessions",
+        "publish_date": "2026-08-28T15:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-28T15:26:54.724675+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
