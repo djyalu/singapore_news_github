@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Viral rubbish-throwing videos expose bitter feud between Sengkang neighbours",
+        "url": "https://www.asiaone.com/singapore/viral-rubbish-throwing-videos-expose-bitter-feud-between-sengkang-neighbours",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Viral rubbish-throwing videos expose bitter feud between Sen...",
+        "content": "It has amassed some 500,000 views. Some of the videos also capture confrontations between the neighbours, during which vulgarities were exchanged. Her TikTok videos have gone viral, attracting hundreds of thousands of views. Both residents live opposite each other on the 16th floor of a rental flat at 182 Rivervale Crescent. Lee told AsiaOne that her neighbour, Alagan, began occasionally throwing rubbish outside her...",
+        "publish_date": "2026-08-29T10:00:00+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-29T12:59:26.878118+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
