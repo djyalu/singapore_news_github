@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "The missing in Nepal-Tibet flash floods",
+        "url": "https://sg.news.yahoo.com/missing-nepal-tibet-flash-floods-235719186.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 The missing in Nepal-Tibet flash floods...",
+        "content": "Nearly 3,000 people were still missing on Sunday with 682 confirmed dead after flash floods and landslides hit the Nepal-Tibet border. Together, the total missing stands at least 2,980. Nepal's disaster agency on Friday said that 517 foreigners -- which could include tourists as well as foreign workers -- were still missing. Chinese officials on Friday put the number of foreigners missing at 260",
+        "publish_date": "2026-08-30T08:57:19+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Insecticide smoke sparks fire scare at Sultan Plaza; about 30 self-evacuate",
+        "url": "https://www.asiaone.com/singapore/sultan-plaza-smoke-insecticide-fumigation-panic-self-evacuate-scdf",
+        "summary": "📰 싱가포르 관련 뉴스\n📢 Insecticide smoke sparks fire scare at Sultan Plaza; about 30 self-evacuate",
+        "content": "At least 30 people self-evacuated, and emergency services were called at about 10.45pm, after smoke was seen coming from the first-floor eatery. Mallgoers were seen exiting the plaza's premises, with some coughing as they walked out. At least four Singapore Civil Defence Force (SCDF) appliances were present at the scene as firefighters in full breathing apparatus checked the eatery",
+        "publish_date": "2026-08-30T08:45:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-08-30T09:51:03.786695+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
