@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Indonesia wants more sway over commodity prices",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-commodity-exchange-nickel-palm-oil-coal-6333186",
+        "summary": "📰 시장 관련 뉴스\\n📢 Indonesia wants more sway over commodity prices...",
+        "content": "“No!” lawmakers roared back, rising to their feet. At their simplest, commodity exchanges are organised marketplaces that bring together raw ingredient producers, manufacturers,...",
+        "publish_date": "2026-08-31T09:56:20.489720+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Ted Cruz Coyly Responds To Questions About A 2028 Presidential Run",
+        "url": "https://sg.news.yahoo.com/ted-cruz-coyly-responds-questions-232601833.html",
+        "summary": "📰 취업, 법률, 정치 관련 뉴스\n📢 Ted Cruz Coyly Responds To Questions About A 2028 Presidential Run",
+        "content": "26 interview on the \"Lt. Dan\" podcast, Cruz reiterated his interest in the top job. To Take 35% Stake In Venezuelan Mogul Betancourt's Oil Venture, WSJ Reports. \"It's no secret that I want to be president,\" Cruz said. \"I ran for president. When asked if he was going to run again, Cruz replied, \"Time will tell.\". This time, Cruz changed the topic. \"You know, the Book of Ecclesiastes tells us there's a time for every season,\" Cruz replied. \"And this is not that season right now. This is the season of the midterms. Cruz then described the upcoming elections as \"the most consequential midterms we have ever had\" and continued to promote his...",
+        "publish_date": "2026-08-31T08:26:01+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-08-31T09:59:21.597752+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
