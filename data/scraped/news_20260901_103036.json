@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Four areas in Sarawak record 'hazardous' air quality; East Malaysian state prepares for possible haze emergency",
+        "url": "https://www.channelnewsasia.com/asia/malaysia-haze-sarawak-hazardous-national-day-6351696",
+        "content": "Air quality in the country began to reach hazardous levels over the weekend. Under Malaysia’s API scale, readings above 300 are classified as hazardous",
+        "publish_date": "2026-09-01T10:27:41.638875+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Four areas in Sarawak record 'hazardous' air quali..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Anthropic signs $35 billion cloud deal with Nvidia-backed Lambda, source says",
+        "url": "https://sg.news.yahoo.com/anthropic-signs-35-billion-cloud-235939268.html",
+        "content": "The deal will bring ​online ​Nvidia ​capacity to ‌meet growing demand for Anthropic's Claude AI, the source said. The news was ‌first reported ​by ​the ​Wall Street ‌Journal.",
+        "publish_date": "2026-09-01T09:50:22+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Anthropic signs $35 billion cloud deal with Nvidia..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "10 men face molest charges; victims include women with intellectual disabilities",
+        "url": "https://www.asiaone.com/singapore/10-men-charged-molest-intellectually-disabled",
+        "content": "The cases took place between July 2025 and June this year, the police said in a news release on Monday night. Among the 10 cases, the youngest victim was a 16-year-old girl with severe intellectual disability. The second case involving a 21-year-old woman with intellectual disability happened on Sept 25, 2025",
+        "publish_date": "2026-08-31T22:45:43+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 10 men face molest charges; victims include women ..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-01T10:30:36.965205+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
