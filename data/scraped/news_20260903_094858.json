@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Social media bans for teens: What Talking Point learnt from Australia, Malaysia",
+        "url": "https://www.channelnewsasia.com/cna-insider/social-media-ban-protect-teenagers-age-singapore-australia-malaysia-6354736",
+        "content": "Another said the government could “give guidelines” to parents to implement at home. As Talking Point host Diana Ser joined their group, none sounded confident about the enforceability of restrictions. Said one boy: “There’s only so much (the government) can do.”",
+        "publish_date": "2026-09-03T09:46:13.502969+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Social media bans for teens: What Talking Point le..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/tech-pilgrims-flock-china-global-000228390.html",
+        "content": "He noted that visitors often arrive with misconceptions — for instance, assuming China's robotaxi sector leads the U.S., when domestic policy caution around...",
+        "publish_date": "2026-09-03T09:02:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-03T09:48:58.163989+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
