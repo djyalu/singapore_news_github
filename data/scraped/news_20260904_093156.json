@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Foo Cexiang sworn in as Minister of State",
+        "url": "https://www.asiaone.com/singapore/foo-cexiang-minister-of-state-swearing-in",
+        "content": "The 41-year-old spent nearly 15 years as a civil servant before entering politics in the last General Election. He is currently an MP in Tanjong Pagar GRC. He has held portfolios spanning industrial planning, security policy, education planning",
+        "publish_date": "2026-09-03T21:25:18+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Foo Cexiang sworn in as Minister of State"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-04T09:31:56.712978+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
