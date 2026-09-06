@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Germany's far-right AfD seeks landmark state victory as Saxony-Anhalt votes",
+        "url": "https://sg.news.yahoo.com/germanys-far-afd-seeks-landmark-000535978.html",
+        "content": "Recent surveys place the AfD at just over 40%, followed by Merz's Christian Democrats (CDU) at 23%. An absolute majority would ‌allow the AfD to bypass mainstream parties' efforts ⁠to keep the...",
+        "publish_date": "2026-09-06T09:05:35+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Germany's far-right AfD seeks landmark state victo..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Pyramid scheme arrests: China says cases handled in accordance with law",
+        "url": "https://www.asiaone.com/singapore/pyramid-scheme-52-singaporeans-arrested-china-law",
+        "content": "He was responding to a question from Singapore state broadcaster CNA. She also asked for more details on the case such as when investigations began. In a statement on Friday, Second Minister for Foreign Affairs and Second Minister...",
+        "publish_date": "2026-09-05T09:05:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pyramid scheme arrests: China says cases handled i..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-06T09:19:56.147150+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
