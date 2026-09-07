@@ -1,0 +1,62 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Mapping the 5.0-magnitude quake in China",
+        "url": "https://www.straitstimes.com/asia/east-asia/mapping-the-5-0-magnitude-quake-in-china?ref=visual-stories",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Mapping the 5.0-magnitude quake in China...",
+        "content": "The 5.0-magnitude quake struck China’s southwestern Sichuan province on Aug 28. The US Geological Survey said the quake struck at a depth of 10.0km. Here’s where the quake struck and where the aftershocks with magnitudes above 2.5 were recorded.",
+        "publish_date": "2026-09-07T09:23:25.769580+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Jakarta airport suspends flights due to Mount Anak Krakatau ash; SIA among affected airlines",
+        "url": "https://www.channelnewsasia.com/asia/jakarta-indonesia-soekarno-hatta-airport-suspend-flight-volcano-6365251",
+        "summary": "📰 교통 관련 뉴스\\n📢 Jakarta airport suspends flights due to Mount Anak Krakatau ...",
+        "content": "The suspension, extended several times, has affected 964 flights, the transportation ministry said. Total affected flights across the eight airports reached more than 1,500 flights with 170,000 passengers, the ministry said. This service is not intended for persons residing in the E.U",
+        "publish_date": "2026-09-07T09:23:38.249130+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "Travel chaos hits Changi and Jakarta airports as volcanic ash grounds flights between the two hubs",
+        "url": "https://www.channelnewsasia.com/singapore/travel-chaos-changi-airport-soekarno-hatta-volcano-6365516",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 Travel chaos hits Changi and Jakarta airports as volcanic as...",
+        "content": "The Indonesian airport is the country's main hub for international and domestic flights. The suspension was initially in place until 5.30am in Jakarta (6.30am Singapore time), but was repeatedly extended.",
+        "publish_date": "2026-09-07T09:23:43.827598+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "5 dead after Amazon cargo aircraft overruns runway in Miami, striking multiple vehicles",
+        "url": "https://sg.news.yahoo.com/amazon-cargo-aircraft-overruns-runway-204157307.html",
+        "summary": "📰 기술 관련 뉴스\n📢 5 dead after Amazon cargo aircraft overruns runway in Miami, striking multiple v...",
+        "content": "Five others were injured in the crash, Miami-Dade Fire Rescue Chief Raied \"Ray\" Jadallah said during a news conference Sunday evening. \"Guys, the plane's on fire. Put your game faces on,\" a first responder said in Broadcastify audio. Responders also said the pilots had been removed from the plane and were being treated",
+        "publish_date": "2026-09-07T08:05:42+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Asking for forgiveness? Man caught on CCTV stealing from Eunos temple prays before leaving",
+        "url": "https://www.asiaone.com/singapore/eunos-temple-donation-theft-pray-before-leaving",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Asking for forgiveness? Man caught on CCTV stealing from Eunos temple prays befo...",
+        "content": "The incident, which happened at Hoon Sian Keng temple in Eunos on August 28, took place at about 1.30pm. He is next seen peeking into another donation box in another part of the temple. He then clasps his hands together and is seen praying before walking off nonchalantly. According to the temple, it suffered losses of about $200 and has since lodged a...",
+        "publish_date": "2026-09-07T08:00:10+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2026-09-07T09:26:43.560222+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
