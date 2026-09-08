@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "'Isn't this trespassing?' Neighbours accused of entering Woodlands HDB flat without consent during renovation",
+        "url": "https://www.asiaone.com/singapore/neighbours-trespassing-woodlands-hdb-renovation-works",
+        "content": "A property agent has expressed concern after several people were allegedly seen entering a Woodlands HDB flat which is undergoing renovation. In the video, which appeared to show two separate occasions, several people could be seen entering the unit. The video has since garnered more than 117,000 views on TikTok. The property agent claimed that the woman then walked into the kitchen and rooms while the man remained outside.",
+        "publish_date": "2026-09-07T17:57:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'Isn't this trespassing?' Neighbours accused of en..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Retail sales post slower growth of 1.5% in July, lowest since February",
+        "url": "https://www.asiaone.com/money/retail-sales-food-beverage-service-sales-index-july-2026",
+        "content": "In comparison, the growth recorded in June was 4 per cent, year-on-year. Excluding motor vehicles, parts and accessories, retail sales expanded by 0.7 per cent, bettering June's 0.1 per cent. According to SingStat, 15.4 per cent of total retail sales were transacted online. Excluding motor vehicles, parts and accessories, this proportion grew to 18.3 per cent. Across the 14 categories tracked, sales growth was recorded in...",
+        "publish_date": "2026-09-07T17:47:33+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Retail sales post slower growth of 1.5% in July, l..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-08T09:48:12.326468+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
