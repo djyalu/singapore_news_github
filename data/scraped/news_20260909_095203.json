@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Donald Trump, 80, Sparks Confusion With Dramatic New Hairdo",
+        "url": "https://sg.news.yahoo.com/donald-trump-80-sparks-confusion-013116056.html",
+        "content": "Donald Trump's hair is having another identity crisis. \"What in the world is going on with Trump's hair?\" journalist Aaron Rupar wondered on X. \"Did grandpa get a new wig?\" asked another. Republicans Against Trump snarked: \"Yes, this is a real photo of Trump.\". Trump has long been sensitive about his hair. Trump pointed to a particularly windy Ohio rally in 2024 as proof that...",
+        "publish_date": "2026-09-06T10:31:16+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Donald Trump, 80, Sparks Confusion With Dramatic N..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Where Do Most American Tourists Actually Die?",
+        "url": "https://sg.news.yahoo.com/travel/advice/safety/articles/where-most-american-tourists-actually-093800207.html",
+        "content": "State Department keeps a public record of exactly how and where that happens. Mexico is the single most common country for non-natural deaths of U.S. citizens abroad, and it has held that position for years",
+        "publish_date": "2026-09-06T18:38:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Where Do Most American Tourists Actually Die?"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-09T09:52:03.492236+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
