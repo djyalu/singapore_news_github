@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Mapping the 5.0-magnitude quake in China",
+        "url": "https://www.straitstimes.com/asia/east-asia/mapping-the-5-0-magnitude-quake-in-china?ref=visual-stories",
+        "content": "The 5.0-magnitude quake struck China’s southwestern Sichuan province on Aug 28. The US Geological Survey said the quake struck at a depth of 10.0km. Here’s where the quake struck and where the aftershocks with magnitudes above 2.5 were recorded.",
+        "publish_date": "2026-09-10T09:39:48.016844+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mapping the 5.0-magnitude quake in China"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Straits Times"
+    ],
+    "timestamp": "2026-09-10T09:45:49.521003+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
