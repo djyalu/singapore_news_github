@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Newsmax Host Straight Up Asks MAGA Rep If Trump’s $5,000 Check Is ‘Basically A Bribe’",
+        "url": "https://sg.news.yahoo.com/newsmax-host-straight-asks-maga-002347888.html",
+        "content": "Keep independent journalism alive. \"National Report\" host E.D. Hill posed the question Thursday to Rep. Andrew Clyde (R-Ga.), who mostly evaded the question. \"Well, it's an interesting plan,\" he responded. \"I just first heard of it last night. national debt reached a record-high $40 trillion last month, according to The Associated Press.",
+        "publish_date": "2026-09-11T09:23:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Newsmax Host Straight Up Asks MAGA Rep If Trump’s ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Vance takes spotlight as Republicans close Trump-heavy convention",
+        "url": "https://sg.news.yahoo.com/vance-takes-spotlight-republicans-close-113823663.html",
+        "content": "Trump will dominate the finale of the two-day gathering, delivering closing remarks after Vance's keynote address at the American Airlines Center in downtown Dallas. That strategy comes with the party under heavy pressure. Trump dramatically raised the stakes in his opening night keynote Wednesday,...",
+        "publish_date": "2026-09-11T08:40:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Vance takes spotlight as Republicans close Trump-h..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Public sector salaries must remain realistic or administrative, political leadership quality will decline: SM Lee",
+        "url": "https://www.asiaone.com/singapore/political-salaries-ministers-lee-hsien-loong",
+        "content": "Prime Minister Lawrence Wong also took to social media to share his reflections on the debate. He noted that while there were different views on the...",
+        "publish_date": "2026-09-10T21:10:22+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Public sector salaries must remain realistic or ad..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$7.5m in losses: 254 scammers and money mules under police probe",
+        "url": "https://www.asiaone.com/singapore/scammers-money-mules-police-probe",
+        "content": "Over 652 cases, including e-commerce and government official impersonation scams, are linked to them. In total, victims have reportedly lost around $7.5 million, the police said. These individuals are being investigated for the offences of cheating, money laundering or providing payment services without a licence",
+        "publish_date": "2026-09-11T09:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $7.5m in losses: 254 scammers and money mules unde..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-11T09:43:02.438687+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
