@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "The 9/11 firefighter whose death went uncounted",
+        "url": "https://sg.news.yahoo.com/9-11-firefighter-whose-death-080030275.html",
+        "content": "He'd only been home from work for five hours, anyway. \"A plane just hit the World Trade Center!\" a voice bellowed. \"Dad, they're going to need everybody,\" 27-year-old Keith said. \"You better get down here.\"",
+        "publish_date": "2026-09-13T07:18:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The 9/11 firefighter whose death went uncounted"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "49 people under probe for illegal activities following multi-agency enforcement operation in Geylang",
+        "url": "https://www.asiaone.com/singapore/49-investigation-illegal-activities-enforcement-operations-hsa-ica-sfa-lta-cnb-cid",
+        "content": "These were part of efforts to clamp down on illegal activities in Geylang, the police said. The operation yielded cough syrup, sexual enhancement products, vaporisers and etomidate pods,...",
+        "publish_date": "2026-09-12T11:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 49 people under probe for illegal activities follo..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-13T09:34:57.687343+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
