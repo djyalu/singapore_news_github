@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Trump says 'very negative forces' raising exaggerated concerns over AI",
+        "url": "https://www.channelnewsasia.com/world/trump-ai-concerns-negative-forces-6381456",
+        "content": "\"We're leading China in AI. \"We could put guardrails. We can do this and that. Trump has resisted stirring concerns about AI",
+        "publish_date": "2026-09-14T09:30:07.916968+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump says 'very negative forces' raising exaggera..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "DC's Kennedy Center faces bankruptcy, closure: media",
+        "url": "https://sg.news.yahoo.com/dcs-kennedy-center-faces-bankruptcy-002301565.html",
+        "content": "Publicly recognizing Trump at the center, they argue in the 57-page pre-meeting packet, would help ensure fundraising help to keep it afloat. Shortly after beginning his second term, Trump installed himself as chairman of the center, which...",
+        "publish_date": "2026-09-14T09:23:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 DC's Kennedy Center faces bankruptcy, closure: med..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "3 Traffic Police officers face investigations after video showing unsafe riding surfaces",
+        "url": "https://www.asiaone.com/singapore/traffic-police-officers-unsafe-riding-investigations",
+        "content": "Three Traffic Police (TP) officers are facing investigations after footage of their unsafe riding behaviour surfaced online. A ComfortDelGro taxi is also seen making the right turn from the outer lane. They are then seen entering the Traffic Police headquarters. The third officer's actions also caused the dashcam vehicle to brake. #sgnews #Singapore #Police #Road #Behaviour ♬...",
+        "publish_date": "2026-09-13T09:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 3 Traffic Police officers face investigations afte..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-14T09:35:37.241260+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
