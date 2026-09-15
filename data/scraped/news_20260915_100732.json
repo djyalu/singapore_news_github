@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Man loses $700 in alleged Carousell MacBook scam despite seller's over 100 reviews: 'Don't trust good reviews'",
+        "url": "https://www.asiaone.com/singapore/man-loses-700-carousell-macbook-scam-reviews",
+        "content": "Kamirul said he then bargained the price down to $700, and he exchanged WhatsApp contact details with the purported seller. Continuing their conversation on WhatsApp, Kamirul was convinced by the seller's quick response times, and ratings with over 100 positive reviews.",
+        "publish_date": "2026-09-14T18:41:34+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man loses $700 in alleged Carousell MacBook scam d..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-15T10:07:32.790357+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
