@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "N95 masks, adjusted work arrangements: Companies step up haze precautions",
+        "url": "https://www.channelnewsasia.com/singapore/haze-unhealthy-psi-flexible-work-construction-6385696",
+        "content": "Singtel said it would suspend outdoor work except for emergencies if the Pollutant Standards Index (PSI) exceeds 300, while construction firm Lum Chang Creations could reduce or reschedule prolonged outdoor work. This is the first time since September 2019 that air quality in all regions entered the unhealthy range. CNA Games Guess Word Crack the word, one row at a time Buzzword Create words using the...",
+        "publish_date": "2026-09-16T09:51:23.753260+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 N95 masks, adjusted work arrangements: Companies s..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-16T09:58:44.771873+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
