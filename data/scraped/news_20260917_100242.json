@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "16 years’ jail and caning for ex-PE teacher who sexually exploited student in hotels, school",
+        "url": "https://www.asiaone.com/singapore/ex-pe-teacher-sexually-exploited-student-hotels-school",
+        "content": "Another 12 charges for sexual offences against the same victim were considered during sentencing. In sentencing the man, High Court judge Kwek Mean Luck agreed with prosecutors that the offences were premeditated",
+        "publish_date": "2026-09-16T21:39:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 16 years’ jail and caning for ex-PE teacher who se..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-17T10:02:42.161667+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
