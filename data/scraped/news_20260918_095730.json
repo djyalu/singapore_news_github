@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US approves sale of 48 F-35 jets to Saudi Arabia",
+        "url": "https://sg.news.yahoo.com/us-approves-sale-48-f-001206676.html",
+        "content": "It \"will also augment Saudi Arabia's operational aircraft and enhance its air-to-air, and air-to-ground self-defense capability,\" the statement said. The State Department has notified Congress about the proposed sale, which would require the approval of US lawmakers",
+        "publish_date": "2026-09-18T09:12:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US approves sale of 48 F-35 jets to Saudi Arabia"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-18T09:57:30.043215+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
