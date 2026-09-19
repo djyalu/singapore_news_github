@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "'No way around it': Will Sembawang residents forever face the longest commute to work?",
+        "url": "https://www.channelnewsasia.com/today/ground-up/sembawang-neighbourhood-residents-bus-train-commute-6390791",
+        "content": "During the morning peak period, bus stops along the route are packed with residents thronging buses that arrive, with many struggling to squeeze on board",
+        "publish_date": "2026-09-19T09:43:06.725554+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'No way around it': Will Sembawang residents forev..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "The hidden grief of being laid off in your 30s",
+        "url": "https://www.channelnewsasia.com/today/mental-health-matters/retrenchment-30s-grief-mental-health-6385976",
+        "content": "\"Is this a Bad News Meeting?\" I asked my boss via online chat. I got a cryptic non-answer in response. It was, in fact, very bad news. Focusing on my tasks felt easier than thinking about what would come next.",
+        "publish_date": "2026-09-19T09:43:26.024894+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 The hidden grief of being laid off in your 30s"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-19T09:48:30.697029+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
