@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Mapping the 5.0-magnitude quake in China",
+        "url": "https://www.straitstimes.com/asia/east-asia/mapping-the-5-0-magnitude-quake-in-china?ref=visual-stories",
+        "content": "The 5.0-magnitude quake struck China’s southwestern Sichuan province on Aug 28. The US Geological Survey said the quake struck at a depth of 10.0km. Here’s where the quake struck and where the aftershocks with magnitudes above 2.5 were recorded.",
+        "publish_date": "2026-09-20T09:27:04.488654+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mapping the 5.0-magnitude quake in China"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "In a reading slump? Here's how to fall in love with books again",
+        "url": "https://www.channelnewsasia.com/living/reading-books-how-get-started-again-6366401",
+        "content": "There’s good news and bad news. Reading sessions can be logged digitally, earning you virtual coins that can be exchanged for cash. Even once-prolific bibliophiles like myself find it hard to get lit about literature. It’s the same with reading. Horror master Stephen King agrees",
+        "publish_date": "2026-09-20T09:27:28.131796+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 In a reading slump? Here's how to fall in love wit..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "This made my day: Migrant workers and passers-by move fallen tree off road",
+        "url": "https://www.asiaone.com/singapore/migrant-workers-public-move-fallen-tree",
+        "content": "When a tree fell onto the road during Friday (Sept 18) evening peak-hour, a group of people sprung into action. More than 10 migrant workers and passers-by helped to move the fallen tree off the road. The incident happened at the intersection between MacPherson Road and Jalan Wangi at around 6pm, Lianhe Zaobao reported. The road was cleared in about five minutes. Others removed branches off the road. \"So much community spirit, all because they don’t want a roadblock,\" she wrote. Her social media post has garnered over 5,000 'likes', with netizens commending everyone involved for their teamwork and kampung spirit. One of them commented: \"Feeling the love from everyone helping out. Some just walked over including the foreign workers...",
+        "publish_date": "2026-09-19T13:43:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 This made my day: Migrant workers and passers-by m..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 69, found dead in Ubi flat",
+        "url": "https://www.asiaone.com/singapore/man-69-found-dead-ubi-flat",
+        "content": "The man was found motionless and pronounced dead at the scene. The unit's door and windows were also open, with a strong smell of decay noticeable from the corridor. Suspected bloodstains could also be seen on the kitchen floor",
+        "publish_date": "2026-09-19T20:15:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 69, found dead in Ubi flat"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Yoga Inc.'s abrupt closure leaves instructors, customers in limbo",
+        "url": "https://www.asiaone.com/singapore/yoga-inc-closure",
+        "content": "Yoga Inc. ceased operations abruptly on Friday (Sept 18), closing its two remaining studios at Punggol and Tampines. I'm sorry to all those affected by this sudden change.\". They have reported the matter to the Ministry of Manpower",
+        "publish_date": "2026-09-19T12:18:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yoga Inc.'s abrupt closure leaves instructors, cus..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "The Straits Times",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-20T09:34:19.103960+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
