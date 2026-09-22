@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Through smoke, flames and exhaustion, Sumatra’s firefighters find strength to carry on",
+        "url": "https://www.channelnewsasia.com/asia/indonesia-haze-wildfires-sumatra-firefighters-drought-6391731",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 Through smoke, flames and exhaustion, Sumatra’s firefighters...",
+        "content": "OGAN ILIR, Indonesia: After eight hours battling flames advancing through a botanical park in South Sumatra, firefighter Rahmat Hadi Wijaya faces a difficult choice. The fire is still burning. Thick smoke rises from the ground, while embers smoulder beneath layers of dead foliage. “Every day, we have to respond to two, sometimes three calls. We work from early in the morning until close to midnight. This year has proved especially punishing.",
+        "publish_date": "2026-09-22T10:16:02.529996+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/canada-aims-slash-time-needed-202132880.html",
+        "summary": "📰 취업, 금융 관련 뉴스\n📢 Yahoo Finance",
+        "content": "Ottawa stepped in several times in 2024 and ​2025 to settle work stoppages in crucial sectors, prompting union anger. ONE-YEAR APPROVAL ‌TARGET",
+        "publish_date": "2026-09-22T09:50:29+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Car skids and crashes along Upper Bukit Timah Road, destroys part of road divider fencing",
+        "url": "https://www.asiaone.com/singapore/upper-bukit-timah-road-accident-car-skid-fencing-destroyed",
+        "summary": "📰 싱가포르, 교통, 법률 관련 뉴스\n📢 Car skids and crashes along Upper Bukit Timah Road, destroys part of road divide...",
+        "content": "The incident happened at about 11.35pm on Sunday (Sept 20). As cars drive past the mangled heap of metal, screeching sounds can be heard. #sgnews #singapore #traffic #accident #police ♬ original sound - AsiaOne. The driver is assisting with ongoing police investigations.",
+        "publish_date": "2026-09-21T19:48:29+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-22T10:23:22.433768+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
