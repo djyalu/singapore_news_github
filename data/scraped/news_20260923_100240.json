@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Nepal flood: What we know so far",
+        "url": "https://www.straitstimes.com/asia/nepal-flood-what-we-know-so-far?ref=visual-stories",
+        "content": "The flood destroyed buildings and structures, sweeping away entire villages. Official figures suggested that more than 1,500 people, including at least 800 foreigners, were among the missing. Nine Singaporeans were also reported missing as at noon on Aug 27. The flooding started on the border of Nepal and Tibet. “The information is being verified and cross-checked with travel agencies, guides, local authorities and security agencies,” the statement said. “All efforts are under way to rescue/evacuate the injured and stranded people,” it...",
+        "publish_date": "2026-09-23T09:59:00.265488+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nepal flood: What we know so far"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Voting opens in Alaska's annual Fat Bear Week",
+        "url": "https://sg.news.yahoo.com/voting-opens-alaskas-annual-fat-004303525.html",
+        "content": "Polls opened Tuesday in the only American election that really matters: Fat Bear Week. \"For each match-up, vote for the bear you believe best exemplifies fatness and success in brown bears,\" said organizers. \"The bear with the most votes advances to the next round",
+        "publish_date": "2026-09-23T09:43:03+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Voting opens in Alaska's annual Fat Bear Week"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump threatens to annihilate Iran as diplomats push for deal at UN",
+        "url": "https://sg.news.yahoo.com/tehran-hints-hormuz-talks-us-122001507.html",
+        "content": "\"Will a deal be made with Iran that lets them rebuild and create a far greater country than it ever ‌was before?.",
+        "publish_date": "2026-09-23T09:50:54+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump threatens to annihilate Iran as diplomats pu..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "French prosecutors probe secret filming of women with smart glasses",
+        "url": "https://sg.news.yahoo.com/french-prosecutors-probe-secret-filming-004938472.html",
+        "content": "Paris prosecutors said Tuesday they had opened several probes after receiving complaints concerning women filmed on the street without their consent using smart glasses. Anyone wearing smart glasses can take photos, film videos, listen to music, make phone calls, translate text or interact with an AI assistant. Meta's smart spectacles, developed in partnership with Ray-Ban maker EssilorLuxottica, have become a commercial success. Meta sold seven million pairs in 2025. Other companies, including Google and Snap, are also preparing to roll out AI-powered glasses",
+        "publish_date": "2026-09-23T09:49:38+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 French prosecutors probe secret filming of women w..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "ComfortDelGro, Strides Premier extend temporary fare adjustment till Nov 30",
+        "url": "https://www.asiaone.com/singapore/taxi-fare-adjustment-extended-comfortdelgro-strides",
+        "content": "Taxi operators ComfortDelGro and Strides Premier will extend their respective temporary metered fare adjustments till Nov 30. In its Facebook post, Strides Premier said the full amount from the adjustment will be passed directly to its...",
+        "publish_date": "2026-09-23T07:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ComfortDelGro, Strides Premier extend temporary fa..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "The Straits Times",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-23T10:02:40.305011+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
