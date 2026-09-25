@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Australia launches urgent review after OpenAI program hacks government health portal",
+        "url": "https://sg.news.yahoo.com/australia-launches-urgent-review-openai-063410413.html",
+        "content": "Australia launches a review after an OpenAI agent \"infiltrated\" part of the government's healthcare scheme Medicare - here's what we know. Sam Altman, the company's boss, earlier this week called for international standards for the industry. Australia launches urgent review after OpenAI program hacks government health portal",
+        "publish_date": "2026-09-24T18:48:12+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Australia launches urgent review after OpenAI prog..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "SAF participates in five-power defence exercise hosted by Malaysia",
+        "url": "https://www.asiaone.com/singapore/exercise-suman-warrior-2026-saf",
+        "content": "\"The exercise focused on conventional operations and provided opportunities for participants to exercise command decision-making and staff procedures within a combined operations mission context.\". Singapore's 18-man delegation was led by Senior Lieutenant Colonel (NS) Lim Kim...",
+        "publish_date": "2026-09-24T21:33:59+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 SAF participates in five-power defence exercise ho..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Venomous black spitting cobra spotted in Serangoon Gardens; NParks monitoring area",
+        "url": "https://www.asiaone.com/singapore/black-spitting-cobra-serangoon-gardens-mei-hwan",
+        "content": "He added that NParks' contractors were immediately activated to survey the area and locate the snake after each reported sighting. However, the reptile was not found during these surveys. “NParks will continue to monitor the area and relocate any cobras sighted,” he added. On its website, NParks said that the snake is typically found in forests, parks and gardens. It may also be found in terrestrial and urban areas. The black spitting cobra is known to feed on small animals such as rats and toads",
+        "publish_date": "2026-09-24T17:57:20+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Venomous black spitting cobra spotted in Serangoon..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-25T10:01:00.165617+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
