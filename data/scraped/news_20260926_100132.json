@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "TV networks resume covering White House as press access fight continues",
+        "url": "https://sg.news.yahoo.com/tv-networks-resume-coverage-trump-133956229.html",
+        "content": "Trump last week banned the three outlets from the ‌White House, before a judge ordered the administration to restore their access. The Washington Post reported on Friday evening that the White House had blocked...",
+        "publish_date": "2026-09-26T09:22:28+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 TV networks resume covering White House as press a..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "$8.8m lost to scams involving impersonation of ICA officers, fake PR application assistance",
+        "url": "https://www.asiaone.com/singapore/police-ica-scams-china-official-pr-application",
+        "content": "According to the agencies, the calls would then be transferred to another scammer impersonating a China official. The \"official\" would then demand the victims hand over cash for investigation or bail. In some cases, victims were asked to meet up with unknown individuals to sign fake documents such as...",
+        "publish_date": "2026-09-25T17:27:34+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 $8.8m lost to scams involving impersonation of ICA..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-09-26T10:01:32.292359+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
