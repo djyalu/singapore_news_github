@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Nepal flood: What we know so far",
+        "url": "https://www.straitstimes.com/asia/nepal-flood-what-we-know-so-far?ref=visual-stories",
+        "content": "The flood destroyed buildings and structures, sweeping away entire villages. Official figures suggested that more than 1,500 people, including at least 800 foreigners, were among the missing. Nine Singaporeans were also reported missing as at noon on Aug 27. The flooding started on the border of Nepal and Tibet. “The information is being verified and cross-checked with travel agencies, guides, local authorities and security agencies,” the statement said. “All efforts are under way to rescue/evacuate the injured and stranded people,” it...",
+        "publish_date": "2026-09-27T09:58:28.310255+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Nepal flood: What we know so far"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Exclusive-OpenAI works to understand full scope of agent activity as user data leak emerges",
+        "url": "https://sg.news.yahoo.com/exclusive-openai-works-understand-full-203649029.html",
+        "content": "The latest example came on Friday when OpenAI said its agents had leaked 53 images from ChatGPT users. OpenAI declined to say if the images were AI-generated or identified real people. It also declined to say when the ‌images were posted",
+        "publish_date": "2026-09-26T11:10:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Exclusive-OpenAI works to understand full scope of..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "China’s latest panda diplomats Ping Ping and Fu Shuang take flight as they head for Atlanta",
+        "url": "https://sg.news.yahoo.com/china-latest-panda-diplomats-ping-235544199.html",
+        "content": "They departed Chengdu, in southwestern China, at 2:55 a.m. Sunday morning local time, China's state news agency Xinhua said. The flight came just a day after Chinese leader Xi Jinping's state visit to Washington concluded",
+        "publish_date": "2026-09-27T08:55:44+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 China’s latest panda diplomats Ping Ping and Fu Sh..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "The Straits Times"
+    ],
+    "timestamp": "2026-09-27T10:02:18.698615+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
