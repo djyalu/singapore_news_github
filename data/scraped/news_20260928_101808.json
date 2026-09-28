@@ -1,0 +1,52 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "More than 23,500 Simba customers affected in data breach involving IC numbers, birth dates",
+        "url": "https://www.channelnewsasia.com/singapore/more-23500-simba-customers-affected-in-data-breach-involving-ic-numbers-birth-dates-6413636",
+        "content": "SINGAPORE: Telecommunications company Simba has suffered a data breach affecting 23,549 customers, involving names, identity card numbers and dates of birth. No credit card or bank account information is \"at risk\", the company said",
+        "publish_date": "2026-09-28T10:15:09.646471+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 More than 23,500 Simba customers affected in data ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Five-room flat at Pinnacle@Duxton sets record of $1.72mil; Kallang-Whampoa five-room flat sets town record of $1.59 mil",
+        "url": "https://sg.news.yahoo.com/five-room-flat-pinnacle-duxton-063000232.html",
+        "content": "(Photo: Shutterstock). Two record-setting five-room HDB flat resale transactions took place recently, one at The Pinnacle@Duxton and another along Upper Boon Keng Road. Read also: What's moving the market: Singapore's biggest property deals and hottest searches (Sept 25). Located on the 19th to 21st storeys, the flat measures 1,151 sq ft. This transaction surpasses the previous high of $1.701 million ($1,477 psf) for a five-room flat at the...",
+        "publish_date": "2026-09-25T15:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Five-room flat at Pinnacle@Duxton sets record of $..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Public Hygiene Council partners Sentosa to protect local waters beyond just beach cleanups",
+        "url": "https://www.asiaone.com/singapore/phc-partners-rws-protect-local-waters",
+        "content": "Marking its 15th anniversary, the Public Hygiene Council (PHC) is officially extending Singapore's national cleanliness drive from urban residential estates directly to coastal shores and marine environments. During heavy rain, uncollected rubbish in inland estates can travel through stormwater drains and drainage networks directly into...",
+        "publish_date": "2026-09-27T16:33:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Public Hygiene Council partners Sentosa to protect..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'You won't die from eating it': 'Cai fan' stall employee allegedly retorts diner after being shown centipede in meal",
+        "url": "https://www.asiaone.com/singapore/woman-vomit-centipede-cai-fan-bukit-batok",
+        "content": "A woman purportedly regurgitated her lunch after finding a centipede midway through consuming a packet of 'cai fan'. When her mother returned to the Bukit Batok coffee shop stall to complain, a disagreement occurred. \"(You) won't die from eating it, there's no problem\" an employee allegedly retorted. Lin said they will not patronise the stall again. When contacted by Shin Min, the employee involved confirmed that an argument had happened, but rebutted...",
+        "publish_date": "2026-09-27T19:20:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'You won't die from eating it': 'Cai fan' stall em..."
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-09-28T10:18:08.607277+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
