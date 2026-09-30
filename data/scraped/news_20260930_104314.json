@@ -1,0 +1,53 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Japan’s August factory output unexpectedly falls",
+        "url": "https://www.businesstimes.com.sg/international/japans-august-factory-output-unexpectedly-falls",
+        "content": "Industrial output shrank 1.7% in August from the previous month, falling for a second straight month. [TOKYO] Japan’s factory output unexpectedly fell in August from the previous month, government data showed on Wednesday (Sep 30). It decreased for a second straight month",
+        "publish_date": "2026-09-30T10:40:39.824708+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Japan’s August factory output unexpectedly falls"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-09-30T10:43:14.552384+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/china-vows-response-eu-introduces-002025761.html",
+        "content": "China could respond ‌with a \"strong policy toolbox\" that includes anti-discrimination probes, security investigations into industrial and supply chains and could also look into the impact of...",
+        "publish_date": "2026-09-30T09:28:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Pentagon chief set to announce additional cuts in senior officer positions",
+        "url": "https://sg.news.yahoo.com/pentagon-chief-set-announce-additional-175404445.html",
+        "content": "officials told Reuters on Tuesday. Those are one- to four-star generals and admirals. That is an increase from the minimum 10% ‌cut Hegseth laid out last year",
+        "publish_date": "2026-09-30T10:06:12+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Pentagon chief set to announce additional cuts in ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-09-30T10:43:14.552422+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
