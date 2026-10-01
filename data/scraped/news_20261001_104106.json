@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "What’s really inside meats with ‘no nitrite added’? Here’s what Talking Point tests found",
+        "url": "https://www.channelnewsasia.com/cna-insider/nitrite-free-no-nitrates-added-processed-meats-singapore-tests-6420726",
+        "content": "SINGAPORE: Consumption of processed meat has been a long-standing public health concern. In Singapore, the prevalence of diabetes is already high, according to the latest National Population Health Survey. Against that backdrop, some processed meats are being marketed as nitrite-free alternatives",
+        "publish_date": "2026-10-01T10:37:53.419371+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 What’s really inside meats with ‘no nitrite added’..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Yahoo Finance",
+        "url": "https://sg.news.yahoo.com/finance/news/tsmc-evaluates-potential-texas-investment-003801947.html",
+        "content": "Taiwanese media first reported the development this ​week, citing ​unnamed industry sources. Including current and planned projects, TSMC's ‌Arizona operations...",
+        "publish_date": "2026-10-01T09:38:01+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Yahoo Finance"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-10-01T10:41:06.878050+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
