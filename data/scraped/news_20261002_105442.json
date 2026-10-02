@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump launches midterm campaign push in Texas and Oklahoma as Republicans face tough races",
+        "url": "https://sg.news.yahoo.com/trump-launches-midterm-campaign-push-100312740.html",
+        "content": "He's beginning that trip in safe Republican territory, looking to build momentum before plunging into more competitive races. Some candidates have become increasingly willing to break with him on issues that are riling...",
+        "publish_date": "2026-10-02T09:48:26+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump launches midterm campaign push in Texas and ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-10-02T10:54:42.267168+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
