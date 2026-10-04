@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "UAE investigators say flydubai co-pilot was planning 'terrorist act'",
+        "url": "https://www.channelnewsasia.com/world/flydubai-co-pilot-attempted-terrorist-attack-uae-6428876",
+        "content": "Media reports have also said he had been barred from flying in his home nation over concerns about extremist views",
+        "publish_date": "2026-10-04T11:02:28.894885+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 UAE investigators say flydubai co-pilot was planni..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Lula ahead in polls for Brazil's first-round vote; runoff likely",
+        "url": "https://sg.news.yahoo.com/lulas-lead-over-bolsonaro-narrows-142104612.html",
+        "content": "• First round (valid votes): Lula 47.8%, Bolsonaro 42.1%, Augusto Cury 3.6%, Ronaldo Caiado 3.4%, ⁠Renan Santos 1.7%, Romeu Zema 0.9%. • Runoff: Lula 47.3%, Bolsonaro 43.1%. • Datafolha surveyed 4,006 people from October 2-3; margin of error 2 percentage points. • Quaest surveyed 3,702 ​people from October ​2-3; margin of error 2 percentage points. • ‌First round (valid votes): Lula 47%, ​Bolsonaro 44.1%, Santos ​4.6%, Cury...",
+        "publish_date": "2026-10-04T09:59:52+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Lula ahead in polls for Brazil's first-round vote;..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Mexico says FDA lettuce probe did not conclusively identify contamination source",
+        "url": "https://sg.news.yahoo.com/mexico-says-fda-lettuce-probe-234156358.html",
+        "content": "• The regulator added that environmental findings alone do not ⁠constitute conclusive evidence that agricultural products were the source of contamination. • The agency reported two environmental samples positive...",
+        "publish_date": "2026-10-04T08:41:56+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Mexico says FDA lettuce probe did not conclusively..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Channel NewsAsia",
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-10-04T11:05:42.765285+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
