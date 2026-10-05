@@ -1,0 +1,51 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "UK Green party adopts 'Zionism is racism' policy",
+        "url": "https://sg.news.yahoo.com/uk-green-party-adopts-zionism-172853614.html",
+        "summary": "📰 장관, 정책 관련 뉴스\\n📢 UK Green party adopts 'Zionism is racism' policy...",
+        "content": "Israel's foreign ministry, declaring the resolution \"a clear antisemitic text,\" announced in retaliation Sunday evening that Foreign Minister Gideon Sa'ar was barring the Green party's leader, Zack Polanski, from entering Israel. \"This has been a serious and deeply felt debate within our membership,\" a Green spokesperson said.",
+        "publish_date": "2026-10-05T07:26:51+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Paraguay opposition candidate wins Asuncion mayor's race in gauge of 2028 vote",
+        "url": "https://sg.news.yahoo.com/paraguay-opposition-candidate-wins-asuncion-003254956.html",
+        "summary": "📰 기술 관련 뉴스\n📢 Paraguay opposition candidate wins Asuncion mayor's race in gauge of 2028 vote",
+        "content": "Colorado had controlled ‌the mayor's seat since ⁠2019. Perez told reporters on Sunday night that he would await an official review of the results on Monday",
+        "publish_date": "2026-10-05T09:32:54+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man rescued from air-con ledge of Bukit Panjang flat, apprehended under Mental Health Act",
+        "url": "https://www.asiaone.com/singapore/bukit-panjang-segar-road-hdb-rescue-apprehended",
+        "summary": "📰 보건, 기술 관련 뉴스\n📢 Man rescued from air-con ledge of Bukit Panjang flat, apprehended under Mental H...",
+        "content": "SCDF deployed a safety life air pack as a precautionary measure when they arrived at the scene. DART rescuers rappelled down from the unit above and brought the man to safety at about 9.50am. The 42-year-old was taken conscious to hospital and subsequently apprehended under Section 7(1) of the Mental Health (Care...",
+        "publish_date": "2026-10-04T17:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Elderly man rides PMA along bus lane in Bugis, sparking safety concerns",
+        "url": "https://www.asiaone.com/singapore/bugis-pma-bus-lane-safety",
+        "summary": "📰 교통 관련 뉴스\n📢 Elderly man rides PMA along bus lane in Bugis, sparking safety concerns",
+        "content": "Ho also reported the matter to the Land Transport Authority's Active Mobility Enforcement Division. According to LTA, PMAs are only allowed on footpaths,...",
+        "publish_date": "2026-10-05T09:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 4,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-05T10:23:05.741261+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
