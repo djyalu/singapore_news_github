@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Dozens quarantined in Siberia after plague institute lab worker dies",
+        "url": "https://www.channelnewsasia.com/world/russia-siberia-plague-lab-worker-dies-quarantined-6433201",
+        "content": "The World Health Organization said that based on available information, \"the public health risk to the general population appears to be low\". New risk assessments would be conducted once further information became known, it said",
+        "publish_date": "2026-10-06T11:33:25.406815+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Dozens quarantined in Siberia after plague institu..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Separatists win Quebec election in test for Canada PM",
+        "url": "https://sg.news.yahoo.com/quebec-votes-separatist-surge-poses-160550593.html",
+        "content": "The results make PQ leader Paul Saint-Pierre Plamondon, a 49-year-old lawyer known by his initials as PSPP, Quebec's next premier. The partial results indicated that the separatists...",
+        "publish_date": "2026-10-06T11:28:13+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Separatists win Quebec election in test for Canada..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'You like?' Man melts hearts with free haircuts for 18-month-old twins with cerebral palsy",
+        "url": "https://www.asiaone.com/singapore/free-haircut-man-babies-cerebral-palsy-twins-aidan-james-loo",
+        "content": "Cerebral palsy is a lifelong neurological disorder that affects movement, muscle tone and posture due to abnormal or damaged brain development. The infant immediately begins to cry and she chuckles in response. \"You like?\" he asks the infant who remains silent before the haircut. However, the toddler can be seen bawling during the haircut in...",
+        "publish_date": "2026-10-06T09:00:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 'You like?' Man melts hearts with free haircuts fo..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-10-06T11:36:44.997490+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
