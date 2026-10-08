@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "‘Phenomenal’ amount of capital going into AI could be more spread out: Temasek CEO",
+        "url": "https://www.channelnewsasia.com/singapore/temasek-invest-ai-chips-data-centre-6439061",
+        "content": "The panel included billionaire Ray Dalio, Franklin Templeton CEO Jenny Johnson and Bangkok Bank president Chartsiri Sophonpanich. Mr Sandrasegaran questioned whether the cost of capital will rise because of inflationary pressures from investment in AI infrastructure",
+        "publish_date": "2026-10-08T11:18:58.186980+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ‘Phenomenal’ amount of capital going into AI could..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "PM Wong congratulates Laos PM Saleumxay Kommasith on his appointment",
+        "url": "https://www.asiaone.com/singapore/lawrence-wong-congratulate-laos-premier-saleumxay-kommasith",
+        "content": "Prime Minister Lawrence Wong on Wednesday (Oct 7) congratulated Saleumxay Kommasith on his appointment as Laos' premier. He succeeds Sonexay Siphandone, who was elected the National Assembly president. This, PM Wong said, includes mutually beneficial initiatives such as the...",
+        "publish_date": "2026-10-07T23:25:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 PM Wong congratulates Laos PM Saleumxay Kommasith ..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-08T11:22:16.616052+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
