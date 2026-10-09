@@ -1,0 +1,54 @@
+[
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "Why the Asean Power Grid’s future lies in subsea cables",
+        "url": "https://www.businesstimes.com.sg/companies-markets/why-asean-power-grids-future-lies-subsea-cables",
+        "content": "South-east Asian countries have long traded electricity via land-based power cables. Subsea interconnectors will be vital to realise the APG. These are high-voltage power cable systems laid on or under the seabed, transmitting electricity from one country to another. Today, the world’s longest subsea interconnector runs 630 km between the UK and Denmark. If the Viking Link seems massive, South-east Asia could take subsea interconnectors to a whole new scale",
+        "publish_date": "2026-10-09T11:37:05.258938+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Why the Asean Power Grid’s future lies in subsea c..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-10-09T11:40:00.717291+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  },
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "EU trade chief seeks 'tangible outcomes' in China talks",
+        "url": "https://sg.news.yahoo.com/eu-trade-chief-seeks-tangible-013827152.html",
+        "content": "\"Building on three intensive months of engagement, we're working hard to rebalance EU-China trade,\" Maros Sefcovic said late Thursday after meeting Chinese Commerce Minister Wang Wentao in Beijing. Sefcovic had said earlier Thursday that the EU's trade deficit with China, running at around one billion euros ($1.1 billion) every day, was \"unsustainable\". Cheaper products coming from China have strangled European industry, resulting in tens of thousands of job losses across the continent.",
+        "publish_date": "2026-10-09T10:38:27+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 EU trade chief seeks 'tangible outcomes' in China ..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Man, 39, found dead after fall from Everton Road condo",
+        "url": "https://www.asiaone.com/singapore/man-dead-fall-sky-everton-road-condo",
+        "content": "This is the address of Sky Everton condominium. He was pronounced dead at the scene by a Singapore Civil Defence Force (SCDF) paramedic. SCDF said it received a call for assistance at the same address at about 7.20am. Based on preliminary investigations, the police do not suspect foul play.",
+        "publish_date": "2026-10-09T11:35:07+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Man, 39, found dead after fall from Everton Road c..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-09T11:40:00.717313+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
