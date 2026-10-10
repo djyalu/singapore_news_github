@@ -1,0 +1,43 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "US green card crackdown clouds Indian tech workers' American dream",
+        "url": "https://www.channelnewsasia.com/asia/us-green-card-crackdown-clouds-indian-tech-workers-american-dream-6446536",
+        "content": "US Labor Secretary Keith Sonderling said authorities would stop accepting new applications and processing pending ones under the Permanent Labor Certification (PERM) programme. It added that the move could affect eligible workers' green card applications but not existing H-1B visa...",
+        "publish_date": "2026-10-10T10:57:17.181060+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US green card crackdown clouds Indian tech workers..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Powerful earthquake shakes Panama",
+        "url": "https://sg.news.yahoo.com/powerful-earthquake-shakes-panama-192418107.html",
+        "content": "Various homes, roads, hotels, government buildings, businesses and churches have sustained structural damage, according to the civil protection system. The USGS had said some casualties were possible and extensive damage was probable. Footage verified by CNN shows several damaged buildings in Penonome, some 70 miles from the epicenter. One video shows a church with a partially collapsed steeple and another building with a crumbled facade. In the popular resort town Playa Venao, a multi-story building collapsed and crushed several cars beneath it. Along the Panama Canal, the Centennial Bridge's suspension cables were seen shaking as vehicles drove through. The canal's authority said operations were continuing as normal and that staff were...",
+        "publish_date": "2026-10-10T08:59:11+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Powerful earthquake shakes Panama"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "7 drivers caught at Woodlands, Tuas checkpoints for illegal cross-border ride-hailing services",
+        "url": "https://www.asiaone.com/singapore/woodlands-tuas-checkpoints-illegal-cross-border-taxi-impounded-lta",
+        "content": "A total of seven drivers were on Thursday (Oct 8) caught for providing illegal cross-border taxi services at Singapore's land checkpoints. Vehicles used could also be forfeited, the authority...",
+        "publish_date": "2026-10-09T22:31:47+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 7 drivers caught at Woodlands, Tuas checkpoints fo..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News",
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-10T11:05:04.703905+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
