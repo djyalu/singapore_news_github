@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "11-year-old cyclist taken to hospital after accident with van opposite primary school in Hougang",
+        "url": "https://www.asiaone.com/singapore/-11-year-old-cyclist-hougang-accident-montfort-junior-school",
+        "summary": "📰 싱가포르 관련 뉴스\\n📢 11-year-old cyclist taken to hospital after accident with va...",
+        "content": "The boy, who was cycling, was conscious while being taken to the hospital. An ambulance was parked further down the road. The Singapore Civil Defence Force (SCDF) also confirmed that it was alerted to the accident at 1.40pm.",
+        "publish_date": "2026-10-11T10:20:00+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-11T10:28:29.930783+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
