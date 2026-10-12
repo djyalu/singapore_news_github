@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Salad shop owner distressed by work injury claim found soaked at Changi Beach Park a day before death",
+        "url": "https://www.asiaone.com/singapore/salad-shop-owner-distressed-work-injury-claim-found-soaked-changi-beach-park-day-death",
+        "content": "Her husband said that she had been deeply distressed after receiving multiple medical bills and a lawyer’s letter regarding a foreign employee’s work injury compensation claim. On July 24, 2025, Minister of State for Manpower Dinesh Vasu Dash said the Ministry of Manpower (MOM)...",
+        "publish_date": "2026-10-11T13:33:33+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Salad shop owner distressed by work injury claim f..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-12T10:59:16.752602+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
