@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Call centre lines across NHG Health institutions, including four hospitals, temporarily unavailable",
+        "url": "https://www.channelnewsasia.com/singapore/call-centre-nhg-health-hospitals-temporarily-unavailable-6454651",
+        "content": "The group said it is working to restore access to the lines. Four hospitals are under NHG Health: Tan Tock Seng Hospital, Khoo Teck Puat Hospital, Woodlands Hospital and Yishun Community Hospital",
+        "publish_date": "2026-10-13T12:14:20.394969+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Call centre lines across NHG Health institutions, ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US actress Selma Blair arrested after flight altercation",
+        "url": "https://sg.news.yahoo.com/us-actress-selma-blair-arrested-005646733.html",
+        "content": "US media said that Blair punched one flight attendant and bit another. \"Selma experienced a medical emergency that led to the alleged conduct,\" a representative for Blair said. \"Upon landing, she received immediate medical attention and is currently in stable condition.\"",
+        "publish_date": "2026-10-13T11:19:02+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US actress Selma Blair arrested after flight alter..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US says it opposes Chinese 'coercion', after Belize, Paraguay ministers sanctioned",
+        "url": "https://sg.news.yahoo.com/us-says-opposes-chinese-coercion-015538196.html",
+        "content": "Paraguay and Belize are two of just 12 countries ‌to maintain formal diplomatic relations with Taiwan. The sanctions are largely symbolic because ministers from Taiwan's diplomatic allies generally do not travel to China. Beijing has previously imposed similar measures mainly on Western politicians for their support of democratically governed Taiwan. \"The Trump Administration opposes coercion and aggression by China ‌against countries in our hemisphere ⁠for exercising their sovereign rights,\" State Department spokesperson Tommy Pigott said in a statement.",
+        "publish_date": "2026-10-13T11:24:06+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 US says it opposes Chinese 'coercion', after Beliz..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Car driver turns Jurong West block wall into cinema screen; resident says 'I can't help but admire it'",
+        "url": "https://www.asiaone.com/singapore/jurong-west-hdb-wall-screen-projector-cinema",
+        "content": "I rubbed my eyes, looked again, smiled and took the shot,\" the 40-year-old entrepreneur said. \"It's so brazen that I can't help but to admire,\" Farhan wrote in the video caption",
+        "publish_date": "2026-10-13T11:01:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Car driver turns Jurong West block wall into cinem..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Police raid Geylang premises, arrest 22 over vice and illegal lottery activities",
+        "url": "https://www.asiaone.com/singapore/singapore-geylang-vice-illegal-lottery-raid-22-arrested",
+        "content": "Officers from the Criminal Investigation Department, Bedok Police Division and the Immigration and Checkpoints Authority conducted the operation last Thursday (Oct 8). Police also seized betting-related paraphernalia. Investigations against all 22 individuals are ongoing",
+        "publish_date": "2026-10-12T21:18:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Police raid Geylang premises, arrest 22 over vice ..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "AsiaOne",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-10-13T12:22:13.657842+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
