@@ -1,0 +1,61 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "The Straits Times",
+        "title": "Complex works, tough terrain: Building Jurong Region Line no easy task",
+        "url": "https://www.straitstimes.com/singapore/transport/complex-works-tough-terrain-building-jurong-region-line-no-easy-task1?ref=visual-stories",
+        "content": "The North-South and East-West lines have a mix of above-ground and underground sections. It was first announced in 2001 as a light rail system. The station names will be made known later.",
+        "publish_date": "2026-10-14T10:26:52.058196+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Complex works, tough terrain: Building Jurong Regi..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "MAS keeps monetary policy on hold after tightening twice this year",
+        "url": "https://www.channelnewsasia.com/singapore/mas-monetary-policy-inflation-economy-6454831",
+        "content": "SINGAPORE: The Monetary Authority of Singapore (MAS) kept monetary policy unchanged on Wednesday (Oct 14), contrary to analysts' expectations. Core inflation is projected to ease discernibly from the middle of next year, MAS added. \"MAS will therefore maintain the rate of appreciation of the policy band",
+        "publish_date": "2026-10-14T10:27:02.672110+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 MAS keeps monetary policy on hold after tightening..."
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "‘Modest take-up’: More than 90 families await childminders as pilot faces matching challenge",
+        "url": "https://www.channelnewsasia.com/singapore/childminding-nanny-baby-parents-caregiving-challenge-6456531",
+        "content": "Another 95 families are waiting to be matched with a childminder. About 250 active childminders are registered under the pilot. Operators said that interest does not necessarily...",
+        "publish_date": "2026-10-14T10:27:06.398695+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 ‘Modest take-up’: More than 90 families await chil..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "EU takes a page from Ireland's AI playbook",
+        "url": "https://sg.news.yahoo.com/eu-takes-page-irelands-ai-011503028.html",
+        "content": "\"We need to stay in the race. Because this is crucial for our independence,\" EU chief Ursula von der Leyen said last month. Europe will use the gathering to hammer home its pro-AI agenda.",
+        "publish_date": "2026-10-14T10:15:03+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 EU takes a page from Ireland's AI playbook"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Distances Himself From Kimberly Guilfoyle, But His Past Comments Tell Another Story.",
+        "url": "https://sg.news.yahoo.com/trump-distances-himself-kimberly-guilfoyle-005958208.html",
+        "content": "President Donald Trump on Tuesday tried his best to distance himself from the now-former U.S. ambassador to Greece, Kimberly Guilfoyle. But his past comments about her, as recent as earlier this year, painted a very different picture. \"She, I guess, dated my son a long time ago,\" Trump said. She was doing a good job, but we didn't like what we were reading.\". Trump was singing a very different tune about Guilfoyle less than a year ago. \"Kimberly Guilfoyle has been my friend for a long time. I love calling her Kimberly. That's my little pet name, right?\" Trump said during a Greek Independence Day ceremony in March. \"But you are the greatest, and I heard they love you over there.\". Keep independent journalism alive. Guilfoyle resigned after less than a year on the job,...",
+        "publish_date": "2026-10-14T09:59:58+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump Distances Himself From Kimberly Guilfoyle, B..."
+      }
+    ],
+    "article_count": 5,
+    "sites": [
+      "The Straits Times",
+      "Yahoo Singapore News",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-10-14T10:34:55.538284+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
