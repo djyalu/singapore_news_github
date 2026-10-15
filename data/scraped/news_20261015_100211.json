@@ -1,0 +1,32 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "New White House press secretary Katie Zacharia's legal career draws scrutiny",
+        "url": "https://sg.news.yahoo.com/white-house-press-secretary-katie-002850922.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 New White House press secretary Katie Zacharia's legal caree...",
+        "content": "Zacharia, who joined ‌the White House on Monday, has said she practiced law before entering politics. Trump has described her as an ‌attorney",
+        "publish_date": "2026-10-15T09:28:50+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "A list of US roller coaster fatalities dating back to 2003",
+        "url": "https://sg.news.yahoo.com/list-us-roller-coaster-fatalities-172019069.html",
+        "summary": "📰 법률, 기술 관련 뉴스\n📢 A list of US roller coaster fatalities dating back to 2003",
+        "content": "Several people also were injured. Here's a look at other fatalities and injuries on U.S. The park in Southern California announced last month that it was retiring its famous X2 roller coaster following lawsuits alleging riders suffered serious brain injuries. The medical examiner's office determined he died from \"blunt head trauma.\" Six Flags Entertainment Corp. said the ride had consistently passed safety tests. A medical examiner concluded last year that a man who was unresponsive after riding a roller coaster at...",
+        "publish_date": "2026-10-14T02:20:19+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-10-15T10:02:11.948198+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
