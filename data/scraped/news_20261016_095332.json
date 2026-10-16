@@ -1,0 +1,54 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "How a four-member government team turned red-light cameras into speed enforcers in 3 months",
+        "url": "https://www.channelnewsasia.com/singapore/road-safety-speeding-traffic-police-ogp-6461926",
+        "summary": "📰 정부 관련 뉴스\\n📢 How a four-member government team turned red-light cameras i...",
+        "content": "Enter Darren Lau, a senior product manager at Open Government Products (OGP), and his three colleagues. They rolled it out and fine-tuned it along the way",
+        "publish_date": "2026-10-16T09:50:30.341069+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "'Why would I want to harm myself?' Some delivery riders look to cut hours as haze worsens",
+        "url": "https://www.asiaone.com/singapore/haze-delivery-rider-health",
+        "summary": "📰 취업 관련 뉴스\n📢 'Why would I want to harm myself?' Some delivery riders look to cut hours as haz...",
+        "content": "Some wore masks to protect themselves, while others went without, saying the masks trapped sweat and became uncomfortable after prolonged use. The delivery rider, who typically works five to six days a week and...",
+        "publish_date": "2026-10-16T08:30:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Channel NewsAsia",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-16T09:53:32.657067+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  },
+  {
+    "group": "Economy",
+    "articles": [
+      {
+        "site": "The Business Times",
+        "title": "MSCI proposes downgrading Indonesia to standalone market status",
+        "url": "https://www.businesstimes.com.sg/international/asean/msci-proposes-downgrading-indonesia-standalone-market-status",
+        "summary": "📰 시장 관련 뉴스\\n📢 MSCI proposes downgrading Indonesia to standalone market sta...",
+        "content": "IDX said it would seek further clarification from the index provider on the considerations behind its announcement. The index provider cited persistent concerns over shareholding transparency, suspected coordinated trading and a lack of evidence that regulatory reforms have meaningfully improved the country’s equity market.",
+        "publish_date": "2026-10-16T09:50:53.030288+09:00",
+        "extracted_by": "traditional_fallback"
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "The Business Times"
+    ],
+    "timestamp": "2026-10-16T09:53:32.657108+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
