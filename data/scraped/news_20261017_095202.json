@@ -1,0 +1,41 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Why Trump decided to fire Katie Zacharia as press secretary after just five days: ‘Did anyone vet her?’",
+        "url": "https://sg.news.yahoo.com/trump-fires-katie-zacharia-white-181604109.html",
+        "content": "Settling in for a seven-hour flight across the continent this week, President Donald Trump offered little indication there was anything wrong. His new press secretary's rocky 14-minute debut at the White House podium was being met with decidedly negative reviews. An hour later, she'd offered a perplexing response when asked where she'd passed the bar exam. It was her first time on Air Force One. Plans to move east from California with her family were put on hold. It was all, multiple Trump advisers said, a real flop. \"I said, 'Is this for you, Katie?'\" Trump said Friday, after he'd fired her",
+        "publish_date": "2026-10-17T08:59:11+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Why Trump decided to fire Katie Zacharia as press ..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Anthropic quietly pitches its own AI safety bill to lawmakers, Politico reports",
+        "url": "https://sg.news.yahoo.com/anthropic-quietly-pitches-own-ai-223755665.html",
+        "content": "• ⁠An Anthropic spokesperson told Reuters the bill represents proposals outlined in Anthropic's \"Advanced AI Framework\" released earlier this year",
+        "publish_date": "2026-10-17T08:17:40+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Anthropic quietly pitches its own AI safety bill t..."
+      },
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump mocks popularity of the name Mohammad, common among Muslims",
+        "url": "https://sg.news.yahoo.com/trump-mocks-popularity-name-mohammad-235451027.html",
+        "content": "\"You know, if you're in doubt about somebody's name from the Middle East, ​just say 'Mohammad,'\" Trump told a crowd in Dalton, Georgia. \"You have about a 65% chance. 'Hello, Mohammad.' I've done it for years now. I've never been wrong.\"",
+        "publish_date": "2026-10-17T08:54:51+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump mocks popularity of the name Mohammad, commo..."
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-10-17T09:52:02.826231+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
