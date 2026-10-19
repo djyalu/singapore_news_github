@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "AsiaOne",
+        "title": "Haze update Oct 17: Rain keeps air quality from worsening, 24-hour PSI forecast unhealthy to very unhealthy",
+        "url": "https://www.asiaone.com/singapore/singapore-haze-psi-forecast-very-unhealthy-17-october",
+        "content": "Afternoon showers over parts of Singapore helped keep hourly PM2.5 from climbing into the very high band on Saturday (Oct 17) afternoon. It then hit a high of 243µg/m3 at 2pm, before thundery showers possibly kept it from crossing into very high band (>251µg/m3). Elsewhere, PM2.5 is in the elevated band in the eastern (139µg/m3) and northern (106µg/m3) regions",
+        "publish_date": "2026-10-17T20:45:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Haze update Oct 17: Rain keeps air quality from wo..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-19T09:36:56.988574+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
