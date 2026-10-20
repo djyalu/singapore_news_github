@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trump Once Again Attempts To Rename New Mexico As — Guess What?!",
+        "url": "https://sg.news.yahoo.com/trump-once-again-attempts-rename-004339146.html",
+        "content": "Donald Trump is once again suggesting renaming New Mexico as \"New America,\" and, once again, the idea is being greeted with brutal mockery. Donald Trump's Truth Social post from Oct. This isn't the first time Trump has suggested changing the state's name. Michelle Lujan Grisham doesn't seem too interested in changing the name of her state. \"This tired New America bit again?\" she told HuffPost. \"You have to ask — what policy failure is Trump trying to distract Americans from this time?\"",
+        "publish_date": "2026-10-20T09:43:39+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trump Once Again Attempts To Rename New Mexico As ..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-10-20T10:21:56.006626+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
