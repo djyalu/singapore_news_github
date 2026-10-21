@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Trans Resource Letters Sent To Families Spark Confusion In Texas",
+        "url": "https://sg.news.yahoo.com/trans-letters-sent-families-spark-225504501.html",
+        "content": "Keep independent journalism alive. However, the Houston Chronicle says that organization was created last month in Wyoming. Some Texans also received texts with a link to TENT's website. \"Questions about gender-affirming care in Texas. You can get the care you need,\" one text reads. Another text reads, \"New school year. Here's your complete guide on bathrooms and beyond for trans...",
+        "publish_date": "2026-10-21T07:55:04+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Trans Resource Letters Sent To Families Spark Conf..."
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Woman loses over $15k in alleged rental scam despite viewing unit twice: 'How could I have been so trusting?'",
+        "url": "https://www.asiaone.com/singapore/woman-loses-15k-alleged-rental-scam-condo",
+        "content": "\"(It) was one of the darkest periods of my life. I was embarrassed, heartbroken and traumatised,\" said the mother of one",
+        "publish_date": "2026-10-21T08:30:00+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Woman loses over $15k in alleged rental scam despi..."
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-21T10:06:42.829595+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
