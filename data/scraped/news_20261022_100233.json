@@ -1,0 +1,42 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "About 40 cat fosterers approved under new pilot scheme as rescuers weigh benefits, restrictions",
+        "url": "https://www.channelnewsasia.com/singapore/avs-cat-fosterer-new-pilot-scheme-application-benefit-restriction-6477451",
+        "summary": "📰 HDB 관련 뉴스\\n📢 About 40 cat fosterers approved under new pilot scheme as re...",
+        "content": "Another 20 applications are being reviewed. The previous household limits were two cats in HDB flats and three in private premises. While some cat fosterers welcomed the formal recognition and additional support, others raised concerns about restrictions that could limit their ability to...",
+        "publish_date": "2026-10-22T09:59:40.149109+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "Channel NewsAsia",
+        "title": "'Nobody will call you': The long road back after retrenchment for workers in their 50s",
+        "url": "https://www.channelnewsasia.com/singapore/retrenched-workers-50s-older-work-find-jobs-6477801",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 'Nobody will call you': The long road back after retrenchmen...",
+        "content": "Restructuring at his multinational packaging firm had cost him his director role. Life went quiet after his last day of work in February 2025. “Nobody will call you. Nobody will message you,” he said. He also wanted to stay active. The only option in his mind was another full-time job",
+        "publish_date": "2026-10-22T09:59:44.968572+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Motorcyclist, 30, dies after accident involving lorry at West Coast Ferry Road",
+        "url": "https://www.asiaone.com/singapore/motorcyclist-30-dies-accident-lorry-west-coast-ferry-road",
+        "summary": "📰 교육, 국제 관련 뉴스\n📢 Motorcyclist, 30, dies after accident involving lorry at West Coast Ferry Road",
+        "content": "A 30-year-old motorcyclist died after an accident involving a lorry near West Coast Park on Tuesday (Oct 20) morning. A pool of blood is also visible beside a motorcycle bearing a Malaysian licence plate. A 30-year-old male motorcyclist was taken unconscious to National University Hospital where he subsequently died. A 24-year-old male lorry driver was arrested for driving without reasonable consideration causing death",
+        "publish_date": "2026-10-22T07:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 3,
+    "sites": [
+      "AsiaOne",
+      "Channel NewsAsia"
+    ],
+    "timestamp": "2026-10-22T10:02:33.615061+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
