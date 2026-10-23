@@ -1,0 +1,23 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "Reclaiming the walls in a former Salvadoran gang hotspot",
+        "url": "https://sg.news.yahoo.com/reclaiming-walls-former-salvadoran-gang-211947943.html",
+        "content": "In El Salvador, walls that were once plastered with gang graffiti now feature tableaus of birds, flowers and landscapes, as artists reclaim public spaces from vanquished crime gangs",
+        "publish_date": "2026-10-23T09:16:36+09:00",
+        "extracted_by": "hybrid_fallback",
+        "summary": "📰 싱가포르 최신 뉴스\n📢 Reclaiming the walls in a former Salvadoran gang h..."
+      }
+    ],
+    "article_count": 1,
+    "sites": [
+      "Yahoo Singapore News"
+    ],
+    "timestamp": "2026-10-23T10:05:44.675835+09:00",
+    "scraping_method": "hybrid_ai",
+    "execution_type": "auto"
+  }
+]
