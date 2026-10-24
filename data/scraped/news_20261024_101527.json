@@ -1,0 +1,33 @@
+[
+  {
+    "group": "News",
+    "articles": [
+      {
+        "site": "Yahoo Singapore News",
+        "title": "US Justice Dept sues to block possible Alaska election of Democrat to Senate",
+        "url": "https://sg.news.yahoo.com/trump-administration-sues-block-senate-145823557.html",
+        "summary": "📰 싱가포르 최신 뉴스\\n📢 US Justice Dept sues to block possible Alaska election of De...",
+        "content": "Critics, including ​both Democratic and some Republican election officials, view the moves as federal overreach. Control of the US Senate could come down to Alaska, where incumbent Republican Senator Dan S. Sullivan is running a closely contested race against Democrat Mary Peltola.",
+        "publish_date": "2026-10-24T09:57:42+09:00",
+        "extracted_by": "traditional_fallback"
+      },
+      {
+        "site": "AsiaOne",
+        "title": "Exercise Wallaby 2026: RSAF showcases new operating area for training in Australia",
+        "url": "https://www.asiaone.com/singapore/warriors-den-new-rsaf-operations-centre-exercise-wallaby-2026",
+        "summary": "📰 싱가포르, 교통, 기술 관련 뉴스\n📢 Exercise Wallaby 2026: RSAF showcases new operating area for training in Austral...",
+        "content": "This year's exercise involves about 6,000 personnel and 1,200 platforms from the Singapore Army, RSAF and Digital and Intelligence Service. \"The vast airspace and terrain here in Queensland offer us a...",
+        "publish_date": "2026-10-23T19:00:00+09:00",
+        "extracted_by": "traditional_traditional"
+      }
+    ],
+    "article_count": 2,
+    "sites": [
+      "Yahoo Singapore News",
+      "AsiaOne"
+    ],
+    "timestamp": "2026-10-24T10:15:27.573136+09:00",
+    "scraping_method": "traditional",
+    "execution_type": "scheduled"
+  }
+]
